@@ -31,16 +31,14 @@ sind vorhanden. Verfügbare Formate und Funktionen hängen von Browser,
 Serverlaufzeit und Hostingrechten ab; vor dem Einsatz auf der eigenen
 Installation prüfen.
 
-**Grenzen der Bilanzfunktionen:** Die besonderen steuerlichen Fälle der
-SKR42-Konten **72500** (Finanzanlagenabschreibung aufgrund einer §-6b-EStG-Rücklage)
-und **72550** (zusätzlich mit § 3 Nr. 40 EStG beziehungsweise § 8b Abs. 3 KStG)
-sind für den E-Bilanz-Export noch gesperrt. Eine erfasste Quelle oder manuelle
-Kontenzuordnung hebt diese Sperre nicht auf. Eine neue Übertragung nach § 6b
-Absatz 10 auf Ersatzanteile einer GmbH ist vom persönlichen Anwendungsbereich
-nicht umfasst; bereits früher vorgenommene Abzüge sind gesondert zu behandeln.
-Für Steuerdateien gelten außerdem
-der unterstützte Fallumfang, das passende Jahrespaket und die gesonderte
-Einrichtung des amtlichen Prüf- und Übermittlungswegs.
+**Stand der E-Bilanz-Sonderfälle:** Die Rücklagenprüfung wurde erweitert:
+getrennte Zwei- und Vierjahresfristen, Jahresfortschreibung der Ursprungsrücklage
+und die Anwendbarkeitsprüfung neuer GmbH-Anteilskäufe nach einer Einbringung
+sind umgesetzt. Die vollständige steuerliche Überleitung dieser Sonderfälle
+in den E-Bilanz-Export ist noch nicht abgeschlossen. Beträge ungleich null auf den
+SKR42-Sonderkonten **72500** und **72550** bleiben deshalb gesperrt, auch bei
+manueller Taxonomiezuordnung. Das ist keine allgemeine Sperre der Bilanzfunktionen.
+[Unterstützte Fälle, Jahrespakete und Freigaben](docs/EBILANZ-UMGEBUNGEN.md).
 
 ## Installation auf eigenem Webspace
 
