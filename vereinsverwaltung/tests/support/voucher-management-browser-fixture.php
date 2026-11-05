@@ -1,0 +1,26 @@
+<?php declare(strict_types=1);
+use Kulturhus\Native\Shared\Db;
+require __DIR__.'/free-list-interface-browser-fixture.php';
+require __DIR__.'/voucher-management-browser-originals.php';
+$mbPeople=[];
+for($mbI=0;$mbI<28;$mbI++){
+ $mbPerson=$viRegistry->saveContact(null,0,'person','Own picker member '.sprintf('%02d',$mbI).' ä🙂','own-picker-'.$mbI.'@example.invalid','Own fixture address');
+ $viRegistry->addMembership($mbPerson,'','aktiv','2020-01-01');$mbPeople[]=['id'=>$mbPerson,'name'=>'Own picker member '.sprintf('%02d',$mbI).' ä🙂'];
+ Db::run($db,"INSERT INTO actors(id,club_id,role,contact_id) VALUES(?,?,'member',?)",['own-picker-helper-'.$mbI,'own-list-club',$mbPerson]);
+}
+$mbCases=[];$mbRecipients=[$viPerson,...$mgPeople];
+for($mbI=0;$mbI<8;$mbI++){
+ $mbDay=(new DateTimeImmutable('2043-06-01'))->modify('+'.$mbI.' days')->format('Y-m-d');$mbTitle='Own current management browser '.$mbI.' <em data-own-case>0</em> ä🙂';
+ $mbSource=$viRegistry->saveAppointment(null,0,['title'=>$mbTitle,'start'=>$mbDay.'T18:00','end'=>$mbDay.'T20:00','location'=>'Own original current venue 0','description'=>str_repeat('Own private source body ',300),'category'=>'verein'],[]);
+ $mbOpenKey=$key();$mbEvent=$viAdmin->open($mbSource,$mbOpenKey);$mbGrantKey=$key();$viAdmin->grant($mbEvent,$mbRecipients,[['label'=>'0','kind'=>'other','unit'=>'piece','amount'=>'2'],['label'=>'Gutschein einlösen','kind'=>'other','unit'=>'eur','amount'=>'3.50']],$mbGrantKey);$viAdmin->configure($mbEvent,1,true,['own-voucher-helper'],$key());
+ $mbVouchers=$viAdmin->vouchers($mbEvent);$mbOwnPiece=array_values(array_filter($mbVouchers,static fn(array $row):bool=>$row['contact_id']===$viPerson&&$row['unit']==='piece'))[0];$mbOwnEuro=array_values(array_filter($mbVouchers,static fn(array $row):bool=>$row['contact_id']===$viPerson&&$row['unit']==='eur'))[0];
+ $mbAux=$viRegistry->saveAppointment(null,0,['title'=>'Own unopened management browser source '.$mbI,'start'=>$mbDay.'T21:00','end'=>$mbDay.'T22:00','location'=>'Own additional original venue','description'=>'Own private unselected source','category'=>'verein'],[]);
+ $mbCases[]=['event'=>$mbEvent,'source'=>$mbSource,'title'=>$mbTitle,'receipt'=>$mbGrantKey,'original_json_sha256'=>hash('sha256',$viAdmin->confirmation($mbGrantKey)['original_json']),'piece'=>$mbOwnPiece,'euro'=>$mbOwnEuro,'aux_source'=>$mbAux,'aux_title'=>'Own unopened management browser source '.$mbI,'pdf_sha256'=>hash('sha256',\Kulturhus\Verein\EventVoucherPdf::fromSnapshot($viAdmin->managementPrintSnapshot($mbEvent,$viPerson))),'qr'=>\Kulturhus\Verein\EventVoucherQr::image($mbEvent,$mbOwnPiece['tickets'][0]['code'])];
+}
+$mbFixture=ownFreeListInterfaceBrowser($db,[]);$mbRoot=$mbFixture['input']['root'];$mbAuth=\Kulturhus\Native\Auth\Runtime::service($db);$mbAdminBridge=new \Kulturhus\Native\Integration\ManagerBridge($db,'own-list-admin','native',static fn()=>null);$mbHelperBridge=new \Kulturhus\Native\Integration\ManagerBridge($db,'own-voucher-helper','native',static fn()=>null);$mbHelperBridge->access();$mbInvite=$mbAuth->createInvitation($mbAdminBridge->access(),$mbHelperBridge->nativeActorId(),'own-voucher-browser-helper@example.invalid');$mbAuth->acceptInvitation($mbInvite['token'],$mbFixture['input']['password']);$mbFixture['input']['accounts']['helper']=['email'=>'own-voucher-browser-helper@example.invalid','actor'=>'own-voucher-helper'];
+$mbFixture['input']['data']=['cases'=>$mbCases,'other_event'=>$viEvents[0],'large_event'=>$vrLargeEvent,'members'=>$mbPeople,'person'=>$viPerson,'other_person'=>$mgPeople[0],'members_count'=>$viAdmin->membersPage()['total'],'helpers_count'=>$viAdmin->helpersPage()['total']];file_put_contents($mbRoot.'/fixture.json',json_encode($mbFixture['input'],JSON_THROW_ON_ERROR));
+$mbProtected=array_values(array_diff($tables,['native_auth_sessions','native_auth_limits','native_language_preferences']));$mbBefore=ownOriginalDatabaseHash($db,$mbProtected);$mbWriteMode=getenv('DVM_VOUCHER_MANAGEMENT_READONLY')!=='1';$mbOriginals=$mbWriteMode?ownManagementBrowserOriginals($db,$mbProtected,$mbCases):null;$mbKeys=[];foreach(['auth','private']as$mbKey)$mbKeys[$mbKey]=hash_file('sha256',$mbRoot.'/'.$mbKey.'.key');
+try{$mbProcess=proc_open(['node',dirname(__DIR__).'/voucher-management-browser.mjs'],[0=>['pipe','r'],1=>STDOUT,2=>STDERR],$mbPipes);fwrite($mbPipes[0],json_encode($mbFixture['input'],JSON_THROW_ON_ERROR));fclose($mbPipes[0]);if(proc_close($mbProcess)!==0)throw new RuntimeException('Actual native voucher management browser failed.');}
+finally{foreach($mbFixture['servers']as[$mbProcess,$mbLog]){proc_terminate($mbProcess);proc_close($mbProcess);fclose($mbLog);}}
+if($mbWriteMode){$mbResults=json_decode(file_get_contents($mbRoot.'/browser-actions.json'),true,512,JSON_THROW_ON_ERROR);ownManagementBrowserVerify($db,$mbProtected,$mbCases,$mbOriginals,$mbResults,$check);}else $check(ownOriginalDatabaseHash($db,$mbProtected)===$mbBefore,'actual native unsaved selection searches pages original downloads and language changes preserve every complete earlier business row');
+foreach($mbKeys as$mbKey=>$mbHash)$check(hash_file('sha256',$mbRoot.'/'.$mbKey.'.key')===$mbHash,'actual native general browsing preserves the exact private '.$mbKey.' key');

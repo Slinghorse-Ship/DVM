@@ -1,0 +1,832 @@
+{
+  "schema": 1,
+  "revision": 33,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "account-closing-r33-001@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.trade.other",
+          "choices": [
+            "bs.ass.currAss.receiv.trade.other",
+            "bs.ass.currAss.receiv.trade.shareholders",
+            "bs.ass.currAss.receiv.trade.misc"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": "upTo1year",
+          "calculation_only_pair": null,
+          "disclosures": [
+            "bs.ass.currAss.receiv.trade.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "12460",
+              "semantic": {
+                "name": "Einzelwertberichtigungen auf Forderungen - Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "12460",
+                "range_end": "12460",
+                "parent": null
+              },
+              "signature": "ef40c981d9a174151d78b141b72ef92d9c08d395ead9ca4973cd599f463f6757"
+            }
+          ]
+        },
+        {
+          "purpose": "account-closing-r33-002@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.trade.other",
+          "choices": [
+            "bs.ass.currAss.receiv.trade.other",
+            "bs.ass.currAss.receiv.trade.shareholders",
+            "bs.ass.currAss.receiv.trade.misc"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": "above1year",
+          "calculation_only_pair": null,
+          "disclosures": [
+            "bs.ass.currAss.receiv.trade.above1year"
+          ],
+          "sources": [
+            {
+              "code": "12470",
+              "semantic": {
+                "name": "- Restlaufzeit größer 1 Jahr",
+                "function": "",
+                "range_start": "12470",
+                "range_end": "12470",
+                "parent": {
+                  "code": "12460",
+                  "end": "12460",
+                  "name": "Einzelwertberichtigungen auf Forderungen - Restlaufzeit bis 1 Jahr",
+                  "function": ""
+                }
+              },
+              "signature": "2c8466a961aee38ddfb1bbdc09e2f4de482c05617665b11b681107a3514a99a4"
+            }
+          ]
+        },
+        {
+          "purpose": "account-closing-r33-003@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.trade.other",
+          "choices": [
+            "bs.ass.currAss.receiv.trade.other",
+            "bs.ass.currAss.receiv.trade.shareholders",
+            "bs.ass.currAss.receiv.trade.misc"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": "upTo1year",
+          "calculation_only_pair": null,
+          "disclosures": [
+            "bs.ass.currAss.receiv.trade.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "12480",
+              "semantic": {
+                "name": "Pauschalwertberichtigung auf Forderungen - Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "12480",
+                "range_end": "12480",
+                "parent": null
+              },
+              "signature": "58e2064174ed1007d1a1b4ce58cc41260aae3394b8dac86e2ae76d09c92b351a"
+            }
+          ]
+        },
+        {
+          "purpose": "account-closing-r33-004@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.trade.other",
+          "choices": [
+            "bs.ass.currAss.receiv.trade.other",
+            "bs.ass.currAss.receiv.trade.shareholders",
+            "bs.ass.currAss.receiv.trade.misc"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": "above1year",
+          "calculation_only_pair": null,
+          "disclosures": [
+            "bs.ass.currAss.receiv.trade.above1year"
+          ],
+          "sources": [
+            {
+              "code": "12490",
+              "semantic": {
+                "name": "- Restlaufzeit größer 1 Jahr",
+                "function": "",
+                "range_start": "12490",
+                "range_end": "12490",
+                "parent": {
+                  "code": "12480",
+                  "end": "12480",
+                  "name": "Pauschalwertberichtigung auf Forderungen - Restlaufzeit bis 1 Jahr",
+                  "function": ""
+                }
+              },
+              "signature": "a8d251075e99429307d343dc3152f7f54eb1ea85c3317e439f97d9175727e192"
+            }
+          ]
+        },
+        {
+          "purpose": "account-closing-r33-005@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": null,
+          "calculation_only_pair": "0",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69700",
+              "semantic": {
+                "name": "Kalkulatorischer Unternehmerlohn",
+                "function": "",
+                "range_start": "69700",
+                "range_end": "69700",
+                "parent": null
+              },
+              "signature": "7b422d59634c45ee8837a7813dbb5a6ceeecb20e6150c4c3b9fbf158140565d5"
+            },
+            {
+              "code": "69800",
+              "semantic": {
+                "name": "Verrechneter kalkulatorischer Unternehmerlohn",
+                "function": "",
+                "range_start": "69800",
+                "range_end": "69800",
+                "parent": null
+              },
+              "signature": "79f04dae175e8cbc7a1b4ab37c38bf12bf78c7b5c44c77afea128758cdda38c3"
+            }
+          ]
+        },
+        {
+          "purpose": "account-closing-r33-006@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": null,
+          "calculation_only_pair": "1",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69720",
+              "semantic": {
+                "name": "Kalkulatorische Miete und Pacht",
+                "function": "",
+                "range_start": "69720",
+                "range_end": "69720",
+                "parent": null
+              },
+              "signature": "11cc8b4c4511c45284c7cda787a99bb7915552b367867c78372e187287c612a0"
+            },
+            {
+              "code": "69820",
+              "semantic": {
+                "name": "Verrechnete kalkulatorische Miete/Pacht",
+                "function": "",
+                "range_start": "69820",
+                "range_end": "69820",
+                "parent": null
+              },
+              "signature": "33dd0dcd174eca962aa90b49291f204298d15aac04272d0c05a8449f5c55218e"
+            }
+          ]
+        },
+        {
+          "purpose": "account-closing-r33-007@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": null,
+          "calculation_only_pair": "2",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69740",
+              "semantic": {
+                "name": "Kalkulatorische Zinsen",
+                "function": "",
+                "range_start": "69740",
+                "range_end": "69740",
+                "parent": null
+              },
+              "signature": "32062978bbd28341890220e74529d0ad8dd41e65c331c5f25f666b767185a4fa"
+            },
+            {
+              "code": "69840",
+              "semantic": {
+                "name": "Verrechnete kalkulatorische Zinsen",
+                "function": "",
+                "range_start": "69840",
+                "range_end": "69840",
+                "parent": null
+              },
+              "signature": "a9acdecca430028a67949a251d61600f39b4a2922d989a299ac4aef69e8b0434"
+            }
+          ]
+        },
+        {
+          "purpose": "account-closing-r33-008@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": null,
+          "calculation_only_pair": "3",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69760",
+              "semantic": {
+                "name": "Kalkulatorische Abschreibungen",
+                "function": "",
+                "range_start": "69760",
+                "range_end": "69760",
+                "parent": null
+              },
+              "signature": "7a17af180592e43988db1f3b1c0c0d81951b9ad863f9f53166080b3a70030362"
+            },
+            {
+              "code": "69860",
+              "semantic": {
+                "name": "Verrechnete kalkulatorische Abschreibungen",
+                "function": "",
+                "range_start": "69860",
+                "range_end": "69860",
+                "parent": null
+              },
+              "signature": "93358a3f9f093f8fd373cf4513d05ed8e52556f5658366bad63cdbcfedb8141a"
+            }
+          ]
+        },
+        {
+          "purpose": "account-closing-r33-009@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": null,
+          "calculation_only_pair": "4",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69780",
+              "semantic": {
+                "name": "Kalkulatorische Wagnisse",
+                "function": "",
+                "range_start": "69780",
+                "range_end": "69780",
+                "parent": null
+              },
+              "signature": "f0f255cb5faf2e704e1c61deb7609b574c53118ae70be407ad7f440cbad951de"
+            },
+            {
+              "code": "69880",
+              "semantic": {
+                "name": "Verrechnete kalkulatorische Wagnisse",
+                "function": "",
+                "range_start": "69880",
+                "range_end": "69880",
+                "parent": null
+              },
+              "signature": "0dc0d840c92bf2542b6ebc84ed516a42ed40faf50163af04ba08732c66eefc50"
+            }
+          ]
+        },
+        {
+          "purpose": "account-closing-r33-010@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": null,
+          "calculation_only_pair": "5",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69790",
+              "semantic": {
+                "name": "Kalkulatorischer Lohn für unentgeltliche Mitarbeiter",
+                "function": "",
+                "range_start": "69790",
+                "range_end": "69790",
+                "parent": null
+              },
+              "signature": "ce9085bcdce2f00f739b76ecf943da06e119bc3aab46185c66e1fd2ffa1c1a05"
+            },
+            {
+              "code": "69890",
+              "semantic": {
+                "name": "Verrechneter kalkulatorischer Lohn für unentgeltliche Mitarbeiter",
+                "function": "",
+                "range_start": "69890",
+                "range_end": "69890",
+                "parent": null
+              },
+              "signature": "629f78a981705633e073e6312a94d19fee5edd613a058cfe98fc39e25fc600e9"
+            }
+          ]
+        },
+        {
+          "purpose": "account-closing-r33-011@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": null,
+          "calculation_only_pair": "6",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69900",
+              "semantic": {
+                "name": "Herstellungskosten",
+                "function": "",
+                "range_start": "69900",
+                "range_end": "69900",
+                "parent": null
+              },
+              "signature": "f3bf77a2ec57c1e131b9b370d01559695a65eb33c108ad84e535d5d3d0bdf6a8"
+            },
+            {
+              "code": "69920",
+              "semantic": {
+                "name": "Verwaltungskosten",
+                "function": "",
+                "range_start": "69920",
+                "range_end": "69920",
+                "parent": null
+              },
+              "signature": "224254feec99fa2d8938713496ae6e85367686d2836a20d92ccfe7b495d01df9"
+            },
+            {
+              "code": "69940",
+              "semantic": {
+                "name": "Vertriebskosten",
+                "function": "",
+                "range_start": "69940",
+                "range_end": "69940",
+                "parent": null
+              },
+              "signature": "35c78be19aa59423e6af4d1a24adf98b41c5d6bffb3b06e7d907c22d210e506e"
+            },
+            {
+              "code": "69990",
+              "semantic": {
+                "name": "Gegenkonto zu 6990 0 bis 6998 9",
+                "function": "",
+                "range_start": "69990",
+                "range_end": "69990",
+                "parent": null
+              },
+              "signature": "d33928f96cef30cf754d7e0276e350822259b5c8f940f828b2ad4b1a2ea90abc"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "account-closing-r33-001@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.trade.other",
+          "choices": [
+            "bs.ass.currAss.receiv.trade.other",
+            "bs.ass.currAss.receiv.trade.shareholders",
+            "bs.ass.currAss.receiv.trade.misc"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": "upTo1year",
+          "calculation_only_pair": null,
+          "disclosures": [
+            "bs.ass.currAss.receiv.trade.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "12460",
+              "semantic": {
+                "name": "Einzelwertberichtigungen auf Forderungen - Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "12460",
+                "range_end": "12460",
+                "parent": null
+              },
+              "signature": "ef40c981d9a174151d78b141b72ef92d9c08d395ead9ca4973cd599f463f6757"
+            }
+          ]
+        },
+        {
+          "purpose": "account-closing-r33-002@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.trade.other",
+          "choices": [
+            "bs.ass.currAss.receiv.trade.other",
+            "bs.ass.currAss.receiv.trade.shareholders",
+            "bs.ass.currAss.receiv.trade.misc"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": "above1year",
+          "calculation_only_pair": null,
+          "disclosures": [
+            "bs.ass.currAss.receiv.trade.above1year"
+          ],
+          "sources": [
+            {
+              "code": "12470",
+              "semantic": {
+                "name": "- Restlaufzeit größer 1 Jahr",
+                "function": "",
+                "range_start": "12470",
+                "range_end": "12470",
+                "parent": {
+                  "code": "12460",
+                  "end": "12460",
+                  "name": "Einzelwertberichtigungen auf Forderungen - Restlaufzeit bis 1 Jahr",
+                  "function": ""
+                }
+              },
+              "signature": "2c8466a961aee38ddfb1bbdc09e2f4de482c05617665b11b681107a3514a99a4"
+            }
+          ]
+        },
+        {
+          "purpose": "account-closing-r33-003@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.trade.other",
+          "choices": [
+            "bs.ass.currAss.receiv.trade.other",
+            "bs.ass.currAss.receiv.trade.shareholders",
+            "bs.ass.currAss.receiv.trade.misc"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": "upTo1year",
+          "calculation_only_pair": null,
+          "disclosures": [
+            "bs.ass.currAss.receiv.trade.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "12480",
+              "semantic": {
+                "name": "Pauschalwertberichtigung auf Forderungen - Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "12480",
+                "range_end": "12480",
+                "parent": null
+              },
+              "signature": "58e2064174ed1007d1a1b4ce58cc41260aae3394b8dac86e2ae76d09c92b351a"
+            }
+          ]
+        },
+        {
+          "purpose": "account-closing-r33-004@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.trade.other",
+          "choices": [
+            "bs.ass.currAss.receiv.trade.other",
+            "bs.ass.currAss.receiv.trade.shareholders",
+            "bs.ass.currAss.receiv.trade.misc"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": "above1year",
+          "calculation_only_pair": null,
+          "disclosures": [
+            "bs.ass.currAss.receiv.trade.above1year"
+          ],
+          "sources": [
+            {
+              "code": "12490",
+              "semantic": {
+                "name": "- Restlaufzeit größer 1 Jahr",
+                "function": "",
+                "range_start": "12490",
+                "range_end": "12490",
+                "parent": {
+                  "code": "12480",
+                  "end": "12480",
+                  "name": "Pauschalwertberichtigung auf Forderungen - Restlaufzeit bis 1 Jahr",
+                  "function": ""
+                }
+              },
+              "signature": "a8d251075e99429307d343dc3152f7f54eb1ea85c3317e439f97d9175727e192"
+            }
+          ]
+        },
+        {
+          "purpose": "account-closing-r33-005@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": null,
+          "calculation_only_pair": "0",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69700",
+              "semantic": {
+                "name": "Kalkulatorischer Unternehmerlohn",
+                "function": "",
+                "range_start": "69700",
+                "range_end": "69700",
+                "parent": null
+              },
+              "signature": "7b422d59634c45ee8837a7813dbb5a6ceeecb20e6150c4c3b9fbf158140565d5"
+            },
+            {
+              "code": "69800",
+              "semantic": {
+                "name": "Verrechneter kalkulatorischer Unternehmerlohn",
+                "function": "",
+                "range_start": "69800",
+                "range_end": "69800",
+                "parent": null
+              },
+              "signature": "79f04dae175e8cbc7a1b4ab37c38bf12bf78c7b5c44c77afea128758cdda38c3"
+            }
+          ]
+        },
+        {
+          "purpose": "account-closing-r33-006@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": null,
+          "calculation_only_pair": "1",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69720",
+              "semantic": {
+                "name": "Kalkulatorische Miete und Pacht",
+                "function": "",
+                "range_start": "69720",
+                "range_end": "69720",
+                "parent": null
+              },
+              "signature": "11cc8b4c4511c45284c7cda787a99bb7915552b367867c78372e187287c612a0"
+            },
+            {
+              "code": "69820",
+              "semantic": {
+                "name": "Verrechnete kalkulatorische Miete/Pacht",
+                "function": "",
+                "range_start": "69820",
+                "range_end": "69820",
+                "parent": null
+              },
+              "signature": "33dd0dcd174eca962aa90b49291f204298d15aac04272d0c05a8449f5c55218e"
+            }
+          ]
+        },
+        {
+          "purpose": "account-closing-r33-007@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": null,
+          "calculation_only_pair": "2",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69740",
+              "semantic": {
+                "name": "Kalkulatorische Zinsen",
+                "function": "",
+                "range_start": "69740",
+                "range_end": "69740",
+                "parent": null
+              },
+              "signature": "32062978bbd28341890220e74529d0ad8dd41e65c331c5f25f666b767185a4fa"
+            },
+            {
+              "code": "69840",
+              "semantic": {
+                "name": "Verrechnete kalkulatorische Zinsen",
+                "function": "",
+                "range_start": "69840",
+                "range_end": "69840",
+                "parent": null
+              },
+              "signature": "a9acdecca430028a67949a251d61600f39b4a2922d989a299ac4aef69e8b0434"
+            }
+          ]
+        },
+        {
+          "purpose": "account-closing-r33-008@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": null,
+          "calculation_only_pair": "3",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69760",
+              "semantic": {
+                "name": "Kalkulatorische Abschreibungen",
+                "function": "",
+                "range_start": "69760",
+                "range_end": "69760",
+                "parent": null
+              },
+              "signature": "7a17af180592e43988db1f3b1c0c0d81951b9ad863f9f53166080b3a70030362"
+            },
+            {
+              "code": "69860",
+              "semantic": {
+                "name": "Verrechnete kalkulatorische Abschreibungen",
+                "function": "",
+                "range_start": "69860",
+                "range_end": "69860",
+                "parent": null
+              },
+              "signature": "93358a3f9f093f8fd373cf4513d05ed8e52556f5658366bad63cdbcfedb8141a"
+            }
+          ]
+        },
+        {
+          "purpose": "account-closing-r33-009@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": null,
+          "calculation_only_pair": "4",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69780",
+              "semantic": {
+                "name": "Kalkulatorische Wagnisse",
+                "function": "",
+                "range_start": "69780",
+                "range_end": "69780",
+                "parent": null
+              },
+              "signature": "f0f255cb5faf2e704e1c61deb7609b574c53118ae70be407ad7f440cbad951de"
+            },
+            {
+              "code": "69880",
+              "semantic": {
+                "name": "Verrechnete kalkulatorische Wagnisse",
+                "function": "",
+                "range_start": "69880",
+                "range_end": "69880",
+                "parent": null
+              },
+              "signature": "0dc0d840c92bf2542b6ebc84ed516a42ed40faf50163af04ba08732c66eefc50"
+            }
+          ]
+        },
+        {
+          "purpose": "account-closing-r33-010@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": null,
+          "calculation_only_pair": "5",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69790",
+              "semantic": {
+                "name": "Kalkulatorischer Lohn für unentgeltliche Mitarbeiter",
+                "function": "",
+                "range_start": "69790",
+                "range_end": "69790",
+                "parent": null
+              },
+              "signature": "ce9085bcdce2f00f739b76ecf943da06e119bc3aab46185c66e1fd2ffa1c1a05"
+            },
+            {
+              "code": "69890",
+              "semantic": {
+                "name": "Verrechneter kalkulatorischer Lohn für unentgeltliche Mitarbeiter",
+                "function": "",
+                "range_start": "69890",
+                "range_end": "69890",
+                "parent": null
+              },
+              "signature": "629f78a981705633e073e6312a94d19fee5edd613a058cfe98fc39e25fc600e9"
+            }
+          ]
+        },
+        {
+          "purpose": "account-closing-r33-011@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": null,
+          "calculation_only_pair": "6",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69900",
+              "semantic": {
+                "name": "Herstellungskosten",
+                "function": "",
+                "range_start": "69900",
+                "range_end": "69900",
+                "parent": null
+              },
+              "signature": "f3bf77a2ec57c1e131b9b370d01559695a65eb33c108ad84e535d5d3d0bdf6a8"
+            },
+            {
+              "code": "69920",
+              "semantic": {
+                "name": "Verwaltungskosten",
+                "function": "",
+                "range_start": "69920",
+                "range_end": "69920",
+                "parent": null
+              },
+              "signature": "224254feec99fa2d8938713496ae6e85367686d2836a20d92ccfe7b495d01df9"
+            },
+            {
+              "code": "69940",
+              "semantic": {
+                "name": "Vertriebskosten",
+                "function": "",
+                "range_start": "69940",
+                "range_end": "69940",
+                "parent": null
+              },
+              "signature": "35c78be19aa59423e6af4d1a24adf98b41c5d6bffb3b06e7d907c22d210e506e"
+            },
+            {
+              "code": "69990",
+              "semantic": {
+                "name": "Gegenkonto zu 6990 0 bis 6998 9",
+                "function": "",
+                "range_start": "69990",
+                "range_end": "69990",
+                "parent": null
+              },
+              "signature": "d33928f96cef30cf754d7e0276e350822259b5c8f940f828b2ad4b1a2ea90abc"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

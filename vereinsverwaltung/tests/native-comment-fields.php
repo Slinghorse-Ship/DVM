@@ -1,0 +1,47 @@
+<?php declare(strict_types=1);
+require dirname(__DIR__).'/native/bootstrap.php';
+require __DIR__.'/support/original-database-hash.php';
+use Kulturhus\Native\TestSupport;
+use Kulturhus\Native\Shared\{Access,Db,SecretBox};
+use Kulturhus\Native\Cms\{Schema as CmsSchema,Pages,DataModel,CustomFields,FieldConditions,PagePurge,PageTrash,Conflict};
+use Kulturhus\Native\Comments\{Schema,Streams,Bindings,PageRemoval};
+$db=TestSupport::db();$actors=TestSupport::seed($db);CmsSchema::install($db);Schema::install($db);$admin=new Access($db,$actors['admin']);$reader=new Access($db,$actors['reader']);$box=new SecretBox(random_bytes(32));$model=new DataModel($db,$admin);$pages=new Pages($db,$admin);$streams=new Streams($db,$admin,$box);$checks=0;
+function check(bool $okay,string $label):void{if(!$okay)throw new RuntimeException($label);++$GLOBALS['checks'];echo 'PASS '.$label.PHP_EOL;}
+function rejects(callable $f,string $label):void{try{$f();}catch(DomainException|InvalidArgumentException|Conflict){check(true,$label);return;}throw new RuntimeException($label);}
+$definition=['key'=>'discussion','label'=>'Human discussion','type'=>'comments'];$field=$model->saveField($definition);
+check($field['type']==='comments'&&!$field['required']&&CustomFields::value($field,null)===null,'comment field has only a closed null binding and no stored conversation JSON');
+foreach(['',[],['body'=>'Forged'],0,'Human text']as$value)rejects(fn()=>CustomFields::value($field,$value),'page values cannot inject human conversation data');
+foreach([['required'=>true],['multiple'=>true],['min'=>1],['options'=>['a']],['fields'=>['discussion']],['show_when'=>['match'=>'all','conditions'=>[['field'=>'title','operator'=>'empty']]]]]as$extra)rejects(fn()=>CustomFields::definition($definition+$extra),'comment field refuses scalar/container/conditional configuration');
+rejects(fn()=>$model->saveField(['key'=>'nested_comments','label'=>'No nested conversation','type'=>'repeater','fields'=>['discussion']]),'comments cannot be nested under a datarow identity');
+$template=$model->saveTemplate(['key'=>'comment_field_page','label'=>'Own comment field page','fields'=>['discussion']]);
+$page=$pages->save(['title'=>'Own original comment field','slug'=>'own-comment-field','template'=>$template['key']]);$page=$pages->publish($page['id'],$page['version']);$pageId=$page['id'];
+check($page['custom_fields']['discussion']===null&&(int)$db->query('SELECT COUNT(*) FROM native_comment_settings')->fetchColumn()===0,'saving and publishing a comment field never implicitly activate a stream');
+Bindings::assert($db,$admin,$pageId,'discussion');Bindings::assert($db,$reader,$pageId,'discussion',true);check(Bindings::choices($db,$admin,$pageId)['discussion']==='Human discussion','actual original-bound comment field is available to explicit settings');
+rejects(fn()=>Bindings::assert($db,$admin,$pageId,'other_stream'),'known page cannot bind an undeclared stream name');
+rejects(fn()=>$pages->count([['field'=>'custom.discussion','operator'=>'eq','value'=>null]]),'conversation binding cannot be used as a page selector');
+rejects(fn()=>$pages->search([],10,0,[['field'=>'custom.discussion','direction'=>'asc']]),'conversation binding cannot be used as a page ordering value');
+$streams->configure($pageId,'discussion',0,['enabled'=>true,'anonymous'=>true]);
+$human=$streams->submit($pageId,'discussion',['name'=>'Own original human','body'=>'Own exact original human text'],bin2hex(random_bytes(32)),bin2hex(random_bytes(32)),'own-field-rate');$streams->moderate($human['id'],1,'approved');
+$copy=$pages->copyFrom($pageId,$page['version'],['title'=>'Own copied field binding','slug'=>'own-comment-field-copy']);check((int)Db::run($db,'SELECT COUNT(*) FROM native_comment_settings WHERE page_id=?',[$copy['id']])->fetchColumn()===0&&(int)Db::run($db,'SELECT COUNT(*) FROM native_comments WHERE page_id=?',[$copy['id']])->fetchColumn()===0,'page copy retains field schema without copying or enabling the original human conversation');$copyTrash=(new PageTrash($db,$admin))->move($copy['id'],$copy['version']);(new PagePurge($db,$admin))->purge($copy['id'],$copyTrash['version'],true);
+$originals=ownOriginalDatabaseHash($db,['khcms_pages','khcms_revisions']);$comments=ownOriginalDatabaseHash($db,['native_comments','native_comment_history','native_comment_settings','native_comment_setting_history']);
+$private=$model->saveField($definition+['access'=>['read'=>'manage','edit'=>'manage']],$field['version']);
+rejects(fn()=>Bindings::assert($db,$reader,$pageId,'discussion',true),'current field revocation closes the public conversation binding');
+rejects(fn()=>$streams->publicList($pageId,'discussion'),'administrator never widens anonymous conversation field visibility');
+Db::run($db,"INSERT INTO native_grants(actor_id,module,capability) VALUES(?,'website','publish')",[$actors['editor']]);$editorStreams=new Streams($db,new Access($db,$actors['editor']),$box);
+rejects(fn()=>$editorStreams->get($human['id']),'known comment ID cannot bypass captured and current field rights');check($editorStreams->moderationList('approved')['total']===0,'moderation field rights apply before count and bounded row selection');
+rejects(fn()=>$editorStreams->moderate($human['id'],2,'spam'),'known comment action cannot bypass field rights');
+
+Bindings::assert($db,$admin,$pageId,'discussion');check(ownOriginalDatabaseHash($db,['khcms_pages','khcms_revisions'])===$originals&&ownOriginalDatabaseHash($db,['native_comments','native_comment_history','native_comment_settings','native_comment_setting_history'])===$comments,'field revocation preserves exact page and human text originals');
+$trashed=(new PageTrash($db,$admin))->move($pageId,$page['version']);$purge=new PagePurge($db,$admin);
+rejects(fn()=>$purge->purge($pageId,$trashed['version'],true),'ordinary page confirmation cannot remove an associated human conversation');
+check(ownOriginalDatabaseHash($db,['native_comments','native_comment_history','native_comment_settings','native_comment_setting_history'])===$comments,'missing extra confirmation preserves all human text and settings');
+$db->exec('CREATE TABLE own_comment_business_guard(club_id VARCHAR(64), payload_json JSON) ENGINE=InnoDB');Db::run($db,'INSERT INTO own_comment_business_guard VALUES(?,?)',[$admin->club(),json_encode(['page'=>$pageId],JSON_THROW_ON_ERROR)]);
+$guardedComments=ownOriginalDatabaseHash($db,['native_comments','native_comment_history','native_comment_settings','native_comment_setting_history']);$guardRows=$db->query('SELECT * FROM own_comment_business_guard')->fetchAll();
+rejects(fn()=>$purge->purge($pageId,$trashed['version'],true,true),'another retained original blocks page deletion after tentative owned comment cleanup');
+check(ownOriginalDatabaseHash($db,['native_comments','native_comment_history','native_comment_settings','native_comment_setting_history'])===$guardedComments&&$db->query('SELECT * FROM own_comment_business_guard')->fetchAll()===$guardRows,'failed serializable purge rolls back exact human comments and immutable histories');
+Db::run($db,'DELETE FROM own_comment_business_guard WHERE club_id=?',[$admin->club()]);
+$foreign=$pages->save(['title'=>'Own independent foreign discussion','slug'=>'own-independent-comment-field','template'=>$template['key']]);$streams->configure($foreign['id'],'discussion',0,['enabled'=>false]);
+$removed=$purge->purge($pageId,$trashed['version'],true,true);check($removed['purged']&&!PageRemoval::present($db,$admin->club(),$pageId)&&!Db::run($db,'SELECT 1 FROM native_comment_history WHERE comment_id=?',[$human['id']])->fetchColumn(),'explicit atomic purge removes only this page conversation, settings and exact owned history');
+check($purge->purge($pageId,$trashed['version'],true,true)['replayed'],'lost purge response replays without a second deletion');
+check((int)Db::run($db,'SELECT COUNT(*) FROM native_comment_settings WHERE page_id=?',[$foreign['id']])->fetchColumn()===1,'another original page keeps its independent conversation settings');
+echo json_encode(['suite'=>'native-comment-fields','checks'=>$checks,'live_transport'=>false],JSON_THROW_ON_ERROR).PHP_EOL;

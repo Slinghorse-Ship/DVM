@@ -1,0 +1,478 @@
+{
+  "schema": 1,
+  "revision": 31,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "building-r31-001@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.tan.landBuildings.buildingsOnOwnLand.buildings",
+          "choices": [
+            "bs.ass.fixAss.tan.landBuildings.buildingsOnOwnLand.buildings"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "02300",
+              "semantic": {
+                "name": "Bauten auf eigenen Grundstücken und grundstücksgleichen Rechten",
+                "function": "",
+                "range_start": "02300",
+                "range_end": "02300",
+                "parent": null
+              },
+              "signature": "01ab3a0236ddbc5943f018ca8bfc87893ef5bc73ae5c4d00bb3f32ac2a693ac3"
+            },
+            {
+              "code": "02400",
+              "semantic": {
+                "name": "Geschäftsbauten",
+                "function": "",
+                "range_start": "02400",
+                "range_end": "02400",
+                "parent": null
+              },
+              "signature": "b799216858d70f8285f6d2682c981e5277a387f964a90f01f6c563bd51a71537"
+            },
+            {
+              "code": "02410",
+              "semantic": {
+                "name": "Gebäude",
+                "function": "",
+                "range_start": "02410",
+                "range_end": "02410",
+                "parent": null
+              },
+              "signature": "dbdd1c0ce52aa0c8e082e407d378cc31d1fde175e18321b99bd9e1e79d277564"
+            },
+            {
+              "code": "02430",
+              "semantic": {
+                "name": "Hallen",
+                "function": "",
+                "range_start": "02430",
+                "range_end": "02430",
+                "parent": null
+              },
+              "signature": "8d07d407881abe3c2a9515015d40d279ab54397b923b8cd75933551b2ad574d0"
+            },
+            {
+              "code": "02440",
+              "semantic": {
+                "name": "Gaststätte",
+                "function": "",
+                "range_start": "02440",
+                "range_end": "02440",
+                "parent": null
+              },
+              "signature": "de4fb6f83627cd88e728bc079662e4c875d189e39ddef80b94a4bdaf9b79dc91"
+            },
+            {
+              "code": "02500",
+              "semantic": {
+                "name": "Fabrikbauten",
+                "function": "",
+                "range_start": "02500",
+                "range_end": "02500",
+                "parent": null
+              },
+              "signature": "af523b2f4f1e52094c8304a4376cfbf4b7238fe74a198cc8261d1c3887979ff9"
+            },
+            {
+              "code": "02600",
+              "semantic": {
+                "name": "Andere Bauten",
+                "function": "",
+                "range_start": "02600",
+                "range_end": "02600",
+                "parent": null
+              },
+              "signature": "fcd8676c062acff94bef888c2151801c662ffb4d083140e4ea0052ebf98e7d18"
+            },
+            {
+              "code": "02700",
+              "semantic": {
+                "name": "Garagen",
+                "function": "",
+                "range_start": "02700",
+                "range_end": "02700",
+                "parent": null
+              },
+              "signature": "bf236c5d1b4383c6c52f38c935a45ed4521969109444d18f694c1e641a86de0a"
+            },
+            {
+              "code": "03000",
+              "semantic": {
+                "name": "Wohnbauten",
+                "function": "",
+                "range_start": "03000",
+                "range_end": "03000",
+                "parent": null
+              },
+              "signature": "9e79b3203b9b0f6c38b607be3e5e40ff0e5debb253da1dd3bd61471006acaf99"
+            },
+            {
+              "code": "03050",
+              "semantic": {
+                "name": "Garagen",
+                "function": "",
+                "range_start": "03050",
+                "range_end": "03050",
+                "parent": null
+              },
+              "signature": "c9d9ee56837e0c6eb0f0eed3166ae259ec08873bd22f4e411c2ed74c66db1df6"
+            }
+          ]
+        },
+        {
+          "purpose": "building-r31-002@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.tan.landBuildings.buildingsOnNonOwnedLand",
+          "choices": [
+            "bs.ass.fixAss.tan.landBuildings.buildingsOnNonOwnedLand"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "03300",
+              "semantic": {
+                "name": "Bauten auf fremden Grundstücken",
+                "function": "",
+                "range_start": "03300",
+                "range_end": "03300",
+                "parent": null
+              },
+              "signature": "f0c40564e567f24a033c6cea926c60efb629740ffbb52f0ee281ad6874cacfb6"
+            },
+            {
+              "code": "03400",
+              "semantic": {
+                "name": "Geschäftsbauten",
+                "function": "",
+                "range_start": "03400",
+                "range_end": "03400",
+                "parent": null
+              },
+              "signature": "155f4d5963622ab87218c15b260d7d7c11fe7538f2502aa3e04d838274e69f53"
+            },
+            {
+              "code": "03500",
+              "semantic": {
+                "name": "Fabrikbauten",
+                "function": "",
+                "range_start": "03500",
+                "range_end": "03500",
+                "parent": null
+              },
+              "signature": "3673ae588ef71e7606d7ccfdd69a715e20afe9a7757f9ed8dfbc11c2c3a23543"
+            },
+            {
+              "code": "03600",
+              "semantic": {
+                "name": "Wohnbauten",
+                "function": "",
+                "range_start": "03600",
+                "range_end": "03600",
+                "parent": null
+              },
+              "signature": "128f706b9d88d2bf8556fb1a320dd8e1548afaf96657e2b5e15aa293e88737c7"
+            },
+            {
+              "code": "03700",
+              "semantic": {
+                "name": "Andere Bauten",
+                "function": "",
+                "range_start": "03700",
+                "range_end": "03700",
+                "parent": null
+              },
+              "signature": "da899be4ea201de394abf451768adc9fd4d69806ccbe539e4644e60a55018439"
+            },
+            {
+              "code": "03800",
+              "semantic": {
+                "name": "Garagen",
+                "function": "",
+                "range_start": "03800",
+                "range_end": "03800",
+                "parent": null
+              },
+              "signature": "69bfc4895f01565850041b7dc329b6ed25498750cc670ba32d211b8be6d75ad6"
+            }
+          ]
+        },
+        {
+          "purpose": "building-r31-003@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.deprAmort.fixAss.tan.buildings",
+          "choices": [
+            "is.netIncome.regular.operatingTC.deprAmort.fixAss.tan.buildings"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "62210",
+              "semantic": {
+                "name": "Abschreibungen auf Gebäude",
+                "function": "",
+                "range_start": "62210",
+                "range_end": "62210",
+                "parent": null
+              },
+              "signature": "d2787eec712c6d578c9c2f3dba994178d12a3121df836baa5f3c2d1df7d80c9a"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "building-r31-001@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.tan.landBuildings.buildingsOnOwnLand.buildings",
+          "choices": [
+            "bs.ass.fixAss.tan.landBuildings.buildingsOnOwnLand.buildings"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "02300",
+              "semantic": {
+                "name": "Bauten auf eigenen Grundstücken und grundstücksgleichen Rechten",
+                "function": "",
+                "range_start": "02300",
+                "range_end": "02300",
+                "parent": null
+              },
+              "signature": "01ab3a0236ddbc5943f018ca8bfc87893ef5bc73ae5c4d00bb3f32ac2a693ac3"
+            },
+            {
+              "code": "02400",
+              "semantic": {
+                "name": "Geschäftsbauten",
+                "function": "",
+                "range_start": "02400",
+                "range_end": "02400",
+                "parent": null
+              },
+              "signature": "b799216858d70f8285f6d2682c981e5277a387f964a90f01f6c563bd51a71537"
+            },
+            {
+              "code": "02410",
+              "semantic": {
+                "name": "Gebäude",
+                "function": "",
+                "range_start": "02410",
+                "range_end": "02410",
+                "parent": null
+              },
+              "signature": "dbdd1c0ce52aa0c8e082e407d378cc31d1fde175e18321b99bd9e1e79d277564"
+            },
+            {
+              "code": "02430",
+              "semantic": {
+                "name": "Hallen",
+                "function": "",
+                "range_start": "02430",
+                "range_end": "02430",
+                "parent": null
+              },
+              "signature": "8d07d407881abe3c2a9515015d40d279ab54397b923b8cd75933551b2ad574d0"
+            },
+            {
+              "code": "02440",
+              "semantic": {
+                "name": "Gaststätte",
+                "function": "",
+                "range_start": "02440",
+                "range_end": "02440",
+                "parent": null
+              },
+              "signature": "de4fb6f83627cd88e728bc079662e4c875d189e39ddef80b94a4bdaf9b79dc91"
+            },
+            {
+              "code": "02500",
+              "semantic": {
+                "name": "Fabrikbauten",
+                "function": "",
+                "range_start": "02500",
+                "range_end": "02500",
+                "parent": null
+              },
+              "signature": "af523b2f4f1e52094c8304a4376cfbf4b7238fe74a198cc8261d1c3887979ff9"
+            },
+            {
+              "code": "02600",
+              "semantic": {
+                "name": "Andere Bauten",
+                "function": "",
+                "range_start": "02600",
+                "range_end": "02600",
+                "parent": null
+              },
+              "signature": "fcd8676c062acff94bef888c2151801c662ffb4d083140e4ea0052ebf98e7d18"
+            },
+            {
+              "code": "02700",
+              "semantic": {
+                "name": "Garagen",
+                "function": "",
+                "range_start": "02700",
+                "range_end": "02700",
+                "parent": null
+              },
+              "signature": "bf236c5d1b4383c6c52f38c935a45ed4521969109444d18f694c1e641a86de0a"
+            },
+            {
+              "code": "03000",
+              "semantic": {
+                "name": "Wohnbauten",
+                "function": "",
+                "range_start": "03000",
+                "range_end": "03000",
+                "parent": null
+              },
+              "signature": "9e79b3203b9b0f6c38b607be3e5e40ff0e5debb253da1dd3bd61471006acaf99"
+            },
+            {
+              "code": "03050",
+              "semantic": {
+                "name": "Garagen",
+                "function": "",
+                "range_start": "03050",
+                "range_end": "03050",
+                "parent": null
+              },
+              "signature": "c9d9ee56837e0c6eb0f0eed3166ae259ec08873bd22f4e411c2ed74c66db1df6"
+            }
+          ]
+        },
+        {
+          "purpose": "building-r31-002@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.tan.landBuildings.buildingsOnNonOwnedLand",
+          "choices": [
+            "bs.ass.fixAss.tan.landBuildings.buildingsOnNonOwnedLand"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "03300",
+              "semantic": {
+                "name": "Bauten auf fremden Grundstücken",
+                "function": "",
+                "range_start": "03300",
+                "range_end": "03300",
+                "parent": null
+              },
+              "signature": "f0c40564e567f24a033c6cea926c60efb629740ffbb52f0ee281ad6874cacfb6"
+            },
+            {
+              "code": "03400",
+              "semantic": {
+                "name": "Geschäftsbauten",
+                "function": "",
+                "range_start": "03400",
+                "range_end": "03400",
+                "parent": null
+              },
+              "signature": "155f4d5963622ab87218c15b260d7d7c11fe7538f2502aa3e04d838274e69f53"
+            },
+            {
+              "code": "03500",
+              "semantic": {
+                "name": "Fabrikbauten",
+                "function": "",
+                "range_start": "03500",
+                "range_end": "03500",
+                "parent": null
+              },
+              "signature": "3673ae588ef71e7606d7ccfdd69a715e20afe9a7757f9ed8dfbc11c2c3a23543"
+            },
+            {
+              "code": "03600",
+              "semantic": {
+                "name": "Wohnbauten",
+                "function": "",
+                "range_start": "03600",
+                "range_end": "03600",
+                "parent": null
+              },
+              "signature": "128f706b9d88d2bf8556fb1a320dd8e1548afaf96657e2b5e15aa293e88737c7"
+            },
+            {
+              "code": "03700",
+              "semantic": {
+                "name": "Andere Bauten",
+                "function": "",
+                "range_start": "03700",
+                "range_end": "03700",
+                "parent": null
+              },
+              "signature": "da899be4ea201de394abf451768adc9fd4d69806ccbe539e4644e60a55018439"
+            },
+            {
+              "code": "03800",
+              "semantic": {
+                "name": "Garagen",
+                "function": "",
+                "range_start": "03800",
+                "range_end": "03800",
+                "parent": null
+              },
+              "signature": "69bfc4895f01565850041b7dc329b6ed25498750cc670ba32d211b8be6d75ad6"
+            }
+          ]
+        },
+        {
+          "purpose": "building-r31-003@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.deprAmort.fixAss.tan.buildings",
+          "choices": [
+            "is.netIncome.regular.operatingTC.deprAmort.fixAss.tan.buildings"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "62210",
+              "semantic": {
+                "name": "Abschreibungen auf Gebäude",
+                "function": "",
+                "range_start": "62210",
+                "range_end": "62210",
+                "parent": null
+              },
+              "signature": "d2787eec712c6d578c9c2f3dba994178d12a3121df836baa5f3c2d1df7d80c9a"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

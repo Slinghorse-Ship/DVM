@@ -1,0 +1,34 @@
+.handbook{max-width:1080px;line-height:1.7;overflow-wrap:anywhere}
+.handbook h2,.handbook h3{scroll-margin-top:24px;line-height:1.35}
+.handbook h2{margin-top:2.3em}.handbook h3{margin-top:0}
+.handbook li{margin:10px 0}.handbook a{color:#174f80;text-decoration:underline}
+.handbook-task{padding:26px 0;border-top:1px solid #d9e2ec}
+.handbook-task>p,.handbook-task>ol,.handbook-task>ul{max-width:85ch}
+.handbook-toc{padding:22px;background:#f3f7fa;border-radius:10px;margin:24px 0}
+.handbook-toc h2{margin:0 0 16px}.handbook-toc input{width:100%;max-width:620px}
+.handbook-toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start}
+.handbook-toc details{background:white;border:1px solid #ccd8e2;border-radius:6px;padding:12px}
+.handbook-toc summary{cursor:pointer;font-weight:700;min-height:30px}
+.handbook-toc ul{padding-left:22px}.handbook-toc li{margin:10px 0}
+.handbook-toc [hidden]{display:none!important}
+.handbook-figure{margin:26px 0;padding:20px;background:#f8fafc;border:1px solid #c6d3df;border-radius:10px;max-width:940px}
+.handbook figcaption{margin-bottom:20px;line-height:1.45}.handbook figcaption strong{font-size:1.12rem;display:block}.handbook figcaption span{display:block;margin-top:6px;color:#475d70}
+.handbook-image{display:block;width:fit-content;max-width:100%}.handbook img{display:block;max-width:100%;height:auto;border:1px solid #ccd8e2;border-radius:4px}
+.handbook .handbook-markers{counter-reset:markers;list-style:none;padding:6px 0 0;margin-bottom:12px}
+.handbook-markers li{position:relative;padding-left:44px;min-height:32px;counter-increment:markers;margin:14px 0}
+.handbook-markers li:before{content:counter(markers);position:absolute;left:0;top:1px;width:30px;height:30px;border-radius:50%;background:#164e8c;color:#fff;font-weight:800;text-align:center;line-height:30px}
+.handbook-zoom{display:inline-block;padding:8px 12px;border:1px solid #174f80;border-radius:5px;background:white;font-weight:700}
+.handbook small{display:block;color:#546477;margin-top:10px}
+.handbook-tools{display:flex;gap:16px;flex-wrap:wrap;align-items:center}.handbook-tools a{font-weight:600}
+.handbook-tools>a{display:inline-block;padding:12px 16px;background:#eef5fa;border:1px solid #b8cad8;border-radius:6px}
+.handbook-video-library,.handbook-faq{margin:20px 0;padding:18px;background:#f8fafc;border:1px solid #c6d3df;border-radius:8px}
+.handbook-video-library>summary,.handbook-faq>summary{font-size:1.2rem;font-weight:700;cursor:pointer;min-height:34px}
+.handbook-video-card{padding:16px;margin:18px 0;background:#fff;border:1px solid #c6d3df;border-radius:6px;scroll-margin-top:20px}
+.handbook-video-card>summary{font-weight:700;cursor:pointer;line-height:1.5}.handbook-video-card>summary span{display:inline-block;margin-left:10px;font-size:.9rem;color:#475d70;font-weight:normal}
+.handbook video{display:block;width:100%;height:auto;aspect-ratio:8/5;background:#183346;border-radius:6px}
+.handbook-video-chapters{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px}.handbook-video-chapters li{margin:0}.handbook-video-chapters button{white-space:normal;text-align:left;font-size:14px;min-height:44px}
+.handbook-transcript{border-top:1px solid #d9e2ec;padding:14px 0;margin-top:20px}.handbook-transcript summary{cursor:pointer;font-weight:bold}.handbook-transcript h3{margin-top:20px}
+.handbook-faq h3{margin-top:24px}
+@media print{.handbook-video-library,.handbook-faq{display:none!important}}
+@media(max-width:700px){.handbook-toc-grid{grid-template-columns:1fr}.handbook-toc{padding:14px}.handbook-figure{padding:12px;margin:20px -4px}.handbook-task{padding:20px 0}.handbook-markers li{padding-left:40px}.handbook figcaption strong{font-size:1rem}.handbook-video-library{padding:12px 0;border:0;background:none}.handbook-video-card{padding:12px 6px;margin:12px -4px}.handbook-video-card>summary span{display:block;margin-left:0}}
+@media print{.handbook{max-width:none;font-size:10pt;line-height:1.5}.handbook-toc,.handbook-tools,.handbook-zoom{display:none}.handbook-figure{break-inside:avoid;padding:10px;background:white}.handbook img{max-height:170mm;width:auto}.handbook h2,.handbook h3{break-after:avoid}.handbook-task{padding:16px 0}.handbook-markers li{min-height:32px!important;margin:10px 0!important;break-inside:avoid}.handbook-markers li:before{width:24px;height:24px;line-height:24px;top:0;print-color-adjust:exact;-webkit-print-color-adjust:exact}.handbook a{color:inherit}.handbook-chapter{break-before:page}}

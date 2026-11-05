@@ -1,0 +1,13 @@
+.payment-reversal-workspace{min-width:0;font-size:1rem;overflow-wrap:anywhere}
+.payment-reversal-workspace :is(.error,.notice,.form-control,.btn){font-size:1rem}
+.payment-reversal-workspace h2{font-size:1.25rem}.payment-reversal-workspace h3{font-size:1.125rem}
+.payment-reversal-workspace .muted{font-size:.875rem}
+.payment-reversal-workspace :is(form,label,input,select,.matching-candidate,.matching-candidate>div){min-width:0;max-width:100%}
+.payment-reversal-workspace .notice{display:block;margin:1rem 0}
+.payment-reversal-workspace .btn{min-height:44px;white-space:normal;overflow-wrap:anywhere}
+.payment-reversal-workspace .matching-candidate{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}.payment-reversal-workspace .matching-candidate>div{flex:1 1 14rem}
+.payment-reversal-workspace .filter-form>label{flex:1 1 12rem}.payment-reversal-workspace .filter-form>p{flex:1 1 100%}
+body:has(.payment-reversal-workspace) :is(.error,.notice){font-size:1rem;overflow-wrap:anywhere}
+
+.payment-reversal-workspace fieldset{border:0;min-width:0;padding:0}.payment-reversal-workspace :is(.form-control,summary){min-height:2.75rem}.payment-reversal-workspace label.check{min-height:2.75rem;display:flex;align-items:flex-start;gap:.75rem}.payment-reversal-workspace .reversal-original textarea{min-height:10rem;width:100%;font-size:.875rem;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word}.payment-reversal-workspace :focus-visible{outline:.1875rem solid currentColor;outline-offset:.1875rem}
+.payment-reversal-workspace .reversal-reason-field{grid-column:1/-1;min-width:0}

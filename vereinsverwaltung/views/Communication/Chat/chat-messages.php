@@ -1,0 +1,11 @@
+<div id="chat-messages" class="chat-messages" data-chat-id="<?= e($chatId) ?>" <?= isset($_GET['before'])?'data-history="1"':'' ?>>
+<?php $chatDay='';foreach($messages as $message):$messageDate=(new DateTimeImmutable($message['created_at']))->setTimezone(new DateTimeZone('Europe/Berlin'));$day=$messageDate->format('d.m.Y');$own=$message['actor_id']===$_SESSION['actor'];$editing=$own&&input($_POST,'action')==='chat-edit'&&input($_POST,'chat')===$chatId&&(int)input($_POST,'message')===(int)$message['seq'];
+if($day!==$chatDay):$chatDay=$day; ?><p class="chat-day"><span><?= e($day) ?></span></p><?php endif ?>
+<article class="chat-message <?= $own?'is-own':'' ?>" data-chat-message="<?= (int)$message['seq'] ?>">
+ <div class="chat-message-meta"><strong><?= $own?'Du':e($chatName($message)) ?></strong><time datetime="<?= e($message['created_at']) ?>" title="<?= e($messageDate->format('d.m.Y · H:i')) ?>"><?= e($messageDate->format('H:i')) ?></time><?php if($message['edit_revision']): ?><span>bearbeitet</span><?php endif ?></div>
+ <?php $chatPoll=$chatPolls[(int)$message['seq']]??null;if($chatPoll):require __DIR__.'/chat-poll.php';elseif($message['body']!==''): ?><p class="chat-message-body"><?= nl2br(e($message['body'])) ?></p><?php endif ?>
+ <?php if($message['file_name']): ?><a class="chat-file" href="<?= e(url(['chat'=>$chatId,'chat_file'=>$message['seq']])) ?>"><span aria-hidden="true">↓</span><span><?= e($message['file_name']) ?><small>Datei herunterladen</small></span></a><?php endif ?>
+ <?php if($own&&!$chatPoll): ?><details class="chat-message-edit" <?= $editing?'open':'' ?>><summary>Eigene Nachricht bearbeiten</summary><form method="post"><?= csrf().hidden('action','chat-edit').hidden('chat',$chatId).hidden('message',$message['seq']).hidden('edit_token',$editing?input($_POST,'edit_token'):\Kulturhus\Verein\ClubChat::editToken($message)) ?><label>Nachricht ändern<textarea class="form-control" name="body" maxlength="5000" rows="3"><?= e($editing?input($_POST,'body'):$message['body']) ?></textarea></label><button class="btn btn-solid theme-primary">Änderung speichern</button></form></details><?php endif ?>
+</article>
+<?php endforeach;if(!$messages): ?><div class="chat-empty-messages"><h3>Noch keine Nachricht</h3><p>Schreibe unten die erste Nachricht an diese Unterhaltung.</p></div><?php endif ?>
+</div>

@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "revision": 77,
+  "source_kind": "explicit_original_separate_regular_and_exceptional_depreciation",
+  "years": [
+    {
+      "year": 2025,
+      "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+      "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+      "sources": [
+        {
+          "code": "62320",
+          "function": "",
+          "page": 20,
+          "name": "Absetzung für außergewöhnliche technische und wirtschaftliche Abnutzung der Fahrzeuge",
+          "range_start": "62320",
+          "range_end": "62320",
+          "derived": false
+        },
+        {
+          "code": "62330",
+          "function": "",
+          "page": 20,
+          "name": "Absetzung für außergewöhnliche technische und wirtschaftliche Abnutzung sonstiger Wirtschaftsgüter",
+          "range_start": "62330",
+          "range_end": "62330",
+          "derived": false
+        },
+        {
+          "code": "62660",
+          "function": "",
+          "page": 20,
+          "name": "Außerplanmäßige Abschreibungen auf aktivierte geringwertige Wirtschaftsgüter",
+          "range_start": "62660",
+          "range_end": "62660",
+          "derived": false
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+      "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+      "sources": [
+        {
+          "code": "62320",
+          "function": "",
+          "page": 20,
+          "name": "Absetzung für außergewöhnliche technische und wirtschaftliche Abnutzung der Fahrzeuge",
+          "range_start": "62320",
+          "range_end": "62320",
+          "derived": false
+        },
+        {
+          "code": "62330",
+          "function": "",
+          "page": 20,
+          "name": "Absetzung für außergewöhnliche technische und wirtschaftliche Abnutzung sonstiger Wirtschaftsgüter",
+          "range_start": "62330",
+          "range_end": "62330",
+          "derived": false
+        },
+        {
+          "code": "62660",
+          "function": "",
+          "page": 20,
+          "name": "Außerplanmäßige Abschreibungen auf aktivierte geringwertige Wirtschaftsgüter",
+          "range_start": "62660",
+          "range_end": "62660",
+          "derived": false
+        }
+      ]
+    }
+  ],
+  "production_authorized": false,
+  "scope": "Initial full calendar2025/2026, original individual movable/activatedGWG, separately confirmed identical book and tax extraordinary amounts; no mixed assets, disposal, periods or carry qualified.",
+  "legal_sources": [
+    "https://www.gesetze-im-internet.de/estg/__7.html",
+    "https://www.gesetze-im-internet.de/hgb/__253.html"
+  ]
+}

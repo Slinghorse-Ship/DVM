@@ -1,0 +1,8 @@
+.account-settings-workspace{min-width:0;font-size:1rem;overflow-wrap:anywhere}
+.account-settings-workspace :is(.form-control,.btn,.error,.notice,label,summary){font-size:1rem;max-width:100%;min-width:0}
+.account-settings-workspace :is(.form-control,.btn,summary){min-height:2.75rem}
+.account-settings-workspace .btn{white-space:normal;overflow-wrap:anywhere}
+.account-settings-workspace .account-mutation-controls{border:0;margin:0;padding:0;min-width:0}
+.account-settings-workspace [data-account-original-values]{min-height:10rem;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;font-size:.875rem}
+.account-settings-workspace :is(form,.form-grid,label,fieldset,dl,dd){min-width:0;max-width:100%}
+.account-settings-workspace :focus-visible{outline:.1875rem solid currentColor;outline-offset:.1875rem}

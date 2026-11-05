@@ -1,0 +1,320 @@
+{
+  "format": 1,
+  "date": "2026-10-18",
+  "feature": "K-35 responsive manager and joint K acceptance",
+  "generation": 2026101554,
+  "acceptance": "composite acceptance of immutable source trees, with exact source deltas and separately rerun affected paths",
+  "core": {
+    "source": "31025fc96a18af0ce4b54f0e101a3bdcd56043b1",
+    "summary": {
+      "suites": 311,
+      "failed": [],
+      "live_transport": false
+    },
+    "completed_and_cleaned_groups": 311,
+    "log_sha256": "ef8ee6b3f7ea17d678a1f1e53e47088c6ba585631dd8a0dfb5ae2aa8b18ce41f"
+  },
+  "website_media": {
+    "tree": "0fe6a21a2920b75af57c2a1db610fa4b38a2795d",
+    "summary": {
+      "suite": "native-k-browser",
+      "checks": 34,
+      "browser": true,
+      "session_gc_proof": true,
+      "completed_browser_cases": 11,
+      "failed_browser_cases": [],
+      "diagnostic_case": null,
+      "fresh_databases": 2,
+      "original_keys": 4,
+      "external_actions": 0
+    },
+    "case_results": [
+      {
+        "case": "native-home-layout-browser",
+        "checks": 99,
+        "local_actions": 10,
+        "external_actions": 0
+      },
+      {
+        "case": "website-documents-app-browser",
+        "checks": 209,
+        "new_pdfs": 16,
+        "new_pages": 8,
+        "original_bytes": true,
+        "live_transport": false
+      },
+      {
+        "case": "public-albums-app-browser",
+        "suite": "public-albums-app-browser",
+        "checks": 131,
+        "writes": 0,
+        "external_requests": 0
+      },
+      {
+        "case": "album-catalogue-app-browser",
+        "suite": "album-catalogue-app-browser",
+        "checks": 93,
+        "writes": 4,
+        "rejected_writes": 2,
+        "external_requests": 0
+      },
+      {
+        "case": "native-media-metadata-browser",
+        "checks": 200,
+        "writes": 8,
+        "external_service_calls": false
+      },
+      {
+        "case": "native-media-policy-browser",
+        "checks": 56,
+        "writes": 30,
+        "external_service_calls": false
+      },
+      {
+        "case": "native-media-quota-browser",
+        "checks": 69,
+        "writes": 16,
+        "external_service_calls": false
+      },
+      {
+        "case": "native-media-usage-browser",
+        "checks": 152,
+        "writes": 0,
+        "external_service_calls": false
+      },
+      {
+        "case": "native-website-footer-browser",
+        "checks": 339,
+        "business_writes": 0,
+        "external_actions": 0
+      },
+      {
+        "case": "native-feed-http-browser",
+        "checks": 25,
+        "business_writes": 0,
+        "external_actions": 0,
+        "preflights": 4
+      },
+      {
+        "case": "native-feed-images-browser",
+        "checks": 108,
+        "business_writes": 0,
+        "external_actions": 0,
+        "preflights": 8
+      }
+    ],
+    "log_sha256": "3fbcc251a86266ae387a1fcac3de8c7e703cb9a7d71d8d54072910b823ac5a44",
+    "completed_and_cleaned": true
+  },
+  "menu": {
+    "source_tree": "0fe6a21a2920b75af57c2a1db610fa4b38a2795d",
+    "views": 1416,
+    "roles": {
+      "admin": {
+        "routes": 35,
+        "views": 840
+      },
+      "member": {
+        "routes": 10,
+        "views": 240
+      },
+      "editor": {
+        "routes": 14,
+        "views": 336
+      }
+    },
+    "checks": 9307,
+    "bootstrap_navigation_views": 180,
+    "failed_audits": 0,
+    "business_writes": 0,
+    "external_requests": 0,
+    "originals": {
+      "suite": "native-manager-controls",
+      "browser": true,
+      "http_checks": 9,
+      "original_tables": 428,
+      "original_bytes": "exact",
+      "external_actions": 0
+    }
+  },
+  "workspace": {
+    "views": 64,
+    "catalogue_views": 12,
+    "checks": 524,
+    "business_posts": 0,
+    "external_requests": 0,
+    "layout_failures": [],
+    "errors": []
+  },
+  "appearance": {
+    "suite": "native-appearance-browser",
+    "views": 96,
+    "checks": 3368,
+    "external_requests": 0,
+    "javascript_errors": [],
+    "static_assets": 198,
+    "live_transport": false
+  },
+  "appearance_originals": {
+    "suite": "native-appearance-browser-originals",
+    "original_tables": 429,
+    "retained_account_revisions": 4,
+    "retained_audits": 4,
+    "original_keys": 3,
+    "original_media_files": 4,
+    "original_bytes": "exact",
+    "external_actions": 0
+  },
+  "http_neighbors": [
+    {
+      "completed_suite": "native-editorial-channels",
+      "exit_code": 0,
+      "cleanup_complete": true
+    },
+    {
+      "completed_suite": "native-event-programme",
+      "exit_code": 0,
+      "cleanup_complete": true
+    },
+    {
+      "completed_suite": "native-editorial-policy",
+      "exit_code": 0,
+      "cleanup_complete": true
+    },
+    {
+      "completed_suite": "native-standard-pages",
+      "exit_code": 0,
+      "cleanup_complete": true
+    },
+    {
+      "completed_suite": "native-website-layouts",
+      "exit_code": 0,
+      "cleanup_complete": true
+    },
+    {
+      "completed_suite": "native-worker-history",
+      "exit_code": 0,
+      "cleanup_complete": true
+    }
+  ],
+  "auth_neighbors": [
+    {
+      "completed_suite": "native-k-browser",
+      "exit_code": 0,
+      "cleanup_complete": true
+    },
+    {
+      "completed_suite": "native-auth",
+      "exit_code": 0,
+      "cleanup_complete": true
+    },
+    {
+      "completed_suite": "native-auth-retention",
+      "exit_code": 0,
+      "cleanup_complete": true
+    },
+    {
+      "completed_suite": "native-session-duration",
+      "exit_code": 0,
+      "cleanup_complete": true
+    },
+    {
+      "completed_suite": "native-account-sessions",
+      "exit_code": 0,
+      "cleanup_complete": true
+    },
+    {
+      "completed_suite": "native-http-gates",
+      "exit_code": 0,
+      "cleanup_complete": true
+    },
+    {
+      "completed_suite": "native-login-aliases",
+      "exit_code": 0,
+      "cleanup_complete": true
+    },
+    {
+      "completed_suite": "native-routing",
+      "exit_code": 0,
+      "cleanup_complete": true
+    }
+  ],
+  "forced_php_session_gc": {
+    "php_file_older_than_default_gc": true,
+    "forced_gc_admin_status": 200,
+    "session_file_retained": true,
+    "reader_status": 200,
+    "all_original_database_bytes_exact": true,
+    "external_actions": 0
+  },
+  "core_to_final_runtime_delta": {
+    "vereinsverwaltung/native/Integration/EmbeddedManager.php": "58cbe3ab4fec41d67f2b5650b3c09ac7f8b11ec1b65a1924bfee9697c7853a39",
+    "vereinsverwaltung/native/Web/assets/bootstrap-dvm.css": "f95be65e67f78c0d8f5d32992f4e82bf86eba0e8fc8d4d69721146a8426005da",
+    "vereinsverwaltung/native/Web/router.php": "e4bccd3e4d2750912bcd4e4be550960eff764e68ff1ff1524ad9cc86c8704237",
+    "vereinsverwaltung/public/admin-appearance.css": "8c6ad36c5aca5f2401a1700ce75138cce14387c9ff2f8104a15f4bdbbf2b0435",
+    "vereinsverwaltung/public/bank-workflows.css": "65a6622ffe4bba0cef922888e55bab570b5950039cc6171ebfb780c1be488a60"
+  },
+  "all_source_changes_after_core": [
+    "distribution/source-files.json",
+    "docs/MANAGER-K-REGRESSIONEN.md",
+    "vereinsverwaltung/native/Integration/EmbeddedManager.php",
+    "vereinsverwaltung/native/Web/assets/bootstrap-dvm.css",
+    "vereinsverwaltung/native/Web/router.php",
+    "vereinsverwaltung/public/admin-appearance.css",
+    "vereinsverwaltung/public/bank-workflows.css",
+    "vereinsverwaltung/tests/native-appearance-browser.mjs",
+    "vereinsverwaltung/tests/native-k-browser.php",
+    "vereinsverwaltung/tests/native-manager-controls-browser.mjs",
+    "vereinsverwaltung/tests/native-manager-controls.php",
+    "vereinsverwaltung/tests/native-media-policy-browser.mjs",
+    "vereinsverwaltung/tests/native-media-usage-browser.mjs",
+    "vereinsverwaltung/tests/native-website-workspace-browser.mjs",
+    "vereinsverwaltung/tests/support/editorial-browser-router.php",
+    "vereinsverwaltung/tests/support/k-browser-router.php",
+    "vereinsverwaltung/tests/support/k-session-retention.php"
+  ],
+  "original_source_files_unchanged": {
+    "9": 6900,
+    "11": 6900,
+    "12": 6901,
+    "13": 6901,
+    "14": 6901,
+    "17": 6902
+  },
+  "offline_package": [
+    {
+      "status": "verified",
+      "files": 5143,
+      "bytes": 545748408
+    }
+  ],
+  "source_contract_tests": 6,
+  "package_contract_tests": 9,
+  "log_sha256": {
+    "k35-candidate9-all-311-core.log": "ef8ee6b3f7ea17d678a1f1e53e47088c6ba585631dd8a0dfb5ae2aa8b18ce41f",
+    "k35-candidate17-legacy-full.log": "3fbcc251a86266ae387a1fcac3de8c7e703cb9a7d71d8d54072910b823ac5a44",
+    "k35-candidate17-menu.log": "ae14301c80daa3d3488b66be0e5f00ecf9f334b16e9f4218e6a7762debafeb3b",
+    "k35-candidate17-workspace.log": "7b8fb9d4a9036119d48fe410fa46eae5d72202ff29a6072fe817776f0609a9d2",
+    "k35-candidate17-appearance.log": "65ca0bf2d2930edf097b37c5080dbe75156102f3d519ed7635cc9c869399e564",
+    "k35-candidate17-http-neighbors.log": "b2ce0f3a796c3aab307d5c8c11d349cd8965af1632e5639560bbf2213327c872",
+    "k35-candidate13-auth-http.log": "6bbe4c6b3e8d4532b82bb5224923fd33a4c389db29dfd4ce53b015919f423ed7",
+    "k35-candidate17-verified-package.log": "fa557fa735b2b6e3f6c8fb9050cee97b3347bc23cc1fd7220a06221fbc5f118d"
+  },
+  "not_counted_as_success": [
+    "environment restart interrupted candidate2",
+    "candidate11 media usage lost valid local PHP session; fixed and rerun",
+    "candidate12 forced GC demonstrates the original session loss",
+    "candidate11 menu and candidate13 legacy stopped to remove redundant test asset bootstraps",
+    "candidate14 menu revealed the double-font bank overflow; fixed and rerun",
+    "package command path/PHP environment mistakes retained privately and corrected"
+  ],
+  "remaining_scope": [
+    "P-12 complete specialist interface translations",
+    "P-25 final operating and maintenance paths",
+    "event-bound contribution partial months",
+    "qualified SKR42 72500/72550 families",
+    "licensed original ERiC runtime acceptance",
+    "iPhone/iPad and Android phone/tablet device acceptance"
+  ],
+  "external_actions": 0
+}

@@ -1,0 +1,167 @@
+{
+  "schema": 1,
+  "revision": 70,
+  "production_authorized": false,
+  "primary_sources": [
+    "https://www.gesetze-im-internet.de/hgb/__271.html",
+    "https://www.gesetze-im-internet.de/hgb/__253.html"
+  ],
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "generic-corporate-holding-r70-08000@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.sharesInAffil.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.sharesInAffil.corporations"
+          ],
+          "sources": [
+            {
+              "code": "08000",
+              "semantic": {
+                "name": "Anteile an verbundenen Unternehmen (Anlagevermögen)",
+                "function": "",
+                "range_start": "08000",
+                "range_end": "08000",
+                "parent": null
+              },
+              "signature": "a3d7ff66ed2fb85df4ce017757e2b3f62953824a72114b9118d468f55ab5a90d"
+            }
+          ],
+          "scope": "Only independently confirmed corporate holdings; partnership capital basis is outside this cost contract."
+        },
+        {
+          "purpose": "generic-corporate-holding-r70-08090@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.sharesInAffil.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.sharesInAffil.corporations"
+          ],
+          "sources": [
+            {
+              "code": "08090",
+              "semantic": {
+                "name": "Anteile an herrschender oder mit Mehrheit beteiligter Gesellschaft",
+                "function": "",
+                "range_start": "08090",
+                "range_end": "08090",
+                "parent": null
+              },
+              "signature": "6e8548d3af2d373066f2c831cef6184c2df37dd850dfc87f1e4140f8e40ecf28"
+            }
+          ],
+          "scope": "Only independently confirmed corporate holdings; partnership capital basis is outside this cost contract."
+        },
+        {
+          "purpose": "generic-corporate-holding-r70-08200@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.particip.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.particip.corporations"
+          ],
+          "sources": [
+            {
+              "code": "08200",
+              "semantic": {
+                "name": "Beteiligungen",
+                "function": "",
+                "range_start": "08200",
+                "range_end": "08200",
+                "parent": null
+              },
+              "signature": "344798525a1d2260ed072dd16a9626813d26d234694439f4d9db5e886f2046c3"
+            }
+          ],
+          "scope": "Only independently confirmed corporate holdings; partnership capital basis is outside this cost contract."
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "generic-corporate-holding-r70-08000@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.sharesInAffil.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.sharesInAffil.corporations"
+          ],
+          "sources": [
+            {
+              "code": "08000",
+              "semantic": {
+                "name": "Anteile an verbundenen Unternehmen (Anlagevermögen)",
+                "function": "",
+                "range_start": "08000",
+                "range_end": "08000",
+                "parent": null
+              },
+              "signature": "a3d7ff66ed2fb85df4ce017757e2b3f62953824a72114b9118d468f55ab5a90d"
+            }
+          ],
+          "scope": "Only independently confirmed corporate holdings; partnership capital basis is outside this cost contract."
+        },
+        {
+          "purpose": "generic-corporate-holding-r70-08090@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.sharesInAffil.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.sharesInAffil.corporations"
+          ],
+          "sources": [
+            {
+              "code": "08090",
+              "semantic": {
+                "name": "Anteile an herrschender oder mit Mehrheit beteiligter Gesellschaft",
+                "function": "",
+                "range_start": "08090",
+                "range_end": "08090",
+                "parent": null
+              },
+              "signature": "6e8548d3af2d373066f2c831cef6184c2df37dd850dfc87f1e4140f8e40ecf28"
+            }
+          ],
+          "scope": "Only independently confirmed corporate holdings; partnership capital basis is outside this cost contract."
+        },
+        {
+          "purpose": "generic-corporate-holding-r70-08200@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.particip.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.particip.corporations"
+          ],
+          "sources": [
+            {
+              "code": "08200",
+              "semantic": {
+                "name": "Beteiligungen",
+                "function": "",
+                "range_start": "08200",
+                "range_end": "08200",
+                "parent": null
+              },
+              "signature": "344798525a1d2260ed072dd16a9626813d26d234694439f4d9db5e886f2046c3"
+            }
+          ],
+          "scope": "Only independently confirmed corporate holdings; partnership capital basis is outside this cost contract."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3174 @@
+{
+  "schema": 1,
+  "revision": 18,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "working-capital-r18-001@1",
+          "group": "inventory",
+          "target": "bs.ass.currAss.inventory.inProgress.constructionInProgress",
+          "choices": [
+            "bs.ass.currAss.inventory.inProgress.constructionInProgress"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "10900",
+              "semantic": {
+                "name": "In Ausführung befindliche Bauaufträge",
+                "function": "",
+                "range_start": "10900",
+                "range_end": "10949",
+                "parent": null
+              },
+              "signature": "75e42abc100a3e890b85bd62f9194b195450cf3e39868c29cdb6520afc0d93d5"
+            },
+            {
+              "code": "10910",
+              "semantic": {
+                "name": "In Ausführung befindliche Bauaufträge",
+                "function": "",
+                "range_start": "10900",
+                "range_end": "10949",
+                "parent": null
+              },
+              "signature": "75e42abc100a3e890b85bd62f9194b195450cf3e39868c29cdb6520afc0d93d5"
+            },
+            {
+              "code": "10920",
+              "semantic": {
+                "name": "In Ausführung befindliche Bauaufträge",
+                "function": "",
+                "range_start": "10900",
+                "range_end": "10949",
+                "parent": null
+              },
+              "signature": "75e42abc100a3e890b85bd62f9194b195450cf3e39868c29cdb6520afc0d93d5"
+            },
+            {
+              "code": "10930",
+              "semantic": {
+                "name": "In Ausführung befindliche Bauaufträge",
+                "function": "",
+                "range_start": "10900",
+                "range_end": "10949",
+                "parent": null
+              },
+              "signature": "75e42abc100a3e890b85bd62f9194b195450cf3e39868c29cdb6520afc0d93d5"
+            },
+            {
+              "code": "10940",
+              "semantic": {
+                "name": "In Ausführung befindliche Bauaufträge",
+                "function": "",
+                "range_start": "10900",
+                "range_end": "10949",
+                "parent": null
+              },
+              "signature": "75e42abc100a3e890b85bd62f9194b195450cf3e39868c29cdb6520afc0d93d5"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-002@1",
+          "group": "inventory",
+          "target": "bs.ass.currAss.inventory.inProgress.ordersInProgress",
+          "choices": [
+            "bs.ass.currAss.inventory.inProgress.ordersInProgress"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "10950",
+              "semantic": {
+                "name": "In Arbeit befindliche Aufträge",
+                "function": "",
+                "range_start": "10950",
+                "range_end": "10999",
+                "parent": null
+              },
+              "signature": "4de03c69c9dfb961de6872b80692771974f01d61cc526ff97a38453fde81f82f"
+            },
+            {
+              "code": "10960",
+              "semantic": {
+                "name": "In Arbeit befindliche Aufträge",
+                "function": "",
+                "range_start": "10950",
+                "range_end": "10999",
+                "parent": null
+              },
+              "signature": "4de03c69c9dfb961de6872b80692771974f01d61cc526ff97a38453fde81f82f"
+            },
+            {
+              "code": "10970",
+              "semantic": {
+                "name": "In Arbeit befindliche Aufträge",
+                "function": "",
+                "range_start": "10950",
+                "range_end": "10999",
+                "parent": null
+              },
+              "signature": "4de03c69c9dfb961de6872b80692771974f01d61cc526ff97a38453fde81f82f"
+            },
+            {
+              "code": "10980",
+              "semantic": {
+                "name": "In Arbeit befindliche Aufträge",
+                "function": "",
+                "range_start": "10950",
+                "range_end": "10999",
+                "parent": null
+              },
+              "signature": "4de03c69c9dfb961de6872b80692771974f01d61cc526ff97a38453fde81f82f"
+            },
+            {
+              "code": "10990",
+              "semantic": {
+                "name": "In Arbeit befindliche Aufträge",
+                "function": "",
+                "range_start": "10950",
+                "range_end": "10999",
+                "parent": null
+              },
+              "signature": "4de03c69c9dfb961de6872b80692771974f01d61cc526ff97a38453fde81f82f"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-003@1",
+          "group": "inventory",
+          "target": "bs.ass.currAss.inventory.advPaymPaid",
+          "choices": [
+            "bs.ass.currAss.inventory.advPaymPaid"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "11810",
+              "semantic": {
+                "name": "Geleistete Anzahlungen 7 % Vorsteuer",
+                "function": "AV",
+                "range_start": "11810",
+                "range_end": "11810",
+                "parent": null
+              },
+              "signature": "f02cdb7f72c02e8e552c8564581cd34789606363f50b3002417975887fd96fc0"
+            },
+            {
+              "code": "11820",
+              "semantic": {
+                "name": "Geleistete Anzahlungen 5 % Vorsteuer",
+                "function": "AV",
+                "range_start": "11820",
+                "range_end": "11820",
+                "parent": null
+              },
+              "signature": "3572b3dc6f9a0bf71f2715ca17342a730a5ce483e24e4e3b971f9845a5b54bd2"
+            },
+            {
+              "code": "11840",
+              "semantic": {
+                "name": "Geleistete Anzahlungen 16 % Vorsteuer",
+                "function": "AV",
+                "range_start": "11840",
+                "range_end": "11840",
+                "parent": null
+              },
+              "signature": "da7ca7372f60d1231f209b47a9819662b5ef9f37f7454b278723de0c6ef6e1c0"
+            },
+            {
+              "code": "11860",
+              "semantic": {
+                "name": "Geleistete Anzahlungen 19 % Vorsteuer",
+                "function": "AV",
+                "range_start": "11860",
+                "range_end": "11860",
+                "parent": null
+              },
+              "signature": "a3b1a11b36a3090be07d50f5f80143825d600d1a3517fef926256bcdc18f3727"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-004@1",
+          "group": "inventory",
+          "target": "bs.ass.currAss.inventory.material",
+          "choices": [
+            "bs.ass.currAss.inventory.material",
+            "bs.ass.currAss.inventory.finishedAndMerch.merchandise"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "11600",
+              "semantic": {
+                "name": "Waren und Material aus Sachspenden (Bestand)",
+                "function": "",
+                "range_start": "11600",
+                "range_end": "11600",
+                "parent": null
+              },
+              "signature": "5f6d5072acd61a525c0d659ae38b1f14028a58ed394433454270f45ca1c241eb"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-005@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.trade.other",
+          "choices": [
+            "bs.ass.currAss.receiv.trade.other",
+            "bs.ass.currAss.receiv.trade.shareholders",
+            "bs.ass.currAss.receiv.trade.misc"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "12100",
+              "semantic": {
+                "name": "Forderungen aus Lieferungen und Leistungen ohne Kontokorrent",
+                "function": "F",
+                "range_start": "12100",
+                "range_end": "12149",
+                "parent": null
+              },
+              "signature": "f277c76734936311484cb77eddc84084f1b204d0e9d8f160535bc3c6959257db"
+            },
+            {
+              "code": "12110",
+              "semantic": {
+                "name": "Forderungen aus Lieferungen und Leistungen ohne Kontokorrent",
+                "function": "F",
+                "range_start": "12100",
+                "range_end": "12149",
+                "parent": null
+              },
+              "signature": "f277c76734936311484cb77eddc84084f1b204d0e9d8f160535bc3c6959257db"
+            },
+            {
+              "code": "12120",
+              "semantic": {
+                "name": "Forderungen aus Lieferungen und Leistungen ohne Kontokorrent",
+                "function": "F",
+                "range_start": "12100",
+                "range_end": "12149",
+                "parent": null
+              },
+              "signature": "f277c76734936311484cb77eddc84084f1b204d0e9d8f160535bc3c6959257db"
+            },
+            {
+              "code": "12130",
+              "semantic": {
+                "name": "Forderungen aus Lieferungen und Leistungen ohne Kontokorrent",
+                "function": "F",
+                "range_start": "12100",
+                "range_end": "12149",
+                "parent": null
+              },
+              "signature": "f277c76734936311484cb77eddc84084f1b204d0e9d8f160535bc3c6959257db"
+            },
+            {
+              "code": "12140",
+              "semantic": {
+                "name": "Forderungen aus Lieferungen und Leistungen ohne Kontokorrent",
+                "function": "F",
+                "range_start": "12100",
+                "range_end": "12149",
+                "parent": null
+              },
+              "signature": "f277c76734936311484cb77eddc84084f1b204d0e9d8f160535bc3c6959257db"
+            },
+            {
+              "code": "12400",
+              "semantic": {
+                "name": "Zweifelhafte Forderungen",
+                "function": "F",
+                "range_start": "12400",
+                "range_end": "12400",
+                "parent": null
+              },
+              "signature": "603f4598a7e436effe11bde30c75f3a05a0182cf13aa03684d9c660c01d1eb9e"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-006@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.trade.other",
+          "choices": [
+            "bs.ass.currAss.receiv.trade.other",
+            "bs.ass.currAss.receiv.trade.shareholders",
+            "bs.ass.currAss.receiv.trade.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.ass.currAss.receiv.trade.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "12210",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "F",
+                "range_start": "12210",
+                "range_end": "12210",
+                "parent": {
+                  "code": "12100",
+                  "end": "12149",
+                  "name": "Forderungen aus Lieferungen und Leistungen ohne Kontokorrent",
+                  "function": "F"
+                }
+              },
+              "signature": "f2bef1ed052d536801cafab9f3222edf94d02b89535005f54e2b7de756dfc5ce"
+            },
+            {
+              "code": "12410",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "F",
+                "range_start": "12410",
+                "range_end": "12410",
+                "parent": {
+                  "code": "12400",
+                  "end": "12400",
+                  "name": "Zweifelhafte Forderungen",
+                  "function": "F"
+                }
+              },
+              "signature": "860c66307c5498567aaf60bea0f9f003102c7b17801feee32aa9fd43b2b88761"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-007@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.trade.other",
+          "choices": [
+            "bs.ass.currAss.receiv.trade.other",
+            "bs.ass.currAss.receiv.trade.shareholders",
+            "bs.ass.currAss.receiv.trade.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.ass.currAss.receiv.trade.above1year"
+          ],
+          "sources": [
+            {
+              "code": "12250",
+              "semantic": {
+                "name": "- Restlaufzeit größer 1 Jahr",
+                "function": "F",
+                "range_start": "12250",
+                "range_end": "12250",
+                "parent": {
+                  "code": "12100",
+                  "end": "12149",
+                  "name": "Forderungen aus Lieferungen und Leistungen ohne Kontokorrent",
+                  "function": "F"
+                }
+              },
+              "signature": "9d77f1c9cc029814bb3ece84ea1c5841548216416c87cc383042a74388836eb4"
+            },
+            {
+              "code": "12420",
+              "semantic": {
+                "name": "- Restlaufzeit größer 1 Jahr",
+                "function": "F",
+                "range_start": "12420",
+                "range_end": "12420",
+                "parent": {
+                  "code": "12400",
+                  "end": "12400",
+                  "name": "Zweifelhafte Forderungen",
+                  "function": "F"
+                }
+              },
+              "signature": "b9db174408a9b4028449181bae822626c968eeeb354f8f711536950c24161b2d"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-008@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.affil",
+          "choices": [
+            "bs.ass.currAss.receiv.affil"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "12600",
+              "semantic": {
+                "name": "Forderungen gegen verbundene Unternehmen",
+                "function": "",
+                "range_start": "12600",
+                "range_end": "12600",
+                "parent": null
+              },
+              "signature": "9f0d3f35fa60255390bee230b084b5cfb413e8fccdf71a1535dce1465e8dd494"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-009@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.affil",
+          "choices": [
+            "bs.ass.currAss.receiv.affil"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.ass.currAss.receiv.affil.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "12610",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "12610",
+                "range_end": "12610",
+                "parent": {
+                  "code": "12600",
+                  "end": "12600",
+                  "name": "Forderungen gegen verbundene Unternehmen",
+                  "function": ""
+                }
+              },
+              "signature": "67b18b073d3e77ccf9349da5d5c394bcec5d42bf87014cac7000027d27acd6f3"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-010@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.affil",
+          "choices": [
+            "bs.ass.currAss.receiv.affil"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.ass.currAss.receiv.affil.above1year"
+          ],
+          "sources": [
+            {
+              "code": "12620",
+              "semantic": {
+                "name": "- Restlaufzeit größer 1 Jahr",
+                "function": "",
+                "range_start": "12620",
+                "range_end": "12620",
+                "parent": {
+                  "code": "12600",
+                  "end": "12600",
+                  "name": "Forderungen gegen verbundene Unternehmen",
+                  "function": ""
+                }
+              },
+              "signature": "281804ba8ed0038c47eb24f539db6cd9755ed86b5aa0699e5c2370bd56c83c2d"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-011@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.affil",
+          "choices": [
+            "bs.ass.currAss.receiv.affil"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.ass.currAss.receiv.affil.trade"
+          ],
+          "sources": [
+            {
+              "code": "12700",
+              "semantic": {
+                "name": "Forderungen aus Lieferungen und Leistungen gegen verbundene Unternehmen",
+                "function": "F",
+                "range_start": "12700",
+                "range_end": "12700",
+                "parent": null
+              },
+              "signature": "0fb8ea1bf876f4009e9ba79e687ac0f992d8ef6659f1aa0af8f9503ceaadde8e"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-012@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.affil",
+          "choices": [
+            "bs.ass.currAss.receiv.affil"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.ass.currAss.receiv.affil.trade",
+            "bs.ass.currAss.receiv.affil.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "12710",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "F",
+                "range_start": "12710",
+                "range_end": "12710",
+                "parent": {
+                  "code": "12700",
+                  "end": "12700",
+                  "name": "Forderungen aus Lieferungen und Leistungen gegen verbundene Unternehmen",
+                  "function": "F"
+                }
+              },
+              "signature": "95b459750fb3f9ba5726c6d3c2e1e9d1dc1637b21c252fba509122835f5b7404"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-013@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.affil",
+          "choices": [
+            "bs.ass.currAss.receiv.affil"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.ass.currAss.receiv.affil.trade",
+            "bs.ass.currAss.receiv.affil.above1year"
+          ],
+          "sources": [
+            {
+              "code": "12720",
+              "semantic": {
+                "name": "- Restlaufzeit größer 1 Jahr",
+                "function": "F",
+                "range_start": "12720",
+                "range_end": "12720",
+                "parent": {
+                  "code": "12700",
+                  "end": "12700",
+                  "name": "Forderungen aus Lieferungen und Leistungen gegen verbundene Unternehmen",
+                  "function": "F"
+                }
+              },
+              "signature": "43fbc9466ed5aac35816d163682823342b65c4fad4af663b9906ab6625ee31c1"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-014@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.particip",
+          "choices": [
+            "bs.ass.currAss.receiv.particip"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "12800",
+              "semantic": {
+                "name": "Forderungen gegen Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                "function": "",
+                "range_start": "12800",
+                "range_end": "12800",
+                "parent": null
+              },
+              "signature": "3c9971516d1c06df4156350ae36553d795fcf49662c8564877d5d2c602c2b2a8"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-015@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.particip",
+          "choices": [
+            "bs.ass.currAss.receiv.particip"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.ass.currAss.receiv.particip.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "12810",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "12810",
+                "range_end": "12810",
+                "parent": {
+                  "code": "12800",
+                  "end": "12800",
+                  "name": "Forderungen gegen Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                  "function": ""
+                }
+              },
+              "signature": "d86fae0a27337b182eba6b9627aec416b521a336e0371d38aa4182d7c29841c2"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-016@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.particip",
+          "choices": [
+            "bs.ass.currAss.receiv.particip"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.ass.currAss.receiv.particip.above1year"
+          ],
+          "sources": [
+            {
+              "code": "12820",
+              "semantic": {
+                "name": "- Restlaufzeit größer 1 Jahr",
+                "function": "",
+                "range_start": "12820",
+                "range_end": "12820",
+                "parent": {
+                  "code": "12800",
+                  "end": "12800",
+                  "name": "Forderungen gegen Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                  "function": ""
+                }
+              },
+              "signature": "185d51c037eb09feea1cdafb74d8d0d2983a7a88873e23b462f5268d1e29adc1"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-017@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.particip",
+          "choices": [
+            "bs.ass.currAss.receiv.particip"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.ass.currAss.receiv.particip.trade"
+          ],
+          "sources": [
+            {
+              "code": "12900",
+              "semantic": {
+                "name": "Forderungen aus Lieferungen und Leistungen gegen Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                "function": "F",
+                "range_start": "12900",
+                "range_end": "12900",
+                "parent": null
+              },
+              "signature": "931e3344227e0c62bd95da92055c24342b448cac91f69c22fa69a733349b72f1"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-018@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.particip",
+          "choices": [
+            "bs.ass.currAss.receiv.particip"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.ass.currAss.receiv.particip.trade",
+            "bs.ass.currAss.receiv.particip.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "12910",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "F",
+                "range_start": "12910",
+                "range_end": "12910",
+                "parent": {
+                  "code": "12900",
+                  "end": "12900",
+                  "name": "Forderungen aus Lieferungen und Leistungen gegen Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                  "function": "F"
+                }
+              },
+              "signature": "1c1c9ff60e679cd9db7940bfb4d002fbd42628b997933110aa91ad1cf0978d61"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-019@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.particip",
+          "choices": [
+            "bs.ass.currAss.receiv.particip"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.ass.currAss.receiv.particip.trade",
+            "bs.ass.currAss.receiv.particip.above1year"
+          ],
+          "sources": [
+            {
+              "code": "12920",
+              "semantic": {
+                "name": "- Restlaufzeit größer 1 Jahr",
+                "function": "F",
+                "range_start": "12920",
+                "range_end": "12920",
+                "parent": {
+                  "code": "12900",
+                  "end": "12900",
+                  "name": "Forderungen aus Lieferungen und Leistungen gegen Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                  "function": "F"
+                }
+              },
+              "signature": "2d87df4f46a75a09d83aa7620e50476eaa9c899fe228581993f5718a7197f185"
+            }
+          ]
+        },
+        {
+          "purpose": "purpose-0013@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.receiv.other.other",
+          "choices": [
+            "bs.ass.currAss.receiv.other.other"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "13370",
+              "semantic": {
+                "name": "Forderungen gegen typisch stille Gesellschafter",
+                "function": "",
+                "range_start": "13370",
+                "range_end": "13370",
+                "parent": null
+              },
+              "signature": "7b1cec6a61020cb34b96a61747a2448da6c4871acc2bf0aa48c671b8c7e6144b"
+            },
+            {
+              "code": "13900",
+              "semantic": {
+                "name": "GmbH-Anteile zum kurzfristigen Verbleib",
+                "function": "",
+                "range_start": "13900",
+                "range_end": "13900",
+                "parent": null
+              },
+              "signature": "d8797ad87e5b1c6c2ffb4a7b44037f2090156245777acdca6e2b968602970450"
+            },
+            {
+              "code": "13930",
+              "semantic": {
+                "name": "Genussrechte",
+                "function": "",
+                "range_start": "13930",
+                "range_end": "13930",
+                "parent": null
+              },
+              "signature": "bd143709737a84a1749aaac08fec5f33424beaf0f1fc5ca8ba230bb46f16d5ba"
+            },
+            {
+              "code": "13940",
+              "semantic": {
+                "name": "Einzahlungsansprüche zu Nebenleistungen oder Zuzahlungen",
+                "function": "",
+                "range_start": "13940",
+                "range_end": "13940",
+                "parent": null
+              },
+              "signature": "4ea5c8a2957c2b2db67403e3d80e4890e7f7fd85da667c8f17151f596d4f0907"
+            },
+            {
+              "code": "13950",
+              "semantic": {
+                "name": "Genossenschaftsanteile zum kurzfristigen Verbleib",
+                "function": "",
+                "range_start": "13950",
+                "range_end": "13950",
+                "parent": null
+              },
+              "signature": "7d3ed3908bec8ffa26c75478ea574d630c6f45b7059a32d8f32f9060616995a2"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-021@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.receiv.other.other",
+          "choices": [
+            "bs.ass.currAss.receiv.other.other"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.ass.currAss.receiv.other.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "13380",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "13380",
+                "range_end": "13380",
+                "parent": {
+                  "code": "13370",
+                  "end": "13370",
+                  "name": "Forderungen gegen typisch stille Gesellschafter",
+                  "function": ""
+                }
+              },
+              "signature": "7b0bffe789cf693673225164d1343bf9a44a2e5f03e7dba1e5f19251cc2a2e06"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-022@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.receiv.other.other",
+          "choices": [
+            "bs.ass.currAss.receiv.other.other"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.ass.currAss.receiv.other.above1year"
+          ],
+          "sources": [
+            {
+              "code": "13390",
+              "semantic": {
+                "name": "- Restlaufzeit größer 1 Jahr",
+                "function": "",
+                "range_start": "13390",
+                "range_end": "13390",
+                "parent": {
+                  "code": "13370",
+                  "end": "13370",
+                  "name": "Forderungen gegen typisch stille Gesellschafter",
+                  "function": ""
+                }
+              },
+              "signature": "18747a4efb95cd2f153e030c8f0f4b9b6f42c6f1b6de7ee23557e619fe15326e"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-023@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.receiv.other.socInsur",
+          "choices": [
+            "bs.ass.currAss.receiv.other.socInsur"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "13680",
+              "semantic": {
+                "name": "Forderungen gegenüber Bundesagentur für Arbeit",
+                "function": "",
+                "range_start": "13680",
+                "range_end": "13680",
+                "parent": null
+              },
+              "signature": "ab3553c83e552b77e8c3107148785ebea940f8baca330b279203d48114203f53"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-024@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.advPaym",
+          "choices": [
+            "bs.eqLiab.liab.advPaym"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "32500",
+              "semantic": {
+                "name": "Erhaltene Anzahlungen auf Bestellungen (Verbindlichkeiten)",
+                "function": "",
+                "range_start": "32500",
+                "range_end": "32500",
+                "parent": null
+              },
+              "signature": "69172fc9210d40e7fd5547959277fb9bce4265aadfeec9d2749e675831b19a0f"
+            },
+            {
+              "code": "32600",
+              "semantic": {
+                "name": "Erhaltene, versteuerte Anzahlungen 7 % USt (Verbindlichkeiten)",
+                "function": "AM",
+                "range_start": "32600",
+                "range_end": "32609",
+                "parent": null
+              },
+              "signature": "92dc917c268f6c59d4fffca45ab7e15dc60efef93be9c6e6dd12b3d4a68e5f21"
+            },
+            {
+              "code": "32610",
+              "semantic": {
+                "name": "Erhaltene, versteuerte Anzahlungen 5 % USt (Verbindlichkeiten)",
+                "function": "AM",
+                "range_start": "32610",
+                "range_end": "32619",
+                "parent": null
+              },
+              "signature": "5ca5aa0a7f7a9578ed0809236b0a52fadab471d58b84729a1da817763e4e4351"
+            },
+            {
+              "code": "32640",
+              "semantic": {
+                "name": "Erhaltene, versteuerte Anzahlungen 0 % USt (Verbindlichkeiten)",
+                "function": "AM",
+                "range_start": "32640",
+                "range_end": "32649",
+                "parent": null
+              },
+              "signature": "c09fb2054744aeb1e2504268f9f96c69aad59696fc9ea072dfcee99a1eccc001"
+            },
+            {
+              "code": "32700",
+              "semantic": {
+                "name": "Erhaltene, versteuerte Anzahlungen 16 % USt (Verbindlichkeiten)",
+                "function": "AM",
+                "range_start": "32700",
+                "range_end": "32709",
+                "parent": null
+              },
+              "signature": "b6736434330d259bce4a47371a57de3c25d0e5be179e65e5d88bf29813960c47"
+            },
+            {
+              "code": "32720",
+              "semantic": {
+                "name": "Erhaltene, versteuerte Anzahlungen 19 % USt (Verbindlichkeiten)",
+                "function": "AM",
+                "range_start": "32720",
+                "range_end": "32729",
+                "parent": null
+              },
+              "signature": "4b6e6999eb24eeb9bda23e6449eb38cc73987b5be2d96330187bde9160ccb842"
+            },
+            {
+              "code": "32800",
+              "semantic": {
+                "name": "Erhaltene Anzahlungen - Nachsteuer",
+                "function": "",
+                "range_start": "32800",
+                "range_end": "32800",
+                "parent": null
+              },
+              "signature": "0288e0a8c331a23594fa374636cc30f0c3c6879ed8c01c349b5e2dcec46724bd"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-025@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.advPaym",
+          "choices": [
+            "bs.eqLiab.liab.advPaym"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.eqLiab.liab.advPaym.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "32810",
+              "semantic": {
+                "name": "Erhaltene Anzahlungen - Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "32810",
+                "range_end": "32810",
+                "parent": null
+              },
+              "signature": "c6d7172f93614ab4dd0f14ffcaff337f07dc4dbda22bfffa7ffea1b8d0d8d60d"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-026@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.advPaym",
+          "choices": [
+            "bs.eqLiab.liab.advPaym"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.eqLiab.liab.advPaym.above1year"
+          ],
+          "sources": [
+            {
+              "code": "32820",
+              "semantic": {
+                "name": "- Restlaufzeit 1 bis 5 Jahre",
+                "function": "",
+                "range_start": "32820",
+                "range_end": "32820",
+                "parent": {
+                  "code": "32810",
+                  "end": "32810",
+                  "name": "Erhaltene Anzahlungen - Restlaufzeit bis 1 Jahr",
+                  "function": ""
+                }
+              },
+              "signature": "0c7122427dadeec54687059212e712b05afeefdec23debde86237d9b9aa1430b"
+            },
+            {
+              "code": "32830",
+              "semantic": {
+                "name": "- Restlaufzeit größer 5 Jahre",
+                "function": "",
+                "range_start": "32830",
+                "range_end": "32830",
+                "parent": {
+                  "code": "32810",
+                  "end": "32810",
+                  "name": "Erhaltene Anzahlungen - Restlaufzeit bis 1 Jahr",
+                  "function": ""
+                }
+              },
+              "signature": "4916b9283e48fe2a76f7c04977148ab5b0c3ea8ca023735a703088ad08e93a8c"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-027@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.trade.genOther",
+          "choices": [
+            "bs.eqLiab.liab.trade.genOther",
+            "bs.eqLiab.liab.trade.shareholders",
+            "bs.eqLiab.liab.trade.misc"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "33100",
+              "semantic": {
+                "name": "Verbindlichkeiten aus Lieferungen und Leistungen ohne Kontokorrent",
+                "function": "F",
+                "range_start": "33100",
+                "range_end": "33149",
+                "parent": null
+              },
+              "signature": "a647d8abf5b6f86a2966b1b070eb1b84a9c008c8836caa2cdda8e15e67c7b1fe"
+            },
+            {
+              "code": "33110",
+              "semantic": {
+                "name": "Verbindlichkeiten aus Lieferungen und Leistungen ohne Kontokorrent",
+                "function": "F",
+                "range_start": "33100",
+                "range_end": "33149",
+                "parent": null
+              },
+              "signature": "a647d8abf5b6f86a2966b1b070eb1b84a9c008c8836caa2cdda8e15e67c7b1fe"
+            },
+            {
+              "code": "33120",
+              "semantic": {
+                "name": "Verbindlichkeiten aus Lieferungen und Leistungen ohne Kontokorrent",
+                "function": "F",
+                "range_start": "33100",
+                "range_end": "33149",
+                "parent": null
+              },
+              "signature": "a647d8abf5b6f86a2966b1b070eb1b84a9c008c8836caa2cdda8e15e67c7b1fe"
+            },
+            {
+              "code": "33130",
+              "semantic": {
+                "name": "Verbindlichkeiten aus Lieferungen und Leistungen ohne Kontokorrent",
+                "function": "F",
+                "range_start": "33100",
+                "range_end": "33149",
+                "parent": null
+              },
+              "signature": "a647d8abf5b6f86a2966b1b070eb1b84a9c008c8836caa2cdda8e15e67c7b1fe"
+            },
+            {
+              "code": "33140",
+              "semantic": {
+                "name": "Verbindlichkeiten aus Lieferungen und Leistungen ohne Kontokorrent",
+                "function": "F",
+                "range_start": "33100",
+                "range_end": "33149",
+                "parent": null
+              },
+              "signature": "a647d8abf5b6f86a2966b1b070eb1b84a9c008c8836caa2cdda8e15e67c7b1fe"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-028@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.trade.genOther",
+          "choices": [
+            "bs.eqLiab.liab.trade.genOther",
+            "bs.eqLiab.liab.trade.shareholders",
+            "bs.eqLiab.liab.trade.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.trade.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "33310",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "F",
+                "range_start": "33310",
+                "range_end": "33310",
+                "parent": {
+                  "code": "33100",
+                  "end": "33149",
+                  "name": "Verbindlichkeiten aus Lieferungen und Leistungen ohne Kontokorrent",
+                  "function": "F"
+                }
+              },
+              "signature": "e4dfc8da512cab39b53e80752aad5bc19671f9be278dfce712cab389729368af"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-029@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.trade.genOther",
+          "choices": [
+            "bs.eqLiab.liab.trade.genOther",
+            "bs.eqLiab.liab.trade.shareholders",
+            "bs.eqLiab.liab.trade.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.trade.above1year"
+          ],
+          "sources": [
+            {
+              "code": "33320",
+              "semantic": {
+                "name": "- Restlaufzeit 1 bis 5 Jahre",
+                "function": "F",
+                "range_start": "33320",
+                "range_end": "33320",
+                "parent": {
+                  "code": "33100",
+                  "end": "33149",
+                  "name": "Verbindlichkeiten aus Lieferungen und Leistungen ohne Kontokorrent",
+                  "function": "F"
+                }
+              },
+              "signature": "ed0ac617e82a70d35cabe9dab7bd4170da556325afc4e793740abab8788d81d5"
+            },
+            {
+              "code": "33330",
+              "semantic": {
+                "name": "- Restlaufzeit größer 5 Jahre",
+                "function": "F",
+                "range_start": "33330",
+                "range_end": "33330",
+                "parent": {
+                  "code": "33100",
+                  "end": "33149",
+                  "name": "Verbindlichkeiten aus Lieferungen und Leistungen ohne Kontokorrent",
+                  "function": "F"
+                }
+              },
+              "signature": "e585543a59a53d46af5e914f0185f5ff2aac7f12c5dda855747e7002ebaff69c"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-030@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.statutoryBenefits.commitments",
+          "choices": [
+            "bs.eqLiab.liab.statutoryBenefits.commitments"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "34900",
+              "semantic": {
+                "name": "Verbindlichkeiten für satzungsgemäße Leistungen",
+                "function": "",
+                "range_start": "34900",
+                "range_end": "34900",
+                "parent": null
+              },
+              "signature": "c8ce9d75d3de74bd207b71f2d0d9338d729e674323bb88d2c32bd66c46f8f396"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-031@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.other",
+          "choices": [
+            "bs.eqLiab.liab.other.other"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "34920",
+              "semantic": {
+                "name": "Verbindlichkeiten aus nicht zweckentsprechend verwendeten Mitteln",
+                "function": "",
+                "range_start": "34920",
+                "range_end": "34920",
+                "parent": null
+              },
+              "signature": "57a1d48c9bddd1daa7777c760eaf404246f36189530691b39059dff44ca08b78"
+            },
+            {
+              "code": "36000",
+              "semantic": {
+                "name": "Agenturwarenabrechnung",
+                "function": "",
+                "range_start": "36000",
+                "range_end": "36000",
+                "parent": null
+              },
+              "signature": "e85950a9333217bb85906218df009407622fbc4957aa223683868a81106b62fc"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-032@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.jointVent",
+          "choices": [
+            "bs.eqLiab.liab.other.jointVent"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "36110",
+              "semantic": {
+                "name": "Verbindlichkeiten gegenüber Arbeitsgemeinschaften",
+                "function": "",
+                "range_start": "36110",
+                "range_end": "36110",
+                "parent": null
+              },
+              "signature": "2e00b40616aba9a6cb5df2698ca11693d39d24dd5e245cf9f995f552dfb483ad"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-033@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.silentPartner.typ",
+          "choices": [
+            "bs.eqLiab.liab.other.silentPartner.typ"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "35200",
+              "semantic": {
+                "name": "Verbindlichkeiten gegenüber typisch stillen Gesellschaftern",
+                "function": "",
+                "range_start": "35200",
+                "range_end": "35200",
+                "parent": null
+              },
+              "signature": "e51bd50dc315ff11a37dc4d8164cdb5be287a3e92611be776730827d4e71646f"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-034@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.silentPartner.typ",
+          "choices": [
+            "bs.eqLiab.liab.other.silentPartner.typ"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.eqLiab.liab.other.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "35210",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "35210",
+                "range_end": "35210",
+                "parent": {
+                  "code": "35200",
+                  "end": "35200",
+                  "name": "Verbindlichkeiten gegenüber typisch stillen Gesellschaftern",
+                  "function": ""
+                }
+              },
+              "signature": "620a258b78eaa48c493c2cf8fd2e2809fff39de01b32482ed90c8cc3c2a255ed"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-035@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.silentPartner.typ",
+          "choices": [
+            "bs.eqLiab.liab.other.silentPartner.typ"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.eqLiab.liab.other.above1year"
+          ],
+          "sources": [
+            {
+              "code": "35220",
+              "semantic": {
+                "name": "- Restlaufzeit 1 bis 5 Jahre",
+                "function": "",
+                "range_start": "35220",
+                "range_end": "35220",
+                "parent": {
+                  "code": "35200",
+                  "end": "35200",
+                  "name": "Verbindlichkeiten gegenüber typisch stillen Gesellschaftern",
+                  "function": ""
+                }
+              },
+              "signature": "2e239bf02785d51019fd5e725a83d3cb3621319e938c573026328e169ddd95cb"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-035@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.silentPartner.typ",
+          "choices": [
+            "bs.eqLiab.liab.other.silentPartner.typ"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.eqLiab.liab.other.above1year"
+          ],
+          "sources": [
+            {
+              "code": "35230",
+              "semantic": {
+                "name": "- Restlaufzeit größer 5 Jahre",
+                "function": "",
+                "range_start": "35230",
+                "range_end": "35230",
+                "parent": {
+                  "code": "35200",
+                  "end": "35200",
+                  "name": "Verbindlichkeiten gegenüber typisch stillen Gesellschaftern",
+                  "function": ""
+                }
+              },
+              "signature": "7b2efac3133cfa255a3b19581db194f2788484f54d004cc5e55703eba340f54c"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-037@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.theroffTax.otherTaxes",
+          "choices": [
+            "bs.eqLiab.liab.other.theroffTax.vat",
+            "bs.eqLiab.liab.other.theroffTax.operatingTaxes",
+            "bs.eqLiab.liab.other.theroffTax.otherTaxes"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "37000",
+              "semantic": {
+                "name": "Verbindlichkeiten aus Steuern und Abgaben",
+                "function": "",
+                "range_start": "37000",
+                "range_end": "37000",
+                "parent": null
+              },
+              "signature": "8567386200359c0583a934a79d0672624f3f59fdf627ce54f55617f2a6bd8b43"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-038@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.theroffTax.otherTaxes",
+          "choices": [
+            "bs.eqLiab.liab.other.theroffTax.vat",
+            "bs.eqLiab.liab.other.theroffTax.operatingTaxes",
+            "bs.eqLiab.liab.other.theroffTax.otherTaxes"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.other.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "37010",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "37010",
+                "range_end": "37010",
+                "parent": {
+                  "code": "37000",
+                  "end": "37000",
+                  "name": "Verbindlichkeiten aus Steuern und Abgaben",
+                  "function": ""
+                }
+              },
+              "signature": "fb2c3a0ad56de3ce5940a947ff41cfc45a58cb46afb086eaa9c236f4dc13dad5"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-039@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.theroffTax.otherTaxes",
+          "choices": [
+            "bs.eqLiab.liab.other.theroffTax.vat",
+            "bs.eqLiab.liab.other.theroffTax.operatingTaxes",
+            "bs.eqLiab.liab.other.theroffTax.otherTaxes"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.other.above1year"
+          ],
+          "sources": [
+            {
+              "code": "37020",
+              "semantic": {
+                "name": "- Restlaufzeit 1 bis 5 Jahre",
+                "function": "",
+                "range_start": "37020",
+                "range_end": "37020",
+                "parent": {
+                  "code": "37000",
+                  "end": "37000",
+                  "name": "Verbindlichkeiten aus Steuern und Abgaben",
+                  "function": ""
+                }
+              },
+              "signature": "2edd8979cc605e939f831b128a40b8e36fe2ae554c9ec34dc1ad809e9f6af069"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-039@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.theroffTax.otherTaxes",
+          "choices": [
+            "bs.eqLiab.liab.other.theroffTax.vat",
+            "bs.eqLiab.liab.other.theroffTax.operatingTaxes",
+            "bs.eqLiab.liab.other.theroffTax.otherTaxes"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.other.above1year"
+          ],
+          "sources": [
+            {
+              "code": "37030",
+              "semantic": {
+                "name": "- Restlaufzeit größer 5 Jahre",
+                "function": "",
+                "range_start": "37030",
+                "range_end": "37030",
+                "parent": {
+                  "code": "37000",
+                  "end": "37000",
+                  "name": "Verbindlichkeiten aus Steuern und Abgaben",
+                  "function": ""
+                }
+              },
+              "signature": "45137094eb99df6dfbce696b7b42e78deccb6ef3f27686e62f11ce1e42b8e3a2"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-041@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.theroffTax.otherTaxes",
+          "choices": [
+            "bs.eqLiab.liab.other.theroffTax.otherTaxes"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "37260",
+              "semantic": {
+                "name": "Verbindlichkeiten an das Finanzamt aus abzuführendem Bauabzugsbetrag",
+                "function": "",
+                "range_start": "37260",
+                "range_end": "37260",
+                "parent": null
+              },
+              "signature": "e9ba35054bdf2359c41896fc992a9857a8f27ce72744716264602b8aea7dadeb"
+            },
+            {
+              "code": "37300",
+              "semantic": {
+                "name": "Verbindlichkeiten aus Lohn- und Kirchensteuer",
+                "function": "",
+                "range_start": "37300",
+                "range_end": "37300",
+                "parent": null
+              },
+              "signature": "5ee21e24c9b2548d8d03799b9bf4df3dc60d44ae8d9c1ba44383983f8f7c0bc5"
+            },
+            {
+              "code": "37600",
+              "semantic": {
+                "name": "Verbindlichkeiten aus Einbehaltungen (KapESt und SolZ, KiSt auf Kap- ESt) für offene Ausschüttungen",
+                "function": "",
+                "range_start": "37600",
+                "range_end": "37600",
+                "parent": null
+              },
+              "signature": "7273c5f833b58c5d708d66c701196664180e29005aa64c37a8c57d27b726f749"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-042@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.theroffTax.operatingTaxes",
+          "choices": [
+            "bs.eqLiab.liab.other.theroffTax.operatingTaxes"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "37610",
+              "semantic": {
+                "name": "Verbindlichkeiten für Verbrauchsteuern",
+                "function": "",
+                "range_start": "37610",
+                "range_end": "37610",
+                "parent": null
+              },
+              "signature": "d688f98213e0af829b67934c452905b477d28f92f2aedf149d06248f208973d2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "working-capital-r18-001@1",
+          "group": "inventory",
+          "target": "bs.ass.currAss.inventory.inProgress.constructionInProgress",
+          "choices": [
+            "bs.ass.currAss.inventory.inProgress.constructionInProgress"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "10900",
+              "semantic": {
+                "name": "In Ausführung befindliche Bauaufträge",
+                "function": "",
+                "range_start": "10900",
+                "range_end": "10949",
+                "parent": null
+              },
+              "signature": "75e42abc100a3e890b85bd62f9194b195450cf3e39868c29cdb6520afc0d93d5"
+            },
+            {
+              "code": "10910",
+              "semantic": {
+                "name": "In Ausführung befindliche Bauaufträge",
+                "function": "",
+                "range_start": "10900",
+                "range_end": "10949",
+                "parent": null
+              },
+              "signature": "75e42abc100a3e890b85bd62f9194b195450cf3e39868c29cdb6520afc0d93d5"
+            },
+            {
+              "code": "10920",
+              "semantic": {
+                "name": "In Ausführung befindliche Bauaufträge",
+                "function": "",
+                "range_start": "10900",
+                "range_end": "10949",
+                "parent": null
+              },
+              "signature": "75e42abc100a3e890b85bd62f9194b195450cf3e39868c29cdb6520afc0d93d5"
+            },
+            {
+              "code": "10930",
+              "semantic": {
+                "name": "In Ausführung befindliche Bauaufträge",
+                "function": "",
+                "range_start": "10900",
+                "range_end": "10949",
+                "parent": null
+              },
+              "signature": "75e42abc100a3e890b85bd62f9194b195450cf3e39868c29cdb6520afc0d93d5"
+            },
+            {
+              "code": "10940",
+              "semantic": {
+                "name": "In Ausführung befindliche Bauaufträge",
+                "function": "",
+                "range_start": "10900",
+                "range_end": "10949",
+                "parent": null
+              },
+              "signature": "75e42abc100a3e890b85bd62f9194b195450cf3e39868c29cdb6520afc0d93d5"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-002@1",
+          "group": "inventory",
+          "target": "bs.ass.currAss.inventory.inProgress.ordersInProgress",
+          "choices": [
+            "bs.ass.currAss.inventory.inProgress.ordersInProgress"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "10950",
+              "semantic": {
+                "name": "In Arbeit befindliche Aufträge",
+                "function": "",
+                "range_start": "10950",
+                "range_end": "10999",
+                "parent": null
+              },
+              "signature": "4de03c69c9dfb961de6872b80692771974f01d61cc526ff97a38453fde81f82f"
+            },
+            {
+              "code": "10960",
+              "semantic": {
+                "name": "In Arbeit befindliche Aufträge",
+                "function": "",
+                "range_start": "10950",
+                "range_end": "10999",
+                "parent": null
+              },
+              "signature": "4de03c69c9dfb961de6872b80692771974f01d61cc526ff97a38453fde81f82f"
+            },
+            {
+              "code": "10970",
+              "semantic": {
+                "name": "In Arbeit befindliche Aufträge",
+                "function": "",
+                "range_start": "10950",
+                "range_end": "10999",
+                "parent": null
+              },
+              "signature": "4de03c69c9dfb961de6872b80692771974f01d61cc526ff97a38453fde81f82f"
+            },
+            {
+              "code": "10980",
+              "semantic": {
+                "name": "In Arbeit befindliche Aufträge",
+                "function": "",
+                "range_start": "10950",
+                "range_end": "10999",
+                "parent": null
+              },
+              "signature": "4de03c69c9dfb961de6872b80692771974f01d61cc526ff97a38453fde81f82f"
+            },
+            {
+              "code": "10990",
+              "semantic": {
+                "name": "In Arbeit befindliche Aufträge",
+                "function": "",
+                "range_start": "10950",
+                "range_end": "10999",
+                "parent": null
+              },
+              "signature": "4de03c69c9dfb961de6872b80692771974f01d61cc526ff97a38453fde81f82f"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-003@1",
+          "group": "inventory",
+          "target": "bs.ass.currAss.inventory.advPaymPaid",
+          "choices": [
+            "bs.ass.currAss.inventory.advPaymPaid"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "11810",
+              "semantic": {
+                "name": "Geleistete Anzahlungen 7 % Vorsteuer",
+                "function": "AV",
+                "range_start": "11810",
+                "range_end": "11810",
+                "parent": null
+              },
+              "signature": "f02cdb7f72c02e8e552c8564581cd34789606363f50b3002417975887fd96fc0"
+            },
+            {
+              "code": "11820",
+              "semantic": {
+                "name": "Geleistete Anzahlungen 5 % Vorsteuer",
+                "function": "AV",
+                "range_start": "11820",
+                "range_end": "11820",
+                "parent": null
+              },
+              "signature": "3572b3dc6f9a0bf71f2715ca17342a730a5ce483e24e4e3b971f9845a5b54bd2"
+            },
+            {
+              "code": "11840",
+              "semantic": {
+                "name": "Geleistete Anzahlungen 16 % Vorsteuer",
+                "function": "AV",
+                "range_start": "11840",
+                "range_end": "11840",
+                "parent": null
+              },
+              "signature": "da7ca7372f60d1231f209b47a9819662b5ef9f37f7454b278723de0c6ef6e1c0"
+            },
+            {
+              "code": "11860",
+              "semantic": {
+                "name": "Geleistete Anzahlungen 19 % Vorsteuer",
+                "function": "AV",
+                "range_start": "11860",
+                "range_end": "11860",
+                "parent": null
+              },
+              "signature": "a3b1a11b36a3090be07d50f5f80143825d600d1a3517fef926256bcdc18f3727"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-004@1",
+          "group": "inventory",
+          "target": "bs.ass.currAss.inventory.material",
+          "choices": [
+            "bs.ass.currAss.inventory.material",
+            "bs.ass.currAss.inventory.finishedAndMerch.merchandise"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "11600",
+              "semantic": {
+                "name": "Waren und Material aus Sachspenden (Bestand)",
+                "function": "",
+                "range_start": "11600",
+                "range_end": "11600",
+                "parent": null
+              },
+              "signature": "5f6d5072acd61a525c0d659ae38b1f14028a58ed394433454270f45ca1c241eb"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-005@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.trade.other",
+          "choices": [
+            "bs.ass.currAss.receiv.trade.other",
+            "bs.ass.currAss.receiv.trade.shareholders",
+            "bs.ass.currAss.receiv.trade.misc"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "12100",
+              "semantic": {
+                "name": "Forderungen aus Lieferungen und Leistungen ohne Kontokorrent",
+                "function": "F",
+                "range_start": "12100",
+                "range_end": "12149",
+                "parent": null
+              },
+              "signature": "f277c76734936311484cb77eddc84084f1b204d0e9d8f160535bc3c6959257db"
+            },
+            {
+              "code": "12110",
+              "semantic": {
+                "name": "Forderungen aus Lieferungen und Leistungen ohne Kontokorrent",
+                "function": "F",
+                "range_start": "12100",
+                "range_end": "12149",
+                "parent": null
+              },
+              "signature": "f277c76734936311484cb77eddc84084f1b204d0e9d8f160535bc3c6959257db"
+            },
+            {
+              "code": "12120",
+              "semantic": {
+                "name": "Forderungen aus Lieferungen und Leistungen ohne Kontokorrent",
+                "function": "F",
+                "range_start": "12100",
+                "range_end": "12149",
+                "parent": null
+              },
+              "signature": "f277c76734936311484cb77eddc84084f1b204d0e9d8f160535bc3c6959257db"
+            },
+            {
+              "code": "12130",
+              "semantic": {
+                "name": "Forderungen aus Lieferungen und Leistungen ohne Kontokorrent",
+                "function": "F",
+                "range_start": "12100",
+                "range_end": "12149",
+                "parent": null
+              },
+              "signature": "f277c76734936311484cb77eddc84084f1b204d0e9d8f160535bc3c6959257db"
+            },
+            {
+              "code": "12140",
+              "semantic": {
+                "name": "Forderungen aus Lieferungen und Leistungen ohne Kontokorrent",
+                "function": "F",
+                "range_start": "12100",
+                "range_end": "12149",
+                "parent": null
+              },
+              "signature": "f277c76734936311484cb77eddc84084f1b204d0e9d8f160535bc3c6959257db"
+            },
+            {
+              "code": "12400",
+              "semantic": {
+                "name": "Zweifelhafte Forderungen",
+                "function": "F",
+                "range_start": "12400",
+                "range_end": "12400",
+                "parent": null
+              },
+              "signature": "603f4598a7e436effe11bde30c75f3a05a0182cf13aa03684d9c660c01d1eb9e"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-006@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.trade.other",
+          "choices": [
+            "bs.ass.currAss.receiv.trade.other",
+            "bs.ass.currAss.receiv.trade.shareholders",
+            "bs.ass.currAss.receiv.trade.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.ass.currAss.receiv.trade.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "12210",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "F",
+                "range_start": "12210",
+                "range_end": "12210",
+                "parent": {
+                  "code": "12100",
+                  "end": "12149",
+                  "name": "Forderungen aus Lieferungen und Leistungen ohne Kontokorrent",
+                  "function": "F"
+                }
+              },
+              "signature": "f2bef1ed052d536801cafab9f3222edf94d02b89535005f54e2b7de756dfc5ce"
+            },
+            {
+              "code": "12410",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "F",
+                "range_start": "12410",
+                "range_end": "12410",
+                "parent": {
+                  "code": "12400",
+                  "end": "12400",
+                  "name": "Zweifelhafte Forderungen",
+                  "function": "F"
+                }
+              },
+              "signature": "860c66307c5498567aaf60bea0f9f003102c7b17801feee32aa9fd43b2b88761"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-007@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.trade.other",
+          "choices": [
+            "bs.ass.currAss.receiv.trade.other",
+            "bs.ass.currAss.receiv.trade.shareholders",
+            "bs.ass.currAss.receiv.trade.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.ass.currAss.receiv.trade.above1year"
+          ],
+          "sources": [
+            {
+              "code": "12250",
+              "semantic": {
+                "name": "- Restlaufzeit größer 1 Jahr",
+                "function": "F",
+                "range_start": "12250",
+                "range_end": "12250",
+                "parent": {
+                  "code": "12100",
+                  "end": "12149",
+                  "name": "Forderungen aus Lieferungen und Leistungen ohne Kontokorrent",
+                  "function": "F"
+                }
+              },
+              "signature": "9d77f1c9cc029814bb3ece84ea1c5841548216416c87cc383042a74388836eb4"
+            },
+            {
+              "code": "12420",
+              "semantic": {
+                "name": "- Restlaufzeit größer 1 Jahr",
+                "function": "F",
+                "range_start": "12420",
+                "range_end": "12420",
+                "parent": {
+                  "code": "12400",
+                  "end": "12400",
+                  "name": "Zweifelhafte Forderungen",
+                  "function": "F"
+                }
+              },
+              "signature": "b9db174408a9b4028449181bae822626c968eeeb354f8f711536950c24161b2d"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-008@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.affil",
+          "choices": [
+            "bs.ass.currAss.receiv.affil"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "12600",
+              "semantic": {
+                "name": "Forderungen gegen verbundene Unternehmen",
+                "function": "",
+                "range_start": "12600",
+                "range_end": "12600",
+                "parent": null
+              },
+              "signature": "9f0d3f35fa60255390bee230b084b5cfb413e8fccdf71a1535dce1465e8dd494"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-009@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.affil",
+          "choices": [
+            "bs.ass.currAss.receiv.affil"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.ass.currAss.receiv.affil.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "12610",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "12610",
+                "range_end": "12610",
+                "parent": {
+                  "code": "12600",
+                  "end": "12600",
+                  "name": "Forderungen gegen verbundene Unternehmen",
+                  "function": ""
+                }
+              },
+              "signature": "67b18b073d3e77ccf9349da5d5c394bcec5d42bf87014cac7000027d27acd6f3"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-010@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.affil",
+          "choices": [
+            "bs.ass.currAss.receiv.affil"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.ass.currAss.receiv.affil.above1year"
+          ],
+          "sources": [
+            {
+              "code": "12620",
+              "semantic": {
+                "name": "- Restlaufzeit größer 1 Jahr",
+                "function": "",
+                "range_start": "12620",
+                "range_end": "12620",
+                "parent": {
+                  "code": "12600",
+                  "end": "12600",
+                  "name": "Forderungen gegen verbundene Unternehmen",
+                  "function": ""
+                }
+              },
+              "signature": "281804ba8ed0038c47eb24f539db6cd9755ed86b5aa0699e5c2370bd56c83c2d"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-011@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.affil",
+          "choices": [
+            "bs.ass.currAss.receiv.affil"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.ass.currAss.receiv.affil.trade"
+          ],
+          "sources": [
+            {
+              "code": "12700",
+              "semantic": {
+                "name": "Forderungen aus Lieferungen und Leistungen gegen verbundene Unternehmen",
+                "function": "F",
+                "range_start": "12700",
+                "range_end": "12700",
+                "parent": null
+              },
+              "signature": "0fb8ea1bf876f4009e9ba79e687ac0f992d8ef6659f1aa0af8f9503ceaadde8e"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-012@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.affil",
+          "choices": [
+            "bs.ass.currAss.receiv.affil"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.ass.currAss.receiv.affil.trade",
+            "bs.ass.currAss.receiv.affil.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "12710",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "F",
+                "range_start": "12710",
+                "range_end": "12710",
+                "parent": {
+                  "code": "12700",
+                  "end": "12700",
+                  "name": "Forderungen aus Lieferungen und Leistungen gegen verbundene Unternehmen",
+                  "function": "F"
+                }
+              },
+              "signature": "95b459750fb3f9ba5726c6d3c2e1e9d1dc1637b21c252fba509122835f5b7404"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-013@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.affil",
+          "choices": [
+            "bs.ass.currAss.receiv.affil"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.ass.currAss.receiv.affil.trade",
+            "bs.ass.currAss.receiv.affil.above1year"
+          ],
+          "sources": [
+            {
+              "code": "12720",
+              "semantic": {
+                "name": "- Restlaufzeit größer 1 Jahr",
+                "function": "F",
+                "range_start": "12720",
+                "range_end": "12720",
+                "parent": {
+                  "code": "12700",
+                  "end": "12700",
+                  "name": "Forderungen aus Lieferungen und Leistungen gegen verbundene Unternehmen",
+                  "function": "F"
+                }
+              },
+              "signature": "43fbc9466ed5aac35816d163682823342b65c4fad4af663b9906ab6625ee31c1"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-014@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.particip",
+          "choices": [
+            "bs.ass.currAss.receiv.particip"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "12800",
+              "semantic": {
+                "name": "Forderungen gegen Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                "function": "",
+                "range_start": "12800",
+                "range_end": "12800",
+                "parent": null
+              },
+              "signature": "3c9971516d1c06df4156350ae36553d795fcf49662c8564877d5d2c602c2b2a8"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-015@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.particip",
+          "choices": [
+            "bs.ass.currAss.receiv.particip"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.ass.currAss.receiv.particip.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "12810",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "12810",
+                "range_end": "12810",
+                "parent": {
+                  "code": "12800",
+                  "end": "12800",
+                  "name": "Forderungen gegen Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                  "function": ""
+                }
+              },
+              "signature": "d86fae0a27337b182eba6b9627aec416b521a336e0371d38aa4182d7c29841c2"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-016@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.particip",
+          "choices": [
+            "bs.ass.currAss.receiv.particip"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.ass.currAss.receiv.particip.above1year"
+          ],
+          "sources": [
+            {
+              "code": "12820",
+              "semantic": {
+                "name": "- Restlaufzeit größer 1 Jahr",
+                "function": "",
+                "range_start": "12820",
+                "range_end": "12820",
+                "parent": {
+                  "code": "12800",
+                  "end": "12800",
+                  "name": "Forderungen gegen Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                  "function": ""
+                }
+              },
+              "signature": "185d51c037eb09feea1cdafb74d8d0d2983a7a88873e23b462f5268d1e29adc1"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-017@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.particip",
+          "choices": [
+            "bs.ass.currAss.receiv.particip"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.ass.currAss.receiv.particip.trade"
+          ],
+          "sources": [
+            {
+              "code": "12900",
+              "semantic": {
+                "name": "Forderungen aus Lieferungen und Leistungen gegen Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                "function": "F",
+                "range_start": "12900",
+                "range_end": "12900",
+                "parent": null
+              },
+              "signature": "931e3344227e0c62bd95da92055c24342b448cac91f69c22fa69a733349b72f1"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-018@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.particip",
+          "choices": [
+            "bs.ass.currAss.receiv.particip"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.ass.currAss.receiv.particip.trade",
+            "bs.ass.currAss.receiv.particip.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "12910",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "F",
+                "range_start": "12910",
+                "range_end": "12910",
+                "parent": {
+                  "code": "12900",
+                  "end": "12900",
+                  "name": "Forderungen aus Lieferungen und Leistungen gegen Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                  "function": "F"
+                }
+              },
+              "signature": "1c1c9ff60e679cd9db7940bfb4d002fbd42628b997933110aa91ad1cf0978d61"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-019@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.particip",
+          "choices": [
+            "bs.ass.currAss.receiv.particip"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.ass.currAss.receiv.particip.trade",
+            "bs.ass.currAss.receiv.particip.above1year"
+          ],
+          "sources": [
+            {
+              "code": "12920",
+              "semantic": {
+                "name": "- Restlaufzeit größer 1 Jahr",
+                "function": "F",
+                "range_start": "12920",
+                "range_end": "12920",
+                "parent": {
+                  "code": "12900",
+                  "end": "12900",
+                  "name": "Forderungen aus Lieferungen und Leistungen gegen Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                  "function": "F"
+                }
+              },
+              "signature": "2d87df4f46a75a09d83aa7620e50476eaa9c899fe228581993f5718a7197f185"
+            }
+          ]
+        },
+        {
+          "purpose": "purpose-0013@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.receiv.other.other",
+          "choices": [
+            "bs.ass.currAss.receiv.other.other"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "13370",
+              "semantic": {
+                "name": "Forderungen gegen typisch stille Gesellschafter",
+                "function": "",
+                "range_start": "13370",
+                "range_end": "13370",
+                "parent": null
+              },
+              "signature": "7b1cec6a61020cb34b96a61747a2448da6c4871acc2bf0aa48c671b8c7e6144b"
+            },
+            {
+              "code": "13900",
+              "semantic": {
+                "name": "GmbH-Anteile zum kurzfristigen Verbleib",
+                "function": "",
+                "range_start": "13900",
+                "range_end": "13900",
+                "parent": null
+              },
+              "signature": "d8797ad87e5b1c6c2ffb4a7b44037f2090156245777acdca6e2b968602970450"
+            },
+            {
+              "code": "13930",
+              "semantic": {
+                "name": "Genussrechte",
+                "function": "",
+                "range_start": "13930",
+                "range_end": "13930",
+                "parent": null
+              },
+              "signature": "bd143709737a84a1749aaac08fec5f33424beaf0f1fc5ca8ba230bb46f16d5ba"
+            },
+            {
+              "code": "13940",
+              "semantic": {
+                "name": "Einzahlungsansprüche zu Nebenleistungen oder Zuzahlungen",
+                "function": "",
+                "range_start": "13940",
+                "range_end": "13940",
+                "parent": null
+              },
+              "signature": "4ea5c8a2957c2b2db67403e3d80e4890e7f7fd85da667c8f17151f596d4f0907"
+            },
+            {
+              "code": "13950",
+              "semantic": {
+                "name": "Genossenschaftsanteile zum kurzfristigen Verbleib",
+                "function": "",
+                "range_start": "13950",
+                "range_end": "13950",
+                "parent": null
+              },
+              "signature": "7d3ed3908bec8ffa26c75478ea574d630c6f45b7059a32d8f32f9060616995a2"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-021@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.receiv.other.other",
+          "choices": [
+            "bs.ass.currAss.receiv.other.other"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.ass.currAss.receiv.other.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "13380",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "13380",
+                "range_end": "13380",
+                "parent": {
+                  "code": "13370",
+                  "end": "13370",
+                  "name": "Forderungen gegen typisch stille Gesellschafter",
+                  "function": ""
+                }
+              },
+              "signature": "7b0bffe789cf693673225164d1343bf9a44a2e5f03e7dba1e5f19251cc2a2e06"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-022@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.receiv.other.other",
+          "choices": [
+            "bs.ass.currAss.receiv.other.other"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.ass.currAss.receiv.other.above1year"
+          ],
+          "sources": [
+            {
+              "code": "13390",
+              "semantic": {
+                "name": "- Restlaufzeit größer 1 Jahr",
+                "function": "",
+                "range_start": "13390",
+                "range_end": "13390",
+                "parent": {
+                  "code": "13370",
+                  "end": "13370",
+                  "name": "Forderungen gegen typisch stille Gesellschafter",
+                  "function": ""
+                }
+              },
+              "signature": "18747a4efb95cd2f153e030c8f0f4b9b6f42c6f1b6de7ee23557e619fe15326e"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-023@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.receiv.other.socInsur",
+          "choices": [
+            "bs.ass.currAss.receiv.other.socInsur"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "13680",
+              "semantic": {
+                "name": "Forderungen gegenüber Bundesagentur für Arbeit",
+                "function": "",
+                "range_start": "13680",
+                "range_end": "13680",
+                "parent": null
+              },
+              "signature": "ab3553c83e552b77e8c3107148785ebea940f8baca330b279203d48114203f53"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-024@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.advPaym",
+          "choices": [
+            "bs.eqLiab.liab.advPaym"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "32500",
+              "semantic": {
+                "name": "Erhaltene Anzahlungen auf Bestellungen (Verbindlichkeiten)",
+                "function": "",
+                "range_start": "32500",
+                "range_end": "32500",
+                "parent": null
+              },
+              "signature": "69172fc9210d40e7fd5547959277fb9bce4265aadfeec9d2749e675831b19a0f"
+            },
+            {
+              "code": "32600",
+              "semantic": {
+                "name": "Erhaltene, versteuerte Anzahlungen 7 % USt (Verbindlichkeiten)",
+                "function": "AM",
+                "range_start": "32600",
+                "range_end": "32609",
+                "parent": null
+              },
+              "signature": "92dc917c268f6c59d4fffca45ab7e15dc60efef93be9c6e6dd12b3d4a68e5f21"
+            },
+            {
+              "code": "32610",
+              "semantic": {
+                "name": "Erhaltene, versteuerte Anzahlungen 5 % USt (Verbindlichkeiten)",
+                "function": "AM",
+                "range_start": "32610",
+                "range_end": "32619",
+                "parent": null
+              },
+              "signature": "5ca5aa0a7f7a9578ed0809236b0a52fadab471d58b84729a1da817763e4e4351"
+            },
+            {
+              "code": "32640",
+              "semantic": {
+                "name": "Erhaltene, versteuerte Anzahlungen 0 % USt (Verbindlichkeiten)",
+                "function": "AM",
+                "range_start": "32640",
+                "range_end": "32649",
+                "parent": null
+              },
+              "signature": "c09fb2054744aeb1e2504268f9f96c69aad59696fc9ea072dfcee99a1eccc001"
+            },
+            {
+              "code": "32700",
+              "semantic": {
+                "name": "Erhaltene, versteuerte Anzahlungen 16 % USt (Verbindlichkeiten)",
+                "function": "AM",
+                "range_start": "32700",
+                "range_end": "32709",
+                "parent": null
+              },
+              "signature": "b6736434330d259bce4a47371a57de3c25d0e5be179e65e5d88bf29813960c47"
+            },
+            {
+              "code": "32720",
+              "semantic": {
+                "name": "Erhaltene, versteuerte Anzahlungen 19 % USt (Verbindlichkeiten)",
+                "function": "AM",
+                "range_start": "32720",
+                "range_end": "32729",
+                "parent": null
+              },
+              "signature": "4b6e6999eb24eeb9bda23e6449eb38cc73987b5be2d96330187bde9160ccb842"
+            },
+            {
+              "code": "32800",
+              "semantic": {
+                "name": "Erhaltene Anzahlungen - Nachsteuer",
+                "function": "",
+                "range_start": "32800",
+                "range_end": "32800",
+                "parent": null
+              },
+              "signature": "0288e0a8c331a23594fa374636cc30f0c3c6879ed8c01c349b5e2dcec46724bd"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-025@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.advPaym",
+          "choices": [
+            "bs.eqLiab.liab.advPaym"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.eqLiab.liab.advPaym.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "32810",
+              "semantic": {
+                "name": "Erhaltene Anzahlungen - Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "32810",
+                "range_end": "32810",
+                "parent": null
+              },
+              "signature": "c6d7172f93614ab4dd0f14ffcaff337f07dc4dbda22bfffa7ffea1b8d0d8d60d"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-026@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.advPaym",
+          "choices": [
+            "bs.eqLiab.liab.advPaym"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.eqLiab.liab.advPaym.above1year"
+          ],
+          "sources": [
+            {
+              "code": "32820",
+              "semantic": {
+                "name": "- Restlaufzeit 1 bis 5 Jahre",
+                "function": "",
+                "range_start": "32820",
+                "range_end": "32820",
+                "parent": {
+                  "code": "32810",
+                  "end": "32810",
+                  "name": "Erhaltene Anzahlungen - Restlaufzeit bis 1 Jahr",
+                  "function": ""
+                }
+              },
+              "signature": "0c7122427dadeec54687059212e712b05afeefdec23debde86237d9b9aa1430b"
+            },
+            {
+              "code": "32830",
+              "semantic": {
+                "name": "- Restlaufzeit größer 5 Jahre",
+                "function": "",
+                "range_start": "32830",
+                "range_end": "32830",
+                "parent": {
+                  "code": "32810",
+                  "end": "32810",
+                  "name": "Erhaltene Anzahlungen - Restlaufzeit bis 1 Jahr",
+                  "function": ""
+                }
+              },
+              "signature": "4916b9283e48fe2a76f7c04977148ab5b0c3ea8ca023735a703088ad08e93a8c"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-027@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.trade.genOther",
+          "choices": [
+            "bs.eqLiab.liab.trade.genOther",
+            "bs.eqLiab.liab.trade.shareholders",
+            "bs.eqLiab.liab.trade.misc"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "33100",
+              "semantic": {
+                "name": "Verbindlichkeiten aus Lieferungen und Leistungen ohne Kontokorrent",
+                "function": "F",
+                "range_start": "33100",
+                "range_end": "33149",
+                "parent": null
+              },
+              "signature": "a647d8abf5b6f86a2966b1b070eb1b84a9c008c8836caa2cdda8e15e67c7b1fe"
+            },
+            {
+              "code": "33110",
+              "semantic": {
+                "name": "Verbindlichkeiten aus Lieferungen und Leistungen ohne Kontokorrent",
+                "function": "F",
+                "range_start": "33100",
+                "range_end": "33149",
+                "parent": null
+              },
+              "signature": "a647d8abf5b6f86a2966b1b070eb1b84a9c008c8836caa2cdda8e15e67c7b1fe"
+            },
+            {
+              "code": "33120",
+              "semantic": {
+                "name": "Verbindlichkeiten aus Lieferungen und Leistungen ohne Kontokorrent",
+                "function": "F",
+                "range_start": "33100",
+                "range_end": "33149",
+                "parent": null
+              },
+              "signature": "a647d8abf5b6f86a2966b1b070eb1b84a9c008c8836caa2cdda8e15e67c7b1fe"
+            },
+            {
+              "code": "33130",
+              "semantic": {
+                "name": "Verbindlichkeiten aus Lieferungen und Leistungen ohne Kontokorrent",
+                "function": "F",
+                "range_start": "33100",
+                "range_end": "33149",
+                "parent": null
+              },
+              "signature": "a647d8abf5b6f86a2966b1b070eb1b84a9c008c8836caa2cdda8e15e67c7b1fe"
+            },
+            {
+              "code": "33140",
+              "semantic": {
+                "name": "Verbindlichkeiten aus Lieferungen und Leistungen ohne Kontokorrent",
+                "function": "F",
+                "range_start": "33100",
+                "range_end": "33149",
+                "parent": null
+              },
+              "signature": "a647d8abf5b6f86a2966b1b070eb1b84a9c008c8836caa2cdda8e15e67c7b1fe"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-028@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.trade.genOther",
+          "choices": [
+            "bs.eqLiab.liab.trade.genOther",
+            "bs.eqLiab.liab.trade.shareholders",
+            "bs.eqLiab.liab.trade.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.trade.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "33310",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "F",
+                "range_start": "33310",
+                "range_end": "33310",
+                "parent": {
+                  "code": "33100",
+                  "end": "33149",
+                  "name": "Verbindlichkeiten aus Lieferungen und Leistungen ohne Kontokorrent",
+                  "function": "F"
+                }
+              },
+              "signature": "e4dfc8da512cab39b53e80752aad5bc19671f9be278dfce712cab389729368af"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-029@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.trade.genOther",
+          "choices": [
+            "bs.eqLiab.liab.trade.genOther",
+            "bs.eqLiab.liab.trade.shareholders",
+            "bs.eqLiab.liab.trade.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.trade.above1year"
+          ],
+          "sources": [
+            {
+              "code": "33320",
+              "semantic": {
+                "name": "- Restlaufzeit 1 bis 5 Jahre",
+                "function": "F",
+                "range_start": "33320",
+                "range_end": "33320",
+                "parent": {
+                  "code": "33100",
+                  "end": "33149",
+                  "name": "Verbindlichkeiten aus Lieferungen und Leistungen ohne Kontokorrent",
+                  "function": "F"
+                }
+              },
+              "signature": "ed0ac617e82a70d35cabe9dab7bd4170da556325afc4e793740abab8788d81d5"
+            },
+            {
+              "code": "33330",
+              "semantic": {
+                "name": "- Restlaufzeit größer 5 Jahre",
+                "function": "F",
+                "range_start": "33330",
+                "range_end": "33330",
+                "parent": {
+                  "code": "33100",
+                  "end": "33149",
+                  "name": "Verbindlichkeiten aus Lieferungen und Leistungen ohne Kontokorrent",
+                  "function": "F"
+                }
+              },
+              "signature": "e585543a59a53d46af5e914f0185f5ff2aac7f12c5dda855747e7002ebaff69c"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-030@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.statutoryBenefits.commitments",
+          "choices": [
+            "bs.eqLiab.liab.statutoryBenefits.commitments"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "34900",
+              "semantic": {
+                "name": "Verbindlichkeiten für satzungsgemäße Leistungen",
+                "function": "",
+                "range_start": "34900",
+                "range_end": "34900",
+                "parent": null
+              },
+              "signature": "c8ce9d75d3de74bd207b71f2d0d9338d729e674323bb88d2c32bd66c46f8f396"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-031@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.other",
+          "choices": [
+            "bs.eqLiab.liab.other.other"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "34920",
+              "semantic": {
+                "name": "Verbindlichkeiten aus nicht zweckentsprechend verwendeten Mitteln",
+                "function": "",
+                "range_start": "34920",
+                "range_end": "34920",
+                "parent": null
+              },
+              "signature": "57a1d48c9bddd1daa7777c760eaf404246f36189530691b39059dff44ca08b78"
+            },
+            {
+              "code": "36000",
+              "semantic": {
+                "name": "Agenturwarenabrechnung",
+                "function": "",
+                "range_start": "36000",
+                "range_end": "36000",
+                "parent": null
+              },
+              "signature": "e85950a9333217bb85906218df009407622fbc4957aa223683868a81106b62fc"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-032@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.jointVent",
+          "choices": [
+            "bs.eqLiab.liab.other.jointVent"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "36110",
+              "semantic": {
+                "name": "Verbindlichkeiten gegenüber Arbeitsgemeinschaften",
+                "function": "",
+                "range_start": "36110",
+                "range_end": "36110",
+                "parent": null
+              },
+              "signature": "2e00b40616aba9a6cb5df2698ca11693d39d24dd5e245cf9f995f552dfb483ad"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-033@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.silentPartner.typ",
+          "choices": [
+            "bs.eqLiab.liab.other.silentPartner.typ"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "35200",
+              "semantic": {
+                "name": "Verbindlichkeiten gegenüber typisch stillen Gesellschaftern",
+                "function": "",
+                "range_start": "35200",
+                "range_end": "35200",
+                "parent": null
+              },
+              "signature": "e51bd50dc315ff11a37dc4d8164cdb5be287a3e92611be776730827d4e71646f"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-034@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.silentPartner.typ",
+          "choices": [
+            "bs.eqLiab.liab.other.silentPartner.typ"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.eqLiab.liab.other.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "35210",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "35210",
+                "range_end": "35210",
+                "parent": {
+                  "code": "35200",
+                  "end": "35200",
+                  "name": "Verbindlichkeiten gegenüber typisch stillen Gesellschaftern",
+                  "function": ""
+                }
+              },
+              "signature": "620a258b78eaa48c493c2cf8fd2e2809fff39de01b32482ed90c8cc3c2a255ed"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-035@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.silentPartner.typ",
+          "choices": [
+            "bs.eqLiab.liab.other.silentPartner.typ"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.eqLiab.liab.other.above1year"
+          ],
+          "sources": [
+            {
+              "code": "35220",
+              "semantic": {
+                "name": "- Restlaufzeit 1 bis 5 Jahre",
+                "function": "",
+                "range_start": "35220",
+                "range_end": "35220",
+                "parent": {
+                  "code": "35200",
+                  "end": "35200",
+                  "name": "Verbindlichkeiten gegenüber typisch stillen Gesellschaftern",
+                  "function": ""
+                }
+              },
+              "signature": "2e239bf02785d51019fd5e725a83d3cb3621319e938c573026328e169ddd95cb"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-035@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.silentPartner.typ",
+          "choices": [
+            "bs.eqLiab.liab.other.silentPartner.typ"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.eqLiab.liab.other.above1year"
+          ],
+          "sources": [
+            {
+              "code": "35230",
+              "semantic": {
+                "name": "- Restlaufzeit größer 5 Jahre",
+                "function": "",
+                "range_start": "35230",
+                "range_end": "35230",
+                "parent": {
+                  "code": "35200",
+                  "end": "35200",
+                  "name": "Verbindlichkeiten gegenüber typisch stillen Gesellschaftern",
+                  "function": ""
+                }
+              },
+              "signature": "7b2efac3133cfa255a3b19581db194f2788484f54d004cc5e55703eba340f54c"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-037@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.theroffTax.otherTaxes",
+          "choices": [
+            "bs.eqLiab.liab.other.theroffTax.vat",
+            "bs.eqLiab.liab.other.theroffTax.operatingTaxes",
+            "bs.eqLiab.liab.other.theroffTax.otherTaxes"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "37000",
+              "semantic": {
+                "name": "Verbindlichkeiten aus Steuern und Abgaben",
+                "function": "",
+                "range_start": "37000",
+                "range_end": "37000",
+                "parent": null
+              },
+              "signature": "8567386200359c0583a934a79d0672624f3f59fdf627ce54f55617f2a6bd8b43"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-038@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.theroffTax.otherTaxes",
+          "choices": [
+            "bs.eqLiab.liab.other.theroffTax.vat",
+            "bs.eqLiab.liab.other.theroffTax.operatingTaxes",
+            "bs.eqLiab.liab.other.theroffTax.otherTaxes"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.other.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "37010",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "37010",
+                "range_end": "37010",
+                "parent": {
+                  "code": "37000",
+                  "end": "37000",
+                  "name": "Verbindlichkeiten aus Steuern und Abgaben",
+                  "function": ""
+                }
+              },
+              "signature": "fb2c3a0ad56de3ce5940a947ff41cfc45a58cb46afb086eaa9c236f4dc13dad5"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-039@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.theroffTax.otherTaxes",
+          "choices": [
+            "bs.eqLiab.liab.other.theroffTax.vat",
+            "bs.eqLiab.liab.other.theroffTax.operatingTaxes",
+            "bs.eqLiab.liab.other.theroffTax.otherTaxes"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.other.above1year"
+          ],
+          "sources": [
+            {
+              "code": "37020",
+              "semantic": {
+                "name": "- Restlaufzeit 1 bis 5 Jahre",
+                "function": "",
+                "range_start": "37020",
+                "range_end": "37020",
+                "parent": {
+                  "code": "37000",
+                  "end": "37000",
+                  "name": "Verbindlichkeiten aus Steuern und Abgaben",
+                  "function": ""
+                }
+              },
+              "signature": "2edd8979cc605e939f831b128a40b8e36fe2ae554c9ec34dc1ad809e9f6af069"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-039@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.theroffTax.otherTaxes",
+          "choices": [
+            "bs.eqLiab.liab.other.theroffTax.vat",
+            "bs.eqLiab.liab.other.theroffTax.operatingTaxes",
+            "bs.eqLiab.liab.other.theroffTax.otherTaxes"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.other.above1year"
+          ],
+          "sources": [
+            {
+              "code": "37030",
+              "semantic": {
+                "name": "- Restlaufzeit größer 5 Jahre",
+                "function": "",
+                "range_start": "37030",
+                "range_end": "37030",
+                "parent": {
+                  "code": "37000",
+                  "end": "37000",
+                  "name": "Verbindlichkeiten aus Steuern und Abgaben",
+                  "function": ""
+                }
+              },
+              "signature": "45137094eb99df6dfbce696b7b42e78deccb6ef3f27686e62f11ce1e42b8e3a2"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-041@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.theroffTax.otherTaxes",
+          "choices": [
+            "bs.eqLiab.liab.other.theroffTax.otherTaxes"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "37260",
+              "semantic": {
+                "name": "Verbindlichkeiten an das Finanzamt aus abzuführendem Bauabzugsbetrag",
+                "function": "",
+                "range_start": "37260",
+                "range_end": "37260",
+                "parent": null
+              },
+              "signature": "e9ba35054bdf2359c41896fc992a9857a8f27ce72744716264602b8aea7dadeb"
+            },
+            {
+              "code": "37300",
+              "semantic": {
+                "name": "Verbindlichkeiten aus Lohn- und Kirchensteuer",
+                "function": "",
+                "range_start": "37300",
+                "range_end": "37300",
+                "parent": null
+              },
+              "signature": "5ee21e24c9b2548d8d03799b9bf4df3dc60d44ae8d9c1ba44383983f8f7c0bc5"
+            },
+            {
+              "code": "37600",
+              "semantic": {
+                "name": "Verbindlichkeiten aus Einbehaltungen (KapESt und SolZ, KiSt auf Kap- ESt) für offene Ausschüttungen",
+                "function": "",
+                "range_start": "37600",
+                "range_end": "37600",
+                "parent": null
+              },
+              "signature": "7273c5f833b58c5d708d66c701196664180e29005aa64c37a8c57d27b726f749"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r18-042@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.theroffTax.operatingTaxes",
+          "choices": [
+            "bs.eqLiab.liab.other.theroffTax.operatingTaxes"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "37610",
+              "semantic": {
+                "name": "Verbindlichkeiten für Verbrauchsteuern",
+                "function": "",
+                "range_start": "37610",
+                "range_end": "37610",
+                "parent": null
+              },
+              "signature": "d688f98213e0af829b67934c452905b477d28f92f2aedf149d06248f208973d2"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

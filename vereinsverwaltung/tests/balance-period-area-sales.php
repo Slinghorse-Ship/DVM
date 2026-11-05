@@ -1,0 +1,14 @@
+<?php declare(strict_types=1);
+require __DIR__.'/balance-period-sales.php';
+require_once __DIR__.'/../src/Finance/Balance/BalancePeriodAreas.php';
+require __DIR__.'/fixtures/period-area-asset-chain.php';
+$base=$n;$n=0;
+$r=$l->report($next);$l->close($next,$r['version'],$r['journal_sha256'],$all,'Synthetic remaining asset closing');
+verifyAssetAreaChain($db,'sales-admin',$l,[$pid,$next],'4');
+$first=(new \Kulturhus\Verein\BalancePeriodAreas($db,'sales-admin'))->view($pid);$source=$first['source'];
+$source['accounts']['alternate_sale']=['name'=>'Synthetic unused parallel sale account','group'=>'revenue','skr_code'=>'48450'];
+$source['calculation']=\Kulturhus\Verein\BalanceCalculation::build($source['year'],$source['accounts'],$source['opening'],$source['entries'],$source['period']);
+$proof=\Kulturhus\Verein\BalancePeriodAssetAllocation::build($source,$first['input']['units'],$first['proof']['statement']['units'],$first['proof']['assets']['shares']);
+check(!$proof['issues'],'same-code parallel account cannot replace retained original sale account');
+check(!\Kulturhus\Verein\Tests\MySqlFixture::foreignKeyErrors($db),'sale activity chain remains tenant bound');
+echo "$n dated sale activity checks passed plus $base original sale checks; synthetic MySQL only\n";

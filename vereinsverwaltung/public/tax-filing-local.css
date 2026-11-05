@@ -1,0 +1,32 @@
+.tax-local,.tax-local-heading{min-width:0;max-width:76rem;overflow-wrap:anywhere}
+.tax-local :is(p,label,li,small,span,dt,dd,pre,code,strong,legend,summary,input,select,textarea,button,a){font-size:1rem;line-height:1.5;max-width:100%;box-sizing:border-box}
+.tax-local h2{font-size:1.35rem}.tax-local h3{font-size:1.15rem}
+.tax-local .card,.tax-local form,.tax-local fieldset{min-width:0;max-width:100%}
+.tax-local :is(.card,.notice){padding:1rem;margin-block:1rem}
+.tax-local label:not(.tax-local-check):not(.check){display:block;margin-block:1rem}
+.tax-local :is(input:not([type=checkbox]):not([type=hidden]),select,textarea){display:block;width:100%;min-height:2.75rem;padding:.6rem}
+.tax-local textarea{min-height:5rem;resize:vertical}
+.tax-local :is(button,.btn,summary,a){min-height:2.75rem;white-space:normal;overflow-wrap:anywhere}
+.tax-local :is(button,.btn){max-width:100%;padding:.6rem .8rem;margin-block:.3rem}
+.tax-local a{display:inline-flex;align-items:center;padding-block:.55rem}
+.tax-local summary{padding:.6rem 0;cursor:pointer;font-weight:600}
+.tax-local details{margin-block:1rem}.tax-local pre{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;max-height:24rem;overflow:auto}
+.tax-local :is(pre,code){min-width:0}.tax-local dl{margin-block:1rem}.tax-local dt{font-weight:600}.tax-local dd{margin-inline:0;margin-block:0 .75rem}
+.tax-local .tax-local-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin-block:1rem;min-width:0}
+.tax-local [aria-current=page]{outline:2px solid currentColor;font-weight:700}
+.tax-local .tax-local-check,.tax-local label.check{display:flex;align-items:flex-start;gap:.5rem;min-height:2.75rem;margin-block:.75rem;cursor:pointer}
+.tax-local input[type=checkbox]{flex:0 0 2.75rem;width:2.75rem;height:2.75rem;margin:0}
+.tax-local :focus-visible{outline:3px solid currentColor;outline-offset:3px}
+.tax-local [role=alert]{border-inline-start:.25rem solid currentColor}
+.tax-local .tax-environment{border:2px solid currentColor;padding:.75rem;font-weight:700}
+.tax-local-heading h1{font-size:1.75rem}
+.tax-local .notice{display:block;min-width:0}
+.tax-local .notice>strong{display:block}
+
+.tax-local :is(.card,.notice){padding:min(1rem,4vw)}
+.tax-local .tax-environment{padding:min(.75rem,3vw)}
+.tax-local .tax-scope-options{border:0;margin-block:1rem;padding:0;min-width:0}
+.tax-local .tax-scope-options legend{font-weight:600}
+.tax-local input[type=radio]{flex:0 0 2.75rem;width:2.75rem;height:2.75rem;margin:0;padding:0}
+.tax-local .tax-scope-options input.check[type=radio]{inline-size:2.75rem;block-size:2.75rem;min-inline-size:2.75rem;min-block-size:2.75rem;flex:0 0 2.75rem}
+.tax-local .tax-local-check>span{min-inline-size:0;overflow-wrap:anywhere}

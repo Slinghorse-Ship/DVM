@@ -1,0 +1,30 @@
+<?php declare(strict_types=1);
+use Kulturhus\Verein\{PartnershipBookPlans,Documents};
+$holdingValue=null;foreach($plan['years'] as $row)if((int)$row['year']===$year)$holdingValue=PartnershipBookPlans::snapshot(json_decode($row['snapshot'],true,512,JSON_THROW_ON_ERROR));
+?>
+<h3>Handelsrechtliche Beteiligungswerte</h3><p>Bestätigte Originalwerte bleiben erhalten. Der steuerliche Spiegelbildwert wird anhand der Feststellungsunterlagen gesondert nachgewiesen.</p>
+<form method="get"><?= hidden('view','finance').hidden('tab','book-values').hidden('item',$itemId) ?><label>Für welches Jahr?<input class="form-control" name="year" type="number" min="1900" max="2199" value="<?= $year ?>" required></label><button class="btn btn-outline theme-secondary secondary">Jahr anzeigen</button></form>
+<?php if($holdingValue):$hb=$holdingValue['book']; ?><dl><dt>Buchwert zu Jahresbeginn</dt><dd><?= euro($hb['book_opening_cents']) ?></dd><dt>Ursprüngliche Restanschaffungskosten</dt><dd><?= euro($hb['cost_closing_cents']) ?></dd><dt>Wertminderung</dt><dd><?= euro($hb['impairment_cents']) ?></dd><dt>Wertaufholung</dt><dd><?= euro($hb['writeup_cents']) ?></dd><dt>Ausgebuchter Restbuchwert</dt><dd><?= euro($hb['book_disposals_cents']) ?></dd><dt>Bestätigter Buchwert am Jahresende</dt><dd><strong><?= euro($hb['book_closing_cents']) ?></strong></dd></dl>
+<?php foreach($holdingValue['source']['events'] as $event): ?><p><?= e($event['on'].' · '.$event['reason']) ?> · <a href="<?= e(url(['view'=>'documents','doc'=>$event['document']['document_id']])) ?>">Originalnachweis ansehen</a></p><?php endforeach ?>
+<?php else: ?><p>Für <?= $year ?> ist noch kein HGB-Jahreswert bestätigt.</p><?php endif ?>
+<?php if($canConfirmYear):
+ $holdingDocs=array_filter((new Documents($db,(string)$_SESSION['actor']))->listing(),static fn($d)=>$d['state']==='active'&&in_array('finance',$d['scopes'],true));
+ $eventRows=input($_POST,'action')==='asset-book-year'&&is_array($_POST['partnership_book_events']??null)?array_values($_POST['partnership_book_events']):[];
+ $rowCount=max(3,min(200,count($eventRows)+1));
+?>
+<details <?= input($_POST,'action')==='asset-book-year'?'open':'' ?>><summary>HGB-Jahreswert <?= $year ?> prüfen und bestätigen</summary>
+<form method="post" data-partnership-book-events><?= csrf().hidden('action','asset-book-year').hidden('item',$itemId).hidden('version',input($_POST,'action')==='asset-book-year'?input($_POST,'version'):(string)$plan['version']).hidden('year',(string)$year) ?>
+<p>Wertminderungen, Wertaufholungen und belegte Abgänge ohne Erlös in zeitlicher Reihenfolge erfassen. Ohne Änderungen die Ereigniszeilen leer lassen. Weitere Anschaffungen anhand der zugehörigen Rechnung gesondert prüfen.</p>
+<div data-partnership-book-event-list><?php for($i=0;$i<$rowCount;$i++):$row=$eventRows[$i]??[];$prefix='partnership_book_events['.$i.']'; ?>
+<fieldset data-partnership-book-event-row><legend>Bewertungsereignis <?= $i+1 ?></legend><?= hidden($prefix.'[id]',input($row,'id',bin2hex(random_bytes(16)))) ?>
+<label>Welche Änderung?<select class="form-control" name="<?= e($prefix.'[kind]') ?>"><option value="">Keine Änderung in dieser Zeile</option><?php foreach(['impairment'=>'Wertminderung','writeup'=>'Wertaufholung','disposal'=>'Belegter Abgang ohne Erlös'] as $code=>$label): ?><option value="<?= e($code) ?>" <?= input($row,'kind')===$code?'selected':'' ?>><?= e($label) ?></option><?php endforeach ?></select></label>
+<div class="form-grid"><label>Datum<input class="form-control" type="date" name="<?= e($prefix.'[on]') ?>" min="<?= $year ?>-01-01" max="<?= $year ?>-12-31" value="<?= e(input($row,'on')) ?>"></label>
+<label>Buchwert nach der Bewertung / Restbuchwert des abgegangenen Anteils · EUR<input class="form-control" inputmode="decimal" name="<?= e($prefix.'[book]') ?>" value="<?= e(input($row,'book')) ?>"></label></div>
+<label>Begründung<textarea class="form-control" name="<?= e($prefix.'[reason]') ?>" maxlength="2000"><?= e(input($row,'reason')) ?></textarea></label>
+<?php foreach(['document_id'=>'Originaler Bewertungsbeleg','allocation_document_id'=>'Nur beim Abgang: Nachweis der Kostenaufteilung'] as $field=>$label): ?><label><?= e($label) ?><select class="form-control" name="<?= e($prefix.'['.$field.']') ?>" data-searchable-select><option value="">Finanzbeleg wählen …</option><?php foreach($holdingDocs as $d): ?><option value="<?= e($d['id']) ?>" <?= input($row,$field)===$d['id']?'selected':'' ?>><?= e($d['title']) ?></option><?php endforeach ?></select></label><?php endforeach ?>
+<label class="check"><input class="check" type="checkbox" name="<?= e($prefix.'[permanent]') ?>" value="1" <?= input($row,'permanent')==='1'?'checked':'' ?>>Die Wertminderung ist nach dem Originalnachweis dauerhaft.</label>
+<details <?= input($row,'kind')==='disposal'?'open':'' ?>><summary>Angaben zum Abgang</summary><label>Ursprüngliche Kosten des abgegangenen Anteils · EUR<input class="form-control" inputmode="decimal" name="<?= e($prefix.'[cost]') ?>" value="<?= e(input($row,'cost')) ?>"></label><label class="check"><input class="check" type="checkbox" name="<?= e($prefix.'[no_proceeds]') ?>" value="1" <?= input($row,'no_proceeds')==='1'?'checked':'' ?>>Es gibt keinen Verkaufserlös und keine Entschädigung.</label></details>
+<label class="check"><input class="check" type="checkbox" name="<?= e($prefix.'[confirmed]') ?>" value="1" <?= input($row,'confirmed')==='1'?'checked':'' ?>>Ich habe dieses Ereignis anhand des Originalnachweises geprüft.</label></fieldset>
+<?php endfor ?></div><button type="button" class="btn btn-outline theme-secondary secondary" data-partnership-add-book-event>Weiteres HGB-Ereignis ergänzen</button><p role="status" data-partnership-book-event-status></p>
+<label class="check"><input class="check" type="checkbox" name="partnership_year_reviewed" value="1" required>Alle HGB-Ereignisse und der vollständige Jahresstand sind geprüft, auch wenn keine Änderung vorliegt.</label><button class="btn btn-solid theme-primary">HGB-Jahresstand <?= $year ?> feststellen</button>
+</form></details><?php endif ?>

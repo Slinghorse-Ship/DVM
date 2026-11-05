@@ -1,0 +1,72 @@
+{
+  "feature": "explicit-bilingual-manager-frames",
+  "package_generation": 2026101557,
+  "registered_core_groups": 313,
+  "browser": {
+    "suite": "native-manager-interface-browser",
+    "states": 96,
+    "checks": 3269,
+    "actual_posts": 12,
+    "external_requests": 0,
+    "javascript_errors": []
+  },
+  "service_and_original_guards": {
+    "suite": "native-manager-interface",
+    "checks": 13,
+    "external_actions": 0
+  },
+  "navigation": {
+    "suite": "native-navigation-browser",
+    "passed": 229,
+    "committed_saves": 14,
+    "external": 0,
+    "errors": []
+  },
+  "unchanged_language_conditions": 127,
+  "webspace_http_installer_conditions": 55,
+  "sources": {
+    "p12-frame-candidate1": {
+      "index_tree": "e8e3a72f523dff59427414a31cbc0e249bc4f119",
+      "original_files": 6900,
+      "changed_original_files": []
+    },
+    "p12-frame-candidate2": {
+      "index_tree": "2ea19b43e635317791f3e3a82a9bb7360f45079e",
+      "original_files": 6900,
+      "changed_original_files": []
+    },
+    "p12-frame-candidate4": {
+      "index_tree": "2fa5d172dd5552fcd376fd4d40dfdacebd192496",
+      "original_files": 6900,
+      "changed_original_files": []
+    },
+    "p12-frame-candidate6": {
+      "index_tree": "2b64ef6e8a6be0a29af8ffe7740f317a2e0467e1",
+      "original_files": 6900,
+      "changed_original_files": []
+    },
+    "p12-frame-candidate7": {
+      "index_tree": "d9c14bcd4397ed266b58ebddee156b5c7cc7f5c9",
+      "original_files": 6901,
+      "changed_original_files": []
+    }
+  },
+  "log_sha256": {
+    "p12-frame-candidate1-core-browser.log": "24db4c11da707a4523e0582a4b7e149a24cb68f2450e270faa0d5446104a774a",
+    "p12-frame-candidate2-core-browser.log": "d0b1a4cd97c15ac0293fc8346b5e2ef6632105c6162f7e00b95d7eef3d850d65",
+    "p12-frame-candidate3-core-browser-installer.log": "b5218c8dc1310d0b633eb50d27f8269a70d0d0304be2c2f45998175a8864dca2",
+    "p12-frame-candidate4-core-browser-installer.log": "b213813df35166035b11c60c2603f88c6e7b4294629da0e6a745900d070c7fbd",
+    "p12-frame-candidate6-browser-installer.log": "052a486d38bb8835e86c5fa6418e4a52754d95d9ced6ba87e10ba78fd3302115",
+    "p12-frame-candidate7-browser-installer.log": "90709d0fd9621987e3bb01256b3a780b085996040372af96dca6b9a434bac8cf",
+    "p12-frame-candidate7-package.log": "84774cd45e26f6c6171098427bd8ce1b7a2a21155a55224168b76a823f6b42f6"
+  },
+  "diagnoses": [
+    "Initial new fixture used a different runtime session directory; corrected to the actual native test router directory.",
+    "Touch measurements reproduced a too-small native account link and a 30px tablet history icon; fixed. The preview link is measured too, and history remains reachable on phones.",
+    "Older menu browser selected a hidden global link after the compact embedded area menu was introduced. It now opens the actual disclosure and follows its visible destination. Original guards also run on failures.",
+    "Additional native English cancellation initially used an embedded-only CSS class; corrected to the actual page-save form."
+  ],
+  "full_all_acceptance": false,
+  "full_core_followup_source": "p12-frame-candidate4",
+  "remaining": "Other specialist screens and embedded account/notification text remain open under P-12. P-25 and original ERiC/device acceptance remain open."
+}

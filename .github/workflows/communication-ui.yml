@@ -1,0 +1,92 @@
+name: Communication UI
+# Hosted Actions are manual while quota is exhausted; use tools/ci/local-release.py.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: communication-ui-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  interface:
+    name: ${{ matrix.suite }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - suite: native-social-human-sends
+            browser: DVM_SOCIAL_HUMAN_SENDS_BROWSER
+          - suite: native-task-help
+            browser: DVM_TASK_HELP_BROWSER
+          - suite: native-social-check-plan-requests
+            browser: DVM_SOCIAL_CHECK_PLAN_BROWSER
+          - suite: native-event-draft-requests
+            browser: DVM_EVENT_SOURCE_BROWSER
+          - suite: native-social-library
+            browser: DVM_SOCIAL_LIBRARY_BROWSER
+    env:
+      KULTURHUS_DISABLE_MAIL: '1'
+      KULTURHUS_DISABLE_WEBSITE: '1'
+      VEREIN_ERIC_DISABLE_TRANSPORT: '1'
+      VEREIN_TEST_SKIP_BACKUP_ROUNDTRIP: '1'
+      KH_NATIVE_CI_PASSWORD: synthetic-ci-only
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check browser registration
+        run: python3 tools/ci/test-browser-registration.py
+      - name: Start isolated pinned MySQL
+        run: bash tools/ci/start-mysql.sh
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: none, ctype, curl, dom, exif, fileinfo, gd, iconv, intl, pdo_mysql, mbstring, phar, posix, simplexml, sockets, sodium, tokenizer, xml, xmlreader, xmlwriter, zip
+          coverage: none
+      - name: Install locked PHP dependencies
+        run: composer install --no-interaction --no-progress --prefer-dist
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser runtime
+        run: |
+          npm install --no-save --package-lock=false playwright@1.56.1
+          npx playwright install --with-deps chromium
+          node <<'NODE'
+          const fs = require('node:fs');
+          const path = require('node:path');
+          const playwright = require('playwright');
+          const modulePath = path.join(path.dirname(require.resolve('playwright')), 'index.mjs');
+          fs.appendFileSync(process.env.GITHUB_ENV,
+            'PLAYWRIGHT_MODULE=' + modulePath + '\n' +
+            'PLAYWRIGHT_CHROMIUM_EXECUTABLE=' + playwright.chromium.executablePath() + '\n');
+          NODE
+      - name: Verify syntax
+        run: |
+          find vereinsverwaltung/native -name '*.php' -print0 | xargs -0 -n1 php -l
+          php -l vereinsverwaltung/src/Web/TaskHelp.php
+          node --check vereinsverwaltung/tests/social-human-sends-browser.mjs
+          node --check vereinsverwaltung/tests/task-help-browser.mjs
+          node --check vereinsverwaltung/tests/social-check-plan-browser.mjs
+          node --check vereinsverwaltung/tests/event-source-browser.mjs
+          node --check vereinsverwaltung/tests/social-library-browser.mjs
+          node --check vereinsverwaltung/native/Web/assets/social-chat.js
+      - name: Run complete communication browser
+        env:
+          DVM_BROWSER_ARTIFACT_DIR: ${{ runner.temp }}/communication-ui/${{ matrix.suite }}
+        run: |
+          set -o pipefail
+          env -u DVM_CONVERSATION_PROFILE "${{ matrix.browser }}=1" php vereinsverwaltung/tests/ci-native.php "${{ matrix.suite }}" | tee "$RUNNER_TEMP/${{ matrix.suite }}.log"
+      - name: Retain synthetic browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: communication-ui-${{ matrix.suite }}
+          if-no-files-found: ignore
+          retention-days: 7
+          path: |
+            ${{ runner.temp }}/communication-ui/${{ matrix.suite }}/*.png
+            ${{ runner.temp }}/communication-ui/${{ matrix.suite }}/result*.json
+            ${{ runner.temp }}/${{ matrix.suite }}.log

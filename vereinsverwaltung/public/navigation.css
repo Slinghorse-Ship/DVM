@@ -1,0 +1,19 @@
+/* Short main menus; relevant subpages wrap instead of disappearing off-screen. */
+.sidebar .brand{flex-direction:row;gap:12px;padding:16px 18px 10px;flex-shrink:0}
+.sidebar .brand-mark{width:44px;height:44px;flex:0 0 44px;font-size:28px}
+.sidebar .brand strong{font-size:18px;text-align:left}
+.sidebar .brand small{font-size:10px;letter-spacing:.6px}
+.sidebar .club-label{margin:0 12px 6px;padding:8px;flex-shrink:0}
+.sidebar .nav-group>summary{padding-top:12px;padding-bottom:12px;min-height:46px;gap:12px}
+.sidebar .subnav a{min-height:42px;padding-top:10px;padding-bottom:10px}
+.sidebar-small .sidebar .brand{padding-left:17px;padding-right:17px}
+.menu-search-results a{display:block;color:#fff;padding:11px 12px;border-radius:6px;line-height:1.45;text-decoration:none}
+.menu-search-results a:hover,.menu-search-results a:focus-visible{background:#304b70;outline:2px solid #ffbb70;outline-offset:-2px}
+.menu-search-results[hidden],.menu-search-results a[hidden],.nav-group[hidden]{display:none!important}
+.finance-main-nav,.finance-sub-nav,.section-main-nav,.section-sub-nav,.people-nav,.inventory-navigation{display:flex;flex-wrap:wrap;white-space:normal;overflow:visible;gap:2px 8px}
+.finance-main-nav a,.finance-sub-nav a,.section-main-nav a,.section-sub-nav a,.people-nav a,.inventory-navigation a{white-space:normal;min-height:44px;display:flex;align-items:center}
+.finance-sub-nav,.section-sub-nav{background:#f2f5f8;border-bottom:1px solid #d9e1ea}
+.section-sub-nav a[aria-current="page"]{font-weight:700}
+@media(max-width:760px){.finance-main-nav,.finance-sub-nav,.section-main-nav,.section-sub-nav,.people-nav,.inventory-navigation{padding-left:16px;padding-right:16px}.finance-main-nav a,.finance-sub-nav a,.section-main-nav a,.section-sub-nav a{padding:10px 8px}.nav-group summary{min-height:48px}}
+.nav-flyout-title{display:none}
+@media(min-width:761px){.sidebar-small .nav-group[open]>.subnav{display:block;position:fixed;left:82px;top:88px;width:260px;max-height:calc(100vh - 104px);overflow-y:auto;z-index:80;background:var(--nav-deep);border:1px solid #476287;border-radius:0 8px 8px 0;box-shadow:10px 10px 25px #10284c40;padding:8px}.sidebar-small .subnav a{display:block;padding:12px 18px;min-height:44px;font-size:14px;white-space:normal}.sidebar-small .subnav>.nav-flyout-title{display:block;padding:12px 18px;color:white;font-size:16px}.sidebar-small .menu-search{display:none}}

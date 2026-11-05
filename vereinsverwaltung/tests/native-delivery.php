@@ -1,0 +1,37 @@
+<?php declare(strict_types=1);
+require dirname(__DIR__).'/native/bootstrap.php';
+use Kulturhus\Native\TestSupport;
+use Kulturhus\Native\Shared\{Access,Db,Identity,SecretBox};
+use Kulturhus\Native\Communication\{Schema,Subscribers,NewsletterGateway,Workspace,Campaigns,ContactPage};
+use Kulturhus\Native\Delivery\{Outbox,MailAccount};
+use Kulturhus\Native\Cms\{Pages,PublishedEvents};
+$db=TestSupport::db();TestSupport::seed($db);Schema::install($db);Kulturhus\Native\Cms\Schema::install($db);
+$n=0;function check(bool $ok,string $label):void{global $n;if(!$ok)throw new RuntimeException($label);++$n;echo "PASS $label\n";}
+$access=new Access($db,'admin');$box=new SecretBox(str_repeat('s',32));$club=$access->club();$identity=new Identity($db,$access);
+$settings=$identity->get();$identity->save(['name'=>'Synthetischer Verein','origin'=>'https://example.invalid','address'=>'Testweg 1'],$settings['version']);
+$mail=new MailAccount($db,$box);$mail->save($access,['host'=>'smtp.example.invalid','port'=>587,'username'=>'synthetic-user','password'=>'synthetic-secret-never-send','from'=>'verein@example.invalid','reply_to'=>'antwort@example.invalid'],0);
+$cipher=Db::run($db,"SELECT ciphertext FROM native_private_settings WHERE club_id=? AND purpose='mail'",[$club])->fetchColumn();check(!str_contains($cipher,'synthetic-secret')&&!str_contains($cipher,'synthetic-user'),'mail credentials encrypted at rest');
+try{$box->open('mail:another-club',$cipher);check(false,'context binding');}catch(DomainException){check(true,'encrypted credentials bound to tenant/purpose');}
+$gateway=new NewsletterGateway($db,$club,$box);$outbox=new Outbox($db,$box);$deliveries=[];
+$gateway->signup('person@example.invalid','Testperson',['events','news'],'192.0.2.1',true);
+$records=$outbox->run(function($club,$payload)use(&$deliveries){$deliveries[]=$payload;return 'synthetic-message-1';});check(count($records)===1&&$records[0]['status']==='sent','anonymous signup queues and delivers exactly one synthetic DOI');
+preg_match('~https://example\.invalid/newsletter/bestaetigen/\?token=([a-f0-9]{64})(?:\s|$)~',$deliveries[0]['text'],$link);$token=$link[1]??'';check(strlen($token)===64,'DOI token carried only in private mail payload');
+check($gateway->redeem($token,'confirm'),'public DOI confirmation needs no operator identity');check(!$gateway->redeem($token,'confirm'),'confirmation replay rejected');
+$before=count($deliveries);$gateway->signup('person@example.invalid','Testperson',['events','news'],'192.0.2.1',true);$outbox->run(function()use(&$deliveries){$deliveries[]=[];return 'unexpected';});check(count($deliveries)===$before,'confirmed signup does not disclose state or send another mail');
+$work=new Workspace($db,$access,'newsletter');$item=$work->save(['title'=>'Synthetische Ausgabe','body'=>'Kultur im Verein.']);$item=$work->approve($item['id'],$item['version']);$campaigns=new Campaigns($db,$access,$box);$jobs=$campaigns->queue($item['id'],gmdate('Y-m-d H:i:s'));
+check(count($jobs)===1,'campaign recipients from confirmed consent only');
+$r=$outbox->run(function($club,$payload)use(&$deliveries){$deliveries[]=$payload;return 'synthetic-campaign';});check($r[0]['status']==='sent'&&isset(end($deliveries)['headers']['List-Unsubscribe-Post']),'campaign includes One-Click unsubscribe headers');
+$message=end($deliveries);preg_match('/token=([a-f0-9]{64})/',$message['headers']['List-Unsubscribe'],$m);check($gateway->redeem($m[1],'unsubscribe'),'public unsubscribe succeeds');check($gateway->redeem($m[1],'unsubscribe'),'unsubscribe idempotent');
+$s=Db::run($db,"SELECT * FROM khn_newsletter_subscribers WHERE club_id=? AND status='unsubscribed'",[$club])->fetch();check($s['name']===''&&!str_contains($s['email'],'person@')&&$s['consent_evidence']==='','withdrawal removes readable recipient data');
+check((int)Db::run($db,'SELECT COUNT(*) FROM native_newsletter_blocks WHERE club_id=?',[$club])->fetchColumn()===1,'withdrawal retains only keyed suppression hash');
+$subscribers=new Subscribers($db,$access);$new=$subscribers->recordWrittenConsent('other@example.invalid','Andere Person',['events','news'],'synthetic signed consent');
+$item2=$work->save(['title'=>'Ausgabe mit Rechteprüfung','body'=>'Nicht nach Widerruf senden.']);$item2=$work->approve($item2['id'],$item2['version']);$campaigns->queue($item2['id'],gmdate('Y-m-d H:i:s'));
+Db::run($db,"DELETE FROM native_grants WHERE actor_id='admin' AND module='newsletter' AND capability='publish'");$calls=0;$r=$outbox->run(function()use(&$calls){$calls++;return 'unexpected';});check($calls===0&&$r[0]['status']==='cancelled','worker rechecks current publication grants');
+Db::run($db,"INSERT INTO native_grants(actor_id,module,capability) VALUES('admin','newsletter','publish')");
+$item3=$work->save(['title'=>'Transporttimeout','body'=>'Unklares Ergebnis nicht wiederholen.']);$item3=$work->approve($item3['id'],$item3['version']);$campaigns->queue($item3['id'],gmdate('Y-m-d H:i:s'));
+$calls=0;$r=$outbox->run(function()use(&$calls){$calls++;throw new RuntimeException('synthetic timeout after acceptance');});check($r[0]['status']==='uncertain','transport uncertainty persisted');$outbox->run(function()use(&$calls){$calls++;return 'duplicate';});check($calls===1,'uncertain attempt never automatically repeated');
+$view=$campaigns->viewLink($item3['id'],true);parse_str(parse_url($view,PHP_URL_QUERY),$query);check(Campaigns::publicView($db,$club,$query['token'])['test'],'test browser view scoped to frozen snapshot');Db::run($db,'UPDATE native_campaign_views SET expires_at=? WHERE token_hash=?',[gmdate('Y-m-d H:i:s',time()-1),hash('sha256',$query['token'])]);check(Campaigns::publicView($db,$club,$query['token'])===null,'expired test preview unavailable');check(Campaigns::publicView($db,'other-club',$query['token'])===null,'browser view tenant isolation');
+$pages=new Pages($db,$access);$page=$pages->save(['title'=>'Öffentlicher Termin','slug'=>'synthetic-event','template'=>'event','body'=>'Termindetails','event_start'=>'2026-10-18T19:00','event_location'=>'Testsaal']);$pages->publish($page['id'],$page['version']);$events=new PublishedEvents($db,$club);$e=$events->between('2026-10-01','2026-11-01');check(count($e)===1&&$e[0]['title']==='Öffentlicher Termin','digests/calendar read published CMS event identity');$latest=$pages->get($page['id']);$pages->save($latest+[], $latest['version']);
+$campaigns->planDigest('month');$digests=Campaigns::runDigests($db,$box,new DateTimeImmutable('2026-10-08'));check(count($digests)===1,'monthly plan prepares one draft from published events');check(Campaigns::runDigests($db,$box,new DateTimeImmutable('2026-10-09'))===[],'monthly preparation idempotent for same period');
+for($i=0;$i<30;$i++)$subscribers->recordWrittenConsent('search'.$i.'@example.invalid','Suchkontakt '.$i,['events'],'synthetic written consent');$p=ContactPage::query($db,$access,'newsletter','Suchkontakt',2,25);check($p['total']===30&&count($p['rows'])===5&&$p['page']===2,'search pagination counts and selects matching contact page');$p=ContactPage::query($db,$access,'newsletter','%',1);check($p['total']===0,'LIKE metacharacters searched literally');
+echo "$n native delivery checks passed; synthetic MySQL and fake transport only.\n";

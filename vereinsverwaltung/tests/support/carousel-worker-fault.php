@@ -1,0 +1,10 @@
+<?php declare(strict_types=1);
+require dirname(__DIR__,2).'/native/bootstrap.php';
+use Kulturhus\Native\TestSupport;
+use Kulturhus\Native\Shared\SecretBox;
+use Kulturhus\Native\Communication\Meta;
+use Kulturhus\Native\Delivery\Outbox;
+if(PHP_SAPI!=='cli'||getenv('KH_NATIVE_CI')!=='1'||(TestSupport::config()['label']??'')!=='native-meta-carousels'||(TestSupport::config()['owner']??'')!=='isolated-native-ci'||!function_exists('posix_kill'))exit(1);
+$input=json_decode(stream_get_contents(STDIN),true,8,JSON_THROW_ON_ERROR);$db=TestSupport::db();$root=dirname(getenv('KH_NATIVE_TEST_CONFIG')).'/runtime-'.TestSupport::config()['database'];$box=SecretBox::fromFile($root.'/private.key');
+$sender=new Meta($db,$box,static function($method){if($method==='POST')posix_kill(getmypid(),9);throw new RuntimeException('Only the owned first-child interruption is allowed.');},$root.'/media');
+(new Outbox($db,$box))->run(static fn($club,$frame,$kind,$job)=>$sender->send($club,$frame,$job),1,['meta'],$input['club']);exit(1);

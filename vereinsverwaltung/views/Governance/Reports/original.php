@@ -1,0 +1,6 @@
+<?php declare(strict_types=1);
+use Kulturhus\Verein\ActivityReportReview;
+$reportOriginalIds=[];foreach([$_GET['report_id']??null,$_POST['report_id']??null]as$originalId)if(is_string($originalId)&&preg_match('/\A[a-f0-9]{32}\z/D',$originalId))$reportOriginalIds[$originalId]=true;
+?>
+<section class="card" data-activity-report-rejected><h1><?=e($reportText('Berichtsangaben prüfen'))?></h1><p role="alert"><?=e($reportText($reportFailure->getMessage()))?></p>
+<?php foreach(ActivityReportReview::KINDS as$originalKind=>$originalLabel):if(!(new ActivityReportReview($db,(string)$_SESSION['actor'],null,$originalKind))->canRead())continue;?><?php foreach(array_keys($reportOriginalIds)as$originalId):?><a class="btn btn-outline theme-secondary" href="<?=e(url(['view'=>'documents','tab'=>'activity-reports','report_kind'=>$originalKind,'report_id'=>$originalId]))?>"><?=e($reportText($originalKind==='tax'?'Gespeicherten Finanzamtsbericht prüfen':'Gespeicherten Versammlungsbericht prüfen'))?></a><?php endforeach?><a class="btn btn-outline theme-secondary" href="<?=e(url(['view'=>'documents','tab'=>'activity-reports','report_kind'=>$originalKind]))?>"><?=e($reportText($originalKind==='tax'?'Finanzamtsberichte öffnen':'Versammlungsberichte öffnen'))?></a><?php endforeach?></section>

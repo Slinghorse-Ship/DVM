@@ -1,0 +1,22 @@
+#workspace .press-recipient-picker{min-width:0;padding:0;margin-block:1rem;border:1px solid var(--line,#d5dcda);border-radius:12px}
+.press-recipient-picker>summary{padding:8px;min-height:44px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;cursor:pointer;overflow-wrap:anywhere}
+.press-recipient-content{padding:8px;min-width:0}
+.press-recipient-modes,.press-recipient-pages{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.press-recipient-search{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:end;margin-block:8px}
+.press-recipient-search label{margin:0;min-width:0}
+#workspace .press-recipient-picker button,#workspace .press-recipient-picker input[type=search],#workspace .press-recipient-option,#workspace .press-recipient-picker>summary{min-height:44px;font-size:max(1rem,16px)}
+#workspace .press-recipient-picker button{padding:8px 12px;overflow-wrap:anywhere}
+#workspace .press-recipient-name,#workspace .press-recipient-contact>summary{font-size:inherit;min-height:44px;display:flex;align-items:center;cursor:pointer;margin:0}
+.press-recipient-contact>summary{justify-content:space-between;gap:8px}
+.press-recipient-contact>summary::after{content:'⌄';flex:none}
+#workspace .press-recipient-contact{margin:0;padding:0;border:0;min-width:0;background:transparent;box-shadow:none}
+.press-recipient-status{margin-block:8px}
+.press-recipient-options{display:grid;gap:8px;margin-block:8px}
+.press-recipient-option{display:flex!important;align-items:flex-start;gap:8px;padding:8px;border:1px solid var(--line,#d5dcda);border-radius:8px;min-height:44px;cursor:pointer;margin:0!important}
+.press-recipient-option input[type=checkbox]{flex:none;width:24px;height:24px;margin:.15rem 0}
+.press-recipient-option>span{display:grid;gap:4px;min-width:0;overflow-wrap:anywhere;line-height:1.3}
+.press-recipient-option small{font-size:max(1rem,16px)}
+.press-recipient-option:has(input:checked){border-color:var(--primary,#175e43);background:var(--surface-alt,#eef7f1)}
+.press-recipient-picker [data-press-error]{overflow-wrap:anywhere}
+@media(max-width:480px){.press-recipient-search{grid-template-columns:minmax(0,1fr)}.press-recipient-pages>span{flex-basis:100%;order:-1}}
+@media(max-width:650px){.compose-paper:has(.press-recipient-picker) .compose-writing{padding:8px}}

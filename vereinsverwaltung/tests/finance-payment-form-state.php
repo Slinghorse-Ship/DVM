@@ -1,0 +1,11 @@
+<?php declare(strict_types=1);
+require __DIR__.'/finance-form-state.php';
+$id=$finance->createEntry($bill,bin2hex(random_bytes(16)));$bank1=$finance->createAccount('Synthetic1','offline','0','2026-01-01');$bank2=$finance->createAccount('Synthetic2','offline','0','2026-01-01');
+function paymentHtml(string $id):string{global $db,$finance;$r=$finance->entry($id);$accountRows=$finance->accounts();$approval=['status'=>'approved'];ob_start();require __DIR__.'/../views/Finance/Accounting/entry-payments.php';return ob_get_clean();}
+$_GET=['account'=>$bank1];$_POST=['action'=>'record-payment','id'=>$id,'version'=>'0','account'=>$bank2,'paid_on'=>'2026-08-09'];$html=paymentHtml($id);check(str_contains($html,'value="'.$bank2.'" selected'),'failed payment uses posted account before GET default');check(str_contains($html,'value="2026-08-09"'),'failed payment date retained');check(str_contains($html,'name="version" value="0"'),'failed payment stale version not silently refreshed');
+$finance->recordPayment($id,1,$bank1,'2026-09-01');$_POST=['action'=>'reverse-payment','id'=>$id,'version'=>'1','reversed_on'=>'2026-08-03','reason'=>'Synthetic "quoted" correction'];$html=paymentHtml($id);check(str_contains($html,'value="2026-08-03"')&&str_contains($html,'Synthetic &quot;quoted&quot; correction'),'failed reversal date and escaped reason retained');check(str_contains($html,'name="version" value="1"'),'failed reversal version retained');
+echo "$checks finance payment form checks passed\n";
+
+$openId=$finance->createEntry($bill,bin2hex(random_bytes(16)));
+$tx=$finance->createTransaction(['account'=>$bank1,'booked_on'=>'2026-09-01','direction'=>'expense','amount'=>'80','description'=>'Synthetic open payment'],bin2hex(random_bytes(16)));
+$_GET=[];$_POST=['action'=>'allocate','transaction_id'=>$tx,'entry_id'=>$openId,'transaction_version'=>'0','entry_version'=>'0','amount'=>'12,34','request_key'=>'original-key'];$html=paymentHtml($openId);check(str_contains($html,'value="12,34"')&&str_contains($html,'name="transaction_version" value="0"')&&str_contains($html,'name="entry_version" value="0"')&&str_contains($html,'value="original-key"'),'failed matching retains partial amount, conflict versions and request identity');

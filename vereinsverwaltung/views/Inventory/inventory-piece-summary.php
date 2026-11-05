@@ -1,0 +1,4 @@
+<?php declare(strict_types=1);$ct=$ivItemText; ?>
+<details id="inventory-piece-read-summary" class="iv-editor-panel iv-piece-read-summary" data-inventory-panel="pieces"><summary><span><strong><?= e($ct('{count} Stück · Seriennummern und dokumentierte Einzelpreise',['count'=>(string)count($item['purchase_units'])])) ?></strong></span></summary><div class="iv-editor-body">
+<?php foreach($item['purchase_units']as$index=>$piece): ?><p><strong><?= e($ct('Stück {number}',['number'=>(string)($index+1)])) ?></strong><?php if($piece['serial_number']!==''): ?> · <?= e($ct('Seriennummer (falls vorhanden)')) ?>: <?= e($piece['serial_number']) ?><?php endif ?><?php if($canFinance): ?> · <?= $piece['unit_value_cents']===null?e($ct('Preis unbekannt')):euro((int)$piece['unit_value_cents']) ?><?php if($piece['value_note']!==''): ?><small><?= e($piece['value_note']) ?></small><?php endif;endif ?></p><?php endforeach ?>
+</div></details>

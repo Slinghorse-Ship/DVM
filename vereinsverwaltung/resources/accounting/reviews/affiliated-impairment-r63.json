@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "revision": 63,
+  "production_authorized": false,
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "affiliated-impairment-r63-72070@1",
+          "group": "expense",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.amortFinanc.financialsExcept.participCorp.domesticCorp",
+            "is.netIncome.regular.fin.netParticipation.amortFinanc.financialsExcept.participCorp.foreignCorp",
+            "is.netIncome.regular.fin.netParticipation.amortFinanc.financialsExcept.receivCorp25pt.domestic",
+            "is.netIncome.regular.fin.netParticipation.amortFinanc.financialsExcept.receivCorp25pt.foreign",
+            "is.netIncome.regular.fin.netParticipation.amortFinanc.financialsExcept.other"
+          ],
+          "sources": [
+            {
+              "code": "72070",
+              "semantic": {
+                "name": "Abschreibungen auf Finanzanlagen - verbundene Unternehmen",
+                "function": "",
+                "range_start": "72070",
+                "range_end": "72070",
+                "parent": null
+              },
+              "signature": "d0d2515157d6b2a3da7d25859e9cc0e7687977d3e8b425b2e6909e4b914dae53"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "affiliated-impairment-r63-72070@1",
+          "group": "expense",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.amortFinanc.financialsExcept.participCorp.domesticCorp",
+            "is.netIncome.regular.fin.netParticipation.amortFinanc.financialsExcept.participCorp.foreignCorp",
+            "is.netIncome.regular.fin.netParticipation.amortFinanc.financialsExcept.receivCorp25pt.domestic",
+            "is.netIncome.regular.fin.netParticipation.amortFinanc.financialsExcept.receivCorp25pt.foreign",
+            "is.netIncome.regular.fin.netParticipation.amortFinanc.financialsExcept.other"
+          ],
+          "sources": [
+            {
+              "code": "72070",
+              "semantic": {
+                "name": "Abschreibungen auf Finanzanlagen - verbundene Unternehmen",
+                "function": "",
+                "range_start": "72070",
+                "range_end": "72070",
+                "parent": null
+              },
+              "signature": "d0d2515157d6b2a3da7d25859e9cc0e7687977d3e8b425b2e6909e4b914dae53"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+<?php declare(strict_types=1);
+require __DIR__.'/balance-period-filing-calendar-workflow.php';
+use Kulturhus\Verein\{BalanceTaxFiling as WF,BalanceFilingRevision,SettingsSchema,Tests\MySqlFixture};
+$base=$n;$n=0;$before=[];
+foreach(['balance_years','balance_entries','balance_sources','balance_period_events'] as $table)$before[$table]=MySqlFixture::rows($db,$table);
+$wp=$profile;unset($wp['whole_business_name'],$wp['whole_book_standard']);$wp['tax_privileged']=false;$wp['business_name']='Synthetic calendar whole';
+$wr=['complete'=>true,'opening_adjustments'=>[],'current_adjustments'=>[
+    ['id'=>'old-value','reason'=>'Synthetic calendar value','lines'=>[['account'=>'receivables','debit_cents'=>501,'credit_cents'=>0,'sphere'=>''],['account'=>'expense','debit_cents'=>0,'credit_cents'=>501,'sphere'=>'4']]],
+    ['id'=>'old-capital','reason'=>'Synthetic calendar capital','lines'=>[['account'=>'cash','debit_cents'=>100,'credit_cents'=>0,'sphere'=>''],['account'=>'equity','debit_cents'=>0,'credit_cents'=>100,'sphere'=>'']]]],
+    'asset_tax_plans'=>[],'capital_movements'=>['tax:old-capital:1'=>['kind'=>'contribution','reason'=>'Synthetic confirmed contribution']]];
+$oldId=$filing->create(2025,'complete_club_ledger');$filing->save($oldId,1,$wp,$mapping,$wr);
+denied(fn()=>$filing->create(2025,'separate_business_ledger'),'calendar whole does not disable the separate-business clearing guard');
+check($filing->sourceReport($filings->get($oldId))['calculation']===$l->report(2025)['calculation'],'whole retains all original amounts without partial clearing projection');
+check($filings->validate($oldId,2)['valid'],'calendar whole generates reviewed actual XML');$filing->approve($oldId,3,true);
+check($filings->send($oldId,4,'dummy','123456','SEND-TEST',true,true)['state']==='sent_test','synthetic calendar receipt persisted');
+$original=$filings->get($oldId);$newId=$filing->createPeriod($id,'complete_club_ledger');$period=$filings->get($newId)['form_data']['balance_preparation']['period'];
+require_once __DIR__.'/../src/Web/View.php';
+$renderWhole=static function(string $fid)use($db):string{$_SESSION=['actor'=>'board','csrf'=>str_repeat('a',64)];$_GET=['tax_year'=>'2026','filing'=>$fid];$_POST=[];$_SERVER['REQUEST_METHOD']='GET';ob_start();require __DIR__.'/../views/Finance/Tax/tax-filings.php';return ob_get_clean();};
+$html=$renderWhole($newId);check(str_contains($html,'Vorherigen Abschluss übernehmen')&&str_contains($html,'01.01.2025 – 31.12.2025')&&!str_contains($html,'Test jetzt senden'),'calendar predecessor shown before dated calculation and sending');
+check(array_column($filing->carryForwardChoices(2026,$period),'id')===[$oldId],'confirmed calendar whole is offered for adjacent dated period');
+denied(fn()=>$filing->carryForward($newId,1,$fid,true),'subsidiary receipt cannot become whole-club carry');
+$filing->carryForward($newId,1,$oldId,true);$bound=$filings->get($newId)['form_data']['balance_preparation'];
+check($bound['carry_forward']['period_values']['values']===$filing->assertCurrent($original),'exact calendar values retained without a replacement hash');
+check(!$bound['review']['complete']&&$bound['profile']['company']===$original['form_data']['balance_preparation']['profile']['company'],'carry copies identity and requires a fresh dated review');
+$fresh=$bound['review'];unset($fresh['year'],$fresh['journal_sha256'],$fresh['period']);$fresh['complete']=true;$filing->save($newId,2,$wp,$mapping,$fresh);
+$values=$filing->assertCurrent($filings->get($newId));
+check($values['accounts']['receivables']['tax_opening_cents']-$values['accounts']['receivables']['book_opening_cents']===501&&$values['capital_comparison']['opening_adjustment_cents']===601,'calendar profit and contributions enter dated opening once');
+check($values['tax']['annual_result_cents']===0&&$values['capital_comparison']['contributions_cents']===0,'calendar differences are not repeated as dated income or capital contributions');
+check($filings->validate($newId,3)['valid'],'calendar whole to dated whole generates actual persisted XML');
+$xml=$filings->get($newId)['xml_data'];check(str_contains($xml,'2025-12-31')&&str_contains($xml,'2026-06-30'),'XML retains original calendar and actual short period');
+$html=$renderWhole($newId);check(str_contains($html,'01.01.2026 – 30.06.2026')&&str_contains($html,'Gesamter Verein · nicht steuerbegünstigt'),'rendered dated whole scope and dates remain explicit');
+file_put_contents(__DIR__.'/balance-period-workflow-whole-calendar.xml',$xml);
+$filing->approve($newId,4,true);check($filings->send($newId,5,'dummy','123456','SEND-TEST',true,true)['state']==='sent_test','dated whole calendar bridge simulated receipt is bound');
+$sent=$filings->get($newId);$oldEvents=$filings->attempts($oldId);
+// A later confirmed correction must invalidate old carry for NEW sends, not rewrite history.
+$replacement=$filing->create(2025,'complete_club_ledger');$changed=$wr;
+$changed['current_adjustments'][0]['lines'][0]['debit_cents']=700;$changed['current_adjustments'][0]['lines'][1]['credit_cents']=700;
+$filing->save($replacement,1,$wp,$mapping,$changed);$filing->revision($replacement,2,['status'=>'B','reason'=>'Synthetic corrected calendar value','legal_basis'=>'Synthetic checked correction','source_id'=>$oldId,'confirmed'=>true]);
+check($filings->validate($replacement,3)['valid'],'calendar correction remains separate from dated obligation');$filing->approve($replacement,4,true);
+$filings->send($replacement,5,'dummy','123456','SEND-TEST',true,true);
+check(array_column($filing->carryForwardChoices(2026,$period),'id')===[$replacement],'superseded calendar receipt no longer selectable');
+$corrected=$filing->createPeriod($id,'complete_club_ledger');denied(fn()=>$filing->carryForward($corrected,1,$oldId,true),'superseded calendar cannot seed a new dated draft');
+$filing->carryForward($corrected,1,$replacement,true);$next=$filings->get($corrected)['form_data']['balance_preparation']['review'];unset($next['year'],$next['journal_sha256'],$next['period']);$next['complete']=true;
+$filing->save($corrected,2,$wp,$mapping,$next);$filing->revision($corrected,3,['status'=>'B','reason'=>'Synthetic corrected calendar carry','legal_basis'=>'Synthetic confirmed predecessor correction','source_id'=>$newId,'confirmed'=>true]);
+check($filings->validate($corrected,4)['valid'],'dependent dated correction uses last confirmed calendar values');
+$v=$filing->assertCurrent($filings->get($corrected));check($v['capital_comparison']['opening_adjustment_cents']===800&&$v['tax']['annual_result_cents']===0,'corrected prior amounts remain opening not current income');
+file_put_contents(__DIR__.'/balance-period-workflow-whole-calendar-correction.xml',$filings->get($corrected)['xml_data']);
+check($filings->get($newId)===$sent&&$filings->get($oldId)===$original&&$filings->attempts($oldId)===$oldEvents,'submitted original and dated XML approvals receipts unchanged');
+check($filing->sourceReport($sent,true)['period']===$period,'historical dated source remains readable after calendar correction');
+foreach($before as $table=>$rows)check(MySqlFixture::rows($db,$table)===$rows,'filing calendar bridge preserves '.$table);
+check(MySqlFixture::foreignKeyErrors($db)===[],'calendar whole bridge keeps foreign keys intact');
+echo "$n whole calendar workflow checks passed plus $base existing checks; simulated transport only\n";

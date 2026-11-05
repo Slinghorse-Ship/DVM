@@ -1,0 +1,22 @@
+.event-vouchers .voucher-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1rem;margin-top:1rem}
+.event-vouchers .voucher{border:2px solid #b8c6d7;border-radius:12px;padding:1.25rem;break-inside:avoid}
+.event-vouchers .voucher-balance{font-size:1.5rem;font-weight:700;color:#163859}
+.event-vouchers .voucher-code{font-family:monospace;overflow-wrap:anywhere;font-size:1rem}
+.event-vouchers .voucher-qr{display:block;width:222px;height:222px;max-width:100%;object-fit:contain;background:white}
+.event-vouchers .voucher-event{font-size:1.1rem;line-height:1.45;border-bottom:1px solid #b8c6d7;padding-bottom:.8rem}
+.event-vouchers .voucher-validity{font-size:.95rem;font-weight:600}
+.event-vouchers .voucher-used{background:#f1f3f5}
+.event-vouchers [data-voucher-camera] video{width:100%;max-width:600px;display:block;margin-top:1rem;border-radius:8px}
+.event-vouchers [hidden]{display:none!important}
+.event-vouchers input:not([type=checkbox]),.event-vouchers select{width:100%;box-sizing:border-box;min-height:48px}
+.event-vouchers button,.event-vouchers .button{min-height:48px;margin-top:.65rem;white-space:normal}
+.event-vouchers label{display:block;margin:.65rem 0}
+.event-vouchers input[type=checkbox]{width:1.3rem;height:1.3rem;vertical-align:middle}
+.event-vouchers fieldset{border:1px solid #b8c6d7;border-radius:8px;margin:1rem 0;padding:1rem;min-width:0}
+.event-vouchers .voucher-members{max-height:320px;overflow:auto;border:1px solid #d1d9e2;padding:.5rem}
+.event-vouchers .voucher-members label{padding:.5rem;margin:0}
+.event-vouchers .voucher-members label[hidden]{display:none}
+.event-vouchers summary{cursor:pointer;min-height:44px;font-size:1.15rem;font-weight:600;padding:.5rem 0}
+.event-vouchers .voucher-mail-preview{padding:1.5rem;background:#fffaf0;border:1px solid #d7cdbb;line-height:1.6;margin:1rem 0;overflow-wrap:anywhere}
+.event-vouchers .voucher-screen article+article{border-top:1px solid #b8c6d7;margin-top:1rem;padding-top:1rem}
+@media print{.sidebar,.topbar,.page-heading,.voucher-screen,.module-tabs,.notice,.error,.voucher-used{display:none!important}.app{margin:0!important}.event-vouchers{padding:0!important}.event-vouchers .card{box-shadow:none;border:0}.event-vouchers .voucher-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.event-vouchers .voucher{border:2px dashed #333;border-radius:0;break-inside:avoid}.event-vouchers .voucher-qr{width:40mm;height:40mm}.event-vouchers .voucher-person{break-inside:auto}}

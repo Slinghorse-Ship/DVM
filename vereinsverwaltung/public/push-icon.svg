@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Kulturhus Jaderberg</title>
+  <g transform="rotate(-7 256 256)">
+    <path
+      fill="#17221c"
+      d="M137 82H344c66 0 100 39 94 99l-17 180c-5 58-38 88-96 84l-188-14c-51-4-77-34-75-86l8-184c2-52 28-79 67-79Z"
+      transform="translate(18 18)"
+    />
+    <path
+      fill="#e9a23b"
+      stroke="#17221c"
+      stroke-width="20"
+      stroke-linejoin="round"
+      d="M137 64H344c66 0 100 39 94 99l-17 180c-5 58-38 88-96 84l-188-14c-51-4-77-34-75-86l8-184c2-52 28-79 67-79Z"
+    />
+    <text
+      x="254"
+      y="357"
+      fill="#17221c"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="292"
+      font-weight="700"
+      text-anchor="middle"
+    >K</text>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+<?php declare(strict_types=1);
+if(PHP_SAPI!=='cli'||getenv('KH_NATIVE_CI')!=='1')throw new RuntimeException('Only explicitly owned synthetic recovery fault process.');
+require dirname(__DIR__,2).'/native/bootstrap.php';
+
+use Kulturhus\Native\{TestSupport};use Kulturhus\Native\Shared\Access;use Kulturhus\Native\Cms\MediaStorageRecovery;
+$config=TestSupport::config();if(($config['owner']??'')!=='isolated-native-ci'||($config['label']??'')!=='native-media-storage-recovery')throw new RuntimeException('Only own recovery suite configuration.');$root=dirname(getenv('KH_NATIVE_TEST_CONFIG')).'/runtime-'.$config['database'];$payload=json_decode(file_get_contents($root.'/resume-probe.json'),true,16,JSON_THROW_ON_ERROR);$db=TestSupport::db();
+
+$club=(new Access($db,'own-recovery-admin'))->require('website','manage')['club_id'];$expected=$root.'/media/'.hash('sha256',$club).'/'.substr(hash('sha256','native-media-recovery:'.$club.':'.$payload['source'].':'.$payload['fingerprint']),0,32);if(($payload['target']??null)!==$expected||!preg_match('/\A[a-f0-9]{32}\z/D',$payload['source']??'')||!preg_match('/\A[a-f0-9]{64}\z/D',$payload['fingerprint']??''))throw new RuntimeException('Only own content-bound stage path.');
+if(($payload['mode']??'')==='partial'){
+ $club=(new Access($db,'own-recovery-admin'))->require('website','manage')['club_id'];$lease=\Kulturhus\Native\Cms\MediaRecoveryLease::acquire($root.'/media',$club,$payload['source'],$payload['fingerprint'],basename($payload['target']),$payload['target']);mkdir($payload['target'],0700);$old=umask(0077);try{$empty=fopen($payload['target'].'/original.png','xb');fclose($empty);$from=fopen($root.'/media/'.hash('sha256',$club).'/'.$payload['source'].'/large.png','rb');$to=fopen($payload['target'].'/large.png','xb');stream_copy_to_stream($from,$to,17);fflush($to);if(function_exists('fsync'))fsync($to);fclose($from);fclose($to);}finally{umask($old);}file_put_contents($root.'/resume-stage-ready','Actual empty and partial source prefix before original row commit');usleep(30000000);exit(2);
+}
+$access=new class($db,$root,$payload['target'])extends Access{public function __construct(PDO $db,private string $root,private string $target){parent::__construct($db,'own-recovery-admin');}public function require(string $module,string $capability):array{if(is_file($this->target.'/thumb.png')){file_put_contents($this->root.'/resume-stage-ready','Actual four copied files before first row commit');usleep(30000000);}return parent::require($module,$capability);}};
+(new MediaStorageRecovery($db,$access,$root.'/media'))->recover($payload['source'],$payload['fingerprint']);

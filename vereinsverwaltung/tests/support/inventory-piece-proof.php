@@ -1,0 +1,7 @@
+<?php declare(strict_types=1);
+require_once __DIR__.'/original-database-hash.php';
+function ownPieceProof():void
+{
+ $cfg=\Kulturhus\Native\TestSupport::config();$db=\Kulturhus\Native\TestSupport::db();if(($cfg['owner']??'')!=='isolated-native-ci'||($cfg['label']??'')!=='native-inventory-piece-interface'||!preg_match('/\Akh_native_[a-f0-9]{24}\z/D',$cfg['database']??'')||$db->query('SELECT DATABASE()')->fetchColumn()!==$cfg['database'])throw new RuntimeException('Owned disposable piece proof required.');
+ $tables=array_values(array_diff($db->query('SHOW TABLES')->fetchAll(PDO::FETCH_COLUMN),['native_auth_sessions','native_auth_limits','native_language_preferences']));$whole=ownOriginalDatabaseHash($db,$tables);$items=$db->query("SELECT * FROM inventory_items WHERE club_id='own-list-club' ORDER BY id")->fetchAll(PDO::FETCH_ASSOC);$stocks=$db->query("SELECT * FROM inventory_stock WHERE club_id='own-list-club' ORDER BY item_id,location_id")->fetchAll(PDO::FETCH_ASSOC);$pieces=$db->query("SELECT * FROM inventory_purchase_units WHERE club_id='own-list-club' ORDER BY sequence")->fetchAll(PDO::FETCH_ASSOC);$balances=array_column((new \Kulturhus\Verein\Finance($db,'own-list-admin'))->accounts(),'balance_cents','id');header('Content-Type: application/json');header('Cache-Control: private, no-store');echo json_encode(compact('whole','items','stocks','pieces','balances'),JSON_THROW_ON_ERROR);
+}

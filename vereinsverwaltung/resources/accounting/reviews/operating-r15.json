@@ -1,0 +1,2418 @@
+{
+  "schema": 1,
+  "revision": 15,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "operating-r15-001@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.subsidies.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.subsidies.other"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "48280",
+              "semantic": {
+                "name": "Zuschüsse von Verbänden und Behörden",
+                "function": "",
+                "range_start": "48280",
+                "range_end": "48280",
+                "parent": null
+              },
+              "signature": "dd854d102504f91d4caff080ada642141f5f10d3172d19f7d97f5f4081f66e69"
+            },
+            {
+              "code": "48290",
+              "semantic": {
+                "name": "Sonstige Zuschüsse",
+                "function": "",
+                "range_start": "48290",
+                "range_end": "48290",
+                "parent": null
+              },
+              "signature": "b26c97747e56fc87c5a65c58d75b6de3cd75c791d22cd50149bdfb00b17017e4"
+            },
+            {
+              "code": "49750",
+              "semantic": {
+                "name": "Investitionszuschüsse (steuerpflichtig)",
+                "function": "",
+                "range_start": "49750",
+                "range_end": "49750",
+                "parent": null
+              },
+              "signature": "44b8f10e7a140d48dfee02d0876daacb7b649f36355207337d06e70603bb9ef1"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-002@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.subsidies.taxExempt",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.subsidies.taxExempt"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "49800",
+              "semantic": {
+                "name": "Investitionszulagen (steuerfrei)",
+                "function": "",
+                "range_start": "49800",
+                "range_end": "49800",
+                "parent": null
+              },
+              "signature": "17249376f636c8a17457a93fd4af641815751b382263a66c360eef34d4fcb9e8"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-003@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.miscellaneous",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.miscellaneous"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "48340",
+              "semantic": {
+                "name": "Sonstige Erträge betrieblich und regelmäßig 16 % USt",
+                "function": "AM",
+                "range_start": "48340",
+                "range_end": "48349",
+                "parent": null
+              },
+              "signature": "339a96c9786eac758afcdb9e86e77d80b0722623b56a5fccc4e160b77d7e5dc9"
+            },
+            {
+              "code": "48350",
+              "semantic": {
+                "name": "Sonstige Erträge betrieblich und regelmäßig",
+                "function": "",
+                "range_start": "48350",
+                "range_end": "48350",
+                "parent": null
+              },
+              "signature": "a3165c7badd797574f8451e2ed93d4a98709305f4678e9688b5fd5cdcbe87146"
+            },
+            {
+              "code": "48360",
+              "semantic": {
+                "name": "Sonstige Erträge betrieblich und regelmäßig 19 % USt",
+                "function": "AM",
+                "range_start": "48360",
+                "range_end": "48369",
+                "parent": null
+              },
+              "signature": "3ee749f9f3c471977f6df6d42fc1ceb69e2e506e0eb6873a3bad1a190380b73a"
+            },
+            {
+              "code": "48380",
+              "semantic": {
+                "name": "Erstattete Vorsteuer anderer Länder",
+                "function": "",
+                "range_start": "48380",
+                "range_end": "48380",
+                "parent": null
+              },
+              "signature": "a685c98bd05c0987808dffdf3777b7d419a8e8b9bf5e6ab5e5cb09046f6fff58"
+            },
+            {
+              "code": "48390",
+              "semantic": {
+                "name": "Sonstige Erträge unregelmäßig",
+                "function": "",
+                "range_start": "48390",
+                "range_end": "48390",
+                "parent": null
+              },
+              "signature": "f163bb2f782cf50ab11d6db5a70d2eb93bc0b64a455ec284bcc8ab23f2f2ce9e"
+            },
+            {
+              "code": "48410",
+              "semantic": {
+                "name": "Sonstige Erträge betrieblich und regelmäßig, steuerfrei § 4 Nr. 8 ff. UStG",
+                "function": "AM",
+                "range_start": "48410",
+                "range_end": "48419",
+                "parent": null
+              },
+              "signature": "e5bb44830b82f46429678f7dc602f0e4c23551562bb4141b8670ad18ca790a5a"
+            },
+            {
+              "code": "48420",
+              "semantic": {
+                "name": "Sonstige betriebliche Erträge, steuerfrei z. B. § 4 Nr. 2 bis 7 UStG",
+                "function": "AM",
+                "range_start": "48420",
+                "range_end": "48429",
+                "parent": null
+              },
+              "signature": "ada9e5520f97b467e2ab7009bfabd6ad6c50c29222ac3fff693e6e9531a04c83"
+            },
+            {
+              "code": "49600",
+              "semantic": {
+                "name": "Periodenfremde Erträge",
+                "function": "",
+                "range_start": "49600",
+                "range_end": "49600",
+                "parent": null
+              },
+              "signature": "a1170ba97ba641db50c345131e280e8482ff4c06f39d61af6c754c2b4a3eae03"
+            },
+            {
+              "code": "49720",
+              "semantic": {
+                "name": "Erstattungen Aufwendungsausgleichsgesetz",
+                "function": "",
+                "range_start": "49720",
+                "range_end": "49720",
+                "parent": null
+              },
+              "signature": "a6e61dc2f5ed797a045a7f8105ae274e009d0571c21508a6711fc6f1591e5241"
+            },
+            {
+              "code": "49890",
+              "semantic": {
+                "name": "Kostenerstattungen, Rückvergütungen und Gutschriften für frühere Jahre",
+                "function": "",
+                "range_start": "49890",
+                "range_end": "49890",
+                "parent": null
+              },
+              "signature": "274b64df435af6ec239afb62394f927bea5c62ff1845dba59901f627f8268965"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-004@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.currGains",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.currGains"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "48400",
+              "semantic": {
+                "name": "Erträge aus der Währungsumrechnung",
+                "function": "",
+                "range_start": "48400",
+                "range_end": "48400",
+                "parent": null
+              },
+              "signature": "872c19936fb5f1884d6bc15a5e751b371f78f24992bf8291d994021c2d74d272"
+            },
+            {
+              "code": "48470",
+              "semantic": {
+                "name": "Erträge aus der Währungsumrechnung (nicht § 256a HGB)",
+                "function": "",
+                "range_start": "48470",
+                "range_end": "48470",
+                "parent": null
+              },
+              "signature": "1c5727845563ba0a111bdb2f2317e432a6de25cae99b73516972b4380df1a0d7"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-005@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.releaseLossProv.globalValuation",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releaseLossProv.globalValuation"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "49200",
+              "semantic": {
+                "name": "Erträge aus der Herabsetzung der Pauschalwertberichtigung auf Forderungen",
+                "function": "",
+                "range_start": "49200",
+                "range_end": "49200",
+                "parent": null
+              },
+              "signature": "ff36dfa0d0ad0e49b5537616d13506d6a1c905280c53e4d5b1cd66f1bf7d90cd"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-006@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.releaseLossProv.specificValuation",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releaseLossProv.specificValuation"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "49230",
+              "semantic": {
+                "name": "Erträge aus der Herabsetzung der Einzelwertberichtigung auf Forderungen",
+                "function": "",
+                "range_start": "49230",
+                "range_end": "49230",
+                "parent": null
+              },
+              "signature": "b8e514cfbf9278546fb72a15ee85b0ee5cad1b8f4f8e5ec3accc7aa6302e94d1"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-007@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.recoveryWriteoffs",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.recoveryWriteoffs"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "49250",
+              "semantic": {
+                "name": "Erträge aus abgeschriebenen Forderungen",
+                "function": "",
+                "range_start": "49250",
+                "range_end": "49250",
+                "parent": null
+              },
+              "signature": "cecb1f6b935c76f21651841a20692e66335996f2fa2304948ef7c54ebfbd389b"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-008@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.releaseProv",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releaseProv"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "49300",
+              "semantic": {
+                "name": "Erträge aus der Auflösung von Rückstellungen",
+                "function": "",
+                "range_start": "49300",
+                "range_end": "49300",
+                "parent": null
+              },
+              "signature": "f84202764533b7d27270247093a6ba6474178a428e81394342a1a59f7a097a2f"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-009@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.releasLiab",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasLiab"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "49320",
+              "semantic": {
+                "name": "Erträge aus der Herabsetzung von Verbindlichkeiten",
+                "function": "",
+                "range_start": "49320",
+                "range_end": "49320",
+                "parent": null
+              },
+              "signature": "782569ac7f7ab58cdf119937558fc6b51fbc5413dca24697010629a460e7c8b6"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-010@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.insuranceRefunds",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.insuranceRefunds"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "49700",
+              "semantic": {
+                "name": "Versicherungsentschädigungen und Schadenersatzleistungen",
+                "function": "",
+                "range_start": "49700",
+                "range_end": "49700",
+                "parent": null
+              },
+              "signature": "b0da1edb87561a25d065e1cbce833ca68b66eb03b11878bda737283648862cf4"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-011@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.freight",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.freight"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "63030",
+              "semantic": {
+                "name": "Transportkosten",
+                "function": "",
+                "range_start": "63030",
+                "range_end": "63030",
+                "parent": null
+              },
+              "signature": "69c150b96bddc545bb238856a07ac629098f1935b99bfd1b0d7d1c25bf2b5ee4"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-012@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherTaxes.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherTaxes.other"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "63400",
+              "semantic": {
+                "name": "Abgaben für betrieblich genutzten Grundbesitz",
+                "function": "",
+                "range_start": "63400",
+                "range_end": "63400",
+                "parent": null
+              },
+              "signature": "0beda17980917e37c7a57dda1860c1352df4a55db7ac859a634f5c1a415fe141"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-013@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.vehicles",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.vehicles"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "65000",
+              "semantic": {
+                "name": "Fahrzeugkosten",
+                "function": "",
+                "range_start": "65000",
+                "range_end": "65000",
+                "parent": null
+              },
+              "signature": "e58829e9c18fffec520c093b57e4f4fc1f00ebd2045e1b503c5e1eaad0214245"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-014@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.gifts.deductible",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.gifts.deductible"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "66100",
+              "semantic": {
+                "name": "Geschenke abzugsfähig ohne § 37b EStG",
+                "function": "",
+                "range_start": "66100",
+                "range_end": "66100",
+                "parent": null
+              },
+              "signature": "8495ed836f559bcd2c99b371ab024bea0b84aa74174fc2251229ee23558ab119"
+            },
+            {
+              "code": "66110",
+              "semantic": {
+                "name": "Geschenke abzugsfähig mit § 37b EStG",
+                "function": "",
+                "range_start": "66110",
+                "range_end": "66110",
+                "parent": null
+              },
+              "signature": "c73aab55c55caef0c810cfa3b91c9dddfb50b7304e2e513642fc8e48eede591e"
+            },
+            {
+              "code": "66120",
+              "semantic": {
+                "name": "Pauschale Steuer für Geschenke und Zuwendungen abzugsfähig",
+                "function": "",
+                "range_start": "66120",
+                "range_end": "66120",
+                "parent": null
+              },
+              "signature": "6a481acc461ea4237ade79c25599558056a234b4ae7a5d0d60f58856b5f9d386"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-015@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.gifts.nondeductible",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.gifts.nondeductible"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "66200",
+              "semantic": {
+                "name": "Geschenke nicht abzugsfähig ohne § 37b EStG",
+                "function": "",
+                "range_start": "66200",
+                "range_end": "66200",
+                "parent": null
+              },
+              "signature": "942e086e94875ee0ef1cc811a3d8bff249ab4df494bbeb94140f48dc096c3e10"
+            },
+            {
+              "code": "66210",
+              "semantic": {
+                "name": "Geschenke nicht abzugsfähig mit § 37b EStG",
+                "function": "",
+                "range_start": "66210",
+                "range_end": "66210",
+                "parent": null
+              },
+              "signature": "e735b30bf104a394d5e2424d36a32bb6e8ba29706653a3b4c3a2fb2296385da9"
+            },
+            {
+              "code": "66220",
+              "semantic": {
+                "name": "Pauschale Steuer für Geschenke und Zuwendungen nicht abzugsfähig",
+                "function": "",
+                "range_start": "66220",
+                "range_end": "66220",
+                "parent": null
+              },
+              "signature": "df92726f1f5c470ddb11c7afaa63eaa139705a5a4d4b2f306160c6d67290a1f9"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-016@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.marketing",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.marketing"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "66250",
+              "semantic": {
+                "name": "Geschenke ausschließlich betrieblich genutzt",
+                "function": "",
+                "range_start": "66250",
+                "range_end": "66250",
+                "parent": null
+              },
+              "signature": "60acd1f5ec01393c4999472f3a34d1b8fd80d8bc89a445616da8b4cae738571b"
+            },
+            {
+              "code": "66290",
+              "semantic": {
+                "name": "Zugaben mit § 37b EStG",
+                "function": "",
+                "range_start": "66290",
+                "range_end": "66290",
+                "parent": null
+              },
+              "signature": "067d2558956a28a501a4ca3f30cd5b9ffbd62f411849a264ceef313aa073fba2"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-017@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.miscellaneous.deductible",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.miscellaneous.deductible"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "64360",
+              "semantic": {
+                "name": "Steuerlich abzugsfähige Verspätungszuschläge und Zwangsgelder",
+                "function": "",
+                "range_start": "64360",
+                "range_end": "64360",
+                "parent": null
+              },
+              "signature": "8453c34a941d02dfa525715427344088c4303994dbab43b5ca557fdfd3ace6a8"
+            },
+            {
+              "code": "66410",
+              "semantic": {
+                "name": "Sonstige eingeschränkt abziehbare Betriebsausgaben (abziehbarer Anteil)",
+                "function": "",
+                "range_start": "66410",
+                "range_end": "66410",
+                "parent": null
+              },
+              "signature": "72f5e2ec8e405326b65d5f7fd535b08c6c3395551a4c26b4c18405dbef8466b0"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-018@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.miscellaneous.nonDeductible",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.miscellaneous.nonDeductible"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "64370",
+              "semantic": {
+                "name": "Steuerlich nicht abzugsfähige Verspätungszuschläge und Zwangsgelder",
+                "function": "",
+                "range_start": "64370",
+                "range_end": "64370",
+                "parent": null
+              },
+              "signature": "8c16160b3db29e73b87e9dfa3a5998509ccc27254bfde92792642dd9f7894a2b"
+            },
+            {
+              "code": "66420",
+              "semantic": {
+                "name": "Sonstige eingeschränkt abziehbare Betriebsausgaben (nicht abziehbarer Anteil)",
+                "function": "",
+                "range_start": "66420",
+                "range_end": "66420",
+                "parent": null
+              },
+              "signature": "8a88696f1a6ba2a91e70a3f1438a665beaf21b4505fd9ff31fb289ed7e2c3598"
+            },
+            {
+              "code": "66450",
+              "semantic": {
+                "name": "Nicht abzugsfähige Betriebsausgaben aus Werbe- und Repräsentationskosten",
+                "function": "",
+                "range_start": "66450",
+                "range_end": "66450",
+                "parent": null
+              },
+              "signature": "e4e282f20cdda2288e3cc32d016bcfe2da799677045e1f97b730809c5f163b61"
+            },
+            {
+              "code": "66490",
+              "semantic": {
+                "name": "Nicht abzugsfähige Ausgaben",
+                "function": "",
+                "range_start": "66490",
+                "range_end": "66490",
+                "parent": null
+              },
+              "signature": "901def22e2b9efff950b55422f2ca42f7229abb15148ff6ca7aecefeef3b627b"
+            },
+            {
+              "code": "69680",
+              "semantic": {
+                "name": "Sonstige nicht abziehbare Aufwendungen",
+                "function": "",
+                "range_start": "69680",
+                "range_end": "69680",
+                "parent": null
+              },
+              "signature": "e1d537b69210596929f3a1d00e2af48c8d4e98171bbe398b5d5970a146b09315"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-019@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.entertainment.nonDeductible",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.entertainment.nonDeductible"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "66440",
+              "semantic": {
+                "name": "Nicht abzugsfähige Bewirtungskosten",
+                "function": "",
+                "range_start": "66440",
+                "range_end": "66440",
+                "parent": null
+              },
+              "signature": "0c019a8a9ffddbef3389b44f209464de41233aaefb619472f657ff124203bb9f"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-020@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.staffRelated",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.staffRelated"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "66430",
+              "semantic": {
+                "name": "Aufmerksamkeiten",
+                "function": "",
+                "range_start": "66430",
+                "range_end": "66430",
+                "parent": null
+              },
+              "signature": "dae3a60b00604b510986d1e7679038882228f5913360359f127f91ffa180a200"
+            },
+            {
+              "code": "68220",
+              "semantic": {
+                "name": "Freiwillige Sozialleistungen",
+                "function": "",
+                "range_start": "68220",
+                "range_end": "68220",
+                "parent": null
+              },
+              "signature": "5d4e04a2c2f7cd3f0bd114c4b7eb31c8010d760f6ddc9f033ac9ac7472fb325e"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-021@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.currLoss",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.currLoss"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "68800",
+              "semantic": {
+                "name": "Aufwendungen aus der Währungsumrechnung",
+                "function": "",
+                "range_start": "68800",
+                "range_end": "68800",
+                "parent": null
+              },
+              "signature": "d3154e17d0f47753d3d01bf899b9a9dc6f8864d251368b0db00e85efe68cf910"
+            },
+            {
+              "code": "68810",
+              "semantic": {
+                "name": "Aufwendungen aus der Währungsumrechnung (nicht § 256a HGB)",
+                "function": "",
+                "range_start": "68810",
+                "range_end": "68810",
+                "parent": null
+              },
+              "signature": "133dbc9e44a2863d1417bd9e89049f94ffff7e234f475b4020a249053b869f5b"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-022@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.entertainment.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.entertainment.deductible",
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.entertainment.nonDeductible",
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.entertainment.other"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "66400",
+              "semantic": {
+                "name": "Bewirtungskosten",
+                "function": "",
+                "range_start": "66400",
+                "range_end": "66400",
+                "parent": null
+              },
+              "signature": "7d6c2b97f7b0a08bf608199826f4a91091d1bf547031bd1465dc1082c4af181a"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-023@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.employee",
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "66500",
+              "semantic": {
+                "name": "Reisekosten",
+                "function": "",
+                "range_start": "66500",
+                "range_end": "66500",
+                "parent": null
+              },
+              "signature": "970c8f823ea12c8ae613bae5e440f0e705c783d4cbeae898663b9f7f8238ad9b"
+            },
+            {
+              "code": "66600",
+              "semantic": {
+                "name": "Reisekosten Übernachtungsaufwand",
+                "function": "",
+                "range_start": "66600",
+                "range_end": "66600",
+                "parent": null
+              },
+              "signature": "f0dbeeb1e2dd7a94bac7e3a5055a5be553ab89f74cd7f1184802a38958a01f58"
+            },
+            {
+              "code": "66630",
+              "semantic": {
+                "name": "Reisekosten Fahrtkosten",
+                "function": "",
+                "range_start": "66630",
+                "range_end": "66630",
+                "parent": null
+              },
+              "signature": "5625ffdebfe769ea856c7095929a4bb7239ab7bec3382a5f2f777eb4b47006a5"
+            },
+            {
+              "code": "66640",
+              "semantic": {
+                "name": "Reisekosten Verpflegungsmehraufwand",
+                "function": "",
+                "range_start": "66640",
+                "range_end": "66640",
+                "parent": null
+              },
+              "signature": "57d2b92ebbdf40ef9c352c40e6e7883d8de8eea9c379a70b86980ddb7b24a880"
+            },
+            {
+              "code": "66680",
+              "semantic": {
+                "name": "Kilometergelderstattung",
+                "function": "",
+                "range_start": "66680",
+                "range_end": "66680",
+                "parent": null
+              },
+              "signature": "1a07ce541cb463530a26f1a911174a2e33d6087b58b22ad26a2d73f23f6d2778"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-024@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netInterest.income.deposits.AO233a",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.income.deposits.AO233a"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "71050",
+              "semantic": {
+                "name": "Zinserträge § 233a AO, steuerpflichtig",
+                "function": "",
+                "range_start": "71050",
+                "range_end": "71050",
+                "parent": null
+              },
+              "signature": "f9c5f59e8c069952ca6843023cec59dd8bc3a8752e4cc8b62df2b58ea0613c8e"
+            },
+            {
+              "code": "71060",
+              "semantic": {
+                "name": "Zinserträge § 233a AO, steuerfrei (Anlage GK KSt)",
+                "function": "",
+                "range_start": "71060",
+                "range_end": "71060",
+                "parent": null
+              },
+              "signature": "7a03386bb18fe580c9744e186d23431e5240fee25fb7e019d9a3cade16583914"
+            },
+            {
+              "code": "71070",
+              "semantic": {
+                "name": "Zinserträge § 233a AO und § 4 Abs. 5b EStG, steuerfrei",
+                "function": "",
+                "range_start": "71070",
+                "range_end": "71070",
+                "parent": null
+              },
+              "signature": "20891f26a4d5d5748ff87d5daf3580cc6ccdb246d3505624ebc0cf9506ac292a"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-025@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netInterest.income.other",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.income.other"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "71200",
+              "semantic": {
+                "name": "Zinsähnliche Erträge",
+                "function": "",
+                "range_start": "71200",
+                "range_end": "71200",
+                "parent": null
+              },
+              "signature": "cba71bd8bb40208d930ac9a6e630f956fbd1d7bc6009ba01124b8c0b539e2686"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-026@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netInterest.income.deposits.otherMisc",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.income.deposits.banks",
+            "is.netIncome.regular.fin.netInterest.income.deposits.thirdParty",
+            "is.netIncome.regular.fin.netInterest.income.deposits.otherMisc"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "71100",
+              "semantic": {
+                "name": "Sonstige Zinserträge",
+                "function": "",
+                "range_start": "71100",
+                "range_end": "71100",
+                "parent": null
+              },
+              "signature": "4ddaa5871f1117ab40023dcda33f373e1c0e3227ada27d54eb7872922e81a1ce"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-027@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.AO233a.deductible",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.AO233a.deductible"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "73050",
+              "semantic": {
+                "name": "Zinsaufwendungen § 233a AO abzugsfähig",
+                "function": "",
+                "range_start": "73050",
+                "range_end": "73050",
+                "parent": null
+              },
+              "signature": "793ab73d3f382650e364f92223b242d450411e2d64c7dc13c04734e4c29f9d3d"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-028@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.AO233a.nondeductible",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.AO233a.nondeductible"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "73080",
+              "semantic": {
+                "name": "Zinsaufwendungen § 233a AO nicht abzugsfähig",
+                "function": "",
+                "range_start": "73080",
+                "range_end": "73080",
+                "parent": null
+              },
+              "signature": "3b0ddcdf82cd827d149cad0b46911f990d348695ea48d16a9285330c0c6b1691"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-029@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.AO234to237.deductible",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.AO234to237.deductible"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "73110",
+              "semantic": {
+                "name": "Zinsaufwendungen §§ 234 bis 237 AO abzugsfähig",
+                "function": "",
+                "range_start": "73110",
+                "range_end": "73110",
+                "parent": null
+              },
+              "signature": "25507066ba98094cb50647ab89bffc4541eaffbcc7c3e041fa29ccb77089bbbc"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-030@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.AO234to237.nonDeductible",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.AO234to237.nonDeductible"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "73060",
+              "semantic": {
+                "name": "Zinsaufwendungen §§ 234 bis 237 AO nicht abzugsfähig",
+                "function": "",
+                "range_start": "73060",
+                "range_end": "73060",
+                "parent": null
+              },
+              "signature": "b2191e0c545719bb394811d44568b0e26358bc3b802518a4b629f6c856864c38"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-031@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.relatedPayments.deduct",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.relatedPayments.deduct"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "73030",
+              "semantic": {
+                "name": "Steuerlich abzugsfähige andere Nebenleistungen zu Steuern",
+                "function": "",
+                "range_start": "73030",
+                "range_end": "73030",
+                "parent": null
+              },
+              "signature": "a666a485aded628543f2da56e03965274acd3e025d91151ea03b6cb3ebc47231"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-032@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.relatedPayments.nondeduct",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.relatedPayments.nondeduct"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "73020",
+              "semantic": {
+                "name": "Steuerlich nicht abzugsfähige andere Nebenleistungen zu Steuern § 4 Abs. 5b EStG",
+                "function": "",
+                "range_start": "73020",
+                "range_end": "73020",
+                "parent": null
+              },
+              "signature": "c6559c896683077d882bd5c521dabe40e8d2704fb828b4e91cbed3db11db3efd"
+            },
+            {
+              "code": "73040",
+              "semantic": {
+                "name": "Steuerlich nicht abzugsfähige andere Nebenleistungen zu Steuern",
+                "function": "",
+                "range_start": "73040",
+                "range_end": "73040",
+                "parent": null
+              },
+              "signature": "e24d28f30103a309d7fd1d4a0f5e80ec4824f01070de552bb8c82d8fd54ab976"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-033@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.other",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.other"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "73100",
+              "semantic": {
+                "name": "Zinsaufwendungen für kurzfristige Verbindlichkeiten",
+                "function": "",
+                "range_start": "73100",
+                "range_end": "73100",
+                "parent": null
+              },
+              "signature": "de6fe2f9cde2bd00954f32d412a024f3a4d1d080e5b0975151ef60e19fa00015"
+            },
+            {
+              "code": "73180",
+              "semantic": {
+                "name": "Zinsen auf Kontokorrentkonten",
+                "function": "",
+                "range_start": "73180",
+                "range_end": "73180",
+                "parent": null
+              },
+              "signature": "f6a61e70ddab6655735aac0b0df8a8331a52fa33c88ed629bb338357fa9e42c4"
+            },
+            {
+              "code": "73200",
+              "semantic": {
+                "name": "Zinsaufwendungen für langfristige Verbindlichkeiten",
+                "function": "",
+                "range_start": "73200",
+                "range_end": "73200",
+                "parent": null
+              },
+              "signature": "9e8dda5db02bfa829de1bea42e82d1cd08456f2393170eb1817bfc33deaadb76"
+            },
+            {
+              "code": "73250",
+              "semantic": {
+                "name": "Zinsaufwendungen für Gebäude, die zum Betriebsvermögen gehören",
+                "function": "",
+                "range_start": "73250",
+                "range_end": "73250",
+                "parent": null
+              },
+              "signature": "aaeb958e5bc03465bfb863bf7ffd506ffc2e94099e81c65b7c3068da66f75bd3"
+            },
+            {
+              "code": "73260",
+              "semantic": {
+                "name": "Zinsen zur Finanzierung des Anlagevermögens",
+                "function": "",
+                "range_start": "73260",
+                "range_end": "73260",
+                "parent": null
+              },
+              "signature": "fd33728144d69d2da3b59797b499aae7d41b36e7864ed2f45caecde9c35de575"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-034@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.amortDiscount",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.amortDiscount"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "73230",
+              "semantic": {
+                "name": "Abschreibungen auf ein Agio oder Disagio/Damnum zur Finanzierung",
+                "function": "",
+                "range_start": "73230",
+                "range_end": "73230",
+                "parent": null
+              },
+              "signature": "b0a8eeec969fe0a83bf846a7b8942cb8d748510f2220df7f4cb5c3aa17b8ff6e"
+            },
+            {
+              "code": "73240",
+              "semantic": {
+                "name": "Abschreibungen auf ein Agio oder Disagio/Damnum zur Finanzierung des Anlagevermögens",
+                "function": "",
+                "range_start": "73240",
+                "range_end": "73240",
+                "parent": null
+              },
+              "signature": "4af5b7dad0e1d423786cd51d79354683ca9cdab31286ab2788b0e28932be9066"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-035@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.loanFees",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.loanFees"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "73550",
+              "semantic": {
+                "name": "Kreditprovisionen und Verwaltungskostenbeiträge",
+                "function": "",
+                "range_start": "73550",
+                "range_end": "73550",
+                "parent": null
+              },
+              "signature": "a0d1c81ebc5988b0139e9361d468834193aab5363ab82e7b10ce4ca1a91432a0"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-036@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.other",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.other"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "73300",
+              "semantic": {
+                "name": "Zinsähnliche Aufwendungen",
+                "function": "",
+                "range_start": "73300",
+                "range_end": "73300",
+                "parent": null
+              },
+              "signature": "e4e84489b508f97bfafe0bf8c7a17fe3eff362f5919ffef034b4f5cbdb827f53"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "operating-r15-001@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.subsidies.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.subsidies.other"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "48280",
+              "semantic": {
+                "name": "Zuschüsse von Verbänden und Behörden",
+                "function": "",
+                "range_start": "48280",
+                "range_end": "48280",
+                "parent": null
+              },
+              "signature": "dd854d102504f91d4caff080ada642141f5f10d3172d19f7d97f5f4081f66e69"
+            },
+            {
+              "code": "48290",
+              "semantic": {
+                "name": "Sonstige Zuschüsse",
+                "function": "",
+                "range_start": "48290",
+                "range_end": "48290",
+                "parent": null
+              },
+              "signature": "b26c97747e56fc87c5a65c58d75b6de3cd75c791d22cd50149bdfb00b17017e4"
+            },
+            {
+              "code": "49750",
+              "semantic": {
+                "name": "Investitionszuschüsse (steuerpflichtig)",
+                "function": "",
+                "range_start": "49750",
+                "range_end": "49750",
+                "parent": null
+              },
+              "signature": "44b8f10e7a140d48dfee02d0876daacb7b649f36355207337d06e70603bb9ef1"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-002@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.subsidies.taxExempt",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.subsidies.taxExempt"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "49800",
+              "semantic": {
+                "name": "Investitionszulagen (steuerfrei)",
+                "function": "",
+                "range_start": "49800",
+                "range_end": "49800",
+                "parent": null
+              },
+              "signature": "17249376f636c8a17457a93fd4af641815751b382263a66c360eef34d4fcb9e8"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-003@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.miscellaneous",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.miscellaneous"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "48340",
+              "semantic": {
+                "name": "Sonstige Erträge betrieblich und regelmäßig 16 % USt",
+                "function": "AM",
+                "range_start": "48340",
+                "range_end": "48349",
+                "parent": null
+              },
+              "signature": "339a96c9786eac758afcdb9e86e77d80b0722623b56a5fccc4e160b77d7e5dc9"
+            },
+            {
+              "code": "48350",
+              "semantic": {
+                "name": "Sonstige Erträge betrieblich und regelmäßig",
+                "function": "",
+                "range_start": "48350",
+                "range_end": "48350",
+                "parent": null
+              },
+              "signature": "a3165c7badd797574f8451e2ed93d4a98709305f4678e9688b5fd5cdcbe87146"
+            },
+            {
+              "code": "48360",
+              "semantic": {
+                "name": "Sonstige Erträge betrieblich und regelmäßig 19 % USt",
+                "function": "AM",
+                "range_start": "48360",
+                "range_end": "48369",
+                "parent": null
+              },
+              "signature": "3ee749f9f3c471977f6df6d42fc1ceb69e2e506e0eb6873a3bad1a190380b73a"
+            },
+            {
+              "code": "48380",
+              "semantic": {
+                "name": "Erstattete Vorsteuer anderer Länder",
+                "function": "",
+                "range_start": "48380",
+                "range_end": "48380",
+                "parent": null
+              },
+              "signature": "a685c98bd05c0987808dffdf3777b7d419a8e8b9bf5e6ab5e5cb09046f6fff58"
+            },
+            {
+              "code": "48390",
+              "semantic": {
+                "name": "Sonstige Erträge unregelmäßig",
+                "function": "",
+                "range_start": "48390",
+                "range_end": "48390",
+                "parent": null
+              },
+              "signature": "f163bb2f782cf50ab11d6db5a70d2eb93bc0b64a455ec284bcc8ab23f2f2ce9e"
+            },
+            {
+              "code": "48410",
+              "semantic": {
+                "name": "Sonstige Erträge betrieblich und regelmäßig, steuerfrei § 4 Nr. 8 ff. UStG",
+                "function": "AM",
+                "range_start": "48410",
+                "range_end": "48419",
+                "parent": null
+              },
+              "signature": "e5bb44830b82f46429678f7dc602f0e4c23551562bb4141b8670ad18ca790a5a"
+            },
+            {
+              "code": "48420",
+              "semantic": {
+                "name": "Sonstige betriebliche Erträge, steuerfrei z. B. § 4 Nr. 2 bis 7 UStG",
+                "function": "AM",
+                "range_start": "48420",
+                "range_end": "48429",
+                "parent": null
+              },
+              "signature": "ada9e5520f97b467e2ab7009bfabd6ad6c50c29222ac3fff693e6e9531a04c83"
+            },
+            {
+              "code": "49600",
+              "semantic": {
+                "name": "Periodenfremde Erträge",
+                "function": "",
+                "range_start": "49600",
+                "range_end": "49600",
+                "parent": null
+              },
+              "signature": "a1170ba97ba641db50c345131e280e8482ff4c06f39d61af6c754c2b4a3eae03"
+            },
+            {
+              "code": "49720",
+              "semantic": {
+                "name": "Erstattungen Aufwendungsausgleichsgesetz",
+                "function": "",
+                "range_start": "49720",
+                "range_end": "49720",
+                "parent": null
+              },
+              "signature": "a6e61dc2f5ed797a045a7f8105ae274e009d0571c21508a6711fc6f1591e5241"
+            },
+            {
+              "code": "49890",
+              "semantic": {
+                "name": "Kostenerstattungen, Rückvergütungen und Gutschriften für frühere Jahre",
+                "function": "",
+                "range_start": "49890",
+                "range_end": "49890",
+                "parent": null
+              },
+              "signature": "274b64df435af6ec239afb62394f927bea5c62ff1845dba59901f627f8268965"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-004@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.currGains",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.currGains"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "48400",
+              "semantic": {
+                "name": "Erträge aus der Währungsumrechnung",
+                "function": "",
+                "range_start": "48400",
+                "range_end": "48400",
+                "parent": null
+              },
+              "signature": "872c19936fb5f1884d6bc15a5e751b371f78f24992bf8291d994021c2d74d272"
+            },
+            {
+              "code": "48470",
+              "semantic": {
+                "name": "Erträge aus der Währungsumrechnung (nicht § 256a HGB)",
+                "function": "",
+                "range_start": "48470",
+                "range_end": "48470",
+                "parent": null
+              },
+              "signature": "1c5727845563ba0a111bdb2f2317e432a6de25cae99b73516972b4380df1a0d7"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-005@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.releaseLossProv.globalValuation",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releaseLossProv.globalValuation"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "49200",
+              "semantic": {
+                "name": "Erträge aus der Herabsetzung der Pauschalwertberichtigung auf Forderungen",
+                "function": "",
+                "range_start": "49200",
+                "range_end": "49200",
+                "parent": null
+              },
+              "signature": "ff36dfa0d0ad0e49b5537616d13506d6a1c905280c53e4d5b1cd66f1bf7d90cd"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-006@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.releaseLossProv.specificValuation",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releaseLossProv.specificValuation"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "49230",
+              "semantic": {
+                "name": "Erträge aus der Herabsetzung der Einzelwertberichtigung auf Forderungen",
+                "function": "",
+                "range_start": "49230",
+                "range_end": "49230",
+                "parent": null
+              },
+              "signature": "b8e514cfbf9278546fb72a15ee85b0ee5cad1b8f4f8e5ec3accc7aa6302e94d1"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-007@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.recoveryWriteoffs",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.recoveryWriteoffs"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "49250",
+              "semantic": {
+                "name": "Erträge aus abgeschriebenen Forderungen",
+                "function": "",
+                "range_start": "49250",
+                "range_end": "49250",
+                "parent": null
+              },
+              "signature": "cecb1f6b935c76f21651841a20692e66335996f2fa2304948ef7c54ebfbd389b"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-008@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.releaseProv",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releaseProv"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "49300",
+              "semantic": {
+                "name": "Erträge aus der Auflösung von Rückstellungen",
+                "function": "",
+                "range_start": "49300",
+                "range_end": "49300",
+                "parent": null
+              },
+              "signature": "f84202764533b7d27270247093a6ba6474178a428e81394342a1a59f7a097a2f"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-009@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.releasLiab",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasLiab"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "49320",
+              "semantic": {
+                "name": "Erträge aus der Herabsetzung von Verbindlichkeiten",
+                "function": "",
+                "range_start": "49320",
+                "range_end": "49320",
+                "parent": null
+              },
+              "signature": "782569ac7f7ab58cdf119937558fc6b51fbc5413dca24697010629a460e7c8b6"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-010@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.insuranceRefunds",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.insuranceRefunds"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "49700",
+              "semantic": {
+                "name": "Versicherungsentschädigungen und Schadenersatzleistungen",
+                "function": "",
+                "range_start": "49700",
+                "range_end": "49700",
+                "parent": null
+              },
+              "signature": "b0da1edb87561a25d065e1cbce833ca68b66eb03b11878bda737283648862cf4"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-011@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.freight",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.freight"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "63030",
+              "semantic": {
+                "name": "Transportkosten",
+                "function": "",
+                "range_start": "63030",
+                "range_end": "63030",
+                "parent": null
+              },
+              "signature": "69c150b96bddc545bb238856a07ac629098f1935b99bfd1b0d7d1c25bf2b5ee4"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-012@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherTaxes.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherTaxes.other"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "63400",
+              "semantic": {
+                "name": "Abgaben für betrieblich genutzten Grundbesitz",
+                "function": "",
+                "range_start": "63400",
+                "range_end": "63400",
+                "parent": null
+              },
+              "signature": "0beda17980917e37c7a57dda1860c1352df4a55db7ac859a634f5c1a415fe141"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-013@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.vehicles",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.vehicles"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "65000",
+              "semantic": {
+                "name": "Fahrzeugkosten",
+                "function": "",
+                "range_start": "65000",
+                "range_end": "65000",
+                "parent": null
+              },
+              "signature": "e58829e9c18fffec520c093b57e4f4fc1f00ebd2045e1b503c5e1eaad0214245"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-014@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.gifts.deductible",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.gifts.deductible"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "66100",
+              "semantic": {
+                "name": "Geschenke abzugsfähig ohne § 37b EStG",
+                "function": "",
+                "range_start": "66100",
+                "range_end": "66100",
+                "parent": null
+              },
+              "signature": "8495ed836f559bcd2c99b371ab024bea0b84aa74174fc2251229ee23558ab119"
+            },
+            {
+              "code": "66110",
+              "semantic": {
+                "name": "Geschenke abzugsfähig mit § 37b EStG",
+                "function": "",
+                "range_start": "66110",
+                "range_end": "66110",
+                "parent": null
+              },
+              "signature": "c73aab55c55caef0c810cfa3b91c9dddfb50b7304e2e513642fc8e48eede591e"
+            },
+            {
+              "code": "66120",
+              "semantic": {
+                "name": "Pauschale Steuer für Geschenke und Zuwendungen abzugsfähig",
+                "function": "",
+                "range_start": "66120",
+                "range_end": "66120",
+                "parent": null
+              },
+              "signature": "6a481acc461ea4237ade79c25599558056a234b4ae7a5d0d60f58856b5f9d386"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-015@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.gifts.nondeductible",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.gifts.nondeductible"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "66200",
+              "semantic": {
+                "name": "Geschenke nicht abzugsfähig ohne § 37b EStG",
+                "function": "",
+                "range_start": "66200",
+                "range_end": "66200",
+                "parent": null
+              },
+              "signature": "942e086e94875ee0ef1cc811a3d8bff249ab4df494bbeb94140f48dc096c3e10"
+            },
+            {
+              "code": "66210",
+              "semantic": {
+                "name": "Geschenke nicht abzugsfähig mit § 37b EStG",
+                "function": "",
+                "range_start": "66210",
+                "range_end": "66210",
+                "parent": null
+              },
+              "signature": "e735b30bf104a394d5e2424d36a32bb6e8ba29706653a3b4c3a2fb2296385da9"
+            },
+            {
+              "code": "66220",
+              "semantic": {
+                "name": "Pauschale Steuer für Geschenke und Zuwendungen nicht abzugsfähig",
+                "function": "",
+                "range_start": "66220",
+                "range_end": "66220",
+                "parent": null
+              },
+              "signature": "df92726f1f5c470ddb11c7afaa63eaa139705a5a4d4b2f306160c6d67290a1f9"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-016@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.marketing",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.marketing"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "66250",
+              "semantic": {
+                "name": "Geschenke ausschließlich betrieblich genutzt",
+                "function": "",
+                "range_start": "66250",
+                "range_end": "66250",
+                "parent": null
+              },
+              "signature": "60acd1f5ec01393c4999472f3a34d1b8fd80d8bc89a445616da8b4cae738571b"
+            },
+            {
+              "code": "66290",
+              "semantic": {
+                "name": "Zugaben mit § 37b EStG",
+                "function": "",
+                "range_start": "66290",
+                "range_end": "66290",
+                "parent": null
+              },
+              "signature": "067d2558956a28a501a4ca3f30cd5b9ffbd62f411849a264ceef313aa073fba2"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-017@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.miscellaneous.deductible",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.miscellaneous.deductible"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "64360",
+              "semantic": {
+                "name": "Steuerlich abzugsfähige Verspätungszuschläge und Zwangsgelder",
+                "function": "",
+                "range_start": "64360",
+                "range_end": "64360",
+                "parent": null
+              },
+              "signature": "8453c34a941d02dfa525715427344088c4303994dbab43b5ca557fdfd3ace6a8"
+            },
+            {
+              "code": "66410",
+              "semantic": {
+                "name": "Sonstige eingeschränkt abziehbare Betriebsausgaben (abziehbarer Anteil)",
+                "function": "",
+                "range_start": "66410",
+                "range_end": "66410",
+                "parent": null
+              },
+              "signature": "72f5e2ec8e405326b65d5f7fd535b08c6c3395551a4c26b4c18405dbef8466b0"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-018@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.miscellaneous.nonDeductible",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.miscellaneous.nonDeductible"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "64370",
+              "semantic": {
+                "name": "Steuerlich nicht abzugsfähige Verspätungszuschläge und Zwangsgelder",
+                "function": "",
+                "range_start": "64370",
+                "range_end": "64370",
+                "parent": null
+              },
+              "signature": "8c16160b3db29e73b87e9dfa3a5998509ccc27254bfde92792642dd9f7894a2b"
+            },
+            {
+              "code": "66420",
+              "semantic": {
+                "name": "Sonstige eingeschränkt abziehbare Betriebsausgaben (nicht abziehbarer Anteil)",
+                "function": "",
+                "range_start": "66420",
+                "range_end": "66420",
+                "parent": null
+              },
+              "signature": "8a88696f1a6ba2a91e70a3f1438a665beaf21b4505fd9ff31fb289ed7e2c3598"
+            },
+            {
+              "code": "66450",
+              "semantic": {
+                "name": "Nicht abzugsfähige Betriebsausgaben aus Werbe- und Repräsentationskosten",
+                "function": "",
+                "range_start": "66450",
+                "range_end": "66450",
+                "parent": null
+              },
+              "signature": "e4e282f20cdda2288e3cc32d016bcfe2da799677045e1f97b730809c5f163b61"
+            },
+            {
+              "code": "66490",
+              "semantic": {
+                "name": "Nicht abzugsfähige Ausgaben",
+                "function": "",
+                "range_start": "66490",
+                "range_end": "66490",
+                "parent": null
+              },
+              "signature": "901def22e2b9efff950b55422f2ca42f7229abb15148ff6ca7aecefeef3b627b"
+            },
+            {
+              "code": "69680",
+              "semantic": {
+                "name": "Sonstige nicht abziehbare Aufwendungen",
+                "function": "",
+                "range_start": "69680",
+                "range_end": "69680",
+                "parent": null
+              },
+              "signature": "e1d537b69210596929f3a1d00e2af48c8d4e98171bbe398b5d5970a146b09315"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-019@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.entertainment.nonDeductible",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.entertainment.nonDeductible"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "66440",
+              "semantic": {
+                "name": "Nicht abzugsfähige Bewirtungskosten",
+                "function": "",
+                "range_start": "66440",
+                "range_end": "66440",
+                "parent": null
+              },
+              "signature": "0c019a8a9ffddbef3389b44f209464de41233aaefb619472f657ff124203bb9f"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-020@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.staffRelated",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.staffRelated"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "66430",
+              "semantic": {
+                "name": "Aufmerksamkeiten",
+                "function": "",
+                "range_start": "66430",
+                "range_end": "66430",
+                "parent": null
+              },
+              "signature": "dae3a60b00604b510986d1e7679038882228f5913360359f127f91ffa180a200"
+            },
+            {
+              "code": "68220",
+              "semantic": {
+                "name": "Freiwillige Sozialleistungen",
+                "function": "",
+                "range_start": "68220",
+                "range_end": "68220",
+                "parent": null
+              },
+              "signature": "5d4e04a2c2f7cd3f0bd114c4b7eb31c8010d760f6ddc9f033ac9ac7472fb325e"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-021@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.currLoss",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.currLoss"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "68800",
+              "semantic": {
+                "name": "Aufwendungen aus der Währungsumrechnung",
+                "function": "",
+                "range_start": "68800",
+                "range_end": "68800",
+                "parent": null
+              },
+              "signature": "d3154e17d0f47753d3d01bf899b9a9dc6f8864d251368b0db00e85efe68cf910"
+            },
+            {
+              "code": "68810",
+              "semantic": {
+                "name": "Aufwendungen aus der Währungsumrechnung (nicht § 256a HGB)",
+                "function": "",
+                "range_start": "68810",
+                "range_end": "68810",
+                "parent": null
+              },
+              "signature": "133dbc9e44a2863d1417bd9e89049f94ffff7e234f475b4020a249053b869f5b"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-022@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.entertainment.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.entertainment.deductible",
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.entertainment.nonDeductible",
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.entertainment.other"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "66400",
+              "semantic": {
+                "name": "Bewirtungskosten",
+                "function": "",
+                "range_start": "66400",
+                "range_end": "66400",
+                "parent": null
+              },
+              "signature": "7d6c2b97f7b0a08bf608199826f4a91091d1bf547031bd1465dc1082c4af181a"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-023@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.employee",
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "66500",
+              "semantic": {
+                "name": "Reisekosten",
+                "function": "",
+                "range_start": "66500",
+                "range_end": "66500",
+                "parent": null
+              },
+              "signature": "970c8f823ea12c8ae613bae5e440f0e705c783d4cbeae898663b9f7f8238ad9b"
+            },
+            {
+              "code": "66600",
+              "semantic": {
+                "name": "Reisekosten Übernachtungsaufwand",
+                "function": "",
+                "range_start": "66600",
+                "range_end": "66600",
+                "parent": null
+              },
+              "signature": "f0dbeeb1e2dd7a94bac7e3a5055a5be553ab89f74cd7f1184802a38958a01f58"
+            },
+            {
+              "code": "66630",
+              "semantic": {
+                "name": "Reisekosten Fahrtkosten",
+                "function": "",
+                "range_start": "66630",
+                "range_end": "66630",
+                "parent": null
+              },
+              "signature": "5625ffdebfe769ea856c7095929a4bb7239ab7bec3382a5f2f777eb4b47006a5"
+            },
+            {
+              "code": "66640",
+              "semantic": {
+                "name": "Reisekosten Verpflegungsmehraufwand",
+                "function": "",
+                "range_start": "66640",
+                "range_end": "66640",
+                "parent": null
+              },
+              "signature": "57d2b92ebbdf40ef9c352c40e6e7883d8de8eea9c379a70b86980ddb7b24a880"
+            },
+            {
+              "code": "66680",
+              "semantic": {
+                "name": "Kilometergelderstattung",
+                "function": "",
+                "range_start": "66680",
+                "range_end": "66680",
+                "parent": null
+              },
+              "signature": "1a07ce541cb463530a26f1a911174a2e33d6087b58b22ad26a2d73f23f6d2778"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-024@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netInterest.income.deposits.AO233a",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.income.deposits.AO233a"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "71050",
+              "semantic": {
+                "name": "Zinserträge § 233a AO, steuerpflichtig",
+                "function": "",
+                "range_start": "71050",
+                "range_end": "71050",
+                "parent": null
+              },
+              "signature": "f9c5f59e8c069952ca6843023cec59dd8bc3a8752e4cc8b62df2b58ea0613c8e"
+            },
+            {
+              "code": "71060",
+              "semantic": {
+                "name": "Zinserträge § 233a AO, steuerfrei (Anlage GK KSt)",
+                "function": "",
+                "range_start": "71060",
+                "range_end": "71060",
+                "parent": null
+              },
+              "signature": "7a03386bb18fe580c9744e186d23431e5240fee25fb7e019d9a3cade16583914"
+            },
+            {
+              "code": "71070",
+              "semantic": {
+                "name": "Zinserträge § 233a AO und § 4 Abs. 5b EStG, steuerfrei",
+                "function": "",
+                "range_start": "71070",
+                "range_end": "71070",
+                "parent": null
+              },
+              "signature": "20891f26a4d5d5748ff87d5daf3580cc6ccdb246d3505624ebc0cf9506ac292a"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-025@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netInterest.income.other",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.income.other"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "71200",
+              "semantic": {
+                "name": "Zinsähnliche Erträge",
+                "function": "",
+                "range_start": "71200",
+                "range_end": "71200",
+                "parent": null
+              },
+              "signature": "cba71bd8bb40208d930ac9a6e630f956fbd1d7bc6009ba01124b8c0b539e2686"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-026@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netInterest.income.deposits.otherMisc",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.income.deposits.banks",
+            "is.netIncome.regular.fin.netInterest.income.deposits.thirdParty",
+            "is.netIncome.regular.fin.netInterest.income.deposits.otherMisc"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "71100",
+              "semantic": {
+                "name": "Sonstige Zinserträge",
+                "function": "",
+                "range_start": "71100",
+                "range_end": "71100",
+                "parent": null
+              },
+              "signature": "4ddaa5871f1117ab40023dcda33f373e1c0e3227ada27d54eb7872922e81a1ce"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-027@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.AO233a.deductible",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.AO233a.deductible"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "73050",
+              "semantic": {
+                "name": "Zinsaufwendungen § 233a AO abzugsfähig",
+                "function": "",
+                "range_start": "73050",
+                "range_end": "73050",
+                "parent": null
+              },
+              "signature": "793ab73d3f382650e364f92223b242d450411e2d64c7dc13c04734e4c29f9d3d"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-028@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.AO233a.nondeductible",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.AO233a.nondeductible"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "73080",
+              "semantic": {
+                "name": "Zinsaufwendungen § 233a AO nicht abzugsfähig",
+                "function": "",
+                "range_start": "73080",
+                "range_end": "73080",
+                "parent": null
+              },
+              "signature": "3b0ddcdf82cd827d149cad0b46911f990d348695ea48d16a9285330c0c6b1691"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-029@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.AO234to237.deductible",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.AO234to237.deductible"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "73110",
+              "semantic": {
+                "name": "Zinsaufwendungen §§ 234 bis 237 AO abzugsfähig",
+                "function": "",
+                "range_start": "73110",
+                "range_end": "73110",
+                "parent": null
+              },
+              "signature": "25507066ba98094cb50647ab89bffc4541eaffbcc7c3e041fa29ccb77089bbbc"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-030@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.AO234to237.nonDeductible",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.AO234to237.nonDeductible"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "73060",
+              "semantic": {
+                "name": "Zinsaufwendungen §§ 234 bis 237 AO nicht abzugsfähig",
+                "function": "",
+                "range_start": "73060",
+                "range_end": "73060",
+                "parent": null
+              },
+              "signature": "b2191e0c545719bb394811d44568b0e26358bc3b802518a4b629f6c856864c38"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-031@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.relatedPayments.deduct",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.relatedPayments.deduct"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "73030",
+              "semantic": {
+                "name": "Steuerlich abzugsfähige andere Nebenleistungen zu Steuern",
+                "function": "",
+                "range_start": "73030",
+                "range_end": "73030",
+                "parent": null
+              },
+              "signature": "a666a485aded628543f2da56e03965274acd3e025d91151ea03b6cb3ebc47231"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-032@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.relatedPayments.nondeduct",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.relatedPayments.nondeduct"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "73020",
+              "semantic": {
+                "name": "Steuerlich nicht abzugsfähige andere Nebenleistungen zu Steuern § 4 Abs. 5b EStG",
+                "function": "",
+                "range_start": "73020",
+                "range_end": "73020",
+                "parent": null
+              },
+              "signature": "c6559c896683077d882bd5c521dabe40e8d2704fb828b4e91cbed3db11db3efd"
+            },
+            {
+              "code": "73040",
+              "semantic": {
+                "name": "Steuerlich nicht abzugsfähige andere Nebenleistungen zu Steuern",
+                "function": "",
+                "range_start": "73040",
+                "range_end": "73040",
+                "parent": null
+              },
+              "signature": "e24d28f30103a309d7fd1d4a0f5e80ec4824f01070de552bb8c82d8fd54ab976"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-033@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.other",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.other"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "73100",
+              "semantic": {
+                "name": "Zinsaufwendungen für kurzfristige Verbindlichkeiten",
+                "function": "",
+                "range_start": "73100",
+                "range_end": "73100",
+                "parent": null
+              },
+              "signature": "de6fe2f9cde2bd00954f32d412a024f3a4d1d080e5b0975151ef60e19fa00015"
+            },
+            {
+              "code": "73180",
+              "semantic": {
+                "name": "Zinsen auf Kontokorrentkonten",
+                "function": "",
+                "range_start": "73180",
+                "range_end": "73180",
+                "parent": null
+              },
+              "signature": "f6a61e70ddab6655735aac0b0df8a8331a52fa33c88ed629bb338357fa9e42c4"
+            },
+            {
+              "code": "73200",
+              "semantic": {
+                "name": "Zinsaufwendungen für langfristige Verbindlichkeiten",
+                "function": "",
+                "range_start": "73200",
+                "range_end": "73200",
+                "parent": null
+              },
+              "signature": "9e8dda5db02bfa829de1bea42e82d1cd08456f2393170eb1817bfc33deaadb76"
+            },
+            {
+              "code": "73250",
+              "semantic": {
+                "name": "Zinsaufwendungen für Gebäude, die zum Betriebsvermögen gehören",
+                "function": "",
+                "range_start": "73250",
+                "range_end": "73250",
+                "parent": null
+              },
+              "signature": "aaeb958e5bc03465bfb863bf7ffd506ffc2e94099e81c65b7c3068da66f75bd3"
+            },
+            {
+              "code": "73260",
+              "semantic": {
+                "name": "Zinsen zur Finanzierung des Anlagevermögens",
+                "function": "",
+                "range_start": "73260",
+                "range_end": "73260",
+                "parent": null
+              },
+              "signature": "fd33728144d69d2da3b59797b499aae7d41b36e7864ed2f45caecde9c35de575"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-034@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.amortDiscount",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.amortDiscount"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "73230",
+              "semantic": {
+                "name": "Abschreibungen auf ein Agio oder Disagio/Damnum zur Finanzierung",
+                "function": "",
+                "range_start": "73230",
+                "range_end": "73230",
+                "parent": null
+              },
+              "signature": "b0a8eeec969fe0a83bf846a7b8942cb8d748510f2220df7f4cb5c3aa17b8ff6e"
+            },
+            {
+              "code": "73240",
+              "semantic": {
+                "name": "Abschreibungen auf ein Agio oder Disagio/Damnum zur Finanzierung des Anlagevermögens",
+                "function": "",
+                "range_start": "73240",
+                "range_end": "73240",
+                "parent": null
+              },
+              "signature": "4af5b7dad0e1d423786cd51d79354683ca9cdab31286ab2788b0e28932be9066"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-035@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.loanFees",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.loanFees"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "73550",
+              "semantic": {
+                "name": "Kreditprovisionen und Verwaltungskostenbeiträge",
+                "function": "",
+                "range_start": "73550",
+                "range_end": "73550",
+                "parent": null
+              },
+              "signature": "a0d1c81ebc5988b0139e9361d468834193aab5363ab82e7b10ce4ca1a91432a0"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r15-036@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.other",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.other"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "73300",
+              "semantic": {
+                "name": "Zinsähnliche Aufwendungen",
+                "function": "",
+                "range_start": "73300",
+                "range_end": "73300",
+                "parent": null
+              },
+              "signature": "e4e84489b508f97bfafe0bf8c7a17fe3eff362f5919ffef034b4f5cbdb827f53"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

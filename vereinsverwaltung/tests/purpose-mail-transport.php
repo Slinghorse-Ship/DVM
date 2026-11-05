@@ -1,0 +1,11 @@
+<?php declare(strict_types=1);
+require __DIR__.'/support/mail-purpose-fixture.php';
+// The former transport classes belonged to removed ProcessWire. Exercise the
+// current persisted purpose resolver and genuine unsent MIME instead of doubles.
+$mailPurposeChecks=0;$f=ownMailPurposeFixture();$data=ownMailPurposeConfigured($f);
+$invoice=array_replace(\Kulturhus\Verein\InvoiceMailbox::defaults(),['smtp_enabled'=>true,'email'=>'own-invoice@example.invalid','smtp_host'=>'smtp.example.test','smtp_user'=>'own-invoice@example.invalid','smtp_password'=>'Own synthetic invoice test secret','smtp_name'=>'0']);$f['mailbox']->save($invoice,0);
+$routes=['board','press','newsletter','invoices'];$i=0;foreach($data['routes']as $purpose=>&$channel)$channel=$routes[$i++%4];unset($channel);$f['channels']->save($data,1);
+$message=['to'=>'own-recipient@example.invalid','subject'=>'Own original purpose message','text'=>'Whole original body ä🙂','html'=>'<p>Whole original body ä🙂</p>','attachments'=>[['name'=>'own-original.txt','mime'=>'text/plain','bytes'=>'Own exact entire original attachment']]];
+foreach($data['routes']as $purpose=>$channel){[$configuration,$mime]=$f['mail']->prepare($f['access']->club(),$message,$purpose);$address=$channel==='invoices'?'own-invoice@example.invalid':'own-'.$channel.'@example.invalid';$name=$channel==='invoices'?'0':$data['channels'][$channel]['name'];ownMailPurposeCheck($mime->getFrom()[0]->getAddress()===$address&&$mime->getFrom()[0]->getName()===$name&&$mime->getTo()[0]->getAddress()===$message['to']&&$mime->getTextBody()===$message['text']&&$mime->getHtmlBody()===$message['html']&&$mime->getAttachments()[0]->getBody()===$message['attachments'][0]['bytes'],'actual native purpose '.$purpose.' keeps its selected sender whole displayed name original body and complete attachment without SMTP');}
+$before=\Kulturhus\Verein\Tests\MySqlFixture::snapshot($f['db']);$f['mail']->prepare($f['access']->club(),$message,'membership');ownMailPurposeCheck(\Kulturhus\Verein\Tests\MySqlFixture::snapshot($f['db'])===$before,'actual native purpose preflight changes no whole business row or original');
+echo json_encode(['checks'=>$mailPurposeChecks,'external_actions'=>0,'transport'=>'local MIME preparation only'])."\n";

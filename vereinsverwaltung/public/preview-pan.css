@@ -1,0 +1,13 @@
+[data-pdf-preview] .pdf-controls,[data-image-preview] .pdf-controls{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem}
+[data-pdf-preview] .pdf-controls button,[data-image-preview] .pdf-controls button,[data-pdf-preview] .pdf-controls select{min-height:44px;min-width:44px;font-size:16px;line-height:1.4}
+.document-preview-pan{overscroll-behavior:contain;max-width:100%;min-width:0}
+.document-preview-pan:focus-visible{outline:3px solid #174d80;outline-offset:2px}
+.document-preview-pan.can-pan{cursor:grab;touch-action:none}
+.document-preview-pan.is-panning{cursor:grabbing;user-select:none}
+.document-preview-pan img,.document-preview-pan canvas{user-select:none;-webkit-user-select:none}
+
+.document-preview-pan.can-pinch{touch-action:none}
+
+[data-pdf-preview] [data-pdf-enhanced][hidden]{display:none!important}
+[data-pdf-preview] .pdf-controls>*{max-width:100%;min-width:0;overflow-wrap:anywhere}
+[data-pdf-preview] .pdf-controls label{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem}

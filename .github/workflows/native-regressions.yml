@@ -1,0 +1,234 @@
+name: Native regressions
+# Hosted Actions are manual while quota is exhausted; use tools/ci/local-release.py.
+on:
+  workflow_dispatch:
+    inputs:
+      full:
+        description: Include complete installation, upgrade and recovery acceptance
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: native-regressions-${{ github.ref }}
+  # Let an already running acceptance finish; the latest pending main check follows it.
+  cancel-in-progress: false
+jobs:
+  native:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 300
+    env:
+      KULTURHUS_DISABLE_MAIL: "1"
+      KULTURHUS_DISABLE_WEBSITE: "1"
+      VEREIN_ERIC_DISABLE_TRANSPORT: "1"
+    steps:
+      - uses: actions/checkout@v4
+        id: checkout
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: CI MySQL fallback contracts
+        run: |
+          python3 tools/ci/test-start-mysql.py
+          python3 tools/ci/test-github-core.py
+          python3 tools/ci/test-browser-registration.py
+          python3 tools/ci/test-local-release.py
+      - name: Start isolated pinned MySQL with registry fallback
+        run: bash tools/ci/start-mysql.sh
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+          extensions: none, ctype, curl, dom, exif, fileinfo, gd, iconv, intl, pdo_mysql, mbstring, phar, posix, simplexml, sockets, sodium, tokenizer, xml, xmlreader, xmlwriter, zip
+          coverage: none
+      - name: Install locked PHP dependencies
+        run: composer install --no-interaction --no-progress --prefer-dist
+      - name: Install PDF layout verifier
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends poppler-utils
+          pdftotext -v
+      - name: Install calendar PDF runtime
+        run: |
+          python3 -m venv "$RUNNER_TEMP/calendar-pdf"
+          "$RUNNER_TEMP/calendar-pdf/bin/python" -m pip install -r vereinsverwaltung/requirements-pdf.txt
+          "$RUNNER_TEMP/calendar-pdf/bin/python" -c 'import reportlab, pypdf; assert reportlab.Version == "4.4.9"; assert pypdf.__version__ == "6.18.0"'
+          echo "VEREIN_PYTHON=$RUNNER_TEMP/calendar-pdf/bin/python" >> "$GITHUB_ENV"
+      - name: PHP syntax
+        run: find vereinsverwaltung/native -name '*.php' -print0 | xargs -0 -n1 php -l
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install browser test runtime
+        run: |
+          npm install --no-save --package-lock=false playwright@1.56.1
+          npx playwright install --with-deps chromium
+          node <<'NODE'
+          const fs = require('node:fs');
+          const path = require('node:path');
+          const playwright = require('playwright');
+          const modulePath = path.join(path.dirname(require.resolve('playwright')), 'index.mjs');
+          const executable = playwright.chromium.executablePath();
+          fs.appendFileSync(process.env.GITHUB_ENV,
+            'PLAYWRIGHT_MODULE=' + modulePath + '\nDVM_PLAYWRIGHT_MODULE=' + modulePath +
+            '\nPLAYWRIGHT_CHROMIUM_EXECUTABLE=' + executable + '\nDVM_CHROMIUM=' + executable +
+            '\nVEREIN_TEST_RESULTS=' + path.join(process.env.RUNNER_TEMP, 'dvm-test-results') + '\n');
+          NODE
+      - name: Prepare genuine isolated invoice validation tools
+        run: |
+          docker image inspect debian@sha256:7c7b2c966bc9ee8cedfeef67e0e279108992c77681fa595db4a9d65c06ccc587 >/dev/null 2>&1 || docker pull debian@sha256:7c7b2c966bc9ee8cedfeef67e0e279108992c77681fa595db4a9d65c06ccc587
+          php tools/ci/prepare-invoice-runtime.php
+      - name: Isolated native contracts
+        id: native
+        env:
+          KH_NATIVE_CI_PASSWORD: synthetic-ci-only
+        run: python3 tools/ci/run-github-core.py
+      - name: Shared calendar original-source contracts
+        env:
+          VEREIN_TEST_MYSQL: isolated-regression-only
+          VEREIN_TEST_MYSQL_HOST: 127.0.0.1
+          VEREIN_TEST_MYSQL_PORT: 13372
+          VEREIN_MODE: synthetic
+          KULTURHUS_DISABLE_MAIL: "1"
+          KULTURHUS_DISABLE_WEBSITE: "1"
+        run: php vereinsverwaltung/tests/run-mysql-suite.php calendar-occasions-publications.php calendar-workflows.php calendar-newsletter-periods.php calendar-loans.php shared-calendar-documents.php calendar-visible-range.php event-workflows.php calendar-invitations.php
+      - name: Browser image export contracts
+        if: always() && steps.checkout.outcome == 'success'
+        run: |
+          node vereinsverwaltung/tests/image-export-browser.mjs
+          node vereinsverwaltung/tests/photo-import-browser.mjs
+          node vereinsverwaltung/tests/photo-editor-browser.mjs
+          node vereinsverwaltung/tests/editor-list-browser.mjs
+      - name: Actual member import, inbox and manager release workflows
+        if: always() && steps.checkout.outcome == 'success'
+        env:
+          KH_NATIVE_CI_PASSWORD: synthetic-ci-only
+          DVM_GENERAL_MAILBOX_BROWSER: "1"
+          DVM_MAILINGS_INTERFACE_BROWSER: "1"
+          DVM_MEMBER_DETAILS_BROWSER: "1"
+          DVM_OCCASIONS_BROWSER: "1"
+          DVM_TAX_CATALOGUES_BROWSER: "1"
+          DVM_MINUTES_BROWSER: "1"
+          DVM_MEMBER_CHANGES_BROWSER: "1"
+          DVM_ACTIVITY_REPORTS_BROWSER: "1"
+          DVM_RELEASE_INTERFACE_BROWSER: "1"
+          DVM_SOCIAL_SAVE_BROWSER: "1"
+          DVM_IMAGE_STUDIO_INTERFACE_BROWSER: "1"
+          DVM_CANVAS_SAVE_BROWSER: "1"
+          DVM_STORY_AUTOMATION_BROWSER: "1"
+          DVM_SOCIAL_PHOTO_BROWSER: "1"
+          DVM_SOCIAL_PLANNING_BROWSER: "1"
+          DVM_VIDEO_SAVE_BROWSER: "1"
+          DVM_VIDEO_RECOVERY_REQUEST_BROWSER: "1"
+          DVM_VIDEO_REUSE_REQUEST_BROWSER: "1"
+          DVM_VIDEO_FILE_BROWSER: "1"
+          DVM_VIDEO_ARCHIVE_SAVE_BROWSER: "1"
+          DVM_VIDEO_POLICY_SAVE_BROWSER: "1"
+          DVM_VIDEO_METADATA_SAVE_BROWSER: "1"
+          # The earlier core step already audits all 139 menu routes.
+          DVM_RELEASE_INTERFACE_BROWSER_ONLY: "1"
+        run: php vereinsverwaltung/tests/ci-native.php native-general-mailbox native-mailings-interface native-member-import-details native-occasions-interface native-tax-catalogue-interface native-minutes-interface native-member-changes-interface native-activity-reports-interface native-release-interface native-social-save-requests native-image-studio-interface native-canvas-save-requests native-story-automation native-social-photo-upload native-social-planning-interface native-video-save-requests native-video-metadata-save-requests native-video-policy-save-requests native-video-archive-save-requests native-video-removal-requests native-video-recovery-requests native-video-reuse-requests
+      - name: Actual public and account form correction
+        if: always() && steps.checkout.outcome == 'success'
+        env:
+          KH_NATIVE_CI_PASSWORD: synthetic-ci-only
+          DVM_MEMBERSHIP_BROWSER: "1"
+          DVM_NEWSLETTER_BROWSER: "1"
+          DVM_ACCOUNT_BROWSER: "1"
+        run: php vereinsverwaltung/tests/ci-native.php native-membership-family native-newsletter-forms native-account-panels
+      - name: Actual individual account sessions
+        if: always() && steps.checkout.outcome == 'success'
+        env:
+          KH_NATIVE_CI_PASSWORD: synthetic-ci-only
+          DVM_ACCOUNT_SESSIONS_BROWSER: "1"
+        run: php vereinsverwaltung/tests/ci-native.php native-account-panels
+      - name: Actual anonymous public aliases
+        if: always() && steps.checkout.outcome == 'success'
+        env:
+          KH_NATIVE_CI_PASSWORD: synthetic-ci-only
+          DVM_PUBLIC_ALIAS_BROWSER: "1"
+        run: php vereinsverwaltung/tests/ci-native.php native-public-aliases
+      - name: Actual touch editor contact links
+        if: always() && steps.checkout.outcome == 'success'
+        env:
+          KH_NATIVE_CI_PASSWORD: synthetic-ci-only
+          DVM_CONTACT_LINK_BROWSER: "1"
+        run: php vereinsverwaltung/tests/ci-native.php native-contact-links
+      - name: Actual global media dependency observation
+        if: always() && steps.checkout.outcome == 'success'
+        env:
+          KH_NATIVE_CI_PASSWORD: synthetic-ci-only
+          DVM_MEDIA_REFERENCE_BROWSER: "1"
+        run: php vereinsverwaltung/tests/ci-native.php native-media-references
+      - name: Actual private media removal and recovery
+        if: always() && steps.checkout.outcome == 'success'
+        env:
+          KH_NATIVE_CI_PASSWORD: synthetic-ci-only
+          DVM_MEDIA_REMOVAL_BROWSER: "1"
+        run: php vereinsverwaltung/tests/ci-native.php native-media-removal-ui
+      - name: Actual private media retention controls
+        if: always() && steps.checkout.outcome == 'success'
+        env:
+          KH_NATIVE_CI_PASSWORD: synthetic-ci-only
+          DVM_MEDIA_RETENTION_BROWSER: "1"
+        run: php vereinsverwaltung/tests/ci-native.php native-media-retention
+      - name: Actual confirmed private image purge and continuation
+        if: always() && steps.checkout.outcome == 'success'
+        env:
+          KH_NATIVE_CI_PASSWORD: synthetic-ci-only
+          DVM_MEDIA_PURGE_BROWSER: "1"
+        run: php vereinsverwaltung/tests/ci-native.php native-media-purge-ui
+      - name: Inventory contracts and complete offline package
+        if: always() && steps.checkout.outcome == 'success'
+        run: |
+          python3 distribution/test-source-manifest.py
+          python3 distribution/test-package-store.py
+          python3 distribution/build-source-manifest.py --check
+          php distribution/install.php --verify
+          sha256sum distribution/source-files.json
+      - name: Read-only private media storage with touch and native forms
+        if: always() && steps.checkout.outcome == 'success'
+        env:
+          KH_NATIVE_CI: "1"
+          KH_NATIVE_CI_PASSWORD: synthetic-ci-only
+          DVM_MEDIA_STORAGE_BROWSER: "1"
+        run: php vereinsverwaltung/tests/ci-native.php native-media-storage-ui
+      - name: Actual optional PDF quota, conflicts and lost acknowledgements
+        if: always() && steps.checkout.outcome == 'success'
+        env:
+          KH_NATIVE_CI_PASSWORD: synthetic-ci-only
+          DVM_DOCUMENT_QUOTA_BROWSER: "1"
+        run: php vereinsverwaltung/tests/ci-native.php native-document-quota-ui
+      - name: Actual soft clone stamps, mobile controls and immutable original pixels
+        if: always() && steps.checkout.outcome == 'success'
+        env:
+          KH_NATIVE_CI_PASSWORD: synthetic-ci-only
+          DVM_PHOTO_SOFT_CLONES_BROWSER: "1"
+        run: php vereinsverwaltung/tests/ci-native.php native-photo-soft-clones
+      - name: Actual finger and pen retouch strokes, cancellation and private save
+        if: always() && steps.checkout.outcome == 'success'
+        env:
+          KH_NATIVE_CI_PASSWORD: synthetic-ci-only
+          DVM_PHOTO_CLONE_PAINTER_BROWSER: "1"
+        run: php vereinsverwaltung/tests/ci-native.php native-photo-clone-painter
+      - name: Actual browser webspace installation without shell functions
+        if: always() && steps.checkout.outcome == 'success' && steps.native.outputs.operational == 'true'
+        env:
+          KH_NATIVE_CI_PASSWORD: synthetic-ci-only
+          DVM_INSTALLER_BROWSER: "1"
+        run: php vereinsverwaltung/tests/ci-native.php native-webspace-installer
+      - name: Preserve synthetic browser failure evidence
+        if: always() && steps.checkout.outcome == 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-browser-evidence-${{ github.run_id }}
+          retention-days: 3
+          if-no-files-found: ignore
+          path: |
+            ${{ runner.temp }}/dvm-test-results/**/*.png
+            ${{ runner.temp }}/dvm-test-results/**/*-results.json
+            ${{ runner.temp }}/dvm-test-results/**/interface-report.json
+            ${{ runner.temp }}/dvm-test-results/**/*-failure.html
+            ${{ runner.temp }}/dvm-test-results/**/http.log
+      - name: Remove only this run's ephemeral MySQL containers
+        if: always() && steps.checkout.outcome == 'success'
+        run: docker ps --all --quiet --filter "label=com.kulturhus.ci.run=$GITHUB_RUN_ID" | xargs -r docker rm -f

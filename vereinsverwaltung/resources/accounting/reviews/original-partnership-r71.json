@@ -1,0 +1,220 @@
+{
+  "schema": 1,
+  "revision": 71,
+  "production_authorized": false,
+  "source_stage_proof_sha256": "c23767056edc861e2c8aa6a9286ea9ca8645b2d6648a9852eb3bfec9078e683b",
+  "bounds": "Positive complete annual original journals 2025/2026 only; no signed-negative/shared/period/composite qualification. No ELSTER transmission or production authorization.",
+  "primary_sources": [
+    "https://www.esteuer.de/download/taxonomie_20250618/german-gaap-taxonomy-v6.9-2025-04-01-xbrl.zip",
+    "https://www.gesetze-im-internet.de/hgb/__271.html",
+    "https://www.gesetze-im-internet.de/hgb/__253.html"
+  ],
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "original-partnership-r71-08030@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.sharesInAffil.partnerships.commPart.other",
+          "choices": [
+            "bs.ass.fixAss.fin.sharesInAffil.partnerships.commPart.other",
+            "bs.ass.fixAss.fin.sharesInAffil.partnerships.commPart.silentAtyp"
+          ],
+          "sources": [
+            {
+              "code": "08030",
+              "semantic": {
+                "name": "Anteile an verbundenen Unternehmen, Personengesellschaften",
+                "function": "",
+                "range_start": "08030",
+                "range_end": "08030",
+                "parent": null
+              },
+              "signature": "60251e1f1c34dfe201489b60d708fa4bbb5eb147125ab82549476df0dae41d1b"
+            }
+          ],
+          "scope": "Only positive original partnership capital in actual complete annual journals/registers, independent fiscal matrix and confirmed prior filing. Other source scopes remain guarded and unsupported."
+        },
+        {
+          "purpose": "original-partnership-r71-08050@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.sharesInAffil.partnerships.commPart.other",
+          "choices": [
+            "bs.ass.fixAss.fin.sharesInAffil.partnerships.commPart.other",
+            "bs.ass.fixAss.fin.sharesInAffil.partnerships.commPart.silentAtyp"
+          ],
+          "sources": [
+            {
+              "code": "08050",
+              "semantic": {
+                "name": "Anteile an herrschender oder mehrheitlich beteiligter Gesellschaft, Personengesellschaften",
+                "function": "",
+                "range_start": "08050",
+                "range_end": "08050",
+                "parent": null
+              },
+              "signature": "f1dd4f0c30244f85f9362db2d7c02f5dbda3146b9359cf900820a69e58c27edc"
+            }
+          ],
+          "scope": "Only positive original partnership capital in actual complete annual journals/registers, independent fiscal matrix and confirmed prior filing. Other source scopes remain guarded and unsupported."
+        },
+        {
+          "purpose": "original-partnership-r71-08400@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.particip.partnerships.commPart.silentAtyp",
+          "choices": [
+            "bs.ass.fixAss.fin.particip.partnerships.commPart.silentAtyp"
+          ],
+          "sources": [
+            {
+              "code": "08400",
+              "semantic": {
+                "name": "Atypisch stille Beteiligungen",
+                "function": "",
+                "range_start": "08400",
+                "range_end": "08400",
+                "parent": null
+              },
+              "signature": "f3c8a719e56e0acc8f1e5e55582d99d2edd74c70f3006a360193f0cc3a1ec24b"
+            }
+          ],
+          "scope": "Only positive original partnership capital in actual complete annual journals/registers, independent fiscal matrix and confirmed prior filing. Other source scopes remain guarded and unsupported."
+        },
+        {
+          "purpose": "original-partnership-r71-08600@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.particip.partnerships.commPart.other",
+          "choices": [
+            "bs.ass.fixAss.fin.particip.partnerships.commPart.other",
+            "bs.ass.fixAss.fin.particip.partnerships.commPart.silentAtyp"
+          ],
+          "sources": [
+            {
+              "code": "08600",
+              "semantic": {
+                "name": "Beteiligungen an Personengesellschaften",
+                "function": "",
+                "range_start": "08600",
+                "range_end": "08600",
+                "parent": null
+              },
+              "signature": "179e9b8e7f50d66156f6d8350ef23b483dc998d750f79835110f5baec3a28502"
+            }
+          ],
+          "scope": "Only positive original partnership capital in actual complete annual journals/registers, independent fiscal matrix and confirmed prior filing. Other source scopes remain guarded and unsupported."
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "original-partnership-r71-08030@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.sharesInAffil.partnerships.commPart.other",
+          "choices": [
+            "bs.ass.fixAss.fin.sharesInAffil.partnerships.commPart.other",
+            "bs.ass.fixAss.fin.sharesInAffil.partnerships.commPart.silentAtyp"
+          ],
+          "sources": [
+            {
+              "code": "08030",
+              "semantic": {
+                "name": "Anteile an verbundenen Unternehmen, Personengesellschaften",
+                "function": "",
+                "range_start": "08030",
+                "range_end": "08030",
+                "parent": null
+              },
+              "signature": "60251e1f1c34dfe201489b60d708fa4bbb5eb147125ab82549476df0dae41d1b"
+            }
+          ],
+          "scope": "Only positive original partnership capital in actual complete annual journals/registers, independent fiscal matrix and confirmed prior filing. Other source scopes remain guarded and unsupported."
+        },
+        {
+          "purpose": "original-partnership-r71-08050@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.sharesInAffil.partnerships.commPart.other",
+          "choices": [
+            "bs.ass.fixAss.fin.sharesInAffil.partnerships.commPart.other",
+            "bs.ass.fixAss.fin.sharesInAffil.partnerships.commPart.silentAtyp"
+          ],
+          "sources": [
+            {
+              "code": "08050",
+              "semantic": {
+                "name": "Anteile an herrschender oder mehrheitlich beteiligter Gesellschaft, Personengesellschaften",
+                "function": "",
+                "range_start": "08050",
+                "range_end": "08050",
+                "parent": null
+              },
+              "signature": "f1dd4f0c30244f85f9362db2d7c02f5dbda3146b9359cf900820a69e58c27edc"
+            }
+          ],
+          "scope": "Only positive original partnership capital in actual complete annual journals/registers, independent fiscal matrix and confirmed prior filing. Other source scopes remain guarded and unsupported."
+        },
+        {
+          "purpose": "original-partnership-r71-08400@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.particip.partnerships.commPart.silentAtyp",
+          "choices": [
+            "bs.ass.fixAss.fin.particip.partnerships.commPart.silentAtyp"
+          ],
+          "sources": [
+            {
+              "code": "08400",
+              "semantic": {
+                "name": "Atypisch stille Beteiligungen",
+                "function": "",
+                "range_start": "08400",
+                "range_end": "08400",
+                "parent": null
+              },
+              "signature": "f3c8a719e56e0acc8f1e5e55582d99d2edd74c70f3006a360193f0cc3a1ec24b"
+            }
+          ],
+          "scope": "Only positive original partnership capital in actual complete annual journals/registers, independent fiscal matrix and confirmed prior filing. Other source scopes remain guarded and unsupported."
+        },
+        {
+          "purpose": "original-partnership-r71-08600@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.particip.partnerships.commPart.other",
+          "choices": [
+            "bs.ass.fixAss.fin.particip.partnerships.commPart.other",
+            "bs.ass.fixAss.fin.particip.partnerships.commPart.silentAtyp"
+          ],
+          "sources": [
+            {
+              "code": "08600",
+              "semantic": {
+                "name": "Beteiligungen an Personengesellschaften",
+                "function": "",
+                "range_start": "08600",
+                "range_end": "08600",
+                "parent": null
+              },
+              "signature": "179e9b8e7f50d66156f6d8350ef23b483dc998d750f79835110f5baec3a28502"
+            }
+          ],
+          "scope": "Only positive original partnership capital in actual complete annual journals/registers, independent fiscal matrix and confirmed prior filing. Other source scopes remain guarded and unsupported."
+        }
+      ]
+    }
+  ]
+}

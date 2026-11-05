@@ -1,0 +1,3 @@
+# The package checksums cover exact bytes, including upstream license notices.
+# JSON/Markdown produced here already use LF; prevent checkout conversions.
+* -text

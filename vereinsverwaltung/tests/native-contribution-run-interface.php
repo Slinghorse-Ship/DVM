@@ -1,0 +1,14 @@
+<?php declare(strict_types=1);
+require dirname(__DIR__,2).'/vendor/autoload.php';
+require __DIR__.'/native-document-interface.php';
+require __DIR__.'/support/contribution-run-contracts.php';
+$contributionRunFixture=ownContributionRunContracts($db,$check);
+require __DIR__.'/support/contribution-run-failures.php';
+$contributionRunFailures=ownContributionRunFailures($db,$check,$contributionRunFixture,\Kulturhus\Native\TestSupport::config());
+require __DIR__.'/support/contribution-run-originals.php';
+$contributionRunOriginals=ownContributionRunOriginals($db,$check,$contributionRunFixture,$contributionRunFailures);
+require __DIR__.'/support/contribution-run-history.php';
+$contributionRunHistory=ownContributionRunHistory($db,$check,$contributionRunFixture);
+if(getenv('DVM_CONTRIBUTION_RUN_INTERFACE_BROWSER')==='1')require __DIR__.'/support/contribution-run-browser-fixture.php';
+$mailPolicy=new \Kulturhus\Verein\Finance\Contributions\ContributionMailPolicy($db,$contributionRunFixture['admin']);$policyBefore=ownOriginalDatabaseHash($db,$contributionRunFixture['tables']);$policy=$mailPolicy->state();$check($policy['version']===0&&!$policy['automatic']&&!$mailPolicy->automaticAllowed()&&ownOriginalDatabaseHash($db,$contributionRunFixture['tables'])===$policyBefore,'annual mail automation defaults off and merely opening the policy changes no invoice mail order or business row');$mailPolicy->save(true,0);$check($mailPolicy->state()['automatic']&&$mailPolicy->automaticAllowed(),'only an explicitly saved financial choice enables annual and reminder automation');$deniedPolicy=false;try{$mailPolicy->save(false,0);}catch(DomainException){$deniedPolicy=true;}$check($deniedPolicy&&$mailPolicy->state()['automatic'],'a stale checkbox form cannot change current mail automation');$mailPolicy->save(false,1);$check(!$mailPolicy->automaticAllowed(),'explicitly disabling automatic mail retains manual contribution actions');
+echo json_encode(['suite'=>'native-contribution-run-interface','checks'=>$n,'external_actions'=>0],JSON_THROW_ON_ERROR)."\n";

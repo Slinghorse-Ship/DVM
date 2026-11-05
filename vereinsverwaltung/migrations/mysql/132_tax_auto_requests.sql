@@ -1,0 +1,28 @@
+-- Accepted tax-assistant commands only; existing cases, profiles, reports and money stay untouched.
+CREATE TABLE IF NOT EXISTS tax_auto_requests (
+ club_id VARCHAR(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+ request_key CHAR(32) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+ actor_id VARCHAR(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+ operation VARCHAR(16) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+ tax_year INT NOT NULL,
+ case_version INT NOT NULL,
+ profile_version INT NOT NULL,
+ input_sha256 CHAR(64) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+ input_json MEDIUMTEXT NOT NULL,
+ original_sha256 CHAR(64) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+ original_json MEDIUMTEXT NOT NULL,
+ created_at DATETIME(6) NOT NULL,
+ PRIMARY KEY(club_id,request_key),
+ INDEX kh132_tax_auto_history(club_id,tax_year,created_at,request_key),
+ CONSTRAINT kh132_tax_auto_club FOREIGN KEY(club_id) REFERENCES clubs(id),
+ CONSTRAINT kh132_tax_auto_actor FOREIGN KEY(actor_id) REFERENCES actors(id),
+ CONSTRAINT kh132_tax_auto_operation CHECK(CAST(operation AS BINARY) IN ('draft','filing')),
+ CONSTRAINT kh132_tax_auto_year CHECK(tax_year BETWEEN 2000 AND 9999),
+ CONSTRAINT kh132_tax_auto_case_version CHECK(case_version>=0),
+ CONSTRAINT kh132_tax_auto_profile_version CHECK(profile_version>=0),
+ CONSTRAINT kh132_tax_auto_key CHECK(REGEXP_LIKE(request_key,'^[a-f0-9]{32}$','c')),
+ CONSTRAINT kh132_tax_auto_input_hash CHECK(REGEXP_LIKE(input_sha256,'^[a-f0-9]{64}$','c')),
+ CONSTRAINT kh132_tax_auto_original_hash CHECK(REGEXP_LIKE(original_sha256,'^[a-f0-9]{64}$','c')),
+ CONSTRAINT kh132_tax_auto_input_json CHECK(JSON_VALID(input_json)),
+ CONSTRAINT kh132_tax_auto_original_json CHECK(JSON_VALID(original_json))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;

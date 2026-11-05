@@ -1,0 +1,12 @@
+[data-xml-text-preview],[data-invoice-mail-preview]{min-width:0;overflow-wrap:anywhere;font-size:1rem}
+[data-xml-text-preview] .pdf-controls{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+[data-xml-text-preview] .pdf-controls[hidden]{display:none}
+[data-xml-text-preview] .data-list,[data-invoice-mail-preview] .data-list{display:block}
+[data-xml-text-preview] .data-list dt,[data-invoice-mail-preview] .data-list dt{font-weight:600;margin-top:.6rem}
+[data-xml-text-preview] .data-list dd,[data-invoice-mail-preview] .data-list dd{margin-left:0;overflow-wrap:anywhere}
+[data-xml-text-preview] p,[data-xml-text-preview] dt,[data-xml-text-preview] dd,[data-xml-text-preview] li,[data-invoice-mail-preview] p,[data-invoice-mail-preview] dt,[data-invoice-mail-preview] dd,[data-invoice-mail-preview] li{font-size:1rem}
+[data-xml-text-preview] h3,[data-xml-text-preview] h4,[data-invoice-mail-preview] h3{font-size:1.15rem}
+[data-xml-text-preview] summary,[data-xml-text-preview] a,[data-invoice-mail-preview] a{display:inline-flex;align-items:center;min-height:44px;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+[data-xml-text-preview] summary{display:list-item;padding-block:.5rem;font-size:1rem}
+[data-xml-text-preview] button,[data-invoice-mail-preview] .btn{min-height:44px;font-size:1rem;white-space:normal;overflow-wrap:anywhere}
+[data-xml-text-preview] .doc-hash{font-size:.875rem;white-space:normal}

@@ -1,0 +1,348 @@
+/* Native select arrows keep the same-origin image policy without inline SVG URLs. */
+select.form-control {
+  appearance: auto;
+  background-image: none;
+}
+
+/* Legacy unlayered link colours must not override Bootstrap's layered buttons. */
+body:not(.public-site) a.btn {
+  color: var(--bs-btn-color);
+}
+body:not(.public-site) a.btn:hover {
+  color: var(--bs-btn-hover-color, var(--bs-btn-color));
+}
+body:not(.public-site) a.btn:is(:active, .active, .show) {
+  color: var(--bs-btn-active-color, var(--bs-btn-color));
+}
+body:not(.public-site) a.btn.disabled {
+  color: var(--bs-btn-disabled-color, var(--bs-btn-color));
+}
+
+/* Existing DVM forms use .check on labels; Bootstrap 6 uses it on inputs. */
+label.check {
+  width: auto;
+  height: auto;
+  appearance: auto;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  position: static;
+  flex-shrink: 1;
+}
+
+label.check::before {
+  content: none;
+}
+
+/* Legacy label rules must not collapse Bootstrap 6 checkbox inputs to their border. */
+label.check > input.check[type="checkbox"] {
+  display: inline-block;
+  appearance: auto;
+  width: var(--bs-check-size, 1.25rem);
+  height: var(--bs-check-size, 1.25rem);
+  min-width: 1rem;
+  min-height: 1rem;
+  margin: 0;
+  padding: 0;
+  flex: 0 0 var(--bs-check-size, 1.25rem);
+}
+
+/* Native checkbox glyphs retain the existing image policy without data-URL masks. */
+input.check[type="checkbox"]::before {
+  content: none;
+}
+
+/* All communication sections remain visible on narrow manager screens. */
+.native-manager-embedded .workspace-tabs.nav {
+  flex-wrap: wrap;
+  overflow-x: visible;
+}
+
+/* DVM menu labels wrap and retain the configured club colours. */
+.sidebar .subnav .nav-link {
+  color: inherit;
+  white-space: normal;
+}
+
+.module-tabs.nav .nav-link {
+  white-space: normal;
+}
+
+/* Long publication states must fit side panels and narrow manager screens. */
+.badge {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.page-children-list {
+  display: block;
+}
+
+.page-children-list li {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.page-children-list .nav-link {
+  overflow-wrap: anywhere;
+  max-width: 100%;
+}
+
+/* Menu editor rows follow the available workspace width, including the tablet sidebar. */
+[data-navigation-editor] .native-menu-list {
+  container-type: inline-size;
+}
+
+[data-navigation-editor] .native-menu-list .native-menu-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 6rem max-content minmax(0, 9rem);
+  gap: 1rem;
+  align-items: center;
+  min-width: 0;
+}
+
+[data-navigation-editor] .native-menu-list .native-menu-row > * {
+  min-width: 0;
+}
+
+@container (max-width: 640px) {
+  [data-navigation-editor] .native-menu-list .native-menu-row {
+    grid-template-columns: minmax(0, 1fr) 5rem;
+    gap: 0.75rem;
+  }
+}
+
+.reference-picker {
+  min-width: 0;
+  margin-bottom: 1rem;
+}
+
+.reference-search-actions,
+.reference-pagination {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0.5rem 0;
+}
+
+.reference-search-actions input {
+  flex: 1 1 10rem;
+  min-width: 0;
+}
+
+.reference-picker select {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.reference-pagination p {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.page-sidebar {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.model-field[hidden],
+[data-condition-body][hidden],
+[data-condition-value][hidden] {
+  display: none !important;
+}
+.field-rules fieldset {
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid var(--bs-border-color, #d7ded5);
+  border-radius: 0.5rem;
+  min-width: 0;
+}
+.condition-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.75rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--bs-border-color, #d7ded5);
+}
+.condition-row > [data-condition-value],
+.condition-row > button {
+  grid-column: 1 / -1;
+}
+.condition-row > button {
+  justify-self: start;
+}
+.field-rules {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+@container (max-width: 640px) {
+  .condition-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .condition-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Shared manager controls keep a usable target in compact specialist panels. */
+body:not(.public-site) :is(button, .button, .btn) {
+  min-inline-size: 44px;
+  min-block-size: 44px;
+  max-inline-size: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  touch-action: manipulation;
+}
+
+body:not(.public-site) :is(select.form-control, input.form-control, textarea.form-control) {
+  min-block-size: 44px;
+  max-inline-size: 100%;
+  min-inline-size: 0;
+  font-size: max(1rem, 16px);
+}
+
+body:not(.public-site) input.check:is([type="checkbox"], [type="radio"]) {
+  appearance: auto;
+  inline-size: 24px;
+  block-size: 24px;
+  min-inline-size: 24px;
+  min-block-size: 24px;
+  flex: 0 0 24px;
+  margin: 0;
+}
+
+body:not(.public-site) input.check::before {
+  content: none;
+}
+
+body:not(.public-site) label:has(> input.check) {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  min-block-size: 44px;
+  inline-size: auto;
+}
+
+body:not(.public-site) :not(label) > input.check {
+  min-inline-size: 44px;
+  min-block-size: 44px;
+}
+
+body:not(.public-site) details > summary {
+  min-block-size: 44px;
+  align-content: center;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+/* Event provider choices also fit the narrow layout produced by 200% zoom. */
+body:not(.public-site) :is(#event-workflow, #facebook-event-link) button.btn-solid {
+  background: #245640;
+  border-color: #245640;
+  color: #fff;
+  font-size: 1rem;
+}
+body:not(.public-site) :is(#event-workflow, #facebook-event-link),
+body:not(.public-site) :is(#event-workflow, #facebook-event-link) :is(summary, form, label) {
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  overflow-wrap: anywhere;
+}
+
+body:not(.public-site) [hidden] {
+  display: none !important;
+}
+
+body:not(.public-site) .kh-rte-emoji {
+  grid-template-columns: repeat(auto-fit, minmax(44px, 1fr));
+}
+
+body:not(.public-site) .kh-rte-popover {
+  max-block-size: min(410px, 70dvh);
+  overflow: auto;
+}
+
+body:not(.public-site) .kh-rte-palette {
+  gap: .5rem;
+}
+
+/* Manager colours are independent of the public website template. */
+body:not(.public-site) {
+  --bs-primary-base: #245640;
+  --bs-primary-fg: #245640;
+  --bs-primary-fg-emphasis: #173b2e;
+  --bs-primary-bg: #245640;
+  --bs-primary-bg-subtle: #eaf2ed;
+  --bs-primary-bg-muted: #eaf2ed;
+  --bs-primary-border: #245640;
+  --bs-primary-focus-ring: #317858;
+  --bs-primary-contrast: #fff;
+  --bs-secondary-base: #506357;
+  --bs-secondary-fg: #314c3e;
+  --bs-secondary-fg-emphasis: #243d2e;
+  --bs-secondary-bg: #506357;
+  --bs-secondary-bg-subtle: #eef3ef;
+  --bs-secondary-bg-muted: #eef3ef;
+  --bs-secondary-border: #d7e2db;
+  --bs-secondary-focus-ring: #317858;
+  --bs-secondary-contrast: #fff;
+}
+
+body:not(.public-site) .select-search-popup [role="option"] {
+  min-block-size: 44px;
+  align-content: center;
+  touch-action: manipulation;
+}
+
+body:not(.public-site) label:has(> input.check) {
+  flex-wrap: wrap;
+  max-inline-size: 100%;
+  overflow-wrap: anywhere;
+}
+
+body:not(.public-site) label:has(> input.check) > span {
+  min-inline-size: 0;
+  flex: 1 1 0;
+  overflow-wrap: anywhere;
+}
+
+.native-manager-embedded .workspace-tabs .nav-link{white-space:normal;overflow-wrap:anywhere;max-width:100%}
+.social-library-heading>div{min-width:0;max-width:100%}.social-library-heading h2{overflow-wrap:anywhere;hyphens:auto}
+
+.website-workspace-header[data-website-detail] p{display:none}
+.website-area-menu{margin-bottom:.5rem}
+.website-area-menu>summary{display:flex;align-items:center;min-height:44px;cursor:pointer}
+.website-area-menu>summary::after{content:"⌄";margin-left:.5rem}
+.website-area-menu .module-tabs{margin-top:.5rem}
+
+.worker-history-filter,.worker-history-pages{display:flex;flex-wrap:wrap;align-items:end;gap:.65rem;margin-block:.75rem}
+.worker-history-filter label{min-width:0;max-width:100%}.worker-history-filter select{min-height:44px;max-width:100%}
+.worker-history-pages a,.worker-history-filter button{min-height:44px;max-width:100%;white-space:normal}
+#worker-heading{scroll-margin-block-start:6rem}
+.worker-table table{width:100%}.worker-table td{overflow-wrap:anywhere;vertical-align:top}
+@container(max-width:620px){.worker-table{overflow:visible}.worker-table caption{display:block;width:100%;text-align:start}.worker-table table,.worker-table tbody{display:block;max-width:100%}.worker-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.worker-table tbody tr{display:grid;grid-template-columns:minmax(0,1fr);border:1px solid var(--line,#ddd);border-radius:.5rem;margin-block:.65rem;padding:.5rem}.worker-table td{display:block;min-width:0;max-width:100%;padding:.35rem;border:0}.worker-table td::before{content:attr(data-label);display:block;font-size:.8em;font-weight:600}.worker-history-filter>*{min-width:0;max-width:100%}}
+
+#worker-history{container-type:inline-size;min-width:0;max-width:100%;overflow-wrap:anywhere}
+.worker-history-filter select{font-size:1rem}
+.worker-status{display:inline-flex;max-width:100%;padding:.3rem .55rem;border-radius:.4rem;font-weight:600;background:#edf2ff;color:#284b87}
+.worker-status-completed{background:#eef6ef;color:#205135}.worker-status-needs_review{background:#fff0c2;color:#694c00}.worker-status-failed{background:#fff0f0;color:#8e1e25}
+
+/* Long original upload names stay readable inside native and embedded notices. */
+body:not(.public-site) :is(.notice,.error){overflow-wrap:anywhere;min-inline-size:0;max-inline-size:100%}
+body:not(.public-site) :is(.notice,.error)>:is(span,p,div){min-inline-size:0}
+
+
+.finance-area-menu{margin-block:.5rem 1rem;min-width:0;max-width:100%}
+.finance-area-menu>summary{display:flex;flex-wrap:wrap;align-items:center;gap:.25rem .75rem;min-height:44px;padding:.5rem .75rem;border:1px solid currentColor;border-radius:.375rem;overflow-wrap:anywhere}
+.finance-area-menu>summary>span{min-width:0;max-width:100%}
+.finance-area-menu-hint{font-size:.875em}
+.finance-area-menu>summary::after{content:"⌄";margin-left:auto}
+.finance-area-menu[open]>summary::after{content:"⌃"}
+.finance-area-menu .module-tabs{margin-top:.5rem}

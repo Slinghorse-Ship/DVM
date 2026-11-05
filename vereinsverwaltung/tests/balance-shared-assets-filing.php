@@ -1,0 +1,58 @@
+<?php declare(strict_types=1);
+require __DIR__.'/balance-tax-assets.php';
+use Kulturhus\Verein\{BalanceSegments,BalanceSegmentCalculation as S,BalanceAssetAllocation as A,BalanceTaxFiling,BalanceSegmentExport,SettingsSchema};
+use Kulturhus\Verein\Tests\MySqlFixture;
+$segments=new BalanceSegments($db,'assetboard');$editor=new BalanceSegments($db,'assetfinance');
+$units=['food'=>['name'=>'Essen <not-html>','sphere'=>'4'],'drinks'=>['name'=>'Getränke','sphere'=>'4']];$weights=['drinks'=>2,'food'=>1];
+$report=$ledger->report(2025);$item=$report['asset_schedule']['items']['tax-item'];$alloc=[];
+$sharedJournalBefore=MySqlFixture::rows($db,'balance_years');$sharedEntriesBefore=MySqlFixture::rows($db,'balance_entries');$sharedPlanBefore=$books->get('tax-item');
+foreach(S::sources($report) as $key=>$row)$alloc[$key]=['parts'=>array_filter(A::cents($row['cents'],$weights)),'reason'=>'Synthetic original source allocation'];
+$editor->save(2025,0,$units,$alloc);$before=MySqlFixture::snapshot($db);
+denied(fn()=>$editor->asset(2025,1,'tax-item',$weights,'hours','Synthetic evidence',false),'asset use requires express review');
+denied(fn()=>(new BalanceSegments($db,'assetmember'))->asset(2025,1,'tax-item',$weights,'hours','Evidence',true),'member cannot allocate assets');
+denied(fn()=>(new BalanceSegments($db,'other'))->asset(2025,1,'tax-item',$weights,'hours','Evidence',true),'foreign club cannot allocate assets');
+denied(fn()=>$editor->asset(2025,1,'missing',$weights,'hours','Evidence',true),'unknown source blocked');
+denied(fn()=>$editor->asset(2025,1,'tax-item',$weights,'hours','',true),'usage evidence required');
+check(MySqlFixture::snapshot($db)===$before,'failed shared-asset edits do not write rows or audit');
+$settings=json_decode($db->query("SELECT payload FROM club_settings WHERE club_id='c' AND section='tax'")->fetchColumn(),true);$q=$db->prepare("UPDATE club_settings SET payload=? WHERE club_id='c' AND section='tax'");
+$q->execute([json_encode(array_replace($settings,['accounting_basis'=>'euer']))]);denied(fn()=>$editor->asset(2025,1,'tax-item',$weights,'hours','Evidence',true),'EÜR remains protected');$q->execute([json_encode($settings)]);
+$originalAssetUse=$editor->asset(2025,1,'tax-item',$weights,'hours','Synthetic usage <not-html>',true);$s=$segments->get(2025);
+check($s['allocation']['schema']===4&&$s['allocation']['complete']&&!$s['current_approval'],'saved exact shared asset requires board approval');
+denied(fn()=>$editor->asset(2025,1,'tax-item',$weights,'hours','Stale',true),'stale asset version rejected');
+denied(fn()=>$editor->confirm(2025,2,true,'Not board'),'treasurer cannot replace board review');
+$segments->confirm(2025,2,true,'Synthetic shared asset approval');
+$cp=$profile+['whole_business_name'=>'Synthetic complete club','whole_book_standard'=>'HGBM'];$cp['tax_privileged']=true;$cp['asset_values_unchanged']=true;$cp['asset_tax_values_reviewed']=false;
+$cid=$svc->create(2025,BalanceTaxFiling::COMBINED_SOURCE);$clear=['complete'=>true,'opening_adjustments'=>[],'current_adjustments'=>[]];$svc->save($cid,1,$cp,$mapping,$clear,$mapping);
+check($tax->validate($cid,2)['valid'],'persisted shared asset passes actual combined generator');$bs->approve($cid,3,true);
+$values=$svc->assertCurrent($tax->get($cid));check(count($values['taxable']['asset_schedule']['items'])===1&&$values['taxable']['asset_schedule']['totals']['book_closing_cents']===11000,'one original asset retained in tax XML source');
+check($tax->ready($cid,4,'SEND-TEST',true,true)['id']===$cid,'approved shared asset ready only in synthetic runtime');
+$sharedRender=static function(string $actor,array $post=[])use($db):string{$_SESSION=['actor'=>$actor,'csrf'=>'synthetic'];$_GET=['asset_item'=>'tax-item'];$_POST=$post;$year=2025;ob_start();require __DIR__.'/../views/Finance/Balance/balance-segments.php';return ob_get_clean();};
+$html=$sharedRender('assetfinance');check(str_contains($html,'Nutzungsaufteilung ändern')&&str_contains($html,'Anlagenanteile'),'UI shows retained values and editing');
+check(str_contains($html,'2 von 3 Nutzungsstunden')&&!str_contains($html,'Centreste'),'UI states use units without rounding jargon');
+check(str_contains($html,'&lt;not-html&gt;')&&!str_contains($html,'<not-html>'),'usage and business names escaped');
+check(!str_contains($sharedRender('assetmember'),'Nutzungsaufteilung speichern'),'member sees no financial edit');
+file_put_contents(__DIR__.'/balance-shared-assets-ui.html',$html);
+$post=['action'=>'balance-segment-asset','balance_year'=>'2025','version'=>'2','asset_item'=>'tax-item','measure'=>'hours','weights'=>['food'=>'17','drinks'=>'23'],'evidence'=>'Preserved <draft>'];
+$html=$sharedRender('assetfinance',$post);check(str_contains($html,'Preserved &lt;draft&gt;')&&str_contains($html,'value="17"')&&str_contains($html,'name="version" value="2"'),'failed input preserved without promoting stale version');file_put_contents(__DIR__.'/balance-shared-assets-form-ui.html',$html);
+$editor->asset(2025,3,'tax-item',['drinks'=>1,'food'=>1],'hours','Synthetic corrected usage',true);check(!$segments->get(2025)['allocation']['complete'],'mismatching usage cannot pass reconciliation');
+denied(fn()=>$segments->confirm(2025,4,true,'Mismatching'),'mismatching shared assets cannot be approved');
+denied(fn()=>$tax->ready($cid,4,'SEND-TEST',true,true),'changed usage invalidates prior filing');
+$editor->asset(2025,4,'tax-item',$weights,'hours','Synthetic renewed original usage',true);$segments->confirm(2025,5,true,'Synthetic refreshed review');
+$segments->carry(2026,0,true);$s=$segments->get(2026);$nextReport=$ledger->report(2026);$parts=A::item($nextReport['asset_schedule']['items']['tax-item'],$weights);$current=$s['allocation']['allocations'];
+foreach(S::sources($nextReport) as $key=>$row)if(!isset($current[$key])){$amounts=[];foreach($parts as $u=>$v)if($v['depreciation_cents'])$amounts[$u]=$v['depreciation_cents'];$current[$key]=['parts'=>$amounts,'reason'=>'Synthetic cumulative depreciation shares'];}
+$editor->save(2026,1,$units,$current);check($segments->get(2026)['allocation']['complete'],'following year cumulative shares reconcile');
+denied(fn()=>$editor->asset(2026,2,'tax-item',['drinks'=>1,'food'=>1],'hours','Changed following year',true),'prior approved weights cannot silently change');
+$segments->confirm(2026,2,true,'Synthetic complete carry');
+class SharedAssetRedirect extends RuntimeException {public function __construct(public array $parameters){parent::__construct('Synthetic redirect');}}
+function redirectTo(array $parameters):never{throw new SharedAssetRedirect($parameters);}
+$sharedAction=static function(array $post)use($db):array{$_SESSION=['actor'=>'assetfinance'];$_POST=$post+['balance_year'=>'2026','segment_journal_sha256'=>(new BalanceSegments($db,'assetfinance'))->forAction(2026,(int)input($post,'version'))['journal']['closed_sha256']];$year=2026;$version=(int)input($post,'version');$action='balance-segment-asset';try{require __DIR__.'/../src/Finance/Balance/BalanceSegmentActions.php';}catch(SharedAssetRedirect $r){return $r->parameters;}throw new RuntimeException('Missing redirect');};
+$post=['version'=>'3','asset_item'=>'tax-item','weights'=>['drinks'=>'2','food'=>'1'],'measure'=>'hours','evidence'=>'Synthetic controller proof','reviewed'=>'1'];
+foreach(['1.5','-1','true','1000001',[]] as $invalid){$bad=$post;$bad['weights']['food']=$invalid;denied(fn()=>$sharedAction($bad),'controller rejects malformed weight');}
+$bad=$post;unset($bad['reviewed']);denied(fn()=>$sharedAction($bad),'controller requires consent');
+$redirect=$sharedAction($post);check($redirect['asset_item']==='tax-item'&&$segments->get(2026)['version']===4&&!$segments->get(2026)['current_approval'],'controller preserves item selection and requires renewed review');
+$segments->confirm(2026,4,true,'Synthetic controller review');
+check(isset(BalanceSegmentExport::files($segments->get(2025))['bereiche/anlagenanteile.csv']),'retained workpaper export includes source-bound asset allocation');
+$originalRepeatRows=MySqlFixture::snapshot($db);check($editor->asset(2025,1,'tax-item',$weights,'hours','Synthetic usage <not-html>',true)===$originalAssetUse&&MySqlFixture::snapshot($db)===$originalRepeatRows,'first actual source-bound asset allocation replays exactly after later usage and carry reviews');
+check(MySqlFixture::rows($db,'balance_years')===$sharedJournalBefore&&MySqlFixture::rows($db,'balance_entries')===$sharedEntriesBefore&&$books->get('tax-item')===$sharedPlanBefore,'all original journals and asset records remain unchanged');
+$priorState=$segments->get(2026);$restored=MySqlFixture::restoreBackup($db);check((new BalanceSegments($restored,'assetboard'))->get(2026)===$priorState,'encrypted restore retains schema 4 and carry history');
+echo "$checks shared-asset workflow checks passed; synthetic MySQL and offline transport fixture only\n";

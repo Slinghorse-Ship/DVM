@@ -1,0 +1,1728 @@
+{
+  "schema": 1,
+  "revision": 21,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "financial-income-r21-001@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earnings.silentPart",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earnings.silentPart"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "70020",
+              "semantic": {
+                "name": "Erträge aus typisch stillen Beteiligungen",
+                "function": "",
+                "range_start": "70020",
+                "range_end": "70020",
+                "parent": null
+              },
+              "signature": "03a37eb271b8e8e4d4ca9136cd903b875f3263a4f80aea90a5db7ae01a506c7f"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-002@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earnings.corporations.domestic.smaller10pt",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.domestic.smaller10pt",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.domestic.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.domestic.notLessThan15pt",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.domestic.other",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.foreign.smaller10pt",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.foreign.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.foreign.notLessThan15pt",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.foreign.other",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "70050",
+              "semantic": {
+                "name": "Erträge aus Anteilen an Kapitalgesellschaften (Beteiligung) § 3 Nr. 40 EStG bzw. § 8b Abs. 1 KStG",
+                "function": "",
+                "range_start": "70050",
+                "range_end": "70050",
+                "parent": null
+              },
+              "signature": "197c09a63e13727b36079aa5fb22e2b01e6da3c61a6620c5eab6ef5744b4f852"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-003@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earnings.corporations.domestic.smaller10pt",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.domestic.smaller10pt",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.domestic.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.domestic.notLessThan15pt",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.domestic.other",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.foreign.smaller10pt",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.foreign.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.foreign.notLessThan15pt",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.foreign.other",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.other"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "is.netIncome.regular.fin.netParticipation.earnings.groupComp"
+          ],
+          "sources": [
+            {
+              "code": "70060",
+              "semantic": {
+                "name": "Erträge aus Anteilen an Kapitalgesellschaften (verbundene Unternehmen) § 3 Nr. 40 EStG bzw. § 8b Abs. 1 KStG",
+                "function": "",
+                "range_start": "70060",
+                "range_end": "70060",
+                "parent": null
+              },
+              "signature": "b55750511f098ab14f87a5939af697e7db50afc26949bbd4d7e2c501afe93a13"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-004@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earningSecurities.partnerships",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.partnerships"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "70130",
+              "semantic": {
+                "name": "Erträge aus Anteilen an Personengesellschaften (Finanzanlagevermögen)",
+                "function": "",
+                "range_start": "70130",
+                "range_end": "70130",
+                "parent": null
+              },
+              "signature": "66a6055bbed565ac7ff4904851cbedf42766ee125f5eee761bf17809a3b44868"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-005@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.smaller10pt",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.smaller10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.notLessThan15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.other",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.smaller10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.notLessThan15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.other",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "70140",
+              "semantic": {
+                "name": "Erträge aus Anteilen an Kapitalgesellschaften (Finanzanlagevermögen) § 3 Nr. 40 EStG bzw. § 8b Abs. 1 und 4 KStG",
+                "function": "",
+                "range_start": "70140",
+                "range_end": "70140",
+                "parent": null
+              },
+              "signature": "cda60ae6da8cd6ee5029202f4ad98193c088505249bd953d25a9655dfc39226c"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-006@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.smaller10pt",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.smaller10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.notLessThan15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.other",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.smaller10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.notLessThan15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.other",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.other"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.assoc"
+          ],
+          "sources": [
+            {
+              "code": "70150",
+              "semantic": {
+                "name": "Erträge aus Anteilen an Kapitalgesellschaften (verbundene Unternehmen) § 3 Nr. 40 EStG bzw. § 8b Abs. 1 KStG",
+                "function": "",
+                "range_start": "70150",
+                "range_end": "70150",
+                "parent": null
+              },
+              "signature": "4c0d7125ab26ef65bffb398844588d8fbd35567e0f0c60ff23a3bf08554267e9"
+            },
+            {
+              "code": "70170",
+              "semantic": {
+                "name": "Erträge aus anderen Wertpapieren des Finanzanlagevermögens an Kapitalgesellschaften (verbundene Unternehmen)",
+                "function": "",
+                "range_start": "70170",
+                "range_end": "70170",
+                "parent": null
+              },
+              "signature": "cd0d906539505b1cd1ff2086daf8aa3351144d0bdaf6ce69a10c1b9f86163e4c"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-007@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earningSecurities.partnerships",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.partnerships"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.assoc"
+          ],
+          "sources": [
+            {
+              "code": "70160",
+              "semantic": {
+                "name": "Erträge aus Anteilen an Personengesellschaften (verbundene Unternehmen)",
+                "function": "",
+                "range_start": "70160",
+                "range_end": "70160",
+                "parent": null
+              },
+              "signature": "5550ec9732c25edd4459dd9bb9f12aa087916945e981d73f085b619820105d83"
+            },
+            {
+              "code": "70180",
+              "semantic": {
+                "name": "Erträge aus anderen Wertpapieren des Finanzanlagevermögens an Personengesellschaften (verbundene Unternehmen)",
+                "function": "",
+                "range_start": "70180",
+                "range_end": "70180",
+                "parent": null
+              },
+              "signature": "e1e7e9ecaaa690622a367e676d145fe2e02fea30e3a747c5ca136d5f798bfb14"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-008@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earningSecurities.minorInterestReceived",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.minorInterestReceived"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "70300",
+              "semantic": {
+                "name": "Erhaltene Ausgleichszahlungen (als außenstehender Aktionär)",
+                "function": "",
+                "range_start": "70300",
+                "range_end": "70300",
+                "parent": null
+              },
+              "signature": "cbc4297263c08d8625c788b66acc6818b92e969a9743f32c1ff07be223b02d42"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-009@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.smaller10pt",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.smaller10pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.10to15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.notLessThan15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.misc",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.smaller10pt.DTTexempt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.smaller10pt.other",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.10to15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.notLessThan15pt"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "71030",
+              "semantic": {
+                "name": "Erträge aus Anteilen an Kapitalgesellschaften (Umlaufvermögen) § 3 Nr. 40 EStG bzw. § 8b Abs. 1 und 4 KStG",
+                "function": "",
+                "range_start": "71030",
+                "range_end": "71030",
+                "parent": null
+              },
+              "signature": "f45888a679add99af462ac9578c28cc1dc45be856355e3fb557873b03d672bc5"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-010@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.smaller10pt",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.smaller10pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.10to15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.notLessThan15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.misc",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.smaller10pt.DTTexempt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.smaller10pt.other",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.10to15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.notLessThan15pt"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "is.netIncome.regular.fin.netInterest.income.assoc"
+          ],
+          "sources": [
+            {
+              "code": "71040",
+              "semantic": {
+                "name": "Erträge aus Anteilen an Kapitalgesellschaften (verbundene Unternehmen) § 3 Nr. 40 EStG bzw. § 8b Abs. 1 KStG",
+                "function": "",
+                "range_start": "71040",
+                "range_end": "71040",
+                "parent": null
+              },
+              "signature": "6bbc6303470bd79ca2b5b53d81999c1fca7a9b12d5963e02ca491f3a223d4b26"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-011@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.PartnersLoans.other",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.PartnersLoans.other",
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.PartnersLoans.participationOver25pt"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "73160",
+              "semantic": {
+                "name": "Zinsen für Gesellschafterdarlehen",
+                "function": "",
+                "range_start": "73160",
+                "range_end": "73160",
+                "parent": null
+              },
+              "signature": "18a71459345931acda48cf4e330fb47f93be0e1f892fe574f7f0ef7421206560"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-012@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.PartnersLoans.participationOver25pt",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.PartnersLoans.participationOver25pt"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "73170",
+              "semantic": {
+                "name": "Zinsen an Gesellschafter mit einer Beteiligung von mehr als 25 % bzw. diesen nahe stehende Personen",
+                "function": "",
+                "range_start": "73170",
+                "range_end": "73170",
+                "parent": null
+              },
+              "signature": "c9105f9e86563e14fd82766bb67cdebe1c116ca37796fbda666ae691464f4057"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-013@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.annuities",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.annuities"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "73270",
+              "semantic": {
+                "name": "Renten und dauernde Lasten",
+                "function": "",
+                "range_start": "73270",
+                "range_end": "73270",
+                "parent": null
+              },
+              "signature": "838c3e5c4bb3a98ba90881fdc1420919f34669b717290f816f2f06ef84b326a5"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-014@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.calcInterestOnPensProv",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.calcInterestOnPensProv"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "73600",
+              "semantic": {
+                "name": "Zinsanteil der Zuführungen zu Pensionsrückstellungen",
+                "function": "",
+                "range_start": "73600",
+                "range_end": "73600",
+                "parent": null
+              },
+              "signature": "6d9d3816a3c4614cd75fa0c9d282eadf89c6f6047146af16297c3b2e2d7965be"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-015@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.other",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.other"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "is.netIncome.regular.fin.netInterest.expenses.assoc"
+          ],
+          "sources": [
+            {
+              "code": "73190",
+              "semantic": {
+                "name": "Zinsaufwendungen für kurzfristige Verbindlichkeiten an verbundene Unternehmen",
+                "function": "",
+                "range_start": "73190",
+                "range_end": "73190",
+                "parent": null
+              },
+              "signature": "b4a9c02205111c50b87eee1ac86117fef8d44cca34610a74953618897b2f4cc0"
+            },
+            {
+              "code": "73290",
+              "semantic": {
+                "name": "Zinsaufwendungen für langfristige Verbindlichkeiten an verbundene Unternehmen",
+                "function": "",
+                "range_start": "73290",
+                "range_end": "73290",
+                "parent": null
+              },
+              "signature": "36b992f2bc6567ccfff16ad6c2d83edbf4d3492ad0c99917e11a5de81225a379"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-016@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.other",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.other"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "is.netIncome.regular.fin.netInterest.expenses.assoc"
+          ],
+          "sources": [
+            {
+              "code": "73390",
+              "semantic": {
+                "name": "Zinsähnliche Aufwendungen an verbundene Unternehmen",
+                "function": "",
+                "range_start": "73390",
+                "range_end": "73390",
+                "parent": null
+              },
+              "signature": "da1de862d4e50dec50423fd4d0aa4cd1374507d6107d1d16e25fccfb4ee46432"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-017@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netInterest.income.valueDiscount.accruals",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.income.valueDiscount.accruals"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "71400",
+              "semantic": {
+                "name": "Steuerfreie Zinserträge aus der Abzinsung von Rückstellungen",
+                "function": "",
+                "range_start": "71400",
+                "range_end": "71400",
+                "parent": null
+              },
+              "signature": "ff3c56a50d5b811be62f988fd1eab7e5db2aef8733a9a5ce75cadd07c2f81979"
+            },
+            {
+              "code": "71420",
+              "semantic": {
+                "name": "Zinserträge aus der Abzinsung von Rückstellungen",
+                "function": "",
+                "range_start": "71420",
+                "range_end": "71420",
+                "parent": null
+              },
+              "signature": "9f844c07f6a3b045d62c1bbe607064cfb2c6ebb4d7df91a649e943abc69623e5"
+            },
+            {
+              "code": "71430",
+              "semantic": {
+                "name": "Zinserträge aus der Abzinsung von Pensionsrückstellungen und ähnlichen / vergleichbaren Verpflichtungen",
+                "function": "",
+                "range_start": "71430",
+                "range_end": "71430",
+                "parent": null
+              },
+              "signature": "c52f3993d34dd4c040d710d924a062a75477c02ea2871e20d4caf252e2ed4596"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-018@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.valueDiscount.liabilities",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.valueDiscount.liabilities"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "73620",
+              "semantic": {
+                "name": "Zinsaufwendungen aus der Abzinsung von Rückstellungen",
+                "function": "",
+                "range_start": "73620",
+                "range_end": "73620",
+                "parent": null
+              },
+              "signature": "b9a519a0e53a9d5edb3f35f9c5dd44e73cbd11a5cd940e3c350a070386921c78"
+            },
+            {
+              "code": "73630",
+              "semantic": {
+                "name": "Zinsaufwendungen aus der Abzinsung von Pensionsrückstellungen und ähnlichen / vergleichbaren Verpflichtungen",
+                "function": "",
+                "range_start": "73630",
+                "range_end": "73630",
+                "parent": null
+              },
+              "signature": "93c0ce746a64a9f4876baa3abed5d8e3c40eb06740104a619045f9be45f64c3d"
+            },
+            {
+              "code": "73660",
+              "semantic": {
+                "name": "Steuerlich nicht abzugsfähige Zinsaufwendungen aus der Abzinsung von Rückstellungen",
+                "function": "",
+                "range_start": "73660",
+                "range_end": "73660",
+                "parent": null
+              },
+              "signature": "fc41db4778e6f2122e20cf3e8555b48d5512a096e5b8dc439f5582b590cfc0b5"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-019@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earningSecurities.shareholder",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.shareholder",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interestOtherLoans.Employee",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interestOtherLoans.misc"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "70110",
+              "semantic": {
+                "name": "Erträge aus Ausleihungen des Finanzanlagevermögens",
+                "function": "",
+                "range_start": "70110",
+                "range_end": "70110",
+                "parent": null
+              },
+              "signature": "6f3db8dbb23eea21c51b5059243e545bddcf102d4d59b4ec27fb1be1806eaa11"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-020@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earningSecurities.shareholder",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.shareholder"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.assoc"
+          ],
+          "sources": [
+            {
+              "code": "70120",
+              "semantic": {
+                "name": "Erträge aus Ausleihungen des Finanzanlagevermögens an verbundenen Unternehmen",
+                "function": "",
+                "range_start": "70120",
+                "range_end": "70120",
+                "parent": null
+              },
+              "signature": "1df976e6c65d8b4e663e3d2f028810bba83ec1d0af96642f41dddc23392c1c72"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-021@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netInterest.income.affiliated.comp.corp",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.income.affiliated.comp.corp",
+            "is.netIncome.regular.fin.netInterest.income.affiliated.comp.partnership",
+            "is.netIncome.regular.fin.netInterest.income.affiliated.comp.solePropietor",
+            "is.netIncome.regular.fin.netInterest.income.affiliated.comp.other"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "is.netIncome.regular.fin.netInterest.income.assoc"
+          ],
+          "sources": [
+            {
+              "code": "71190",
+              "semantic": {
+                "name": "Sonstige Zinserträge aus verbundenen Unternehmen",
+                "function": "",
+                "range_start": "71190",
+                "range_end": "71190",
+                "parent": null
+              },
+              "signature": "e5db24e05b12c7234e4022546befaedf331bf9ee96a16cf266bcea64f391a24a"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-022@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netInterest.income.other",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.income.other"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "is.netIncome.regular.fin.netInterest.income.assoc"
+          ],
+          "sources": [
+            {
+              "code": "71290",
+              "semantic": {
+                "name": "Zinsähnliche Erträge aus verbundenen Unternehmen",
+                "function": "",
+                "range_start": "71290",
+                "range_end": "71290",
+                "parent": null
+              },
+              "signature": "9fdb98d6d3edd2b83089a578f63cc72e1de35c532e086b5f35caec2f039254e5"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-023@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netInterest.income.securities.interest",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.income.securities.interest",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.smaller10pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.10to15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.notLessThan15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.misc",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.smaller10pt.DTTexempt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.smaller10pt.other",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.10to15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.notLessThan15pt"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "71150",
+              "semantic": {
+                "name": "Erträge aus anderen Wertpapieren und Ausleihungen des Umlaufvermögens",
+                "function": "",
+                "range_start": "71150",
+                "range_end": "71150",
+                "parent": null
+              },
+              "signature": "5a9f431ed0e322d175a29ba01ec271f089d71d8ab36d1bf5fc9c49a8b3f48f33"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-024@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netInterest.income.deposits.AO233a",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.income.deposits.AO233a",
+            "is.netIncome.regular.fin.netInterest.income.deposits.banks",
+            "is.netIncome.regular.fin.netInterest.income.deposits.thirdParty",
+            "is.netIncome.regular.fin.netInterest.income.deposits.otherMisc",
+            "is.netIncome.regular.fin.netInterest.income.other",
+            "is.netIncome.regular.fin.netInterest.income.securities.interest",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.smaller10pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.10to15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.notLessThan15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.misc",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.smaller10pt.DTTexempt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.smaller10pt.other",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.10to15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.notLessThan15pt",
+            "is.netIncome.regular.fin.netInterest.income.affiliated.comp.corp",
+            "is.netIncome.regular.fin.netInterest.income.affiliated.comp.partnership",
+            "is.netIncome.regular.fin.netInterest.income.affiliated.comp.solePropietor",
+            "is.netIncome.regular.fin.netInterest.income.affiliated.comp.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "71000",
+              "semantic": {
+                "name": "Sonstige Zinsen und ähnliche Erträge",
+                "function": "",
+                "range_start": "71000",
+                "range_end": "71000",
+                "parent": null
+              },
+              "signature": "87e51fa0d50cf18a97f2fec4927de0802af47fe3f3ad546a88eedc8b09c227a1"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-025@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netInterest.income.affiliated.comp.corp",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.income.affiliated.comp.corp",
+            "is.netIncome.regular.fin.netInterest.income.affiliated.comp.partnership",
+            "is.netIncome.regular.fin.netInterest.income.affiliated.comp.solePropietor",
+            "is.netIncome.regular.fin.netInterest.income.affiliated.comp.other",
+            "is.netIncome.regular.fin.netInterest.income.other",
+            "is.netIncome.regular.fin.netInterest.income.securities.interest",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.smaller10pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.10to15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.notLessThan15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.misc",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.smaller10pt.DTTexempt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.smaller10pt.other",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.10to15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.notLessThan15pt"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "is.netIncome.regular.fin.netInterest.income.assoc"
+          ],
+          "sources": [
+            {
+              "code": "71090",
+              "semantic": {
+                "name": "Sonstige Zinsen und ähnliche Erträge aus verbundenen Unternehmen",
+                "function": "",
+                "range_start": "71090",
+                "range_end": "71090",
+                "parent": null
+              },
+              "signature": "980749153dd78a491b609dbc745a3371b6c6e32ab89bbdd554261566adb72ac5"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-026@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.other",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.other",
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.PartnersLoans.other",
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.PartnersLoans.participationOver25pt",
+            "is.netIncome.regular.fin.netInterest.expenses.amortDiscount",
+            "is.netIncome.regular.fin.netInterest.expenses.loanFees",
+            "is.netIncome.regular.fin.netInterest.expenses.other",
+            "is.netIncome.regular.fin.netInterest.expenses.annuities",
+            "is.netIncome.regular.fin.netInterest.expenses.calcInterestOnPensProv",
+            "is.netIncome.regular.fin.netInterest.expenses.discount"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "73000",
+              "semantic": {
+                "name": "Zinsen und ähnliche Aufwendungen",
+                "function": "",
+                "range_start": "73000",
+                "range_end": "73000",
+                "parent": null
+              },
+              "signature": "271b62bdaccc2fedf80c3d3c182ce6e733abc78243b8d36362ba8baad78f25fb"
+            },
+            {
+              "code": "73500",
+              "semantic": {
+                "name": "Zinsen und ähnliche Aufwendungen §§ 3 Nr. 40 und 3c EStG bzw. § 8b Abs. 1 und Abs. 4 KStG,",
+                "function": "",
+                "range_start": "73500",
+                "range_end": "73500",
+                "parent": null
+              },
+              "signature": "494c4cd68a7d29c22a958e7481fc2d6a84f80e9ada4aa9f675ba68a7dbd5c576"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-027@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.other",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.other",
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.PartnersLoans.other",
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.PartnersLoans.participationOver25pt",
+            "is.netIncome.regular.fin.netInterest.expenses.amortDiscount",
+            "is.netIncome.regular.fin.netInterest.expenses.loanFees",
+            "is.netIncome.regular.fin.netInterest.expenses.other",
+            "is.netIncome.regular.fin.netInterest.expenses.annuities",
+            "is.netIncome.regular.fin.netInterest.expenses.calcInterestOnPensProv",
+            "is.netIncome.regular.fin.netInterest.expenses.discount"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "is.netIncome.regular.fin.netInterest.expenses.assoc"
+          ],
+          "sources": [
+            {
+              "code": "73090",
+              "semantic": {
+                "name": "Zinsaufwendungen an verbundene Unternehmen",
+                "function": "",
+                "range_start": "73090",
+                "range_end": "73090",
+                "parent": null
+              },
+              "signature": "17c1cca01a80f937019b7285410067fc24c7cd735c3eefcebef00803d5d09203"
+            },
+            {
+              "code": "73510",
+              "semantic": {
+                "name": "Zinsen und ähnliche Aufwendungen an verbundene Unternehmen §§ 3 Nr. 40 und 3c EStG bzw. § 8b Abs. 1 KStG,",
+                "function": "",
+                "range_start": "73510",
+                "range_end": "73510",
+                "parent": null
+              },
+              "signature": "405e2b8b23bc54dda9ee4c91748b003255649184eb448ca004438dee7adbb6e6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "financial-income-r21-001@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earnings.silentPart",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earnings.silentPart"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "70020",
+              "semantic": {
+                "name": "Erträge aus typisch stillen Beteiligungen",
+                "function": "",
+                "range_start": "70020",
+                "range_end": "70020",
+                "parent": null
+              },
+              "signature": "03a37eb271b8e8e4d4ca9136cd903b875f3263a4f80aea90a5db7ae01a506c7f"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-002@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earnings.corporations.domestic.smaller10pt",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.domestic.smaller10pt",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.domestic.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.domestic.notLessThan15pt",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.domestic.other",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.foreign.smaller10pt",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.foreign.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.foreign.notLessThan15pt",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.foreign.other",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "70050",
+              "semantic": {
+                "name": "Erträge aus Anteilen an Kapitalgesellschaften (Beteiligung) § 3 Nr. 40 EStG bzw. § 8b Abs. 1 KStG",
+                "function": "",
+                "range_start": "70050",
+                "range_end": "70050",
+                "parent": null
+              },
+              "signature": "197c09a63e13727b36079aa5fb22e2b01e6da3c61a6620c5eab6ef5744b4f852"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-003@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earnings.corporations.domestic.smaller10pt",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.domestic.smaller10pt",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.domestic.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.domestic.notLessThan15pt",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.domestic.other",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.foreign.smaller10pt",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.foreign.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.foreign.notLessThan15pt",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.foreign.other",
+            "is.netIncome.regular.fin.netParticipation.earnings.corporations.other"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "is.netIncome.regular.fin.netParticipation.earnings.groupComp"
+          ],
+          "sources": [
+            {
+              "code": "70060",
+              "semantic": {
+                "name": "Erträge aus Anteilen an Kapitalgesellschaften (verbundene Unternehmen) § 3 Nr. 40 EStG bzw. § 8b Abs. 1 KStG",
+                "function": "",
+                "range_start": "70060",
+                "range_end": "70060",
+                "parent": null
+              },
+              "signature": "b55750511f098ab14f87a5939af697e7db50afc26949bbd4d7e2c501afe93a13"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-004@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earningSecurities.partnerships",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.partnerships"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "70130",
+              "semantic": {
+                "name": "Erträge aus Anteilen an Personengesellschaften (Finanzanlagevermögen)",
+                "function": "",
+                "range_start": "70130",
+                "range_end": "70130",
+                "parent": null
+              },
+              "signature": "66a6055bbed565ac7ff4904851cbedf42766ee125f5eee761bf17809a3b44868"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-005@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.smaller10pt",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.smaller10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.notLessThan15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.other",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.smaller10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.notLessThan15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.other",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "70140",
+              "semantic": {
+                "name": "Erträge aus Anteilen an Kapitalgesellschaften (Finanzanlagevermögen) § 3 Nr. 40 EStG bzw. § 8b Abs. 1 und 4 KStG",
+                "function": "",
+                "range_start": "70140",
+                "range_end": "70140",
+                "parent": null
+              },
+              "signature": "cda60ae6da8cd6ee5029202f4ad98193c088505249bd953d25a9655dfc39226c"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-006@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.smaller10pt",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.smaller10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.notLessThan15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.other",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.smaller10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.notLessThan15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.other",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.other"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.assoc"
+          ],
+          "sources": [
+            {
+              "code": "70150",
+              "semantic": {
+                "name": "Erträge aus Anteilen an Kapitalgesellschaften (verbundene Unternehmen) § 3 Nr. 40 EStG bzw. § 8b Abs. 1 KStG",
+                "function": "",
+                "range_start": "70150",
+                "range_end": "70150",
+                "parent": null
+              },
+              "signature": "4c0d7125ab26ef65bffb398844588d8fbd35567e0f0c60ff23a3bf08554267e9"
+            },
+            {
+              "code": "70170",
+              "semantic": {
+                "name": "Erträge aus anderen Wertpapieren des Finanzanlagevermögens an Kapitalgesellschaften (verbundene Unternehmen)",
+                "function": "",
+                "range_start": "70170",
+                "range_end": "70170",
+                "parent": null
+              },
+              "signature": "cd0d906539505b1cd1ff2086daf8aa3351144d0bdaf6ce69a10c1b9f86163e4c"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-007@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earningSecurities.partnerships",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.partnerships"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.assoc"
+          ],
+          "sources": [
+            {
+              "code": "70160",
+              "semantic": {
+                "name": "Erträge aus Anteilen an Personengesellschaften (verbundene Unternehmen)",
+                "function": "",
+                "range_start": "70160",
+                "range_end": "70160",
+                "parent": null
+              },
+              "signature": "5550ec9732c25edd4459dd9bb9f12aa087916945e981d73f085b619820105d83"
+            },
+            {
+              "code": "70180",
+              "semantic": {
+                "name": "Erträge aus anderen Wertpapieren des Finanzanlagevermögens an Personengesellschaften (verbundene Unternehmen)",
+                "function": "",
+                "range_start": "70180",
+                "range_end": "70180",
+                "parent": null
+              },
+              "signature": "e1e7e9ecaaa690622a367e676d145fe2e02fea30e3a747c5ca136d5f798bfb14"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-008@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earningSecurities.minorInterestReceived",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.minorInterestReceived"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "70300",
+              "semantic": {
+                "name": "Erhaltene Ausgleichszahlungen (als außenstehender Aktionär)",
+                "function": "",
+                "range_start": "70300",
+                "range_end": "70300",
+                "parent": null
+              },
+              "signature": "cbc4297263c08d8625c788b66acc6818b92e969a9743f32c1ff07be223b02d42"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-009@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.smaller10pt",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.smaller10pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.10to15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.notLessThan15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.misc",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.smaller10pt.DTTexempt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.smaller10pt.other",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.10to15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.notLessThan15pt"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "71030",
+              "semantic": {
+                "name": "Erträge aus Anteilen an Kapitalgesellschaften (Umlaufvermögen) § 3 Nr. 40 EStG bzw. § 8b Abs. 1 und 4 KStG",
+                "function": "",
+                "range_start": "71030",
+                "range_end": "71030",
+                "parent": null
+              },
+              "signature": "f45888a679add99af462ac9578c28cc1dc45be856355e3fb557873b03d672bc5"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-010@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.smaller10pt",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.smaller10pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.10to15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.notLessThan15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.misc",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.smaller10pt.DTTexempt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.smaller10pt.other",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.10to15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.notLessThan15pt"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "is.netIncome.regular.fin.netInterest.income.assoc"
+          ],
+          "sources": [
+            {
+              "code": "71040",
+              "semantic": {
+                "name": "Erträge aus Anteilen an Kapitalgesellschaften (verbundene Unternehmen) § 3 Nr. 40 EStG bzw. § 8b Abs. 1 KStG",
+                "function": "",
+                "range_start": "71040",
+                "range_end": "71040",
+                "parent": null
+              },
+              "signature": "6bbc6303470bd79ca2b5b53d81999c1fca7a9b12d5963e02ca491f3a223d4b26"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-011@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.PartnersLoans.other",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.PartnersLoans.other",
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.PartnersLoans.participationOver25pt"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "73160",
+              "semantic": {
+                "name": "Zinsen für Gesellschafterdarlehen",
+                "function": "",
+                "range_start": "73160",
+                "range_end": "73160",
+                "parent": null
+              },
+              "signature": "18a71459345931acda48cf4e330fb47f93be0e1f892fe574f7f0ef7421206560"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-012@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.PartnersLoans.participationOver25pt",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.PartnersLoans.participationOver25pt"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "73170",
+              "semantic": {
+                "name": "Zinsen an Gesellschafter mit einer Beteiligung von mehr als 25 % bzw. diesen nahestehende Personen",
+                "function": "",
+                "range_start": "73170",
+                "range_end": "73170",
+                "parent": null
+              },
+              "signature": "c9105f9e86563e14fd82766bb67cdebe1c116ca37796fbda666ae691464f4057"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-013@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.annuities",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.annuities"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "73270",
+              "semantic": {
+                "name": "Renten und dauernde Lasten",
+                "function": "",
+                "range_start": "73270",
+                "range_end": "73270",
+                "parent": null
+              },
+              "signature": "838c3e5c4bb3a98ba90881fdc1420919f34669b717290f816f2f06ef84b326a5"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-014@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.calcInterestOnPensProv",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.calcInterestOnPensProv"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "73600",
+              "semantic": {
+                "name": "Zinsanteil der Zuführungen zu Pensionsrückstellungen",
+                "function": "",
+                "range_start": "73600",
+                "range_end": "73600",
+                "parent": null
+              },
+              "signature": "6d9d3816a3c4614cd75fa0c9d282eadf89c6f6047146af16297c3b2e2d7965be"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-015@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.other",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.other"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "is.netIncome.regular.fin.netInterest.expenses.assoc"
+          ],
+          "sources": [
+            {
+              "code": "73190",
+              "semantic": {
+                "name": "Zinsaufwendungen für kurzfristige Verbindlichkeiten an verbundene Unternehmen",
+                "function": "",
+                "range_start": "73190",
+                "range_end": "73190",
+                "parent": null
+              },
+              "signature": "b4a9c02205111c50b87eee1ac86117fef8d44cca34610a74953618897b2f4cc0"
+            },
+            {
+              "code": "73290",
+              "semantic": {
+                "name": "Zinsaufwendungen für langfristige Verbindlichkeiten an verbundene Unternehmen",
+                "function": "",
+                "range_start": "73290",
+                "range_end": "73290",
+                "parent": null
+              },
+              "signature": "36b992f2bc6567ccfff16ad6c2d83edbf4d3492ad0c99917e11a5de81225a379"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-016@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.other",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.other"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "is.netIncome.regular.fin.netInterest.expenses.assoc"
+          ],
+          "sources": [
+            {
+              "code": "73390",
+              "semantic": {
+                "name": "Zinsähnliche Aufwendungen an verbundene Unternehmen",
+                "function": "",
+                "range_start": "73390",
+                "range_end": "73390",
+                "parent": null
+              },
+              "signature": "da1de862d4e50dec50423fd4d0aa4cd1374507d6107d1d16e25fccfb4ee46432"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-017@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netInterest.income.valueDiscount.accruals",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.income.valueDiscount.accruals"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "71400",
+              "semantic": {
+                "name": "Steuerfreie Zinserträge aus der Abzinsung von Rückstellungen",
+                "function": "",
+                "range_start": "71400",
+                "range_end": "71400",
+                "parent": null
+              },
+              "signature": "ff3c56a50d5b811be62f988fd1eab7e5db2aef8733a9a5ce75cadd07c2f81979"
+            },
+            {
+              "code": "71420",
+              "semantic": {
+                "name": "Zinserträge aus der Abzinsung von Rückstellungen",
+                "function": "",
+                "range_start": "71420",
+                "range_end": "71420",
+                "parent": null
+              },
+              "signature": "9f844c07f6a3b045d62c1bbe607064cfb2c6ebb4d7df91a649e943abc69623e5"
+            },
+            {
+              "code": "71430",
+              "semantic": {
+                "name": "Zinserträge aus der Abzinsung von Pensionsrückstellungen und ähnlichen / vergleichbaren Verpflichtungen",
+                "function": "",
+                "range_start": "71430",
+                "range_end": "71430",
+                "parent": null
+              },
+              "signature": "c52f3993d34dd4c040d710d924a062a75477c02ea2871e20d4caf252e2ed4596"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-018@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.valueDiscount.liabilities",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.valueDiscount.liabilities"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "73620",
+              "semantic": {
+                "name": "Zinsaufwendungen aus der Abzinsung von Rückstellungen",
+                "function": "",
+                "range_start": "73620",
+                "range_end": "73620",
+                "parent": null
+              },
+              "signature": "b9a519a0e53a9d5edb3f35f9c5dd44e73cbd11a5cd940e3c350a070386921c78"
+            },
+            {
+              "code": "73630",
+              "semantic": {
+                "name": "Zinsaufwendungen aus der Abzinsung von Pensionsrückstellungen und ähnlichen / vergleichbaren Verpflichtungen",
+                "function": "",
+                "range_start": "73630",
+                "range_end": "73630",
+                "parent": null
+              },
+              "signature": "93c0ce746a64a9f4876baa3abed5d8e3c40eb06740104a619045f9be45f64c3d"
+            },
+            {
+              "code": "73660",
+              "semantic": {
+                "name": "Steuerlich nicht abzugsfähige Zinsaufwendungen aus der Abzinsung von Rückstellungen",
+                "function": "",
+                "range_start": "73660",
+                "range_end": "73660",
+                "parent": null
+              },
+              "signature": "fc41db4778e6f2122e20cf3e8555b48d5512a096e5b8dc439f5582b590cfc0b5"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-019@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earningSecurities.shareholder",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.shareholder",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interestOtherLoans.Employee",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interestOtherLoans.misc"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "70110",
+              "semantic": {
+                "name": "Erträge aus Ausleihungen des Finanzanlagevermögens",
+                "function": "",
+                "range_start": "70110",
+                "range_end": "70110",
+                "parent": null
+              },
+              "signature": "6f3db8dbb23eea21c51b5059243e545bddcf102d4d59b4ec27fb1be1806eaa11"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-020@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earningSecurities.shareholder",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.shareholder"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.assoc"
+          ],
+          "sources": [
+            {
+              "code": "70120",
+              "semantic": {
+                "name": "Erträge aus Ausleihungen des Finanzanlagevermögens an verbundenen Unternehmen",
+                "function": "",
+                "range_start": "70120",
+                "range_end": "70120",
+                "parent": null
+              },
+              "signature": "1df976e6c65d8b4e663e3d2f028810bba83ec1d0af96642f41dddc23392c1c72"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-021@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netInterest.income.affiliated.comp.corp",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.income.affiliated.comp.corp",
+            "is.netIncome.regular.fin.netInterest.income.affiliated.comp.partnership",
+            "is.netIncome.regular.fin.netInterest.income.affiliated.comp.solePropietor",
+            "is.netIncome.regular.fin.netInterest.income.affiliated.comp.other"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "is.netIncome.regular.fin.netInterest.income.assoc"
+          ],
+          "sources": [
+            {
+              "code": "71190",
+              "semantic": {
+                "name": "Sonstige Zinserträge aus verbundenen Unternehmen",
+                "function": "",
+                "range_start": "71190",
+                "range_end": "71190",
+                "parent": null
+              },
+              "signature": "e5db24e05b12c7234e4022546befaedf331bf9ee96a16cf266bcea64f391a24a"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-022@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netInterest.income.other",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.income.other"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "is.netIncome.regular.fin.netInterest.income.assoc"
+          ],
+          "sources": [
+            {
+              "code": "71290",
+              "semantic": {
+                "name": "Zinsähnliche Erträge aus verbundenen Unternehmen",
+                "function": "",
+                "range_start": "71290",
+                "range_end": "71290",
+                "parent": null
+              },
+              "signature": "9fdb98d6d3edd2b83089a578f63cc72e1de35c532e086b5f35caec2f039254e5"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-023@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netInterest.income.securities.interest",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.income.securities.interest",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.smaller10pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.10to15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.notLessThan15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.misc",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.smaller10pt.DTTexempt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.smaller10pt.other",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.10to15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.notLessThan15pt"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "71150",
+              "semantic": {
+                "name": "Erträge aus anderen Wertpapieren und Ausleihungen des Umlaufvermögens",
+                "function": "",
+                "range_start": "71150",
+                "range_end": "71150",
+                "parent": null
+              },
+              "signature": "5a9f431ed0e322d175a29ba01ec271f089d71d8ab36d1bf5fc9c49a8b3f48f33"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-024@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netInterest.income.deposits.AO233a",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.income.deposits.AO233a",
+            "is.netIncome.regular.fin.netInterest.income.deposits.banks",
+            "is.netIncome.regular.fin.netInterest.income.deposits.thirdParty",
+            "is.netIncome.regular.fin.netInterest.income.deposits.otherMisc",
+            "is.netIncome.regular.fin.netInterest.income.other",
+            "is.netIncome.regular.fin.netInterest.income.securities.interest",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.smaller10pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.10to15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.notLessThan15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.misc",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.smaller10pt.DTTexempt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.smaller10pt.other",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.10to15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.notLessThan15pt",
+            "is.netIncome.regular.fin.netInterest.income.affiliated.comp.corp",
+            "is.netIncome.regular.fin.netInterest.income.affiliated.comp.partnership",
+            "is.netIncome.regular.fin.netInterest.income.affiliated.comp.solePropietor",
+            "is.netIncome.regular.fin.netInterest.income.affiliated.comp.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "71000",
+              "semantic": {
+                "name": "Sonstige Zinsen und ähnliche Erträge",
+                "function": "",
+                "range_start": "71000",
+                "range_end": "71000",
+                "parent": null
+              },
+              "signature": "87e51fa0d50cf18a97f2fec4927de0802af47fe3f3ad546a88eedc8b09c227a1"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-025@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netInterest.income.affiliated.comp.corp",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.income.affiliated.comp.corp",
+            "is.netIncome.regular.fin.netInterest.income.affiliated.comp.partnership",
+            "is.netIncome.regular.fin.netInterest.income.affiliated.comp.solePropietor",
+            "is.netIncome.regular.fin.netInterest.income.affiliated.comp.other",
+            "is.netIncome.regular.fin.netInterest.income.other",
+            "is.netIncome.regular.fin.netInterest.income.securities.interest",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.smaller10pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.10to15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.notLessThan15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.domestic.misc",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.smaller10pt.DTTexempt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.smaller10pt.other",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.10to15pt",
+            "is.netIncome.regular.fin.netInterest.income.securities.dividends.foreign.notLessThan15pt"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "is.netIncome.regular.fin.netInterest.income.assoc"
+          ],
+          "sources": [
+            {
+              "code": "71090",
+              "semantic": {
+                "name": "Sonstige Zinsen und ähnliche Erträge aus verbundenen Unternehmen",
+                "function": "",
+                "range_start": "71090",
+                "range_end": "71090",
+                "parent": null
+              },
+              "signature": "980749153dd78a491b609dbc745a3371b6c6e32ab89bbdd554261566adb72ac5"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-026@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.other",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.other",
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.PartnersLoans.other",
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.PartnersLoans.participationOver25pt",
+            "is.netIncome.regular.fin.netInterest.expenses.amortDiscount",
+            "is.netIncome.regular.fin.netInterest.expenses.loanFees",
+            "is.netIncome.regular.fin.netInterest.expenses.other",
+            "is.netIncome.regular.fin.netInterest.expenses.annuities",
+            "is.netIncome.regular.fin.netInterest.expenses.calcInterestOnPensProv",
+            "is.netIncome.regular.fin.netInterest.expenses.discount"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "73000",
+              "semantic": {
+                "name": "Zinsen und ähnliche Aufwendungen",
+                "function": "",
+                "range_start": "73000",
+                "range_end": "73000",
+                "parent": null
+              },
+              "signature": "271b62bdaccc2fedf80c3d3c182ce6e733abc78243b8d36362ba8baad78f25fb"
+            },
+            {
+              "code": "73500",
+              "semantic": {
+                "name": "Zinsen und ähnliche Aufwendungen §§ 3 Nr. 40 und 3c EStG bzw. § 8b Abs. 1 und Abs. 4 KStG,",
+                "function": "",
+                "range_start": "73500",
+                "range_end": "73500",
+                "parent": null
+              },
+              "signature": "494c4cd68a7d29c22a958e7481fc2d6a84f80e9ada4aa9f675ba68a7dbd5c576"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-income-r21-027@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.other",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.other",
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.PartnersLoans.other",
+            "is.netIncome.regular.fin.netInterest.expenses.regularInterest.PartnersLoans.participationOver25pt",
+            "is.netIncome.regular.fin.netInterest.expenses.amortDiscount",
+            "is.netIncome.regular.fin.netInterest.expenses.loanFees",
+            "is.netIncome.regular.fin.netInterest.expenses.other",
+            "is.netIncome.regular.fin.netInterest.expenses.annuities",
+            "is.netIncome.regular.fin.netInterest.expenses.calcInterestOnPensProv",
+            "is.netIncome.regular.fin.netInterest.expenses.discount"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "is.netIncome.regular.fin.netInterest.expenses.assoc"
+          ],
+          "sources": [
+            {
+              "code": "73090",
+              "semantic": {
+                "name": "Zinsaufwendungen an verbundene Unternehmen",
+                "function": "",
+                "range_start": "73090",
+                "range_end": "73090",
+                "parent": null
+              },
+              "signature": "17c1cca01a80f937019b7285410067fc24c7cd735c3eefcebef00803d5d09203"
+            },
+            {
+              "code": "73510",
+              "semantic": {
+                "name": "Zinsen und ähnliche Aufwendungen an verbundene Unternehmen §§ 3 Nr. 40 und 3c EStG bzw. § 8b Abs. 1 KStG,",
+                "function": "",
+                "range_start": "73510",
+                "range_end": "73510",
+                "parent": null
+              },
+              "signature": "405e2b8b23bc54dda9ee4c91748b003255649184eb448ca004438dee7adbb6e6"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

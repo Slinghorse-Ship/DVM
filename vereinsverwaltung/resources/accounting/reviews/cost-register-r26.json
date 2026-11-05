@@ -1,0 +1,464 @@
+{
+  "schema": 1,
+  "revision": 26,
+  "source_kind": "existing_qualified_cost_lifecycle_registration",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "cost-register-r26-02150@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.tan.landBuildings.landWithoutBuildings",
+          "choices": [
+            "bs.ass.fixAss.tan.landBuildings.landWithoutBuildings"
+          ],
+          "conditional": true,
+          "condition": "cost_schedule",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "02150",
+              "semantic": {
+                "name": "Unbebaute Grundstücke",
+                "function": "",
+                "range_start": "02150",
+                "range_end": "02150",
+                "parent": null
+              },
+              "signature": "fc1c915ad9cf4d47badcda1ad86659f277108aa4214916aa25a1f94f22270b11"
+            }
+          ]
+        },
+        {
+          "purpose": "cost-register-r26-02350@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.tan.landBuildings.buildingsOnOwnLand.land",
+          "choices": [
+            "bs.ass.fixAss.tan.landBuildings.buildingsOnOwnLand.land"
+          ],
+          "conditional": true,
+          "condition": "cost_schedule",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "02350",
+              "semantic": {
+                "name": "Grundstückswerte eigener bebauter Grundstücke",
+                "function": "",
+                "range_start": "02350",
+                "range_end": "02350",
+                "parent": null
+              },
+              "signature": "e3bde28c952e2739c0ecd7a1d49ae8080b861a40e780a516327f1b2c65932ca8"
+            }
+          ]
+        },
+        {
+          "purpose": "cost-register-r26-09200@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.securities.securities",
+          "choices": [
+            "bs.ass.fixAss.fin.securities.securities"
+          ],
+          "conditional": true,
+          "condition": "cost_schedule",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "09200",
+              "semantic": {
+                "name": "Festverzinsliche Wertpapiere",
+                "function": "",
+                "range_start": "09200",
+                "range_end": "09200",
+                "parent": null
+              },
+              "signature": "c77e0b68e6662863eac2b21314932310ec9b99194fe5a58ede4b69b26eaa5efb"
+            }
+          ]
+        },
+        {
+          "purpose": "cost-register-r26-49100@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.tan",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.tan"
+          ],
+          "conditional": true,
+          "condition": "cost_schedule",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49100",
+              "semantic": {
+                "name": "Erträge aus Zuschreibungen des Sachanlagevermögens",
+                "function": "",
+                "range_start": "49100",
+                "range_end": "49100",
+                "parent": null
+              },
+              "signature": "e8a7d36aad430cc72f6f24bcf1bf0a96e39f84bd249b8188c1c1acca044c1f4a"
+            }
+          ]
+        },
+        {
+          "purpose": "cost-register-r26-49120@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.fin.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.fin.other"
+          ],
+          "conditional": true,
+          "condition": "cost_schedule",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49120",
+              "semantic": {
+                "name": "Erträge aus Zuschreibungen des Finanzanlagevermögens",
+                "function": "",
+                "range_start": "49120",
+                "range_end": "49120",
+                "parent": null
+              },
+              "signature": "45e9c0f204560d9e94d5615b186b8a0883244265ce2c54dbcd9fc4dfde08f89b"
+            }
+          ]
+        },
+        {
+          "purpose": "cost-register-r26-62300@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.deprAmort.fixAss.tan.otherMisc",
+          "choices": [
+            "is.netIncome.regular.operatingTC.deprAmort.fixAss.tan.otherMisc"
+          ],
+          "conditional": true,
+          "condition": "cost_schedule",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "62300",
+              "semantic": {
+                "name": "Außerplanmäßige Abschreibungen auf Sachanlagen",
+                "function": "",
+                "range_start": "62300",
+                "range_end": "62300",
+                "parent": null
+              },
+              "signature": "77bc2cf9b526754c7be34b762803d3b63d16d9c1bbbb479423ab71125e6d2c3b"
+            }
+          ]
+        },
+        {
+          "purpose": "cost-register-r26-68970@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.disposFixAss.bookValue.fin.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.disposFixAss.bookValue.fin.other"
+          ],
+          "conditional": true,
+          "condition": "cost_schedule",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "68970",
+              "semantic": {
+                "name": "Anlagenabgänge Finanzanlagen (Restbuchwert bei Buchverlust)",
+                "function": "",
+                "range_start": "68970",
+                "range_end": "68970",
+                "parent": null
+              },
+              "signature": "58a4b81a91da9b8d9df86e0a992942ec32fd394434edeed90e379c69652736ea"
+            }
+          ]
+        },
+        {
+          "purpose": "cost-register-r26-72000@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netParticipation.amortFinanc.financialsExcept.other",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.amortFinanc.financialsExcept.other"
+          ],
+          "conditional": true,
+          "condition": "cost_schedule",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "72000",
+              "semantic": {
+                "name": "Abschreibungen auf Finanzanlagen (dauerhaft)",
+                "function": "",
+                "range_start": "72000",
+                "range_end": "72000",
+                "parent": null
+              },
+              "signature": "249a2f3e5447cfba47991759d042acba20f7c849d8446067408deb1da2c25270"
+            }
+          ]
+        },
+        {
+          "purpose": "cost-register-r26-72010@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netParticipation.amortFinanc.financialsExcept.other",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.amortFinanc.financialsExcept.other"
+          ],
+          "conditional": true,
+          "condition": "cost_schedule",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "72010",
+              "semantic": {
+                "name": "Abschreibungen auf Finanzanlagen (nicht dauerhaft)",
+                "function": "",
+                "range_start": "72010",
+                "range_end": "72010",
+                "parent": null
+              },
+              "signature": "3a5043af9b82917f414d89b4422971b1dbb852355490ef05d6df352d9a924642"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "cost-register-r26-02150@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.tan.landBuildings.landWithoutBuildings",
+          "choices": [
+            "bs.ass.fixAss.tan.landBuildings.landWithoutBuildings"
+          ],
+          "conditional": true,
+          "condition": "cost_schedule",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "02150",
+              "semantic": {
+                "name": "Unbebaute Grundstücke",
+                "function": "",
+                "range_start": "02150",
+                "range_end": "02150",
+                "parent": null
+              },
+              "signature": "fc1c915ad9cf4d47badcda1ad86659f277108aa4214916aa25a1f94f22270b11"
+            }
+          ]
+        },
+        {
+          "purpose": "cost-register-r26-02350@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.tan.landBuildings.buildingsOnOwnLand.land",
+          "choices": [
+            "bs.ass.fixAss.tan.landBuildings.buildingsOnOwnLand.land"
+          ],
+          "conditional": true,
+          "condition": "cost_schedule",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "02350",
+              "semantic": {
+                "name": "Grundstückswerte eigener bebauter Grundstücke",
+                "function": "",
+                "range_start": "02350",
+                "range_end": "02350",
+                "parent": null
+              },
+              "signature": "e3bde28c952e2739c0ecd7a1d49ae8080b861a40e780a516327f1b2c65932ca8"
+            }
+          ]
+        },
+        {
+          "purpose": "cost-register-r26-09200@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.securities.securities",
+          "choices": [
+            "bs.ass.fixAss.fin.securities.securities"
+          ],
+          "conditional": true,
+          "condition": "cost_schedule",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "09200",
+              "semantic": {
+                "name": "Festverzinsliche Wertpapiere",
+                "function": "",
+                "range_start": "09200",
+                "range_end": "09200",
+                "parent": null
+              },
+              "signature": "c77e0b68e6662863eac2b21314932310ec9b99194fe5a58ede4b69b26eaa5efb"
+            }
+          ]
+        },
+        {
+          "purpose": "cost-register-r26-49100@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.tan",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.tan"
+          ],
+          "conditional": true,
+          "condition": "cost_schedule",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49100",
+              "semantic": {
+                "name": "Erträge aus Zuschreibungen des Sachanlagevermögens",
+                "function": "",
+                "range_start": "49100",
+                "range_end": "49100",
+                "parent": null
+              },
+              "signature": "e8a7d36aad430cc72f6f24bcf1bf0a96e39f84bd249b8188c1c1acca044c1f4a"
+            }
+          ]
+        },
+        {
+          "purpose": "cost-register-r26-49120@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.fin.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.fin.other"
+          ],
+          "conditional": true,
+          "condition": "cost_schedule",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49120",
+              "semantic": {
+                "name": "Erträge aus Zuschreibungen des Finanzanlagevermögens",
+                "function": "",
+                "range_start": "49120",
+                "range_end": "49120",
+                "parent": null
+              },
+              "signature": "45e9c0f204560d9e94d5615b186b8a0883244265ce2c54dbcd9fc4dfde08f89b"
+            }
+          ]
+        },
+        {
+          "purpose": "cost-register-r26-62300@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.deprAmort.fixAss.tan.otherMisc",
+          "choices": [
+            "is.netIncome.regular.operatingTC.deprAmort.fixAss.tan.otherMisc"
+          ],
+          "conditional": true,
+          "condition": "cost_schedule",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "62300",
+              "semantic": {
+                "name": "Außerplanmäßige Abschreibungen auf Sachanlagen",
+                "function": "",
+                "range_start": "62300",
+                "range_end": "62300",
+                "parent": null
+              },
+              "signature": "77bc2cf9b526754c7be34b762803d3b63d16d9c1bbbb479423ab71125e6d2c3b"
+            }
+          ]
+        },
+        {
+          "purpose": "cost-register-r26-68970@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.disposFixAss.bookValue.fin.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.disposFixAss.bookValue.fin.other"
+          ],
+          "conditional": true,
+          "condition": "cost_schedule",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "68970",
+              "semantic": {
+                "name": "Anlagenabgänge Finanzanlagen (Restbuchwert bei Buchverlust)",
+                "function": "",
+                "range_start": "68970",
+                "range_end": "68970",
+                "parent": null
+              },
+              "signature": "58a4b81a91da9b8d9df86e0a992942ec32fd394434edeed90e379c69652736ea"
+            }
+          ]
+        },
+        {
+          "purpose": "cost-register-r26-72000@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netParticipation.amortFinanc.financialsExcept.other",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.amortFinanc.financialsExcept.other"
+          ],
+          "conditional": true,
+          "condition": "cost_schedule",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "72000",
+              "semantic": {
+                "name": "Abschreibungen auf Finanzanlagen (dauerhaft)",
+                "function": "",
+                "range_start": "72000",
+                "range_end": "72000",
+                "parent": null
+              },
+              "signature": "249a2f3e5447cfba47991759d042acba20f7c849d8446067408deb1da2c25270"
+            }
+          ]
+        },
+        {
+          "purpose": "cost-register-r26-72010@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netParticipation.amortFinanc.financialsExcept.other",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.amortFinanc.financialsExcept.other"
+          ],
+          "conditional": true,
+          "condition": "cost_schedule",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "72010",
+              "semantic": {
+                "name": "Abschreibungen auf Finanzanlagen (nicht dauerhaft)",
+                "function": "",
+                "range_start": "72010",
+                "range_end": "72010",
+                "parent": null
+              },
+              "signature": "3a5043af9b82917f414d89b4422971b1dbb852355490ef05d6df352d9a924642"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

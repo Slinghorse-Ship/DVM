@@ -1,0 +1,65 @@
+[data-tax-guided]{font-size:17px;line-height:1.55;min-width:0;max-width:1100px;margin-inline:auto;overflow-wrap:anywhere}
+[data-tax-guided] [hidden]{display:none!important}
+[data-tax-guided] p,[data-tax-guided] li{font-size:16px;line-height:1.55}
+[data-tax-guided] input:not([type=checkbox]):not([type=radio]):not([type=hidden]),[data-tax-guided] select,[data-tax-guided] textarea{font-size:17px!important;min-height:48px;width:100%;max-width:100%;box-sizing:border-box}
+[data-tax-guided] button,[data-tax-guided] .button{font-size:17px;min-height:48px;white-space:normal}
+[data-tax-guided] label{display:block;margin-block:14px 8px;font-size:17px}
+[data-tax-guided] label.check{display:flex;align-items:flex-start;gap:12px}
+[data-tax-guided] input[type=checkbox]{width:22px;height:22px;flex-shrink:0}
+[data-tax-guided] summary{cursor:pointer;font-size:18px;min-height:48px;padding:12px 4px;font-weight:650}
+[data-tax-guided] .tax-help summary{font-size:16px;font-weight:normal}
+[data-tax-guided] details{min-width:0;margin-block:12px}
+[data-tax-guided] .tax-question{padding-block:8px;border-bottom:1px solid #ccd4df;scroll-margin-top:90px}
+[data-tax-guided] .tax-source{font-size:16px;background:#edf3f5;padding:10px;border-radius:6px}
+[data-tax-guided] .tax-source button{display:block;margin-top:8px}
+[data-tax-guided] .tax-flow-nav{display:flex;gap:10px;flex-wrap:wrap;margin-block:16px}
+[data-tax-guided] .tax-flow-nav a{padding:10px 14px;border:1px solid #9aaeb8;border-radius:6px;color:inherit;min-height:44px;box-sizing:border-box}
+[data-tax-guided] [id^=tax-]{scroll-margin-top:90px}
+[data-tax-guided] .tax-draft-actions{padding-block:18px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+[data-tax-guided] .tax-status{padding:12px;border-left:4px solid #946c0f;background:#fff4d6}
+[data-tax-guided] :focus-visible{outline:3px solid #155da1;outline-offset:3px}
+@media(max-width:700px){[data-tax-guided] .form-grid{grid-template-columns:minmax(0,1fr)}[data-tax-guided] .tax-flow-nav{display:grid;grid-template-columns:1fr}[data-tax-guided] button,[data-tax-guided] .button{max-width:100%}[data-tax-guided] .card{padding:14px}}
+@media print{[data-tax-guided] .tax-flow-nav,[data-tax-guided] .tax-draft-actions{display:none}}
+[data-tax-guided] .tax-balance-figures{padding-block:12px;border-bottom:1px solid #dbe3e8}
+[data-tax-guided] .tax-balance-figures dl{display:flex;flex-wrap:wrap;gap:12px 24px;margin-block:8px 0}
+[data-tax-guided] .tax-balance-figures dt{font-size:14px}
+[data-tax-guided] .tax-balance-figures dd{margin:0;font-variant-numeric:tabular-nums}
+[data-balance-tax-reconciliation] .tax-balance-figures{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:18px 24px}
+[data-balance-tax-reconciliation] .tax-balance-figures dt{font-size:16px;line-height:1.5}
+[data-balance-tax-reconciliation] .tax-balance-figures dd{font-size:21px;font-weight:650}
+:is([data-balance-segments],[data-balance-clearings]) td{font-size:16px;line-height:1.55}
+@media(max-width:700px){
+  [data-balance-tax-reconciliation] .table-scroll{overflow:visible}
+  [data-balance-tax-reconciliation] table,[data-balance-tax-reconciliation] tbody{display:block;min-width:0;width:100%}
+  [data-balance-tax-reconciliation] thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  [data-balance-tax-reconciliation] tr{display:block;margin-block:12px;padding:12px;border:1px solid #ccd4df;border-radius:6px}
+  [data-balance-tax-reconciliation] td{display:block;padding:5px 0;border:0;white-space:normal;font-size:16px}
+  [data-balance-tax-reconciliation] td::before{content:attr(data-label) ": ";font-weight:650}
+  :is([data-balance-segments],[data-balance-clearings]) .table-scroll{overflow:visible}
+  :is([data-balance-segments],[data-balance-clearings]) table,:is([data-balance-segments],[data-balance-clearings]) tbody{display:block;min-width:0;width:100%}
+  :is([data-balance-segments],[data-balance-clearings]) thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  :is([data-balance-segments],[data-balance-clearings]) tr{display:block;margin-block:12px;padding:12px;border:1px solid #ccd4df;border-radius:6px}
+  :is([data-balance-segments],[data-balance-clearings]) td{display:block;padding:5px 0;border:0;white-space:normal}
+  :is([data-balance-segments],[data-balance-clearings]) td::before{content:attr(data-label) ": ";font-weight:650}
+  :is([data-balance-segments],[data-balance-clearings]) td a{display:block;min-height:44px;padding-top:10px}
+}
+[data-period-disposal]:has(select[name="disposal_kind"] option:checked:not([value="software_end"])) [data-disposal-for="software_end"],
+[data-period-disposal]:has(select[name="disposal_kind"] option:checked:not([value="partial_scrap"])) [data-disposal-for="partial_scrap"],
+[data-period-disposal]:has(select[name="disposal_kind"] option:checked:not([value="sale"])) [data-disposal-for="sale"],
+[data-period-disposal]:has(select[name="disposal_kind"] option:checked[value="sale"]) [data-disposal-not="sale"]{display:none}
+/* Screen balance: long headings wrap; original monetary amounts stay readable. */
+[data-tax-guided] .balance-screen-main{width:100%;min-width:0;table-layout:auto}
+[data-tax-guided] .balance-screen-main th{white-space:normal;overflow-wrap:anywhere}
+[data-tax-guided] .balance-screen-main td:first-child{white-space:normal;overflow-wrap:anywhere}
+[data-tax-guided] .balance-screen-main td:last-child,[data-tax-guided] .balance-screen-main th:last-child:not([colspan]){white-space:nowrap}
+/* Screen reports keep original income-statement amounts readable in both scopes. */
+@media(max-width:700px){
+ [data-tax-guided] :is(.balance-period-income,.balance-screen-income),[data-tax-guided] :is(.balance-period-income,.balance-screen-income) tbody,[data-tax-guided] :is(.balance-period-income,.balance-screen-income) tfoot{display:block;width:100%;min-width:0}
+ [data-tax-guided] :is(.balance-period-income,.balance-screen-income) thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+ [data-tax-guided] :is(.balance-period-income,.balance-screen-income) tr{display:block;padding:10px 12px;border-bottom:1px solid #ccd4df}
+ [data-tax-guided] :is(.balance-period-income,.balance-screen-income) td,[data-tax-guided] :is(.balance-period-income,.balance-screen-income) th{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border:0;white-space:normal;overflow-wrap:anywhere}
+ [data-tax-guided] :is(.balance-period-income,.balance-screen-income) [data-label]::before{content:attr(data-label) ": ";font-weight:650}
+ [data-tax-guided] :is(.balance-period-income,.balance-screen-income) td:first-child{display:block;font-weight:650}
+ [data-tax-guided] :is(.balance-period-income,.balance-screen-income) td:first-child::before{content:none}
+}
+[data-tax-guided] .balance-period-money{white-space:nowrap;font-variant-numeric:tabular-nums}

@@ -1,0 +1,7 @@
+.invoice-catalogue,.invoice-summary,.invoice-summary>*{min-width:0;overflow-wrap:anywhere}
+.invoice-cards{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr))}
+.invoice-search,.invoice-pages{display:flex;flex-wrap:wrap;gap:1rem;align-items:end}
+.invoice-search label{flex:1 1 12rem;min-width:0}.invoice-search input,.invoice-search select,.invoice-pages input{width:100%;min-width:0}
+.invoice-pages{margin-block:1rem}.invoice-pages label{flex:0 1 12rem;min-width:0}
+.invoice-summary .btn,.invoice-pages .btn,.invoice-search .btn{min-height:44px;white-space:normal}
+@media(max-width:48rem){.invoice-search label,.invoice-search button{flex-basis:100%}}

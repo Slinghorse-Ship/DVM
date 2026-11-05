@@ -1,0 +1,7 @@
+<?php declare(strict_types=1);
+function ownedTaxAutoPackageSourceFault(array$fixture,array$cfg):never{
+ $step=$_POST['source_step']??null;
+ if(($_SERVER['REQUEST_METHOD']??'')!=='POST'||($cfg['owner']??'')!=='isolated-native-ci'||($cfg['label']??'')!=='native-tax-auto-package-interface'||!is_string($_SERVER['HTTP_X_OWNED_TAX_AUTO_SOURCE']??null)||!hash_equals($fixture['data']['source_change_key'],$_SERVER['HTTP_X_OWNED_TAX_AUTO_SOURCE'])||!in_array($step,['1','2'],true)||!preg_match('/^kh_native_[a-f0-9]{24}$/D',$cfg['database']??'')){http_response_code(403);exit;}
+ $db=\Kulturhus\Native\TestSupport::db();if($db->query('SELECT DATABASE()')->fetchColumn()!==$cfg['database']){http_response_code(403);exit;}$finance=new \Kulturhus\Verein\Finance($db,'own-list-admin');$account=$finance->account($fixture['data']['packageBank']);if($account['club_id']!=='own-list-club'||$account['kind']!=='offline'){http_response_code(403);exit;}
+ $key=substr(hash('sha256',$fixture['data']['source_change_key'].':'.$step),0,32);$id=$finance->createTransaction(['account'=>$account['id'],'booked_on'=>'2025-06-02','direction'=>'income','amount'=>'1','counterparty'=>'0 Own explicit tax-auto package source','description'=>'Own actual tax-auto package reviewed source '.($step==='1'?'first':'second')],$key);header('Content-Type: application/json');echo json_encode(['owned_source_changed'=>true,'source_step'=>$step,'transaction'=>$id],JSON_THROW_ON_ERROR);exit;
+}

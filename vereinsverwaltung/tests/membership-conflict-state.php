@@ -1,0 +1,47 @@
+<?php declare(strict_types=1);
+require __DIR__.'/../src/bootstrap.php';require __DIR__.'/../src/Web/View.php';
+use Kulturhus\Verein\{Database,Registry};
+$db=\Kulturhus\Verein\Tests\MySqlFixture::connect(':memory:');Database::migrate($db);
+$db->exec("INSERT INTO clubs VALUES('a','Synthetic');INSERT INTO actors(id,club_id,role) VALUES('admin','a','members')");
+$registry=new Registry($db,'admin');$_SESSION=['csrf'=>'synthetic'];
+$person=$registry->saveContact(null,0,'person','Synthetic Person','','');
+$id=$registry->addMembership($person,'TEST-1','aktiv','2020-01-01');
+$profile=$registry->contact($person);$n=0;
+function check(bool $ok,string $text):void{global $n;if(!$ok)throw new RuntimeException($text);++$n;echo "PASS $text\n";}
+function denied(callable $f):void{try{$f();}catch(DomainException){return;}throw new RuntimeException('Expected conflict');}
+function renderMembership(string $file):string{global $profile,$m,$registry;ob_start();require \Kulturhus\Verein\Web\Templates::path($file);return ob_get_clean();}
+$registry->changeMembershipStart($person,$id,1,'2019-01-01');$m=$registry->memberships($person)[0];
+$_POST=['action'=>'membership-start','id'=>$person,'membership'=>$id,'version'=>'1','start'=>'2018-03-04','start_precision'=>'day'];
+denied(fn()=>$registry->changeMembershipStart($person,$id,1,$_POST['start']));
+$html=renderMembership('membership-start');
+check(str_contains($html,'name="version" value="1"')&&str_contains($html,'value="2018-03-04"'),'entry conflict retains draft and original version');
+preg_match('/name="version" value="([0-9]+)"/',$html,$version);
+denied(fn()=>$registry->changeMembershipStart($person,$id,(int)$version[1],$_POST['start']));
+check($registry->memberships($person)[0]['starts_on']==='2019-01-01','retry of rendered stale entry cannot overwrite concurrent save');
+$_POST=['action'=>'leave','id'=>$person,'membership'=>$id,'version'=>'1','end'=>'2026-12-31'];
+denied(fn()=>$registry->endMembership($id,1,$_POST['end']));
+$html=renderMembership('membership-end');
+check(str_contains($html,'name="version" value="1"')&&str_contains($html,'value="2026-12-31"')&&str_contains($html,'<details open>'),'exit conflict retains date, version and opens failed form');
+preg_match('/name="version" value="([0-9]+)"/',$html,$version);
+denied(fn()=>$registry->endMembership($id,(int)$version[1],$_POST['end']));
+check($registry->memberships($person)[0]['ends_on']===null,'retry of rendered stale exit cannot end changed membership');
+$_POST['membership']='other';$html=renderMembership('membership-end');
+check(!str_contains($html,'2026-12-31')&&str_contains($html,'name="version" value="2"'),'different membership exit does not leak into this row');
+$_POST=['action'=>'membership-start','id'=>'another','membership'=>$id,'version'=>'1','start'=>'2018-03-04'];
+check(!str_contains(renderMembership('membership-start'),'2018-03-04'),'different profile entry draft ignored');
+$registry->assignFamily($person,'','new','Synthetic household');$family=$registry->family($person);
+$_POST=['action'=>'join','id'=>$person,'expected_family'=>'','family'=>'','start'=>'2026-01-01','status'=>'passiv','access_mail'=>'1'];
+$html=renderMembership('membership-fields');
+check(str_contains($html,'name="expected_family" value=""'),'join preserves missing prior family after concurrent assignment');
+denied(fn()=>$registry->addMembership($person,'TEST-2','passiv','2026-01-01',null,['expected'=>'','target'=>'']));
+check(count($registry->memberships($person))===1&&$registry->family($person)['id']===$family['id'],'failed join rolls back new membership and preserves concurrent family');
+check(str_contains($html,'value="passiv" selected')&&str_contains($html,'value="1" selected'),'join retains selected status and explicit mail choice');
+$_POST=['action'=>'leave','id'=>$person,'status'=>'passiv','family'=>'new','access_mail'=>'1'];$html=renderMembership('membership-fields');
+check(!str_contains($html,'value="passiv" selected')&&!str_contains($html,'value="new" selected')&&!str_contains($html,'value="1" selected'),'other form cannot preselect new membership or access mail');
+$_POST=[];$html=renderMembership('membership-fields');
+check(str_contains($html,'name="expected_family" value="'.$family['id'].'"'),'fresh reopen uses current family marker');
+$registry->endMembership($id,2,'2026-12-31');
+denied(fn()=>$registry->endMembership($id,2,'2026-12-31'));
+check($registry->memberships($person)[0]['ends_on']==='2026-12-31','fresh exit saves once and duplicate submission fails');
+check(\Kulturhus\Verein\Tests\MySqlFixture::integrity($db)==='ok'&&!(\Kulturhus\Verein\Tests\MySqlFixture::foreignKeyErrors($db)[0]??false),'database intact');
+echo "$n membership conflict state checks passed\n";

@@ -1,0 +1,300 @@
+{
+  "schema": 1,
+  "revision": 38,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "fixtures-r38-001@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.tan.landBuildings.buildingsOnOwnLand.buildings",
+          "choices": [
+            "bs.ass.fixAss.tan.landBuildings.buildingsOnOwnLand.buildings"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "02800",
+              "semantic": {
+                "name": "Außenanlagen",
+                "function": "",
+                "range_start": "02800",
+                "range_end": "02800",
+                "parent": null
+              },
+              "signature": "a1be5f9b852ca83f0067fe513488529fa3320ebd94bc112c1ddd9a5f68fe1137"
+            },
+            {
+              "code": "02850",
+              "semantic": {
+                "name": "Hof- und Wegebefestigungen",
+                "function": "",
+                "range_start": "02850",
+                "range_end": "02850",
+                "parent": null
+              },
+              "signature": "ae6a1ff2a8fcbbe98bcf5fa6a2de3a08ac0bf57898465f2350acaf19b57145d9"
+            },
+            {
+              "code": "02900",
+              "semantic": {
+                "name": "Einrichtungen für Geschäfts- und andere Bauten",
+                "function": "",
+                "range_start": "02900",
+                "range_end": "02900",
+                "parent": null
+              },
+              "signature": "73cc7c94a8035403ef25ce66bdbb5cf96a233fa97e4ccad65c2b410ec1f73ad5"
+            },
+            {
+              "code": "03100",
+              "semantic": {
+                "name": "Außenanlagen",
+                "function": "",
+                "range_start": "03100",
+                "range_end": "03100",
+                "parent": null
+              },
+              "signature": "7d9f816cf14697a344323c40541057d8337a138f00496a82c34ae43321131c83"
+            },
+            {
+              "code": "03150",
+              "semantic": {
+                "name": "Hof- und Wegebefestigungen",
+                "function": "",
+                "range_start": "03150",
+                "range_end": "03150",
+                "parent": null
+              },
+              "signature": "de1694a6a3fe7a205037c381ae6fc3cb21343407b204e92ac99295279ab55718"
+            },
+            {
+              "code": "03200",
+              "semantic": {
+                "name": "Einrichtungen für Wohnbauten",
+                "function": "",
+                "range_start": "03200",
+                "range_end": "03200",
+                "parent": null
+              },
+              "signature": "e34600f7f8f0bcf7ddbfa1396a3ec904b26f49e96633959c556b3ca674b0c0a5"
+            }
+          ]
+        },
+        {
+          "purpose": "fixtures-r38-002@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.tan.landBuildings.buildingsOnNonOwnedLand",
+          "choices": [
+            "bs.ass.fixAss.tan.landBuildings.buildingsOnNonOwnedLand"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "03900",
+              "semantic": {
+                "name": "Außenanlagen",
+                "function": "",
+                "range_start": "03900",
+                "range_end": "03900",
+                "parent": null
+              },
+              "signature": "ad18430de44dfa3e305b44bcef0bfd2211b2815dcdb477101047569413530328"
+            },
+            {
+              "code": "03950",
+              "semantic": {
+                "name": "Hof- und Wegebefestigungen",
+                "function": "",
+                "range_start": "03950",
+                "range_end": "03950",
+                "parent": null
+              },
+              "signature": "d25c52e0a8f3da234b834a028f53b4a6f93550892593c72df2a3e72aab8ab7c1"
+            },
+            {
+              "code": "03980",
+              "semantic": {
+                "name": "Einrichtungen für Geschäfts-, Wohn- und andere Bauten",
+                "function": "",
+                "range_start": "03980",
+                "range_end": "03980",
+                "parent": null
+              },
+              "signature": "7abcb41291a70aefcff6b2413cf4b4f9983438f1008cade620913664428127ff"
+            },
+            {
+              "code": "06800",
+              "semantic": {
+                "name": "Einbauten in fremde Grundstücke",
+                "function": "",
+                "range_start": "06800",
+                "range_end": "06800",
+                "parent": null
+              },
+              "signature": "65cc79937659d2f6e2f8c50f28a1a347e0cbda986fbe204c6bbea19abe3a6b02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "fixtures-r38-001@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.tan.landBuildings.buildingsOnOwnLand.buildings",
+          "choices": [
+            "bs.ass.fixAss.tan.landBuildings.buildingsOnOwnLand.buildings"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "02800",
+              "semantic": {
+                "name": "Außenanlagen",
+                "function": "",
+                "range_start": "02800",
+                "range_end": "02800",
+                "parent": null
+              },
+              "signature": "a1be5f9b852ca83f0067fe513488529fa3320ebd94bc112c1ddd9a5f68fe1137"
+            },
+            {
+              "code": "02850",
+              "semantic": {
+                "name": "Hof- und Wegebefestigungen",
+                "function": "",
+                "range_start": "02850",
+                "range_end": "02850",
+                "parent": null
+              },
+              "signature": "ae6a1ff2a8fcbbe98bcf5fa6a2de3a08ac0bf57898465f2350acaf19b57145d9"
+            },
+            {
+              "code": "02900",
+              "semantic": {
+                "name": "Einrichtungen für Geschäfts- und andere Bauten",
+                "function": "",
+                "range_start": "02900",
+                "range_end": "02900",
+                "parent": null
+              },
+              "signature": "73cc7c94a8035403ef25ce66bdbb5cf96a233fa97e4ccad65c2b410ec1f73ad5"
+            },
+            {
+              "code": "03100",
+              "semantic": {
+                "name": "Außenanlagen",
+                "function": "",
+                "range_start": "03100",
+                "range_end": "03100",
+                "parent": null
+              },
+              "signature": "7d9f816cf14697a344323c40541057d8337a138f00496a82c34ae43321131c83"
+            },
+            {
+              "code": "03150",
+              "semantic": {
+                "name": "Hof- und Wegebefestigungen",
+                "function": "",
+                "range_start": "03150",
+                "range_end": "03150",
+                "parent": null
+              },
+              "signature": "de1694a6a3fe7a205037c381ae6fc3cb21343407b204e92ac99295279ab55718"
+            },
+            {
+              "code": "03200",
+              "semantic": {
+                "name": "Einrichtungen für Wohnbauten",
+                "function": "",
+                "range_start": "03200",
+                "range_end": "03200",
+                "parent": null
+              },
+              "signature": "e34600f7f8f0bcf7ddbfa1396a3ec904b26f49e96633959c556b3ca674b0c0a5"
+            }
+          ]
+        },
+        {
+          "purpose": "fixtures-r38-002@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.tan.landBuildings.buildingsOnNonOwnedLand",
+          "choices": [
+            "bs.ass.fixAss.tan.landBuildings.buildingsOnNonOwnedLand"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "03900",
+              "semantic": {
+                "name": "Außenanlagen",
+                "function": "",
+                "range_start": "03900",
+                "range_end": "03900",
+                "parent": null
+              },
+              "signature": "ad18430de44dfa3e305b44bcef0bfd2211b2815dcdb477101047569413530328"
+            },
+            {
+              "code": "03950",
+              "semantic": {
+                "name": "Hof- und Wegebefestigungen",
+                "function": "",
+                "range_start": "03950",
+                "range_end": "03950",
+                "parent": null
+              },
+              "signature": "d25c52e0a8f3da234b834a028f53b4a6f93550892593c72df2a3e72aab8ab7c1"
+            },
+            {
+              "code": "03980",
+              "semantic": {
+                "name": "Einrichtungen für Geschäfts-, Wohn- und andere Bauten",
+                "function": "",
+                "range_start": "03980",
+                "range_end": "03980",
+                "parent": null
+              },
+              "signature": "7abcb41291a70aefcff6b2413cf4b4f9983438f1008cade620913664428127ff"
+            },
+            {
+              "code": "06800",
+              "semantic": {
+                "name": "Einbauten in fremde Grundstücke",
+                "function": "",
+                "range_start": "06800",
+                "range_end": "06800",
+                "parent": null
+              },
+              "signature": "65cc79937659d2f6e2f8c50f28a1a347e0cbda986fbe204c6bbea19abe3a6b02"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

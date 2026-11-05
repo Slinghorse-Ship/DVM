@@ -1,0 +1,19 @@
+[data-donation-cover-native] {
+  font-size: 1rem;
+}
+
+[data-donation-cover-native] :is(label, button, input, select, textarea, p, dt, dd, a, span, small) {
+  font-size: inherit !important;
+}
+
+[data-donation-cover-native] h2 {
+  font-size: 1.25em !important;
+}
+
+[data-donation-cover-native] h3 {
+  font-size: 1.125em !important;
+}
+
+[data-donation-cover-native] h4 {
+  font-size: 1em !important;
+}

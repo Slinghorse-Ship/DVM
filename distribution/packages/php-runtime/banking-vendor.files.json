@@ -1,0 +1,1910 @@
+[
+  {
+    "bytes": 748,
+    "mode": "0644",
+    "path": "vendor/autoload.php",
+    "sha256": "f7758464d08b3eec1d91aaba0ad572c05195be8877e3431c6165b01fc6f28160"
+  },
+  {
+    "bytes": 16378,
+    "mode": "0644",
+    "path": "vendor/composer/ClassLoader.php",
+    "sha256": "d4b2313e562edf942838ec316d983c1a3459ca67da3e5658e861200b0b3693c2"
+  },
+  {
+    "bytes": 17395,
+    "mode": "0644",
+    "path": "vendor/composer/InstalledVersions.php",
+    "sha256": "1e4525198301d1ed1f87ac3df2a8555a6f139f8df30a703d0b775a61963c96e4"
+  },
+  {
+    "bytes": 1070,
+    "mode": "0644",
+    "path": "vendor/composer/LICENSE",
+    "sha256": "c8cce4b6b9729f264ffdf9296d505d63432497feeed1f586d1902b942197e024"
+  },
+  {
+    "bytes": 32260,
+    "mode": "0644",
+    "path": "vendor/composer/autoload_classmap.php",
+    "sha256": "241990ca32cf1b781b705630aa301324317f25aa6a2c8c7be61c584ad4ca86ac"
+  },
+  {
+    "bytes": 139,
+    "mode": "0644",
+    "path": "vendor/composer/autoload_namespaces.php",
+    "sha256": "ede505407590638a435137f4e060136f1008de79fc169b3de9793423b0cea38c"
+  },
+  {
+    "bytes": 305,
+    "mode": "0644",
+    "path": "vendor/composer/autoload_psr4.php",
+    "sha256": "9e9545c927c2d320dbfc2c37a2c41a8dcd5f8dedc26602903e4cb9d1a9f7cb0a"
+  },
+  {
+    "bytes": 1137,
+    "mode": "0644",
+    "path": "vendor/composer/autoload_real.php",
+    "sha256": "55c78318fade71a8160e76369ee09e05c4ef817e529654787ff2ec99402c5109"
+  },
+  {
+    "bytes": 36013,
+    "mode": "0644",
+    "path": "vendor/composer/autoload_static.php",
+    "sha256": "6edf409a9b25b7a52ed174d6997a1d49b40f5f6de784fbd29a29e81b3a761ffe"
+  },
+  {
+    "bytes": 3830,
+    "mode": "0644",
+    "path": "vendor/composer/installed.json",
+    "sha256": "cbc1143e5acfe7392fab4a84bca8ad57364c3071c41a2b639398e0d5c78c84e4"
+  },
+  {
+    "bytes": 1475,
+    "mode": "0644",
+    "path": "vendor/composer/installed.php",
+    "sha256": "54f8c061d392924f57b3c26ddab7a2d1aa186eeab3b11802e56beb1e6049d3fe"
+  },
+  {
+    "bytes": 917,
+    "mode": "0644",
+    "path": "vendor/composer/platform_check.php",
+    "sha256": "45f40bb671c2e809778cd8065a7a40f1472e476e155275440e34ae43e3fc9e9c"
+  },
+  {
+    "bytes": 1100,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/LICENSE",
+    "sha256": "786163aef285b967a50f8a5854664b4366d9bcfb7d44105872726f16997dbf21"
+  },
+  {
+    "bytes": 4280,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/README.md",
+    "sha256": "12ca98b95acdeee57944d7b8b9da313c8fb4d9467aae704e9de79d0323301fe3"
+  },
+  {
+    "bytes": 687,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/Samples/accounts.php",
+    "sha256": "5817bd6ba8040cd239abeeb5d7a3ef7ed3b54e914aa114ba3a2bba32145eb836"
+  },
+  {
+    "bytes": 1380,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/Samples/balance.php",
+    "sha256": "18e5b25e572baf7de55ad94e35c8609d8ba6de2d30d8b51de99a2b45a69e634b"
+  },
+  {
+    "bytes": 976,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/Samples/bpd.php",
+    "sha256": "db792497f1c13145be8c962c4efe288d7e9b564f9b576b4688ac564e4dea38c1"
+  },
+  {
+    "bytes": 12669,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/Samples/browser.php",
+    "sha256": "e585fafa35a00cf79e3e1eceebdeea5ba782e80664b0be34419cc4d8e8e5c58a"
+  },
+  {
+    "bytes": 2057,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/Samples/directDebit_Sephpa.php",
+    "sha256": "b969ed1fc35aff33ff09a088b9ce474760e80cb3795f03b93ded105300246020"
+  },
+  {
+    "bytes": 2494,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/Samples/directDebit_phpSepaXml.php",
+    "sha256": "f2e0519d7e8bae2663cbcfcde635f0f13559a0694688f0993b6457f5a1c45adc"
+  },
+  {
+    "bytes": 1220,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/Samples/init.php",
+    "sha256": "7b97b1d78ed3bda013027137c82a2abe1a85a4ac0f6e345f49c989e29a4d59c3"
+  },
+  {
+    "bytes": 12496,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/Samples/login.php",
+    "sha256": "93a7788bbe880bb9d7767adb187e12579697e2a88ca3be311228928284b8f588"
+  },
+  {
+    "bytes": 2229,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/Samples/statementOfAccount.php",
+    "sha256": "9f010d2d926e972636efa61b748538b6e430c1cdf410cf92b70e13ca37f32ad7"
+  },
+  {
+    "bytes": 3395,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/Samples/statementOfAccountXML.php",
+    "sha256": "84439ab76c511181b0bc2ed7b00c6d30403501b9a13e56b254a7411607afe9e1"
+  },
+  {
+    "bytes": 1702,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/Samples/statementOfHoldings.php",
+    "sha256": "1fb2fa8bc5bc0abeaffa0460d3b02ab56783a056b8ce2e1d678c81afbf8ccee8"
+  },
+  {
+    "bytes": 2582,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/Samples/tanModesAndMedia.php",
+    "sha256": "72d72b43a7caa732ccdc3f1f6766836a265bf436482febf6ace2d542099dedf1"
+  },
+  {
+    "bytes": 2302,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/Samples/transfer.php",
+    "sha256": "35eb30a1dbde346d63127da0e31c7e36ee8af0bc2a949009db927b473cf73123"
+  },
+  {
+    "bytes": 7507,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/Samples/vop.php",
+    "sha256": "66038c54be1c13e5f73815ee6f4a2899b07fea08fb0396c090ca93309457dd98"
+  },
+  {
+    "bytes": 946,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/composer.json",
+    "sha256": "7fbc5da03d4c836429b87a67ab09a02bd7f669813c8637844b1c6350c970592e"
+  },
+  {
+    "bytes": 324,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/prettify_message.php",
+    "sha256": "bdf740c1ea1b4dd618da9d880a53c461a8a03300e87bb262902e607cae258c14"
+  },
+  {
+    "bytes": 337,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/prettify_segment.php",
+    "sha256": "33c847a12b56f757a4c22575268f2ad6f383bc22b4420c161d743b7ea7fa9fad"
+  },
+  {
+    "bytes": 4210,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Action/GetBalance.php",
+    "sha256": "2fc5383f0e20518d89306800e6d2723551a464cf636b30fd3a84190e2e397983"
+  },
+  {
+    "bytes": 5143,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Action/GetDepotAufstellung.php",
+    "sha256": "fa8b0ba88b7b433a058c26733fc1ec021b2159e140824c23e93fdd5a83d176c5"
+  },
+  {
+    "bytes": 2823,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Action/GetSEPAAccounts.php",
+    "sha256": "294184261b7539b74b1ed4a55ad3ea769a9c576479d6719041e82176a53dbb18"
+  },
+  {
+    "bytes": 4046,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Action/GetSEPADirectDebitParameters.php",
+    "sha256": "103e5c39696513de7b423b68f79b1d130c4ab32f387f248a8536a67e82f52b23"
+  },
+  {
+    "bytes": 10095,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Action/GetStatementOfAccount.php",
+    "sha256": "50b8e4362a74e89743ea2d411f8cc701cd3f39cc6f2f6a7222aae0c7ce34ca22"
+  },
+  {
+    "bytes": 7178,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Action/GetStatementOfAccountXML.php",
+    "sha256": "410af694cd78319c6415aa80c1d3902f4a46eaec6487bb9383c00e528015faf2"
+  },
+  {
+    "bytes": 3121,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Action/SendInternationalCreditTransfer.php",
+    "sha256": "41ad1bec4d995ce9a3f50601ed85165018f3217b5fe1e348fa1632b79813acfd"
+  },
+  {
+    "bytes": 7349,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Action/SendSEPADirectDebit.php",
+    "sha256": "5b2b008acbb40ca67fdfda4ccfdd92c6256e7afd374d69e15fcc56ff267166b4"
+  },
+  {
+    "bytes": 6182,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Action/SendSEPARealtimeTransfer.php",
+    "sha256": "e256752de1df23c60ddf9136799ed1ae8960c8ca137f547ffcb174ea3dd74853"
+  },
+  {
+    "bytes": 7443,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Action/SendSEPATransfer.php",
+    "sha256": "2bc33ee85ac9d666e7a3de0a994ac8499548f9df2c2072aeb0111c69a754ed28"
+  },
+  {
+    "bytes": 13632,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/BaseAction.php",
+    "sha256": "a331639989ca247d0f7192fa01e8fd90a672712c384a75eeb43cd212bf35d150"
+  },
+  {
+    "bytes": 25777,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/CAMT/CAMT.php",
+    "sha256": "b530abc84e1891ad3cb1d6c602fcf6346364a6b950177397c16de1f34ea1d453"
+  },
+  {
+    "bytes": 3170,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Connection.php",
+    "sha256": "893bf7d9aa18fa3e0caf3be78fd1afa773899e02d70e55e4a98ac115e2f77d3d"
+  },
+  {
+    "bytes": 981,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/CurlException.php",
+    "sha256": "539015a616059a814e8227e49d6cd13d38ccf94ae9037a9aac4ad1db4bec89c9"
+  },
+  {
+    "bytes": 63126,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/FinTs.php",
+    "sha256": "013dcebf570ba36dd9627c3ff654e82372cdc6dcc723f1cdb533ee11701d0b2d"
+  },
+  {
+    "bytes": 4736,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/MT535/MT535.php",
+    "sha256": "bb4721e3fde3ad38b535ca45343278b4de26538c80de4507922809b4cbb81fe2"
+  },
+  {
+    "bytes": 1231,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/MT940/Dialect/PostbankMT940.php",
+    "sha256": "f34dcc97b5f785bd5cb3047a7d0711adfae1c334f37e680edd53ebd18eb0a794"
+  },
+  {
+    "bytes": 2880,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/MT940/Dialect/SpardaMT940.php",
+    "sha256": "3dde52d4aad3d4d32a2422b7b7e42357e62253defab1c7e3a13f25d4d0e510db"
+  },
+  {
+    "bytes": 11255,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/MT940/MT940.php",
+    "sha256": "6710096f1ca0fccaa0dbf0053ea6c86fa974fd75519483d991b9570bc2e7dfe7"
+  },
+  {
+    "bytes": 126,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/MT940/MT940Exception.php",
+    "sha256": "55a5b31a22b20f09b8395b0641d59c72e3232561f65428c9aca5f959963b4cba"
+  },
+  {
+    "bytes": 2717,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Model/Account.php",
+    "sha256": "f80f5ce8ddb2a323f1820778261234bf5746a3e922f4012ee1c0ca5f4096f9ed"
+  },
+  {
+    "bytes": 5288,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Model/FlickerTan/DataElement.php",
+    "sha256": "e8be245db54550daea15496247ef8297cf0b18b593cf2b5cf8e7fb8877312c2b"
+  },
+  {
+    "bytes": 3227,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Model/FlickerTan/StartCode.php",
+    "sha256": "7ace802d0c97c005e3113c958f0191f642137e2030f428cc9acc7d212325bd26"
+  },
+  {
+    "bytes": 6124,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Model/FlickerTan/SvgRenderer.php",
+    "sha256": "4642d8e4cd329b4a411e28385ed398d5e4dbe414b3ef2e8b612bdb9253aca17c"
+  },
+  {
+    "bytes": 5514,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Model/FlickerTan/TanRequestChallengeFlicker.php",
+    "sha256": "a45c22b5e89a27e023e4ea96c7f86f0bf799aeccbe9e12708f17e119f7b8cb3e"
+  },
+  {
+    "bytes": 2697,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Model/NoPsd2TanMode.php",
+    "sha256": "72c9e5e35c750c48e7d4143f1b273a726018f5b7b9c175fc4cb9d63e1ff04326"
+  },
+  {
+    "bytes": 826,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Model/PollingInfo.php",
+    "sha256": "197a2e4dbbb8046ffa60dcc1aa9b774183e57cdf6dc0db589f775892cc809aa6"
+  },
+  {
+    "bytes": 1744,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Model/SEPAAccount.php",
+    "sha256": "9e0ab9460fca4af885621decd5301e3fadeb010101358815894d392fe6f74245"
+  },
+  {
+    "bytes": 2051,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Model/StatementOfAccount/Statement.php",
+    "sha256": "31e54cdbbf74e1d7736ecefbdcc5bd648819a72d7f56296938a80e996ed46816"
+  },
+  {
+    "bytes": 5127,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Model/StatementOfAccount/StatementOfAccount.php",
+    "sha256": "f44b1dae3536ea2e98c723f1258f3bfaf320589ca605a9425767fcc19b8875dd"
+  },
+  {
+    "bytes": 7163,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Model/StatementOfAccount/Transaction.php",
+    "sha256": "50ea2129379028656a7696498afb9fe304fc189046fafb968e892122cf035df9"
+  },
+  {
+    "bytes": 3641,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Model/StatementOfHoldings/Holding.php",
+    "sha256": "dcbe5d3093abf2e5284d8b3189fa7ec8691df9a8ab3465ff6140c16d2087eac1"
+  },
+  {
+    "bytes": 403,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Model/StatementOfHoldings/StatementOfHoldings.php",
+    "sha256": "77595828d3e61ff0e58799313832dff0cc60d54c326d227a2fc666a5dbf73d10"
+  },
+  {
+    "bytes": 1198,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Model/TanMedium.php",
+    "sha256": "0e248dd6aef5ac32f117dc4f3bbf69da717e20384bc1bb53007f30ac6ec62649"
+  },
+  {
+    "bytes": 6528,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Model/TanMode.php",
+    "sha256": "609f432bcf97f9a15c89b2eae2fdd662ca1f84aab374166fcaeeb5e8ea823682"
+  },
+  {
+    "bytes": 1374,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Model/TanRequest.php",
+    "sha256": "e403d9ad038a600eb9bbfe1a5930dbcd2c46236dc173f19c18aed643e1762262"
+  },
+  {
+    "bytes": 2142,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Model/TanRequestChallengeImage.php",
+    "sha256": "e5a93f581393f2ac1d0a76f15fb1cc1c5d2e92f6dd8b3f6c6f0ec8a2bf13d739"
+  },
+  {
+    "bytes": 1066,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Model/VopConfirmationRequest.php",
+    "sha256": "a9dcc0422ad4a30cfefab307211f0e19ab9fe52253a6a95a2e411ccbe9f94db6"
+  },
+  {
+    "bytes": 1446,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Model/VopConfirmationRequestImpl.php",
+    "sha256": "767bfcae6ab55a25e6de51761d3b529df2d45291f718b147058516b3f71d79ff"
+  },
+  {
+    "bytes": 1624,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Model/VopPollingInfo.php",
+    "sha256": "eab375123de8d39227eeaaa7a808abee3df12f0fe96a301336e2d49f2e4ee008"
+  },
+  {
+    "bytes": 2406,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Model/VopVerificationResult.php",
+    "sha256": "1a5f4b8f06794c81086bf1548ad47996aaaf4adfd6894397f57b82b27312fe52"
+  },
+  {
+    "bytes": 1826,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Options/Credentials.php",
+    "sha256": "6ce1b9a6a2b87860ec79d3684174404ec63828857f9ccc9922e60d274c8894a7"
+  },
+  {
+    "bytes": 2455,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Options/FinTsOptions.php",
+    "sha256": "70285497f5de8d234baae83b40c9a3157aa0ace95e47abd92c7518249a6f0176"
+  },
+  {
+    "bytes": 4433,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Options/SanitizingLogger.php",
+    "sha256": "e63b5bb452dad68d98b02597ef6545ff5d9b62588f882490b5791f80f6435c08"
+  },
+  {
+    "bytes": 3855,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/PaginateableAction.php",
+    "sha256": "809f29af5498ac9a4a0d1a8251a7f30567b9fd9a8f1e6e0a6883742bb269b5bf"
+  },
+  {
+    "bytes": 386,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Protocol/ActionIncompleteException.php",
+    "sha256": "4a7f2485026d4550300b27b161f8af7b9b088c2b21f670697a85f4dfe82fd54f"
+  },
+  {
+    "bytes": 679,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Protocol/ActionPendingException.php",
+    "sha256": "5241cc3b0356e21f90ce21d06369757e0dd1a8f2f84eb475e4e54062942e79f9"
+  },
+  {
+    "bytes": 10091,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Protocol/BPD.php",
+    "sha256": "eda825ac59b3f159004acf52ec51860669d6f44edfde61397c3f0add67976f72"
+  },
+  {
+    "bytes": 9780,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Protocol/DialogInitialization.php",
+    "sha256": "de4014451ef1e2b9a90af9b395b7c54e4f991e70ad64a172a7448bfab18fc460"
+  },
+  {
+    "bytes": 1381,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Protocol/GetTanMedia.php",
+    "sha256": "1aba560bfb6bb7b9a1ac42ab8c5ed3c3f5ba43df995597494fee6a8cbe8c5018"
+  },
+  {
+    "bytes": 16740,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Protocol/Message.php",
+    "sha256": "da19f789adec61ca2fd9d58b7182e5b7b9b53f11679f6e282f461281b1b51618"
+  },
+  {
+    "bytes": 1339,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Protocol/MessageBuilder.php",
+    "sha256": "05dc43cb62eb908d1c4549675a8d7fea2b39944631f53a958e7d4573f242ffda"
+  },
+  {
+    "bytes": 6361,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Protocol/ServerException.php",
+    "sha256": "9993922d97c104f99712904d2382e495c0a402ae41dd622b8c39d40464790323"
+  },
+  {
+    "bytes": 592,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Protocol/TanRequiredException.php",
+    "sha256": "3812f4b60e87588c27854ec0f9438d180777c9f4100a8c923edbc2b23d9ee3be"
+  },
+  {
+    "bytes": 2743,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Protocol/UPD.php",
+    "sha256": "0ec5f5ce6770cb1f586a464328c380d71df6de452e69d4ce96b697c955d2207c"
+  },
+  {
+    "bytes": 413,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Protocol/UnexpectedResponseException.php",
+    "sha256": "0cac76e3345e28447c9ecff862242bf3f7a0ce3c89617387add0a939d834431c"
+  },
+  {
+    "bytes": 760,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Protocol/VopConfirmationRequiredException.php",
+    "sha256": "f9d3978821e75d9671c62843214bc936a940d0b3da962495677f3a35e4890a50"
+  },
+  {
+    "bytes": 415,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/AUB/HIAUBSv9.php",
+    "sha256": "051de5c516a219765b07fe5ffd014ea4a615cb81f6fb2e0e5ab2280deac1cf74"
+  },
+  {
+    "bytes": 479,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/AUB/HKAUBv9.php",
+    "sha256": "b9feb5682ea9644cb006de8a5b608ecaade11bc4f7a25b997226e3696f76bfca"
+  },
+  {
+    "bytes": 468,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/AUB/ParameterAuslandsueberweisungV2.php",
+    "sha256": "0b200f5afa678a2bc8986d7a3dae369b9f7d56738ea0a83cc548ec43b699ef1b"
+  },
+  {
+    "bytes": 3536,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/AnonymousSegment.php",
+    "sha256": "e36e6dda9c623665e02e5bdd6fc30936b35473b82526e36f79ba3307806a78d9"
+  },
+  {
+    "bytes": 837,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/BME/HIBMESv1.php",
+    "sha256": "4658200b44086d2d2bb5912657d3f03c29d95fe5fd26bd78ae517c6f1bdf4b78"
+  },
+  {
+    "bytes": 837,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/BME/HIBMESv2.php",
+    "sha256": "b8ac162ea54f0ef08e0d03a7369da72d363d4a3851c4609061c5ade45f0a18a1"
+  },
+  {
+    "bytes": 346,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/BME/HKBMEv1.php",
+    "sha256": "29769030e7282f48ddf3dd2f2059b4387c1d7447145bf7c9568b7eb5cf1ffc78"
+  },
+  {
+    "bytes": 316,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/BME/HKBMEv2.php",
+    "sha256": "ca367600dc38c5af4ccfa9611a5be2380cc971112b69119290910fdc51130a7d"
+  },
+  {
+    "bytes": 405,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/BME/ParameterTerminierteSEPAFirmenSammellastschriftEinreichenV1.php",
+    "sha256": "544487331b3f69d2a3f122c5667fba0a98b79de918e60e177dfaee3ba3643c63"
+  },
+  {
+    "bytes": 768,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/BME/ParameterTerminierteSEPAFirmenSammellastschriftEinreichenV2.php",
+    "sha256": "19e0b841f60b031143c357025bc19ca337b4f4f7ea588408546237c827c66dc0"
+  },
+  {
+    "bytes": 837,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/BSE/HIBSESv1.php",
+    "sha256": "fc62e426697f52f891b2cca26e3e8c9db1070d85e32063860a0f85beab4c3175"
+  },
+  {
+    "bytes": 837,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/BSE/HIBSESv2.php",
+    "sha256": "340ef9716dd8f9224101c807dd999b56a786d91fd05a3b144ff0cda792b445ec"
+  },
+  {
+    "bytes": 348,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/BSE/HKBSEv1.php",
+    "sha256": "abee4516ae999b663d63212debe0984a5f0034ee4914d08446241f21bae963b9"
+  },
+  {
+    "bytes": 318,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/BSE/HKBSEv2.php",
+    "sha256": "80a5a30e13e59393ebeec7b53244ea685961b3d8943b10f86a87d7b331789b8c"
+  },
+  {
+    "bytes": 859,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/BSE/ParameterTerminierteSEPAFirmenEinzellastschriftEinreichenV1.php",
+    "sha256": "c55a8b8b70aa9d19cdd1bc97dda12b2d992b5dcd2868271f208b283944a396b4"
+  },
+  {
+    "bytes": 544,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/BSE/ParameterTerminierteSEPAFirmenEinzellastschriftEinreichenV2.php",
+    "sha256": "9cf033139e9b9c572b31e1f0ecc4fbc719173900051a2391e806db58801de9c0"
+  },
+  {
+    "bytes": 745,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/BSE/ParameterTerminierteSEPAFirmenLastschriftEinreichenV2.php",
+    "sha256": "c946552770f333c609867ec270932935b1000a3946c75cd5011cf6505cfab823"
+  },
+  {
+    "bytes": 3048,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/BaseDeg.php",
+    "sha256": "fd5b3999810669ba05612157ef6c141d56f79f55a0e567d261a263f6db7d312b"
+  },
+  {
+    "bytes": 10549,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/BaseDescriptor.php",
+    "sha256": "9f2cf93a92413ab5ef89b6d9c06a818b2a356f4905fb8a3b5ff3138636b00c72"
+  },
+  {
+    "bytes": 1568,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/BaseGeschaeftsvorfallparameter.php",
+    "sha256": "93b8b1c718f46309d1b85b8a20a210305535cd742843213e9d5d0d49a00642d7"
+  },
+  {
+    "bytes": 1105,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/BaseGeschaeftsvorfallparameterOld.php",
+    "sha256": "1d991aafda675fd243808f340d30c709318cf1d124287337f6b2d89d9717e8df"
+  },
+  {
+    "bytes": 4912,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/BaseSegment.php",
+    "sha256": "3fb4e1c74f7bf49a5ce84f0cb5808a71b3697b3619c79c08a4409641f3b7be6a"
+  },
+  {
+    "bytes": 695,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/CAZ/GebuchteCamtUmsaetze.php",
+    "sha256": "60684d6d341a5b7eecd5241eea1a28c5b24513f2a49cc1c3db6fdada02708194"
+  },
+  {
+    "bytes": 530,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/CAZ/HICAZSv1.php",
+    "sha256": "f952a26cebcc06aa2a45807aa2eb31d8f129a93015cced4508a7cc3206c7dfb1"
+  },
+  {
+    "bytes": 1988,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/CAZ/HICAZv1.php",
+    "sha256": "17d35d232f6f3785f0861fce5f754c603ef1516f45b9493df8cb4ea34a4528b5"
+  },
+  {
+    "bytes": 1783,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/CAZ/HKCAZv1.php",
+    "sha256": "9333a8ab46b674f463494a1650892f4c5ea1f2e040102a8b0dacffe7a189e438"
+  },
+  {
+    "bytes": 625,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/CAZ/ParameterKontoumsaetzeCamt.php",
+    "sha256": "48bcecf18da2e1eef739a81a73b8bf56fc2b0443ca57e96417557b92d9e69b25"
+  },
+  {
+    "bytes": 667,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/CAZ/UnterstuetzteCamtMessages.php",
+    "sha256": "34cbcfe4af4ea8a9dfc578414f19066acee0fa9a6e227f4d52044a50c897b6db"
+  },
+  {
+    "bytes": 549,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/CCM/HICCMSv1.php",
+    "sha256": "58a18050cf3aaa2bef1d523d1be3fef020814abd26e44ff478c3097a00cf6d3a"
+  },
+  {
+    "bytes": 834,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/CCM/HKCCMv1.php",
+    "sha256": "fc1a6974a3c3e2d5f5601a680bea28429d20b0e2e1d416c7d885093dc86a096f"
+  },
+  {
+    "bytes": 266,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/CCM/ParameterSEPASammelueberweisungV1.php",
+    "sha256": "b2614835e53c1f62c1db01a06daf4dbd36ddfffbbae215e369e1acf1fc7bed4c"
+  },
+  {
+    "bytes": 398,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/CCS/HICCSSv1.php",
+    "sha256": "977de938b975a7599cf08ad1d25cbd312c5cf37add6f1b470e7e133f3fbc3077"
+  },
+  {
+    "bytes": 741,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/CCS/HKCCSv1.php",
+    "sha256": "30a7cfcd5f6c3998edd5dd7b473e926edf31a22555ef06e7fa28a9366c07e68d"
+  },
+  {
+    "bytes": 591,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/CME/HICMESv1.php",
+    "sha256": "225da4924c84341d0003e337c0db0725886059644f68b48c503b3a174cd1bb1b"
+  },
+  {
+    "bytes": 380,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/CME/HICMEv1.php",
+    "sha256": "9dda268a54e6655735791daeec7ace9748979a93e7339fd810c3cd8f9ba919cf"
+  },
+  {
+    "bytes": 834,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/CME/HKCMEv1.php",
+    "sha256": "2799800bfa56db05cef01f50caf47b0ec8e5cbd8c5f202515fcc171cf09ec355"
+  },
+  {
+    "bytes": 361,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/CME/ParameterTerminierteSEPASammelueberweisungEinreichenV1.php",
+    "sha256": "80f59e74a160a062b9deb2f4a9b58fcf0eafd2b02f875af43a21e0c940d0e03a"
+  },
+  {
+    "bytes": 529,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/CSE/HICSESv1.php",
+    "sha256": "d3c89541f365e6e2dd1253b891ec77ca9b22fa349c056aa757847863db340aeb"
+  },
+  {
+    "bytes": 380,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/CSE/HICSEv1.php",
+    "sha256": "470ba78c86b84dd00d04f2df0f7f07333469cc0b5272a06e2d61194314553411"
+  },
+  {
+    "bytes": 741,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/CSE/HKCSEv1.php",
+    "sha256": "c2dadef0ad8179ba70f14a45c57e63256ebf69196037c7e2440f2b31a5992674"
+  },
+  {
+    "bytes": 234,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/CSE/ParameterTerminierteSEPAUeberweisungEinreichenV1.php",
+    "sha256": "6b4c3dce4eba8cef824c7cf930ffec5a4c19ce90354a325e2bdc2711295c02b9"
+  },
+  {
+    "bytes": 394,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/Common/AccountInfo.php",
+    "sha256": "b1e6df99288b407d12275079e8d8cbfedb4a86d60a249d0d3568cb861eb43bc9"
+  },
+  {
+    "bytes": 421,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/Common/Btg.php",
+    "sha256": "4c8f2790af6225fc8afa97e9088a19e28f935970427eefea6204aa22f2532055"
+  },
+  {
+    "bytes": 1261,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/Common/Kik.php",
+    "sha256": "7da5fb5b27797ffb87eada926f1522f8813b53f7926694a5b9d75e8b2f53ecf4"
+  },
+  {
+    "bytes": 2283,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/Common/Kti.php",
+    "sha256": "e574433a7b687486ddf4fb74fa086024323f64549b70514c2a49e788cdba3904"
+  },
+  {
+    "bytes": 1026,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/Common/Kto.php",
+    "sha256": "7c4dcd27af5f6488ebb532ca57a6f4679b51d3b103691abaed8e6fe1dc15a6b0"
+  },
+  {
+    "bytes": 1616,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/Common/KtvV3.php",
+    "sha256": "69d9fce1be18db49ad340c83189b94df7be58dbee80ace6de008e278916682fc"
+  },
+  {
+    "bytes": 1066,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/Common/Ktz.php",
+    "sha256": "e1152be9f47ee8d9586419a103b1022576ad513b84ca145e316f6b41fb548d5c"
+  },
+  {
+    "bytes": 456,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/Common/Kursqualitaet.php",
+    "sha256": "fefcebb1762f1f6e3537da9b54b6adf189d540925e1cf6109dd2625b451654bf"
+  },
+  {
+    "bytes": 2155,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/Common/Sdo.php",
+    "sha256": "892f88733b3ec5545dcd904b9f25b0ecfba6066607ea194508313d2d86cf8844"
+  },
+  {
+    "bytes": 860,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/Common/Tsp.php",
+    "sha256": "8eb994bdf3cc0b6c3783adcd48e469fca836f0edb2c955dacc1626bd17fbf052"
+  },
+  {
+    "bytes": 831,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/DME/HIDMESv1.php",
+    "sha256": "0f6abb4226952b90ce9d144c1778907a80e6ad89f83831cd6dde246457c6c05d"
+  },
+  {
+    "bytes": 831,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/DME/HIDMESv2.php",
+    "sha256": "abf6c41e3f4acac8265608129306d308e12b9ef13f036735f764f34ef32a6e75"
+  },
+  {
+    "bytes": 857,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/DME/HKDMEv1.php",
+    "sha256": "bd852c462423bda8c54269c8f2db6e55f87a7d0b9f3e62443d078659dcd60795"
+  },
+  {
+    "bytes": 316,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/DME/HKDMEv2.php",
+    "sha256": "3cb7bb11dabddc38dc781f3921d85fbec4094d6c550099c51fe39b1cc9b86964"
+  },
+  {
+    "bytes": 387,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/DME/ParameterTerminierteSEPASammellastschriftEinreichenV1.php",
+    "sha256": "af01e213a6b722bedb16da5404e16fb9ff3386cced664b12f16d83891ff57357"
+  },
+  {
+    "bytes": 750,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/DME/ParameterTerminierteSEPASammellastschriftEinreichenV2.php",
+    "sha256": "0c69d55179cdb2eade89171de6f1378f4b0203bb6565077e84df9f5820b1f738"
+  },
+  {
+    "bytes": 758,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/DSE/HIDSESv1.php",
+    "sha256": "65c1241e7bd1114fe825491b324065bf652523b55a23c7579cdda85cfce77c9f"
+  },
+  {
+    "bytes": 758,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/DSE/HIDSESv2.php",
+    "sha256": "19c540eb173b0b5eeff90286e8ad9f3110a78c0eb5e755b1463de55b6307e29f"
+  },
+  {
+    "bytes": 323,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/DSE/HIDXES.php",
+    "sha256": "81290d45f0e6221de9380bef3a79f9cc75e00085b86501c1d3936ae4543e6e91"
+  },
+  {
+    "bytes": 624,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/DSE/HKDSEv1.php",
+    "sha256": "be2d46c803eb8adbcecefbe5cc0027a61fffb65cb0f5cdc29adc285cc73615b1"
+  },
+  {
+    "bytes": 318,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/DSE/HKDSEv2.php",
+    "sha256": "11dcf45c008347fdbbc75e9232433c8ca28c14530e5fba6b51ee9b98423e67cb"
+  },
+  {
+    "bytes": 3244,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/DSE/MinimaleVorlaufzeitSEPALastschrift.php",
+    "sha256": "99dc48781b51721c6ab8ffaa4cd566a172ddb37534c28925b5e727e1f7ce0b17"
+  },
+  {
+    "bytes": 737,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/DSE/ParameterTerminierteSEPAEinzellastschriftEinreichenV1.php",
+    "sha256": "518e80fc79a8f92a2d5f187350d06724633119d27c3e6a544b773eaa0b56d183"
+  },
+  {
+    "bytes": 532,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/DSE/ParameterTerminierteSEPAEinzellastschriftEinreichenV2.php",
+    "sha256": "7d2cc024d6205ab15819bfe0cd2de1c9c96c677a10809c9a0e6ca2971324d146"
+  },
+  {
+    "bytes": 564,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/DSE/ParameterTerminierteSEPALastschriftEinreichenV2.php",
+    "sha256": "f18e41ae7b892ebc5a42bb0c439d64c4f8338afba3d940b34e2613ce8ceea240"
+  },
+  {
+    "bytes": 287,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/DSE/SEPADirectDebitMinimalLeadTimeProvider.php",
+    "sha256": "b90830d576c0f1a4217470cccfdcf39d637703d1fc50654645e6f8519173bb74"
+  },
+  {
+    "bytes": 1550,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/DegDescriptor.php",
+    "sha256": "8976a2a7b809e041078bac0970fd35f33c7945e675c9017007f80e78b6a832f7"
+  },
+  {
+    "bytes": 3889,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/ElementDescriptor.php",
+    "sha256": "8b5f16620766e027e686d0f0c88f7053f984a7577552608437c310d71b3571e0"
+  },
+  {
+    "bytes": 862,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HIBPA/HIBPAv3.php",
+    "sha256": "2eba132b6ac1d9a96b1b893ed701aad289300f2da07b1f452cf7bc7c9aceff02"
+  },
+  {
+    "bytes": 443,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HIBPA/UnterstuetzteHbciVersionenV2.php",
+    "sha256": "ffeb1d831d68f1c0ef59cfc16546d721bcf51906980da430bfc6062445f73158"
+  },
+  {
+    "bytes": 709,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HIBPA/UnterstuetzteSprachenV2.php",
+    "sha256": "94b3371f2e487807b15f95a50ecd902a5adf1a5dbc9a157964fcdb4bc42d28d4"
+  },
+  {
+    "bytes": 750,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HIPINS/GeschaeftsvorfallspezifischePinTanInformationen.php",
+    "sha256": "fa171a19459a3fe39effb47cffd9fac5a194074a85adf10fd459c03683fc5896"
+  },
+  {
+    "bytes": 482,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HIPINS/HIPINSv1.php",
+    "sha256": "1ec0154b0d6892428185de521bccc685846e033a2faf915fc68ff4133cdf0c69"
+  },
+  {
+    "bytes": 889,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HIPINS/ParameterPinTanSpezifischeInformationen.php",
+    "sha256": "8b7bd2574578735733ecedf6d132aba9d2c2a119473e602c872cc6a6208b2a3b"
+  },
+  {
+    "bytes": 749,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HIRMG/HIRMGv2.php",
+    "sha256": "0d74680407415161a4f62ab186cd44f3f41ee1ccd3172e94c322c605029a69e2"
+  },
+  {
+    "bytes": 1155,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HIRMS/FindRueckmeldungTrait.php",
+    "sha256": "fb09c3adc0c27af80e16c32bae1689b2ef6d0d147bfa7c6dfcf79f3399af75ba"
+  },
+  {
+    "bytes": 975,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HIRMS/HIRMSv2.php",
+    "sha256": "9d4cf69e495a73403ca0253e4699cf1d52ca0341e01cb48c8b432e3bd6471532"
+  },
+  {
+    "bytes": 1634,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HIRMS/Rueckmeldung.php",
+    "sha256": "41ec76586a4ff111e6d2e3cf2d6add1de988d3ca85fc80ac83d20ae64db22ebd"
+  },
+  {
+    "bytes": 599,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HIRMS/RueckmeldungContainer.php",
+    "sha256": "d446e20909dd4ad324f3c0d239dca9c80267c6ffd08c3c4d3039809abd6e40ec"
+  },
+  {
+    "bytes": 6137,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HIRMS/Rueckmeldungscode.php",
+    "sha256": "49efebe05875d4a54b9ea2760b204a3ec6231a5d4640dbfdd4ca45c5215504b1"
+  },
+  {
+    "bytes": 782,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HISYN/HISYNv4.php",
+    "sha256": "4fd7e6ad8a6ffff21564be2054c95d0e4048d02c4d1a66917e88fd5c22d4a112"
+  },
+  {
+    "bytes": 1207,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HIUPA/HIUPAv4.php",
+    "sha256": "0cb8e280825c1906947e3660b75a3132c846a1f781f0ad5f140a97c26bb52c2f"
+  },
+  {
+    "bytes": 265,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HIUPD/ErlaubteGeschaeftsvorfaelle.php",
+    "sha256": "3a98b8334758019a4806bc0769b8357e149b340e0eb4308c47715fba290d969c"
+  },
+  {
+    "bytes": 856,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HIUPD/ErlaubteGeschaeftsvorfaelleV1.php",
+    "sha256": "c51d118de38afed210913f52d78a800e22db4096958ae68041271c7663395f14"
+  },
+  {
+    "bytes": 905,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HIUPD/ErlaubteGeschaeftsvorfaelleV2.php",
+    "sha256": "1cc03356cd04dc8563f6b1aa9fc715786f5eea7001a8fe0a0f2dc9757e4b4bad"
+  },
+  {
+    "bytes": 500,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HIUPD/HIUPD.php",
+    "sha256": "ebd50fae6eeccb19eda9de4f0380a6954ac9e3f15a7a3d9c1132ce6894a37505"
+  },
+  {
+    "bytes": 1258,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HIUPD/HIUPDv4.php",
+    "sha256": "c675163bf42186b331778283ea65a031d44f1d005025801016f55e1c541f92f3"
+  },
+  {
+    "bytes": 2376,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HIUPD/HIUPDv6.php",
+    "sha256": "377dffd1064ca544a4a54e5ca8c114fd5fc5834ac008e59781a6fa8d6cba3ac0"
+  },
+  {
+    "bytes": 499,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HIUPD/KontolimitV1.php",
+    "sha256": "3c5cafe710a5051403875920068c9d5ac42841121d1307d1f71954e264ea2e68"
+  },
+  {
+    "bytes": 605,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HIUPD/KontolimitV2.php",
+    "sha256": "eca708df0016b56fe26f650cdbccedbac8f8433a7cb014c0a28e4750b6aeab33"
+  },
+  {
+    "bytes": 499,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HKEND/HKENDv1.php",
+    "sha256": "f8f6fed5ced3a6826f311b46920f80544964ad3712cef58ed857d356876bc12b"
+  },
+  {
+    "bytes": 2145,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HKIDN/HKIDNv2.php",
+    "sha256": "144a9bbacbb8b720829fb783380bcae1939d00c59201ed72fc757d1f25d8e6c5"
+  },
+  {
+    "bytes": 570,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HKSYN/HKSYNv3.php",
+    "sha256": "faeefdfae3126a31face3d91e18390f81f41785b48e9a73f88a8c429cdd61077"
+  },
+  {
+    "bytes": 1469,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HKVVB/HKVVBv3.php",
+    "sha256": "e00ed295e1a0e9ffaf7b03cc455d05f33af30f744e8e4c59d336e99f6e7a0c30"
+  },
+  {
+    "bytes": 552,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HNHBK/BezugsnachrichtV1.php",
+    "sha256": "2ac8ed6f51693d4068bf4bccb22c292e1460839f11523b63f35e1888c88ef8ab"
+  },
+  {
+    "bytes": 1614,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HNHBK/HNHBKv3.php",
+    "sha256": "7330107b51baebd2168d289bf3a727e47e831dc28b7969f3c2ab768b6cc422e6"
+  },
+  {
+    "bytes": 276,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HNHBS/HNHBSv1.php",
+    "sha256": "ca80c7d0a0d596dfc13f62c5e3289713eae8a6fdebafce7d134064a00f0e08fa"
+  },
+  {
+    "bytes": 745,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HNSHA/BenutzerdefinierteSignaturV1.php",
+    "sha256": "927638dab0a55640bb27329dc9cb88718f43417c3268a79f383d01da384f5d96"
+  },
+  {
+    "bytes": 1233,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HNSHA/HNSHAv2.php",
+    "sha256": "46e42535d15bdf1a787ccbeb42fabad4339b40f4f3c7a154fe01b43dd95e15a4"
+  },
+  {
+    "bytes": 4088,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HNSHK/HNSHKv4.php",
+    "sha256": "b6d93f45b9a49bea8e55ca211480ebb2e91fa8511bddd61748006d5b3447a81a"
+  },
+  {
+    "bytes": 1170,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HNSHK/HashalgorithmusV2.php",
+    "sha256": "6e66df85bab0357460fa765122008b77280b3b9eefc6509363b2bd1315fbaf24"
+  },
+  {
+    "bytes": 874,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HNSHK/SignaturalgorithmusV2.php",
+    "sha256": "a882b4008a2baf7aa5f040da9ac03088c8d3a3f16b7858c222024c785ccb823d"
+  },
+  {
+    "bytes": 1347,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HNVSD/HNVSDv1.php",
+    "sha256": "96d4f9a09a40ba2626ccbca6181bcc82517f356d797112a579484d9fe316020c"
+  },
+  {
+    "bytes": 3636,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HNVSK/HNVSKv3.php",
+    "sha256": "e34f0df68d37d7a736288b521b46816a94fc7ed117873e923e4608953770c77b"
+  },
+  {
+    "bytes": 1482,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HNVSK/SchluesselnameV3.php",
+    "sha256": "8cbed0fe16ca20da154e19d0e84fce4341a8fb0f0348cde7244d7fafb4bcf840"
+  },
+  {
+    "bytes": 1474,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HNVSK/SicherheitsdatumUndUhrzeitV2.php",
+    "sha256": "26d422efbb9856d40d2e6ff9fc48ddf7cc9c5b2a426448aaa1fd6466bc9ae3f7"
+  },
+  {
+    "bytes": 1397,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HNVSK/SicherheitsidentifikationDetailsV2.php",
+    "sha256": "bf0c29ea763be5371729a27400347c71054eeaf7323a610060465ca3dbd2ed07"
+  },
+  {
+    "bytes": 1367,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HNVSK/SicherheitsprofilV1.php",
+    "sha256": "d51fde869c3929d3437c914094e0dead67d343798bed8150943a9626c0881217"
+  },
+  {
+    "bytes": 2345,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HNVSK/VerschluesselungsalgorithmusV2.php",
+    "sha256": "3f21d9aed42c4c71ee3e4ac41ad22fd83e0ce341fb5bbe1c274fa9b3fa29bcf3"
+  },
+  {
+    "bytes": 493,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/HNVSK/ZertifikatV2.php",
+    "sha256": "73e498a94b23adbbb8549db2671d8ef49804139b40f1cae45ad6e987f3b93629"
+  },
+  {
+    "bytes": 572,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/IPZ/HIIPZSv1.php",
+    "sha256": "4a60d91a1c9908fc1eebe880149bdf6a6fa1baabcd5c210084d9d4404a24b05d"
+  },
+  {
+    "bytes": 572,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/IPZ/HIIPZSv2.php",
+    "sha256": "a21dd521ab4193920e79dd1da5afde84ae8d224bf1303b66b958915e8a47859a"
+  },
+  {
+    "bytes": 1052,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/IPZ/HIIPZv1.php",
+    "sha256": "3dab397d4d324b324db313a72bf09b2f05d3474dae232bf4d8080dae343582ad"
+  },
+  {
+    "bytes": 302,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/IPZ/HIIPZv2.php",
+    "sha256": "dae0890c3f516c71843195c6d0397fe416d4ad0c88212e1915a59e59985f3580"
+  },
+  {
+    "bytes": 332,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/IPZ/HKIPZv1.php",
+    "sha256": "2572d008b34df9e546c85c11a6a82e92416e30adeb6ad48e67fa5e8d4bf20eaf"
+  },
+  {
+    "bytes": 360,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/IPZ/HKIPZv2.php",
+    "sha256": "5c6d0fb90ade93685f62f68d6d0843c01f705434c4209bde1276d01116b4d55b"
+  },
+  {
+    "bytes": 719,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/IPZ/ParameterSEPAInstantPaymentZahlungV1.php",
+    "sha256": "27ca263fe5d3178848ef00d3a1dafc7d92a020b2ff6409223d8843e9576fffa7"
+  },
+  {
+    "bytes": 785,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/IPZ/ParameterSEPAInstantPaymentZahlungV2.php",
+    "sha256": "b3e00fcd21cc800a7ec44eb5ee5f93c05756d869ecff71b09fb75719a99a251d"
+  },
+  {
+    "bytes": 293,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/KAZ/HIKAZ.php",
+    "sha256": "85622fc355f1f23cdc4e5deaf3b335236e76d325931749f55a0616348604b82e"
+  },
+  {
+    "bytes": 229,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/KAZ/HIKAZS.php",
+    "sha256": "67e175f8046306586d6b671b49f7bd8fbea042f7a870a091e266a163db3a1eb4"
+  },
+  {
+    "bytes": 563,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/KAZ/HIKAZSv4.php",
+    "sha256": "748dbdfdb233b9aa7f8d2cd0609ee4e87e9cd50de2b3a7cc8ae856ae0637366f"
+  },
+  {
+    "bytes": 527,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/KAZ/HIKAZSv5.php",
+    "sha256": "407ae7ea0b29cbea80bd2fe8b3b46b99208870e30b3e31071777a67ff4e1bc99"
+  },
+  {
+    "bytes": 549,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/KAZ/HIKAZSv6.php",
+    "sha256": "e1ba71e20f1975cba4392515ecee2de328a831c50cf4f9df9e52fa02e7cc7c72"
+  },
+  {
+    "bytes": 350,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/KAZ/HIKAZSv7.php",
+    "sha256": "1a312512215a5b178144d357108a4cba2e12e6a885c6f1a5add3c41a5a6e17d4"
+  },
+  {
+    "bytes": 838,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/KAZ/HIKAZv4.php",
+    "sha256": "365ad83631a8963dffcfc59e47b091c2755c2204853c4eaf1228f0dc76b5eb16"
+  },
+  {
+    "bytes": 404,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/KAZ/HIKAZv5.php",
+    "sha256": "3d0c7ebfea251d60716d4bffe68da965401fd552acf9a20fb0834544be358747"
+  },
+  {
+    "bytes": 432,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/KAZ/HIKAZv6.php",
+    "sha256": "f5a3b5044e7afb293b471d746ae4eb51daf8a16fc6e34ffec048804cf105636a"
+  },
+  {
+    "bytes": 432,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/KAZ/HIKAZv7.php",
+    "sha256": "5f07d7e37a90449f7e7858f91c8381dcf91151bb1192548b83afcd5e9e6ed907"
+  },
+  {
+    "bytes": 1434,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/KAZ/HKKAZv4.php",
+    "sha256": "9d4ec2a1388a21260df3fc08fceced838ad0869c8768e9e6ed3d8c1fe1c12bc6"
+  },
+  {
+    "bytes": 1570,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/KAZ/HKKAZv5.php",
+    "sha256": "22927314cc3b7f69ae066ffde38eb184d144096180f35b9002d25be30d7850d5"
+  },
+  {
+    "bytes": 1598,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/KAZ/HKKAZv6.php",
+    "sha256": "99b5f2b0e49e94685a4432cb32d2d50676bdb08aad1065a1d4a64f2869badb75"
+  },
+  {
+    "bytes": 1593,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/KAZ/HKKAZv7.php",
+    "sha256": "de0ce7cfa02b7227e46d9cdcc0090342efe132b4aac2b341b07d264345229f39"
+  },
+  {
+    "bytes": 177,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/KAZ/ParameterKontoumsaetze.php",
+    "sha256": "d4069aa73a08769fb838100439eff5788c4adcea750a4df63e086211f48c1363"
+  },
+  {
+    "bytes": 595,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/KAZ/ParameterKontoumsaetzeV1.php",
+    "sha256": "77640adb75108f8cf41468ce219c36f35811d6f3b586b9c06b4ea41c0e206abe"
+  },
+  {
+    "bytes": 595,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/KAZ/ParameterKontoumsaetzeV2.php",
+    "sha256": "94e18ec5cf6e20d0b28a82083eb5f20c82ff2abcd5a6347e74f3914698f86cb9"
+  },
+  {
+    "bytes": 325,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/Paginateable.php",
+    "sha256": "a5029f77eb108bef181dbab778b13ee1773f5b8d1e3764c2f3d2288865b40a6e"
+  },
+  {
+    "bytes": 1081,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SAL/HISAL.php",
+    "sha256": "19004f3aa25a58695d11c5692f4b4b5906e1a3cc26eec729d70eab61fd1bdab6"
+  },
+  {
+    "bytes": 419,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SAL/HISALSv4.php",
+    "sha256": "5c917a90e4812207cd236c73eeda8ff1f6a9d78068fe16501057d210c387f12b"
+  },
+  {
+    "bytes": 320,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SAL/HISALSv5.php",
+    "sha256": "e1b3519b3bab2d740e0e371b54e39abf581534960170e4e91816903a8abef515"
+  },
+  {
+    "bytes": 436,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SAL/HISALSv6.php",
+    "sha256": "1fab165cac4b33732ba2d3b4bb9d66f54572386ce2477c91c8aa0c903503b91c"
+  },
+  {
+    "bytes": 348,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SAL/HISALSv7.php",
+    "sha256": "c89749fad58e7212c4ce7e0191d5213d3ffa0ee37cc3520ab53004ad71eb0daf"
+  },
+  {
+    "bytes": 2301,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SAL/HISALv4.php",
+    "sha256": "1966977e13187399bdaf07e8acbbbfca86e0867f61d3b1bf5bddfabe6ffc710c"
+  },
+  {
+    "bytes": 2375,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SAL/HISALv5.php",
+    "sha256": "5a3c8ef6498e252c42a92f7570236a4c0eae976ef5bf3641b0497ebaf88e5f18"
+  },
+  {
+    "bytes": 2285,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SAL/HISALv6.php",
+    "sha256": "911c2615081549e3a2ba9c01b032df54302e3c1ae98d7353f38c343cce9096ca"
+  },
+  {
+    "bytes": 2285,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SAL/HISALv7.php",
+    "sha256": "13934d96ad6e1fc54e1a72ddfe6df0144c61f49f2a949754e8e8a36e9f15cb12"
+  },
+  {
+    "bytes": 1039,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SAL/HKSALv4.php",
+    "sha256": "c5a580055e29a1410e65b164deb4ae80a0f7101a859ab3430deb7238ccdc3728"
+  },
+  {
+    "bytes": 1057,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SAL/HKSALv5.php",
+    "sha256": "6c78da1e22a8aa6121f2d139ecc163e31877d70d7a5fdc197ea05f16da190e60"
+  },
+  {
+    "bytes": 1085,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SAL/HKSALv6.php",
+    "sha256": "98c5e338ee02d5fc5e075b00310f365147fb9c72d1cf2ff642dff413351fdb62"
+  },
+  {
+    "bytes": 1083,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SAL/HKSALv7.php",
+    "sha256": "eead18cd6b9939d6c5d384cd4f593a483e1284005ff3a4c5df2910659ece2553"
+  },
+  {
+    "bytes": 266,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SPA/HISPA.php",
+    "sha256": "317177fc9b4fcf5ff3f94aa15289a2535cdf33fdca48b684dc45bff918ba54a9"
+  },
+  {
+    "bytes": 253,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SPA/HISPAS.php",
+    "sha256": "a12903e3267421c56e5533395857a21e6ab2be10bbe636b75301a8000e02db41"
+  },
+  {
+    "bytes": 584,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SPA/HISPASv1.php",
+    "sha256": "35d805740fd61d43b4b630f3e37def13b4b828c5602fb0964aa1e43095ca2c43"
+  },
+  {
+    "bytes": 584,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SPA/HISPASv2.php",
+    "sha256": "3217233c6581e45246ae4bd39351e26dc0d682e17fe05fc12ce49130e1b677a6"
+  },
+  {
+    "bytes": 310,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SPA/HISPASv3.php",
+    "sha256": "3718dc6573200c8b84bf09c3a19be57ba3a36f11e31cccbc153a460c772f297f"
+  },
+  {
+    "bytes": 639,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SPA/HISPAv1.php",
+    "sha256": "e405b390f3b8088a0a5e2f5d258a80a890ed9ba68925ef4afb76a6af38a7d467"
+  },
+  {
+    "bytes": 361,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SPA/HISPAv2.php",
+    "sha256": "9896336dde539a06a39aea3a3d816f7dd2947c10dbc29d1a38bc2d1b497425e6"
+  },
+  {
+    "bytes": 323,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SPA/HISPAv3.php",
+    "sha256": "b1d96babaab742f01a71d8a2e27309c63c1f6ff6dcae0c1de6a7af621624cf7d"
+  },
+  {
+    "bytes": 531,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SPA/HKSPAv1.php",
+    "sha256": "1dbec96893386a13d0da9bfe7b3b5e6eadeb5ce07cab5c06abf03d670194f12b"
+  },
+  {
+    "bytes": 943,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SPA/HKSPAv2.php",
+    "sha256": "a52658f06c5c94d6f12bc4b1498326d9ca353af58b67e80e71c5250b21667a11"
+  },
+  {
+    "bytes": 328,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SPA/HKSPAv3.php",
+    "sha256": "918370852ea63d977a8a57ed0674951017324b960280e14f47a12bb146eda190"
+  },
+  {
+    "bytes": 340,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SPA/ParameterSepaKontoverbindungAnfordern.php",
+    "sha256": "d5ff5af6d2d906b8a34365b5581e3e5f49959bcdd05400e486fa74ea6ca460ea"
+  },
+  {
+    "bytes": 941,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SPA/ParameterSepaKontoverbindungAnfordernV1.php",
+    "sha256": "809c9d10f52cff8ef88ad9597637ed2791f9e4a248fdf0c94836bba1ae49b568"
+  },
+  {
+    "bytes": 989,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SPA/ParameterSepaKontoverbindungAnfordernV2.php",
+    "sha256": "c6c7fbae2d3779a8dd965b78c225cc13b4532e95b9142c745b176ac7d20e0447"
+  },
+  {
+    "bytes": 1048,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SPA/ParameterSepaKontoverbindungAnfordernV3.php",
+    "sha256": "16fbe9614f8b40868ffb3d17b236b5bdd58f2773caae658ad4149baca2c334a3"
+  },
+  {
+    "bytes": 2207,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SegmentDescriptor.php",
+    "sha256": "a37e3ee84ad29c8015d0ba804f175783c97f3dcb15f14676331e1f44b21314d7"
+  },
+  {
+    "bytes": 347,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/SegmentInterface.php",
+    "sha256": "0b032ae077b3dc1702eb7cc8d26e7f357efc39ce432ec2ed4e744e4d1f8837ef"
+  },
+  {
+    "bytes": 813,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/Segmentkopf.php",
+    "sha256": "fdefd5bdc5952aa13bc6aecf7565a7aa7684628158e946eb7417637a949446ea"
+  },
+  {
+    "bytes": 275,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAB/HITAB.php",
+    "sha256": "c01f06cadc0240acf9cba7bd54a9b49037eb67477c4127b89e3a68c139381645"
+  },
+  {
+    "bytes": 418,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAB/HITABSv4.php",
+    "sha256": "dbb9833f7959fc1200dab09d67e576712a9e44451040a6c33eb29e64a8da985f"
+  },
+  {
+    "bytes": 418,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAB/HITABSv5.php",
+    "sha256": "cc210660d9f026f89182c76ba0f57199293261ed1d79f365f9162dcbb1c1c028"
+  },
+  {
+    "bytes": 897,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAB/HITABv4.php",
+    "sha256": "f573bc113533a2c707d7e90d9a5bb2655adcecadb82950713670f28a482f4992"
+  },
+  {
+    "bytes": 897,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAB/HITABv5.php",
+    "sha256": "4c451970082b47d308e24a2ad2ba76fdd661a4e5f7c2279e9760f7c51e865203"
+  },
+  {
+    "bytes": 657,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAB/HKTABv4.php",
+    "sha256": "fb33f874b75ef9b8a0d767a6ab9b184012e67bc687ef1d18349b3debab8557a6"
+  },
+  {
+    "bytes": 688,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAB/HKTABv5.php",
+    "sha256": "c3b1f19df5087288f45952570dfbc781f7cef55bbbe1631f90bc1e4625b50728"
+  },
+  {
+    "bytes": 188,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAB/TanMediumListe.php",
+    "sha256": "7b095833c1e49879d77eb256b56898730723323dd43375c2c4ca0dbe37a17e3a"
+  },
+  {
+    "bytes": 2375,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAB/TanMediumListeV4.php",
+    "sha256": "61c892ffb7974f647816d3e1a7188b458b338b542fe811c87d443a33e13765df"
+  },
+  {
+    "bytes": 2476,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAB/TanMediumListeV5.php",
+    "sha256": "98d1276261ada727cc0384ace1a847e14c9a1abaadde727f555dd2c8654ed46f"
+  },
+  {
+    "bytes": 724,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAN/AntwortHhdUc.php",
+    "sha256": "2628a9ad2d35846a63ce8655ccc433f124d630d5e486660b3574cd730bd24304"
+  },
+  {
+    "bytes": 588,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAN/GueltigkeitsdatumUndUhrzeitFuerChallenge.php",
+    "sha256": "25fd912890145403b0eea516ba3d8dfa72030e3378b41ed5d50fb986d151a243"
+  },
+  {
+    "bytes": 294,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAN/HITAN.php",
+    "sha256": "69cea0e5ad1e61593e21da2af3af4ed952f2643c9b2ddc8ae4e6e96fa762511c"
+  },
+  {
+    "bytes": 153,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAN/HITANS.php",
+    "sha256": "0e59f11033862502123673541c7099e5a393038656bed7b1c79ea467471fa028"
+  },
+  {
+    "bytes": 766,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAN/HITANSv6.php",
+    "sha256": "b6986d7d84ff1096620f4b60536cfd9928803d07688da5ea34274c917e0eb73b"
+  },
+  {
+    "bytes": 766,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAN/HITANSv7.php",
+    "sha256": "578bd18d8354cf0b6ebb30d08289a32c04ef2b85d9b158a37489fcc8eb733c1f"
+  },
+  {
+    "bytes": 3377,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAN/HITANv6.php",
+    "sha256": "3b1cf2aa58cb80ec690bceccd750eccd1d3ddd1fc3a9225968eb9135c8a8c846"
+  },
+  {
+    "bytes": 574,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAN/HITANv7.php",
+    "sha256": "2afae7271dde2332f8878e287685352c31ff0c9ad710cd8ea03cc92a1cbe3267"
+  },
+  {
+    "bytes": 745,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAN/HKTAN.php",
+    "sha256": "296c7f0515e193add6d2ab9061bb9825934aed415827ca56698feff785fa7b7f"
+  },
+  {
+    "bytes": 4926,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAN/HKTANFactory.php",
+    "sha256": "ac9feb8b8a1b6dd4fe27338059424cf9275bb2606196d05bbd65c879bdcd76e5"
+  },
+  {
+    "bytes": 5879,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAN/HKTANv6.php",
+    "sha256": "150429fa7c563c6f7e54bf8c86b53294b996a824d997f1c6fb879cfc60c7a182"
+  },
+  {
+    "bytes": 539,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAN/HKTANv7.php",
+    "sha256": "662384564cccd0a6657843c7f8867173613099f6f308d11ba9e17b333b0cb34a"
+  },
+  {
+    "bytes": 491,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAN/ParameterChallengeKlasse.php",
+    "sha256": "7ea5b9423b67cfcb11257ad599e7c9f964e4919dcb922ff5d75c5ca67dd9c883"
+  },
+  {
+    "bytes": 300,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAN/ParameterZweiSchrittTanEinreichung.php",
+    "sha256": "44f48fb748fa90cc077f73b0c34b3937c97f1765ac4e6353107db20fe564bada"
+  },
+  {
+    "bytes": 854,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAN/ParameterZweiSchrittTanEinreichungV6.php",
+    "sha256": "bd9fdbd9dc703803c6dec6d5309b9f10d04e923fbb910c6a8043d82ba0b277ce"
+  },
+  {
+    "bytes": 854,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAN/ParameterZweiSchrittTanEinreichungV7.php",
+    "sha256": "21fe12c09ded290e9e4898c33531a72b993b0da6adf3c82c020e94ed3c530453"
+  },
+  {
+    "bytes": 4419,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAN/VerfahrensparameterZweiSchrittVerfahrenV6.php",
+    "sha256": "3c6e313b8528b0437a443deb50906fb5d1ef2de42288c121487d0590dd338bd8"
+  },
+  {
+    "bytes": 7233,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/TAN/VerfahrensparameterZweiSchrittVerfahrenV7.php",
+    "sha256": "d7bcb80fc0bd6428430ffb06862433768184e82c6028f8b1faf10153c92e9d94"
+  },
+  {
+    "bytes": 197,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/UnterstuetzteSEPADatenformate.php",
+    "sha256": "4569ec209eec6063e71d15e0fa9ea76db35ea1352cba9f196fbf63d91a7472a7"
+  },
+  {
+    "bytes": 853,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/UnterstuetzteSEPADatenformateTrait.php",
+    "sha256": "2ebe00772f623abcaa857aba4baed89e2b6fe04ab32b6a84c76eea6dbbbcd5ba"
+  },
+  {
+    "bytes": 304,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/VPA/HKVPAv1.php",
+    "sha256": "36c39d4e325e8ba5b56c78373dc1c4ee762067bfe6e3ad7a45b09e14a2428a7e"
+  },
+  {
+    "bytes": 461,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/VPP/ErgebnisVopPruefungEinzeltransaktionV1.php",
+    "sha256": "81288c428f1c6f951ca7f707d1122e408d246a2fe0239b05a379db2febc8ef6a"
+  },
+  {
+    "bytes": 362,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/VPP/HIVPPSv1.php",
+    "sha256": "628577dcf6a676a4cbc6df389b95f926de9fa010dded053cca75e7bde7704769"
+  },
+  {
+    "bytes": 774,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/VPP/HIVPPv1.php",
+    "sha256": "458b57fdca3877bf238e4dc6ada4892ef6cc3cd5079cbec17abffc1de5e09051"
+  },
+  {
+    "bytes": 859,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/VPP/HKVPPv1.php",
+    "sha256": "a3451ce532d1b538c69e8fabd45649e449b557464269c8cd79a1f76475574628"
+  },
+  {
+    "bytes": 766,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/VPP/ParameterNamensabgleichPruefauftragV1.php",
+    "sha256": "98b126b4abc3515698eb5e4e25c3fb5ef9aa5b153621bf7330848a94d1fcf8d7"
+  },
+  {
+    "bytes": 723,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/VPP/UnterstuetztePaymentStatusReportsV1.php",
+    "sha256": "afbe0c4ae1633a0314b95ae1ab703b33eda0742ae0abd20df4c8e9c24d34d8c3"
+  },
+  {
+    "bytes": 7255,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/VPP/VopHelper.php",
+    "sha256": "f6b4977e7d2f4deb606802b29182cc63bfffdf6c135b69466a494f2594779365"
+  },
+  {
+    "bytes": 330,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/WPD/HIWPD.php",
+    "sha256": "fe4c5ccf6daa6ef754cd30d2f404dc045a7bc2f86237f18df26f6477da4ba330"
+  },
+  {
+    "bytes": 391,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/WPD/HIWPDS.php",
+    "sha256": "4e450c18c216a0f8d873bf852a44e89b09106e66f37f9a0ae965e578c3bdd48a"
+  },
+  {
+    "bytes": 590,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/WPD/HIWPDSv5.php",
+    "sha256": "0bf6d81d5fd833f0f9e69e782f79df1dfc7188311b55763eb9ff6a3c74b9c75d"
+  },
+  {
+    "bytes": 600,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/WPD/HIWPDv5.php",
+    "sha256": "34cf5f21edf8efad939d1a1c32c0b42ba7a5bca46627ee64c5149ec46e2c2be8"
+  },
+  {
+    "bytes": 1045,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/WPD/HKWPDv5.php",
+    "sha256": "529d517610d8bc4457d70261b912f72c211c4b935f5f741c55a56710a4d6cc20"
+  },
+  {
+    "bytes": 474,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/WPD/ParameterDepotaufstellung.php",
+    "sha256": "616957e7d5988e760aa1907f58e163ca018fcbfd3c20cda408221e499d390620"
+  },
+  {
+    "bytes": 876,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Segment/WPD/ParameterDepotaufstellungV2.php",
+    "sha256": "f36f3c55a7de97218253cd93ba6dbee81e02b5b1d8486c9d97e1e34a64bb452a"
+  },
+  {
+    "bytes": 732,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Syntax/Bin.php",
+    "sha256": "3313bd04046f1ea3fbe389b0820beef373fb51139f9d8b85b2b916acbb7a6048"
+  },
+  {
+    "bytes": 184,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Syntax/Delimiter.php",
+    "sha256": "a9acc8913c7081d83e1d1efca0ed3ec104e3f551d6f59bbc1874ac706e26346e"
+  },
+  {
+    "bytes": 383,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Syntax/InvalidResponseException.php",
+    "sha256": "44ce8d6ba29e313f35e0d16d89b791dca1980194155a32c84d91215015b32a5e"
+  },
+  {
+    "bytes": 24459,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Syntax/Parser.php",
+    "sha256": "4c80f61c6e578683832153afbe5041828903928182e28025d478a7811a1c013c"
+  },
+  {
+    "bytes": 8412,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/Syntax/Serializer.php",
+    "sha256": "c41399a7eb0f9d62727eb0dff08a5bdf17b408b18fdf6772fa418c9818d5c3b7"
+  },
+  {
+    "bytes": 339,
+    "mode": "0644",
+    "path": "vendor/nemiah/php-fints/src/UnsupportedException.php",
+    "sha256": "738b8b74c699fd1852cdad829193675e3abbc35e95d0d5f1cba11ec25a34e683"
+  },
+  {
+    "bytes": 1085,
+    "mode": "0644",
+    "path": "vendor/psr/log/LICENSE",
+    "sha256": "6e944907067bae93c00a9f2ad51032243820b22df34b77c77690d46cb2e98e24"
+  },
+  {
+    "bytes": 1346,
+    "mode": "0644",
+    "path": "vendor/psr/log/README.md",
+    "sha256": "4f2bc231e87cda248b1fa2aef7a930045f3e95f89ee46ff579188d2489372954"
+  },
+  {
+    "bytes": 555,
+    "mode": "0644",
+    "path": "vendor/psr/log/composer.json",
+    "sha256": "1f8dfc72d50f452d0795681fde72b7c008eedd4fcbca482b70a35401c9fbb661"
+  },
+  {
+    "bytes": 414,
+    "mode": "0644",
+    "path": "vendor/psr/log/src/AbstractLogger.php",
+    "sha256": "84c69c6cc60fd805eb525daa79bd04a8d0b73e52776e1a0c2a9e666b37b4512e"
+  },
+  {
+    "bytes": 96,
+    "mode": "0644",
+    "path": "vendor/psr/log/src/InvalidArgumentException.php",
+    "sha256": "403c6def4d4199a12cb4a54e804c7d29405968871366500f72d6f3ea401bfc64"
+  },
+  {
+    "bytes": 336,
+    "mode": "0644",
+    "path": "vendor/psr/log/src/LogLevel.php",
+    "sha256": "9f2520b22945ce1599c4fedba0a4c75985f172ca86cdf386766ebb8b2363768c"
+  },
+  {
+    "bytes": 231,
+    "mode": "0644",
+    "path": "vendor/psr/log/src/LoggerAwareInterface.php",
+    "sha256": "076efac38ab493f4fc3e701cce9a2641135048f2bf0407b322c45712ef73813c"
+  },
+  {
+    "bytes": 347,
+    "mode": "0644",
+    "path": "vendor/psr/log/src/LoggerAwareTrait.php",
+    "sha256": "eb114e265de2d1c8c1190b0fa9cb5f8a25e262a46d1d28d1aa02f01aaf025c64"
+  },
+  {
+    "bytes": 2770,
+    "mode": "0644",
+    "path": "vendor/psr/log/src/LoggerInterface.php",
+    "sha256": "05aecbaded98967719d76a058ea27465ffae03b7800dc36049e1ed23c825e6b3"
+  },
+  {
+    "bytes": 2755,
+    "mode": "0644",
+    "path": "vendor/psr/log/src/LoggerTrait.php",
+    "sha256": "c854406af9c4706980e93183b5f37fa9cca523df9bb1019a927f8e4713834172"
+  },
+  {
+    "bytes": 643,
+    "mode": "0644",
+    "path": "vendor/psr/log/src/NullLogger.php",
+    "sha256": "22fbb348f7b25259ca801f595fc9aa22b9f035a44e7899687bd89bf4070d78c8"
+  }
+]

@@ -1,0 +1,163 @@
+DVM-Lizenz für gemeinnützige Nutzung 1.0
+Stand: 5. November 2026
+Kennung: LicenseRef-DVM-Gemeinnuetzig-1.0
+
+Lizenzgeber sind die jeweiligen Rechteinhaber des eigenen DVM-Codes.
+Ansprechpartner für gesonderte Erlaubnisse ist der Repository-Inhaber
+Slinghorse-Ship: https://github.com/Slinghorse-Ship/DVM
+
+1. Geltungsbereich
+
+Diese Lizenz gilt ausschließlich für den eigenen Anwendungscode und die
+eigenen Dokumentationen von DVM – DeinVereinsManager, soweit dafür keine
+abweichende Lizenz oder Rechtekennzeichnung angegeben ist. Sie gilt auch für
+Kopien und darauf beruhende Änderungen dieses Codes.
+
+Fremdsoftware, fremde Schriften, Bilder, Datenbestände und sonstige gesondert
+gekennzeichnete Bestandteile sind von dieser Lizenz vollständig ausgenommen.
+Für sie gelten ausschließlich ihre jeweiligen Lizenzbedingungen. Insbesondere
+werden Rechte aus GPL, LGPL, MPL, MIT, Apache und anderen Fremdlizenzen durch
+diese Lizenz nicht eingeschränkt. Eine solche Komponente darf im Umfang ihrer
+eigenen Lizenz auch kommerziell verwendet, verändert und weitergegeben werden.
+Das verleiht keine zusätzlichen Rechte am eigenen DVM-Code.
+
+2. Erlaubte Nutzer und Zwecke
+
+Ein gemeinnütziger Verein oder eine vergleichbare gemeinnützige Körperschaft
+darf DVM kostenlos für die eigene Vereins- beziehungsweise Organisationsarbeit
+installieren, ausführen, kopieren und anpassen. Voraussetzung ist, dass die
+Gemeinnützigkeit nach dem am Sitz geltenden Recht anerkannt ist, keine Gewinne
+an Mitglieder, Eigentümer oder Träger ausgeschüttet werden und die Nutzung
+den gemeinnützigen Satzungszwecken dient. In Deutschland zählen hierzu
+steuerbegünstigte Körperschaften im Sinne der §§ 51 bis 68 Abgabenordnung.
+Eine entsprechende anerkannte Gemeinnützigkeit in einem anderen Staat genügt.
+Eine satzungsgemäße Mittelweitergabe an andere anerkannte gemeinnützige
+Körperschaften für deren begünstigte Zwecke ist keine verbotene private
+Gewinnausschüttung.
+
+Mitgliedsbeiträge, Spenden, Fördermittel und Einnahmen aus Veranstaltungen oder
+anderen der Finanzierung dieser Satzungszwecke dienenden Tätigkeiten schließen
+diese Erlaubnis nicht aus. Sie begründen keine Erlaubnis für die in Abschnitt 3
+ausgeschlossene kommerzielle Verwertung der Software.
+
+Mitglieder, ehrenamtliche Helfer und unmittelbar bei dieser Organisation
+Beschäftigte dürfen die Software im Auftrag dieser Organisation für deren
+eigene Arbeit verwenden. Die Vergütung eigener Beschäftigter macht diese
+zulässige Organisationsnutzung nicht kommerziell. Externe gewerbliche Anbieter
+und deren Beschäftigte fallen nicht unter diese Erlaubnis.
+
+Natürliche Personen dürfen DVM außerdem privat zur persönlichen Weiterbildung,
+nichtkommerziellen Erprobung und ehrenamtlichen Weiterentwicklung verwenden,
+sofern damit keine bereits beabsichtigte kommerzielle Nutzung vorbereitet oder
+eine ausgeschlossene Organisationsnutzung durchgeführt wird. Ein Verein ohne
+anerkannte Gemeinnützigkeit benötigt für den produktiven Betrieb eine gesonderte
+Erlaubnis nach Abschnitt 4.
+
+Besucher einer zulässigen Vereinswebsite, eingeladene Personen und Empfänger
+von Vereinsunterlagen dürfen die ihnen bereitgestellten Endnutzerfunktionen
+verwenden. Daraus entsteht kein Recht, eine eigene DVM-Installation für eine
+ausgeschlossene Organisation oder einen kommerziellen Dienst zu betreiben.
+
+3. Ausgeschlossene Nutzungen
+
+Ohne gesonderte Erlaubnis nach Abschnitt 4 sind insbesondere nicht erlaubt:
+
+a) der produktive Einsatz für gewinnorientierte oder nicht anerkannt
+   gemeinnützige Vereine, Unternehmen und andere Organisationen, auch als
+   internes Werkzeug und auch dann, wenn die Software kostenlos bezogen wurde;
+b) der Verkauf, die Vermietung, entgeltliche Lizenzierung oder sonstige
+   kommerzielle Verwertung des eigenen DVM-Codes oder darauf beruhender Werke;
+c) das Angebot von DVM als kostenpflichtiger Hosting-, Cloud-, SaaS-,
+   Plattform-, White-Label- oder vergleichbarer Dienst für andere;
+d) entgeltliche, anwendungsbezogene Leistungen für andere, deren Gegenstand
+   die Einrichtung, Anpassung, Wartung, Schulung oder der Betrieb von DVM ist;
+   die erlaubte Tätigkeit eigener Beschäftigter nach Abschnitt 2 ist ausgenommen;
+e) eine Umgehung dieser Beschränkungen durch Umbenennung, geänderte
+   Benutzeroberflächen, kostenlose Testphasen, Bündelung mit anderen Leistungen
+   oder ein vorgeschaltetes angeblich kostenloses Angebot.
+
+Allgemeine, marktübliche Infrastrukturleistungen wie Domain, Server, Speicher,
+Datenbank, E-Mail-Transport und deren technische Sicherung dürfen von einer
+zulässigen Organisation bei kommerziellen Anbietern bezogen werden. Das erlaubt
+dem Infrastrukturanbieter keine eigenständige kommerzielle DVM-Dienstleistung.
+Maßgeblich ist die tatsächlich erbrachte Leistung, nicht ihre Rechnungsbezeichnung.
+
+Diese Lizenz enthält keine allgemeine kommerzielle Probe- oder Schonfrist.
+
+4. Gesonderte Erlaubnis
+
+Die Rechteinhaber können Nutzungen außerhalb dieser Lizenz nach vorheriger
+Anfrage gesondert schriftlich erlauben und dafür eigene Bedingungen vereinbaren.
+Dafür genügt eine individuelle Erklärung in Textform, beispielsweise eine
+E-Mail oder eine unterzeichnete Vereinbarung.
+Eine Anfrage, ein öffentliches Repository, ein Download, Schweigen oder die
+Erlaubnis eines anderen Nutzers ersetzen eine solche Vereinbarung nicht.
+Die Vereinbarung muss den erlaubten Nutzer und Nutzungsumfang bestimmen und
+von den für den betroffenen DVM-Code berechtigten Rechteinhabern stammen.
+
+5. Weitergabe und Änderungen
+
+Kopien des eigenen DVM-Codes und darauf beruhende Änderungen dürfen für die
+erlaubten Zwecke unentgeltlich weitergegeben werden. Jede Weitergabe muss
+diesen vollständigen Lizenztext, vorhandene Urheber- und Rechtehinweise sowie
+die zugehörigen Fremdlizenzen enthalten. Änderungen sind als solche zu
+kennzeichnen; sie dürfen nicht als unveränderte Originalveröffentlichung von
+DVM ausgegeben werden.
+
+Wer geänderten DVM-Code oder ein darauf beruhendes ausführbares Paket
+weitergibt, muss den Empfängern auch den zugehörigen geänderten DVM-Quellcode
+und die zum Erstellen dieses Pakets benötigten eigenen Buildanweisungen ohne
+zusätzliches Entgelt zugänglich machen. Private Vereinsdaten, Zugangsdaten,
+Schlüssel und Betriebsdateien gehören nicht dazu. Ausschließlich intern
+verwendete Änderungen müssen nicht veröffentlicht werden.
+
+Die Beschränkungen dieser Lizenz bleiben für den ursprünglichen DVM-Code und
+darauf beruhende Änderungen erhalten. Kein Empfänger darf dafür eine weiter
+gehende Nutzungserlaubnis oder eine Unterlizenz erteilen. Gesonderte Rechte an
+unabhängigen eigenen Bestandteilen und die Rechte an Fremdsoftware bleiben
+unberührt; aus ihnen entsteht keine Erlaubnis zur ausgeschlossenen Nutzung
+des DVM-Codes.
+
+6. Vereinsdaten und Ausgaben
+
+Diese Lizenz erhebt keine Rechte an euren Vereinsdaten oder selbst erstellten
+Inhalten. Ein mit DVM erstellter Brief, eine Rechnung, ein Bericht oder eine
+andere reine Datenausgabe wird allein dadurch nicht zu einer Softwarekopie.
+Rechte an darin verwendeten fremden Inhalten und Vorlagen bleiben zu beachten.
+Namen, Kennzeichen und Logos anderer Rechteinhaber werden nicht mitlizenziert.
+
+7. Bedingungen, Verstöße und zwingende Rechte
+
+Die Erlaubnisse dieser Lizenz setzen ihre Einhaltung voraus. Bei einer Nutzung
+außerhalb ihres Umfangs besteht dafür kein Nutzungsrecht. Bei einem Verstoß
+enden die nach dieser Lizenz eingeräumten Rechte; eine erneute Erlaubnis kann
+ausdrücklich durch die berechtigten Rechteinhaber erteilt werden. Gesetzliche
+Ansprüche wegen bereits erfolgter Verstöße bleiben unberührt.
+
+Zwingende gesetzliche Nutzungs-, Interoperabilitäts- und sonstige Rechte werden
+durch diese Lizenz nicht eingeschränkt. Eine unwirksame Bestimmung erweitert
+die Nutzungsrechte nicht über das gesetzlich zwingend Erforderliche hinaus;
+die übrigen Bestimmungen gelten weiter, soweit rechtlich zulässig.
+
+8. Gewährleistung und Haftung
+
+Die Software wird in ihrem jeweiligen Zustand bereitgestellt. Soweit gesetzlich
+zulässig, bestehen keine Zusagen zu Fehlerfreiheit, Verfügbarkeit, Eignung für
+einen bestimmten Zweck, Support oder Updates. Die Betreiber bleiben für
+Datenschutz, Sicherungen und die Prüfung ihrer fachlichen Vorgänge verantwortlich.
+
+Eine Haftung wird nur im gesetzlich zulässigen Umfang ausgeschlossen.
+Insbesondere bleiben gesetzlich zwingende Haftung, Haftung für Vorsatz und
+grobe Fahrlässigkeit sowie für Schäden an Leben, Körper oder Gesundheit und
+Ansprüche aus einer ausdrücklich übernommenen Garantie unberührt.
+
+9. Rechtsnatur
+
+Dies ist eine eigenständige, auf bestimmte nichtkommerzielle Nutzungen
+beschränkte Softwarelizenz. Sie ist keine unveränderte PolyForm-, Prosperity-
+oder andere Standardlizenz und keine Open-Source-Lizenz im Sinne der OSI.
+Sie ändert keine bereits anderweitig wirksam eingeräumten Rechte und erfasst
+keine Rechte, über die der jeweilige Lizenzgeber nicht verfügen darf.
+
+Es gilt deutsches Recht, soweit dadurch zwingende Schutzvorschriften des für
+einen Nutzer geltenden Rechts nicht ausgeschlossen werden.

@@ -1,0 +1,69 @@
+[data-mailbox-workspace]{min-width:0;max-width:100%;overflow-wrap:anywhere}
+[data-mailbox-workspace] :is(fieldset,form,.form-grid,.card,nav,label){min-width:0;max-width:100%}
+[data-mailbox-workspace] fieldset{padding:0;margin:0;border:0;min-inline-size:0}
+[data-mailbox-workspace] :is(button,input:not([type=hidden]):not([type=checkbox]),select,textarea,.btn,summary){min-width:44px;min-height:44px}
+[data-mailbox-workspace] :is(input:not([type=checkbox]),select,textarea){width:100%;max-width:100%;box-sizing:border-box}
+[data-mailbox-workspace] :is(.page-heading,nav){display:flex;flex-wrap:wrap;gap:1rem}
+[data-mailbox-workspace] .page-heading>div{min-width:0;flex:1 1 18rem}
+[data-mailbox-workspace] .form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:1rem}
+[data-mailbox-workspace] label.check{display:flex;align-items:flex-start;gap:.75rem;min-height:44px;padding-block:.5rem;white-space:normal}
+[data-mailbox-workspace] label.check input{flex:0 0 auto;margin-top:.25rem}
+[data-mailbox-workspace] .mailbox-original-text{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word}
+[data-mailbox-workspace] pre{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;max-width:100%}
+[data-mailbox-workspace] details>summary{padding:.75rem .25rem;cursor:pointer;white-space:normal}
+[data-mailbox-workspace] [data-mailbox-list] article{padding-block:1rem;border-bottom:1px solid var(--border)}
+[data-mailbox-workspace] [data-mailbox-list] h3{font-size:1.1rem;line-height:1.4}
+[data-mailbox-workspace] nav form{display:flex;flex-wrap:wrap;align-items:end;gap:.75rem}
+@media(max-width:40rem){[data-mailbox-workspace] .page-heading :is(.btn,button){width:100%}}
+[data-mailbox-workspace] .mailbox-tools{margin:1rem 0}[data-mailbox-workspace] .mailbox-fetch{margin:.8rem 0}
+[data-mailbox-workspace] .mailbox-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:1.5rem;align-items:start}
+[data-mailbox-workspace] .mailbox-layout[data-mailbox-selected="1"]{grid-template-columns:minmax(15rem,23rem) minmax(0,1fr)}
+[data-mailbox-workspace] .mailbox-thread{min-width:0;max-width:100%}[data-mailbox-workspace] .mailbox-thread-heading{padding:1rem 0;border-bottom:1px solid var(--border)}
+[data-mailbox-workspace] .mailbox-conversation-log{display:flex;flex-direction:column;gap:1rem;padding:1rem 0}
+[data-mailbox-workspace] .mailbox-bubble{min-width:0;max-width:100%;padding:1rem;border:1px solid var(--border);border-radius:1rem;color:var(--admin-ink,#172438);background:var(--admin-surface,#fff)}
+[data-mailbox-workspace] .mailbox-outgoing{margin-inline-start:clamp(.5rem,5vw,3rem);background:var(--admin-selected,#e7edfc)}
+[data-mailbox-workspace] .mailbox-incoming{margin-inline-end:clamp(.5rem,5vw,3rem)}
+[data-mailbox-workspace] .mailbox-meta{font-size:.9rem;line-height:1.5;overflow-wrap:anywhere;color:var(--admin-muted,#526179)}
+[data-mailbox-workspace] .mailbox-reply-status{font-size:.9rem;font-weight:650;margin-bottom:0}
+[data-mailbox-workspace] .mailbox-composer{padding:1rem 0;border-top:1px solid var(--border)}
+[data-mailbox-workspace] .mailbox-composer textarea{min-height:8rem;resize:vertical}
+[data-mailbox-workspace] .mailbox-composer-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-block:1rem}
+[data-mailbox-workspace] .mailbox-list-preview{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+@media(max-width:58rem){[data-mailbox-workspace] .mailbox-layout[data-mailbox-selected="1"]{display:block}[data-mailbox-workspace] [data-mailbox-selected="1"] [data-mailbox-list]{display:none}}
+.mailbox-bubble.mailbox-incoming{width:100%;max-width:100%}.mailbox-html-message{display:block;width:100%;height:16rem;min-height:44px;max-height:none;border:1px solid #bac9c1;border-radius:10px;background:#fff;color:#172b25}.mailbox-image-choice{font-size:.875rem}.mailbox-reply-html{overflow-wrap:anywhere}.mailbox-reply-html p{margin:.5em 0}.mailbox-composer [data-mailbox-rich][hidden],.mailbox-composer [data-mailbox-plain][hidden]{display:none!important}.mailbox-composer .kh-rte [data-richtext-surface]{height:auto;min-height:3.2em!important;max-height:none!important;overflow:visible}.mailbox-composer .kh-rte-toolbar{flex-wrap:wrap}
+
+.mailbox-message-actions{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem}.mailbox-message-actions form{margin:0}.mailbox-folders{margin-block:.75rem 1rem}
+/* Mail client: bounded list, conversation and a compact reply box. Every surface has paired theme ink. */
+[data-mailbox-workspace] .mailbox-layout{grid-template-columns:minmax(15rem,23rem) minmax(0,1fr);gap:1rem}
+[data-mailbox-workspace] [data-mailbox-list]{margin:0;padding:.75rem;border:1px solid var(--admin-line,var(--border));border-radius:1rem;background:var(--admin-surface,#fff);color:var(--admin-ink,#172438)}
+[data-mailbox-workspace] [data-mailbox-list]>h2{font-size:1rem;line-height:1.5;margin:.25rem .5rem .75rem}
+[data-mailbox-workspace] .mailbox-message-card{position:relative;padding:1rem;border-radius:.7rem;margin:.25rem 0;min-width:0}
+[data-mailbox-workspace] .mailbox-message-card[aria-current=true]{box-shadow:inset 4px 0 #245640;outline:1px solid var(--admin-line,var(--border))}
+[data-mailbox-workspace] .mailbox-message-card:focus-within{outline:2px solid #477a68;outline-offset:2px}
+[data-mailbox-workspace] .mailbox-message-card h3{margin:.5rem 0 .3rem;font-size:1rem}
+[data-mailbox-workspace] .mailbox-message-card h3 a::after{content:"";position:absolute;inset:0;border-radius:.7rem}
+[data-mailbox-workspace] .mailbox-message-card p{margin:.35rem 0;font-size:.9rem}
+.mailbox-message-top{display:grid;grid-template-columns:2.4rem minmax(0,1fr);column-gap:.6rem;align-items:center;min-width:0}
+.mailbox-avatar{display:grid;place-items:center;grid-row:1/3;width:2.4rem;height:2.4rem;border-radius:50%;background:#245640;color:#fff;font-weight:700}
+.mailbox-sender{font-size:.875rem;font-weight:650;overflow-wrap:anywhere;min-width:0}
+.mailbox-message-top time{grid-column:2;font-size:.75rem}
+.mailbox-folder-count{display:inline-grid;place-items:center;min-width:1.5em;margin-inline-start:.5rem;padding:0 .25em;border-radius:1rem;font-size:.8em;border:1px solid currentColor}
+[data-mailbox-workspace] .mailbox-folders .btn[aria-current=page]{background:#245640!important;color:#fff!important;border-color:#245640!important}
+[data-mailbox-workspace] .mailbox-thread{padding:1rem;border:1px solid var(--admin-line,var(--border));border-radius:1rem;background:var(--admin-surface,#fff);color:var(--admin-ink,#172438)}
+[data-mailbox-workspace] .mailbox-thread-heading{padding:0 0 1rem}
+[data-mailbox-workspace] .mailbox-thread-heading h2{margin:.75rem 0 .4rem;font-size:1.4rem;line-height:1.3}
+[data-mailbox-workspace] .mailbox-bubble{padding:.75rem;margin-inline:0}
+[data-mailbox-workspace] .mailbox-composer{margin-top:1rem;padding-top:1rem}
+[data-mailbox-workspace] .mailbox-composer h3{margin:.25rem 0 .6rem}
+.mailbox-empty-state{display:grid;align-content:center;justify-items:center;gap:.6rem;min-height:24rem;padding:2rem;border:1px dashed var(--admin-line,var(--border));border-radius:1rem;background:var(--admin-surface,#fff);color:var(--admin-ink,#172438);text-align:center}
+.mailbox-empty-state h2,.mailbox-empty-state p{margin:0;max-width:32rem}
+.mailbox-empty-icon{font-size:3rem;color:var(--admin-muted,#526179)}
+.mailbox-composer .kh-rte-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.mailbox-composer .kh-rte{margin-top:.5rem;border-radius:.8rem}
+.mailbox-composer .mailbox-format-toggle{font-size:.875rem;min-height:44px;margin-block:.4rem}
+.mailbox-composer [data-mailbox-rich]:not([data-formats=open]) .kh-rte-insert,.mailbox-composer [data-mailbox-rich]:not([data-formats=open]) .kh-rte-toolbar select,.mailbox-composer [data-mailbox-rich]:not([data-formats=open]) .kh-rte-separator,.mailbox-composer [data-mailbox-rich]:not([data-formats=open]) .kh-rte-undo,.mailbox-composer [data-mailbox-rich]:not([data-formats=open]) .kh-rte-redo{display:none}
+.mailbox-composer .kh-rte-toolbar{gap:.35rem;padding:.4rem;flex-wrap:wrap}
+.mailbox-failed-reply{display:block;margin-block:1rem}
+[data-mailbox-workspace] .mailbox-composer textarea{min-height:3lh;field-sizing:content;max-height:none}
+.mailbox-attachments{max-width:100%;padding:.75rem;border:1px solid var(--admin-line,var(--border));border-radius:.8rem}.mailbox-attachments h3{font-size:1rem;margin:0 0 .5rem}.mailbox-attachments ul{display:grid;gap:.75rem;margin:0;padding:0;list-style:none}.mailbox-attachments li{min-width:0;display:flex;align-items:center;flex-wrap:wrap;gap:.5rem 1rem}.mailbox-attachment-download{overflow-wrap:anywhere;min-height:44px;display:inline-flex;align-items:center}.mailbox-attachment-preview{display:block;max-width:100%;max-height:360px;width:auto;height:auto;object-fit:contain;flex:0 1 auto;border-radius:.4rem}
+@media(max-width:58rem){[data-mailbox-workspace] .mailbox-layout{display:block}.mailbox-empty-state{display:none}[data-mailbox-workspace] .mailbox-thread{padding:.75rem}[data-mailbox-workspace] .mailbox-message-card{padding:.9rem}.mailbox-folders{gap:.5rem!important}}

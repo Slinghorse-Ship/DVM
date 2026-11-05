@@ -1,0 +1,155 @@
+{
+  "schema": 1,
+  "revision": 65,
+  "production_authorized": false,
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "advance-clearing-r65-14970@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.receiv.other.other",
+          "choices": [
+            "bs.ass.currAss.receiv.other.other",
+            "bs.eqLiab.liab.advPaym"
+          ],
+          "directional_balance": {
+            "debit_targets": [
+              "bs.ass.currAss.receiv.other.other"
+            ],
+            "credit_targets": [
+              "bs.eqLiab.liab.advPaym"
+            ]
+          },
+          "sources": [
+            {
+              "code": "14970",
+              "semantic": {
+                "name": "Verrechnungskonto erhaltene Anzahlungen bei Buchung über Debitorenkonto",
+                "function": "F",
+                "range_start": "14970",
+                "range_end": "14970",
+                "parent": null
+              },
+              "signature": "7691881958bc24f4b107f2f56a9a30d3af3cb88058fc70eee5cbbfe207c69a86"
+            }
+          ]
+        },
+        {
+          "purpose": "advance-clearing-r65-36950@1",
+          "group": "liabilities",
+          "target": "bs.ass.currAss.inventory.advPaymPaid",
+          "choices": [
+            "bs.ass.currAss.inventory.advPaymPaid",
+            "bs.ass.currAss.receiv.other.other",
+            "bs.eqLiab.liab.trade.genOther"
+          ],
+          "directional_balance": {
+            "debit_targets": [
+              "bs.ass.currAss.inventory.advPaymPaid",
+              "bs.ass.currAss.receiv.other.other"
+            ],
+            "credit_targets": [
+              "bs.eqLiab.liab.trade.genOther"
+            ]
+          },
+          "sources": [
+            {
+              "code": "36950",
+              "semantic": {
+                "name": "Verrechnungskonto geleistete Anzahlungen bei Buchung über Kreditorenkonto",
+                "function": "",
+                "range_start": "36950",
+                "range_end": "36950",
+                "parent": null
+              },
+              "signature": "07faee721a8d36f9345e2a1eaf5646df7180ad3c150de17ffb75f1804364b9b2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "advance-clearing-r65-14970@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.receiv.other.other",
+          "choices": [
+            "bs.ass.currAss.receiv.other.other",
+            "bs.eqLiab.liab.advPaym"
+          ],
+          "directional_balance": {
+            "debit_targets": [
+              "bs.ass.currAss.receiv.other.other"
+            ],
+            "credit_targets": [
+              "bs.eqLiab.liab.advPaym"
+            ]
+          },
+          "sources": [
+            {
+              "code": "14970",
+              "semantic": {
+                "name": "Verrechnungskonto erhaltene Anzahlungen bei Buchung über Debitorenkonto",
+                "function": "F",
+                "range_start": "14970",
+                "range_end": "14970",
+                "parent": null
+              },
+              "signature": "7691881958bc24f4b107f2f56a9a30d3af3cb88058fc70eee5cbbfe207c69a86"
+            }
+          ]
+        },
+        {
+          "purpose": "advance-clearing-r65-36950@1",
+          "group": "liabilities",
+          "target": "bs.ass.currAss.inventory.advPaymPaid",
+          "choices": [
+            "bs.ass.currAss.inventory.advPaymPaid",
+            "bs.ass.currAss.receiv.other.other",
+            "bs.eqLiab.liab.trade.genOther"
+          ],
+          "directional_balance": {
+            "debit_targets": [
+              "bs.ass.currAss.inventory.advPaymPaid",
+              "bs.ass.currAss.receiv.other.other"
+            ],
+            "credit_targets": [
+              "bs.eqLiab.liab.trade.genOther"
+            ]
+          },
+          "sources": [
+            {
+              "code": "36950",
+              "semantic": {
+                "name": "Verrechnungskonto geleistete Anzahlungen bei Buchung über Kreditorenkonto",
+                "function": "",
+                "range_start": "36950",
+                "range_end": "36950",
+                "parent": null
+              },
+              "signature": "07faee721a8d36f9345e2a1eaf5646df7180ad3c150de17ffb75f1804364b9b2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

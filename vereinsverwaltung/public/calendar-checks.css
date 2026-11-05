@@ -1,0 +1,85 @@
+.calendar-editor,.document-check-workspace{--record-border:#dce3eb;--record-muted:#566579;min-width:0}
+.calendar-editor .record-section,.document-check-workspace .record-section{padding:24px;margin-bottom:20px;border-color:var(--record-border)}
+.calendar-editor h2,.document-check-workspace h2{font-size:21px;margin-bottom:10px}
+.calendar-editor p,.document-check-workspace p{font-size:15px;line-height:1.55}
+.calendar-editor label,.document-check-workspace label{font-size:15px;line-height:1.5}
+.calendar-editor input:not([type=checkbox]):not([type=radio]),.calendar-editor select,.calendar-editor textarea,.document-check-workspace input:not([type=checkbox]):not([type=radio]),.document-check-workspace select,.document-check-workspace textarea{font-size:16px;min-height:46px}
+.calendar-editor label>small,.document-check-workspace label>small,.record-type-choices small{display:block;font-size:14px;line-height:1.5;font-weight:400;color:var(--record-muted);margin-top:6px}
+.calendar-editor .record-help,.document-check-workspace .record-help{color:var(--record-muted);font-size:14px;margin:8px 0 0}
+.calendar-editor fieldset,.document-check-workspace fieldset{min-width:0}
+.record-type-choices{display:grid;grid-template-columns:1fr 1fr;gap:12px;border:0;padding:0;margin:20px 0 24px}
+.record-type-choices legend{font-size:15px;font-weight:600;margin-bottom:12px}
+.record-type-choices .check{border:1px solid var(--record-border);border-radius:8px;padding:14px;margin:0;align-items:flex-start;cursor:pointer;min-height:76px}
+.record-type-choices .check:has(input:checked){border-color:#cc792c;background:#fff7ec;box-shadow:inset 0 0 0 1px #cc792c}
+.record-type-choices input[type=radio]{appearance:auto;display:block;flex:0 0 20px;width:20px;min-height:20px;height:20px;margin:3px 0 0;padding:0;accent-color:#bd641f}
+.calendar-editor .attendee-options{max-height:360px;overflow:auto;padding:14px;border:1px solid var(--record-border);border-radius:8px;align-items:start}
+.calendar-editor .attendee-options .check{min-height:44px;font-size:15px;margin:0;padding:8px;border-radius:5px;background:#f7f9fb}
+.calendar-editor .attendee-options input[type=checkbox]{width:20px;height:20px}
+.calendar-editor [data-meeting-count]{font-weight:600}
+.calendar-editor button,.calendar-editor .button,.document-check-workspace button,.document-check-workspace .button{font-size:15px;min-height:46px}
+.calendar-editor .record-more,.document-check-workspace .record-more{padding:0;margin:0 0 20px;border:1px solid var(--record-border);border-radius:9px;background:#fff}
+.record-more>summary{display:flex;gap:14px;align-items:center;padding:20px 24px;cursor:pointer;list-style:none;font-size:16px;line-height:1.5}
+.record-more>summary::-webkit-details-marker{display:none}
+.record-more>summary:after{content:'+';margin-left:auto;font-size:26px;flex-shrink:0;color:#94591f}
+.record-more[open]>summary:after{content:'−'}
+.record-more>summary small{display:block;font-size:14px;color:var(--record-muted);font-weight:400;margin-top:4px}
+.record-more-body{padding:4px 24px 24px;border-top:1px solid var(--record-border)}
+.record-more-body>p:first-child{margin-top:20px}
+.record-more-body>.form-grid:first-child{margin-top:22px}
+.record-savebar{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:20px 24px;border:1px solid var(--record-border);border-radius:9px;background:#fff;margin-bottom:24px}
+.record-savebar>p{max-width:650px;margin:0;flex:1 1 350px;color:var(--record-muted)}
+.document-check-workspace .check-toolbar{display:flex;align-items:end;flex-wrap:wrap;gap:16px;margin-bottom:18px}
+.document-check-workspace .check-toolbar label{margin:0;flex:1 1 250px}
+.document-check-workspace .check-toolbar label:last-of-type{flex:0 1 230px}
+.document-check-workspace .check-toolbar .actions{flex:0 0 auto}
+.document-check-workspace .check-row-status{display:inline-block;font-size:14px;padding:6px 9px;border-radius:5px;background:#edf3f8;color:#34465a;line-height:1.4}
+.document-check-workspace [data-check-alert="1"] .check-row-status{background:#fff0df;color:#844911}
+.document-check-workspace .check-row-title{font-size:16px;font-weight:600;display:block;padding:5px 0}
+.document-check-workspace .check-list td{font-size:15px;padding:15px}
+.document-check-workspace .check-list th{font-size:12px}
+.document-check-workspace .check-list small{display:block;font-size:13px;color:var(--record-muted)}
+.document-check-workspace .check-empty{padding:24px;border:1px dashed var(--record-border);border-radius:8px;background:#f8fafc}
+.document-check-workspace .check-selected-links{display:flex;gap:16px;flex-wrap:wrap;margin:0 0 18px}
+.document-check-workspace .check-selected-links a{font-size:15px;text-decoration:underline}
+.document-check-workspace .module-tabs{margin-bottom:20px}
+.document-check-workspace .module-tabs a{font-size:15px;min-height:44px}
+.document-check-workspace .check-state-note{padding:12px 16px;border-left:4px solid #b57427;background:#fff7eb}
+@media(max-width:700px){
+ .calendar-editor .record-section,.document-check-workspace .record-section{padding:18px 16px}
+ .calendar-editor .form-grid,.document-check-workspace .form-grid,.record-type-choices,.calendar-editor .attendee-options{grid-template-columns:1fr}
+ .record-type-choices .check{min-height:64px}
+ .record-more>summary{padding:18px 16px}
+ .record-more-body{padding:4px 16px 18px}
+ .record-savebar{padding:18px 16px;display:block}
+ .record-savebar .actions{margin-top:16px}
+ .record-savebar .actions>*{flex:1 1 160px;text-align:center}
+ .document-check-workspace .check-toolbar label:last-of-type{flex:1 1 230px}
+ .document-check-workspace .check-list thead{display:none}
+ .document-check-workspace .check-list,.document-check-workspace .check-list tbody{display:block}
+ .document-check-workspace .check-list tr{display:block;border:1px solid var(--record-border);border-radius:9px;padding:12px 16px;margin-bottom:12px;background:white}
+ .document-check-workspace .check-list td{display:block;max-width:none;border:0;padding:5px 0}
+ .document-check-workspace .check-list td[data-label]:before{content:attr(data-label) ': ';font-weight:600}
+}
+.document-check-workspace .module-tabs{flex-wrap:wrap;white-space:normal}.document-check-workspace .module-tabs a{white-space:normal}
+/* Native check originals and bounded choices share the document workspace. */
+.document-check-workspace.dwf-workspace{min-width:0;max-width:100%;box-sizing:border-box}
+.document-check-workspace :is(h1,h2,h3,p,summary,dt,dd,small,code,a,button){overflow-wrap:anywhere}
+.document-check-workspace :is(form,fieldset,details,label,.record-section,.record-savebar,.check-choice-options){min-width:0;max-width:100%;box-sizing:border-box}
+.document-check-workspace :is(input,select,textarea){min-width:0;max-width:100%;box-sizing:border-box}
+.document-check-workspace textarea{white-space:pre-wrap}
+.document-check-workspace .check-choice{margin:16px 0;padding:12px;border:1px solid var(--dwf-line);border-radius:8px}
+.document-check-workspace .check-choice>summary{min-height:44px;cursor:pointer;padding:8px 0}
+.document-check-workspace .check-choice fieldset{margin:12px 0 0;padding:0;border:0}
+.document-check-workspace .check-choice legend{float:none;width:auto;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+.document-check-workspace .check-choice-options .dwf-check{display:grid;grid-template-columns:24px minmax(0,1fr);align-items:start;gap:10px;min-height:44px}
+.document-check-workspace .check-choice-options input[type=radio]{position:static;float:none;width:24px;height:24px;min-width:24px;min-height:24px;margin:0;padding:0}
+.document-check-workspace .check-choice-options .dwf-check>span{min-width:0;overflow-wrap:anywhere}
+.document-check-workspace .check-original-data{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px 16px}
+.document-check-workspace .check-original-data dd{margin:0;white-space:pre-wrap;min-width:0;overflow-wrap:anywhere}
+.document-check-workspace .check-retained-upload{padding:12px;margin:12px 0;border:1px solid var(--dwf-line)}
+.document-check-workspace .live-upload-list li{min-width:0;flex-wrap:wrap}
+.document-check-workspace .live-upload-list :is(span,progress){min-width:0;max-width:100%;overflow-wrap:anywhere}
+.document-check-workspace .check-creation-list li{margin:10px 0;overflow-wrap:anywhere}
+@media(max-width:700px){.document-check-workspace .check-original-data{display:block}.document-check-workspace .check-original-data dt{margin-top:12px}.document-check-workspace .record-savebar{flex-wrap:wrap}.document-check-workspace .record-savebar>*{min-width:0;max-width:100%}}
+.document-check-workspace .check-toolbar .actions{flex:1 1 auto;min-width:0;max-width:100%;flex-wrap:wrap}
+.document-check-workspace .check-toolbar .actions>a{min-width:0;max-width:100%}

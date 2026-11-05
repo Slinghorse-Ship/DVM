@@ -1,0 +1,450 @@
+{
+  "schema": 1,
+  "revision": 29,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "working-capital-r29-001@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.silentPartner.typ",
+          "choices": [
+            "bs.eqLiab.liab.other.silentPartner.typ",
+            "bs.eqLiab.liab.other.silentPartner.misc"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "36500",
+              "semantic": {
+                "name": "Verbindlichkeiten gegenüber stillen Gesellschaftern",
+                "function": "",
+                "range_start": "36500",
+                "range_end": "36500",
+                "parent": null
+              },
+              "signature": "663377ef0dfa139e22738e73684727733ed956367fd6f96601dcf06ef92e6f57"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r29-002@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.silentPartner.typ",
+          "choices": [
+            "bs.eqLiab.liab.other.silentPartner.typ",
+            "bs.eqLiab.liab.other.silentPartner.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.other.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "36510",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "36510",
+                "range_end": "36510",
+                "parent": {
+                  "code": "36500",
+                  "end": "36500",
+                  "name": "Verbindlichkeiten gegenüber stillen Gesellschaftern",
+                  "function": ""
+                }
+              },
+              "signature": "f84161b41d1181c91e6be8655663ceaf5e9520b0815f31ad9c780d3eb1b3f435"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r29-003@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.silentPartner.typ",
+          "choices": [
+            "bs.eqLiab.liab.other.silentPartner.typ",
+            "bs.eqLiab.liab.other.silentPartner.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.other.above1year"
+          ],
+          "sources": [
+            {
+              "code": "36520",
+              "semantic": {
+                "name": "- Restlaufzeit 1 bis 5 Jahre",
+                "function": "",
+                "range_start": "36520",
+                "range_end": "36520",
+                "parent": {
+                  "code": "36500",
+                  "end": "36500",
+                  "name": "Verbindlichkeiten gegenüber stillen Gesellschaftern",
+                  "function": ""
+                }
+              },
+              "signature": "84c6cb616f1ee9636966459e7346fb7f61b9d439856239b9f07790f46d7cb2d5"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r29-004@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.silentPartner.typ",
+          "choices": [
+            "bs.eqLiab.liab.other.silentPartner.typ",
+            "bs.eqLiab.liab.other.silentPartner.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.other.above1year"
+          ],
+          "sources": [
+            {
+              "code": "36530",
+              "semantic": {
+                "name": "- Restlaufzeit größer 5 Jahre",
+                "function": "",
+                "range_start": "36530",
+                "range_end": "36530",
+                "parent": {
+                  "code": "36500",
+                  "end": "36500",
+                  "name": "Verbindlichkeiten gegenüber stillen Gesellschaftern",
+                  "function": ""
+                }
+              },
+              "signature": "7c51881253878e6a0e132f6e23d85a3b32dc11d19d6546b74efb6aaf00e99aff"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r29-005@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.theroffTax.vat",
+          "choices": [
+            "bs.eqLiab.liab.other.theroffTax.vat"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "38800",
+              "semantic": {
+                "name": "Umsatzsteuer aus im anderen EU- Land steuerpflichtigen Lieferungen",
+                "function": "S",
+                "range_start": "38800",
+                "range_end": "38800",
+                "parent": null
+              },
+              "signature": "a4c5afb80c85c27a0e5bd153165b012e39054d25fa146b1cf6d61fb5960feb08"
+            },
+            {
+              "code": "38810",
+              "semantic": {
+                "name": "Umsatzsteuer aus im anderen EU- Land steuerpflichtigen sonstigen Leistungen/Werklieferungen",
+                "function": "S",
+                "range_start": "38810",
+                "range_end": "38810",
+                "parent": null
+              },
+              "signature": "fcf5d213b8cbee1ae649bc29371c880367035911ad99e56af35d204ba62d62e0"
+            },
+            {
+              "code": "38820",
+              "semantic": {
+                "name": "Umsatzsteuer aus im anderen EU- Land steuerpflichtigen elektronischen Dienstleistungen",
+                "function": "S",
+                "range_start": "38820",
+                "range_end": "38820",
+                "parent": null
+              },
+              "signature": "b82d51f81c79ed043604ae9baba9d57f617f6d1aee7a0ab18795628510423488"
+            },
+            {
+              "code": "38840",
+              "semantic": {
+                "name": "Steuerzahlungen aus im anderen EU-Land steuerpflichtigen Leistungen",
+                "function": "",
+                "range_start": "38840",
+                "range_end": "38840",
+                "parent": null
+              },
+              "signature": "06a6882deaf506d9d9b2363e1d3614f883b452f1006ac192acf5e665ed49c16f"
+            },
+            {
+              "code": "38850",
+              "semantic": {
+                "name": "Umsatzsteuer aus im Inland steuerpflichtigen EU-Lieferungen, nur OSS",
+                "function": "S",
+                "range_start": "38850",
+                "range_end": "38850",
+                "parent": null
+              },
+              "signature": "1c56108fe8ce59c27d0b30b972931fe3f8ebbf926a16bb4d52a87c0492580d17"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r29-006@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.theroffTax.vat",
+          "choices": [
+            "bs.eqLiab.liab.other.theroffTax.vat",
+            "bs.eqLiab.liab.other.theroffTax.operatingTaxes",
+            "bs.eqLiab.liab.other.theroffTax.otherTaxes"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "38830",
+              "semantic": {
+                "name": "Steuerzahlungen an andere Länder",
+                "function": "",
+                "range_start": "38830",
+                "range_end": "38830",
+                "parent": null
+              },
+              "signature": "af2098a2cc3a84b40e54c536e38706e03776c607bcd4485d44ffcbfcee6de832"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "working-capital-r29-001@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.silentPartner.typ",
+          "choices": [
+            "bs.eqLiab.liab.other.silentPartner.typ",
+            "bs.eqLiab.liab.other.silentPartner.misc"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "36500",
+              "semantic": {
+                "name": "Verbindlichkeiten gegenüber stillen Gesellschaftern",
+                "function": "",
+                "range_start": "36500",
+                "range_end": "36500",
+                "parent": null
+              },
+              "signature": "663377ef0dfa139e22738e73684727733ed956367fd6f96601dcf06ef92e6f57"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r29-002@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.silentPartner.typ",
+          "choices": [
+            "bs.eqLiab.liab.other.silentPartner.typ",
+            "bs.eqLiab.liab.other.silentPartner.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.other.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "36510",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "36510",
+                "range_end": "36510",
+                "parent": {
+                  "code": "36500",
+                  "end": "36500",
+                  "name": "Verbindlichkeiten gegenüber stillen Gesellschaftern",
+                  "function": ""
+                }
+              },
+              "signature": "f84161b41d1181c91e6be8655663ceaf5e9520b0815f31ad9c780d3eb1b3f435"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r29-003@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.silentPartner.typ",
+          "choices": [
+            "bs.eqLiab.liab.other.silentPartner.typ",
+            "bs.eqLiab.liab.other.silentPartner.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.other.above1year"
+          ],
+          "sources": [
+            {
+              "code": "36520",
+              "semantic": {
+                "name": "- Restlaufzeit 1 bis 5 Jahre",
+                "function": "",
+                "range_start": "36520",
+                "range_end": "36520",
+                "parent": {
+                  "code": "36500",
+                  "end": "36500",
+                  "name": "Verbindlichkeiten gegenüber stillen Gesellschaftern",
+                  "function": ""
+                }
+              },
+              "signature": "84c6cb616f1ee9636966459e7346fb7f61b9d439856239b9f07790f46d7cb2d5"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r29-004@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.silentPartner.typ",
+          "choices": [
+            "bs.eqLiab.liab.other.silentPartner.typ",
+            "bs.eqLiab.liab.other.silentPartner.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.other.above1year"
+          ],
+          "sources": [
+            {
+              "code": "36530",
+              "semantic": {
+                "name": "- Restlaufzeit größer 5 Jahre",
+                "function": "",
+                "range_start": "36530",
+                "range_end": "36530",
+                "parent": {
+                  "code": "36500",
+                  "end": "36500",
+                  "name": "Verbindlichkeiten gegenüber stillen Gesellschaftern",
+                  "function": ""
+                }
+              },
+              "signature": "7c51881253878e6a0e132f6e23d85a3b32dc11d19d6546b74efb6aaf00e99aff"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r29-005@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.theroffTax.vat",
+          "choices": [
+            "bs.eqLiab.liab.other.theroffTax.vat"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "38800",
+              "semantic": {
+                "name": "Umsatzsteuer aus im anderen EU- Land steuerpflichtigen Lieferungen",
+                "function": "S",
+                "range_start": "38800",
+                "range_end": "38800",
+                "parent": null
+              },
+              "signature": "a4c5afb80c85c27a0e5bd153165b012e39054d25fa146b1cf6d61fb5960feb08"
+            },
+            {
+              "code": "38810",
+              "semantic": {
+                "name": "Umsatzsteuer aus im anderen EU- Land steuerpflichtigen sonstigen Leistungen/Werklieferungen",
+                "function": "S",
+                "range_start": "38810",
+                "range_end": "38810",
+                "parent": null
+              },
+              "signature": "fcf5d213b8cbee1ae649bc29371c880367035911ad99e56af35d204ba62d62e0"
+            },
+            {
+              "code": "38820",
+              "semantic": {
+                "name": "Umsatzsteuer aus im anderen EU- Land steuerpflichtigen elektronischen Dienstleistungen",
+                "function": "S",
+                "range_start": "38820",
+                "range_end": "38820",
+                "parent": null
+              },
+              "signature": "b82d51f81c79ed043604ae9baba9d57f617f6d1aee7a0ab18795628510423488"
+            },
+            {
+              "code": "38840",
+              "semantic": {
+                "name": "Steuerzahlungen aus im anderen EU-Land steuerpflichtigen Leistungen",
+                "function": "",
+                "range_start": "38840",
+                "range_end": "38840",
+                "parent": null
+              },
+              "signature": "06a6882deaf506d9d9b2363e1d3614f883b452f1006ac192acf5e665ed49c16f"
+            },
+            {
+              "code": "38850",
+              "semantic": {
+                "name": "Umsatzsteuer aus im Inland steuerpflichtigen EU-Lieferungen, nur OSS",
+                "function": "S",
+                "range_start": "38850",
+                "range_end": "38850",
+                "parent": null
+              },
+              "signature": "1c56108fe8ce59c27d0b30b972931fe3f8ebbf926a16bb4d52a87c0492580d17"
+            }
+          ]
+        },
+        {
+          "purpose": "working-capital-r29-006@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.theroffTax.vat",
+          "choices": [
+            "bs.eqLiab.liab.other.theroffTax.vat",
+            "bs.eqLiab.liab.other.theroffTax.operatingTaxes",
+            "bs.eqLiab.liab.other.theroffTax.otherTaxes"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "38830",
+              "semantic": {
+                "name": "Steuerzahlungen an andere Länder",
+                "function": "",
+                "range_start": "38830",
+                "range_end": "38830",
+                "parent": null
+              },
+              "signature": "af2098a2cc3a84b40e54c536e38706e03776c607bcd4485d44ffcbfcee6de832"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

@@ -1,0 +1,1622 @@
+{
+  "schema": 1,
+  "revision": 19,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "financial-debt-r19-001@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.securities",
+          "choices": [
+            "bs.eqLiab.liab.securities"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "31000",
+              "semantic": {
+                "name": "Anleihen, nicht konvertibel",
+                "function": "",
+                "range_start": "31000",
+                "range_end": "31000",
+                "parent": null
+              },
+              "signature": "39d0278dc55a975a3037a14d3edeacfccc65175b2ffeb470c4be7fe0f3598212"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-002@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.securities",
+          "choices": [
+            "bs.eqLiab.liab.securities"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.eqLiab.liab.securities.upTo1year",
+            "bs.eqLiab.liab.securities.upTo1year.nonConvertible"
+          ],
+          "sources": [
+            {
+              "code": "31010",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "31010",
+                "range_end": "31010",
+                "parent": {
+                  "code": "31000",
+                  "end": "31000",
+                  "name": "Anleihen, nicht konvertibel",
+                  "function": ""
+                }
+              },
+              "signature": "8ec976a159e790ea626f388e205dcfeb3a670cba4a7297d88c7465324df89e54"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-003@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.securities",
+          "choices": [
+            "bs.eqLiab.liab.securities"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.eqLiab.liab.securities.above1year"
+          ],
+          "sources": [
+            {
+              "code": "31020",
+              "semantic": {
+                "name": "- Restlaufzeit 1 bis 5 Jahre",
+                "function": "",
+                "range_start": "31020",
+                "range_end": "31020",
+                "parent": {
+                  "code": "31000",
+                  "end": "31000",
+                  "name": "Anleihen, nicht konvertibel",
+                  "function": ""
+                }
+              },
+              "signature": "5e7434a0dc9b6fb469dc62e3be4083d916f47a925cc8a032b04c374d0414ed74"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-003@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.securities",
+          "choices": [
+            "bs.eqLiab.liab.securities"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.eqLiab.liab.securities.above1year"
+          ],
+          "sources": [
+            {
+              "code": "31030",
+              "semantic": {
+                "name": "- Restlaufzeit größer 5 Jahre",
+                "function": "",
+                "range_start": "31030",
+                "range_end": "31030",
+                "parent": {
+                  "code": "31000",
+                  "end": "31000",
+                  "name": "Anleihen, nicht konvertibel",
+                  "function": ""
+                }
+              },
+              "signature": "8dbad456bd8e53d69b7ddddcf9e480b1ae4a6e318ef401962df8dca491a40d0e"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-005@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.securities",
+          "choices": [
+            "bs.eqLiab.liab.securities"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.eqLiab.liab.securities.convertible"
+          ],
+          "sources": [
+            {
+              "code": "31200",
+              "semantic": {
+                "name": "Anleihen, konvertibel",
+                "function": "",
+                "range_start": "31200",
+                "range_end": "31200",
+                "parent": null
+              },
+              "signature": "edad6484eab90f3a207013870489258c3317b5e25f855847abca8b88be19f5f9"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-006@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.securities",
+          "choices": [
+            "bs.eqLiab.liab.securities"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.eqLiab.liab.securities.convertible",
+            "bs.eqLiab.liab.securities.upTo1year",
+            "bs.eqLiab.liab.securities.upTo1year.warrants"
+          ],
+          "sources": [
+            {
+              "code": "31210",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "31210",
+                "range_end": "31210",
+                "parent": {
+                  "code": "31200",
+                  "end": "31200",
+                  "name": "Anleihen, konvertibel",
+                  "function": ""
+                }
+              },
+              "signature": "34c39b9a74a197860cc5aac733c0be19216c80cdb4f3b5ddf844ec802282108a"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-007@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.securities",
+          "choices": [
+            "bs.eqLiab.liab.securities"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.eqLiab.liab.securities.convertible",
+            "bs.eqLiab.liab.securities.above1year"
+          ],
+          "sources": [
+            {
+              "code": "31220",
+              "semantic": {
+                "name": "- Restlaufzeit 1 bis 5 Jahre",
+                "function": "",
+                "range_start": "31220",
+                "range_end": "31220",
+                "parent": {
+                  "code": "31200",
+                  "end": "31200",
+                  "name": "Anleihen, konvertibel",
+                  "function": ""
+                }
+              },
+              "signature": "f885bdb3abc7249f2cca79a27affd9945bc7b1f3c11c210e4de342ffddad7394"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-007@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.securities",
+          "choices": [
+            "bs.eqLiab.liab.securities"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.eqLiab.liab.securities.convertible",
+            "bs.eqLiab.liab.securities.above1year"
+          ],
+          "sources": [
+            {
+              "code": "31230",
+              "semantic": {
+                "name": "- Restlaufzeit größer 5 Jahre",
+                "function": "",
+                "range_start": "31230",
+                "range_end": "31230",
+                "parent": {
+                  "code": "31200",
+                  "end": "31200",
+                  "name": "Anleihen, konvertibel",
+                  "function": ""
+                }
+              },
+              "signature": "3977aa94e9c451b4e4d8871c771553e88a2f37577e061e87d21aa72430979eff"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-009@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.otherDebtInstruments",
+          "choices": [
+            "bs.eqLiab.liab.otherDebtInstruments"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "31400",
+              "semantic": {
+                "name": "Sonstige Schuld- und Finanztitel",
+                "function": "",
+                "range_start": "31400",
+                "range_end": "31400",
+                "parent": null
+              },
+              "signature": "cafe5410c8b86b784d5a536c25ab0006918a23ebb81d4253594a5fde948b3003"
+            },
+            {
+              "code": "31410",
+              "semantic": {
+                "name": "Bewilligungen",
+                "function": "",
+                "range_start": "31410",
+                "range_end": "31410",
+                "parent": null
+              },
+              "signature": "c17a838f3435c6dbf26f6b3f78645b44f9471b0e7ff2c4db92d0f3c6899ccdf8"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-010@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.assocComp.other",
+          "choices": [
+            "bs.eqLiab.liab.assocComp.other",
+            "bs.eqLiab.liab.assocComp.partner",
+            "bs.eqLiab.liab.assocComp.SilentPartner.typ",
+            "bs.eqLiab.liab.assocComp.SilentPartner.misc",
+            "bs.eqLiab.liab.assocComp.misc"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "34000",
+              "semantic": {
+                "name": "Verbindlichkeiten gegenüber verbundenen Unternehmen",
+                "function": "",
+                "range_start": "34000",
+                "range_end": "34000",
+                "parent": null
+              },
+              "signature": "a1f083baf5205dcc52d7996bab14c7ab49fbdb160435c0a04d1ee89f1d6b23e9"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-011@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.assocComp.other",
+          "choices": [
+            "bs.eqLiab.liab.assocComp.other",
+            "bs.eqLiab.liab.assocComp.partner",
+            "bs.eqLiab.liab.assocComp.SilentPartner.typ",
+            "bs.eqLiab.liab.assocComp.SilentPartner.misc",
+            "bs.eqLiab.liab.assocComp.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.assocComp.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "34010",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "34010",
+                "range_end": "34010",
+                "parent": {
+                  "code": "34000",
+                  "end": "34000",
+                  "name": "Verbindlichkeiten gegenüber verbundenen Unternehmen",
+                  "function": ""
+                }
+              },
+              "signature": "792b98d439aefab3609cdf46ae0a654502e53a9bd7c160a6d4be3cf2173a68b3"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-012@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.assocComp.other",
+          "choices": [
+            "bs.eqLiab.liab.assocComp.other",
+            "bs.eqLiab.liab.assocComp.partner",
+            "bs.eqLiab.liab.assocComp.SilentPartner.typ",
+            "bs.eqLiab.liab.assocComp.SilentPartner.misc",
+            "bs.eqLiab.liab.assocComp.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.assocComp.above1year"
+          ],
+          "sources": [
+            {
+              "code": "34020",
+              "semantic": {
+                "name": "- Restlaufzeit 1 bis 5 Jahre",
+                "function": "",
+                "range_start": "34020",
+                "range_end": "34020",
+                "parent": {
+                  "code": "34000",
+                  "end": "34000",
+                  "name": "Verbindlichkeiten gegenüber verbundenen Unternehmen",
+                  "function": ""
+                }
+              },
+              "signature": "a5cfd9e0d4f0517f63d260042aa696fb242c68bfc1c60c1ead7f88bb09fa5a04"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-012@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.assocComp.other",
+          "choices": [
+            "bs.eqLiab.liab.assocComp.other",
+            "bs.eqLiab.liab.assocComp.partner",
+            "bs.eqLiab.liab.assocComp.SilentPartner.typ",
+            "bs.eqLiab.liab.assocComp.SilentPartner.misc",
+            "bs.eqLiab.liab.assocComp.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.assocComp.above1year"
+          ],
+          "sources": [
+            {
+              "code": "34030",
+              "semantic": {
+                "name": "- Restlaufzeit größer 5 Jahre Verbindlichkeiten aus Lieferungen",
+                "function": "",
+                "range_start": "34030",
+                "range_end": "34030",
+                "parent": {
+                  "code": "34000",
+                  "end": "34000",
+                  "name": "Verbindlichkeiten gegenüber verbundenen Unternehmen",
+                  "function": ""
+                }
+              },
+              "signature": "434f56662c0b0c03122fe264c47feac64861476e40c7f3b9ecd0737b93f3616b"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-014@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.assocComp.other",
+          "choices": [
+            "bs.eqLiab.liab.assocComp.other",
+            "bs.eqLiab.liab.assocComp.partner",
+            "bs.eqLiab.liab.assocComp.SilentPartner.typ",
+            "bs.eqLiab.liab.assocComp.SilentPartner.misc",
+            "bs.eqLiab.liab.assocComp.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.assocComp.payables"
+          ],
+          "sources": [
+            {
+              "code": "34200",
+              "semantic": {
+                "name": "und Leistungen gegenüber verbundenen Unternehmen",
+                "function": "F",
+                "range_start": "34200",
+                "range_end": "34200",
+                "parent": null
+              },
+              "signature": "c1959f1b23d8725ad1f233864d6045e32383ac38b283caa6aefeff55ce476a1b"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-015@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.assocComp.other",
+          "choices": [
+            "bs.eqLiab.liab.assocComp.other",
+            "bs.eqLiab.liab.assocComp.partner",
+            "bs.eqLiab.liab.assocComp.SilentPartner.typ",
+            "bs.eqLiab.liab.assocComp.SilentPartner.misc",
+            "bs.eqLiab.liab.assocComp.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.assocComp.payables",
+            "bs.eqLiab.liab.assocComp.upTo1year",
+            "bs.eqLiab.liab.assocComp.upTo1year.trade"
+          ],
+          "sources": [
+            {
+              "code": "34210",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "F",
+                "range_start": "34210",
+                "range_end": "34210",
+                "parent": {
+                  "code": "34200",
+                  "end": "34200",
+                  "name": "und Leistungen gegenüber verbundenen Unternehmen",
+                  "function": "F"
+                }
+              },
+              "signature": "29cc05af6863c92eea7de2292b54f3c4ce6132e793a64485bdfd339c4117e7b0"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-016@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.assocComp.other",
+          "choices": [
+            "bs.eqLiab.liab.assocComp.other",
+            "bs.eqLiab.liab.assocComp.partner",
+            "bs.eqLiab.liab.assocComp.SilentPartner.typ",
+            "bs.eqLiab.liab.assocComp.SilentPartner.misc",
+            "bs.eqLiab.liab.assocComp.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.assocComp.payables",
+            "bs.eqLiab.liab.assocComp.above1year"
+          ],
+          "sources": [
+            {
+              "code": "34220",
+              "semantic": {
+                "name": "- Restlaufzeit 1 bis 5 Jahre",
+                "function": "F",
+                "range_start": "34220",
+                "range_end": "34220",
+                "parent": {
+                  "code": "34200",
+                  "end": "34200",
+                  "name": "und Leistungen gegenüber verbundenen Unternehmen",
+                  "function": "F"
+                }
+              },
+              "signature": "6e2f01598ec3c60eef6747c01e77ab68a42cd82dd28cc947f6f2ec45e5fc5262"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-016@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.assocComp.other",
+          "choices": [
+            "bs.eqLiab.liab.assocComp.other",
+            "bs.eqLiab.liab.assocComp.partner",
+            "bs.eqLiab.liab.assocComp.SilentPartner.typ",
+            "bs.eqLiab.liab.assocComp.SilentPartner.misc",
+            "bs.eqLiab.liab.assocComp.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.assocComp.payables",
+            "bs.eqLiab.liab.assocComp.above1year"
+          ],
+          "sources": [
+            {
+              "code": "34230",
+              "semantic": {
+                "name": "- Restlaufzeit größer 5 Jahre",
+                "function": "F",
+                "range_start": "34230",
+                "range_end": "34230",
+                "parent": {
+                  "code": "34200",
+                  "end": "34200",
+                  "name": "und Leistungen gegenüber verbundenen Unternehmen",
+                  "function": "F"
+                }
+              },
+              "signature": "28c3801070b31f47902b2de813a0065fd2bab06b542b655ac282a072ccb0d79f"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-018@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.particip.other",
+          "choices": [
+            "bs.eqLiab.liab.particip.other",
+            "bs.eqLiab.liab.particip.otherShareholder",
+            "bs.eqLiab.liab.particip.silentPartner.typ",
+            "bs.eqLiab.liab.particip.silentPartner.misc",
+            "bs.eqLiab.liab.particip.misc"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "34500",
+              "semantic": {
+                "name": "Verbindlichkeiten gegenüber Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                "function": "",
+                "range_start": "34500",
+                "range_end": "34500",
+                "parent": null
+              },
+              "signature": "970253ee7a92b48b740d2b422c1cf0aab1e39bc7e33e6808aff53be6ad6659e9"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-019@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.particip.other",
+          "choices": [
+            "bs.eqLiab.liab.particip.other",
+            "bs.eqLiab.liab.particip.otherShareholder",
+            "bs.eqLiab.liab.particip.silentPartner.typ",
+            "bs.eqLiab.liab.particip.silentPartner.misc",
+            "bs.eqLiab.liab.particip.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.particip.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "34510",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "34510",
+                "range_end": "34510",
+                "parent": {
+                  "code": "34500",
+                  "end": "34500",
+                  "name": "Verbindlichkeiten gegenüber Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                  "function": ""
+                }
+              },
+              "signature": "4ef3681b457df99f7813f47a883b6246eb8b4c0706aa3305b40c0ba3d32eaec0"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-020@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.particip.other",
+          "choices": [
+            "bs.eqLiab.liab.particip.other",
+            "bs.eqLiab.liab.particip.otherShareholder",
+            "bs.eqLiab.liab.particip.silentPartner.typ",
+            "bs.eqLiab.liab.particip.silentPartner.misc",
+            "bs.eqLiab.liab.particip.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.particip.above1year"
+          ],
+          "sources": [
+            {
+              "code": "34520",
+              "semantic": {
+                "name": "- Restlaufzeit 1 bis 5 Jahre",
+                "function": "",
+                "range_start": "34520",
+                "range_end": "34520",
+                "parent": {
+                  "code": "34500",
+                  "end": "34500",
+                  "name": "Verbindlichkeiten gegenüber Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                  "function": ""
+                }
+              },
+              "signature": "4b3e5d1d525eff955256477bb823a0f2b80ad2aabde6d743dcf5345fde466f02"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-020@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.particip.other",
+          "choices": [
+            "bs.eqLiab.liab.particip.other",
+            "bs.eqLiab.liab.particip.otherShareholder",
+            "bs.eqLiab.liab.particip.silentPartner.typ",
+            "bs.eqLiab.liab.particip.silentPartner.misc",
+            "bs.eqLiab.liab.particip.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.particip.above1year"
+          ],
+          "sources": [
+            {
+              "code": "34530",
+              "semantic": {
+                "name": "- Restlaufzeit größer 5 Jahre",
+                "function": "",
+                "range_start": "34530",
+                "range_end": "34530",
+                "parent": {
+                  "code": "34500",
+                  "end": "34500",
+                  "name": "Verbindlichkeiten gegenüber Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                  "function": ""
+                }
+              },
+              "signature": "628079731c85ac7a44cd06ca5ea85a0669bf43e20da5dcb6afcbdf21c6a8829f"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-022@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.particip.other",
+          "choices": [
+            "bs.eqLiab.liab.particip.other",
+            "bs.eqLiab.liab.particip.otherShareholder",
+            "bs.eqLiab.liab.particip.silentPartner.typ",
+            "bs.eqLiab.liab.particip.silentPartner.misc",
+            "bs.eqLiab.liab.particip.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.particip.accountsPayables"
+          ],
+          "sources": [
+            {
+              "code": "34700",
+              "semantic": {
+                "name": "Verbindlichkeiten aus Lieferungen und Leistungen gegenüber Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                "function": "F",
+                "range_start": "34700",
+                "range_end": "34700",
+                "parent": null
+              },
+              "signature": "227096525ff0a00f7decf9a6d28134c1ac8c02c8a31b44870d48840c8ecde36a"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-023@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.particip.other",
+          "choices": [
+            "bs.eqLiab.liab.particip.other",
+            "bs.eqLiab.liab.particip.otherShareholder",
+            "bs.eqLiab.liab.particip.silentPartner.typ",
+            "bs.eqLiab.liab.particip.silentPartner.misc",
+            "bs.eqLiab.liab.particip.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.particip.accountsPayables",
+            "bs.eqLiab.liab.particip.upTo1year",
+            "bs.eqLiab.liab.particip.upTo1year.trade"
+          ],
+          "sources": [
+            {
+              "code": "34710",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "F",
+                "range_start": "34710",
+                "range_end": "34710",
+                "parent": {
+                  "code": "34700",
+                  "end": "34700",
+                  "name": "Verbindlichkeiten aus Lieferungen und Leistungen gegenüber Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                  "function": "F"
+                }
+              },
+              "signature": "7442967f77b028e6a5eb6bbbac70229c639595a7ac1b6e3e882e2f6f7a7f0dd5"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-024@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.particip.other",
+          "choices": [
+            "bs.eqLiab.liab.particip.other",
+            "bs.eqLiab.liab.particip.otherShareholder",
+            "bs.eqLiab.liab.particip.silentPartner.typ",
+            "bs.eqLiab.liab.particip.silentPartner.misc",
+            "bs.eqLiab.liab.particip.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.particip.accountsPayables",
+            "bs.eqLiab.liab.particip.above1year"
+          ],
+          "sources": [
+            {
+              "code": "34720",
+              "semantic": {
+                "name": "- Restlaufzeit 1 bis 5 Jahre",
+                "function": "F",
+                "range_start": "34720",
+                "range_end": "34720",
+                "parent": {
+                  "code": "34700",
+                  "end": "34700",
+                  "name": "Verbindlichkeiten aus Lieferungen und Leistungen gegenüber Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                  "function": "F"
+                }
+              },
+              "signature": "3763fd17f2cebc6601dc1be6b54b03d3d5033da38eadead4f3e7c5774c2c278d"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-024@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.particip.other",
+          "choices": [
+            "bs.eqLiab.liab.particip.other",
+            "bs.eqLiab.liab.particip.otherShareholder",
+            "bs.eqLiab.liab.particip.silentPartner.typ",
+            "bs.eqLiab.liab.particip.silentPartner.misc",
+            "bs.eqLiab.liab.particip.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.particip.accountsPayables",
+            "bs.eqLiab.liab.particip.above1year"
+          ],
+          "sources": [
+            {
+              "code": "34730",
+              "semantic": {
+                "name": "- Restlaufzeit größer 5 Jahre",
+                "function": "F",
+                "range_start": "34730",
+                "range_end": "34730",
+                "parent": {
+                  "code": "34700",
+                  "end": "34700",
+                  "name": "Verbindlichkeiten aus Lieferungen und Leistungen gegenüber Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                  "function": "F"
+                }
+              },
+              "signature": "fac2b337c0f1084f2445d55d0231c9716f229a4f0e7f9e0f48430083fd9ae6fd"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "financial-debt-r19-001@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.securities",
+          "choices": [
+            "bs.eqLiab.liab.securities"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "31000",
+              "semantic": {
+                "name": "Anleihen, nicht konvertibel",
+                "function": "",
+                "range_start": "31000",
+                "range_end": "31000",
+                "parent": null
+              },
+              "signature": "39d0278dc55a975a3037a14d3edeacfccc65175b2ffeb470c4be7fe0f3598212"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-002@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.securities",
+          "choices": [
+            "bs.eqLiab.liab.securities"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.eqLiab.liab.securities.upTo1year",
+            "bs.eqLiab.liab.securities.upTo1year.nonConvertible"
+          ],
+          "sources": [
+            {
+              "code": "31010",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "31010",
+                "range_end": "31010",
+                "parent": {
+                  "code": "31000",
+                  "end": "31000",
+                  "name": "Anleihen, nicht konvertibel",
+                  "function": ""
+                }
+              },
+              "signature": "8ec976a159e790ea626f388e205dcfeb3a670cba4a7297d88c7465324df89e54"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-003@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.securities",
+          "choices": [
+            "bs.eqLiab.liab.securities"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.eqLiab.liab.securities.above1year"
+          ],
+          "sources": [
+            {
+              "code": "31020",
+              "semantic": {
+                "name": "- Restlaufzeit 1 bis 5 Jahre",
+                "function": "",
+                "range_start": "31020",
+                "range_end": "31020",
+                "parent": {
+                  "code": "31000",
+                  "end": "31000",
+                  "name": "Anleihen, nicht konvertibel",
+                  "function": ""
+                }
+              },
+              "signature": "5e7434a0dc9b6fb469dc62e3be4083d916f47a925cc8a032b04c374d0414ed74"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-003@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.securities",
+          "choices": [
+            "bs.eqLiab.liab.securities"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.eqLiab.liab.securities.above1year"
+          ],
+          "sources": [
+            {
+              "code": "31030",
+              "semantic": {
+                "name": "- Restlaufzeit größer 5 Jahre",
+                "function": "",
+                "range_start": "31030",
+                "range_end": "31030",
+                "parent": {
+                  "code": "31000",
+                  "end": "31000",
+                  "name": "Anleihen, nicht konvertibel",
+                  "function": ""
+                }
+              },
+              "signature": "8dbad456bd8e53d69b7ddddcf9e480b1ae4a6e318ef401962df8dca491a40d0e"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-005@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.securities",
+          "choices": [
+            "bs.eqLiab.liab.securities"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.eqLiab.liab.securities.convertible"
+          ],
+          "sources": [
+            {
+              "code": "31200",
+              "semantic": {
+                "name": "Anleihen, konvertibel",
+                "function": "",
+                "range_start": "31200",
+                "range_end": "31200",
+                "parent": null
+              },
+              "signature": "edad6484eab90f3a207013870489258c3317b5e25f855847abca8b88be19f5f9"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-006@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.securities",
+          "choices": [
+            "bs.eqLiab.liab.securities"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.eqLiab.liab.securities.convertible",
+            "bs.eqLiab.liab.securities.upTo1year",
+            "bs.eqLiab.liab.securities.upTo1year.warrants"
+          ],
+          "sources": [
+            {
+              "code": "31210",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "31210",
+                "range_end": "31210",
+                "parent": {
+                  "code": "31200",
+                  "end": "31200",
+                  "name": "Anleihen, konvertibel",
+                  "function": ""
+                }
+              },
+              "signature": "34c39b9a74a197860cc5aac733c0be19216c80cdb4f3b5ddf844ec802282108a"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-007@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.securities",
+          "choices": [
+            "bs.eqLiab.liab.securities"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.eqLiab.liab.securities.convertible",
+            "bs.eqLiab.liab.securities.above1year"
+          ],
+          "sources": [
+            {
+              "code": "31220",
+              "semantic": {
+                "name": "- Restlaufzeit 1 bis 5 Jahre",
+                "function": "",
+                "range_start": "31220",
+                "range_end": "31220",
+                "parent": {
+                  "code": "31200",
+                  "end": "31200",
+                  "name": "Anleihen, konvertibel",
+                  "function": ""
+                }
+              },
+              "signature": "f885bdb3abc7249f2cca79a27affd9945bc7b1f3c11c210e4de342ffddad7394"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-007@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.securities",
+          "choices": [
+            "bs.eqLiab.liab.securities"
+          ],
+          "conditional": false,
+          "disclosures": [
+            "bs.eqLiab.liab.securities.convertible",
+            "bs.eqLiab.liab.securities.above1year"
+          ],
+          "sources": [
+            {
+              "code": "31230",
+              "semantic": {
+                "name": "- Restlaufzeit größer 5 Jahre",
+                "function": "",
+                "range_start": "31230",
+                "range_end": "31230",
+                "parent": {
+                  "code": "31200",
+                  "end": "31200",
+                  "name": "Anleihen, konvertibel",
+                  "function": ""
+                }
+              },
+              "signature": "3977aa94e9c451b4e4d8871c771553e88a2f37577e061e87d21aa72430979eff"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-009@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.otherDebtInstruments",
+          "choices": [
+            "bs.eqLiab.liab.otherDebtInstruments"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "31400",
+              "semantic": {
+                "name": "Sonstige Schuld- und Finanztitel",
+                "function": "",
+                "range_start": "31400",
+                "range_end": "31400",
+                "parent": null
+              },
+              "signature": "cafe5410c8b86b784d5a536c25ab0006918a23ebb81d4253594a5fde948b3003"
+            },
+            {
+              "code": "31410",
+              "semantic": {
+                "name": "Bewilligungen",
+                "function": "",
+                "range_start": "31410",
+                "range_end": "31410",
+                "parent": null
+              },
+              "signature": "c17a838f3435c6dbf26f6b3f78645b44f9471b0e7ff2c4db92d0f3c6899ccdf8"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-010@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.assocComp.other",
+          "choices": [
+            "bs.eqLiab.liab.assocComp.other",
+            "bs.eqLiab.liab.assocComp.partner",
+            "bs.eqLiab.liab.assocComp.SilentPartner.typ",
+            "bs.eqLiab.liab.assocComp.SilentPartner.misc",
+            "bs.eqLiab.liab.assocComp.misc"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "34000",
+              "semantic": {
+                "name": "Verbindlichkeiten gegenüber verbundenen Unternehmen",
+                "function": "",
+                "range_start": "34000",
+                "range_end": "34000",
+                "parent": null
+              },
+              "signature": "a1f083baf5205dcc52d7996bab14c7ab49fbdb160435c0a04d1ee89f1d6b23e9"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-011@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.assocComp.other",
+          "choices": [
+            "bs.eqLiab.liab.assocComp.other",
+            "bs.eqLiab.liab.assocComp.partner",
+            "bs.eqLiab.liab.assocComp.SilentPartner.typ",
+            "bs.eqLiab.liab.assocComp.SilentPartner.misc",
+            "bs.eqLiab.liab.assocComp.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.assocComp.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "34010",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "34010",
+                "range_end": "34010",
+                "parent": {
+                  "code": "34000",
+                  "end": "34000",
+                  "name": "Verbindlichkeiten gegenüber verbundenen Unternehmen",
+                  "function": ""
+                }
+              },
+              "signature": "792b98d439aefab3609cdf46ae0a654502e53a9bd7c160a6d4be3cf2173a68b3"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-012@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.assocComp.other",
+          "choices": [
+            "bs.eqLiab.liab.assocComp.other",
+            "bs.eqLiab.liab.assocComp.partner",
+            "bs.eqLiab.liab.assocComp.SilentPartner.typ",
+            "bs.eqLiab.liab.assocComp.SilentPartner.misc",
+            "bs.eqLiab.liab.assocComp.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.assocComp.above1year"
+          ],
+          "sources": [
+            {
+              "code": "34020",
+              "semantic": {
+                "name": "- Restlaufzeit 1 bis 5 Jahre",
+                "function": "",
+                "range_start": "34020",
+                "range_end": "34020",
+                "parent": {
+                  "code": "34000",
+                  "end": "34000",
+                  "name": "Verbindlichkeiten gegenüber verbundenen Unternehmen",
+                  "function": ""
+                }
+              },
+              "signature": "a5cfd9e0d4f0517f63d260042aa696fb242c68bfc1c60c1ead7f88bb09fa5a04"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-012@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.assocComp.other",
+          "choices": [
+            "bs.eqLiab.liab.assocComp.other",
+            "bs.eqLiab.liab.assocComp.partner",
+            "bs.eqLiab.liab.assocComp.SilentPartner.typ",
+            "bs.eqLiab.liab.assocComp.SilentPartner.misc",
+            "bs.eqLiab.liab.assocComp.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.assocComp.above1year"
+          ],
+          "sources": [
+            {
+              "code": "34030",
+              "semantic": {
+                "name": "- Restlaufzeit größer 5 Jahre Verbindlichkeiten aus Lieferungen",
+                "function": "",
+                "range_start": "34030",
+                "range_end": "34030",
+                "parent": {
+                  "code": "34000",
+                  "end": "34000",
+                  "name": "Verbindlichkeiten gegenüber verbundenen Unternehmen",
+                  "function": ""
+                }
+              },
+              "signature": "434f56662c0b0c03122fe264c47feac64861476e40c7f3b9ecd0737b93f3616b"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-014@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.assocComp.other",
+          "choices": [
+            "bs.eqLiab.liab.assocComp.other",
+            "bs.eqLiab.liab.assocComp.partner",
+            "bs.eqLiab.liab.assocComp.SilentPartner.typ",
+            "bs.eqLiab.liab.assocComp.SilentPartner.misc",
+            "bs.eqLiab.liab.assocComp.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.assocComp.payables"
+          ],
+          "sources": [
+            {
+              "code": "34200",
+              "semantic": {
+                "name": "und Leistungen gegenüber verbundenen Unternehmen",
+                "function": "F",
+                "range_start": "34200",
+                "range_end": "34200",
+                "parent": null
+              },
+              "signature": "c1959f1b23d8725ad1f233864d6045e32383ac38b283caa6aefeff55ce476a1b"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-015@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.assocComp.other",
+          "choices": [
+            "bs.eqLiab.liab.assocComp.other",
+            "bs.eqLiab.liab.assocComp.partner",
+            "bs.eqLiab.liab.assocComp.SilentPartner.typ",
+            "bs.eqLiab.liab.assocComp.SilentPartner.misc",
+            "bs.eqLiab.liab.assocComp.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.assocComp.payables",
+            "bs.eqLiab.liab.assocComp.upTo1year",
+            "bs.eqLiab.liab.assocComp.upTo1year.trade"
+          ],
+          "sources": [
+            {
+              "code": "34210",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "F",
+                "range_start": "34210",
+                "range_end": "34210",
+                "parent": {
+                  "code": "34200",
+                  "end": "34200",
+                  "name": "und Leistungen gegenüber verbundenen Unternehmen",
+                  "function": "F"
+                }
+              },
+              "signature": "29cc05af6863c92eea7de2292b54f3c4ce6132e793a64485bdfd339c4117e7b0"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-016@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.assocComp.other",
+          "choices": [
+            "bs.eqLiab.liab.assocComp.other",
+            "bs.eqLiab.liab.assocComp.partner",
+            "bs.eqLiab.liab.assocComp.SilentPartner.typ",
+            "bs.eqLiab.liab.assocComp.SilentPartner.misc",
+            "bs.eqLiab.liab.assocComp.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.assocComp.payables",
+            "bs.eqLiab.liab.assocComp.above1year"
+          ],
+          "sources": [
+            {
+              "code": "34220",
+              "semantic": {
+                "name": "- Restlaufzeit 1 bis 5 Jahre",
+                "function": "F",
+                "range_start": "34220",
+                "range_end": "34220",
+                "parent": {
+                  "code": "34200",
+                  "end": "34200",
+                  "name": "und Leistungen gegenüber verbundenen Unternehmen",
+                  "function": "F"
+                }
+              },
+              "signature": "6e2f01598ec3c60eef6747c01e77ab68a42cd82dd28cc947f6f2ec45e5fc5262"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-016@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.assocComp.other",
+          "choices": [
+            "bs.eqLiab.liab.assocComp.other",
+            "bs.eqLiab.liab.assocComp.partner",
+            "bs.eqLiab.liab.assocComp.SilentPartner.typ",
+            "bs.eqLiab.liab.assocComp.SilentPartner.misc",
+            "bs.eqLiab.liab.assocComp.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.assocComp.payables",
+            "bs.eqLiab.liab.assocComp.above1year"
+          ],
+          "sources": [
+            {
+              "code": "34230",
+              "semantic": {
+                "name": "- Restlaufzeit größer 5 Jahre",
+                "function": "F",
+                "range_start": "34230",
+                "range_end": "34230",
+                "parent": {
+                  "code": "34200",
+                  "end": "34200",
+                  "name": "und Leistungen gegenüber verbundenen Unternehmen",
+                  "function": "F"
+                }
+              },
+              "signature": "28c3801070b31f47902b2de813a0065fd2bab06b542b655ac282a072ccb0d79f"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-018@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.particip.other",
+          "choices": [
+            "bs.eqLiab.liab.particip.other",
+            "bs.eqLiab.liab.particip.otherShareholder",
+            "bs.eqLiab.liab.particip.silentPartner.typ",
+            "bs.eqLiab.liab.particip.silentPartner.misc",
+            "bs.eqLiab.liab.particip.misc"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "34500",
+              "semantic": {
+                "name": "Verbindlichkeiten gegenüber Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                "function": "",
+                "range_start": "34500",
+                "range_end": "34500",
+                "parent": null
+              },
+              "signature": "970253ee7a92b48b740d2b422c1cf0aab1e39bc7e33e6808aff53be6ad6659e9"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-019@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.particip.other",
+          "choices": [
+            "bs.eqLiab.liab.particip.other",
+            "bs.eqLiab.liab.particip.otherShareholder",
+            "bs.eqLiab.liab.particip.silentPartner.typ",
+            "bs.eqLiab.liab.particip.silentPartner.misc",
+            "bs.eqLiab.liab.particip.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.particip.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "34510",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "34510",
+                "range_end": "34510",
+                "parent": {
+                  "code": "34500",
+                  "end": "34500",
+                  "name": "Verbindlichkeiten gegenüber Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                  "function": ""
+                }
+              },
+              "signature": "4ef3681b457df99f7813f47a883b6246eb8b4c0706aa3305b40c0ba3d32eaec0"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-020@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.particip.other",
+          "choices": [
+            "bs.eqLiab.liab.particip.other",
+            "bs.eqLiab.liab.particip.otherShareholder",
+            "bs.eqLiab.liab.particip.silentPartner.typ",
+            "bs.eqLiab.liab.particip.silentPartner.misc",
+            "bs.eqLiab.liab.particip.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.particip.above1year"
+          ],
+          "sources": [
+            {
+              "code": "34520",
+              "semantic": {
+                "name": "- Restlaufzeit 1 bis 5 Jahre",
+                "function": "",
+                "range_start": "34520",
+                "range_end": "34520",
+                "parent": {
+                  "code": "34500",
+                  "end": "34500",
+                  "name": "Verbindlichkeiten gegenüber Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                  "function": ""
+                }
+              },
+              "signature": "4b3e5d1d525eff955256477bb823a0f2b80ad2aabde6d743dcf5345fde466f02"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-020@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.particip.other",
+          "choices": [
+            "bs.eqLiab.liab.particip.other",
+            "bs.eqLiab.liab.particip.otherShareholder",
+            "bs.eqLiab.liab.particip.silentPartner.typ",
+            "bs.eqLiab.liab.particip.silentPartner.misc",
+            "bs.eqLiab.liab.particip.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.particip.above1year"
+          ],
+          "sources": [
+            {
+              "code": "34530",
+              "semantic": {
+                "name": "- Restlaufzeit größer 5 Jahre",
+                "function": "",
+                "range_start": "34530",
+                "range_end": "34530",
+                "parent": {
+                  "code": "34500",
+                  "end": "34500",
+                  "name": "Verbindlichkeiten gegenüber Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                  "function": ""
+                }
+              },
+              "signature": "628079731c85ac7a44cd06ca5ea85a0669bf43e20da5dcb6afcbdf21c6a8829f"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-022@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.particip.other",
+          "choices": [
+            "bs.eqLiab.liab.particip.other",
+            "bs.eqLiab.liab.particip.otherShareholder",
+            "bs.eqLiab.liab.particip.silentPartner.typ",
+            "bs.eqLiab.liab.particip.silentPartner.misc",
+            "bs.eqLiab.liab.particip.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.particip.accountsPayables"
+          ],
+          "sources": [
+            {
+              "code": "34700",
+              "semantic": {
+                "name": "Verbindlichkeiten aus Lieferungen und Leistungen gegenüber Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                "function": "F",
+                "range_start": "34700",
+                "range_end": "34700",
+                "parent": null
+              },
+              "signature": "227096525ff0a00f7decf9a6d28134c1ac8c02c8a31b44870d48840c8ecde36a"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-023@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.particip.other",
+          "choices": [
+            "bs.eqLiab.liab.particip.other",
+            "bs.eqLiab.liab.particip.otherShareholder",
+            "bs.eqLiab.liab.particip.silentPartner.typ",
+            "bs.eqLiab.liab.particip.silentPartner.misc",
+            "bs.eqLiab.liab.particip.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.particip.accountsPayables",
+            "bs.eqLiab.liab.particip.upTo1year",
+            "bs.eqLiab.liab.particip.upTo1year.trade"
+          ],
+          "sources": [
+            {
+              "code": "34710",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "F",
+                "range_start": "34710",
+                "range_end": "34710",
+                "parent": {
+                  "code": "34700",
+                  "end": "34700",
+                  "name": "Verbindlichkeiten aus Lieferungen und Leistungen gegenüber Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                  "function": "F"
+                }
+              },
+              "signature": "7442967f77b028e6a5eb6bbbac70229c639595a7ac1b6e3e882e2f6f7a7f0dd5"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-024@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.particip.other",
+          "choices": [
+            "bs.eqLiab.liab.particip.other",
+            "bs.eqLiab.liab.particip.otherShareholder",
+            "bs.eqLiab.liab.particip.silentPartner.typ",
+            "bs.eqLiab.liab.particip.silentPartner.misc",
+            "bs.eqLiab.liab.particip.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.particip.accountsPayables",
+            "bs.eqLiab.liab.particip.above1year"
+          ],
+          "sources": [
+            {
+              "code": "34720",
+              "semantic": {
+                "name": "- Restlaufzeit 1 bis 5 Jahre",
+                "function": "F",
+                "range_start": "34720",
+                "range_end": "34720",
+                "parent": {
+                  "code": "34700",
+                  "end": "34700",
+                  "name": "Verbindlichkeiten aus Lieferungen und Leistungen gegenüber Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                  "function": "F"
+                }
+              },
+              "signature": "3763fd17f2cebc6601dc1be6b54b03d3d5033da38eadead4f3e7c5774c2c278d"
+            }
+          ]
+        },
+        {
+          "purpose": "financial-debt-r19-024@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.particip.other",
+          "choices": [
+            "bs.eqLiab.liab.particip.other",
+            "bs.eqLiab.liab.particip.otherShareholder",
+            "bs.eqLiab.liab.particip.silentPartner.typ",
+            "bs.eqLiab.liab.particip.silentPartner.misc",
+            "bs.eqLiab.liab.particip.misc"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.liab.particip.accountsPayables",
+            "bs.eqLiab.liab.particip.above1year"
+          ],
+          "sources": [
+            {
+              "code": "34730",
+              "semantic": {
+                "name": "- Restlaufzeit größer 5 Jahre",
+                "function": "F",
+                "range_start": "34730",
+                "range_end": "34730",
+                "parent": {
+                  "code": "34700",
+                  "end": "34700",
+                  "name": "Verbindlichkeiten aus Lieferungen und Leistungen gegenüber Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                  "function": "F"
+                }
+              },
+              "signature": "fac2b337c0f1084f2445d55d0231c9716f229a4f0e7f9e0f48430083fd9ae6fd"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

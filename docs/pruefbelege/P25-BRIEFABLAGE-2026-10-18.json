@@ -1,0 +1,110 @@
+{
+  "feature": "native-letter-outbox-maintenance",
+  "package_generation": 2026101556,
+  "registered_core_groups": 312,
+  "maintenance": {
+    "suite": "native-letter-outbox-repair",
+    "checks": 54,
+    "actual_sigkill_boundaries": 2,
+    "native_sql_restore": true,
+    "external_actions": 0
+  },
+  "status_browser": {
+    "suite": "native-service-status-browser",
+    "states": 120,
+    "checks": 6289,
+    "protected_http_posts": 5,
+    "external_requests": 0,
+    "javascript_errors": [],
+    "live_transport": false
+  },
+  "completed_groups": {
+    "native-letter-outbox-repair": {
+      "completed_suite": "native-letter-outbox-repair",
+      "exit_code": 0,
+      "cleanup_complete": true
+    },
+    "native-installer": {
+      "completed_suite": "native-installer",
+      "exit_code": 0,
+      "cleanup_complete": true
+    },
+    "native-webspace-installer": {
+      "completed_suite": "native-webspace-installer",
+      "exit_code": 0,
+      "cleanup_complete": true
+    },
+    "native-package-upgrade": {
+      "completed_suite": "native-package-upgrade",
+      "exit_code": 0,
+      "cleanup_complete": true
+    },
+    "native-restore-resume": {
+      "completed_suite": "native-restore-resume",
+      "exit_code": 0,
+      "cleanup_complete": true
+    },
+    "native-recovery": {
+      "completed_suite": "native-recovery",
+      "exit_code": 0,
+      "cleanup_complete": true
+    },
+    "native-service-status": {
+      "completed_suite": "native-service-status",
+      "exit_code": 0,
+      "cleanup_complete": true
+    }
+  },
+  "final_installer_groups_after_deleting_three_obsolete_scripts": {
+    "native-installer": {
+      "completed_suite": "native-installer",
+      "exit_code": 0,
+      "cleanup_complete": true
+    },
+    "native-webspace-installer": {
+      "completed_suite": "native-webspace-installer",
+      "exit_code": 0,
+      "cleanup_complete": true
+    }
+  },
+  "legacy_document_groups": {
+    "letter-documents.php": 13,
+    "documents.php": 74
+  },
+  "sources": {
+    "p25-letter-candidate3": {
+      "index_tree": "9fd64a91e9749573821a1a5124442f0d2eb98293",
+      "original_files": 6896,
+      "changed_original_files": []
+    },
+    "p25-letter-candidate4": {
+      "index_tree": "5c0418e3fad8d8da78f0342703a1f391271f4213",
+      "original_files": 6897,
+      "changed_original_files": []
+    },
+    "p25-letter-candidate5": {
+      "index_tree": "9ff3d2d92f1f57c3cf3eea2b5a64a9c59e8400cb",
+      "original_files": 6894,
+      "changed_original_files": []
+    }
+  },
+  "log_sha256": {
+    "p25-letter-candidate3-core.log": "33ae5f900aa5db8330cd08ed7d3ed8d395edc2945f47b67e9c21e8eda80a994f",
+    "p25-letter-candidate4-installation.log": "ba6f612cb042accfe239b2082cf71379bb9c172c245f04589aa385a956f33e01",
+    "p25-letter-candidate4-installation-resume.log": "d040a7b05adaac67e172cfeb85d695a3db05eadb4c5e870a9d675184c2f71d3e",
+    "p25-letter-candidate4-status.log": "23adfa9c52f94727c516f5598abe60ddb63daef45f2cc13baf6cd1b4ae264676",
+    "p25-letter-candidate4-original-documents.log": "101714e0412f5a30889f3006a5c5ca8c879b099b38c11a390d95c87eb8cb2197",
+    "p25-letter-candidate4-original-documents-runtime.log": "448b20e6b2c0eac546687ff2baae3d68f1f609e9cd2431bc06af4cbbb696fd66",
+    "p25-letter-candidate4-package.log": "31cdac7c95d7e4beb32e4661424af884781d39ed07b740a0263a66551c6a0679",
+    "p25-letter-candidate4-package-git-context.log": "11b212a641954359766cd6f08f1e16351e09435869cb12d355352d48e134c801",
+    "p25-letter-candidate5-installation.log": "e7014285f918cb1ee4f615fae38ee084722bc0e9fcfcca74e2d6b227c8cf9d60",
+    "p25-letter-candidate5-package.log": "dcf358e93c5e63a06fde2a4943552b219ac279a4563ae54e48972b09f6cc17db"
+  },
+  "initial_invocation_limits": [
+    "Frozen checkout initially lacked PDF runtime in explicit legacy command; both groups passed with the existing runtime configured.",
+    "Frozen checkout initially lacked local Git object context; the two completed installers remain valid, all three remaining groups passed with explicit read-only Git context.",
+    "Initial package invocation lacked Git path inventory context; full package checks passed with explicit Git context."
+  ],
+  "full_all_acceptance": false,
+  "external_business_actions": 0
+}

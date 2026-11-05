@@ -1,0 +1,33 @@
+<?php declare(strict_types=1);
+use Kulturhus\Verein\Finance\Contributions\{ContributionDeliveryInput,ContributionDeliveryDraft,ContributionDeliveryRequests};
+
+$contributiondeliveryState=null;$contributiondeliveryDraft=null;$contributiondeliveryMessages=[];if(!$contributiondeliveryRoute)return;
+try{
+    $contributiondeliveryMessages=(new \Kulturhus\Native\Language\Catalog($db,$nativeAccess))->messages();$error=\Kulturhus\Native\Language\ContributionDeliveryMessages::text($error,$contributiondeliveryMessages);
+    if(!$workspaceAllowed)throw new DomainException('Beitragsmailauftrag im eigenen Finanzbereich öffnen.',403);$contributiondeliveryRequests??=new ContributionDeliveryRequests($db,(string)$_SESSION['actor']);$contributiondeliveryActor=$contributiondeliveryRequests->assertAccess();
+    $contributiondeliveryState=['listing'=>null,'context'=>null,'receipt'=>null,'history'=>null,'errors'=>[],'can_write'=>false];
+    $cdProblem=static function(string $piece,DomainException $failure)use(&$contributiondeliveryState):void{$contributiondeliveryState['errors'][$piece]=$failure->getMessage();if(http_response_code()<400)http_response_code(in_array($failure->getCode(),[403,404,409,422,503],true)?$failure->getCode():422);};
+    try{$contributiondeliveryRequests->assertAccess(true);$contributiondeliveryState['can_write']=true;}catch(DomainException $failure){if($failure->getCode()!==403)throw $failure;}
+    if(!$contributiondeliveryDetail){
+        try{$contributiondeliveryState['listing']=$contributiondeliveryRequests->listing(['query'=>$_GET['contributionmail_q']??'','status'=>$_GET['contributionmail_status']??'','year'=>$_GET['contributionmail_year']??'','page'=>$_GET['contributionmail_page']??'1']);if($contributiondeliveryState['listing']['error']!=='')throw new DomainException($contributiondeliveryState['listing']['error'],422);}catch(DomainException $failure){$cdProblem('listing',$failure);}return;
+    }
+    $explicitHistory=isset($_GET['contributionmail_history_q'])||isset($_GET['contributionmail_history_page']);$slot=hash('sha256',$contributiondeliveryActor['club_id']."\0".$contributiondeliveryActor['id']."\0".ContributionDeliveryDraft::section($contributiondeliveryJob));
+    if($contributiondeliveryPostedDraft!==null)$contributiondeliveryDraft=ContributionDeliveryDraft::get($_SESSION,$contributiondeliveryActor,$contributiondeliveryJob,$contributiondeliveryPostedDraft['id']);
+    elseif(isset($_GET['contributionmail_draft']))$contributiondeliveryDraft=ContributionDeliveryDraft::get($_SESSION,$contributiondeliveryActor,$contributiondeliveryJob,$_GET['contributionmail_draft']);
+    elseif(!$explicitHistory){$stored=$_SESSION['general_settings_slots'][$slot]??null;if(is_string($stored)&&isset($_SESSION['general_settings_drafts'][$stored]))$contributiondeliveryDraft=ContributionDeliveryDraft::get($_SESSION,$contributiondeliveryActor,$contributiondeliveryJob,$stored);}
+    $wasConfirmed=$contributiondeliveryDraft&&$contributiondeliveryDraft['accepted']!==null;
+    if(isset($_GET['contributionmail_receipt']))try{
+        if(!is_string($_GET['contributionmail_receipt']))throw new DomainException('Eigene ursprüngliche Beitragsmailentscheidung nicht verfügbar.',404);$first=$contributiondeliveryRequests->receipt($_GET['contributionmail_receipt']);if($first['input']['job']!==$contributiondeliveryJob)throw new DomainException('Eigene ursprüngliche Beitragsmailentscheidung nicht verfügbar.',404);$contributiondeliveryState['receipt']=$first;
+    }catch(DomainException $failure){$cdProblem('receipt',$failure);}
+    elseif($contributiondeliveryDraft)try{$contributiondeliveryState['receipt']=$contributiondeliveryRequests->receipt($contributiondeliveryDraft['key']);}catch(DomainException $failure){if($failure->getCode()!==404||$contributiondeliveryDraft['accepted']!==null)$cdProblem('receipt',$failure);}
+    if($first=$contributiondeliveryState['receipt']){
+        foreach($_SESSION['general_settings_drafts']??[]as$stored)if($stored['actor']===$contributiondeliveryActor['id']&&$stored['club']===$contributiondeliveryActor['club_id']&&$stored['section']===ContributionDeliveryDraft::section($contributiondeliveryJob)&&$stored['key']===$first['key'])ContributionDeliveryDraft::store($_SESSION,ContributionDeliveryDraft::complete($stored,$first['key']));
+        if($contributiondeliveryDraft&&$contributiondeliveryDraft['key']===$first['key'])$contributiondeliveryDraft=ContributionDeliveryDraft::complete($contributiondeliveryDraft,$first['key']);
+        if($error===\Kulturhus\Native\Language\ContributionDeliveryMessages::text('Beitragsmailausgang nicht bestätigt. Die ursprüngliche persönliche Entscheidung zuerst lesend prüfen.',$contributiondeliveryMessages)){$error='';if(http_response_code()===503)http_response_code(200);}
+    }
+    if(isset($_GET['contributionmail_new'])&&$wasConfirmed&&!isset($_GET['contributionmail_receipt'])&&!isset($_GET['contributionmail_draft'])&&$contributiondeliveryState['errors']===[]){$contributiondeliveryDraft=null;$contributiondeliveryState['receipt']=null;}
+    try{$contributiondeliveryState['history']=$contributiondeliveryRequests->history($contributiondeliveryJob,['query'=>$_GET['contributionmail_history_q']??'','page'=>$_GET['contributionmail_history_page']??'1']);if($contributiondeliveryState['history']['error']!=='')throw new DomainException($contributiondeliveryState['history']['error'],422);}catch(DomainException $failure){$cdProblem('history',$failure);}
+    try{$contributiondeliveryState['context']=$contributiondeliveryRequests->context($contributiondeliveryJob);}catch(DomainException $failure){$cdProblem('context',$failure);}
+    if(!$contributiondeliveryDraft&&!$contributiondeliveryState['receipt']&&!isset($_GET['contributionmail_receipt'])&&!isset($_GET['contributionmail_closed'])&&!$explicitHistory&&$contributiondeliveryState['errors']===[]&&$contributiondeliveryState['can_write']&&($contributiondeliveryState['context']['delivery']['status']??'sent')!=='sent')$contributiondeliveryDraft=ContributionDeliveryDraft::open($_SESSION,$contributiondeliveryActor,ContributionDeliveryInput::initial($contributiondeliveryJob),true);
+}catch(DomainException $failure){http_response_code(in_array($failure->getCode(),[403,404,409,422,503],true)?$failure->getCode():422);$error=\Kulturhus\Native\Language\ContributionDeliveryMessages::text($failure->getMessage(),$contributiondeliveryMessages);}
+catch(Throwable){http_response_code(503);$error=\Kulturhus\Native\Language\ContributionDeliveryMessages::text('Beitragsmailbereich konnte nicht geladen werden.',$contributiondeliveryMessages);}

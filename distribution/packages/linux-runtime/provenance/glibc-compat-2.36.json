@@ -1,0 +1,9 @@
+{
+  "package": "https://deb.debian.org/debian/pool/main/g/glibc/libc6_2.36-9+deb12u14_amd64.deb",
+  "sha256": "ba4f88f73dbc3ae9055f3c20f4523bfdbaf1ad13ff95e258924f77d20b4fbedf",
+  "files": {
+    "libdl.so.2": "95d521b2c39fd0333271b6fdcdddff878ae82001a304313a837b8e728ebe3cb1",
+    "libmvec.so.1": "1d3a6cfc6a5699b323adf25b53b62e128447661ae8ea1d46de88d0743a9599c5",
+    "librt.so.1": "41c72def458b8cfb6aab96a7dbada7454dd216d89aac65fb085eb52bead51def"
+  }
+}

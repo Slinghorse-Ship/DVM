@@ -1,0 +1,49 @@
+<?php declare(strict_types=1);
+require_once __DIR__.'/../../src/bootstrap.php';require_once __DIR__.'/balance-club-tax.php';require_once __DIR__.'/../../src/Finance/Balance/BalanceCombinedClubValues.php';require_once __DIR__.'/../../src/Finance/Balance/BalancePeriodCombinedValues.php';require_once __DIR__.'/../../src/Finance/Balance/BalancePeriodFilingValues.php';
+use Kulturhus\Verein\{BalanceCalculation as C,BalanceSegmentCalculation as S,BalanceClubTaxReport as R,BalanceTaxMapping as M,BalanceCombinedClubValues as V,BalanceWholeClubReport as W,BalanceTaxValues as T,AssetBooks,AssetOriginalDepreciation as O,BalanceAssetAllocation as A};
+function originalTechnicalClosingR62(int $year,string $code,bool $dated=false,bool $taxChanged=false,string $bad=''):array {
+ $technicalCode=$code;if(!in_array($technicalCode,['14980','39500'],true))throw new DomainException('Original technical account required.');$code='05200';$codes=[$code];
+ $chart=['bank'=>['name'=>'Synthetic actual bank','group'=>'cash','skr_code'=>'18000'],'capital'=>['name'=>'Synthetic capital','group'=>'equity','skr_code'=>'25000'],'sales'=>['name'=>'Synthetic original income','group'=>'revenue','skr_code'=>'']];
+ $line=static fn($a,$d,$c,$s='')=>['account'=>$a,'debit_cents'=>$d,'credit_cents'=>$c,'sphere'=>$s];$start=[$line('bank',5000000,0),$line('capital',0,5000000)];$entries=[];$items=[];$taxPlans=[];$shared=[];
+ $period=['start'=>$year.'-02-01','end'=>$year.'-09-30'];$totals=array_fill_keys(R::FIELDS,0);
+ $technicalAsset=$technicalCode==='14980';$chart['technical']=['name'=>'Original documented technical closing account','group'=>$technicalAsset?'other_assets':'liabilities','skr_code'=>$technicalCode];
+ if($bad==='opening'){$start[]=$line('technical',$technicalAsset?1000:0,$technicalAsset?0:1000);$start[]=$line('capital',$technicalAsset?0:1000,$technicalAsset?1000:0);}
+
+ foreach($codes as $i=>$assetCode){
+  $selected=$assetCode==='06700'?'62620':(in_array($assetCode,O::VEHICLES,true)?'62220':'');$key='fixed-'.$assetCode;$depKey='dep-'.($selected?:'62200');
+  $input=['basis'=>$assetCode==='06700'?'120,01':'1200,01','residual'=>'0,00','months'=>'60','acquired_on'=>$year.'-02-01','sphere'=>'4','account'=>$assetCode,'method'=>'linear_monthly','reason'=>'Synthetic independently reviewed actual regular single asset'];
+  if($selected!=='')$input['depreciation_code']=$selected;
+  if($bad==='wrong-kind')$input['account']='06300';if($bad==='immediate')$input['method']='gwg_immediate';if($bad==='forged')$input['depreciation_code']='62320';
+  $plan=AssetBooks::plan($input);$depCode=O::code($plan);$chart[$key]=['name'=>'Original synthetic single asset '.$assetCode,'group'=>'fixed_assets','skr_code'=>$assetCode];$chart[$depKey]=['name'=>'Original retained counter '.$depCode,'group'=>'expense','skr_code'=>$bad==='wrong-counter'?'62200':$depCode];
+  $purchase=['id'=>md5('synthetic-original-dep-purchase-'.$year.'-'.$assetCode),'date'=>$plan['acquired_on'],'lines'=>[$line($key,$plan['basis_cents'],0),$line('bank',0,$plan['basis_cents'])]];
+  $entries[]=$purchase;
+  if($dated)$s=\Kulturhus\Verein\BalancePeriodAssets::calculate($plan,$period);
+  else {$v=AssetBooks::schedule($plan,$year);$s=['cost_opening_cents'=>0,'additions_cents'=>$plan['basis_cents'],'cost_closing_cents'=>$plan['basis_cents'],'accumulated_opening_cents'=>0,'depreciation_cents'=>$v['depreciation_cents'],'accumulated_closing_cents'=>$v['depreciation_cents'],'book_opening_cents'=>0,'book_closing_cents'=>$v['closing_cents']];}
+  $dep=['id'=>md5('synthetic-original-dep-'.$year.'-'.$assetCode),'date'=>$dated?$period['end']:$year.'-12-31','lines'=>[$line($depKey,$s['depreciation_cents'],0,'4'),$line($key,0,$s['depreciation_cents'])]];$entries[]=$dep;
+  if($dated)$item=['item_id'=>$key,'name'=>'Original synthetic asset','posted'=>true,'fixed_account'=>$key,'plan'=>$plan,'schedule'=>$s];
+  else{$item=$s+['item_id'=>$key,'invoice_id'=>$purchase['id'],'receipt_number'=>'TEST-'.$assetCode,'account'=>$key,'skr_code'=>$assetCode,'sphere'=>'4','acquired_on'=>$plan['acquired_on'],'months'=>$plan['months'],'residual_cents'=>0,'expected_depreciation_cents'=>$s['depreciation_cents'],'acquisition_hash'=>hash('sha256',json_encode($purchase)),'depreciation_hash'=>hash('sha256',json_encode($dep))];if($selected!=='')$item['depreciation_code']=$selected;$shared[$key]=A::item($item,['first'=>2,'second'=>3],$year);}
+  $items[$key]=$item;foreach(R::FIELDS as $f)$totals[$f]+=$s[$f];
+  if($taxChanged)$taxPlans[$key]=['months'=>84,'depreciation_account'=>$depKey,'reason'=>'Synthetic separately confirmed tax useful life; original counter preserved','confirmed'=>true];
+ }
+ $firstId=md5('technical-provisional-'.$technicalCode.'-'.$year);$secondId=md5('technical-actual-reversal-'.$technicalCode.'-'.$year);
+ $first=$technicalAsset?[$line('technical',4000,0),$line('bank',0,4000)]:[$line('dep-62220',4000,0,'4'),$line('technical',0,4000)];
+ $reverse=$technicalAsset?[$line('bank',4000,0),$line('technical',0,4000)]:[$line('technical',4000,0),$line('dep-62220',0,4000,'4')];
+ $entries[]=['id'=>$firstId,'date'=>$year.'-06-01','description'=>'Actual original technical transition or provisional BWA depreciation','lines'=>$first];
+ if($bad!=='closing')$entries[]=['id'=>$secondId,'date'=>$year.($bad==='unfinished'?'-10-01':'-07-01'),'description'=>'Actual original full reversal; final true asset depreciation remains independently posted and supported','lines'=>$reverse];
+ $units=['ideal'=>['name'=>'Synthetic ideal','sphere'=>'1'],'capital'=>['name'=>'Synthetic assets','sphere'=>'2'],'culture'=>['name'=>'Synthetic culture','sphere'=>'3'],'food'=>['name'=>'Synthetic taxable food','sphere'=>'4']];$dest=[];
+ foreach($units as $unit=>$u){$id=md5('synthetic-original-dep-income-'.$year.'-'.$unit);$n=100001+count($dest)*31;$dest[$id]=$unit;$entries[]=['id'=>$id,'date'=>$year.'-08-01','lines'=>[$line('bank',$n,0),$line('sales',0,$n,$u['sphere'])]];}
+ if($bad==='unit-mismatch')$dest[$secondId]='ideal';
+ $source=['year'=>$year,'state'=>'closed','closed_sha256'=>hash('sha256',json_encode([$chart,$start,$entries])),'previous_sha256'=>null,'result_account'=>'capital','issues'=>[],'accounts'=>$chart,'opening'=>$start,'entries'=>$entries,'asset_schedule'=>$dated?['period'=>$period,'items'=>$items,'issues'=>[]]:['year'=>$year,'items'=>$items,'totals'=>$totals,'issues'=>[]]];
+ $source['calculation']=C::build($year,$chart,$start,$entries,$dated?$period:null);if($source['calculation']['issues'])throw new DomainException(implode(' ',$source['calculation']['issues']));
+ $source=array_replace(array_fill_keys(['year','state','closed_sha256','previous_sha256','result_account','issues','accounts','opening','entries','calculation','asset_schedule'],null),$source);if($dated)$source['period']=$period;
+ $alloc=[];foreach(S::sources($source) as $key=>$l)$alloc[$key]=['parts'=>[($dest[$l['voucher']]??'food')=>$l['cents']],'reason'=>'Synthetic original allocation'];
+ $shares=[];foreach($items as $key=>$item)$shares[$key]=['item_sha256'=>S::hash($item),'weights'=>['food'=>1],'measure'=>'uses','reason'=>'Synthetic documented single business use'];
+ if($dated){$a=S::build($source,$units,$alloc,[]);$w=\Kulturhus\Verein\BalanceInternalClearing::build('synthetic-original-dep',$source,$a['units'],$a['allocations'],['advances'=>[],'repayments'=>[]]);$statement=\Kulturhus\Verein\BalanceClearingStatement::build($source,$a,$w);$source['assets']=\Kulturhus\Verein\BalancePeriodAssetAllocation::build($source,$a['units'],$statement['units'],$shares);$ref=['revision'=>2,'sha256'=>hash('sha256','Synthetic original complete area review')];$income=\Kulturhus\Verein\BalanceClubIncomeReconciliation::rebuild(['schema'=>3,'kind'=>'club_income_reconciliation','club_id'=>'synthetic-original-dep','source'=>$source,'allocation'=>$a,'clearing'=>$w,'review'=>['allocation'=>$ref,'clearing'=>$ref],'previous'=>null]);$part=\Kulturhus\Verein\BalancePeriodClubReport::build($income);}
+ else{$state=clubTaxState($source,$units,$alloc,2,[],[],$shares);$part=R::fromState($state);}
+ $review=['year'=>$year,'journal_sha256'=>$part['closed_sha256'],'complete'=>true,'opening_adjustments'=>[],'current_adjustments'=>[],'asset_tax_plans'=>$taxPlans];
+ if($bad==='tax-nonzero')$review['current_adjustments']=[['id'=>'invalid-technical-tax-balance','reason'=>'Synthetic negative test of uncleared original tax technical balance','lines'=>$technicalAsset?[$line('technical',500,0),$line('bank',0,500)]:[$line('bank',500,0),$line('technical',0,500)]]];
+ if($dated){$review['period']=$period;$values=\Kulturhus\Verein\BalancePeriodCombinedValues::build($income,$review);$whole=\Kulturhus\Verein\BalancePeriodFilingValues::whole($source,array_replace($review,['journal_sha256'=>$source['closed_sha256'],'capital_movements'=>[]]));}
+ else{$values=V::build($state,['year'=>$year,'journal_sha256'=>$source['closed_sha256'],'complete'=>true,'taxable_review'=>$review]);$whole=T::build(W::fromReport($source),array_replace($review,['journal_sha256'=>$source['closed_sha256']]));}
+ return ['year'=>$year,'code'=>$technicalCode,'dated'=>$dated,'tax_changed'=>$taxChanged,'values'=>$values,'whole_taxable'=>$whole,'source'=>$source,'shared'=>$shared];
+}
+if(realpath($_SERVER['SCRIPT_FILENAME']??'')===__FILE__){set_error_handler(static function($s,$m,$f,$l){throw new ErrorException($m,0,$s,$f,$l);});echo json_encode(originalTechnicalClosingR62((int)$argv[1],$argv[2],($argv[3]??'')==='dated',($argv[4]??'')==='tax',$argv[5]??''),JSON_THROW_ON_ERROR|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);}

@@ -1,0 +1,106 @@
+{
+  "date": "2026-10-18",
+  "package_generation": 2026101558,
+  "accepted_source_tree": "77927671e76ac5cb9ba9dd03f993662db74d62d1",
+  "accepted_source_before": "/workspace/k-proofs/p12-account-candidate5-source-before.json",
+  "accepted_source_after": "/workspace/k-proofs/p12-account-candidate5-source-after.json",
+  "browser": {
+    "suite": "native-account-interface-browser",
+    "mode": "full",
+    "states": 72,
+    "checks": 3406,
+    "posts": 40,
+    "external_requests": 0,
+    "javascript_errors": [],
+    "live_transport": false
+  },
+  "services_and_original_guards": {
+    "suite": "native-account-interface",
+    "checks": 12,
+    "external_actions": 0
+  },
+  "neighbor_groups": {
+    "native-languages": 127,
+    "native-chat-push": 27,
+    "native-account-panels": 187,
+    "native-manager-settings": 19
+  },
+  "hosting": {
+    "actual_webspace_installer": "passed; shell functions disabled; widths 1440/820/390",
+    "native-http-gates": 52
+  },
+  "common_original_suites": [
+    "board-signature.php",
+    "form-validation.php"
+  ],
+  "package_contracts": {
+    "inventory": 6,
+    "archive": 9,
+    "verified_files": 5154,
+    "verified_bytes": 545935243
+  },
+  "syntax_php_files": 17,
+  "completed_prior_core": {
+    "source_tree": "2fa5d172dd5552fcd376fd4d40dfdacebd192496",
+    "groups": 313,
+    "failed": [],
+    "source_originals": "6900 exact; all groups cleaned",
+    "scope": "Earlier frozen frame source with later targeted CSS fixes. This is not a complete run of the current 314 groups or all browsers."
+  },
+  "candidate_history": [
+    {
+      "candidate": 1,
+      "issue": "Fixture incorrectly changed a derived native identity; exact-original guard detected the projection correction."
+    },
+    {
+      "candidate": 2,
+      "issue": "Separate HTTP client returned a sign-in redirect for the Secure localhost fixture session."
+    },
+    {
+      "candidate": 3,
+      "issue": "Localized client validation passed; separate-client stale probe still returned HTTP303."
+    },
+    {
+      "candidate": 4,
+      "scope": "Actions-only diagnostic, 128 browser conditions and 12 backend/original guards passed in the genuine browser session."
+    },
+    {
+      "candidate": 5,
+      "scope": "Full acceptance, including original local image preview under production CSP."
+    }
+  ],
+  "logs": [
+    {
+      "path": "/workspace/k-proofs/p12-account-candidate5-browser.log",
+      "sha256": "22885aa649cb8cf1a57ca28af1636109e4569b42bbab54cab8331f77a9cccef4"
+    },
+    {
+      "path": "/workspace/k-proofs/p12-account-candidate5-hosting.log",
+      "sha256": "bd6518ec63c114ae864f5d58b5f5c4f12280ab574f21618d072c9eccbdd52295"
+    },
+    {
+      "path": "/workspace/k-proofs/p12-account-candidate5-common.log",
+      "sha256": "e2cb7c6ba7617c32b403f08a83e56f4712fcd49ba7c0a80496bcaa837c18ada8"
+    },
+    {
+      "path": "/workspace/k-proofs/p12-account-candidate5-package.log",
+      "sha256": "394b3e47c61fecdeaa7c64efe221397ff08be533b1dffc0c5c1782b40db221ff"
+    },
+    {
+      "path": "/workspace/k-proofs/p12-account-candidate4-neighbors.log",
+      "sha256": "38575b0288547201af5a580aefaec2177946acdb770877bbf42947182bfbe107"
+    },
+    {
+      "path": "/workspace/k-proofs/p12-frame-candidate4-all.log",
+      "sha256": "22284633e90b1bba0ebc3306fe27b91da30cfebee42a6c65eb8c300e34c33449"
+    }
+  ],
+  "remaining": [
+    "P-12 specialist surfaces and their error/touch/keyboard flows",
+    "P-25 remaining registered browsers, comments NoJS diagnostic and final operating acceptance",
+    "Event-bound partial months; qualified SKR42 72500/72550",
+    "Original licensed ERiC runtime and physical iOS/iPadOS/Android device acceptance"
+  ],
+  "external_actions": 0,
+  "release_or_deployment": false
+}

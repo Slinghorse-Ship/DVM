@@ -1,0 +1,12 @@
+<?php declare(strict_types=1);
+function ownBalanceCorrectionProof(array$f):void{
+ $c=Kulturhus\Native\TestSupport::config();
+ if(PHP_SAPI!=='cli-server'||($_SERVER['REQUEST_METHOD']??'')!=='GET'||($c['owner']??'')!=='isolated-native-ci'||($c['label']??'')!=='native-balance-correction-interface'||($c['host']??'')!=='127.0.0.1'||($c['port']??0)!==13371||!preg_match('/\Akh_native_[a-f0-9]{24}\z/D',$c['database']??'')||!is_string($_SERVER['HTTP_X_OWNED_CORRECTION_PROOF']??null)||!hash_equals($f['data']['proof_nonce']??'',$_SERVER['HTTP_X_OWNED_CORRECTION_PROOF'])){http_response_code(403);exit;}
+ require_once dirname(__DIR__,2).'/src/autoload.php';require_once __DIR__.'/original-database-hash.php';$db=Kulturhus\Native\TestSupport::db();if($db->query('SELECT DATABASE()')->fetchColumn()!==$c['database']||(int)$db->query('SELECT MAX(version)FROM schema_migrations')->fetchColumn()!==135){http_response_code(403);exit;}
+ $tables=array_values(array_diff($db->query('SHOW TABLES')->fetchAll(PDO::FETCH_COLUMN),['native_auth_sessions','native_auth_limits','native_language_preferences']));$baseline=$f['data']['proof_baseline'];
+ $filter=static fn(string$t):array=>match($t){'balance_closing_corrections'=>[' WHERE club_id<>? OR tax_year<>? OR revision<=?',['own-correction-interface',2025,$baseline['revision']]],'audit_events'=>[' WHERE sequence<=?',[$baseline['audit']]],default=>['',[]]};
+ $q=$db->prepare("SELECT club_id,tax_year,revision,payload,sha256 FROM balance_closing_corrections WHERE club_id='own-correction-interface' AND tax_year=2025 ORDER BY revision");$q->execute();$records=$q->fetchAll(PDO::FETCH_ASSOC);$q=$db->prepare('SELECT * FROM audit_events WHERE sequence>? ORDER BY sequence');$q->execute([$baseline['audit']]);
+ $s=(new Kulturhus\Verein\BalanceClosingCorrections($db,'corr-board'))->get(2025);
+ header('Content-Type: application/json; charset=UTF-8');header('Cache-Control: no-store');
+ echo json_encode(['whole_protected_sha256'=>ownOriginalDatabaseHash($db,$tables,$filter),'state'=>$s,'records'=>$records,'audits'=>$q->fetchAll(PDO::FETCH_ASSOC)],JSON_THROW_ON_ERROR|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+}

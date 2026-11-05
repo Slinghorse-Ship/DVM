@@ -1,0 +1,9 @@
+<?php declare(strict_types=1);
+require __DIR__.'/../src/bootstrap.php';use Kulturhus\Verein\{Database,ClubChat};
+$db=\Kulturhus\Verein\Tests\MySqlFixture::connect(':memory:');Database::migrate($db);$db->exec("INSERT INTO clubs VALUES('a','A'),('b','B');INSERT INTO actors(id,club_id,role) VALUES('owner','a','member'),('peer','a','member'),('new','a','member'),('foreign','b','member')");$c=new ClubChat($db,'owner');$peer=new ClubChat($db,'peer');
+function ok(bool $v,string $m):void{if(!$v)throw new RuntimeException($m);echo "PASS $m\n";}function denied(callable $f,string $m):void{try{$f();}catch(DomainException){ok(true,$m);return;}throw new RuntimeException($m);}
+$id=$c->create('Test',['peer']);$c->send($id,'Original',bin2hex(random_bytes(16)));$original=$c->messages($id)[0];
+denied(fn()=>$peer->addPeople($id,['new']),'only owner adds people');denied(fn()=>$c->addPeople($id,['foreign']),'foreign club excluded');$c->addPeople($id,['new']);$c->addPeople($id,['new']);ok(count($c->people($id))===3,'participant addition idempotent');ok(count((new ClubChat($db,'new'))->messages($id))===1,'added person can read history');
+denied(fn()=>$peer->editMessage($id,(int)$original['seq'],'Changed',ClubChat::editToken($original)),'cannot edit another author');$c->editMessage($id,(int)$original['seq'],'Changed',ClubChat::editToken($original));$updated=$c->messages($id)[0];ok($updated['body']==='Changed'&&(int)$updated['edit_revision']>0,'own edit visible with revision');denied(fn()=>$c->editMessage($id,(int)$original['seq'],'Stale',ClubChat::editToken($original)),'stale edit rejected');
+$c->editMessage($id,(int)$updated['seq'],'Original',ClubChat::editToken($updated));denied(fn()=>$c->editMessage($id,(int)$original['seq'],'ABA',ClubChat::editToken($original)),'returning to old text does not revive stale token');
+$c->leave($id);denied(fn()=>$c->messages($id),'departed author loses access');

@@ -1,0 +1,18 @@
+<?php declare(strict_types=1);
+require dirname(__DIR__,2).'/vendor/autoload.php';
+require __DIR__.'/native-document-interface.php';
+require __DIR__.'/support/outgoing-mail-contracts.php';
+$db->exec("INSERT INTO actors(id,club_id,role,is_superuser)VALUES('own-outgoing-general','own-list-club','members',0),('own-outgoing-finance','own-list-club','member',0);INSERT INTO settings_roles(club_id,id,name,description,members_access,finance_access,settings_access,version)VALUES('own-list-club','own-outgoing-finance','Own Finance without General','','none','write',0,1);INSERT INTO settings_role_assignments VALUES('own-outgoing-finance','own-list-club','own-outgoing-finance',1)");
+$outgoingMailFixture=ownOutgoingMailContracts($db,$check);
+require __DIR__.'/support/outgoing-mail-failures.php';
+$outgoingMailFaults=ownOutgoingMailFailures($db,$check,$outgoingMailFixture,\Kulturhus\Native\TestSupport::config());
+require __DIR__.'/support/outgoing-mail-worker.php';
+$outgoingMailWorker=ownOutgoingMailWorker($db,$check,$outgoingMailFixture,\Kulturhus\Native\TestSupport::config());
+require __DIR__.'/support/outgoing-mail-sources.php';
+$outgoingMailSources=ownOutgoingMailSources($db,$check,$outgoingMailFixture,\Kulturhus\Native\TestSupport::config());
+require __DIR__.'/support/outgoing-mail-processes.php';
+ownOutgoingMailProcesses($db,$check,$outgoingMailFixture,$outgoingMailSources,\Kulturhus\Native\TestSupport::config());
+require __DIR__.'/support/outgoing-mail-corrections.php';
+ownOutgoingMailCorrections($db,$check,$outgoingMailFixture,$outgoingMailSources);
+if(getenv('DVM_OUTGOING_MAIL_INTERFACE_BROWSER')==='1')require __DIR__.'/support/outgoing-mail-browser-fixture.php';
+echo json_encode(['suite'=>'native-outgoing-mail-interface','checks'=>$n,'external_actions'=>0],JSON_THROW_ON_ERROR)."\n";

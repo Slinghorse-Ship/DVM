@@ -1,0 +1,957 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-09-07",
+  "navigation_source": "vereinsverwaltung/src/Navigation.php",
+  "navigation_sha256": "fd61ef990a46b2658befd8966972dff83a806b5e947fce59d5069893b711b119",
+  "review_method": "Alle Navigation.php-Gruppen und Routen vollständig zugeordnet; Kapitelaufgaben und konkrete Menüwege redaktionell geprüft. explained bezeichnet vorhandene Aufgabenabdeckung, keine vollständige Live-Funktionsabnahme. Detailprüfung gegen Views in Kapiteln 1, 11, 17, 18; keine Live-Mutationen.",
+  "groups": [
+    {
+      "label": "Start",
+      "routes": [
+        {
+          "label": "Dashboard",
+          "route": {
+            "view": "dashboard"
+          },
+          "chapter": 1,
+          "file": "docs/vereinsverwaltung/handbuch/01-start.md",
+          "status": "explained",
+          "tasks": [
+            "Dashboard lesen und eine Aufgabe beginnen"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Kontakte",
+      "routes": [
+        {
+          "label": "Geschütztes Archiv",
+          "route": {
+            "view": "members",
+            "tab": "archive"
+          },
+          "chapter": 5,
+          "file": "docs/vereinsverwaltung/handbuch/05-austritt-archiv.md",
+          "status": "explained",
+          "tasks": [
+            "Ein archiviertes Profil finden und prüfen",
+            "Ein Profil wiederherstellen"
+          ]
+        },
+        {
+          "label": "Kontakte",
+          "route": {
+            "view": "members",
+            "list": "contacts"
+          },
+          "chapter": 2,
+          "file": "docs/vereinsverwaltung/handbuch/02-kontakte-mitglieder.md",
+          "status": "explained",
+          "tasks": [
+            "Eine vorhandene Person finden",
+            "Eine Person zunächst nur als Kontakt anlegen",
+            "Kontaktdaten oder Eintritt korrigieren",
+            "Listen filtern, Spalten wählen und eine Auswahl exportieren"
+          ]
+        },
+        {
+          "label": "Geburtstage",
+          "route": {
+            "view": "members",
+            "list": "birthdays"
+          },
+          "chapter": 2,
+          "file": "docs/vereinsverwaltung/handbuch/02-kontakte-mitglieder.md",
+          "status": "explained",
+          "tasks": [
+            "Geburtstage und Jubiläen ansehen"
+          ]
+        },
+        {
+          "label": "Listen",
+          "route": {
+            "view": "members",
+            "list": "contacts",
+            "show_lists": "1"
+          },
+          "chapter": 2,
+          "file": "docs/vereinsverwaltung/handbuch/02-kontakte-mitglieder.md",
+          "status": "explained",
+          "tasks": [
+            "Eine Filterliste speichern oder einen Favoriten merken"
+          ]
+        },
+        {
+          "label": "Favoriten",
+          "route": {
+            "view": "contacts-extra",
+            "tab": "favourites"
+          },
+          "chapter": 2,
+          "file": "docs/vereinsverwaltung/handbuch/02-kontakte-mitglieder.md",
+          "status": "explained",
+          "tasks": [
+            "Eine Filterliste speichern oder einen Favoriten merken"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Mitglieder",
+      "routes": [
+        {
+          "label": "Mitgliedsanträge",
+          "route": {
+            "view": "portal",
+            "tab": "application"
+          },
+          "chapter": 6,
+          "file": "docs/vereinsverwaltung/handbuch/06-aufnahmeantraege.md",
+          "status": "explained",
+          "tasks": [
+            "Einen eingegangenen Antrag öffnen",
+            "Einen Papier- oder anderweitig vorliegenden Antrag erfassen",
+            "Eine Online-Abstimmung eröffnen und persönlich abstimmen",
+            "Eine einstimmig beschlossene Aufnahme abschließen"
+          ]
+        },
+        {
+          "label": "Aktuelle Mitglieder",
+          "route": {
+            "view": "members",
+            "list": "current"
+          },
+          "chapter": 2,
+          "file": "docs/vereinsverwaltung/handbuch/02-kontakte-mitglieder.md",
+          "status": "explained",
+          "tasks": [
+            "Eine vorhandene Person finden",
+            "Ein bereits beschlossenes Mitglied direkt anlegen",
+            "Kontaktdaten oder Eintritt korrigieren",
+            "Listen filtern, Spalten wählen und eine Auswahl exportieren"
+          ]
+        },
+        {
+          "label": "Alle Mitglieder",
+          "route": {
+            "view": "members",
+            "list": "members"
+          },
+          "chapter": 2,
+          "file": "docs/vereinsverwaltung/handbuch/02-kontakte-mitglieder.md",
+          "status": "explained",
+          "tasks": [
+            "Eine vorhandene Person finden",
+            "Listen filtern, Spalten wählen und eine Auswahl exportieren"
+          ]
+        },
+        {
+          "label": "Ehemalige Mitglieder",
+          "route": {
+            "view": "members",
+            "list": "members",
+            "status": "ehemalig"
+          },
+          "chapter": 2,
+          "file": "docs/vereinsverwaltung/handbuch/02-kontakte-mitglieder.md",
+          "status": "explained",
+          "tasks": [
+            "Eine vorhandene Person finden",
+            "Listen filtern, Spalten wählen und eine Auswahl exportieren"
+          ]
+        },
+        {
+          "label": "Jubiläumsliste",
+          "route": {
+            "view": "members-extra",
+            "tab": "anniversaries"
+          },
+          "chapter": 2,
+          "file": "docs/vereinsverwaltung/handbuch/02-kontakte-mitglieder.md",
+          "status": "explained",
+          "tasks": [
+            "Geburtstage und Jubiläen ansehen"
+          ]
+        },
+        {
+          "label": "Listen",
+          "route": {
+            "view": "members",
+            "list": "members",
+            "show_lists": "1"
+          },
+          "chapter": 2,
+          "file": "docs/vereinsverwaltung/handbuch/02-kontakte-mitglieder.md",
+          "status": "explained",
+          "tasks": [
+            "Eine Filterliste speichern oder einen Favoriten merken"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Finanzen",
+      "routes": [
+        {
+          "label": "Beitragsmails",
+          "route": {
+            "view": "finance",
+            "tab": "contribution-mails"
+          },
+          "chapter": 7,
+          "file": "docs/vereinsverwaltung/handbuch/07-beitraege-rechnungen-zahlungen.md",
+          "status": "explained",
+          "tasks": [
+            "Beitragsmails und Zahlungserinnerungen prüfen"
+          ]
+        },
+        {
+          "label": "Vereinsvermögen",
+          "route": {
+            "view": "inventory",
+            "tab": "assets"
+          },
+          "chapter": 15,
+          "file": "docs/vereinsverwaltung/handbuch/15-inventar-lager-ausleihen.md",
+          "status": "explained",
+          "tasks": [
+            "Vereinsvermögen und Handkasse richtig lesen"
+          ]
+        },
+        {
+          "label": "Bank & Kasse",
+          "route": {
+            "view": "finance",
+            "tab": "bank"
+          },
+          "chapter": 8,
+          "file": "docs/vereinsverwaltung/handbuch/08-bank-und-kasse.md",
+          "status": "explained",
+          "tasks": [
+            "Ein Offlinekonto oder eine Handkasse anlegen",
+            "Einen tatsächlich erfolgten Geldfluss dokumentieren",
+            "Ungeklärte Umsätze finden und auf mehrere Belege verteilen",
+            "Kassenbuch für einen Zeitraum prüfen und exportieren",
+            "Eine gezählte Kasse abschließen",
+            "Bankverbindung und Sandbox richtig unterscheiden"
+          ]
+        },
+        {
+          "label": "Beitragsabrechnung",
+          "route": {
+            "view": "finance",
+            "tab": "contributions"
+          },
+          "chapter": 7,
+          "file": "docs/vereinsverwaltung/handbuch/07-beitraege-rechnungen-zahlungen.md",
+          "status": "explained",
+          "tasks": [
+            "Einen offenen Beitrag und seine Rechnung finden"
+          ]
+        },
+        {
+          "label": "Belege",
+          "route": {
+            "view": "finance",
+            "tab": "receipts"
+          },
+          "chapter": 7,
+          "file": "docs/vereinsverwaltung/handbuch/07-beitraege-rechnungen-zahlungen.md",
+          "status": "explained",
+          "tasks": [
+            "Eine Ausgabe oder Einnahme mit mehreren Positionen erfassen",
+            "Eine vorhandene Zahlung zuordnen oder aufteilen",
+            "Eine noch nicht dokumentierte Zahlung erfassen",
+            "Beleglisten filtern, sortieren und durchblättern"
+          ]
+        },
+        {
+          "label": "Lastschriften",
+          "route": {
+            "view": "finance",
+            "tab": "debit"
+          },
+          "chapter": 7,
+          "file": "docs/vereinsverwaltung/handbuch/07-beitraege-rechnungen-zahlungen.md",
+          "status": "explained",
+          "tasks": [
+            "Lastschriften: den vorhandenen Stand erkennen"
+          ]
+        },
+        {
+          "label": "Finanzexport",
+          "route": {
+            "view": "finance",
+            "tab": "export"
+          },
+          "chapter": 9,
+          "file": "docs/vereinsverwaltung/handbuch/09-finanzexport.md",
+          "status": "explained",
+          "tasks": [
+            "Eine Belegliste oder ein Paket mit Originaldateien herunterladen",
+            "Einen DATEV-Zahlungsstapel vorbereiten und prüfen"
+          ]
+        },
+        {
+          "label": "Körperschaftsteuer & ELSTER",
+          "route": {
+            "view": "finance",
+            "tab": "tax"
+          },
+          "chapter": 19,
+          "file": "docs/vereinsverwaltung/handbuch/19-steuerunterlagen-und-einstellungen.md",
+          "status": "explained",
+          "tasks": [
+            "Ein Unterlagenpaket für ein bis drei Kalenderjahre vorbereiten",
+            "Die vollständige Paketvorschau kontrollieren und ablegen",
+            "In ELSTER weiterarbeiten und Abgabeunterlagen aufbewahren"
+          ]
+        },
+        {
+          "label": "Auswertungen",
+          "route": {
+            "view": "finance",
+            "tab": "reports"
+          },
+          "chapter": 9,
+          "file": "docs/vereinsverwaltung/handbuch/09-finanzexport.md",
+          "status": "explained",
+          "tasks": [
+            "Einnahmen und Ausgaben für ein Quartal auswerten",
+            "Tabellenanzeige durchsuchen, ohne den Export zu verändern",
+            "Das Buchungsjournal prüfen"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Spenden",
+      "routes": [
+        {
+          "label": "Geldspenden",
+          "route": {
+            "view": "donations",
+            "tab": "money"
+          },
+          "chapter": 10,
+          "file": "docs/vereinsverwaltung/handbuch/10-spenden.md",
+          "status": "explained",
+          "tasks": [
+            "Eine Geldspende erfassen und ihre Zahlung zuordnen",
+            "Den eindeutigen Spenderkontakt verbinden",
+            "Einen PDF-Entwurf der Zuwendungsbestätigung prüfen",
+            "Eine Bescheinigung zur Unterschrift erstellen und aufbewahren",
+            "Eine fehlerhafte ausgestellte Bescheinigung stornieren"
+          ]
+        },
+        {
+          "label": "Sachspenden",
+          "route": {
+            "view": "donations",
+            "tab": "goods"
+          },
+          "chapter": 10,
+          "file": "docs/vereinsverwaltung/handbuch/10-spenden.md",
+          "status": "explained",
+          "tasks": [
+            "Eine Sachspende mit Bewertungsnachweis erfassen",
+            "Einen PDF-Entwurf der Zuwendungsbestätigung prüfen",
+            "Eine Bescheinigung zur Unterschrift erstellen und aufbewahren",
+            "Eine fehlerhafte ausgestellte Bescheinigung stornieren"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Orga",
+      "routes": [
+        {
+          "label": "Mitgliederversammlung",
+          "route": {
+            "view": "calendar",
+            "new_event": "1",
+            "meeting": "1"
+          },
+          "chapter": 13,
+          "file": "docs/vereinsverwaltung/handbuch/13-kalender-versammlung-protokolle.md",
+          "status": "explained",
+          "tasks": [
+            "Eine Mitgliederversammlung vorbereiten",
+            "Eine Termineinladung per E-Mail senden",
+            "Einladungsbriefe für Personen ohne E-Mail erstellen"
+          ]
+        },
+        {
+          "label": "Material",
+          "route": {
+            "view": "material"
+          },
+          "chapter": 15,
+          "file": "docs/vereinsverwaltung/handbuch/15-inventar-lager-ausleihen.md",
+          "status": "explained",
+          "tasks": [
+            "Material und verfügbare Mengen ansehen"
+          ]
+        },
+        {
+          "label": "GEMA",
+          "route": {
+            "view": "gema"
+          },
+          "chapter": 14,
+          "file": "docs/vereinsverwaltung/handbuch/14-gema.md",
+          "status": "explained",
+          "tasks": [
+            "Die GEMA-Übersicht und eine Veranstaltung öffnen",
+            "Die Anmeldung vermerken",
+            "Kostenübernahme und vorhandene Nachweise nachsehen",
+            "Die Musikliste möglichst von der Band einreichen lassen"
+          ]
+        },
+        {
+          "label": "Inventar & Ausleihe",
+          "route": {
+            "view": "inventory",
+            "tab": "where"
+          },
+          "chapter": 15,
+          "file": "docs/vereinsverwaltung/handbuch/15-inventar-lager-ausleihen.md",
+          "status": "explained",
+          "tasks": [
+            "Herausfinden: Wo ist ein Gegenstand?",
+            "Einen Gegenstand anlegen",
+            "Vorhandenen Bestand erfassen oder verbrauchtes Material abziehen",
+            "Umlagern, sperren, reparieren oder aussondern",
+            "Eine Bestandszählung korrigierend eintragen",
+            "Fotos, Nachweise, Anschaffungsbeleg und Wert ergänzen",
+            "Inventarlisten exportieren oder Einträge archivieren"
+          ]
+        },
+        {
+          "label": "Lagerorte",
+          "route": {
+            "view": "inventory",
+            "tab": "locations"
+          },
+          "chapter": 15,
+          "file": "docs/vereinsverwaltung/handbuch/15-inventar-lager-ausleihen.md",
+          "status": "explained",
+          "tasks": [
+            "Einen Lagerort anlegen oder korrigieren",
+            "Umlagern, sperren, reparieren oder aussondern"
+          ]
+        },
+        {
+          "label": "Ausleihen",
+          "route": {
+            "view": "inventory",
+            "tab": "loans"
+          },
+          "chapter": 15,
+          "file": "docs/vereinsverwaltung/handbuch/15-inventar-lager-ausleihen.md",
+          "status": "explained",
+          "tasks": [
+            "Eine Ausleihe mit mehreren Gegenständen reservieren",
+            "Reservierte Gegenstände tatsächlich ausgeben",
+            "Eine vollständige oder teilweise Rückgabe erfassen",
+            "Frist, Aufenthaltsort und Verlauf prüfen"
+          ]
+        },
+        {
+          "label": "Fristen & Nachweise",
+          "route": {
+            "view": "documents",
+            "tab": "checks"
+          },
+          "chapter": 12,
+          "file": "docs/vereinsverwaltung/handbuch/12-fristen-nachweise.md",
+          "status": "explained",
+          "tasks": [
+            "Die Nachweisübersicht verstehen",
+            "Einen Nachweis mit Datei und Frist erfassen",
+            "Eine fehlende Genehmigung vorab verfolgen",
+            "Eine Police oder Bescheinigung verlängern",
+            "Überwachung beenden und später wieder aufnehmen"
+          ]
+        },
+        {
+          "label": "Dokumente",
+          "route": {
+            "view": "documents"
+          },
+          "chapter": 11,
+          "file": "docs/vereinsverwaltung/handbuch/11-dokumente.md",
+          "status": "explained",
+          "tasks": [
+            "Die Ablage öffnen und eine Datei wiederfinden",
+            "Eine oder mehrere Dateien zum selben Vorgang ablegen",
+            "Fünf Dokumente zu einer Rechnung und fünf zu einer Person zuordnen",
+            "Eine falsche Auswahl oder einen Uploadfehler vor dem Speichern korrigieren",
+            "Titel, Datum oder Zuordnung eines gespeicherten Dokuments ändern",
+            "Eine neuere Dateifassung ergänzen und alte Versionen ansehen",
+            "Ordner anlegen, Dokumente archivieren und Zugriffsrechte verstehen",
+            "Ein Dokument persönlich für ein Mitglied freigeben"
+          ]
+        },
+        {
+          "label": "Sendungen",
+          "route": {
+            "view": "messages"
+          },
+          "chapter": 16,
+          "file": "docs/vereinsverwaltung/handbuch/16-sendungen-und-chat.md",
+          "status": "explained",
+          "tasks": [
+            "Einen Rundbrief als Entwurf vorbereiten",
+            "Empfänger mit der Suche gezielt auswählen",
+            "Eine Vorschau prüfen und den Versand bewusst beauftragen",
+            "Serienbriefe für den Postweg erzeugen",
+            "Einen einzelnen Brief schreiben und als PDF ablegen"
+          ]
+        },
+        {
+          "label": "Freie Listen",
+          "route": {
+            "view": "free"
+          },
+          "chapter": 20,
+          "file": "docs/vereinsverwaltung/handbuch/20-freie-listen-hilfe.md",
+          "status": "explained",
+          "tasks": [
+            "Eine vorhandene freie Liste öffnen",
+            "Eine Aufgabenliste neu anlegen",
+            "Eine Zeile hinzufügen oder eine Zelle ändern",
+            "Mehrere Zeilen kopieren, archivieren oder zurückholen",
+            "Spalten oder Listentitel anpassen",
+            "Eine Liste persönlich freigeben",
+            "Eine CSV-Datei in eine freie Liste übernehmen",
+            "Eine Liste exportieren oder als eigene Vorlage kopieren",
+            "Eine ganze Liste archivieren und wiederherstellen"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Vereinsportal",
+      "routes": [
+        {
+          "label": "Kalender",
+          "route": {
+            "view": "calendar"
+          },
+          "chapter": 13,
+          "file": "docs/vereinsverwaltung/handbuch/13-kalender-versammlung-protokolle.md",
+          "status": "explained",
+          "tasks": [
+            "Termine im Kalender finden",
+            "Einen internen Termin anlegen",
+            "Eine Termineinladung per E-Mail senden",
+            "Einladungsbriefe für Personen ohne E-Mail erstellen",
+            "Als eingeladenes Mitglied zu- oder absagen",
+            "Eine Website-Veranstaltung ansehen oder einen Termin korrigieren"
+          ]
+        },
+        {
+          "label": "Protokolle",
+          "route": {
+            "view": "minutes"
+          },
+          "chapter": 13,
+          "file": "docs/vereinsverwaltung/handbuch/13-kalender-versammlung-protokolle.md",
+          "status": "explained",
+          "tasks": [
+            "Protokolle finden und lesen",
+            "Ein Protokoll schreiben oder als PDF übernehmen",
+            "Ein Protokoll freigeben, korrigieren oder archivieren"
+          ]
+        },
+        {
+          "label": "Chat",
+          "route": {
+            "view": "chat"
+          },
+          "chapter": 16,
+          "file": "docs/vereinsverwaltung/handbuch/16-sendungen-und-chat.md",
+          "status": "explained",
+          "tasks": [
+            "Eine neue Unterhaltung erstellen und eine Nachricht senden",
+            "Nachrichten korrigieren und ältere Nachrichten lesen",
+            "Teilnehmer ergänzen, Unterhaltung verlassen und Push verwalten"
+          ]
+        },
+        {
+          "label": "Sicher helfen",
+          "route": {
+            "view": "portal",
+            "tab": "safety"
+          },
+          "chapter": 12,
+          "file": "docs/vereinsverwaltung/handbuch/12-fristen-nachweise.md",
+          "status": "explained",
+          "tasks": [
+            "Als Mitglied Informationen zu Hygiene, Ausschank und Erster Hilfe finden",
+            "Eine Ehrenamtsbestätigung vorausfüllen"
+          ]
+        },
+        {
+          "label": "Meine Belege",
+          "route": {
+            "view": "portal",
+            "tab": "documents"
+          },
+          "chapter": 7,
+          "file": "docs/vereinsverwaltung/handbuch/07-beitraege-rechnungen-zahlungen.md",
+          "status": "explained",
+          "tasks": [
+            "Eigene Rechnungen und persönlich freigegebene Dokumente herunterladen"
+          ]
+        },
+        {
+          "label": "Mein Profil",
+          "route": {
+            "view": "portal",
+            "tab": "own"
+          },
+          "chapter": 2,
+          "file": "docs/vereinsverwaltung/handbuch/02-kontakte-mitglieder.md",
+          "status": "explained",
+          "tasks": [
+            "Als Mitglied die eigenen Angaben öffnen"
+          ]
+        },
+        {
+          "label": "Mitgliederausweis",
+          "route": {
+            "view": "portal",
+            "tab": "card"
+          },
+          "chapter": 3,
+          "file": "docs/vereinsverwaltung/handbuch/03-familien-zugaenge.md",
+          "status": "explained",
+          "tasks": [
+            "Den Mitgliederausweis erstellen, drucken und sperren"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Website",
+      "routes": [
+        {
+          "label": "Übersicht",
+          "route": {
+            "view": "website"
+          },
+          "chapter": 17,
+          "file": "docs/vereinsverwaltung/handbuch/17-website.md",
+          "status": "explained",
+          "tasks": [
+            "Website-Übersicht und öffentliche Ansicht unterscheiden"
+          ]
+        },
+        {
+          "label": "Seiten",
+          "route": {
+            "view": "website",
+            "tab": "pages"
+          },
+          "chapter": 17,
+          "file": "docs/vereinsverwaltung/handbuch/17-website.md",
+          "status": "explained",
+          "tasks": [
+            "Eine vorhandene Website-Seite ändern",
+            "Getrennte Textentwürfe und ihre alten Fassungen ansehen"
+          ]
+        },
+        {
+          "label": "Aktuelles",
+          "route": {
+            "view": "website",
+            "tab": "news"
+          },
+          "chapter": 17,
+          "file": "docs/vereinsverwaltung/handbuch/17-website.md",
+          "status": "explained",
+          "tasks": [
+            "Aktuelles als Entwurf vorbereiten oder veröffentlichen",
+            "Getrennte Textentwürfe und ihre alten Fassungen ansehen"
+          ]
+        },
+        {
+          "label": "Fotogalerie",
+          "route": {
+            "view": "website",
+            "tab": "gallery"
+          },
+          "chapter": 17,
+          "file": "docs/vereinsverwaltung/handbuch/17-website.md",
+          "status": "explained",
+          "tasks": [
+            "Ein Fotoalbum anlegen und Bilder hineinziehen",
+            "Bildbeschreibungen, einzelne Fotos und Albumreihenfolge ändern"
+          ]
+        },
+        {
+          "label": "Veranstaltungen",
+          "route": {
+            "view": "website",
+            "tab": "events"
+          },
+          "chapter": 17,
+          "file": "docs/vereinsverwaltung/handbuch/17-website.md",
+          "status": "explained",
+          "tasks": [
+            "Kommende Veranstaltungen und das Programmarchiv finden",
+            "Vorbereitete Meta-Archivdaten ins öffentliche Programmarchiv übernehmen"
+          ]
+        },
+        {
+          "label": "Newsletter",
+          "route": {
+            "view": "website",
+            "tab": "newsletter"
+          },
+          "chapter": 18,
+          "file": "docs/vereinsverwaltung/handbuch/18-newsletter.md",
+          "status": "explained",
+          "tasks": [
+            "Einen Newsletter beginnen und Betreff sowie Zielgruppe festlegen",
+            "Einen Textabsatz schreiben und lesbar gestalten",
+            "Abschnitte verschieben, kopieren oder entfernen",
+            "Ein Bild in den Newsletter einsetzen",
+            "Einen anklickbaren Link oder eine Schaltfläche einfügen",
+            "Eine Veranstaltung aus dem Programm einfügen",
+            "Computer-, Handy- und vollständige Vorschau prüfen",
+            "Eine Testmail senden und erst danach den Versand einplanen",
+            "Newsletter-Automatik einstellen"
+          ]
+        },
+        {
+          "label": "Empfänger & Kontakte",
+          "route": {
+            "view": "website",
+            "tab": "recipients"
+          },
+          "chapter": 18,
+          "file": "docs/vereinsverwaltung/handbuch/18-newsletter.md",
+          "status": "explained",
+          "tasks": [
+            "Empfängerstatus prüfen und eine schriftliche Einwilligung erfassen"
+          ]
+        },
+        {
+          "label": "Social Media",
+          "route": {
+            "view": "website",
+            "tab": "social"
+          },
+          "chapter": 18,
+          "file": "docs/vereinsverwaltung/handbuch/18-newsletter.md",
+          "status": "explained",
+          "tasks": [
+            "Social-Media-Entwürfe bearbeiten und einen Kanal bewusst veröffentlichen"
+          ]
+        },
+        {
+          "label": "Presse",
+          "route": {
+            "view": "website",
+            "tab": "press"
+          },
+          "chapter": 18,
+          "file": "docs/vereinsverwaltung/handbuch/18-newsletter.md",
+          "status": "explained",
+          "tasks": [
+            "Presseempfänger anlegen oder ändern",
+            "Eine Pressemitteilung vorbereiten, prüfen und versenden"
+          ]
+        },
+        {
+          "label": "Technik",
+          "route": {
+            "view": "website",
+            "tab": "technical"
+          },
+          "chapter": 17,
+          "file": "docs/vereinsverwaltung/handbuch/17-website.md",
+          "status": "explained",
+          "tasks": [
+            "Technik: vergangene Facebook-Termine in den internen Kalender übernehmen",
+            "Technik: Verbindungen und Veröffentlichungseinstellungen pflegen",
+            "Ausschließlich registrierte Testdateien bereinigen"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Einstellungen",
+      "routes": [
+        {
+          "label": "Vereinsdaten",
+          "route": {
+            "view": "settings"
+          },
+          "chapter": 19,
+          "file": "docs/vereinsverwaltung/handbuch/19-steuerunterlagen-und-einstellungen.md",
+          "status": "explained",
+          "tasks": [
+            "Vereinsadresse und Rechnungsbankverbindung pflegen",
+            "Steuerbescheid und Angaben für Zuwendungsbescheinigungen hinterlegen",
+            "Absenderdaten und persönliche Anzeigeoptionen ändern",
+            "Briefanreden und vorbereitete Zusatzfelder bearbeiten",
+            "Steuerkonten suchen und für neue Kontierungen verwalten",
+            "Buchungsschlüssel nachschlagen"
+          ]
+        },
+        {
+          "label": "Account",
+          "route": {
+            "view": "settings",
+            "tab": "account"
+          },
+          "chapter": 19,
+          "file": "docs/vereinsverwaltung/handbuch/19-steuerunterlagen-und-einstellungen.md",
+          "status": "explained",
+          "tasks": [
+            "Absenderdaten und persönliche Anzeigeoptionen ändern",
+            "Zwei-Faktor-Anmeldung per E-Mail ein- oder ausschalten"
+          ]
+        },
+        {
+          "label": "Rollen & Rechte",
+          "route": {
+            "view": "settings",
+            "tab": "roles"
+          },
+          "chapter": 19,
+          "file": "docs/vereinsverwaltung/handbuch/19-steuerunterlagen-und-einstellungen.md",
+          "status": "explained",
+          "tasks": [
+            "Eine Vereinsrolle erstellen oder gezielt ändern",
+            "Eine Rolle einem Zugang zuweisen",
+            "Ein vorhandenes Website-Konto mit dem Vereinsmanager verbinden",
+            "Superuser und persönliche Vorstandsstimme unterscheiden"
+          ]
+        },
+        {
+          "label": "Nummernkreis",
+          "route": {
+            "view": "settings",
+            "tab": "numbers"
+          },
+          "chapter": 19,
+          "file": "docs/vereinsverwaltung/handbuch/19-steuerunterlagen-und-einstellungen.md",
+          "status": "explained",
+          "tasks": [
+            "Nummernkreise für neue Belege einstellen"
+          ]
+        },
+        {
+          "label": "Beiträge & Spenden",
+          "route": {
+            "view": "settings",
+            "tab": "rates"
+          },
+          "chapter": 19,
+          "file": "docs/vereinsverwaltung/handbuch/19-steuerunterlagen-und-einstellungen.md",
+          "status": "explained",
+          "tasks": [
+            "Beitrags-, Spenden- und Leistungssätze anlegen",
+            "Einen zusätzlichen Tarif zuweisen und beenden"
+          ]
+        },
+        {
+          "label": "Leistungen",
+          "route": {
+            "view": "settings",
+            "tab": "services"
+          },
+          "chapter": 19,
+          "file": "docs/vereinsverwaltung/handbuch/19-steuerunterlagen-und-einstellungen.md",
+          "status": "explained",
+          "tasks": [
+            "Beitrags-, Spenden- und Leistungssätze anlegen",
+            "Einen zusätzlichen Tarif zuweisen und beenden"
+          ]
+        },
+        {
+          "label": "Textbausteine",
+          "route": {
+            "view": "settings",
+            "tab": "texts"
+          },
+          "chapter": 19,
+          "file": "docs/vereinsverwaltung/handbuch/19-steuerunterlagen-und-einstellungen.md",
+          "status": "explained",
+          "tasks": [
+            "Textbausteine mit Musterwerten prüfen"
+          ]
+        },
+        {
+          "label": "Briefpapier",
+          "route": {
+            "view": "settings",
+            "tab": "paper"
+          },
+          "chapter": 19,
+          "file": "docs/vereinsverwaltung/handbuch/19-steuerunterlagen-und-einstellungen.md",
+          "status": "explained",
+          "tasks": [
+            "Briefpapier, Logo und Fußzeile einrichten"
+          ]
+        },
+        {
+          "label": "Mitgliederausweise & Wallet",
+          "route": {
+            "view": "settings",
+            "tab": "member-cards"
+          },
+          "chapter": 3,
+          "file": "docs/vereinsverwaltung/handbuch/03-familien-zugaenge.md",
+          "status": "explained",
+          "tasks": [
+            "Apple Wallet und Google Wallet für Mitgliederausweise einrichten"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Kommunikation · gemeinsame Redaktion",
+      "review_date": "2026-10-31",
+      "routes": [
+        {
+          "label": "Social & Newsletter",
+          "route": {
+            "view": "social"
+          },
+          "chapter": 18,
+          "file": "docs/vereinsverwaltung/handbuch/18-newsletter.md",
+          "status": "explained",
+          "tasks": [
+            "Social Media und Newsletter gemeinsam planen"
+          ]
+        },
+        {
+          "label": "Social & Newsletter",
+          "route": {
+            "view": "newsletter"
+          },
+          "chapter": 18,
+          "file": "docs/vereinsverwaltung/handbuch/18-newsletter.md",
+          "status": "explained",
+          "tasks": [
+            "Social Media und Newsletter gemeinsam planen"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total": 61,
+    "explained": 61,
+    "partial": 0,
+    "missing": 0
+  },
+  "open_gaps": []
+}

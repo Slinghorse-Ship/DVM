@@ -1,0 +1,19 @@
+.goods-cards{display:grid;gap:.75rem;margin:1rem 0}.goods-card{padding:.75rem;border:1px solid #bdcbd5;border-radius:.75rem;min-width:0;overflow-wrap:anywhere}.goods-card a{display:flex;align-items:center;min-height:44px;white-space:normal;text-align:left}.goods-card p{margin:.5rem 0 0}#goods-catalogue summary{min-height:44px;padding:.75rem;cursor:pointer}.goods-pages{display:flex;align-items:end;flex-wrap:wrap;gap:.5rem;margin:.75rem 0}.goods-pages input{max-width:8rem}#goods-catalogue button,.goods-pages a{min-height:44px}#goods-catalogue .form-grid>*{min-width:0}
+:is([data-goods-workspace],.goods-donation-sheet){min-width:0;font-size:1rem;line-height:1.6;overflow-wrap:anywhere}
+:is([data-goods-workspace],.goods-donation-sheet) :is(p,label,summary,legend,dt,dd,span,small,a,button,input,select,textarea){font-size:1rem}
+:is([data-goods-workspace],.goods-donation-sheet) :is(h2,h3){font-size:1.25rem}
+:is([data-goods-workspace],.goods-donation-sheet) :is(button,.btn,summary,input:not([type=hidden]),select){min-height:44px;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+:is([data-goods-workspace],.goods-donation-sheet) :is(input:not([type=hidden]):not([type=checkbox]):not([type=radio]),textarea,select){width:100%;box-sizing:border-box}
+:is([data-goods-workspace],.goods-donation-sheet) :is(fieldset,.form-grid>*){min-inline-size:0;min-width:0}
+.goods-creation-sheet>form>footer{position:static;flex-wrap:wrap}.goods-donation-sheet>footer{position:static;flex-wrap:wrap}
+.goods-donation-sheet .accounting-position{grid-template-columns:minmax(0,1fr)}
+:is([data-goods-workspace],.goods-donation-sheet) :is(strong,b){font-size:1rem}.goods-donation-sheet .amount-large{font-size:1.25rem}.goods-donation-sheet .position-totals strong{font-size:1.125rem}
+:is([data-goods-workspace],.goods-donation-sheet) a{display:inline-flex;align-items:center;min-height:44px;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+
+.goods-correction-sheet,.goods-correction-history{font-size:1rem;overflow-wrap:anywhere}.goods-correction-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.goods-correction-pair>section{min-width:0;padding:.75rem;border:1px solid var(--border-color,#aaa);border-radius:.5rem}.goods-correction-pair dd{margin:0 0 .75rem;white-space:normal}.goods-correction-history summary{display:flex;align-items:center;min-height:44px;padding:.5rem;cursor:pointer}.goods-correction-history details{border-top:1px solid var(--border-color,#aaa);padding:.5rem 0}.goods-correction-history ul{padding-inline-start:1.25rem}.goods-correction-sheet strong,.goods-correction-history strong{font-size:1rem}@media(max-width:50rem){.goods-correction-pair{grid-template-columns:1fr}}
+.goods-donation-sheet>header h2{font-size:1.25rem;line-height:1.4}.goods-correction-sheet>form>footer{position:static;flex-wrap:wrap}.goods-correction-history summary::before{content:'▸';margin-inline-end:.5rem}.goods-correction-history details[open]>summary::before{content:'▾'}
+.side-sheet.goods-donation-sheet>header h2{font-size:1.25rem;line-height:1.4}
+
+.side-sheet.goods-donation-sheet:is(.goods-correction-sheet,.goods-creation-sheet,.donor-source-sheet) :is(p,label,summary,legend,dt,dd,span,small,a,button,input,select,textarea){font-size:1rem}
+
+.goods-list-accounting{border-top:1px solid var(--border-color,#aaa);margin-top:.75rem;padding-top:.5rem}.goods-list-position{padding:.5rem 0;border-bottom:1px solid var(--border-color,#aaa)}.goods-list-position dl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:.5rem;margin:.75rem 0}.goods-list-position dd{margin:0;min-width:0;overflow-wrap:anywhere}.goods-list-position small{display:block}@media(max-width:40rem){.goods-list-position dl{grid-template-columns:minmax(0,1fr)}.goods-list-position dt{font-weight:600}.goods-list-position dd{margin-bottom:.5rem}}

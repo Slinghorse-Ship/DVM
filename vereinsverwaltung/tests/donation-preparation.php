@@ -1,0 +1,22 @@
+<?php declare(strict_types=1);
+require_once __DIR__.'/../src/Finance/Donations/DonationPreparation.php';
+require __DIR__.'/donation-auto-drafts.php';
+use Kulturhus\Verein\DonationPreparation;
+$before=$checks;
+DonationPreparation::afterSource($db,'writer','entry',$testEntry);
+check(DonationPreparation::status($db,'writer','entry',$testEntry)['state']==='ready','payment then donor automatically prepared');
+check(DonationPreparation::status($db,'writer','entry',$partial)['state']==='ready','donor then partial payments automatically prepared');
+$beforeDocuments=(int)$db->query('SELECT COUNT(*) FROM documents')->fetchColumn();DonationPreparation::afterSource($db,'writer','entry',$partial);check((int)$db->query('SELECT COUNT(*) FROM documents')->fetchColumn()===$beforeDocuments,'rerun creates no duplicate drafts');
+$noPayment=$finance->createEntry(array_replace($moneyData,['counterparty'=>'Synthetic waiting']),$key());$finance->assignDonationContact('entry',$noPayment,1,'donor-a');check(DonationPreparation::status($db,'writer','entry',$noPayment)['state']==='blocked','donor without actual payment gives durable blocked status');
+$priorPython=getenv('VEREIN_PYTHON');putenv('VEREIN_PYTHON=Z:/deliberately-missing-synthetic-python.exe');
+try{$finance->recordPayment($noPayment,2,$paidAccount,'2026-08-01');}finally{putenv($priorPython===false?'VEREIN_PYTHON':'VEREIN_PYTHON='.$priorPython);}
+check($finance->entry($noPayment)['status']==='paid','PDF failure does not undo or misreport committed payment');$state=DonationPreparation::status($db,'writer','entry',$noPayment);check($state['state']==='failed'&&!str_contains($state['reason'],'Z:/'),'safe durable failure status without runtime path');
+DonationPreparation::afterSource($db,'writer','entry',$noPayment);check(DonationPreparation::status($db,'writer','entry',$noPayment)['state']==='ready','retry prepares after runtime recovers');
+$autoEntry=$finance->createEntry(array_replace($moneyData,['amount'=>'22.00','counterparty'=>'Unambiguous synthetic']),$key());$finance->assignDonationContact('entry',$autoEntry,1,'donor-a');$finance->createTransaction(['account'=>$paidAccount,'booked_on'=>'2026-08-01','direction'=>'income','amount'=>'22.00','description'=>$finance->entry($autoEntry)['display_number']],$key());check(DonationPreparation::status($db,'writer','entry',$autoEntry)['state']==='ready','automatic reference allocation prepares after transaction commit');
+$events=(int)$db->query("SELECT COUNT(*) FROM audit_events WHERE action LIKE 'donation.preparation.%'")->fetchColumn();DonationPreparation::afterSource($db,'writer','entry',$noPayment);check((int)$db->query("SELECT COUNT(*) FROM audit_events WHERE action LIKE 'donation.preparation.%'")->fetchColumn()===$events,'unchanged retry does not spam audit');
+denied(fn()=>DonationPreparation::status($db,'foreign','entry',$noPayment),'preparation status tenant isolated');check((int)$db->query('SELECT COUNT(*) FROM donation_receipts')->fetchColumn()===0,'domain hooks never issue certificates');
+$partialAlloc=$finance->allocations($partial);foreach($partialAlloc as $l){$finance->releaseAllocation($l['id'],$finance->transactionDetail($l['transaction_id'])['version'],$finance->entry($partial)['version'],'Synthetic release');$st=DonationPreparation::status($db,'writer','entry',$partial);check($st['state']!=='ready'||count($st['documents'])===1,'released payment excluded from current drafts');}check(DonationPreparation::status($db,'writer','entry',$partial)['state']==='blocked','all payment allocations released invalidates ready');
+$db->exec("UPDATE contacts SET address=CONCAT('Changed Road 5',char(10),'00000 Elsewhere') WHERE id='donor-a'");check(DonationPreparation::status($db,'writer','entry',$noPayment)['state']==='stale','read detects changed donor address without generating PDF');
+DonationPreparation::afterSource($db,'writer','entry',$noPayment);$finance->reverse($noPayment,$finance->entry($noPayment)['version'],'2026-08-01','Synthetic reversal');check(DonationPreparation::status($db,'writer','entry',$noPayment)['state']!=='ready','reversal invalidates ready status');
+$finance->cancel($partial,$finance->entry($partial)['version']);check(DonationPreparation::status($db,'writer','entry',$partial)['state']!=='ready','cancelled donation not ready');
+echo ($checks-$before)." postcommit preparation checks passed\n";

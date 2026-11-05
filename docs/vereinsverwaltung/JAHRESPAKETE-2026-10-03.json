@@ -1,0 +1,191 @@
+{
+  "schema": 1,
+  "checked_at": "2026-10-03T12:15:24.555449+02:00",
+  "scope": "annual-taxonomy-eric-package-development",
+  "source_base_commit": "83454dd",
+  "sources": {
+    "vereinsverwaltung/src/TaxFilings.php": "45112293cc22e6202582719d8cc8b549f6ba05d93fb4d7dacd48f40066c7fcae",
+    "vereinsverwaltung/src/CatalogImports.php": "4eb6d029f01b706170adc62aa7c50f2c1a8bace36288789b4b6324b8889a6ec1",
+    "vereinsverwaltung/tests/catalog-imports.php": "e95b0feb0f08496df8523441e1a7461ecd92cd33286a4cf162f32746a2226ddb",
+    "vereinsverwaltung/tests/balance-suite.json": "81f907274a36efcd8793a2af7dc84a9c6a057b5953de0637e71c8a017b5cd238",
+    "vereinsverwaltung/tests/tax-runtime-fingerprint.php": "1e06ebd8bb12cd39cd29d0c49e74a94cd94d1058ebaf45dba9689c92914b6305",
+    "vereinsverwaltung/tests/ebilanz-release-test.py": "f0eb66161b7c8433772f2fa10a114fc5e0bbc80aa8be129b9d8f985986314092",
+    "vereinsverwaltung/tools/ebilanz_release.py": "1d60e29adbac0231e5d898933aa5205508b28d80f41a473910ca11686886c419",
+    "vereinsverwaltung/tools/datev_years.py": "e47ffad505b89fe5e9bae179fb45e7a32895a3c669e7e55dda1110c7556514cf",
+    "vereinsverwaltung/tools/ebilanz_builder.py": "a332e3dba3b6e19f64f2f56b36b78fe7b83c5da492e925f5b052bc7a0ddf3700",
+    "vereinsverwaltung/tools/eric-bridge.py": "9b836c589d06944e9eeac3798e61b0d8d9650966596062f67b15844d7d0511fd",
+    "vereinsverwaltung/tools/maintain-datev-skr42.py": "5098fb2ac7a20c88417a2e37afa41dcaa2792f9c44151c14ef6cae5cff789c5c",
+    "vereinsverwaltung/resources/ebilanz/releases.json": "5c2c85fce855422c594cf7d39b0b05c79fc5206d3ef446625b79c7e0b4d2da5f",
+    "vereinsverwaltung/views/Catalog/catalog-import.php": "8966ed4ea6c885f6cd179644667a4ca961c106bf3a401815cbb006ce99462367"
+  },
+  "offline": {
+    "passed": true,
+    "programs": 45,
+    "sources_unchanged": true,
+    "application_sources_unchanged_since_run": true,
+    "report": {
+      "file": "audit/annual-package-offline-20261003.json",
+      "sha256": "917287a13a71b0a239b37cd52e38b556b5f874085dcb622a7f8b233fd5812b41"
+    }
+  },
+  "native": {
+    "accepted": 34,
+    "expected_rejections": 1,
+    "flags": 2,
+    "sent": false,
+    "transport_attempted": false,
+    "reports": [
+      {
+        "file": "audit/annual-package-native-20261003.json",
+        "sha256": "a462705cdacf5302b30c2c3e13caa55e14d928f1e4421d600b75c2631350bd43"
+      },
+      {
+        "file": "audit/annual-package-period-native-20261003.json",
+        "sha256": "093db90410f09dda2881c4746cd7fc7b5a789e5e07737c402fd538f75e4c2017"
+      },
+      {
+        "file": "audit/annual-package-combined-native-20261003.json",
+        "sha256": "5cf206cb9abd027b1675733462f03317ce30e7fd77c54b769ef753d576770cb3"
+      },
+      {
+        "file": "audit/annual-package-native-sources-20261003.json",
+        "sha256": "01f2d730d324d42534a7a83a05ee65412d1be3c65f58efb7c58644d4a83630c9"
+      }
+    ]
+  },
+  "native_linux": {
+    "accepted": 3,
+    "expected_rejections": 1,
+    "unsupported_year_rejected_before_native_validation": true,
+    "flags": 2,
+    "sent": false,
+    "transport_attempted": false,
+    "database_connected": false,
+    "protected_files_unchanged": true,
+    "temporary_files_removed": true,
+    "versions": {
+      "checkbilanz": "44.3.4.0",
+      "ericapi": "44.3.4.0"
+    },
+    "report": {
+      "file": "audit/annual-package-linux-20261003.json",
+      "sha256": "ffd023d8ddee1b01a855981bad7436d6098dc9545eb862b3269085b444a7063c"
+    }
+  },
+  "php": {
+    "fingerprint_checks": 236,
+    "actual_pdf_process_checks": 9,
+    "database_connected": false,
+    "reports": [
+      {
+        "file": "audit/annual-package-fingerprint-20261003.json",
+        "sha256": "70c7b1d94eb0b9c016437577e8ef132bc1cf82765326778dd49a1e122477f9d5"
+      },
+      {
+        "file": "audit/annual-package-php-process-20261003.json",
+        "sha256": "c11099ba0334b9ef68ebc65633f7facd8996aaf12f51ddad0b376b8fd0fce69e"
+      }
+    ],
+    "changed_runtime_files_linted": [
+      "src/TaxFilings.php",
+      "src/CatalogImports.php",
+      "views/Catalog/catalog-import.php"
+    ]
+  },
+  "mysql": {
+    "new_package_sources_verified": true,
+    "baseline_checkpoint": {
+      "nonce": "d725ab22c6bc07ed",
+      "expected": 163,
+      "completed": 163,
+      "complete": true,
+      "failed": [
+        "balance-vat-mapping.php"
+      ],
+      "protected_files_unchanged": true,
+      "production_database_connected": false,
+      "last_completed": "tax-runtime-fingerprint.php",
+      "source": "final_saved_report",
+      "temporary_files_removed": true,
+      "passed": false
+    },
+    "baseline_report": {
+      "file": "audit/ebilanz-mysql-host-20260918-d725ab22c6bc07ed.json",
+      "sha256": "73fe7e355f6c8f7a72ef307ee63975315a7694037f606b04c7a42a90ff31892d"
+    },
+    "baseline_staged_sources": 1941,
+    "changed_after_baseline_staging": [
+      "vereinsverwaltung/src/CatalogImports.php",
+      "vereinsverwaltung/src/TaxFilings.php",
+      "vereinsverwaltung/tests/balance-suite.json",
+      "vereinsverwaltung/tests/balance-vat-mapping.php",
+      "vereinsverwaltung/tests/catalog-imports.php",
+      "vereinsverwaltung/tests/tax-runtime-fingerprint.php",
+      "vereinsverwaltung/tools/datev_years.py",
+      "vereinsverwaltung/tools/ebilanz_builder.py",
+      "vereinsverwaltung/tools/eric-bridge.py",
+      "vereinsverwaltung/tools/maintain-datev-skr42.py",
+      "vereinsverwaltung/views/Catalog/catalog-import.php"
+    ],
+    "added_after_baseline_staging": [
+      "vereinsverwaltung/resources/ebilanz/releases.json",
+      "vereinsverwaltung/tests/ebilanz-release-test.py",
+      "vereinsverwaltung/tools/ebilanz_release.py"
+    ],
+    "saved_refresh_workflow": "passed_on_isolated_mysql",
+    "current_package_checks": {
+      "programs": 7,
+      "passed": true,
+      "tests": [
+        "balance-vat-mapping.php",
+        "catalog-imports.php",
+        "datev-web-process.php",
+        "catalog-years.php",
+        "datev-statements.php",
+        "balance-catalog-mapping.php",
+        "tax-runtime-fingerprint.php"
+      ],
+      "report": {
+        "file": "audit/ebilanz-mysql-host-20260918-0a73a3ceb614155d.json",
+        "sha256": "8a86a63493d40ce03db32269d102c3364d8e2d292ff7f843c4a2be5c97a6d67e"
+      },
+      "dedicated_synthetic_database": true,
+      "production_database_connected": false,
+      "backup_created": false,
+      "protected_files_unchanged": true,
+      "temporary_files_removed": true
+    }
+  },
+  "account_coverage_report": {
+    "file": "audit/balance-unmapped-families-20261003.json",
+    "sha256": "ef24da04ac0fce23b1db06efe1ba00032dacffa1cccf60ac3ed8472398d26107"
+  },
+  "annual_source_comparison": {
+    "from_year": 2025,
+    "year": 2026,
+    "automatic": 1154,
+    "review_groups": 61,
+    "accounts_in_review_groups": 70,
+    "existing_gaps": 455,
+    "retired": 18,
+    "report": {
+      "file": "audit/annual-package-real-comparison-20261003.json",
+      "sha256": "27d22a1176a66aabad6e7e4451961a2c534f07234c738750ce0eba9afbaba68b"
+    }
+  },
+  "release_ready": false,
+  "production_authorized": false,
+  "kulturhus_accounting": "euer",
+  "remaining": [
+    "complete_account_asset_valuation_sphere_period_combinations",
+    "complete_safe_transport_and_feedback_acceptance",
+    "full_release_then_full_ui_audit"
+  ],
+  "regression_test_updates_after_offline_run": {
+    "vereinsverwaltung/tests/balance-vat-mapping.php": {
+      "before": "b5086751a2465b68b22446115b548df59a25ce0e244968ea564943112e924a73",
+      "after": "6bc226b1849e9f5527fc855d514f010d9f159cbaa690312c08cb8da010f610a8",
+      "reason": "Replace obsolete unresolved expectations for r16 purposes with exact membership, donation and 0%-category assertions; preserve unresolved-source and VAT-rate guards."
+    }
+  }
+}

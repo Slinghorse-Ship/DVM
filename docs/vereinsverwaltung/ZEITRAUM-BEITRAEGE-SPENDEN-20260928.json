@@ -1,0 +1,49 @@
+{
+  "date": "2026-09-28",
+  "scope": "Assessed contributions and unrestricted cash donations in exact fiscal periods",
+  "general_balance_release": false,
+  "deployed": false,
+  "kulturhus_accounting_basis_changed": false,
+  "source_archive_sha256": "7504ae414fb46f5ea6431261e9dc7334e1e210643213d1c32c87e9b556689cc5",
+  "private_run_report": "audit/ebilanz-mysql-host-20260918-e7b8273bea8aaf3b.json",
+  "host_suite": {
+    "passed": true,
+    "groups": 10,
+    "php_diagnostics": false,
+    "production_database_connected": false,
+    "protected_production_files_unchanged": true,
+    "temporary_host_staging_removed": true,
+    "routine_preservation_backup_created": false,
+    "synthetic_restore_regression_executed": true,
+    "tests": [
+      {"test": "balance-period-noninvoice.php", "checks": 64},
+      {"test": "balance-noninvoice-sources.php", "checks": 65},
+      {"test": "balance-period-sources.php", "checks": 43},
+      {"test": "balance-period-invoice-carry.php", "checks": 33, "reused_checks": 43},
+      {"test": "balance-period-corrections.php", "checks": 51, "reused_checks": 75},
+      {"test": "balance-sources.php", "checks": 56},
+      {"test": "balance-period-sales.php", "checks": 133, "reused_checks": 43},
+      {"test": "document-protection.php", "checks": 15},
+      {"test": "mysql-balance-schema-restore.php", "checks": 9},
+      {"test": "tax-runtime-fingerprint.php", "checks": 132}
+    ]
+  },
+  "browser_review": {
+    "environment": "Synthetic MySQL-rendered HTML served on loopback with actual CSS and JS",
+    "mobile_viewport": {"width": 390, "height": 844},
+    "checks": [
+      "Question and complete radio labels visible on narrow screen",
+      "Changed answer removes stale proposal and import action",
+      "Reset link available",
+      "Advanced bookings collapsed",
+      "Mobile document clientWidth and scrollWidth both 375"
+    ],
+    "real_device_test": false,
+    "real_inexperienced_user_test": false,
+    "whole_manager_post_release_review": false
+  },
+  "limitations": [
+    "Restricted, non-cash and refunded donations require other workflows",
+    "Further accounts, assets, tax, period integrations and general acceptance remain incomplete"
+  ]
+}

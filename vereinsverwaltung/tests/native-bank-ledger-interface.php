@@ -1,0 +1,62 @@
+<?php declare(strict_types=1);
+ini_set('zend.exception_ignore_args','1');
+require dirname(__DIR__).'/native/bootstrap.php';require dirname(__DIR__).'/src/bootstrap.php';
+require __DIR__.'/support/original-database-hash.php';require dirname(__DIR__).'/src/Web/View.php';
+use Kulturhus\Native\{TestSupport,Installer\SchemaRegistry,Integration\ManagerBridge,Language\Catalog,Language\BankLedgerMessages};
+use Kulturhus\Verein\{Finance,Documents,Inventory};
+$db=TestSupport::db();SchemaRegistry::install($db);$n=0;
+$check=static function(bool $ok,string $label)use(&$n):void{if(!$ok)throw new RuntimeException($label);++$n;echo 'PASS '.$label."\n";};
+$key=static fn()=>bin2hex(random_bytes(16));
+$db->exec("INSERT INTO clubs VALUES('catalogue-own','Own ledger interface'),('catalogue-foreign','Foreign ledger');INSERT INTO actors(id,club_id,role,is_superuser) VALUES('catalogue-admin','catalogue-own','member',1),('catalogue-reader','catalogue-own','member',0),('catalogue-foreign','catalogue-foreign','member',1);INSERT INTO settings_roles(club_id,id,name,description,members_access,finance_access,settings_access,version) VALUES('catalogue-own','read-catalogue','Read catalogue','','none','read',0,1);INSERT INTO settings_role_assignments VALUES('catalogue-reader','catalogue-own','read-catalogue',1)");
+$f=new Finance($db,'catalogue-admin');$bank=$f->createAccount('Umsätze ä🙂','offline','1000','2020-01-01');$cash=$f->createAccount('Kassenoriginal <&> ä🙂','cash','100','2020-01-01');
+$actual=static fn(string $account,string $direction,string $amount,string $description)=>$f->createTransaction(['account'=>$account,'booked_on'=>'2021-06-01','direction'=>$direction,'amount'=>$amount,'counterparty'=>'Zugeordnet ä🙂','description'=>$description],$key());
+$entries=[];for($i=0;$i<82;$i++){
+ $id=$actual($bank,$i===81?'expense':'income',match($i){81=>'45',80=>'240',79=>'123456.78',default=>'2.50'},$i===0?'Vollständig zugeordnet <&> ä🙂':'Ledger original '.$i);$entries[]=$id;
+}
+$receipt=$f->createEntry(['kind'=>'income','category'=>'general','description'=>'Original claim status','amount'=>'2.50','document_date'=>'2021-06-01','due_date'=>'2021-06-01'],$key());
+$f->allocate($entries[1],1,$receipt,1,'1',$key());
+$fully=$f->createEntry(['kind'=>'income','category'=>'general','description'=>'Original paid invoice','amount'=>'2.50','document_date'=>'2021-06-01','due_date'=>'2021-06-01'],$key());$f->allocate($entries[2],1,$fully,1,'2.50',$key());
+$inactive=$f->createAccount('Preserved inactive source','offline','0','2020-01-01');$f->saveAccountSettings($inactive,0,false,'',true,false);
+$nativeAccess=(new ManagerBridge($db,'catalogue-admin','native',static fn()=>null))->access();$catalog=new Catalog($db,$nativeAccess);$catalog->select('en');$messages=$catalog->messages();
+$tables=$db->query('SHOW TABLES')->fetchAll(PDO::FETCH_COLUMN);$before=ownOriginalDatabaseHash($db,$tables);
+$render=static function(array $get,array $post=[])use($db,$f,$nativeAccess):DOMXPath{
+ $saved=[$_GET,$_POST,$_SESSION??[]];$_GET=['view'=>'finance','tab'=>'bank']+$get;$_POST=$post;$_SESSION=['actor'=>'catalogue-admin','csrf'=>str_repeat('a',64)];$finance=$f;$accountRows=$f->accounts();$documents=new Documents($db,'catalogue-admin');$inventory=new Inventory($db,'catalogue-admin');$canFinance=true;$error=$post?'Synthetic rejected request':'';
+ ob_start();try{require dirname(__DIR__).'/views/Finance/Banking/bank.php';$html=ob_get_clean();}catch(Throwable $failure){ob_end_clean();throw $failure;}finally{[$_GET,$_POST,$_SESSION]=$saved;}
+ $dom=new DOMDocument();$dom->loadHTML('<meta charset="utf-8">'.$html,LIBXML_NOERROR|LIBXML_NOWARNING);return new DOMXPath($dom);
+};
+$view=$render(['account'=>$bank,'bank_q'=>'<&>','bank_page'=>'2']);
+$check($view->evaluate('string(//input[@name="bank_q"]/@value)')==='<&>'&&$view->query('//tr[@data-bank-transaction="'.$entries[0].'"]')->length===1,'actual complete bank search retains literal original text and source identifier');
+$check($view->evaluate('string(//tr[@data-bank-transaction="'.$entries[0].'"]/td[5]/a[1])')==='Vollständig zugeordnet <&> ä🙂','English account interface preserves bank descriptions even when they equal declared status words');
+$check(str_contains($view->evaluate('string(//*[@data-bank-allocation-help])'),'Invoice payment status')&&$view->evaluate('string(//tr[@data-bank-transaction="'.$entries[0].'"]/td[2]/span)')==='Unallocated','actual journal distinguishes allocation status from invoice payment status');
+$check($view->evaluate('string(//*[@data-bank-transaction-amount])')==='+2,50 €'&&$view->evaluate('string(//*[@data-bank-transaction-amount]/following-sibling::small[1])')==='Incoming','original incoming amount has explicit sign and localized direction');
+$view=$render(['account'=>$bank]);
+$check($view->evaluate('string(//a[contains(@class,"account-list-refresh")]/@aria-label)')==='Refresh view'&&$view->query('//a[contains(@class,"account-list-refresh") and contains(@href,"fints")]')->length===0&&str_contains($view->evaluate('string(//a[contains(@class,"account-list-refresh")]/@href)'),$bank),'view refresh is explicitly distinct from any FinTS retrieval');
+$check($view->query('//a[normalize-space()="Retrieve bank transactions" and contains(@href,"fints=1") and contains(@href,"account='.$bank.'")]')->length===1,'real bank retrieval opens the selected original account FinTS path');
+$view=$render(['account'=>$bank,'edit_account'=>'1']);
+$check($view->query('//*[@data-account-current and @open]|//*[@data-account-original]')->length===0&&$view->query('//button[@name="action" and @value="finance-account-settings-refresh"]')->length===0,'normal account edit starts with editable fields and keeps stored comparison folded');
+$settingsDraft=['action'=>'finance-account-settings','account'=>$bank,'version'=>'0','name'=>'Whole repair <&> ä🙂','active'=>'1','tax_account'=>'','fints_read'=>'0','fints_write'=>'1'];
+$view=$render(['account'=>$bank,'edit_account'=>'1'],$settingsDraft);
+$check($view->evaluate('string(//*[@data-account-settings]//input[@name="name"]/@value)')===$settingsDraft['name']&&$view->evaluate('string(//*[@data-account-settings]//input[@name="version"]/@value)')==='0'&&$view->query('//button[@name="action" and @value="finance-account-settings-refresh"]')->length===1&&$view->query('//*[@data-account-original]|//*[@data-account-current and @open]')->length===0,'rejected account edit retains its whole scalar repair and CAS version with a clear current-state recovery');
+$view=$render(['account'=>$bank,'edit_account'=>'1'],array_replace($settingsDraft,['active'=>['1']]));
+$check($view->query('//*[@data-account-unsupported]')->length===1&&$view->query('//*[@data-account-settings]/fieldset[@disabled]')->length===1&&$view->query('//a[normalize-space()="Reopen account settings"]')->length===1,'malformed account edits cannot write and offer direct human recovery');
+$view=$render(['account'=>$bank,'bank_q'=>'Ledger original 81']);
+$check($view->evaluate('string(//*[@data-bank-transaction-amount])')==='−45,00 €'&&$view->evaluate('string(//*[@data-bank-transaction-amount]/following-sibling::small[1])')==='Outgoing','original outgoing amount and direction remain separate from allocation');
+$view=$render(['account'=>$bank,'bank_q'=>'0','bank_from'=>'2022-01-01','bank_to'=>'2021-01-01','bank_amount'=>'0,23']);
+$check($view->evaluate('string(//input[@name="bank_q"]/@value)')==='0'&&$view->evaluate('string(//input[@name="bank_amount"]/@value)')==='0,23'&&str_contains($view->evaluate('string(//*[@role="alert"])'),'start date'),'rejected actual journal filters retain literal zero, dates and amount with translated rejection');
+$view=$render(['account'=>$bank,'bank_q'=>str_repeat('🙂',151)]);
+$check($view->evaluate('string(//input[@name="bank_q"]/@value)')===str_repeat('🙂',151)&&str_contains($view->evaluate('string(//*[@role="alert"])'),'at most 150 characters'),'whole overlong Unicode bank search remains visible with a translated actual domain rejection');
+$view=$render(['account'=>$cash,'from'=>'2021-06-02','to'=>'2021-06-01']);
+$check($view->query('//form[@data-cashbook-filter]')->length===1&&$view->evaluate('string(//input[@name="from"]/@value)')==='2021-06-02'&&$view->evaluate('string(//input[@name="to"]/@value)')==='2021-06-01'&&$view->query('//*[@data-cashbook-error]')->length===1,'invalid actual cash period retains both dates and a usable correction form');
+$view=$render(['account'=>$cash,'from'=>'2021-06-01','to'=>'2021-06-02'],['action'=>'close-cashbook','account'=>$cash,'through'=>'2021-06-01','counted'=>'99,97']);
+$check($view->query('//details[@id="cash-close" and @open]')->length===1&&$view->evaluate('string(//input[@name="through"]/@value)')==='2021-06-01'&&$view->evaluate('string(//input[@name="counted"]/@value)')==='99,97','failed cash closing displays its whole counted amount and actual closing date for correction');
+$view=$render(['account'=>$bank,'new_transaction'=>'1'],['action'=>'create-transaction','account'=>$cash,'direction'=>'expense','amount'=>'3,007','booked_on'=>'2021-05-31','counterparty'=>'0 <&> ä🙂','description'=>'Umsätze <&> ä🙂','request_key'=>str_repeat('e',32)]);
+foreach(['account'=>$cash,'direction'=>'expense','amount'=>'3,007','booked_on'=>'2021-05-31','counterparty'=>'0 <&> ä🙂','description'=>'Umsätze <&> ä🙂','request_key'=>str_repeat('e',32)] as $field=>$value){$actualValue=$view->evaluate('string(//form[contains(@class,"transaction-new")]//*[@name="'.$field.'"]/@value)');if(in_array($field,['account','direction'],true))$actualValue=$view->evaluate('string(//form[contains(@class,"transaction-new")]//select[@name="'.$field.'"]/option[@selected]/@value)');$check($actualValue===$value,'rejected manual movement retains actual '.$field.' without a replacement');}
+$view=$render(['account'=>$bank,'new_transaction'=>'1'],['action'=>'create-transaction','account'=>$inactive,'amount'=>'7,00','description'=>'Original inactive choice']);
+$check($view->evaluate('string(//form[contains(@class,"transaction-new")]//select[@name="account"]/option[@selected]/@value)')===$inactive&&str_contains($view->evaluate('string(//form[contains(@class,"transaction-new")]//select[@name="account"]/option[@selected])'),'currently unavailable'),'a deactivated actual source remains explicitly selected without silently replacing the account');
+$view=$render(['new_account'=>'1'],['action'=>'create-account','kind'=>'cash','name'=>'Umsätze <&> ä🙂','opening'=>'1,005','opened_on'=>'2021-06-01']);
+$check($view->evaluate('string(//input[@name="name"]/@value)')==='Umsätze <&> ä🙂'&&$view->evaluate('string(//input[@name="opening"]/@value)')==='1,005'&&$view->query('//input[@name="kind" and @value="cash" and @checked]')->length===1,'invalid account creation retains chosen cashbox, original name and complete invalid amount');
+$check($view->query('//*[@data-account-help and @hidden]')->length===0&&$view->evaluate('string(//form[@data-account-create]/@data-account-online-label)')==='Save account and connect online banking','account help stays available without scripts and supplies translated dynamic save wording');
+$check(ownOriginalDatabaseHash($db,$tables)===$before,'all actual account journal cash error and form reads preserve every complete original row and schema');
+$check($f->entry($receipt)['payment_state']==='partial'&&$f->entry($fully)['payment_state']==='paid','overview language and failure recovery preserve independent invoice payment state');
+if(getenv('DVM_BANK_LEDGER_BROWSER')==='1')require __DIR__.'/support/bank-ledger-browser-fixture.php';
+echo json_encode(['suite'=>'native-bank-ledger-interface','checks'=>$n,'external_actions'=>0],JSON_THROW_ON_ERROR)."\n";

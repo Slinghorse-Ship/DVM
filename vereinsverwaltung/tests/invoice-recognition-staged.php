@@ -1,0 +1,26 @@
+<?php declare(strict_types=1);
+require __DIR__.'/../src/bootstrap.php';require_once __DIR__.'/../src/Infrastructure/Media/LiveUploads.php';
+use Kulturhus\Verein\{Database,Inventory,Documents,LiveUploads,InvoiceRecognition};
+$db=\Kulturhus\Verein\Tests\MySqlFixture::connect(':memory:');Database::migrate($db);$db->exec("INSERT INTO clubs VALUES('a','A'),('b','B');INSERT INTO actors(id,club_id,role,is_superuser) VALUES('a','a','member',1),('b','b','member',1),('reader','a','member',0)");
+$n=0;function check($v,$m){global $n;if(!$v)throw new RuntimeException($m);++$n;echo "PASS $m\n";}function denied($f,$m){try{$f();}catch(DomainException){check(true,$m);return;}throw new RuntimeException($m);}
+$key=bin2hex(random_bytes(16));$token=bin2hex(random_bytes(32));$root=sys_get_temp_dir().'/recognition-stage-'.bin2hex(random_bytes(8));mkdir($root,0700);session_save_path($root);mkdir($root.'/live-uploads',0700);$path=$root.'/live-uploads/'.$token.'.bin'; $bytes='<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"/>';file_put_contents($path,$bytes);$_SESSION=['live_uploads'=>[$token=>['actor'=>'a','action'=>'document-upload-many','field'=>'document_files','key'=>$key,'created'=>time(),'size'=>strlen($bytes),'mime'=>'application/xml','hash'=>hash('sha256',$bytes),'name'=>'invoice.xml']]];
+try{
+ $i=new Inventory($db,'a');$item=$i->saveItem('',0,['name'=>'Synthetic'],bin2hex(random_bytes(16)));$r=new InvoiceRecognition($db,'a');
+ check(LiveUploads::snapshot('a',$token,'document-upload-many','document_files',$key)['bytes']===$bytes,'exact draft original read');
+ foreach([['b',$token,'document-upload-many','document_files',$key],['a',$token,'document-upload','document_file',$key],['a',$token,'document-upload-many','document_files',str_repeat('0',32)]] as $args)denied(fn()=>LiveUploads::snapshot(...$args),'actor action or draft mismatch denied');
+ $structured=$r->runStaged($token,'document-upload-many','document_files',$key,$item);check($structured['method']==='xml'&&$structured['source']==='xml'&&!isset($structured['xml_base64']),'staged XML read structurally without OCR or raw payload response');
+ denied(fn()=>InvoiceRecognition::extract('<Invoice/>','application/xml'),'unrecognized XML rejected');
+ $ambiguous='<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"><cac:InvoiceLine><cbc:InvoicedQuantity>1</cbc:InvoicedQuantity><cbc:InvoicedQuantity>2</cbc:InvoicedQuantity></cac:InvoiceLine></Invoice>';
+ $ambiguousResult=InvoiceRecognition::extract($ambiguous,'application/xml');check($ambiguousResult['items'][0]['ambiguous']&&count($ambiguousResult['warnings'])>=2,'ambiguous position retains specific warning alongside general structured notice');
+
+ denied(fn()=>InvoiceRecognition::extract(str_repeat('x',10485761),'application/xml'),'XML byte limit before parsing');
+ denied(fn()=>(new InvoiceRecognition($db,'reader'))->runStaged($token,'document-upload-many','document_files',$key,$item),'reader cannot recognize inventory draft');
+ $foreign=(new Inventory($db,'b'))->saveItem('',0,['name'=>'Foreign'],bin2hex(random_bytes(16)));denied(fn()=>$r->runStaged($token,'document-upload-many','document_files',$key,$foreign),'foreign target denied');
+ file_put_contents($path,'changed');denied(fn()=>LiveUploads::snapshot('a',$token,'document-upload-many','document_files',$key),'changed bytes denied');file_put_contents($path,$bytes);
+ $_SESSION['live_uploads'][$token]['created']=time()-3601;denied(fn()=>LiveUploads::snapshot('a',$token,'document-upload-many','document_files',$key),'expired token denied');$_SESSION['live_uploads'][$token]['created']=time();
+ $doc=(new Documents($db,'a'))->upload('invoice.xml',$bytes,['title'=>'Receipt','kind'=>'receipt','scope'=>'finance','links'=>[]],bin2hex(random_bytes(16)));denied(fn()=>$r->runInventory($doc,1,$item),'existing document must belong to exact item');
+ $entry=(new \Kulturhus\Verein\Finance($db,'a'))->createEntry(['kind'=>'expense','category'=>'general','description'=>'Synthetic invoice','counterparty'=>'Supplier','amount'=>'1,00','document_date'=>'2026-09-07','due_date'=>'2026-09-07'],bin2hex(random_bytes(16)));
+ (new Documents($db,'a'))->linkExpense($doc,1,$entry);$old=$i->item($item);$i->saveItem($item,$old['version'],['name'=>$old['name'],'code'=>$old['code'],'source_kind'=>'expense','source_id'=>$entry],bin2hex(random_bytes(16)));
+ $saved=$r->runInventory($doc,1,$item);check($saved['method']==='xml'&&$saved['state']==='ready','saved inventory source expense link reads XML');check($r->result($doc)['method']==='xml'&&!str_contains($db->query('SELECT result_json FROM invoice_recognition')->fetchColumn(),'xml_base64'),'cached result contains structured fields only');
+ LiveUploads::finish();check(is_file($path)&&isset($_SESSION['live_uploads'][$token]),'recognition does not consume draft');check((int)$db->query('SELECT count(*) FROM finance_entries')->fetchColumn()===1,'recognition adds no financial mutation beyond explicit fixture');
+}finally{unlink($path);rmdir($root.'/live-uploads');rmdir($root);}echo "$n staged recognition boundary checks passed\n";

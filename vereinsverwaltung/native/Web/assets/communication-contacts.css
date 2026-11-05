@@ -1,0 +1,72 @@
+.newsletter-contact {
+  margin-block: 1.5rem;
+  padding-block-start: 1.25rem;
+  border-block-start: 1px solid var(--line, #dce3df);
+}
+.newsletter-contact h3 {
+  margin-block: 0 .5rem;
+  font-size: 1.05rem;
+}
+.newsletter-contact .contact-address {
+  margin-block: .5rem;
+  overflow-wrap: anywhere;
+}
+.newsletter-contact .contact-status {
+  display: inline-block;
+  padding: .25rem .65rem;
+  border: 1px solid var(--line, #dce3df);
+  border-radius: 1rem;
+  font-size: .85rem;
+}
+.confirmation-renewal > summary {
+  line-height: 1.6;
+}
+.confirmation-renewal form {
+  margin-block: 1rem;
+}
+.confirmation-renewal button {
+  max-width: 100%;
+  white-space: normal;
+}
+
+.newsletter-management { min-width: 0; }
+.press-deliveries { min-width: 0; }
+.press-deliveries :is(h2, h3, p, summary, label) { overflow-wrap: anywhere; }
+.press-deliveries :is(form, label) { min-width: 0; max-width: 100%; }
+.press-deliveries select { width: 100%; min-width: 0; }
+body .press-deliveries :is(input, select, button, summary, a.btn) { min-height: 44px; font-size: max(16px, 1rem); max-width: 100%; white-space: normal; }
+.press-delivery { border-block-start: 1px solid var(--line, #dce3df); padding-block: .75rem; }
+.press-delivery-pages { display: flex; flex-wrap: wrap; gap: .5rem; }
+.press-delivery details > summary { padding-block: .6rem; }
+.press-delivery-attention { font-weight: 600; }
+body .compose-side .press-send-planning :is(label, input:not([type=hidden]), select, button, summary, a.btn) { min-height: 44px; font-size: max(16px, 1rem); max-width: 100%; white-space: normal; }
+.press-send-planning { min-width: 0; }
+.press-send-planning :is(label, h2, p, button) { overflow-wrap: anywhere; }
+.press-send-planning form > button { width: 100%; }
+body .newsletter-management :is(input:not([type=hidden]):not([type=checkbox]), select, button, summary, .contact-select, .contact-confirm) {
+  min-height: 44px;
+  font-size: max(16px, 1rem);
+  max-width: 100%;
+}
+.newsletter-management button { white-space: normal; overflow-wrap: anywhere; }
+.contact-search { display: grid; gap: .75rem; }
+.contact-toolbar { display: flex; flex-wrap: wrap; gap: .5rem; margin-block: .75rem; }
+.newsletter-management .newsletter-contact { display: flex; align-items: start; gap: .75rem; margin-block: .75rem; padding-block-start: .75rem; }
+.contact-select { display: flex; flex: 1; min-width: 0; align-items: start; gap: .65rem; min-height: 44px; cursor: pointer; }
+.contact-select > span { min-width: 0; overflow-wrap: anywhere; }
+.contact-select strong, .contact-select .contact-address { display: block; }
+.newsletter-management input[type=checkbox] { width: 1.25rem; height: 1.25rem; flex-shrink: 0; }
+.contact-confirm { display: flex; gap: .65rem; align-items: center; min-height: 44px; margin-block: .65rem; }
+.contact-profile { border-block-start: 2px solid var(--line, #dce3df); margin-block: 1rem; padding-block-start: 1rem; }
+.contact-profile p, .contact-history article { overflow-wrap: anywhere; }
+.contact-history article { padding-block: .5rem; border-block-end: 1px solid var(--line, #dce3df); }
+.contact-unsubscribe, .contact-add { margin-block-start: 1rem; }
+.newsletter-management summary { display: list-item; padding-block: .6rem; }
+.newsletter-management label { min-width: 0; }
+body .newsletter-management fieldset { min-inline-size: 0; }
+body .newsletter-management :is(h3, legend, label, summary) { overflow-wrap: anywhere; }
+@media (max-width: 48rem) {
+  .newsletter-management .newsletter-contact { flex-direction: column; }
+  .newsletter-management .newsletter-contact button { align-self: stretch; }
+  .contact-profile form > button, .contact-unsubscribe > button { width: 100%; }
+}

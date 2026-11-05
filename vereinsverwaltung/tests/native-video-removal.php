@@ -1,0 +1,90 @@
+<?php declare(strict_types=1);
+require dirname(__DIR__).'/native/bootstrap.php';require __DIR__.'/support/original-database-hash.php';
+use Kulturhus\Native\TestSupport;
+use Kulturhus\Native\Shared\{Access,Db,Identity,SecretBox};
+use Kulturhus\Native\Communication\{Schema,Workspace,Videos,VideoArchive,VideoRemoval,VideoRetention,VideoQuota,VideoApproval,Meta};
+use Kulturhus\Native\Cms\Conflict;
+$db=TestSupport::db();TestSupport::seed($db);Schema::install($db);Kulturhus\Native\Cms\Schema::install($db);
+$cfg=TestSupport::config();$root=dirname(getenv('KH_NATIVE_TEST_CONFIG')).'/runtime-'.$cfg['database'];mkdir($root,0700,true);file_put_contents($root.'/private.key',random_bytes(32));chmod($root.'/private.key',0600);
+$access=new Access($db,'admin');$club=$access->club();$n=0;$server=null;$browser=getenv('DVM_VIDEO_REMOVAL_BROWSER')==='1';
+$check=static function(bool $ok,string $label)use(&$n):void{if(!$ok)throw new RuntimeException($label);$n++;echo 'PASS '.$label.PHP_EOL;};
+$deny=static function(callable $f,string $label)use($check):void{try{$f();}catch(DomainException|Conflict){$check(true,$label);return;}throw new RuntimeException($label);};
+try{
+    (new Identity($db,$access))->save(['name'=>'Own video removal club','origin'=>'https://example.invalid','logo_id'=>'','address'=>''],0);
+    $work=new Workspace($db,$access,'social',$root.'/media');$videos=new Videos($db,$access,$root.'/media');$archive=new VideoArchive($db,$access);$service=new VideoRemoval($db,$access,$root.'/media');$retention=new VideoRetention($db,$access);$quota=new VideoQuota($db,$access);
+    $fixture=__DIR__.'/fixtures/reel-profile/portrait-avc-aac.mp4';$item=$work->save(['title'=>'Original private removable video','kind'=>'reel','body'=>'Human original draft']);$id=$videos->save($item['id'],1,1,$fixture,'Original private sound.mp4');$source=$videos->page($item['id'])['rows'][0]['source_id'];$file=$videos->file($id);$bytes=$file['bytes'];$op=bin2hex(random_bytes(16));
+    $original=ownOriginalDatabaseHash($db,['native_social_video_sources','native_social_videos','khn_social_items','khn_social_revisions','native_club_settings']);$usage=$quota->get();
+    $deny(fn()=>$service->beginRemove($source,0,$op),'active source requires deliberate archive before physical removal');
+    $archive->save($source,true,0);$started=$service->beginRemove($source,0,$op);
+    $check($started['state']==='removing'&&$started['version']===1&&is_file($file['path']),'durable original removal intent commits before changing any physical byte');
+    $deny(fn()=>$videos->file($id),'durable moving state immediately blocks original downloads');
+    $deny(fn()=>$archive->save($source,false,1),'moving original cannot be reselected through catalogue return');
+    $deny(fn()=>(new VideoRemoval($db,new Access($db,'reader'),$root.'/media'))->resume($source,$op),'read-only role cannot continue physical removal');
+    $removed=$service->resume($source,$op);$trash=dirname($file['path']).'/.removed/'.$source.'/'.$op.'/original.mp4';
+    $check($removed['state']==='removed'&&$removed['version']===2&&!file_exists($file['path'])&&hash_file('sha256',$trash)===$file['sha256'],'private same-filesystem move retains exact original sound bytes once');
+    $check($service->resume($source,$op)===$removed&&$quota->get()===$usage,'repeated completion keeps first state and retained quota unchanged');
+    $retention->save(0,0);$check($service->get($source)['retain_until']===$started['retain_until']&&!$service->get($source)['purge_eligible'],'future shorter policy never changes captured original thirty-day deadline');
+    $deny(fn()=>$service->beginPurge($source,2,$op),'original retained deadline blocks premature irreversible deletion');
+    $deny(fn()=>$service->beginRestore($source,1,$op),'stale state cannot replace actual removed original');
+    $deny(fn()=>$service->resume($source,bin2hex(random_bytes(16))),'continuation must belong to the exact original operation');
+    $restoring=$service->beginRestore($source,2,$op);$check($restoring['state']==='restoring'&&!file_exists($file['path']),'restore records durable intent before moving the original back');
+    $returned=$service->resume($source,$op);$check($returned['state']==='active'&&$returned['version']===4&&$videos->file($id)===$file&&!file_exists($trash),'return preserves original filename path, source identity, bytes and profile');
+    $check($archive->get($source)['archived']&&$quota->get()===$usage,'physical return does not republish, reselect or double-charge retained source');
+    $archive->save($source,false,1);$proof=Db::atomic($db,fn()=>(new VideoApproval($db,$access,$root.'/media'))->capture($item,$id));$check($proof['id']===$id,'deliberately returned original is selectable again');$archive->save($source,true,2);
+    $next=bin2hex(random_bytes(16));$service->beginRemove($source,4,$next);
+    $child=proc_open([...TestSupport::phpCommand(),__DIR__.'/support/video-removal-fault.php'],[0=>['pipe','r'],1=>['pipe','w'],2=>['pipe','w']],$pipes,dirname(__DIR__,2));if(!is_resource($child))throw new RuntimeException('Owned removal fault helper required.');fwrite($pipes[0],json_encode(['source'=>$source,'operation'=>$next],JSON_THROW_ON_ERROR));fclose($pipes[0]);$out=stream_get_contents($pipes[1]);$err=stream_get_contents($pipes[2]);fclose($pipes[1]);fclose($pipes[2]);$exit=proc_close($child);
+    $nextTrash=dirname($file['path']).'/.removed/'.$source.'/'.$next.'/original.mp4';
+    $check(in_array($exit,[9,137],true)&&$out===''&&$err===''&&$service->get($source)['state']==='removing'&&!file_exists($file['path'])&&hash_file('sha256',$nextTrash)===$file['sha256'],'actual owned SIGKILL after rename leaves durable original intent and exact private bytes');
+    $completed=$service->resume($source,$next);$check($completed['version']===6&&$completed['state']==='removed'&&$completed['purge_eligible'],'fresh continuation confirms already moved original without another copy');
+    $purging=$service->beginPurge($source,6,$next);$check($purging['state']==='purging'&&is_file($nextTrash)&&$quota->get()===$usage,'irreversible original intent commits before deleting or freeing any byte');
+    $purged=$service->resume($source,$next);$check($purged['state']==='purged'&&$purged['version']===8&&!file_exists($nextTrash)&&!file_exists($file['path']),'confirmed irreversible completion deletes only its quarantined original');
+    $afterQuota=$quota->get();$check($afterQuota['source_count']===$usage['source_count']-1&&$afterQuota['used_bytes']===$usage['used_bytes']-$bytes,'only confirmed purge releases this original source budget once');
+    $check($service->resume($source,$next)===$purged&&$quota->get()===$afterQuota,'repeated purge continuation preserves original completion and cannot free bytes twice');
+    $deny(fn()=>$service->beginRestore($source,8,$next),'purged original cannot be silently reconstructed from another file');$deny(fn()=>$archive->save($source,false,3),'purged source cannot re-enter new publication choices');
+    $check(ownOriginalDatabaseHash($db,['native_social_video_sources','native_social_videos','khn_social_items','khn_social_revisions','native_club_settings'])===$original,'all original source/profile/content/identity rows survive physical lifecycle unchanged');
+    $protected=$work->save(['title'=>'Original pending provider video','kind'=>'reel','body'=>'Human original provider text','channels'=>['facebook']]);$protectedId=$videos->save($protected['id'],1,1,$fixture,'Protected provider sound.mp4');$protectedSource=Db::run($db,'SELECT source_id FROM native_social_videos WHERE id=?',[$protectedId])->fetchColumn();$protectedFile=$videos->file($protectedId);$approved=$work->approve($protected['id'],1,$protectedId);
+    $box=SecretBox::fromFile($root.'/private.key');(new Kulturhus\Native\Integration\Accounts($db,$box))->save($access,'meta',['page_id'=>'111','instagram_id'=>'222','token'=>'synthetic-removal-never-live','api_version'=>'v24.0'],0);$job=(new Meta($db,$box))->queue($access,$protected['id'],gmdate('Y-m-d H:i:s'),$root.'/media')[0];$archive->save($protectedSource,true,0);
+    $deny(fn()=>$service->beginRemove($protectedSource,0,bin2hex(random_bytes(16))),'current original approval blocks physical removal even when archived');
+    $check($work->get($protected['id'])===$approved&&$videos->file($protectedId)===$protectedFile,'blocked source removal preserves current approval and exact provider bytes');
+    $work->save(['id'=>$protected['id'],'status'=>'archived'],2);
+    $deny(fn()=>$service->beginRemove($protectedSource,0,bin2hex(random_bytes(16))),'pending original provider job remains protected after content withdrawal');
+    Db::run($db,"UPDATE native_delivery_jobs SET status='uncertain' WHERE id=?",[$job]);$deny(fn()=>$service->beginRemove($protectedSource,0,bin2hex(random_bytes(16))),'uncertain provider result keeps its original source intact');
+    Db::run($db,"UPDATE native_delivery_jobs SET status='cancelled' WHERE id=?",[$job]);$protectedOp=bin2hex(random_bytes(16));$service->beginRemove($protectedSource,0,$protectedOp);
+    Db::run($db,'DELETE FROM native_grants WHERE actor_id=? AND module=? AND capability=?',['admin','social','manage']);$deny(fn()=>$service->resume($protectedSource,$protectedOp),'actual current management revocation blocks physical continuation');$check(is_file($protectedFile['path']),'rights rejection retains source before any move');Db::run($db,'INSERT INTO native_grants VALUES(?,?,?)',['admin','social','manage']);$service->resume($protectedSource,$protectedOp);
+    $protectedTrash=dirname($protectedFile['path']).'/.removed/'.$protectedSource.'/'.$protectedOp.'/original.mp4';$state=$service->get($protectedSource);file_put_contents($protectedTrash,'Corrupt own synthetic source');
+    $deny(fn()=>$service->beginRestore($protectedSource,$state['version'],$protectedOp),'changed quarantined bytes cannot replace the original file');$check($service->get($protectedSource)===$state,'integrity failure preserves exact pending original state');unlink($protectedTrash);symlink($fixture,$protectedTrash);
+    $deny(fn()=>$service->beginPurge($protectedSource,$state['version'],$protectedOp),'linked quarantine cannot delete another original file');$check(hash_file('sha256',$fixture)===$file['sha256'],'outside authoritative test fixture remains unchanged');unlink($protectedTrash);copy($fixture,$protectedTrash);chmod($protectedTrash,0600);
+    $service->beginRestore($protectedSource,$state['version'],$protectedOp);$service->resume($protectedSource,$protectedOp);$check($videos->file($protectedId)===$protectedFile,'verified original bytes return after owned integrity fault correction');
+    foreach([-1,3651,'00',[],false,'1.5']as$bad)$deny(fn()=>$retention->save($bad,1),'invalid retention input cannot create another rule');
+    $deny(fn()=>(new VideoRemoval($db,new Access($db,'outsider'),$root.'/media'))->get($source),'foreign club cannot inspect retained operation');
+    $check((int)Db::run($db,'SELECT COUNT(*) FROM native_video_removal_history WHERE source_id=?',[$source])->fetchColumn()===8,'eight exact original lifecycle decisions remain immutable after repeated continuation');
+    for($i=0;$i<2;$i++){$state=$service->get($protectedSource);$cycle=bin2hex(random_bytes(16));$service->beginRemove($protectedSource,$state['version'],$cycle);$removed=$service->resume($protectedSource,$cycle);$service->beginRestore($protectedSource,$removed['version'],$cycle);$service->resume($protectedSource,$cycle);}
+    $history=$service->history($protectedSource);$older=$service->history($protectedSource,2);$check($history['total']===12&&count($history['rows'])===10&&count($older['rows'])===2,'complete original lifecycle history has ten bounded rows per page');
+    Db::run($db,'UPDATE native_users SET name=? WHERE id=?',['Changed own display name','admin']);$check($service->history($protectedSource,2)['rows'][1]['actor_name']==='Lokale Administration','later name change cannot rewrite original lifecycle attribution');Db::run($db,'UPDATE native_users SET name=? WHERE id=?',['Lokale Administration','admin']);
+    foreach([0,'01',[],false,'1000001']as$bad)$deny(fn()=>$service->history($source,$bad),'invalid lifecycle page never silently changes original selection');
+    $manager=new Kulturhus\Native\Web\Manager($db,$access,$root.'/media','own-csrf');$actorState=$service->get($protectedSource);$post=['operation'=>'social-video-remove','csrf'=>'own-csrf','id'=>$protected['id'],'source_id'=>$protectedSource,'version'=>(string)$protected['version'],'video_page'=>'1','removal_version'=>(string)$actorState['version'],'removal_operation'=>bin2hex(random_bytes(16))];
+    $deny(fn()=>$manager->action('social',$post,[]),'real manager requires explicit physical confirmation');$post['confirm_video']='1';$post['csrf']='forged';$deny(fn()=>$manager->action('social',$post,[]),'real manager rejects forged physical CSRF before intent');$post['csrf']='own-csrf';$post['id']=$item['id'];$deny(fn()=>$manager->action('social',$post,[]),'real manager binds source to its displayed original content');
+    $beforeIntent=(int)$db->query('SELECT COUNT(*) FROM native_video_removals')->fetchColumn();$check($beforeIntent===5&&$service->get($protectedSource)===$actorState,'rejected physical forms keep exact original state and operation count');
+    $dsn='mysql:host='.$cfg['host'].';port='.$cfg['port'].';dbname='.$cfg['database'].';charset=utf8mb4';
+    $lostCommit=new class($dsn,$cfg['username'],$cfg['password'],[PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC,PDO::ATTR_EMULATE_PREPARES=>false]) extends PDO {
+        public bool $lose=false;
+        public function commit():bool{$result=parent::commit();if($this->lose){$this->lose=false;throw new RuntimeException('Owned acknowledgement lost after actual MySQL commit.');}return $result;}
+    };
+    $originalCount=(int)$db->query('SELECT COUNT(*) FROM native_social_video_sources')->fetchColumn();$lostCommit->lose=true;
+    try{(new Videos($lostCommit,new Access($lostCommit,'admin'),$root.'/media'))->save($item['id'],1,1,$fixture,'Original with lost database acknowledgement.mp4');throw new LogicException('Owned commit acknowledgement fault required.');}catch(RuntimeException $failure){if($failure->getMessage()!=='Owned acknowledgement lost after actual MySQL commit.')throw $failure;}
+    $unknown=Db::run($db,'SELECT v.id,s.sha256 FROM native_social_video_sources s JOIN native_social_videos v ON v.club_id=s.club_id AND v.source_id=s.id WHERE s.original_name=?',['Original with lost database acknowledgement.mp4'])->fetch();
+    $check((int)$db->query('SELECT COUNT(*) FROM native_social_video_sources')->fetchColumn()===$originalCount+1&&$unknown&&$videos->file($unknown['id'])['sha256']===hash_file('sha256',$fixture),'lost actual database commit acknowledgement never deletes the committed original video');
+    if($browser){
+        $browserItem=$work->save(['title'=>'Own original browser video lifecycle','kind'=>'reel','body'=>'Own unchanged browser human draft']);$browserData=[];
+        foreach(['js','plain']as$kind){$video=$videos->save($browserItem['id'],1,1,$fixture,'Browser '.$kind.' original.mp4');$s=Db::run($db,'SELECT source_id FROM native_social_videos WHERE id=?',[$video])->fetchColumn();$archive->save($s,true,0);$browserData[$kind]=['id'=>$video,'source'=>$s,'name'=>'Browser '.$kind.' original.mp4'];}
+        $originalTables=['native_social_video_sources','native_social_videos','khn_social_items','khn_social_revisions','native_private_settings','native_video_retention','native_video_retention_history'];$browserOriginal=ownOriginalDatabaseHash($db,$originalTables);
+        $socket=stream_socket_server('tcp://127.0.0.1:0',$errno,$error);$port=(int)substr(strrchr(stream_socket_get_name($socket,false),':'),1);fclose($socket);mkdir($root.'/web',0700,true);putenv('KH_NATIVE_LOCAL_DEMO=synthetic');putenv('KH_NATIVE_DEMO_PORT='.$port);putenv('KH_NATIVE_PRIVATE_KEY_FILE='.$root.'/private.key');
+        $server=proc_open([...TestSupport::phpCommand(),'-d','session.cookie_secure=0','-S','127.0.0.1:'.$port,'-t',$root.'/web',dirname(__DIR__).'/native/Web/router.php'],[0=>['pipe','r'],1=>['file',$root.'/server.log','a'],2=>['file',$root.'/server.log','a']],$pipes,dirname(__DIR__,2));if(!is_resource($server))throw new RuntimeException('Owned video lifecycle server required.');fclose($pipes[0]);
+        $ready=false;for($i=0;$i<100;$i++){$c=@fsockopen('127.0.0.1',$port,$errno,$error,.1);if($c){fclose($c);$ready=true;break;}usleep(50000);}if(!$ready)throw new RuntimeException('Owned video lifecycle server unavailable.');
+        $data=$root.'/browser.json';file_put_contents($data,json_encode(['origin'=>'http://127.0.0.1:'.$port,'item'=>$browserItem['id'],'videos'=>$browserData],JSON_THROW_ON_ERROR));chmod($data,0600);putenv('DVM_VIDEO_REMOVAL_FIXTURE='.$data);
+        $node=proc_open(['node',__DIR__.'/video-removal-browser.mjs'],[0=>STDIN,1=>STDOUT,2=>STDERR],$pipes,dirname(__DIR__,2));if(!is_resource($node)||proc_close($node)!==0)throw new RuntimeException('Actual video lifecycle browser failed.');
+        foreach($browserData as$entry)$check($service->get($entry['source'])['state']==='purged'&&$service->get($entry['source'])['version']===8,'actual JS/no-JS forms finish original removal, return and irreversible purge');
+        $check(ownOriginalDatabaseHash($db,$originalTables)===$browserOriginal,'every earlier content, video, encrypted connection and retention rule survives actual physical forms exact');
+    }
+    echo json_encode(['suite'=>'native-video-removal','checks'=>$n,'live_transport'=>false],JSON_THROW_ON_ERROR).PHP_EOL;
+}finally{if(is_resource($server)){proc_terminate($server);proc_close($server);}if(is_dir($root)){foreach(new RecursiveIteratorIterator(new RecursiveDirectoryIterator($root,FilesystemIterator::SKIP_DOTS),RecursiveIteratorIterator::CHILD_FIRST)as$f)$f->isDir()&&!$f->isLink()?rmdir($f->getPathname()):unlink($f->getPathname());rmdir($root);}}

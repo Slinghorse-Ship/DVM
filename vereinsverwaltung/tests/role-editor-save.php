@@ -1,0 +1,10 @@
+<?php declare(strict_types=1);
+require __DIR__.'/website-area-roles.php';
+$current=$settings->roles()[0];$roleId=$current['id'];$version=(int)$current['version'];$before=$db->query('SELECT * FROM settings_roles')->fetchAll();$history=$db->query('SELECT COUNT(*) FROM settings_revisions')->fetchColumn();
+deny(fn()=>$settings->saveRole($roleId,$version,$base+['website_custom'=>'0','website_levels'=>$levels]),'no-JS differing disabled matrix rejected');ck($db->query('SELECT * FROM settings_roles')->fetchAll()===$before&&$db->query('SELECT COUNT(*) FROM settings_revisions')->fetchColumn()===$history,'rejected matrix leaves role and audit unchanged');
+$baseline=array_fill_keys(array_keys(Kulturhus\Verein\EditorialPolicy::AREAS),'none');$baseline['press']='read';$settings->saveRole($roleId,$version,$base+['website_custom'=>'0','website_levels'=>$baseline]);$current=$settings->roles()[0];ck($current['website_access']===null,'explicit matching baseline removes custom override');$settings->saveRole($roleId,$version+1,$base+['website_custom'=>'1','website_levels'=>$levels]);$current=$settings->roles()[0];ck(json_decode($current['website_access'],true)===$levels,'custom matrix persists on reopen');$matrix=Kulturhus\Verein\WebsiteWorkspace::roleMenuMatrix($current);ck($matrix['Website: '.Kulturhus\Verein\EditorialPolicy::AREAS['events']]==='write','comparison matrix reflects saved level');
+deny(fn()=>$settings->saveRole($roleId,$version+2,$base+['website_levels'=>$levels]),'omitted flag with differing matrix rejected');
+deny(fn()=>$settings->saveRole($roleId,$version+2,$base+['website_levels'=>$baseline]),'omitted flag with matching baseline cannot remove a stored restriction');
+deny(fn()=>$settings->saveRole($roleId,$version+2,$base+['website_custom'=>'1','website_levels'=>'write']),'non-array matrix rejected as a form error');
+$db->exec("UPDATE actors SET active=0 WHERE id='person'");deny(fn()=>$settings->assignRole('person',$roleId,1),'inactive account assignment rejected');
+echo "$n role save checks passed\n";

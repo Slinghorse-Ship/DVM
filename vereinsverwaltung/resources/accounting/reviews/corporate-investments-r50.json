@@ -1,0 +1,224 @@
+{
+  "schema": 1,
+  "revision": 50,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "corporate-investments-r50-001@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.sharesInAffil.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.sharesInAffil.corporations",
+            "bs.ass.fixAss.fin.sharesInAffilOtherForeign"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "08040",
+              "semantic": {
+                "name": "Anteile an verbundenen Unternehmen, Kapitalgesellschaften",
+                "function": "",
+                "range_start": "08040",
+                "range_end": "08040",
+                "parent": null
+              },
+              "signature": "985a456bb7bb6f1891571ccd5d23ffee963db85af418c88d4565fab71a61a16d"
+            }
+          ]
+        },
+        {
+          "purpose": "corporate-investments-r50-002@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.sharesInAffil.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.sharesInAffil.corporations",
+            "bs.ass.fixAss.fin.sharesInAffilOtherForeign"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "08080",
+              "semantic": {
+                "name": "Anteile an herrschender oder mehrheitlich beteiligter Gesellschaft, Kapitalgesellschaften",
+                "function": "",
+                "range_start": "08080",
+                "range_end": "08080",
+                "parent": null
+              },
+              "signature": "4ef4fe165d9688daad3e71d7167aa0bef0059285e1903b14314e45f19fc038f9"
+            }
+          ]
+        },
+        {
+          "purpose": "corporate-investments-r50-003@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.particip.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.particip.corporations",
+            "bs.ass.fixAss.fin.participOtherForeign"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "08500",
+              "semantic": {
+                "name": "Beteiligungen an Kapitalgesellschaften",
+                "function": "",
+                "range_start": "08500",
+                "range_end": "08500",
+                "parent": null
+              },
+              "signature": "4fa4951534ab1e7df7047f6ad2210ad54a6036713943c3a71c2a717803effaed"
+            }
+          ]
+        },
+        {
+          "purpose": "corporate-investments-r50-004@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.particip.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.particip.corporations",
+            "bs.ass.fixAss.fin.participOtherForeign"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "09800",
+              "semantic": {
+                "name": "Genossenschaftsanteile zum langfristigen Verbleib",
+                "function": "",
+                "range_start": "09800",
+                "range_end": "09800",
+                "parent": null
+              },
+              "signature": "3369f2f1b504365f9ca671927b8119a74cd86bf3a9f9dad5cb6f792ff267e5a4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "corporate-investments-r50-001@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.sharesInAffil.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.sharesInAffil.corporations",
+            "bs.ass.fixAss.fin.sharesInAffilOtherForeign"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "08040",
+              "semantic": {
+                "name": "Anteile an verbundenen Unternehmen, Kapitalgesellschaften",
+                "function": "",
+                "range_start": "08040",
+                "range_end": "08040",
+                "parent": null
+              },
+              "signature": "985a456bb7bb6f1891571ccd5d23ffee963db85af418c88d4565fab71a61a16d"
+            }
+          ]
+        },
+        {
+          "purpose": "corporate-investments-r50-002@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.sharesInAffil.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.sharesInAffil.corporations",
+            "bs.ass.fixAss.fin.sharesInAffilOtherForeign"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "08080",
+              "semantic": {
+                "name": "Anteile an herrschender oder mehrheitlich beteiligter Gesellschaft, Kapitalgesellschaften",
+                "function": "",
+                "range_start": "08080",
+                "range_end": "08080",
+                "parent": null
+              },
+              "signature": "4ef4fe165d9688daad3e71d7167aa0bef0059285e1903b14314e45f19fc038f9"
+            }
+          ]
+        },
+        {
+          "purpose": "corporate-investments-r50-003@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.particip.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.particip.corporations",
+            "bs.ass.fixAss.fin.participOtherForeign"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "08500",
+              "semantic": {
+                "name": "Beteiligungen an Kapitalgesellschaften",
+                "function": "",
+                "range_start": "08500",
+                "range_end": "08500",
+                "parent": null
+              },
+              "signature": "4fa4951534ab1e7df7047f6ad2210ad54a6036713943c3a71c2a717803effaed"
+            }
+          ]
+        },
+        {
+          "purpose": "corporate-investments-r50-004@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.particip.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.particip.corporations",
+            "bs.ass.fixAss.fin.participOtherForeign"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "09800",
+              "semantic": {
+                "name": "Genossenschaftsanteile zum langfristigen Verbleib",
+                "function": "",
+                "range_start": "09800",
+                "range_end": "09800",
+                "parent": null
+              },
+              "signature": "3369f2f1b504365f9ca671927b8119a74cd86bf3a9f9dad5cb6f792ff267e5a4"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

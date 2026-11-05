@@ -1,0 +1,29 @@
+<?php declare(strict_types=1);
+/** Compare the bounded catalogue with the full existing public contract, not a second resolver. */
+function ownContentMessageContracts(PDO $db,callable $check):void
+{
+ $id='content-locale-'.bin2hex(random_bytes(5));$club=$id.'-club';$foreignClub=$id.'-other';
+ foreach([[$id,$club],[$id.'-reader',$club],[$id.'-foreign',$foreignClub]]as[$actor,$owner])Kulturhus\Native\Shared\Db::run($db,'INSERT INTO native_users(id,club_id,name) VALUES(?,?,?)',[$actor,$owner,'Own literal Album veröffentlichen 0']);
+ foreach([$id,$id.'-foreign']as$actor)foreach(['read','manage']as$capability)Kulturhus\Native\Shared\Db::run($db,"INSERT INTO native_grants VALUES(?,'website',?)",[$actor,$capability]);
+ $access=new Kulturhus\Native\Shared\Access($db,$id);$catalog=new Kulturhus\Native\Language\Catalog($db,$access);$settings=new Kulturhus\Native\Language\Settings($db,$access);
+ $scoped=$catalog->contentMessages('de');$full=$catalog->messages('de');$keys=array_fill_keys(array_keys($scoped),true);
+ $check(count($scoped)<count($full)/2,'bounded content catalogue excludes unrelated finance and account packs');
+ $sources=array_keys(Kulturhus\Native\Language\ContentMessages::ENGLISH+Kulturhus\Native\Language\MediaMessages::ENGLISH+Kulturhus\Native\Language\PhotoMessages::ENGLISH+Kulturhus\Native\Language\ManagerMessages::ENGLISH+Kulturhus\Native\Language\FreeListMessages::ENGLISH+Kulturhus\Native\Language\ControlMessages::ENGLISH+Kulturhus\Native\Language\CalendarMessages::ENGLISH);
+ $compare=static function(?string $locale=null)use($db,$catalog,$keys,$sources,$check):void{$tables=$db->query('SHOW TABLES')->fetchAll(PDO::FETCH_COLUMN);$before=ownOriginalDatabaseHash($db,$tables);$actual=$catalog->contentMessages($locale);$whole=$catalog->messages($locale);$expected=array_intersect_key($whole,$keys);$all=true;foreach($sources as$source)if(Kulturhus\Native\Language\ContentMessages::text($source,$actual)!==Kulturhus\Native\Language\ContentMessages::text($source,$whole)){$all=false;break;}$check($all,'every declared content/media/photo/manager fallback text equals full catalogue');$check($actual===$expected,'whole scoped labels, order and fallbacks equal existing full catalogue: '.($locale??'own current'));$check(ownOriginalDatabaseHash($db,$tables)===$before,'scoped/full catalogue comparison changes no whole row or schema');};
+ $compare('de');$compare('en');
+ $content=Kulturhus\Native\Language\ContentMessages::key('Album veröffentlichen');$media=Kulturhus\Native\Language\MediaMessages::key(array_key_first(array_diff_key(Kulturhus\Native\Language\MediaMessages::ENGLISH,Kulturhus\Native\Language\ContentMessages::ENGLISH)));$photo=Kulturhus\Native\Language\PhotoMessages::key(array_key_first(array_diff_key(Kulturhus\Native\Language\PhotoMessages::ENGLISH,Kulturhus\Native\Language\MediaMessages::ENGLISH,Kulturhus\Native\Language\ContentMessages::ENGLISH)));$manager=Kulturhus\Native\Language\ManagerMessages::key(array_key_first(Kulturhus\Native\Language\ManagerMessages::ENGLISH));
+ $check(isset($scoped[$content],$scoped[$media],$scoped[$photo],$scoped[$manager]),'content, media, photo and original manager fallback keys are all retained');
+ $config=['source'=>'de','languages'=>[['code'=>'de','label'=>'Deutsch','enabled'=>true,'fallback'=>null,'messages'=>[]],['code'=>'en','label'=>'English','enabled'=>false,'fallback'=>'de','messages'=>[$content=>'Own original English override 0',$media=>'Own media override 0',$photo=>'Own photo override 0',$manager=>'Own manager override 0','save'=>'Own unrelated full-only override']],['code'=>'en-gb','label'=>'Regional','enabled'=>true,'fallback'=>'en','messages'=>[$content=>'Own regional override 0']],['code'=>'fr','label'=>'Français','enabled'=>true,'fallback'=>'en','messages'=>[$photo=>'Own French photo override 0']]]];
+ // Publicly enabled regional and packless locales require their enabled fallback.
+ $config['languages'][1]['enabled']=true;$settings->save($config,0);
+ foreach(['de','en','en-gb','fr']as$locale)$compare($locale);
+ $check($catalog->contentMessages('fr')[$content]==='Own original English override 0'&&$catalog->contentMessages('fr')[$photo]==='Own French photo override 0','packless locale keeps its English fallback and literal own overrides');
+ $check($catalog->contentMessages('en-gb')[$content]==='Own regional override 0','regional own override retains precedence over parent pack');
+ $catalog->select('fr');$compare();$config['languages'][1]['messages'][$content]='Album veröffentlichen';$settings->save($config,1);$compare();
+ $check($catalog->contentMessages()[$content]==='Album veröffentlichen','same catalogue observes live configuration and preserves literal human override');
+ $reader=new Kulturhus\Native\Language\Catalog($db,new Kulturhus\Native\Shared\Access($db,$id.'-reader'));$reader->select('en');$check($reader->contentMessages()[$content]==='Album veröffentlichen','personal content language requires no website editing grant');
+ $foreignAccess=new Kulturhus\Native\Shared\Access($db,$id.'-foreign');$foreignSettings=new Kulturhus\Native\Language\Settings($db,$foreignAccess);$foreignConfig=$config;$foreignConfig['languages'][1]['messages'][$content]='Foreign private original';$foreignSettings->save($foreignConfig,0);$foreign=new Kulturhus\Native\Language\Catalog($db,$foreignAccess);
+ $check($foreign->contentMessages('en')[$content]==='Foreign private original'&&$catalog->contentMessages('en')[$content]==='Album veröffentlichen','club-specific content overrides never cross tenant boundaries');
+ foreach(['xx','en-GB']as$bad){$rejected=false;try{$catalog->contentMessages($bad);}catch(DomainException|InvalidArgumentException){$rejected=true;}$check($rejected,'bounded catalogue keeps existing unknown/invalid locale refusal');}
+ $check(!isset($catalog->contentMessages('en')['save']),'unrelated configured override is absent from content-only catalogue');
+}

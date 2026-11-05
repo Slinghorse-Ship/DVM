@@ -1,0 +1,110 @@
+{
+  "dokument-ziel": {
+    "file": "hilfe-dokument-ziel.png",
+    "title": "Das erste Ablageziel wählen",
+    "notes": [
+      "Die richtige Rechnung oder Person auswählen. Titel und Nummer kontrollieren.",
+      "Für Dateien zu einem anderen Vorgang ein weiteres Ziel anlegen.",
+      "Dieses Ziel gilt für die nächste Dateiauswahl. Bereits vorhandene Dateien werden dadurch nicht verschoben."
+    ],
+    "source": "?view=documents&new_document=1",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 693,
+    "height": 431
+  },
+  "dokument-dateien": {
+    "file": "hilfe-dokument-dateien.png",
+    "title": "Jede Datei hat einen eigenen Titel, ein Datum und ein Ziel",
+    "notes": [
+      "Den vorgeschlagenen Dateinamen durch einen verständlichen Titel ersetzen.",
+      "Das Datum genau dieser Unterlage eintragen.",
+      "Das Ablageziel dieser einzelnen Datei prüfen oder korrigieren."
+    ],
+    "source": "?view=documents&new_document=1",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 678,
+    "height": 387
+  },
+  "dokument-bestaetigung": {
+    "file": "hilfe-dokument-bestaetigung.png",
+    "title": "Die Aufteilung vor dem Speichern kontrollieren",
+    "notes": [
+      "Unter Ziel 1 müssen die ersten fünf Dateien stehen. Titel und Dokumentdaten einzeln lesen.",
+      "Unter Ziel 2 müssen die anderen fünf Dateien stehen. Eine falsche Aufteilung vor dem Speichern ändern."
+    ],
+    "source": "?view=documents&new_document=1",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 690,
+    "height": 364
+  },
+  "finanz-export": {
+    "file": "hilfe-finanz-export.png",
+    "title": "Finanzliste und Originalbelege für einen Zeitraum herunterladen",
+    "notes": [
+      "Beginn des gewünschten Belegzeitraums wählen.",
+      "Ende des gewünschten Belegzeitraums wählen.",
+      "Das Paket mit zugehörigen Originaldateien erzeugen. Vor der Weitergabe den Inhalt prüfen."
+    ],
+    "source": "?view=finance&tab=export",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 324
+  },
+  "finanz-datev": {
+    "file": "hilfe-finanz-datev.png",
+    "title": "DATEV: zuerst eine Vorschau erstellen",
+    "notes": [
+      "Die eigene DATEV-Beraternummer aus den abgestimmten Angaben übernehmen. Keine Beispielnummer für echte Exporte verwenden.",
+      "Die zugehörige Mandantennummer eintragen.",
+      "Die Vorschau prüft Angaben und Zahlungen. Fehler müssen vor dem Export geklärt werden."
+    ],
+    "source": "?view=finance&tab=export",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 317
+  },
+  "briefpapier": {
+    "file": "hilfe-briefpapier.png",
+    "title": "Briefpapier: die Kopfzeile bearbeiten",
+    "notes": [
+      "Öffnet die Felder für Position, Text und Gestaltung der Kopfzeile.",
+      "Ein eigenes Logo auswählen. Die spätere Übernahme erfolgt mit Speichern."
+    ],
+    "source": "?view=settings&tab=paper",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 466,
+    "height": 251
+  },
+  "galerie-upload": {
+    "file": "hilfe-galerie-upload.png",
+    "title": "Bilder auswählen: die Übertragung beginnt sofort",
+    "notes": [
+      "Hier Bilder hineinziehen oder anklicken und im Dateifenster auswählen. Es ist kein weiterer Uploadknopf nötig.",
+      "Bei unklarem Stand die tatsächlich gespeicherten Bilder neu anzeigen."
+    ],
+    "source": "?view=website&tab=gallery&item=1271",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 223
+  },
+  "galerie-sortieren": {
+    "file": "hilfe-galerie-sortieren.png",
+    "title": "Die Reihenfolge ganzer Alben ändern",
+    "notes": [
+      "Verschiebt dieses Album in der Galerieübersicht nach oben.",
+      "Verschiebt das ganze Album nach unten. Einzelne Fotos werden im Album sortiert."
+    ],
+    "source": "?view=website&tab=gallery&q=Beispielalbum%20%E2%80%93%20nur%20Schulungsdaten",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 247,
+    "height": 190
+  }
+}

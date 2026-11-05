@@ -1,0 +1,1150 @@
+{
+  "format": 1,
+  "component": "eric-runtime",
+  "version": "44.3.6.0",
+  "upstream_url": "https://download.elster.de/download/eric/eric_44/ERiC-44.3.6.0-Linux-x86_64.jar",
+  "upstream_sha256": "e36df8b02045ff3449eb23e086a39f5455b709c967e708eae44f27099ce4de95",
+  "runtime_archive_sha256": "8920de055ff2a5ce50db09209d5a7c672fd904dac1f4f2dd4d404bf6d43b6fb0",
+  "runtime_archive_bytes": 515721865,
+  "unmodified_upstream_program_files": [
+    {
+      "path": "lib/libeSigner.so",
+      "bytes": 7045640,
+      "sha256": "0d7c04b37f17ce343b95554131ce8b563c79dbdf098ff961a758020ae9019d8c"
+    },
+    {
+      "path": "lib/libericapi.so",
+      "bytes": 13553056,
+      "sha256": "4620823f5f4b883b08aba9918d801ea6d243c77ca5eb22b877cd05b838976423"
+    },
+    {
+      "path": "lib/libericxerces.so",
+      "bytes": 4123816,
+      "sha256": "f0395545453ba75b69142957e0b937f6459ee7095e53a8a58e45f1d4ff3f0bba"
+    },
+    {
+      "path": "lib/libotto.so",
+      "bytes": 8428544,
+      "sha256": "4b43dfee351cba3f8471bc2bb40ebb8ec66a9db9c94993d04549d4a0d4bfcc70"
+    },
+    {
+      "path": "lib/plugins/libcheck34a_2015.so",
+      "bytes": 3392472,
+      "sha256": "b2a13c91bdb019e5866b0e2f5d9a72f799075cf3ea8b98e4df7540da88d845b3"
+    },
+    {
+      "path": "lib/plugins/libcheck34a_2016.so",
+      "bytes": 3392472,
+      "sha256": "13e4b21db35419b9394f64a23e864dbbba7abeaa9381d1c777c7c77caa10366e"
+    },
+    {
+      "path": "lib/plugins/libcheck34a_2017.so",
+      "bytes": 3392472,
+      "sha256": "5740fbdeb3c96d6f297c53713f965a6108e84c1d2bf49a06c2328658a7b907b7"
+    },
+    {
+      "path": "lib/plugins/libcheck34a_2018.so",
+      "bytes": 3392472,
+      "sha256": "1a2a9244c11295e97403f8d9f0f3d021087e4964b33ac5fa2f700ea6d28a30c8"
+    },
+    {
+      "path": "lib/plugins/libcheck34a_2019.so",
+      "bytes": 3392472,
+      "sha256": "0055856b634dc81bc4af3af94cd0da6245d681e5b91c97a27b969290ab460cb3"
+    },
+    {
+      "path": "lib/plugins/libcheck34a_2020.so",
+      "bytes": 3396568,
+      "sha256": "07b771817e737431866ae5858ab127edc615c80d13b9e5c0214f6f745f0b7d23"
+    },
+    {
+      "path": "lib/plugins/libcheck34a_2021.so",
+      "bytes": 3499320,
+      "sha256": "07fc3d4498db89aac4fcfe65895e4affd10c2f8118357b922a586176c0e0eb2f"
+    },
+    {
+      "path": "lib/plugins/libcheck34a_2022.so",
+      "bytes": 3503416,
+      "sha256": "b60713133e899d56b26461fd270eec9df0cf7108ce4608c7519733f350d9e503"
+    },
+    {
+      "path": "lib/plugins/libcheck34a_2023.so",
+      "bytes": 3503416,
+      "sha256": "873ef895e9a9c1e868ab3949d14bed44871e30b432e1633d26eeb1aff4943ded"
+    },
+    {
+      "path": "lib/plugins/libcheck34a_2024.so",
+      "bytes": 3548536,
+      "sha256": "22a1ccf2df0ac76e883432d268ffcd1fa1783756b672438996ee542c046cd3d9"
+    },
+    {
+      "path": "lib/plugins/libcheck34a_2025.so",
+      "bytes": 3622040,
+      "sha256": "bb89672689eaa20b92bff274586eb82859fbb7fe470edd9a38235e056be87c00"
+    },
+    {
+      "path": "lib/plugins/libcheckAussensteuer.so",
+      "bytes": 5445304,
+      "sha256": "2bf860368c44b9bbaa5777da123eb3f1fabf713e8e9a4490b2902c17e66c95ff"
+    },
+    {
+      "path": "lib/plugins/libcheckBauleistungStAb.so",
+      "bytes": 3822136,
+      "sha256": "71a3283e38cb1850751c4e8fb81961bf647bcfd2d279be39230be1d88303198a"
+    },
+    {
+      "path": "lib/plugins/libcheckBilanz_5_0.so",
+      "bytes": 6645800,
+      "sha256": "6afb6a6a96f10440a719d95ce132ecd4c3ea5e5d960f52ca822e8eb645282098"
+    },
+    {
+      "path": "lib/plugins/libcheckBilanz_5_1.so",
+      "bytes": 6885832,
+      "sha256": "eb950dba3a640856cd68af583cca9e189cb037b87c48d70811baab565b23b407"
+    },
+    {
+      "path": "lib/plugins/libcheckBilanz_5_2.so",
+      "bytes": 7323928,
+      "sha256": "d66ad99e2f5108a6af4894a58afb7c9b7baecfc5e968b6e232b1ebb0a26cfda5"
+    },
+    {
+      "path": "lib/plugins/libcheckBilanz_5_3.so",
+      "bytes": 8218408,
+      "sha256": "18dd06836616acae9df86306d6fd3075199e8ec5c86d9e82daeb8e58569157f2"
+    },
+    {
+      "path": "lib/plugins/libcheckBilanz_5_4.so",
+      "bytes": 8428008,
+      "sha256": "6fcab7591960236d507ba9a638b5647251a53b549a24bddfce3fe2125c4b5e19"
+    },
+    {
+      "path": "lib/plugins/libcheckBilanz_6_0.so",
+      "bytes": 8763624,
+      "sha256": "3316c67cf1031a4bd95d09a431de038ea2a922f1f11ad19e49ee3d2fdc86a1c4"
+    },
+    {
+      "path": "lib/plugins/libcheckBilanz_6_1.so",
+      "bytes": 9033960,
+      "sha256": "33e5b4d99ed623914d8f03dcbee513cdf92eddffa4b9eccd91b629dc139d6bb2"
+    },
+    {
+      "path": "lib/plugins/libcheckBilanz_6_2.so",
+      "bytes": 9246760,
+      "sha256": "b11d7871b41a4006d95a97ed00e07271b788439a16daea04aca9b2683aa66231"
+    },
+    {
+      "path": "lib/plugins/libcheckBilanz_6_3.so",
+      "bytes": 9216968,
+      "sha256": "16791e3aa55796dd5f449bc6a8dafd36926b4e5d7c7b1f77201b456a848710db"
+    },
+    {
+      "path": "lib/plugins/libcheckBilanz_6_4.so",
+      "bytes": 9298952,
+      "sha256": "e4d17b5bbca3f27b7d3ea8991dba9c4317a5dd9be182498ac42c25a575815bf8"
+    },
+    {
+      "path": "lib/plugins/libcheckBilanz_6_5.so",
+      "bytes": 9321832,
+      "sha256": "6656115af152f7a3aaca4f1a04652d5a2c08ecd22d960de7bfa9189b6e3f6a82"
+    },
+    {
+      "path": "lib/plugins/libcheckBilanz_6_6.so",
+      "bytes": 9425192,
+      "sha256": "f0987e3e18970fc3d2e0cffe0cb7691840792a6a3202492bbae0c18892f8ef39"
+    },
+    {
+      "path": "lib/plugins/libcheckBilanz_6_7.so",
+      "bytes": 9427528,
+      "sha256": "6a7eadc648bc0731b13b5223535e08f7ca09904bfbf3ae2d101a76b4b513144f"
+    },
+    {
+      "path": "lib/plugins/libcheckBilanz_6_8.so",
+      "bytes": 9539656,
+      "sha256": "b27c1f1b05f3976806938645af8f898ec623dbdb6b703acdb970d045066eb732"
+    },
+    {
+      "path": "lib/plugins/libcheckBilanz_6_9.so",
+      "bytes": 9614440,
+      "sha256": "da8d20bf84d4f8bc199d258646fa7dc1c06e079d04d167c1df67214f94ed054b"
+    },
+    {
+      "path": "lib/plugins/libcheckDIVA.so",
+      "bytes": 3565848,
+      "sha256": "258d3eaf73a3374d04ee353250ec798b80553012dac591d61d9f86a8da8b91b7"
+    },
+    {
+      "path": "lib/plugins/libcheckESt_2015.so",
+      "bytes": 12119544,
+      "sha256": "577d64d45cb968508b32750b67d9187da7b9963ba0602a84a525ac69e6576360"
+    },
+    {
+      "path": "lib/plugins/libcheckESt_2016.so",
+      "bytes": 12205592,
+      "sha256": "aad33947c66ab8f62d9950e780218077b25881727c3d55f8087b5a631192fed6"
+    },
+    {
+      "path": "lib/plugins/libcheckESt_2017.so",
+      "bytes": 12435000,
+      "sha256": "d58b63561d553cc726cec9d491089fcd08556db3c07d7e19f73659491c1f1a5c"
+    },
+    {
+      "path": "lib/plugins/libcheckESt_2018.so",
+      "bytes": 12840600,
+      "sha256": "a545a73be8e5b089f9631f07f9360b2c8fdcab96b89c164e60e3ccfc028d503c"
+    },
+    {
+      "path": "lib/plugins/libcheckESt_2019.so",
+      "bytes": 13365976,
+      "sha256": "5c93352471df0722cb3f67e7a7d300bf5475f04e0d68af7d2736f034a7fbccd4"
+    },
+    {
+      "path": "lib/plugins/libcheckESt_2020.so",
+      "bytes": 12445400,
+      "sha256": "88f626757357814ca4c7ef7b74d1cccc16d9ea2fe5116e32189f017d4a96b37a"
+    },
+    {
+      "path": "lib/plugins/libcheckESt_2021.so",
+      "bytes": 12789848,
+      "sha256": "5385f6cce8de724a99907dfdff34a92945b6877817baddc10056cc9d82eca5d8"
+    },
+    {
+      "path": "lib/plugins/libcheckESt_2022.so",
+      "bytes": 11908184,
+      "sha256": "fb9792e49a4a3b82d952dc150d2a72d53cd45759d533ae39f785b3a61cc6bded"
+    },
+    {
+      "path": "lib/plugins/libcheckESt_2023.so",
+      "bytes": 11954936,
+      "sha256": "90bb0914fe0817d8db34d1150f880638ab945c124105ddc5c3ca6c3ba1576b70"
+    },
+    {
+      "path": "lib/plugins/libcheckESt_2024.so",
+      "bytes": 12434328,
+      "sha256": "e9b38a2cce1cf8f83b537e3b33cb53ee05f99a7f9502daf09ade017b60295157"
+    },
+    {
+      "path": "lib/plugins/libcheckESt_2025.so",
+      "bytes": 12496152,
+      "sha256": "307b9d92f5d1768074967a20fc7b23584a5b20cab4ba89ba88d40fe4c907fcf7"
+    },
+    {
+      "path": "lib/plugins/libcheckEStbeschraenkt_2015.so",
+      "bytes": 6801304,
+      "sha256": "c9329537379c65786d2e0d6cfde98c879a3cb06e7c818bee0fe022d6229e1c89"
+    },
+    {
+      "path": "lib/plugins/libcheckEStbeschraenkt_2016.so",
+      "bytes": 6903832,
+      "sha256": "61a86c3fc8807792995c293996fe0d15cad86ea92651a95c4fe087f58ead3dc9"
+    },
+    {
+      "path": "lib/plugins/libcheckEStbeschraenkt_2017.so",
+      "bytes": 7108600,
+      "sha256": "d08b88269c207ce7cccf09900e0ef0cc28702e53e5406e2cb9bb247e383fe6ed"
+    },
+    {
+      "path": "lib/plugins/libcheckEStbeschraenkt_2018.so",
+      "bytes": 7387128,
+      "sha256": "98a71f8b1f001552138a1600f739813fc7d53f5fa033f3f98a6558481aebc526"
+    },
+    {
+      "path": "lib/plugins/libcheckEStbeschraenkt_2019.so",
+      "bytes": 7280440,
+      "sha256": "f0c7aebefd6d37220cd47c7a15fa0da438cf2d811af0a8557cf26ac395d11e2d"
+    },
+    {
+      "path": "lib/plugins/libcheckEStbeschraenkt_2020.so",
+      "bytes": 8343480,
+      "sha256": "30ea3c1b22138a8e4438b73f529f3ecd71851ee06d0c9420ea5df02a21c84518"
+    },
+    {
+      "path": "lib/plugins/libcheckEStbeschraenkt_2021.so",
+      "bytes": 8597688,
+      "sha256": "a9b2a1d644055d488b29c63643adcd91a99136d3f739332691a3e79ea4de519e"
+    },
+    {
+      "path": "lib/plugins/libcheckEStbeschraenkt_2022.so",
+      "bytes": 7806200,
+      "sha256": "373771a938f3d5183da93c19c78be5ea82cdff4490f0d3c503c91d7ecbdd3374"
+    },
+    {
+      "path": "lib/plugins/libcheckEStbeschraenkt_2023.so",
+      "bytes": 8039512,
+      "sha256": "e666def4a2f96ea8ce57d6f96045c10112dfa56dd797b399aa9aeed3c9757409"
+    },
+    {
+      "path": "lib/plugins/libcheckEStbeschraenkt_2024.so",
+      "bytes": 8240312,
+      "sha256": "fba162fda3234d0255604f570c89fb7d75c4365e124814337c73b9ba81d00f88"
+    },
+    {
+      "path": "lib/plugins/libcheckEStbeschraenkt_2025.so",
+      "bytes": 8355160,
+      "sha256": "187042ebfaa0e0a2ebe96ee42b35d932497f9488acf4bd8d97b1b045c0122b19"
+    },
+    {
+      "path": "lib/plugins/libcheckEUER_2015.so",
+      "bytes": 6211256,
+      "sha256": "d52893e14df136eba5dd522bf9382f9f151ad106bb9076139a2c73629b7e38ce"
+    },
+    {
+      "path": "lib/plugins/libcheckEUER_2016.so",
+      "bytes": 6350520,
+      "sha256": "eb5165a6c954bbdab2b829ae8a8d8d09fcfa10f911cbb12d0f3ff631c3711b27"
+    },
+    {
+      "path": "lib/plugins/libcheckEUER_2017.so",
+      "bytes": 6330040,
+      "sha256": "5de4b51925cc758da02f817788cc6b795e72b645d9844df20ff3aa3ef84fd02a"
+    },
+    {
+      "path": "lib/plugins/libcheckEUER_2018.so",
+      "bytes": 6354616,
+      "sha256": "0bad056cf693635848b30b6a3623304522da47d3d3606aac412b29b9229deb47"
+    },
+    {
+      "path": "lib/plugins/libcheckEUER_2019.so",
+      "bytes": 7616248,
+      "sha256": "d66770c8424bd8891658dd7a9bbc539c224b2533f8fcfc4043c47fca1490229f"
+    },
+    {
+      "path": "lib/plugins/libcheckEUER_2020.so",
+      "bytes": 7894936,
+      "sha256": "ee29fb520a0e0ff65b946acd04e942539054888b094e8d22f54b59687508807e"
+    },
+    {
+      "path": "lib/plugins/libcheckEUER_2021.so",
+      "bytes": 8636440,
+      "sha256": "3519a7e730658b429bb8c02d2679123c57f05e3e4f12eb141c233e6f058bf416"
+    },
+    {
+      "path": "lib/plugins/libcheckEUER_2022.so",
+      "bytes": 8775704,
+      "sha256": "5b59781ddcb3ec09dc767e7e3749431b4175dfd18c59ca1f2ec96e61cb88e1b3"
+    },
+    {
+      "path": "lib/plugins/libcheckEUER_2023.so",
+      "bytes": 8992536,
+      "sha256": "7e407e80ed98a264ae357d7689ae4d7a45afa4e9f7d43d7b3018eeb5ca97aebb"
+    },
+    {
+      "path": "lib/plugins/libcheckEUER_2024.so",
+      "bytes": 8849272,
+      "sha256": "e0b9f766d1e4b41d790c72af76b13be2813ba3ed484000548bec848f7e95c65d"
+    },
+    {
+      "path": "lib/plugins/libcheckEUER_2025.so",
+      "bytes": 9021304,
+      "sha256": "f42a4db106744ae30e47eb71a253ef94f971175caa3ecadfe32262aa0b04e705"
+    },
+    {
+      "path": "lib/plugins/libcheckEinspruch.so",
+      "bytes": 4792952,
+      "sha256": "70c2caafa5fddfa7af42f8f13be0d272341b10cf450c65e5c2374e78e67c9b5c"
+    },
+    {
+      "path": "lib/plugins/libcheckElsterBereitstellung.so",
+      "bytes": 2720248,
+      "sha256": "f05afd6f074f5ec3dd7c57786db38356fc97e5b94754c19a680fc14f20bad087"
+    },
+    {
+      "path": "lib/plugins/libcheckElsterDatenabholung.so",
+      "bytes": 2507096,
+      "sha256": "f221cf96b02e0c5ec2f6bb8b29344dd335537b0e38e51e588d57a727a998f6ef"
+    },
+    {
+      "path": "lib/plugins/libcheckElsterExtern.so",
+      "bytes": 3117880,
+      "sha256": "d8907a3688095580ceaf5abcd3f54bc7a0950848fc383da74bceec3089b05e4f"
+    },
+    {
+      "path": "lib/plugins/libcheckElsterFSE_2024.so",
+      "bytes": 7389912,
+      "sha256": "ba2ea43e55a95bdc01d10f2da79e78b841636ff37639865eb61769799b845a1c"
+    },
+    {
+      "path": "lib/plugins/libcheckElsterFSE_2025.so",
+      "bytes": 7389944,
+      "sha256": "1fedea5ea8c30703ea6c9757174e1722ea1110885344db6d52d43ffd4163de75"
+    },
+    {
+      "path": "lib/plugins/libcheckElsterKMV.so",
+      "bytes": 2695672,
+      "sha256": "43aaa7203453bc18323a10bb0518ff7f9921dbb217749c1e4e8b0552883cdf98"
+    },
+    {
+      "path": "lib/plugins/libcheckElsterKontoabfrage_6.so",
+      "bytes": 2572664,
+      "sha256": "c285f1cf5128ee5fec97d4ff5bd5d6d18f3f1e393a2fe3f45c4ed21d54b36c2a"
+    },
+    {
+      "path": "lib/plugins/libcheckElsterLavendel.so",
+      "bytes": 5572856,
+      "sha256": "b93f6f14b712e0456c7bdb98708118ee858a783a90a825ae4b77c95f020b3681"
+    },
+    {
+      "path": "lib/plugins/libcheckElsterLohn.so",
+      "bytes": 2802040,
+      "sha256": "d4628f4e95303be3a3b74c345290046a7cc33944ad8a7f6e5bd8aecdad989b02"
+    },
+    {
+      "path": "lib/plugins/libcheckElsterLohn2.so",
+      "bytes": 3176312,
+      "sha256": "ac042c3516d014baaa7256297ac02089a1bf75a538c99f181656fd1a1c2d336c"
+    },
+    {
+      "path": "lib/plugins/libcheckElsterNachricht.so",
+      "bytes": 9700632,
+      "sha256": "69e724ac80f41c3b02ebecf07ae640191a82bc182d23b28779044f618b416022"
+    },
+    {
+      "path": "lib/plugins/libcheckErbschaftsteuer.so",
+      "bytes": 6607544,
+      "sha256": "3e86e2b242dfea765cad93081f142548757085555a763603517f9226c306d907"
+    },
+    {
+      "path": "lib/plugins/libcheckFEINBeteiligtendaten.so",
+      "bytes": 3567096,
+      "sha256": "596d0be88ce898c9acdfbe2053a81ae48a63bb01aa9a3b6ecc7392f09b8bd117"
+    },
+    {
+      "path": "lib/plugins/libcheckFEIN_90_2015.so",
+      "bytes": 7073912,
+      "sha256": "9b57a2302ec8bdbe80d0dc9fc40b6109b43958a2e0eeed8e92a87d696d36e3f0"
+    },
+    {
+      "path": "lib/plugins/libcheckFEIN_90_2016.so",
+      "bytes": 7332088,
+      "sha256": "a5a2d7db231fe30ef0dfa6d37ebbb465fb3d2dd4d9cbdc575dd8f8de148a7ac4"
+    },
+    {
+      "path": "lib/plugins/libcheckFEIN_90_2017.so",
+      "bytes": 7481528,
+      "sha256": "ca7b5b24321ab1a5c6a03f91d69ed80c69e0fcd40347e16c8d7a165cd35cb99a"
+    },
+    {
+      "path": "lib/plugins/libcheckFEIN_90_2018.so",
+      "bytes": 8255928,
+      "sha256": "ddae0f512cfedad69bdc99a5b2198c3fd092776da7ef01ffa515070979ae5144"
+    },
+    {
+      "path": "lib/plugins/libcheckFEIN_90_2019.so",
+      "bytes": 9116024,
+      "sha256": "4db689315ff86e8379a4b1feeb26e07a3c3197760c8e7c09c46a90f2ac26476c"
+    },
+    {
+      "path": "lib/plugins/libcheckFEIN_90_2020.so",
+      "bytes": 9865304,
+      "sha256": "c55d47bc38211fcee52f07d4a65c2afd5d5481b9b44351d1df14e94fc93d014e"
+    },
+    {
+      "path": "lib/plugins/libcheckFEIN_90_2021.so",
+      "bytes": 10262456,
+      "sha256": "1d9a2f5339e9fbc269da4c4ec4bcb660c111b76881b1d072045b190b7bf9076c"
+    },
+    {
+      "path": "lib/plugins/libcheckFEIN_90_2022.so",
+      "bytes": 9145976,
+      "sha256": "9d06ce55815cba71d13c7bef9996bf448f8e42aeab58913698e718a54c7432e4"
+    },
+    {
+      "path": "lib/plugins/libcheckFEIN_90_2023.so",
+      "bytes": 9346584,
+      "sha256": "43955399a32f1e1b2b36823c34462828fb97c13ac035dd66efb95e3f5d1c76ed"
+    },
+    {
+      "path": "lib/plugins/libcheckFEIN_90_2024.so",
+      "bytes": 10149464,
+      "sha256": "1765115d03025b2d93cef0df0788f6b406a1d08827cc7708bf774fc8e7909e96"
+    },
+    {
+      "path": "lib/plugins/libcheckFEIN_90_2025.so",
+      "bytes": 10223352,
+      "sha256": "d13c908824a2fb02f03b97ec15717f979b9c61700dadd5691be6a974efa15b9e"
+    },
+    {
+      "path": "lib/plugins/libcheckFEIN_95_2015.so",
+      "bytes": 4853464,
+      "sha256": "b47ac93a3a4096d31fffba17303b26a7dd1f083dd3afcd8713f6f935f5a2ce8b"
+    },
+    {
+      "path": "lib/plugins/libcheckFEIN_95_2016.so",
+      "bytes": 4980440,
+      "sha256": "8d2328d405a0cc26368bd42a5d17be195dfdf9dd9e098ea8982bd98ffae63bb2"
+    },
+    {
+      "path": "lib/plugins/libcheckFEIN_95_2017.so",
+      "bytes": 5215288,
+      "sha256": "297fd0bb8f0a6ee915c082614030227ef0daa4106cebbe3976145cf943ed9985"
+    },
+    {
+      "path": "lib/plugins/libcheckFEIN_95_2018.so",
+      "bytes": 5543160,
+      "sha256": "6163d6e7f6b4a85e4b1fddeb7739c845385c56ec1650370478dc1f5782291148"
+    },
+    {
+      "path": "lib/plugins/libcheckFEIN_95_2019.so",
+      "bytes": 5309560,
+      "sha256": "a593b8c0c54eb1f42b12e14740f2b2e94cb29157b780e424da0c6e1c258fb5d4"
+    },
+    {
+      "path": "lib/plugins/libcheckFEIN_95_2020.so",
+      "bytes": 5518168,
+      "sha256": "b70953fd04bf8303e7955d6fbb897131055f23d399abaa36f40053dfdf660bd4"
+    },
+    {
+      "path": "lib/plugins/libcheckFEIN_95_2021.so",
+      "bytes": 5898680,
+      "sha256": "0f76bf0c9b65b5a68a08c1f26e7c83e14ba9cdb075711a5448559302fd167b3b"
+    },
+    {
+      "path": "lib/plugins/libcheckFEIN_95_2022.so",
+      "bytes": 5156536,
+      "sha256": "3d23f43f16946257a736e5a4ef061c6e15237b4800e4e7d5e1e7bbae2178853e"
+    },
+    {
+      "path": "lib/plugins/libcheckFEIN_95_2023.so",
+      "bytes": 5041848,
+      "sha256": "a8aef77c9a8b1fcbe7b931507ee27cf000cc81fa48e72de5eb5fed020fcbcd03"
+    },
+    {
+      "path": "lib/plugins/libcheckFEIN_95_2024.so",
+      "bytes": 5070520,
+      "sha256": "b5a3a0786b8997588f50c6aaf7bc19c45a1da533bb897a59a93bf10500f5fb2a"
+    },
+    {
+      "path": "lib/plugins/libcheckFEIN_95_2025.so",
+      "bytes": 5045912,
+      "sha256": "b52f10eaf6bf44ae9c2cb2f9f625f91350e9824a4872db3825a9e83c918bac32"
+    },
+    {
+      "path": "lib/plugins/libcheckGewStZ_2015.so",
+      "bytes": 3511992,
+      "sha256": "cca47db651783258ebd73d55451a87465b46448385cee3c4aac402d50403cdfb"
+    },
+    {
+      "path": "lib/plugins/libcheckGewStZ_2016.so",
+      "bytes": 3496248,
+      "sha256": "5300601ec80aa67c490d53046faa59d0113c20f460a87afcd088a7197e5f1bba"
+    },
+    {
+      "path": "lib/plugins/libcheckGewStZ_2017.so",
+      "bytes": 3505944,
+      "sha256": "b5955e3da0a1b9fbce91a7d1c232038b05294245042fc649bf186b1331ac8e01"
+    },
+    {
+      "path": "lib/plugins/libcheckGewStZ_2018.so",
+      "bytes": 3510040,
+      "sha256": "9b4e400ab47b053735bfad608f43a6a90db1ec3c99c36ab0868c873fb490de6a"
+    },
+    {
+      "path": "lib/plugins/libcheckGewStZ_2019.so",
+      "bytes": 3518872,
+      "sha256": "b3f747fcd612ccee181777e4aae1e80be68503a196ce485e4a38938d24549b45"
+    },
+    {
+      "path": "lib/plugins/libcheckGewStZ_2020.so",
+      "bytes": 3500728,
+      "sha256": "d15aff68710d39f15d0628a258f2871dd6f5526169ac58535e00c4816bb35899"
+    },
+    {
+      "path": "lib/plugins/libcheckGewStZ_2021.so",
+      "bytes": 3632344,
+      "sha256": "46e14a92768a600974a313f537d0a86d82dd9732e307b32d165ca23ceb0fcd4d"
+    },
+    {
+      "path": "lib/plugins/libcheckGewStZ_2022.so",
+      "bytes": 3673304,
+      "sha256": "2142e3dd5f0fbaedffee55e2eb4ae18f7bd954f10f964892867e675948af1e6a"
+    },
+    {
+      "path": "lib/plugins/libcheckGewStZ_2023.so",
+      "bytes": 3673304,
+      "sha256": "1fe0d9ee6d833c497e34532f4424588558d51564da7400423479ff5984940d7d"
+    },
+    {
+      "path": "lib/plugins/libcheckGewStZ_2024.so",
+      "bytes": 3661016,
+      "sha256": "c4a0027d5d8163a9b734855c26dab7bfb85a00f088415e8619e0330bdf227154"
+    },
+    {
+      "path": "lib/plugins/libcheckGewStZ_2025.so",
+      "bytes": 3665368,
+      "sha256": "35f12a8ac7f65468a652714e8470cdd68d9004d155c69e55cd42d7565fe8763f"
+    },
+    {
+      "path": "lib/plugins/libcheckGewSt_2015.so",
+      "bytes": 3634680,
+      "sha256": "968efb6e0f7bb7bb717e0ce6773eadb402d756013555b78a679e4e7c33d393e0"
+    },
+    {
+      "path": "lib/plugins/libcheckGewSt_2016.so",
+      "bytes": 3806712,
+      "sha256": "dedacdc2d2924681a7ca7c8b28d5fc2200d21518358bba0276f0b91e8c77b1cf"
+    },
+    {
+      "path": "lib/plugins/libcheckGewSt_2017.so",
+      "bytes": 4001368,
+      "sha256": "50fbcab15b7b17470c8f443cea6f7fa4cc450fde1743094de9f4d9093d374ab6"
+    },
+    {
+      "path": "lib/plugins/libcheckGewSt_2018.so",
+      "bytes": 4578968,
+      "sha256": "1144eb093ac3d05e7a35299a5ef7af0445a4e31463991324c4dc4e2aed11e63e"
+    },
+    {
+      "path": "lib/plugins/libcheckGewSt_2019.so",
+      "bytes": 4718552,
+      "sha256": "eaec9dc704ee0eb67d6db6453d5ee509032334e05a45b5b2d0abc3eb3922700d"
+    },
+    {
+      "path": "lib/plugins/libcheckGewSt_2020.so",
+      "bytes": 4915000,
+      "sha256": "239a434b732d5254cdfc30f18e9e9b69220f7f3a1281d696df35e5ef6f1796b2"
+    },
+    {
+      "path": "lib/plugins/libcheckGewSt_2021.so",
+      "bytes": 5140536,
+      "sha256": "aa9c41bef6079bb0d10b29ccfe8071a75808c09dafdb1c03d0ea98a8c5e5e245"
+    },
+    {
+      "path": "lib/plugins/libcheckGewSt_2022.so",
+      "bytes": 5353528,
+      "sha256": "661c38f9b5661c8661d5f236eb7e89d47f38f3487ca90dc1d7bdb43098254ddf"
+    },
+    {
+      "path": "lib/plugins/libcheckGewSt_2023.so",
+      "bytes": 5328888,
+      "sha256": "94686bdc5658681979ca5c3990712f8d28d82157ba53a44ca1fd51fea287afc1"
+    },
+    {
+      "path": "lib/plugins/libcheckGewSt_2024.so",
+      "bytes": 5312504,
+      "sha256": "33bcaf059159828a2ce6eb642ee36ee90402282871433f84bcd4324f32245be8"
+    },
+    {
+      "path": "lib/plugins/libcheckGewSt_2025.so",
+      "bytes": 5320760,
+      "sha256": "1a7a8ccd4fe1161079e98cfe30f59a43fa70e3d601a89f67713f04880526f85d"
+    },
+    {
+      "path": "lib/plugins/libcheckGewinnermittlung13aEStG_2022.so",
+      "bytes": 4662680,
+      "sha256": "2ab483bf0e34493853f839410193eaf5f34d017315f4e2592dd58713c3926caa"
+    },
+    {
+      "path": "lib/plugins/libcheckGewinnermittlung13aEStG_2023.so",
+      "bytes": 6214840,
+      "sha256": "be4618e45b29c10679bd61ff509acb370e2e7a0caa1095044e828669f7552e86"
+    },
+    {
+      "path": "lib/plugins/libcheckGewinnermittlung13aEStG_2024.so",
+      "bytes": 6218936,
+      "sha256": "08c555842325a29c4fcb316866dcc3dd8ead905f664d3507176a10a73dd5b987"
+    },
+    {
+      "path": "lib/plugins/libcheckGewinnermittlung13aEStG_2025.so",
+      "bytes": 6247608,
+      "sha256": "7ec077b4383612daf924bf08905fddde7c4f8c36734b548d1f604601b2820f5a"
+    },
+    {
+      "path": "lib/plugins/libcheckGrundsteuerBW.so",
+      "bytes": 5587608,
+      "sha256": "f94c88ddf519c84d8f7cd07a9a9ee30ca37adec86d00d97570b8604024b9aea2"
+    },
+    {
+      "path": "lib/plugins/libcheckGrundsteuerBY.so",
+      "bytes": 5911704,
+      "sha256": "8f9a3a4b2b98699ad2e5a505f0f08545bc7ca1123f06df9590ad449c928b2b19"
+    },
+    {
+      "path": "lib/plugins/libcheckGrundsteuerHE.so",
+      "bytes": 5521496,
+      "sha256": "8a137311dbf349ad885f1775add089b09257882f7d8a04185b5f61c51813e169"
+    },
+    {
+      "path": "lib/plugins/libcheckGrundsteuerHH.so",
+      "bytes": 5890840,
+      "sha256": "a450b2cffef422181f0ccbaccc2bd5c2ea86b000975caff5073df492f0688990"
+    },
+    {
+      "path": "lib/plugins/libcheckGrundsteuerNI.so",
+      "bytes": 5965464,
+      "sha256": "a4858e4b3236f26d3914f5b1668f67d8111432fa6d54c060217a6f196881b9bd"
+    },
+    {
+      "path": "lib/plugins/libcheckGrundsteuerwert.so",
+      "bytes": 6399448,
+      "sha256": "5e6198be7cc64627340fe1d8311adf6bd8419b434695404ff18e55b832131ea1"
+    },
+    {
+      "path": "lib/plugins/libcheckInvStG51Feststellung_3.so",
+      "bytes": 7931992,
+      "sha256": "4d3d7c05e9188cab747e61913e057360ef185ce2df4f6b60ce2ac2aae6733098"
+    },
+    {
+      "path": "lib/plugins/libcheckInvStG51Feststellung_4.so",
+      "bytes": 8677784,
+      "sha256": "5c412a0943fe3770a851a7e8c87f374c24798468f438bce761366f7dfb22487d"
+    },
+    {
+      "path": "lib/plugins/libcheckInvStG56Abs5.so",
+      "bytes": 3369432,
+      "sha256": "1769e07a0d1d3713b694f16b739515617c36895cd8b6477df6c2fc6ff0144a4e"
+    },
+    {
+      "path": "lib/plugins/libcheckKStAntragOptionPersG.so",
+      "bytes": 3369272,
+      "sha256": "2b75cef00041673f297283e903d905c3ce655c0971f3db91e3a830e09c9653ee"
+    },
+    {
+      "path": "lib/plugins/libcheckKStZ_2015.so",
+      "bytes": 3450520,
+      "sha256": "25c81baf16195e74bbbd3a32323ab67f9c0cce5ac8b6337e93861098db5ec675"
+    },
+    {
+      "path": "lib/plugins/libcheckKStZ_2016.so",
+      "bytes": 3479192,
+      "sha256": "a4f5b56278870d260d6c2bae80ea69694327c50fc5879e8916c16db4f34b827b"
+    },
+    {
+      "path": "lib/plugins/libcheckKStZ_2017.so",
+      "bytes": 3488888,
+      "sha256": "0c0e3dc0a7c81b0e51173e4b8ba256df645c2b6c2a6141310f46e5e1e498eb8f"
+    },
+    {
+      "path": "lib/plugins/libcheckKStZ_2018.so",
+      "bytes": 3488888,
+      "sha256": "e8bd854b3f08548f14907af70ee481c34a012d62a33332bd7dacd36d1b00710c"
+    },
+    {
+      "path": "lib/plugins/libcheckKStZ_2019.so",
+      "bytes": 3501176,
+      "sha256": "b3f91473523bbde7f2ee1f95974e7203a50baef2d762b0ca5b6d4848874890d6"
+    },
+    {
+      "path": "lib/plugins/libcheckKStZ_2020.so",
+      "bytes": 3470744,
+      "sha256": "1cdf881aa1e0f94858e501ad0ce40b2754864122c9a57c94ea4f54e0a86af7a4"
+    },
+    {
+      "path": "lib/plugins/libcheckKStZ_2021.so",
+      "bytes": 3676088,
+      "sha256": "9e7da46e8f399dc0f4e8ebed3b323f7e726228dd67ec06a1c26eb5b1c9687169"
+    },
+    {
+      "path": "lib/plugins/libcheckKStZ_2022.so",
+      "bytes": 3671992,
+      "sha256": "eac1d66dc1721cf08e8befb60677aff0633f46787eabef5b3e16b8c63e3ced19"
+    },
+    {
+      "path": "lib/plugins/libcheckKStZ_2023.so",
+      "bytes": 3639224,
+      "sha256": "b3906584d6f8d08dd0fc24fce029e9da83f557bfead9ef3af24bfdca018d332d"
+    },
+    {
+      "path": "lib/plugins/libcheckKStZ_2024.so",
+      "bytes": 3635128,
+      "sha256": "60fbe222bc055051e56dbcc96fd11b7013d9ece5acca60c2bfd4a883298b5776"
+    },
+    {
+      "path": "lib/plugins/libcheckKStZ_2025.so",
+      "bytes": 3643448,
+      "sha256": "5ea5aecd21097b286975106433d2fb99f7408f940a6201ca47ffcbeb42e891f9"
+    },
+    {
+      "path": "lib/plugins/libcheckKSt_2015.so",
+      "bytes": 14047800,
+      "sha256": "8000f0c757d38c27fe15e29097dfea1a762053121d59abd6e24918fac9dd1198"
+    },
+    {
+      "path": "lib/plugins/libcheckKSt_2016.so",
+      "bytes": 18968024,
+      "sha256": "62f1194d302084655763f327730c02b38d7ef6975b5f5f10fcb8729c730c78e3"
+    },
+    {
+      "path": "lib/plugins/libcheckKSt_2017.so",
+      "bytes": 16205752,
+      "sha256": "0243b710ae08e3258ec4abf02c3b34d575544709db7ae8876f89f340a967efa2"
+    },
+    {
+      "path": "lib/plugins/libcheckKSt_2018.so",
+      "bytes": 15051384,
+      "sha256": "344127b7ee7470242c17fac83de3b80691993be535328764cebcd8e2cade3136"
+    },
+    {
+      "path": "lib/plugins/libcheckKSt_2019.so",
+      "bytes": 15883512,
+      "sha256": "846249e8432e9b2008596c90ea8ad83a48bc49d09376b397c481908dae2dcb9e"
+    },
+    {
+      "path": "lib/plugins/libcheckKSt_2020.so",
+      "bytes": 16962872,
+      "sha256": "46a9ddf77b7c0252c1cc2f892c5c7159157b8ccd3c4539249b2953cb95081995"
+    },
+    {
+      "path": "lib/plugins/libcheckKSt_2021.so",
+      "bytes": 16942648,
+      "sha256": "d14d6c08959916525c8b84c47d73cac19bcf78235a85509b8d834bfc7b8ecc8d"
+    },
+    {
+      "path": "lib/plugins/libcheckKSt_2022.so",
+      "bytes": 18888312,
+      "sha256": "c77ddd6a4e34f708569fad1421245912154f2b5debcf57a0ea7fb9d8dad58005"
+    },
+    {
+      "path": "lib/plugins/libcheckKSt_2023.so",
+      "bytes": 20002712,
+      "sha256": "85df953b8bc4414935a93071286ae02cee079c4ebbcc994be1de21c4ac59ddc1"
+    },
+    {
+      "path": "lib/plugins/libcheckKSt_2024.so",
+      "bytes": 22489112,
+      "sha256": "34c0a561a5cf25609f4a7445e027029763b5091cf0f36ceb47f591828fb5dab0"
+    },
+    {
+      "path": "lib/plugins/libcheckKSt_2025.so",
+      "bytes": 20002904,
+      "sha256": "4b022894fb1a6cace8a14fb7e1dcf6b9dcbf9d5ceb327524c267efc7aab4c9ad"
+    },
+    {
+      "path": "lib/plugins/libcheckKapEStA_2016.so",
+      "bytes": 3822520,
+      "sha256": "4c9a2c80a70dff2bc860828c90a83eff01849ff4749afcdea942ea909e612acc"
+    },
+    {
+      "path": "lib/plugins/libcheckKapEStA_2017.so",
+      "bytes": 3830712,
+      "sha256": "bea45e82eacdbf2c82fd12b1d0b2ef5d144184617506735f37a2490323120487"
+    },
+    {
+      "path": "lib/plugins/libcheckKapEStA_2018.so",
+      "bytes": 3929016,
+      "sha256": "664b0f633efbdf97486caafcef33638d584910c17bf87a073f10f596e3aec6c8"
+    },
+    {
+      "path": "lib/plugins/libcheckKapEStA_2019.so",
+      "bytes": 3941304,
+      "sha256": "08a6d7dbb33e90919bffb15a90ecf7b1ad91de56b514434744c6d386b669ae09"
+    },
+    {
+      "path": "lib/plugins/libcheckKapEStA_2020.so",
+      "bytes": 3949464,
+      "sha256": "f81fdd5a01222b8fb79a1c65dbd11019ee1522c75585238f42b9d217cd1c68df"
+    },
+    {
+      "path": "lib/plugins/libcheckKapEStA_2021.so",
+      "bytes": 3949464,
+      "sha256": "31ed03d9087859aed325984bed2cf86e4ff2d0662753034a74c41940a983ffe3"
+    },
+    {
+      "path": "lib/plugins/libcheckKapEStA_2022.so",
+      "bytes": 3949464,
+      "sha256": "f3f6c5a26c6f1c51013ec4deb69b63865284bcba493732b023d1e5435e48634f"
+    },
+    {
+      "path": "lib/plugins/libcheckKapEStA_2023.so",
+      "bytes": 4023192,
+      "sha256": "e80439ef513fee9945bffd483a70be0841d61c6e7632ce830f32ebeb2fc14b91"
+    },
+    {
+      "path": "lib/plugins/libcheckKapEStA_2024.so",
+      "bytes": 4023192,
+      "sha256": "88ba9104e660a040cba5b461f727dce7a21ab2325c7b73437e6616b98bd46263"
+    },
+    {
+      "path": "lib/plugins/libcheckKapEStA_2025.so",
+      "bytes": 4006808,
+      "sha256": "ffccb55622aea2f7c35d5b5d80ee15230cd341900c87cb5833d82c49d8908df0"
+    },
+    {
+      "path": "lib/plugins/libcheckKapEStA_2026.so",
+      "bytes": 4011032,
+      "sha256": "84730caf7185074ab5216656425f0242eab0a345792ec5d291066fbe62f558b6"
+    },
+    {
+      "path": "lib/plugins/libcheckKapEStInvStG.so",
+      "bytes": 5638104,
+      "sha256": "e65eab835cfdd584f0d48b1c1a3e51f80739ed908c449008908bfc57dbe06e5f"
+    },
+    {
+      "path": "lib/plugins/libcheckKapEStInvStG_2022.so",
+      "bytes": 3843288,
+      "sha256": "284a3338e205bfd6488b018e8b026a714f7e14f3c18897facfe248df46ac5447"
+    },
+    {
+      "path": "lib/plugins/libcheckKapEStInvStG_2023.so",
+      "bytes": 3859672,
+      "sha256": "80c51f82c0413597172de3a908e6584a6b37c87e28debc659eb2f65643952859"
+    },
+    {
+      "path": "lib/plugins/libcheckKapEStInvStG_2024.so",
+      "bytes": 3871960,
+      "sha256": "d50bc9dceee0681a75ea13aa7c9728f96ace95131f31cc99372c3060d38dd2b3"
+    },
+    {
+      "path": "lib/plugins/libcheckKapEStInvStG_2025.so",
+      "bytes": 3871960,
+      "sha256": "6e5cd9f34645316e929081f29b422c95f9f8efdcbe40a9b48f360d57c9545e3b"
+    },
+    {
+      "path": "lib/plugins/libcheckKapEStInvStG_2026.so",
+      "bytes": 3876056,
+      "sha256": "04a25a1c0cfe99dc1c9062b7e2fac8926e5d8a44582df043ff690a3b449d8251"
+    },
+    {
+      "path": "lib/plugins/libcheckKontoinformation.so",
+      "bytes": 2675192,
+      "sha256": "f0ac824a7b59e5c5f609e7dbeb58acc9881614635481ef551a10b134bb06694d"
+    },
+    {
+      "path": "lib/plugins/libcheckLStA_2016.so",
+      "bytes": 3684408,
+      "sha256": "6a5ef482e6232596b4c18522f281a652e4fd65f2b3954f391138dc3cc5d7d96c"
+    },
+    {
+      "path": "lib/plugins/libcheckLStA_2017.so",
+      "bytes": 3688504,
+      "sha256": "5021ee28951776262d481c419425c8a39299a61b8c397d2dbbc656b3b76b6f5a"
+    },
+    {
+      "path": "lib/plugins/libcheckLStA_2018.so",
+      "bytes": 3692600,
+      "sha256": "5e7f4b29ce7479c3a10dd5f774cd36fe8b2d8b9882b3887463d4c324111f6ec6"
+    },
+    {
+      "path": "lib/plugins/libcheckLStA_2019.so",
+      "bytes": 3696696,
+      "sha256": "1c22d97e8945adc68e728fb0120c349eb7ceb4c086aa0a255a2c0c0c62e54460"
+    },
+    {
+      "path": "lib/plugins/libcheckLStA_2020.so",
+      "bytes": 3852344,
+      "sha256": "b472d6953a0c741c8fc9c7b395f62366aec3e0de0da028d27716b11a51ef7eb7"
+    },
+    {
+      "path": "lib/plugins/libcheckLStA_2021.so",
+      "bytes": 3904536,
+      "sha256": "9e1bb1b0b9288fcf9c3e06edff26a90dfcdc5343d014423df39f445980cba9be"
+    },
+    {
+      "path": "lib/plugins/libcheckLStA_2022.so",
+      "bytes": 3912728,
+      "sha256": "45842b0e29eaaeb5de9a2c1b9793455422ff297bf2dd4c770c571d575fdf1020"
+    },
+    {
+      "path": "lib/plugins/libcheckLStA_2023.so",
+      "bytes": 3908632,
+      "sha256": "cc90e03557def09b5cce3a441c24ed106a4e10faa6b74689e28ef9cf7e257018"
+    },
+    {
+      "path": "lib/plugins/libcheckLStA_2024.so",
+      "bytes": 3900440,
+      "sha256": "13686ee33a6ee1b77abcd27aeff3769bd297093cec9d2b4ad11f2436e48c4dda"
+    },
+    {
+      "path": "lib/plugins/libcheckLStA_2025.so",
+      "bytes": 3900440,
+      "sha256": "b2ec726a9f5e109dd57cfc90ec6e419ec5497db3b3e3b25c6f6ab70b54f8c02b"
+    },
+    {
+      "path": "lib/plugins/libcheckLStA_2026.so",
+      "bytes": 3904536,
+      "sha256": "fb5183cfb9e5ffee18d28a0c0b0cb8f07c635dd9ac9d2c0c01946f42e8f267fe"
+    },
+    {
+      "path": "lib/plugins/libcheckMindestStUnternehmenEU.so",
+      "bytes": 3406648,
+      "sha256": "38d0f91837325ae22d9836e7a1e993baee1d89c89eb1e21c06ac439e6ddb0334"
+    },
+    {
+      "path": "lib/plugins/libcheckOZGStadtstaaten.so",
+      "bytes": 6179512,
+      "sha256": "c453640f9481f279d3850ca7eea2e9d5ade345be10ad58a1c94361469c6b3961"
+    },
+    {
+      "path": "lib/plugins/libcheckRabeExtDatenhaltung.so",
+      "bytes": 2888568,
+      "sha256": "6be22ce6100e425efe2e12d65f3660ed1191ecafcf94ed80c40543d678dd9c0b"
+    },
+    {
+      "path": "lib/plugins/libcheckSchenkungsteuer.so",
+      "bytes": 6082328,
+      "sha256": "0e7330f535b9a75a747c316ee57d5fb3ce76992c5367438288fc8de68028ca65"
+    },
+    {
+      "path": "lib/plugins/libcheckStAbS50a_2024.so",
+      "bytes": 3458296,
+      "sha256": "2b598b00c42e41c528b6e2b98662eab6332bc984f3d8c56e9954ed2909cea2ed"
+    },
+    {
+      "path": "lib/plugins/libcheckStAbS50a_2025.so",
+      "bytes": 3458328,
+      "sha256": "c8a11af2a93c865558a42067b5d6321c7729c4a96ee7998f2c75877e388ff0ea"
+    },
+    {
+      "path": "lib/plugins/libcheckStAbS50a_2026.so",
+      "bytes": 3462552,
+      "sha256": "3d91624fb08d41c49310f16df2f8bb3391bdb9afac29095fcac2864f5c3b53a0"
+    },
+    {
+      "path": "lib/plugins/libcheckStrafsachen.so",
+      "bytes": 3767128,
+      "sha256": "4a35245565ec47aa59b3e68c041104638c263c217464ce6a2c0ad577ea51d82d"
+    },
+    {
+      "path": "lib/plugins/libcheckUStAKfzEinzel.so",
+      "bytes": 3656408,
+      "sha256": "32f8484f5a5cab4994dde0b74f60774e85873c8706f6c988c77a85e2ee79e798"
+    },
+    {
+      "path": "lib/plugins/libcheckUStVA_2016.so",
+      "bytes": 3651640,
+      "sha256": "8ddf49425ee3b3abd659eac25aed6e4dc3d175b1c974845d51086b5cfac5c466"
+    },
+    {
+      "path": "lib/plugins/libcheckUStVA_2017.so",
+      "bytes": 3663928,
+      "sha256": "384aae7a49f90668a9e8688871abc859e578e5cab0d5fba0d531b4757dd0f087"
+    },
+    {
+      "path": "lib/plugins/libcheckUStVA_2018.so",
+      "bytes": 3663928,
+      "sha256": "caa1c541de2bc95e59bb31f41bdd146dedbf5c71c400e8f40299bd4a5c43a820"
+    },
+    {
+      "path": "lib/plugins/libcheckUStVA_2019.so",
+      "bytes": 3651640,
+      "sha256": "9ec07e4469b94bde7afe081e54a52db78d4caeef43907a2473cad1a639e517d2"
+    },
+    {
+      "path": "lib/plugins/libcheckUStVA_2020.so",
+      "bytes": 3852344,
+      "sha256": "cabd6b8fc2848e629a4fd68db9acdffdd19671e5224a54810c40efdbdad05076"
+    },
+    {
+      "path": "lib/plugins/libcheckUStVA_2021.so",
+      "bytes": 3724280,
+      "sha256": "a3d3e40465afc3fde22dde0507208c8f0fbef93e0757c1226dee25a72492c7ff"
+    },
+    {
+      "path": "lib/plugins/libcheckUStVA_2022.so",
+      "bytes": 3871736,
+      "sha256": "d6f41edb947cb63c0d2bb601b727fa7885b39833383dcad0f9da33e616f1c7c1"
+    },
+    {
+      "path": "lib/plugins/libcheckUStVA_2023.so",
+      "bytes": 3875832,
+      "sha256": "cb75afb81ba674116c1405a23cb618fd6f6216bf1642b02e26bfa375b3ba20ed"
+    },
+    {
+      "path": "lib/plugins/libcheckUStVA_2024.so",
+      "bytes": 3875832,
+      "sha256": "9c5b858022d929fa77d85e75c4757d7305930ebb05aab4cd20fdc6af9d2bc41d"
+    },
+    {
+      "path": "lib/plugins/libcheckUStVA_2025.so",
+      "bytes": 3879928,
+      "sha256": "bb385117b6f0c7c1edd8582387ce2d892aac028d5aa1e09ab840b33c2524302b"
+    },
+    {
+      "path": "lib/plugins/libcheckUStVA_2026.so",
+      "bytes": 3896440,
+      "sha256": "b5064c119be6320b48587c67fb9e9d932f6a59519500f1eb394159505ae0fc34"
+    },
+    {
+      "path": "lib/plugins/libcheckUSt_2015.so",
+      "bytes": 3855320,
+      "sha256": "162fb362d88f031e7e0153a05f539a6f8f155a64be5209aabfd41933a2a3df3f"
+    },
+    {
+      "path": "lib/plugins/libcheckUSt_2016.so",
+      "bytes": 3883992,
+      "sha256": "a564028c59001afca27813d775d06dff6b3089ee4d56755b6ea4e5d1c67bfc79"
+    },
+    {
+      "path": "lib/plugins/libcheckUSt_2017.so",
+      "bytes": 3896280,
+      "sha256": "f24115944b95757621769fd75f356e9a76e1a81ed3f49527d54907b6b5a59fbf"
+    },
+    {
+      "path": "lib/plugins/libcheckUSt_2018.so",
+      "bytes": 3888088,
+      "sha256": "3fdb74ee083a4f3067eeedbe885d9f42e74a0bc01cb4ccbe7e85994659b56f9a"
+    },
+    {
+      "path": "lib/plugins/libcheckUSt_2019.so",
+      "bytes": 3965976,
+      "sha256": "40cd52ca5e97629bf5242e661b638720d167f7bc72274cc847e3e0054979ae1d"
+    },
+    {
+      "path": "lib/plugins/libcheckUSt_2020.so",
+      "bytes": 3998744,
+      "sha256": "52fd0fcfea143c3368d614957b8af83caa2135530a737d001b267841ee4ee92a"
+    },
+    {
+      "path": "lib/plugins/libcheckUSt_2021.so",
+      "bytes": 4224152,
+      "sha256": "700781e338eca74fd7cff13ace8937fa1f1d85dd3e33f409ba7235130d77f30d"
+    },
+    {
+      "path": "lib/plugins/libcheckUSt_2022.so",
+      "bytes": 4228248,
+      "sha256": "d6b66c0e66198f6baca9806dddf3860a0d61ec765222a38da045b62887d2b74a"
+    },
+    {
+      "path": "lib/plugins/libcheckUSt_2023.so",
+      "bytes": 4228248,
+      "sha256": "c62815a7cc23165101335d58ccfcc6c1ff1e6e7594dddabf20a9e4b841382bdb"
+    },
+    {
+      "path": "lib/plugins/libcheckUSt_2024.so",
+      "bytes": 4228248,
+      "sha256": "d172a36073644c637d5a7359de0678beb31372dd0dc24e4c0a508ee61f8af21f"
+    },
+    {
+      "path": "lib/plugins/libcheckUSt_2025.so",
+      "bytes": 4297880,
+      "sha256": "2b9e3f581c382af8bc4ed4e1ae2e10d3f3bb63e69ccb77a67914e1551e8c1f0f"
+    },
+    {
+      "path": "lib/plugins/libcheckUSt_2026.so",
+      "bytes": 4348760,
+      "sha256": "4efa2a7923d79fd38ed1cf8377ecf60f5187c01cef525d8063bfa0d4ff6c587c"
+    },
+    {
+      "path": "lib/plugins/libcheckVaSt.so",
+      "bytes": 3324056,
+      "sha256": "e9e75c0e55a3eb19365e125c25c4b84bcd6dcbd668987f929aa87c86646c5a9b"
+    },
+    {
+      "path": "lib/plugins/libcheckVollmachten.so",
+      "bytes": 5084632,
+      "sha256": "15d5ec4ea6a0c9baca39feed7f7fb757499c0610a743fa0411125d1b845d51ba"
+    },
+    {
+      "path": "lib/plugins/libcheckZMDO.so",
+      "bytes": 3647672,
+      "sha256": "1d0cfaf0ae60d905717dce7f4865a3f0100ee04067bd53c010edad737a99e0e0"
+    },
+    {
+      "path": "lib/plugins/libcommonData.so",
+      "bytes": 6360920,
+      "sha256": "ccfadb82a2f6d2df5df115671f3889f4390dbae7dfe4dfdad0888af949fd3d8c"
+    },
+    {
+      "path": "lizenz.pdf",
+      "bytes": 475720,
+      "sha256": "9d91b1bc0b6891b4a51ed189360a5b278834b5d6ec72f7decd2ee9ea5ea29518"
+    }
+  ],
+  "excluded": [
+    "developer documentation",
+    "schema documentation",
+    "examples",
+    "headers",
+    "SDK toolkit",
+    "certificates"
+  ],
+  "distribution": "Only with DVM as an integrated product under section4(1); mandatory license/privacy texts retained."
+}

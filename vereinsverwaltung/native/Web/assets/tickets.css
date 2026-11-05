@@ -1,0 +1,130 @@
+.ticket-page {
+  max-width: 46rem;
+  margin-inline: auto;
+  overflow-wrap: anywhere;
+}
+.ticket-card {
+  padding: clamp(1rem, 4vw, 2rem);
+  border: 1px solid #d7ded5;
+  border-radius: 1rem;
+  background: #fff;
+  color: #173b2e;
+}
+.ticket-page h1 {
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+}
+.ticket-price {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+}
+.ticket-price span {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.ticket-booking {
+  display: grid;
+  gap: 1rem;
+}
+.ticket-booking label {
+  display: grid;
+  gap: 0.35rem;
+}
+.ticket-page :is(input, select, button, .btn),
+.ticket-admin :is(input, select, button, .btn) {
+  min-height: 44px;
+  font-size: max(1rem, 16px);
+  max-width: 100%;
+  min-width: 0;
+}
+.ticket-page :is(input, select) {
+  width: 100%;
+  padding: 0.65rem;
+  border: 1px solid #8b9d90;
+  border-radius: 0.5rem;
+}
+.ticket-page .btn-solid,
+.ticket-admin .btn-solid {
+  background: #245640;
+  border-color: #245640;
+  color: #fff;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.ticket-page .btn-outline,
+.ticket-admin .btn-outline {
+  background: #fff;
+  border-color: #245640;
+  color: #245640;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.ticket-page form {
+  margin-block: 1rem;
+}
+.ticket-error {
+  padding: 0.8rem;
+  border-inline-start: 4px solid #8d2b27;
+  background: #fff3f0;
+  color: #692219;
+}
+.ticket-total {
+  font-size: 1.1rem;
+}
+.ticket-qr {
+  display: block;
+  max-width: min(100%, 320px);
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  margin: 1rem auto;
+  image-rendering: pixelated;
+}
+.ticket-pages,
+.ticket-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-block: 0.7rem;
+}
+.ticket-admin {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.ticket-admin form {
+  max-width: 100%;
+  min-width: 0;
+}
+.ticket-admin video {
+  display: block;
+  width: 100%;
+  max-height: 35vh;
+  border-radius: 0.6rem;
+  background: #111;
+}
+.ticket-admin [hidden] {
+  display: none !important;
+}
+.ticket-result {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.8rem;
+  border: 1px solid #8b9d90;
+  border-radius: 0.6rem;
+  margin-block: 0.7rem;
+}
+.ticket-admin label:has(> input.check) > span {
+  min-width: 0;
+  flex: 1;
+}
+.ticket-admin label:has(> input.check) {
+  display: flex;
+  gap: 0.5rem;
+  min-height: 44px;
+}
+.ticket-page .btn {
+  min-width: 44px;
+  display: inline-block;
+  padding: 0.7rem 1rem;
+}

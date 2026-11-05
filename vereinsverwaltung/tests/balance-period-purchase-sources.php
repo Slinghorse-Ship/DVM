@@ -1,0 +1,32 @@
+<?php declare(strict_types=1);
+require __DIR__.'/balance-period-sources.php';
+use Kulturhus\Verein\{BalanceInvoiceClassification as C,BalancePeriodSources,Finance};
+use Kulturhus\Verein\Tests\MySqlFixture;
+$entry=$make('119','2026-08-01');$f->updatePositions('entry',$entry,(int)$f->entry($entry)['version'],[['description'=>'Synthetic mixed purchase','amount'=>'119','tax_rate'=>'19','sphere'=>'1','account'=>'50000','input_tax'=>'none','booking_key'=>'']],'Synthetic facts');
+$period=['start'=>'2026-07-01','end'=>'2026-12-31'];$base=['recognised_on'=>'2026-08-01','private_paid_on'=>''];$opts=$base+['invoice_classification'=>['version'=>1,'uses'=>[1=>'goods']]];
+$raw=$f->positions('entry',$entry);$state=MySqlFixture::snapshot($db);$p=$s->preview($period,'invoice',$entry,$opts);
+check(!$p['issues']&&isset($p['accounts']['src_code_53490'])&&$p['snapshot']['source_catalog_year']===2026,'period proposal narrows exact original-year account');
+check(MySqlFixture::snapshot($db)===$state,'period purchase preview read only');
+require_once __DIR__.'/../src/Web/View.php';$_SESSION=['actor'=>'admin','csrf'=>'synthetic'];$_SERVER['REQUEST_METHOD']='GET';$_POST=[];
+$render=static function(PDO $db,array $query):string{$_GET=$query;ob_start();require __DIR__.'/../views/Finance/Balance/balance-ledger.php';return ob_get_clean();};
+$query=['periods'=>'1','period_id'=>$pid2,'period_source'=>'invoice:'.$entry];$html=$render($db,$query);
+check(str_contains($html,'Wofür wurde es gekauft?')&&!str_contains($html,'value="balance-period-source-import"'),'new mixed invoice asks factual use before posting');
+$html=$render($db,$query+C::fields($opts['invoice_classification']));
+check(str_contains($html,'value="balance-period-source-import"')&&str_contains($html,'name="purchase_uses[1]" value="goods"'),'period approval form carries exact reviewed answer');
+if($ui=getenv('VEREIN_PURCHASE_UI_OUTPUT')){
+    if(getenv('VEREIN_MODE')!=='synthetic'||!is_dir(dirname($ui)))throw new RuntimeException('Synthetic UI output directory required');
+    $css=file_get_contents(__DIR__.'/../public/style.css');$js=file_get_contents(__DIR__.'/../public/balance-period-sources.js');
+    preg_match('~<section class="card" id="period-sources">.*?</section>~s',$html,$section);
+    file_put_contents($ui,'<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Synthetische Rechnungsprüfung</title><style>'.$css.'</style></head><body><main style="margin:0;padding:16px;max-width:960px">'.$section[0].'</main><script>'.$js.'</script></body></html>');
+}
+$oldP=$s->preview($period,'invoice',$entry,$base);
+denied(fn()=>$l->importSource($pid2,$l->report($pid2)['version'],'invoice',$entry,$opts,$oldP['hash'],true),'period import rejects earlier unclassified hash');
+$l->importSource($pid2,$l->report($pid2)['version'],'invoice',$entry,$base,$oldP['hash'],true);
+$r=$l->report($pid2);check($r['sources']['invoice:'.$entry]['proposal']['options']===$base,'legacy dated binding is unchanged');
+$l->correctSource($pid2,$r['version'],'invoice',$entry,$opts,$p['hash'],true,$oldP['hash'],'Synthetic use review');
+$r=$l->report($pid2);check($r['sources']['invoice:'.$entry]['proposal']['options']===$opts&&$f->positions('entry',$entry)===$raw,'dated correction retains original receipt and selected use');
+$cross=$make('119','2025-11-01');$f->updatePositions('entry',$cross,(int)$f->entry($cross)['version'],[['description'=>'Synthetic material','amount'=>'119','tax_rate'=>'19','sphere'=>'1','account'=>'51000','input_tax'=>'none','booking_key'=>'']],'Synthetic cross-calendar facts');
+$crossOpts=['recognised_on'=>'2025-11-01','private_paid_on'=>'','invoice_classification'=>['version'=>1,'uses'=>[]]];
+$p=$s->preview(['start'=>'2025-07-01','end'=>'2026-06-30'],'invoice',$cross,$crossOpts);
+check(!$p['issues']&&$p['snapshot']['invoice_classification'][1]['catalog_year']===2025&&$p['snapshot']['period_catalog']['51290']['year']===2026,'cross-calendar source and closing catalogs checked separately');
+echo "$n dated purchase automation checks passed; isolated synthetic MySQL only\n";

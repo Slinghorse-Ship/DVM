@@ -1,0 +1,159 @@
+{
+  "schema": 1,
+  "date": "2026-10-03",
+  "scope": "cost_asset_book_and_tax_lifecycle",
+  "base_commit": "3f49c68",
+  "cost_xml_release": false,
+  "general_balance_release": false,
+  "production_authorized": false,
+  "review_sha256": "12e67bd290a63eb3d78e9f5f891cfd13817943af73b13edf858fc5516efcf848",
+  "original_sources": [
+    {
+      "year": 2025,
+      "edition": "balance",
+      "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+      "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+      "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+    },
+    {
+      "year": 2026,
+      "edition": "balance",
+      "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+      "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+      "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+    }
+  ],
+  "mysql": {
+    "report": "audit/ebilanz-mysql-host-20260918-56c23c66ef70f8b3.json",
+    "sha256": "b41ec0cfa16f443501d6dfbe65251b6cc1434fd194c0634a8bd062d5f7f00843",
+    "source_archive_sha256": "7a969ec7ff8c5cb8d1daf6f81ff785c2a648151be1ec705f0822ede1a060e954",
+    "programs": [
+      {
+        "test": "asset-cost-valuation.php",
+        "exit": 0,
+        "php_diagnostic": false
+      },
+      {
+        "test": "balance-period-cost-valuation.php",
+        "exit": 0,
+        "php_diagnostic": false
+      },
+      {
+        "test": "balance-calendar-cost-valuation.php",
+        "exit": 0,
+        "php_diagnostic": false
+      },
+      {
+        "test": "balance-period-tax-values.php",
+        "exit": 0,
+        "php_diagnostic": false
+      },
+      {
+        "test": "balance-period-tax-calendar.php",
+        "exit": 0,
+        "php_diagnostic": false
+      },
+      {
+        "test": "balance-period-whole-calendar-assets.php",
+        "exit": 0,
+        "php_diagnostic": false
+      },
+      {
+        "test": "balance-shared-assets.php",
+        "exit": 0,
+        "php_diagnostic": false
+      },
+      {
+        "test": "balance-whole-club.php",
+        "exit": 0,
+        "php_diagnostic": false
+      },
+      {
+        "test": "tax-runtime-fingerprint.php",
+        "exit": 0,
+        "php_diagnostic": false
+      }
+    ],
+    "passed": true,
+    "production_database_connected": false,
+    "protected_files_unchanged": true,
+    "temporary_files_removed": true,
+    "backup_created": false,
+    "fixture_adapter": "mysql-bootstrap.php adapted exclusively to the already authorized dedicated synthetic schema; application sources match the frozen current files"
+  },
+  "local": {
+    "report": "audit/bilanz-cost-runtime-check-20261003.json",
+    "sha256": "116fa99cad3d0e62e9b42a40cefe8bfed348d3cdc0218ccc0b33f7c402a6a101",
+    "programs": [
+      {
+        "test": "ebilanz-asset-valuation-test.py",
+        "exit": 0
+      },
+      {
+        "test": "ebilanz-cost-asset-tax-test.py",
+        "exit": 0
+      },
+      {
+        "test": "ebilanz-builder-test.py",
+        "exit": 0
+      },
+      {
+        "test": "ebilanz-tax-assets-test.py",
+        "exit": 0
+      },
+      {
+        "test": "ebilanz-whole-club-test.py",
+        "exit": 0
+      },
+      {
+        "test": "ebilanz-period-assets-test.py",
+        "exit": 0
+      },
+      {
+        "test": "ebilanz-shared-assets-test.py",
+        "exit": 0
+      },
+      {
+        "test": "ebilanz-asset-types-test.py",
+        "exit": 0
+      },
+      {
+        "test": "ebilanz-taxonomy-sources-test.py",
+        "exit": 0
+      },
+      {
+        "test": "ebilanz-future-year-test.py",
+        "exit": 0
+      },
+      {
+        "test": "balance-suite-test.py",
+        "exit": 0
+      },
+      {
+        "test": "ebilanz-native.py",
+        "exit": 0
+      }
+    ],
+    "passed": true,
+    "sources_unchanged": true
+  },
+  "native": {
+    "report": "audit/bilanz-cost-runtime-native-20261003.json",
+    "sha256": "d271efe699c943b1ab38a4938cdc07dd0026dc3619ee8499c5273daa9a0e993c",
+    "data_version": "Bilanz_6_9",
+    "positive_cases": 22,
+    "expected_negative_cases": 1,
+    "negative_code": 610001002,
+    "flags": 2,
+    "sent": false,
+    "cost_assets_in_these_xml_cases": false
+  },
+  "remaining": [
+    "cost_asset_xml_adapter",
+    "cost_asset_shared_usage",
+    "annual_cost_valuation_corrections",
+    "additional_asset_families",
+    "general_balance_acceptance",
+    "complete_role_ui_audit"
+  ]
+}

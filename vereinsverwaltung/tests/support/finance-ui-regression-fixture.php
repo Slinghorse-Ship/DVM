@@ -1,0 +1,10 @@
+<?php declare(strict_types=1);
+require __DIR__.'/member-profile-environment.php';
+use Kulturhus\Verein\{Database,Documents,Settings,SettingsSchema};
+$file=realpath($argv[1]??'');$prefix=realpath($memberTestOutput);
+if(!$file||!$prefix||!str_starts_with(str_replace('\\','/',$file),rtrim(str_replace('\\','/',$prefix),'/').'/'))throw new RuntimeException('Generated local fixture required.');
+$fixture=json_decode(file_get_contents($file),true,16,JSON_THROW_ON_ERROR);if(!str_starts_with($fixture['club'],'member-profile-'))throw new RuntimeException('Synthetic tenant required.');
+$db=\Kulturhus\Verein\Tests\MySqlFixture::existing($memberTestDatabase);$settings=new Settings($db,$fixture['actor']);$tax=$settings->section('tax');$data=$tax['data'];$data['input_tax_default']='none';$settings->save('tax',$data,(int)$tax['version']);
+$doc=(new Documents($db,$fixture['actor']))->upload('synthetic-tax.xml','<Invoice xmlns="urn:synthetic:tax"/>',['title'=>'Synthetic input tax review','kind'=>'receipt','scope'=>'finance','document_date'=>'2026-01-03','links'=>[]],bin2hex(random_bytes(16)));
+$out=dirname($file).'/finance-ui-regression.json';file_put_contents($out,json_encode(['base'=>$fixture['base'],'club'=>$fixture['club'],'session'=>$fixture['sessions']['admin'],'doc'=>$doc,'project_hash'=>$fixture['project_hash'],'fixture'=>$file],JSON_THROW_ON_ERROR|JSON_PRETTY_PRINT));
+echo $out,"\n";

@@ -1,0 +1,39 @@
+<?php declare(strict_types=1);
+use Kulturhus\Verein\{EditorialModules,EditorialModulePreferences};
+if($editorialModule==='press'){
+ $website=$moduleWorkspace;$websiteTab='press';require __DIR__.'/../Website/website-native.php';return;
+}
+// Show the real editors and automation state rather than disconnected sample cards.
+if($editorialModule==='newsletter'&&in_array($editorialTab,['overview','design','automation','module-settings'],true)){
+ $website=$moduleWorkspace;$websiteTab='newsletter';require __DIR__.'/../Website/website-native.php';return;
+}
+if($editorialModule==='social'&&in_array($editorialTab,['overview','design'],true)){
+ $website=$moduleWorkspace;$websiteTab='social';require __DIR__.'/../Website/website-native.php';return;
+}
+if(in_array($editorialModule,['website','social'],true)&&in_array($editorialTab,['design','automation','module-settings'],true)){
+ require __DIR__.'/editorial-connections.php';
+ if($editorialModule==='website'||$editorialTab!=='design')return;
+}
+$preferenceService=new EditorialModulePreferences($db,(string)$_SESSION['actor'],$editorialModule);$preference=$preferenceService->get();$design=$preference['data'];
+$designPost=input($_POST,'action')==='editorial-module-settings'&&input($_POST,'module')===$editorialModule&&is_array($_POST['module_preferences']??null)?$_POST['module_preferences']:[];
+foreach(array_keys($design) as $key)if(is_string($designPost[$key]??null))$design[$key]=$designPost[$key];
+$editorialLabel=EditorialModules::LABELS[$editorialModule];$canConfigure=$moduleWorkspace->canConfigure();
+?>
+<?php if($editorialTab==='overview'): ?><section class="card"><h2><?= e($editorialLabel) ?> · dein Arbeitsplatz</h2><p>Inhalte, Gestaltung und Einstellungen dieses Moduls sind getrennt von den anderen Redaktionsbereichen.</p><div class="native-actions"><?php foreach($moduleWorkspace->areas() as $area=>$info): ?><a class="btn btn-outline theme-secondary button secondary" href="<?= e(url(['view'=>$editorialModule,'tab'=>$area])) ?>"><?= e($info[0]) ?></a><?php endforeach ?></div></section><?php endif ?>
+<?php if(in_array($editorialTab,['overview','design'],true)): ?><section class="card"><h2>Designvorschläge</h2><p>Wähle eine Gestaltung und prüfe die Vorschau. <?= $editorialModule==='social'?'Story und Beitrag haben eigene Formate.':($editorialModule==='newsletter'?'Die Ausgabe bearbeitest du anschließend im Newsletter-Editor.':'Die Seiten bearbeitest du anschließend im Website-Editor.') ?></p>
+<div class="editorial-design-grid"><?php foreach(EditorialModulePreferences::THEMES as $theme=>$label): ?><article class="editorial-design theme-<?= e($theme) ?>"><span class="editorial-eyebrow">KULTURHUS</span><h3><?= e($label) ?></h3><p>Kultur gemeinsam erleben</p><?php if($editorialTab==='overview'): ?><a class="btn btn-outline theme-secondary button secondary" href="<?= e(url(['view'=>$editorialModule,'tab'=>'design'])) ?>">Design bearbeiten</a><?php else: ?><button type="button" class="btn btn-outline theme-secondary secondary" data-editorial-theme="<?= e($theme) ?>" <?= !$canConfigure?'disabled':'' ?>>Design auswählen</button><?php endif ?></article><?php endforeach ?></div>
+<div class="editorial-preview theme-<?= e(isset(EditorialModulePreferences::THEMES[$design['theme']])?$design['theme']:'gold') ?> format-<?= e(in_array($design['format'],['story','post','newsletter','page'],true)?$design['format']:'page') ?>" data-editorial-preview><span class="editorial-eyebrow">KULTURHUS JADERBERG</span><h3 data-editorial-headline><?= e($design['headline']) ?></h3><p data-editorial-text><?= e($design['text']) ?></p><span class="editorial-preview-action">Mehr erfahren</span><small>Gestaltungsvorschlag · nicht veröffentlicht</small></div>
+<?php if($editorialModule==='social'): ?><p>Beiträge, Facebook-Storys und Instagram-Storys findest du unter <a href="<?= e(url(['view'=>'social','tab'=>'social'])) ?>">Inhalte → Social Media</a>. Verbindungs- und Veröffentlichungsstatus werden beim jeweiligen Inhalt angezeigt.</p><?php endif ?></section><?php endif ?>
+<?php if($editorialTab==='automation'): ?><section class="card"><h2>Automatische Gestaltungsvorschläge</h2><p>Auf Wunsch werden beim Öffnen dieses Moduls Vorschläge aus den vorhandenen Inhalten angezeigt. Das erstellt keine Versand- oder Veröffentlichungsaufträge.</p><p>Vorgesehener Ablauf: Vorschlag ansehen → Inhalt bearbeiten → Vorschau prüfen → bewusst veröffentlichen oder versenden.</p></section><?php endif ?>
+<?php if($editorialTab!=='overview'): ?><section class="card"><h2><?= $editorialTab==='module-settings'?'Moduleinstellungen':'Design & Vorschläge speichern' ?></h2><form method="post" data-editorial-preferences><?= csrf().hidden('action','editorial-module-settings').hidden('module',$editorialModule).hidden('version',(string)$preference['version']) ?><fieldset <?= !$canConfigure?'disabled':'' ?>>
+<label>Standarddesign<select class="form-control" name="module_preferences[theme]" data-editorial-theme-select><?php foreach(EditorialModulePreferences::THEMES as $key=>$label): ?><option value="<?= e($key) ?>" <?= $design['theme']===$key?'selected':'' ?>><?= e($label) ?></option><?php endforeach ?></select></label>
+<label>Format<select class="form-control" name="module_preferences[format]" data-editorial-format><?php foreach($editorialModule==='social'?['story'=>'Story · Hochformat','post'=>'Beitrag · Quadrat']:[$editorialModule==='newsletter'?'newsletter':'page'=>$editorialModule==='newsletter'?'Newsletter':'Website-Seite'] as $key=>$label): ?><option value="<?= e($key) ?>" <?= $design['format']===$key?'selected':'' ?>><?= e($label) ?></option><?php endforeach ?></select></label>
+<label>Titel<input class="form-control" name="module_preferences[headline]" data-editorial-headline-input maxlength="120" value="<?= e($design['headline']) ?>" required></label><label>Vorschlagstext<textarea class="form-control" name="module_preferences[text]" data-editorial-text-input maxlength="600" rows="4"><?= e($design['text']) ?></textarea></label>
+<label>Automatische Vorschläge<select class="form-control" name="module_preferences[proposal_mode]"><option value="off" <?= $design['proposal_mode']==='off'?'selected':'' ?>>Aus</option><option value="on_open" <?= $design['proposal_mode']==='on_open'?'selected':'' ?>>Beim Öffnen aus vorhandenen Inhalten vorbereiten</option></select></label>
+<button class="btn btn-solid theme-primary">Moduleinstellungen speichern</button></fieldset></form><?php if(!$canConfigure): ?><p>Du kannst die Einstellungen ansehen. Ändern benötigt Schreibrechte für dieses Modul.</p><?php endif ?></section><?php endif ?>
+<?php if(in_array($editorialTab,['overview','automation'],true)&&$design['proposal_mode']==='on_open'):
+$proposalArea=$editorialModule==='social'?'social':($editorialModule==='newsletter'?'newsletter':'news');
+try{$proposalSource=$moduleWorkspace->editorialRead($proposalArea);$proposalRows=array_slice($proposalSource['rows']??[],0,3);}catch(DomainException $proposalError){$proposalRows=[];$proposalIssue=$proposalError->getMessage();}
+?>
+<section class="card"><h2>Vorschläge aus deinen Inhalten</h2><?php if(isset($proposalIssue)): ?><p role="status"><?= e($proposalIssue) ?></p><?php elseif(!$proposalRows): ?><p>Noch keine passenden Inhalte vorhanden.</p><?php else: ?><div class="editorial-design-grid"><?php foreach($proposalRows as $proposal): ?><article class="editorial-design theme-<?= e($design['theme']) ?>"><span class="editorial-eyebrow"><?= e($editorialModule==='social'?'Beitrag / Story':'Inhaltsvorschlag') ?></span><h3><?= e((string)($proposal['title']??$proposal['subject']??'Inhalt')) ?></h3><p><?= e($design['text']) ?></p><a class="btn btn-outline theme-secondary button secondary" href="<?= e(url(['view'=>$editorialModule,'tab'=>$proposalArea,'item'=>(string)($proposal['id']??0)])) ?>">Inhalt und Vorschau öffnen</a></article><?php endforeach ?></div><?php endif ?></section>
+<?php endif ?>

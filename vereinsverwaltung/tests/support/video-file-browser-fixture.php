@@ -1,0 +1,30 @@
+<?php declare(strict_types=1);
+function ownVideoFileBrowser(PDO $db):array
+{
+    $cfg=Kulturhus\Native\TestSupport::config();if(($cfg['label']??'')!=='native-video-removal-requests'||($cfg['owner']??'')!=='isolated-native-ci')throw new RuntimeException('Own policy fixture required.');
+    $root=dirname(getenv('KH_NATIVE_TEST_CONFIG')).'/runtime-'.$cfg['database'];mkdir($root,0700);foreach(['web','media','sessions','manager-sessions']as$dir)mkdir($root.'/'.$dir,0700);foreach(['auth','private']as$name){file_put_contents($root.'/'.$name.'.key',random_bytes(32));chmod($root.'/'.$name.'.key',0600);}putenv('KH_NATIVE_AUTH_KEY_FILE='.$root.'/auth.key');putenv('KH_NATIVE_PRIVATE_KEY_FILE='.$root.'/private.key');
+    $profiles=[];Kulturhus\Verein\Database::ensureContributionRates($db);
+    foreach(['native','integrated']as$mode)foreach(['de','en']as$locale)foreach(['js','nojs']as$variant){
+        $key=$mode.'-'.$locale.'-'.$variant;$actor='own-policy-'.$key;$club=$actor;$token=null;$managerActor=null;
+        if($mode==='native'){
+            Kulturhus\Native\Shared\Db::run($db,'INSERT INTO native_users(id,club_id,name) VALUES(?,?,?)',[$actor,$club,'Own policy author '.$key]);Kulturhus\Native\Shared\Db::run($db,"INSERT INTO native_grants(actor_id,module,capability) SELECT ?,module,capability FROM native_grants WHERE actor_id='admin'",[$actor]);$access=new Kulturhus\Native\Shared\Access($db,$actor);
+        }else{
+            Kulturhus\Native\Shared\Db::run($db,'INSERT INTO clubs(id,name) VALUES(?,?)',[$club,'Own policy club '.$key]);Kulturhus\Native\Shared\Db::run($db,"INSERT INTO actors(id,club_id,role,is_superuser) VALUES(?,?,'member',1)",[$actor,$club]);$managerActor=$actor;
+            $bridge=new Kulturhus\Native\Integration\ManagerBridge($db,$actor,'native',static fn()=>null);$access=$bridge->access();
+            (new Kulturhus\Verein\Settings($db,$actor))->save('club',array_replace(Kulturhus\Verein\SettingsSchema::defaults('club'),['name'=>'Own policy club','street'=>'Own fixture street','postcode'=>'00000','city'=>'Own fixture city']),0);
+            $contact=(new Kulturhus\Verein\Registry($db,$actor))->saveContact(null,0,'person','Own policy author',$actor.'@example.invalid','Own fixture address');Kulturhus\Native\Shared\Db::run($db,'UPDATE actors SET contact_id=? WHERE id=?',[$contact,$actor]);$access=$bridge->access();
+            $auth=Kulturhus\Native\Auth\Runtime::service($db);$invitation=$auth->createInvitation($access,$bridge->nativeActorId(),$actor.'@example.invalid');$auth->acceptInvitation($invitation['token'],'Own policy browser password 2026!');$token=$auth->passwordLogin($actor.'@example.invalid','Own policy browser password 2026!',$key)['session_token'];$actor=$access->user()['id'];$club=$access->club();
+        }
+        (new Kulturhus\Native\Language\Catalog($db,$access))->select($locale);
+        $kind=$variant==='js'?'reel':'post';$work=new Kulturhus\Native\Communication\Workspace($db,$access,'social',$root.'/media');$item=$work->save(['title'=>'Dateivorgang <literal> ä🙂','body'=>'Own original retained editorial body','kind'=>$kind,'channels'=>[]]);
+        $video=(new Kulturhus\Native\Communication\Videos($db,$access,$root.'/media'))->save($item['id'],1,0,dirname(__DIR__).'/fixtures/reel-profile/portrait-avc-aac.mp4','Originaldatei <literal> ä🙂.mp4');
+        $source=Kulturhus\Native\Shared\Db::run($db,'SELECT source_id FROM native_social_videos WHERE id=?',[$video])->fetchColumn();
+        if($kind==='reel')(new Kulturhus\Native\Communication\Videos($db,$access,$root.'/media'))->reuse($item['id'],1,0,$video);
+        (new Kulturhus\Native\Communication\VideoArchive($db,$access))->save($source,true,0);
+        $finisher='own-file-b-'.substr(hash('sha256',$club),0,20);Kulturhus\Native\Shared\Db::run($db,'INSERT INTO native_users(id,club_id,name) VALUES(?,?,?)',[$finisher,$club,'Own actual finisher '.$key]);Kulturhus\Native\Shared\Db::run($db,"INSERT INTO native_grants(actor_id,module,capability) SELECT ?,module,capability FROM native_grants WHERE actor_id='admin'",[$finisher]);
+        if($mode==='integrated')(new Kulturhus\Native\Language\Settings($db,$access))->save(['source'=>'de','languages'=>[['code'=>'de','label'=>'Deutsch','enabled'=>true,'fallback'=>null,'messages'=>[]],['code'=>'en','label'=>'English','enabled'=>true,'fallback'=>'de','messages'=>[Kulturhus\Native\Language\VideoFileMessages::key('Video-Papierkorb')=>'<Own File Operations>']]]],0);
+        $profiles[$key]=compact('mode','locale','variant','actor','club','token','managerActor','kind','finisher')+['item'=>$item['id'],'source'=>$source,'video'=>$video];
+    }
+    $socket=stream_socket_server('tcp://127.0.0.1:0');$port=(int)substr(strrchr(stream_socket_get_name($socket,false),':'),1);fclose($socket);$data=['root'=>$root,'origin'=>'http://127.0.0.1:'.$port,'profiles'=>$profiles];$file=$root.'/fixture.json';file_put_contents($file,json_encode($data,JSON_THROW_ON_ERROR));chmod($file,0600);putenv('DVM_VIDEO_FILE_FIXTURE='.$file);
+    $log=fopen($root.'/http.log','ab');$process=proc_open([...Kulturhus\Native\TestSupport::phpCommand(),'-S','127.0.0.1:'.$port,'-t',$root.'/web',__DIR__.'/video-file-browser-router.php'],[0=>['pipe','r'],1=>$log,2=>$log],$pipes);if(!is_resource($process))throw new RuntimeException('Own policy HTTP server unavailable.');fclose($pipes[0]);for($i=0;$i<100;$i++){$probe=@stream_socket_client('tcp://127.0.0.1:'.$port,$errno,$error,.1);if($probe){fclose($probe);break;}usleep(50000);}return['process'=>$process,'log'=>$log,'root'=>$root,'input'=>$data];
+}

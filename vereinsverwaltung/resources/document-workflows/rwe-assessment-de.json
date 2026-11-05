@@ -1,0 +1,26 @@
+{
+  "key": "rwe-assessment-de-v1",
+  "title": "Gefährdungsbeurteilung",
+  "description": "Deutsche Formularfassung mit Aufbau und Risikomatrix der bereitgestellten RWE-Vorlage.",
+  "provenance": {
+    "title": "FS-RA-030 Business Travel",
+    "url": "",
+    "licence": "Private Nutzung nach ausdrücklicher Rechtebestätigung des Nutzers. Keine öffentliche Lizenz oder Billigung durch RWE behauptet.",
+    "attribution": "Formularaufbau und Matrix aus der nutzerbereitgestellten RWE-Vorlage. Deutsche Beschriftung; keine Übernahme von Firmenlogo, Personen, Unterschriften oder PDF-Skripten.",
+    "adaptation": "rwe-assessment-de-v1; Referenz-SHA256 d8634845499b7ee78ef838a277af8070c5ba3bfc8ceda721e0253f94ce03f16d",
+    "verified_at": "2026-10-08"
+  },
+  "fields": [
+    {"key":"document_ref","label":"Dokument-Nr.","type":"text","required":true},
+    {"key":"assessment_title","label":"Titel der Beurteilung","type":"text","required":true},
+    {"key":"location","label":"Projekt / Standort","type":"text","required":true},
+    {"key":"activity","label":"Arbeit / Tätigkeit","type":"text","required":true},
+    {"key":"equipment","label":"Arbeitsmittel / Anlage","type":"text","required":false},
+    {"key":"task_step","label":"Arbeitsschritt","type":"text","required":false},
+    {"key":"assessor","label":"Beurteilung durch","type":"text","required":true},
+    {"key":"approver","label":"Freigabe durch","type":"text","required":false},
+    {"key":"approval_date","label":"Freigabedatum","type":"date","required":false},
+    {"key":"review_date","label":"Prüftermin","type":"date","required":true},
+    {"key":"risk_register","label":"Gefährdungen und Schutzmaßnahmen","type":"risk_register","required":true,"matrix_profile":"rwe_reference_de_v1"}
+  ]
+}

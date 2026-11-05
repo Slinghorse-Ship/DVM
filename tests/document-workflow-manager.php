@@ -1,0 +1,57 @@
+<?php declare(strict_types=1);
+/** Full manager schema, dedicated MySQL fixture, synthetic recipients and callback-only mail. */
+ini_set('zend.exception_ignore_args','1');
+require_once __DIR__.'/../vereinsverwaltung/tests/support/document-workflow-fixture.php';
+require_once __DIR__.'/../vereinsverwaltung/src/bootstrap.php';
+require_once __DIR__.'/../vereinsverwaltung/src/Communication/WorkflowReminderMail.php';
+use Kulturhus\Verein\{Database,ManagerDocumentWorkflows,WorkflowReminderMail,WorkspaceAccess,ManagerNavigation};
+use Kulturhus\Verein\DocumentWorkflow\WorkflowSchema;
+$checks=[];$check=static function(bool $ok,string $label)use(&$checks):void{if(!$ok)throw new RuntimeException($label);$checks[]=$label;};
+$reject=static function(callable $f,string $label)use($check):void{try{$f();}catch(DomainException){$check(true,$label);return;}$check(false,$label);};
+$name=DocumentWorkflowFixture::create();$db=DocumentWorkflowFixture::connection($name);Database::migrate($db);
+$check(!ManagerDocumentWorkflows::installed($db),'optional module stays hidden before explicit installation');WorkflowSchema::install($db);$check(ManagerDocumentWorkflows::installed($db),'explicit optional MySQL schema detected');
+$db->exec("INSERT INTO clubs VALUES('wf-manager','Testverein'),('wf-other','Anderer Testverein'); INSERT INTO contacts(club_id,id,kind,name,email) VALUES('wf-manager','member-profile','person','Mara Muster','mara@example.invalid'),('wf-manager','other-profile','person','Alex Beispiel','alex@example.invalid'); INSERT INTO actors(id,club_id,role,is_superuser,contact_id) VALUES('wf-board','wf-manager','members',1,NULL),('wf-board2','wf-manager','member',0,NULL),('wf-member','wf-manager','member',0,'member-profile'),('wf-other-member','wf-manager','member',0,'other-profile'),('wf-editor','wf-manager','editor',1,NULL),('wf-foreign','wf-other','members',1,NULL); INSERT INTO admission_board(club_id,actor_id,office,enabled,version) VALUES('wf-manager','wf-board2','2. Vorstand',1,1)");
+$board=new ManagerDocumentWorkflows($db,'wf-board');$member=new ManagerDocumentWorkflows($db,'wf-member');$other=new ManagerDocumentWorkflows($db,'wf-other-member');$store=$board->store;
+$check((new WorkspaceAccess($db,'wf-board'))->allows(['view'=>'documents','tab'=>'workflows']),'board module route available');
+$check((new ManagerDocumentWorkflows($db,'wf-board2'))->store->actor()['access']==='write','every board member may edit');
+$check(!(new WorkspaceAccess($db,'wf-member'))->allows(['view'=>'documents','tab'=>'workflows']),'personal member cannot open module-wide documents');
+$check((new WorkspaceAccess($db,'wf-member'))->allows(['view'=>'portal','tab'=>'signatures']),'member gets personal signature route');
+$check(!(new WorkspaceAccess($db,'wf-editor'))->allows(['view'=>'portal','tab'=>'signatures']),'editor excluded even with superuser marker');
+$groups=ManagerNavigation::groups(new WorkspaceAccess($db,'wf-board'));$check(in_array('organisation:workflows',array_column(array_merge(...array_column($groups,'items')),'id'),true),'module linked from actual navigation');
+$t=$store->saveTemplate('',0,['title'=>'Gefährdungsbeurteilung','fields'=>[['key'=>'hazards','label'=>'Gefährdungen','type'=>'risk_register','required'=>true,'matrix_profile'=>'rwe_reference_de_v1']],'provenance'=>[]]);$store->publishTemplate($t,1);
+$create=function(string $title)use($store,$t):array{$d=$store->createDocument($t,'',$title);$store->saveDocument($d,1,['hazards'=>[['category'=>'Aufbau','hazard'=>'Kabel','impact'=>'Sturz','initial'=>['likelihood'=>3,'severity'=>3],'controls'=>'Kabelbrücken','residual'=>['likelihood'=>1,'severity'=>2],'responsible'=>'Mara Muster','effectiveness'=>'Sichtprüfung']]],$title,'');$attachment=$store->export($d,2,'pdf');$store->addAttachment($d,2,'Testanlage.pdf',$attachment['bytes']);$store->transition($d,3,'submit');$store->transition($d,4,'approve');return [$d,5];};
+[$doc,$rev]=$create('Kulturabend · Testdaten');$board->signatures->request($doc,$rev,['wf-member','wf-other-member']);$ids=array_column($board->signatures->forDocument($doc,$rev),'id','recipient_id');
+$url='https://verein.example.invalid/vereinsverwaltung';$mail=new WorkflowReminderMail($db,'wf-board',$url);$preview=$mail->preview($doc,$rev);$check(count($preview['recipients'])===2,'reminder preview contains only current unsigned recipients');
+$content=WorkflowReminderMail::content($preview['recipients'][0],$url);$check(str_contains($content['html'],'apple-touch-icon.png')&&str_contains($content['text'],'melde dich an')&&str_contains($content['html'],'tab=signatures'),'branded mail points to authenticated personal signing page');
+$reject(fn()=>(new WorkflowReminderMail($db,'wf-member',$url))->preview($doc,$rev),'member cannot enumerate reminder recipients');
+$saved=[];foreach(['KULTURHUS_LOCAL_DEMO','KULTURHUS_DISABLE_MAIL','APP_ENV','VEREIN_MODE','APP_URL'] as $k){$saved[$k]=getenv($k);putenv($k);}
+try{
+    putenv('VEREIN_MODE=synthetic');$reject(fn()=>$mail->queue($doc,$rev,$preview['hash'],bin2hex(random_bytes(16))),'local mail policy blocks queue');
+    $calls=0;$check(WorkflowReminderMail::dispatch($db,$url,function()use(&$calls){$calls++;},'wf-manager')===0&&$calls===0,'local policy prevents transport callback');putenv('VEREIN_MODE');
+    $reject(fn()=>$mail->queue($doc,$rev,str_repeat('0',64),bin2hex(random_bytes(16))),'tampered preview rejected');
+    $key=bin2hex(random_bytes(16));$check($mail->queue($doc,$rev,$preview['hash'],$key)===2,'explicit confirmed batch queues two separate personal mails');
+    $reject(fn()=>$mail->queue($doc,$rev,$preview['hash'],$key),'repeated browser submission does not duplicate');
+    $check($mail->preview($doc,$rev)['recipients']===[],'daily cooldown excludes already queued signatures');
+    $check(WorkflowReminderMail::dispatch($db,$url,function()use(&$calls){$calls++;},'wf-other')===0,'worker scoped to configured club');
+    $sent=[];$check(WorkflowReminderMail::dispatch($db,$url,function($email,$subject,$text,$html,$files,$club)use(&$sent){$sent[]=[$email,$html,$files,$club];},'wf-manager')===2&&count($sent)===2,'callback-only transport receives branded HTML and no private document attachment');
+    $check(WorkflowReminderMail::dispatch($db,$url,fn()=>throw new RuntimeException('No resend'),'wf-manager')===0,'worker does not resend sent reminders');
+    [$changed,$changedRev]=$create('Geänderte Fassung');$board->signatures->request($changed,$changedRev,['wf-member']);$p=$mail->preview($changed,$changedRev);$mail->queue($changed,$changedRev,$p['hash'],bin2hex(random_bytes(16)));$store->transition($changed,$changedRev,'reopen');
+    $check(WorkflowReminderMail::dispatch($db,$url,function()use(&$calls){$calls++;},'wf-manager')===0&&$calls===0,'reopened assessment blocks queued reminder');
+    [$address,$addressRev]=$create('Adresse prüfen');$board->signatures->request($address,$addressRev,['wf-member']);$p=$mail->preview($address,$addressRev);$mail->queue($address,$addressRev,$p['hash'],bin2hex(random_bytes(16)));$db->exec("UPDATE contacts SET email='changed@example.invalid' WHERE id='member-profile'");$check(WorkflowReminderMail::dispatch($db,$url,function()use(&$calls){$calls++;},'wf-manager')===0&&$calls===0,'changed recipient email blocks stale queued mail');$db->exec("UPDATE contacts SET email='mara@example.invalid' WHERE id='member-profile'");
+    [$uncertain,$uRev]=$create('Unklarer Transport');$board->signatures->request($uncertain,$uRev,['wf-member']);$p=$mail->preview($uncertain,$uRev);$mail->queue($uncertain,$uRev,$p['hash'],bin2hex(random_bytes(16)));$check(WorkflowReminderMail::dispatch($db,$url,fn()=>throw new RuntimeException('Ambiguous result'),'wf-manager')===0,'transport failure recorded without claiming delivery');
+    $check($mail->deliveries($uncertain,$uRev)[0]['state']==='uncertain','ambiguous mail kept out of automatic retry');
+    $pngSource=file_get_contents(__DIR__.'/document-workflow-signatures.php');preg_match("~\\\$png='([^']+)';~",$pngSource,$match);$png=$match[1]??throw new RuntimeException('Synthetic signature missing');
+    $r=$member->signatures->ownRequest($ids['wf-member']);$member->signatures->sign($ids['wf-member'],$r['document_sha256'],true,$png);
+    $member->archive($ids['wf-member']);$file=$member->ownFile($ids['wf-member']);$check(str_starts_with($file['bytes'],'%PDF-'),'signed PDF archived with signature and original attachment');
+    $member->archive($ids['wf-member']);$check((int)$db->query('SELECT COUNT(*) FROM dwf_signature_files')->fetchColumn()===1,'archive retry is idempotent');
+    $check(count($member->ownFiles())===1&&$member->ownFiles()[0]['title']==='Kulturabend · Testdaten','personal archive lists pinned signed title');
+    $reject(fn()=>$other->ownFile($ids['wf-member']),'other member cannot download signed personal PDF');
+    $reject(fn()=>(new ManagerDocumentWorkflows($db,'wf-foreign'))->ownFile($ids['wf-member']),'foreign club cannot download personal PDF');
+    $reject(fn()=>$other->archive($ids['wf-other-member']),'unsigned documents cannot be archived as signed');
+    $store->transition($doc,$rev,'reopen');$check($member->ownFile($ids['wf-member'])['bytes']===$file['bytes'],'later edits preserve exact archived PDF');
+    $active=true;$guarded=new ManagerDocumentWorkflows($db,'wf-member',static function()use(&$active):void{if(!$active)throw new DomainException('Session ended');});$active=false;$reject(fn()=>$guarded->ownFile($ids['wf-member']),'native session guard rechecked for each personal file');
+    $db->exec("UPDATE actors SET active=0 WHERE id='wf-member'");$reject(fn()=>$member->ownFile($ids['wf-member']),'deactivated account loses archive access');$db->exec("UPDATE actors SET active=1 WHERE id='wf-member'");
+    $db->exec("UPDATE dwf_signature_files SET file_bytes='corrupt'");$reject(fn()=>$member->ownFile($ids['wf-member']),'archive corruption fails closed');
+    file_put_contents(dirname(__DIR__).'/output/pdf/gefaehrdungsbeurteilung-manager-ablage.pdf',$file['bytes']);
+}finally{foreach($saved as $k=>$v)putenv($v===false?$k:$k.'='.$v);}
+$report=['suite'=>'document-workflow-manager','status'=>'passed','checks'=>count($checks),'passed'=>$checks,'database'=>$name,'production_changed'=>false,'real_mail_sent'=>false];file_put_contents(dirname(__DIR__).'/audit/document-workflow-manager-20261008.json',json_encode($report,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE));echo json_encode($report,JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE)."\n";

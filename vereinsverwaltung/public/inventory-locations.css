@@ -1,0 +1,14 @@
+.iv-locations{font-size:1rem;line-height:1.55;min-width:0;max-width:100%;overflow-wrap:anywhere;container-type:inline-size}
+.iv-locations .card,.iv-locations form,.iv-locations .iv-form-grid>*{min-width:0}
+.iv-locations h2{font-size:1.1875rem}.iv-locations h3{font-size:.9375rem}
+.iv-locations label,.iv-locations .muted,.iv-locations small,.iv-locations .status{font-size:.875rem}
+.iv-locations input,.iv-locations select,.iv-locations textarea{font-size:1rem;min-width:0;max-width:100%;min-height:46px}
+.iv-locations button,.iv-locations .button{font-size:.875rem;min-height:44px;white-space:normal}
+.iv-locations .iv-location-grid{grid-template-columns:repeat(auto-fit,minmax(min(16rem,100%),1fr))}
+.iv-locations .iv-location{min-height:44px;min-width:0}.iv-locations .iv-location-wide{grid-column:1/-1}
+.iv-locations .iv-where th{font-size:.75rem}.iv-locations .iv-where td{font-size:.875rem}
+.iv-locations .iv-where a{display:inline-block;min-height:44px;align-content:center}
+.iv-locations .iv-location-original pre{font:inherit;white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%;max-height:32rem;overflow:auto;background:#f4f6f7;padding:1rem;border-radius:.5rem}
+.iv-locations .data-list{grid-template-columns:minmax(0,1fr) minmax(0,2fr);font-size:1rem}.iv-locations .data-list dd{white-space:pre-wrap;overflow-wrap:anywhere}
+.inventory-navigation a{font-size:.875rem;min-height:44px}
+@container(max-width:42em){.iv-locations .iv-form-grid,.iv-locations .data-list{grid-template-columns:minmax(0,1fr)}.iv-locations .iv-location-wide{grid-column:auto}}

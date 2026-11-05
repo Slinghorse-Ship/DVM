@@ -1,0 +1,1082 @@
+{
+  "dashboard": {
+    "file": "hilfe-dashboard.png",
+    "title": "Startseite: eine Aufgabe direkt öffnen",
+    "notes": [
+      "Hier beginnt die Auswahl häufiger Aufgaben.",
+      "Dieser Link öffnet die Dokumentablage. Er lädt noch keine Datei hoch.",
+      "Dieser Link öffnet die Website-Verwaltung."
+    ],
+    "source": "?view=dashboard",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 231,
+    "sha256": "8f79b4af09b174346b8f20453c7975941fa4c4f91f865cd3b550d70e9a23e92b",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Visible crop inspected; only blank fields, synthetic records and original interface labels."
+  },
+  "menue": {
+    "file": "hilfe-menue.png",
+    "title": "Das Hauptmenü: Funktion suchen oder einen Bereich öffnen",
+    "notes": [
+      "Das kompakte Kulturhus-Zeichen führt zurück zur Startseite.",
+      "Hier einen Begriff wie Rechnung oder Mitglied eingeben. Passende Funktionen erscheinen direkt in der Suche.",
+      "Diesen Bereich anklicken. Darunter erscheinen getrennte Einstiege für Mitglieder, Kontakte, Geburtstage & Jubiläen und Mitgliedsanträge.",
+      "Weitere Bereiche auf dieselbe Weise öffnen. Unterpunkte und zusätzliche Reiter erscheinen abhängig von deinen Rechten."
+    ],
+    "source": "?view=dashboard",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 260,
+    "height": 599,
+    "sha256": "c303ca6a405cf440ebe045515d3265c769feb4f2a322a8341e74f1194d64ba22",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Visible crop rechecked: numbered badges sit inside their corresponding target rows. Only interface labels and club brand; no persons, account details, documents or signatures. Local synthetic manager."
+  },
+  "newsletter-betreff": {
+    "file": "hilfe-newsletter-betreff.png",
+    "title": "Newsletter: Betreff und Baukasten finden",
+    "notes": [
+      "Betreff anklicken und die Überschrift für das E-Mail-Postfach schreiben.",
+      "Hier beginnt der Baukasten. Die Vorschau-Schalter werden weiter unten in dieser Anleitung erklärt."
+    ],
+    "source": "?view=website&tab=newsletter&native_new=1",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 272,
+    "sha256": "b524896ce85be4023bfbfa11b270c7cea1ed843f0a1235e904d16f98462caa29",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Visible crop inspected; only blank fields, synthetic records and original interface labels."
+  },
+  "newsletter-text": {
+    "file": "hilfe-newsletter-text.png",
+    "title": "Text bearbeiten: Inhalt und Formatierung",
+    "notes": [
+      "Direkt in diesen Text klicken und schreiben. Dies ist der Inhalt des ausgewählten Bausteins.",
+      "Hoch und Runter verschieben diesen Baustein. Kopie erstellt einen weiteren; Löschen entfernt genau diesen Abschnitt.",
+      "Hier Schriftgröße, Ausrichtung und Textfarbe des Bausteins ändern."
+    ],
+    "source": "?view=website&tab=newsletter&native_new=1",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 711,
+    "height": 256,
+    "sha256": "c945962b4f9a5c79c9dff6ed20d85aa8adba0fd004e889b73d4e08c304aa6571",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Visible crop inspected; only blank fields, synthetic records and original interface labels."
+  },
+  "newsletter-bausteine": {
+    "file": "hilfe-newsletter-bausteine.png",
+    "title": "Einen Baustein oder eine Veranstaltung hinzufügen",
+    "notes": [
+      "Text, Überschrift, Bild, Schaltfläche oder Trennlinie anklicken. Das Element wird in die Mail eingefügt.",
+      "Eine kommende Veranstaltung anhand von Titel und Datum auswählen. Die Programmdaten werden als eigener Baustein eingefügt."
+    ],
+    "source": "?view=website&tab=newsletter&native_new=1",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 954,
+    "height": 395,
+    "sha256": "03413760c99760ac1e8fdda4bc077821ab37ff5b8921a8b723499264c87d60d8",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Visible crop inspected; only blank fields, synthetic records and original interface labels."
+  },
+  "newsletter-vorschau": {
+    "file": "hilfe-newsletter-vorschau.png",
+    "title": "Die Mail in schmaler Ansicht und ohne Bearbeitungsknöpfe prüfen",
+    "notes": [
+      "Vollständige Mail-Vorschau öffnet ein separates Vorschaufenster.",
+      "Computer oder Handy ändert die Breite der Vorschau. Es wird dabei keine Mail verschickt."
+    ],
+    "source": "?view=website&tab=newsletter&native_new=1",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 465,
+    "height": 138,
+    "sha256": "ec07da0e0f96e5111dd55e50b817523e7012a66826653dd4756aa3d88527a019",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Visible crop inspected; only blank fields, synthetic records and original interface labels."
+  },
+  "newsletter-speichern": {
+    "file": "hilfe-newsletter-speichern.png",
+    "title": "Unter dem Baukasten: speichern, Zielgruppe und Testmail",
+    "notes": [
+      "Zielgruppe wählen. Nur bestätigte Empfänger des gewählten Themas werden berücksichtigt.",
+      "Nach jeder Text- oder Zielgruppenänderung zuerst speichern.",
+      "Erst nach erfolgreicher Kontrolle verwenden: Dies ist die tatsächliche Versandbeauftragung.",
+      "Für eine Probe die eigene Testadresse eintragen. Der Knopf darunter verschickt die gespeicherte Fassung. Lokal ist der Versand gesperrt."
+    ],
+    "source": "?view=website&tab=newsletter&item=9",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 508,
+    "sha256": "976df6f875d6c451c65edddee01410ac3e0c2c48e9bd297f08cf9d5c560f3839",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Visible crop inspected; only blank fields, synthetic records and original interface labels."
+  },
+  "newsletter-einwilligung": {
+    "file": "hilfe-newsletter-einwilligung.png",
+    "title": "Eine vorhandene schriftliche Newsletter-Einwilligung erfassen",
+    "notes": [
+      "Die unterschriebene E-Mail-Adresse übernehmen.",
+      "Datum der Unterschrift eintragen, nicht das heutige Erfassungsdatum.",
+      "Hier steht, wo die unterschriebene Unterlage abgelegt ist.",
+      "Nur die tatsächlich gewählten Themen ankreuzen."
+    ],
+    "source": "?view=website&tab=recipients",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 754,
+    "sha256": "f911c726238110f6d89683ecefaaad1e7e42d45098673076518af0444dcf6a8d",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Visible crop inspected; only blank fields, synthetic records and original interface labels."
+  },
+  "presse-entwurf": {
+    "file": "hilfe-presse-entwurf.png",
+    "title": "Pressemitteilung: eigener Text und ausgewählte Medien",
+    "notes": [
+      "Aussagekräftigen Betreff für diese Pressemitteilung eintragen.",
+      "Hier den vollständigen Pressetext schreiben und Veranstaltungshinweise kontrollieren."
+    ],
+    "source": "?view=website&tab=press&press_new=1&free=1",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 611,
+    "sha256": "1ac00e43273e83fedb00454d5bd8a472545153db9aca220f1220213c8f085ae5",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Visible crop inspected; only blank fields, synthetic records and original interface labels."
+  },
+  "website-text": {
+    "file": "hilfe-website-text.png",
+    "title": "Website-Text: Kurzbeschreibung und Inhalt",
+    "notes": [
+      "Kurze Zusammenfassung für den Überblick eingeben.",
+      "Den ausführlichen Inhalt im Editor bearbeiten. Speichern wirkt auf diesen Website-Eintrag."
+    ],
+    "source": "?view=website&tab=news&native_new=1",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 555,
+    "sha256": "65eb5924b59ea0468504e9157ce2e8c11e25550b203103e75ecf41237d53e490",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Visible crop inspected; only blank fields, synthetic records and original interface labels."
+  },
+  "website-veroeffentlichen": {
+    "file": "hilfe-website-veroeffentlichen.png",
+    "title": "Aktuelles: Veröffentlichung bewusst einstellen",
+    "notes": [
+      "Dieses Häkchen steuert die Veröffentlichung auf der Website.",
+      "Datum und Uhrzeit kontrollieren, wenn die Nachricht erst später erscheinen soll.",
+      "Der Redaktionsstatus beschreibt den Bearbeitungsstand. Zusätzlich Veröffentlichung und Kanäle prüfen.",
+      "Speichert die gewählten Einstellungen und Texte. Bei Veröffentlichung anschließend die öffentliche Seite kontrollieren."
+    ],
+    "source": "?view=website&tab=news&native_new=1",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 594,
+    "sha256": "343bc98ccb26eea1316aec8f7ba8f873022e6a7f91a8e96053ec933392923325",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Visible crop inspected; only blank fields, synthetic records and original interface labels."
+  },
+  "programmarchiv": {
+    "file": "hilfe-programmarchiv.png",
+    "title": "Programmarchiv: Zeitraum, Jahr und Suche",
+    "notes": [
+      "Hier zwischen kommenden Veranstaltungen und Programmarchiv wechseln. Die Zahlen sind erfundene Beispiele.",
+      "Suchwort, Jahr und Datumssortierung einstellen, anschließend Filtern anklicken."
+    ],
+    "source": "?view=website&tab=events&period=archive",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 203,
+    "sha256": "b10ec1b2286f6c55c6c6986e51aecae463d9fd4af7355af0355ee7a4c5f6b613",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Only interface labels and fixed fictional counts; no records shown."
+  },
+  "member-stammdaten": {
+    "file": "hilfe-member-stammdaten.png",
+    "title": "Mitglied anlegen: persönliche Angaben und weitere Felder finden",
+    "notes": [
+      "In dieser Karte stehen Name und Kontaktdaten.",
+      "Den vollständigen Namen einer einzelnen Person eintragen.",
+      "Die tatsächliche E-Mail-Adresse eintragen, falls vorhanden. Dadurch wird kein Newsletter bestellt.",
+      "Diese Zeile aufklappen: Hier stehen Geburtstag, alte Mitgliedsnummer, Ehrenmitglied, Notizen und zusätzliche Angaben."
+    ],
+    "source": "?view=members&new=1&create_as=member",
+    "captured_at": "2026-09-08",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 1034,
+    "height": 655,
+    "sha256": "a0ec53b39c95a83e8d70092bae21521d4330439c5f3bec6df8a34fa0f07ec3b4",
+    "privacy_reviewed_at": "2026-09-08",
+    "privacy_review": "Actual current local application. Unsaved fictional German handbook example only; example.invalid email, invented name/address/family/date. No live member data, account numbers, documents, signatures or secrets. Numbered callouts and visible crop manually reviewed."
+  },
+  "member-eintritt": {
+    "file": "hilfe-member-eintritt.png",
+    "title": "Eintritt festlegen: nur das bekannte Jahr angeben",
+    "notes": [
+      "Nur Eintrittsjahr bekannt wählen, wenn kein genaues Eintrittsdatum vorliegt.",
+      "Das belegte Jahr eintragen. Das Datumsfeld wird bei dieser Auswahl ausgeblendet."
+    ],
+    "source": "?view=members&new=1&create_as=member",
+    "captured_at": "2026-09-08",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 992,
+    "height": 269,
+    "sha256": "350466ffe0a2d73857775731fa8bc8aae33057e8a21d7098ad718713f35cb81b",
+    "privacy_reviewed_at": "2026-09-08",
+    "privacy_review": "Actual current local application. Unsaved fictional German handbook example only; example.invalid email, invented name/address/family/date. No live member data, account numbers, documents, signatures or secrets. Numbered callouts and visible crop manually reviewed."
+  },
+  "member-familie": {
+    "file": "hilfe-member-familie.png",
+    "title": "Familie zuordnen und Zugangsmail bewusst auswählen",
+    "notes": [
+      "Einzelmitglied, vorhandene Familie oder Neue Familie anlegen auswählen.",
+      "Bei einer neuen Familie deren Namen eintragen. Diese Person wird zunächst Beitragszahler.",
+      "Website-Zugang und Zugangsmail aufklappen, um die Versandauswahl zu sehen.",
+      "Vorausgewählt ist Konto anlegen, keine Mail senden. Nur bei gewünschter Einladung die Variante mit Mail auswählen."
+    ],
+    "source": "?view=members&new=1&create_as=member",
+    "captured_at": "2026-09-08",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 992,
+    "height": 423,
+    "sha256": "6c5d7ab373f927c28f575dbed28d4d6badf281be7c6f773d65e8f98315630a54",
+    "privacy_reviewed_at": "2026-09-08",
+    "privacy_review": "Actual current local application. Unsaved fictional German handbook example only; example.invalid email, invented name/address/family/date. No live member data, account numbers, documents, signatures or secrets. Numbered callouts and visible crop manually reviewed."
+  },
+  "member-import": {
+    "file": "hilfe-member-import.png",
+    "title": "Import: vorhandene Dateispalten den Mitgliederfeldern zuordnen",
+    "notes": [
+      "Die Dateispalte mit vollständigem Namen auswählen.",
+      "Aktuelle Mitgliedsnummer von der historischen Nummer trennen.",
+      "Die Spalte für die alte Nummer auswählen oder auf Nicht übernehmen lassen."
+    ],
+    "source": "?view=members&import=1",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 344,
+    "sha256": "6c2781b32fe46d99e37ae8f168a0192c3dd483cd1a2edfc568adfce500da048c",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Visible crop inspected; only blank fields, synthetic records and original interface labels."
+  },
+  "orga-gema": {
+    "file": "hilfe-orga-gema.png",
+    "title": "GEMA: Anmeldung und Musikliste als erledigt vermerken",
+    "notes": [
+      "Nur den geklärten Bedarf vermerken; die Anmeldung erfolgt bei GEMA.",
+      "Erst nach tatsächlicher Anmeldung Ja, erledigt wählen.",
+      "Musiklistenstatus getrennt pflegen und danach Erledigungsstand speichern."
+    ],
+    "source": "?view=gema&event=website%3A1027&year=2026",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 407,
+    "sha256": "2fa467f7af8399321a3e3824d105b8993d7351d5b8a3efbcacf4d7347cb34ae8",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Visible crop inspected; only blank fields, synthetic records and original interface labels."
+  },
+  "orga-inventar": {
+    "file": "hilfe-orga-inventar.png",
+    "title": "Vier vollständige Sätze mit je vier Teilen erfassen",
+    "notes": [
+      "Satz auswählen: Der Bestand wird in vollständigen Sätzen geführt.",
+      "Hier vier vorhandene Sätze eintragen; die Anzahl der einzelnen Füße folgt aus deren Inhalt.",
+      "Den tatsächlichen Lagerort wählen. Die Anfangsmenge wird beim Speichern dort erfasst.",
+      "Diesen Abschnitt für Sätze, Kartons oder Packungen aufklappen.",
+      "Vier Teile pro Satz eintragen und daneben Stück als Einheit der Teile auswählen. Ergebnis: vier Sätze mit zusammen 16 Füßen."
+    ],
+    "source": "?view=inventory&tab=items&new_item=1&create_mode=quantity",
+    "captured_at": "2026-09-08",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 950,
+    "height": 497,
+    "privacy_reviewed_at": "2026-09-08",
+    "sha256": "df2c2eada7b5597cb3c3cd8da8d717cdb17b579e352f652a5cc0a082b358259a",
+    "privacy_review": "Actual current local inventory interface with isolated fictional German training records and unsaved examples only. No real member names, invoice files, account details, signatures or secrets. Numbered overlays and crop visually reviewed."
+  },
+  "orga-nachweis": {
+    "file": "hilfe-orga-nachweis.png",
+    "title": "Nachweis und Datei: vorhandene Unterlage auswählen oder hochladen",
+    "notes": [
+      "Einen verständlichen Titel für die Unterlage eingeben.",
+      "Die passende Nachweisart auswählen.",
+      "Eine bereits abgelegte Datei suchen und auswählen. Ohne Datei bleibt der Nachweis als fehlend sichtbar.",
+      "Eine neue Unterlage hineinziehen oder über diese Schaltfläche auswählen. Anschließend den Nachweis speichern."
+    ],
+    "source": "?view=documents&tab=checks&new_check=1",
+    "captured_at": "2026-09-09",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 1000,
+    "height": 353,
+    "privacy_reviewed_at": "2026-09-09",
+    "privacy_review": "Current isolated synthetic application; blank fields or explicitly fictional sample text only. Numbered DOM overlays and focused crop reviewed. No real persons, signatures, financial values, or credentials.",
+    "sha256": "9a51b142f6c5a204b760b2acf6fca9b9963a6fd110c4470b16652c731abe5caa"
+  },
+  "orga-fristen": {
+    "file": "hilfe-orga-fristen.png",
+    "title": "Fristen und Zuständigkeit: nur die tatsächlich geltenden Daten eintragen",
+    "notes": [
+      "Name oder Kontaktstelle eintragen, die sich um den nächsten Schritt kümmert.",
+      "Bei einer tatsächlichen Befristung das Gültigkeitsdatum eintragen. Sonst leer lassen.",
+      "Nächsten Prüf-, Kündigungs- oder Meldetermin festhalten.",
+      "Vorlauf in Tagen bestimmen, zum Beispiel 30 für einen Monat."
+    ],
+    "source": "?view=documents&tab=checks&new_check=1",
+    "captured_at": "2026-09-09",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 1000,
+    "height": 275,
+    "privacy_reviewed_at": "2026-09-09",
+    "privacy_review": "Current isolated synthetic application; blank fields or explicitly fictional sample text only. Numbered DOM overlays and focused crop reviewed. No real persons, signatures, financial values, or credentials.",
+    "sha256": "381c2b8e2153f2a118b49b9040e82501edc684ad505ba9ad52beb98c8b7f29a0"
+  },
+  "orga-freieliste": {
+    "file": "hilfe-orga-freieliste.png",
+    "title": "Freie Liste: direkt bearbeiten und Speicherstatus beachten",
+    "notes": [
+      "Vor dem Verlassen auf Alle Änderungen gespeichert warten.",
+      "Die Spalten geben an, welche Angabe in eine Zelle gehört.",
+      "Zelle anklicken und ändern; jede Zeile ist ein eigener Eintrag."
+    ],
+    "source": "?view=free&sheet=2c911c83dc6797de6f411896f528bd09",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 819,
+    "height": 246,
+    "sha256": "d663769cc5095c8e906b62ec9babc0c806c62916c4d1795e22b921e2ba73ba9c",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Visible crop inspected; only blank fields, synthetic records and original interface labels."
+  },
+  "dokument-ziel": {
+    "file": "hilfe-dokument-ziel.png",
+    "title": "Das erste Ablageziel wählen",
+    "notes": [
+      "Die richtige Rechnung oder Person auswählen. Titel und Nummer kontrollieren.",
+      "Für Dateien zu einem anderen Vorgang ein weiteres Ziel anlegen.",
+      "Dieses Ziel gilt für die nächste Dateiauswahl. Bereits vorhandene Dateien werden dadurch nicht verschoben."
+    ],
+    "source": "?view=documents&new_document=1",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 693,
+    "height": 431,
+    "sha256": "084cd2b3295d853125d2cba6f1c5b64a621b3d128e3a99961eaf7e157c0d3259",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Visible crop inspected; only blank fields, synthetic records and original interface labels."
+  },
+  "dokument-dateien": {
+    "file": "hilfe-dokument-dateien.png",
+    "title": "Jede Datei hat einen eigenen Titel, ein Datum und ein Ziel",
+    "notes": [
+      "Den vorgeschlagenen Dateinamen durch einen verständlichen Titel ersetzen.",
+      "Das Datum genau dieser Unterlage eintragen.",
+      "Das Ablageziel dieser einzelnen Datei prüfen oder korrigieren."
+    ],
+    "source": "?view=documents&new_document=1",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 678,
+    "height": 387,
+    "sha256": "e174c85d60c35dc978ff1094d50fbfc4f022e139ce9803540c3973b88c1b3fb6",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Visible crop inspected; only blank fields, synthetic records and original interface labels."
+  },
+  "dokument-bestaetigung": {
+    "file": "hilfe-dokument-bestaetigung.png",
+    "title": "Die Aufteilung vor dem Speichern kontrollieren",
+    "notes": [
+      "Unter Ziel 1 müssen die ersten fünf Dateien stehen. Titel und Dokumentdaten einzeln lesen.",
+      "Unter Ziel 2 müssen die anderen fünf Dateien stehen. Eine falsche Aufteilung vor dem Speichern ändern."
+    ],
+    "source": "?view=documents&new_document=1",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 690,
+    "height": 364,
+    "sha256": "3e69d8596e71e048497a246ce33dad35eac93beeb7b37462356a92ff602c48f2",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Visible crop inspected; only blank fields, synthetic records and original interface labels."
+  },
+  "finanz-export": {
+    "file": "hilfe-finanz-export.png",
+    "title": "Finanzliste und Originalbelege für einen Zeitraum herunterladen",
+    "notes": [
+      "Beginn des gewünschten Belegzeitraums wählen.",
+      "Ende des gewünschten Belegzeitraums wählen.",
+      "Das Paket mit zugehörigen Originaldateien erzeugen. Vor der Weitergabe den Inhalt prüfen."
+    ],
+    "source": "?view=finance&tab=export",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 324,
+    "sha256": "ea7e535fef36c53b08bd570ab85dfd3a3ffc1dcec206dc2a8f9bdaa594eb7cac",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Visible crop inspected; only blank fields, synthetic records and original interface labels."
+  },
+  "finanz-datev": {
+    "file": "hilfe-finanz-datev.png",
+    "title": "DATEV: zuerst eine Vorschau erstellen",
+    "notes": [
+      "Die eigene DATEV-Beraternummer aus den abgestimmten Angaben übernehmen. Keine Beispielnummer für echte Exporte verwenden.",
+      "Die zugehörige Mandantennummer eintragen.",
+      "Die Vorschau prüft Angaben und Zahlungen. Fehler müssen vor dem Export geklärt werden."
+    ],
+    "source": "?view=finance&tab=export",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 317,
+    "sha256": "1d1823365df4dd498cd86da1b39e4061869ba2bc5c0e00c0188d9f5032fe6d5c",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Visible crop inspected; only blank fields, synthetic records and original interface labels."
+  },
+  "briefpapier": {
+    "file": "hilfe-briefpapier.png",
+    "title": "Briefpapier: eigener Entwurf und direkt erreichbare Kopfzeile",
+    "notes": [
+      "Der vorhandene Briefpapierweg erklärt Vorschau und gesonderte Bestätigung; normale Briefe bleiben im Briefbereich erreichbar.",
+      "Hier lässt sich der tatsächlich gespeicherte Stand mit seiner Fassung lesen.",
+      "Der eigene ungespeicherte Entwurf bleibt vom gespeicherten Vereinsstand getrennt.",
+      "Die Kopfeinstellungen sind direkt erreichbar, auch ohne JavaScript und ohne einen zusätzlichen Dialog."
+    ],
+    "source": "?view=settings&tab=paper",
+    "captured_at": "2026-10-21",
+    "privacy": "owned-isolated-synthetic-application-empty-upload-controls-no-private-signature-pixels-dom-number-overlays",
+    "width": 849,
+    "height": 952,
+    "sha256": "db96e14ff89f0e64e30a169eba0ff9ebb82db52b28369ae99f79611162c4b0e2",
+    "privacy_reviewed_at": "2026-10-21",
+    "privacy_review": "Actual isolated German UI crop visually inspected: four real DOM-numbered controls, synthetic header and version only, no uploaded file selection or private signature pixels."
+  },
+  "galerie-upload": {
+    "file": "hilfe-galerie-upload.png",
+    "title": "Bilder auswählen: die Übertragung beginnt sofort",
+    "notes": [
+      "Hier Bilder hineinziehen oder anklicken und im Dateifenster auswählen. Es ist kein weiterer Uploadknopf nötig.",
+      "Bei unklarem Stand die tatsächlich gespeicherten Bilder neu anzeigen."
+    ],
+    "source": "?view=website&tab=gallery&item=1271",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 223,
+    "sha256": "f60e5ba9e3888cc4bdf351b2652e612dcd6f68a8818dcc86182c98577e054fc1",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Visible crop inspected; only blank fields, synthetic records and original interface labels."
+  },
+  "galerie-sortieren": {
+    "file": "hilfe-galerie-sortieren.png",
+    "title": "Die Reihenfolge ganzer Alben ändern",
+    "notes": [
+      "Verschiebt dieses Album in der Galerieübersicht nach oben.",
+      "Verschiebt das ganze Album nach unten. Einzelne Fotos werden im Album sortiert."
+    ],
+    "source": "?view=website&tab=gallery&q=Beispielalbum%20%E2%80%93%20nur%20Schulungsdaten",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 247,
+    "height": 190,
+    "sha256": "26153aa6fe4fee31a7d0e4aaa30018a96246869f27669be0e8b1480519c3aa0f",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Visible crop inspected; only blank fields, synthetic records and original interface labels."
+  },
+  "inventar-einzelstueck": {
+    "file": "hilfe-inventar-einzelstueck.png",
+    "title": "Einzelstück prüfen: eigene Nummer, Seriennummer und eigener Preis",
+    "notes": [
+      "Eigene Inventarnummer für genau dieses Stück prüfen. Der Vorschlag kann geändert werden.",
+      "Nur eine bekannte Herstellerseriennummer eintragen. BEISPIEL-04 ist hier ein erfundenes Schulungsbeispiel; ohne bekannte Nummer bleibt das Feld leer.",
+      "Hier kostet nur die vierte Beispielbühne 200 Euro. Die ersten drei behalten jeweils 100 Euro."
+    ],
+    "source": "?view=inventory&tab=items&new_item=1",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 922,
+    "height": 488,
+    "sha256": "332ba9910c9e29510b90dcad7be30f8f1847330b65c747b8f4c5cad6fa1a9ded",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Sichtgeprüft: nur ungespeicherte Beispielbühnen, fiktive Inventar- und Seriennummern sowie der synthetische Lagerort „Bei Mara · Testdaten“. Keine Rechnung ausgewählt. Kein Anlegen bestätigt. Markierungen im echten Browser-DOM vor der Aufnahme ergänzt; keine nachträgliche Bildbearbeitung."
+  },
+  "inventar-pruefen": {
+    "file": "hilfe-inventar-pruefen.png",
+    "title": "Vor dem Anlegen: alle vier Einzelstücke gemeinsam bestätigen",
+    "notes": [
+      "Auch die vierte Zeile einzeln prüfen: 200 Euro. Die drei vorherigen Stücke haben jeweils 100 Euro; zusammen sind es 500 Euro. Im Beispiel ist bewusst keine Rechnung verknüpft.",
+      "Zurück zur Eingabe, wenn eine Nummer, ein Preis oder eine Zuordnung nicht stimmt. Dadurch wird noch nichts angelegt.",
+      "Erst diese Schaltfläche legt die vier Stücke mit je Bestand 1 an. Die Aufnahme zeigt die Vorschau; sie wurde nicht bestätigt."
+    ],
+    "source": "?view=inventory&tab=items&new_item=1",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 850,
+    "height": 688,
+    "sha256": "547de8cf7b53da9e1c7f42a40dbca0bee0bf551ad82db9a404699cb47a09f8b9",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Sichtgeprüft: nur ungespeicherte Beispielbühnen, fiktive Inventar- und Seriennummern sowie der synthetische Lagerort „Bei Mara · Testdaten“. Keine Rechnung ausgewählt. Kein Anlegen bestätigt. Markierungen im echten Browser-DOM vor der Aufnahme ergänzt; keine nachträgliche Bildbearbeitung."
+  },
+  "vorstand-unterschrift": {
+    "file": "hilfe-vorstand-unterschrift.png",
+    "title": "Vorstands-Unterschrift: zeichnen, übernehmen und bewusst speichern",
+    "notes": [
+      "Im weißen Feld zeichnen. Hier sind nur zwei fiktive Teststriche dargestellt, keine echte Unterschrift.",
+      "Zeichnung übernehmen überträgt das Bild und zeigt die zugeschnittene Vorschau. Die hinterlegte Unterschrift ist dadurch noch nicht ersetzt.",
+      "Vorschau prüfen, Berechtigung bestätigen und erst danach Unterschrift speichern."
+    ],
+    "source": "?view=settings&tab=account#vorstands-unterschrift",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 822,
+    "height": 1172,
+    "sha256": "d9616260a336f71c40f14c16342e15c8399f572b0dca05055559947bbdbc05d1",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Visible crop inspected with view_image. Only original interface labels and a synthetic V-shaped pair of strokes; no real names, signatures or records. Three numbered DOM annotations."
+  },
+  "einstellungen-menue": {
+    "file": "hilfe-einstellungen-menue.png",
+    "title": "Einstellungen: den passenden Bereich öffnen",
+    "notes": [
+      "Hier Vereinsdaten, Rollen und Rechte sowie Postfächer & Versand öffnen. Die genaue Auswahl steht anschließend oben auf der Seite.",
+      "Hier Beitragssätze, Leistungen und Nummernkreise finden.",
+      "Hier Textbausteine und die Gestaltung eurer Briefe öffnen."
+    ],
+    "source": "?view=settings",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 260,
+    "height": 216,
+    "sha256": "e6e8a58c38c5a8c09c9b536c1dfbd5687ac3e1d3d6860d96efb63e8046ceae61",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Visible crop rechecked: numbered badges sit inside their corresponding target rows. Only interface labels and club brand; no persons, account details, documents or signatures. Local synthetic manager."
+  },
+  "orga-inventar-stueckangaben": {
+    "file": "hilfe-orga-inventar-stueckangaben.png",
+    "title": "Ein gemeinsamer Gegenstand mit abweichendem Preis je Stück",
+    "notes": [
+      "Stück 3 bleibt beim Vorschlag von 299,00 €.",
+      "Dieser Wert gehört nur zu diesem Stück.",
+      "Nur eine tatsächlich bekannte Seriennummer eintragen. BEISPIEL-04 ist frei erfunden.",
+      "Beim vierten Stück den abweichenden Preis 399,00 € eintragen. Die anderen Preise bleiben erhalten."
+    ],
+    "source": "?view=inventory&tab=items&new_item=1&create_mode=quantity",
+    "captured_at": "2026-09-08",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 908,
+    "height": 581,
+    "privacy_reviewed_at": "2026-09-08",
+    "sha256": "554624844663cf1b26cef28b8c39e0a64a0c013a1e09072741acde7e3ccc0f6b",
+    "privacy_review": "Actual current local inventory interface with isolated fictional German training records and unsaved examples only. No real member names, invoice files, account details, signatures or secrets. Numbered overlays and crop visually reviewed."
+  },
+  "finanzen-rechnungsfirma": {
+    "file": "hilfe-finanzen-rechnungsfirma.png",
+    "title": "Rechnungsfirma und Bankangaben vor dem Anlegen prüfen",
+    "notes": [
+      "Den Firmennamen am Original prüfen. Ein Firmenkontakt ist kein Mitgliedskonto.",
+      "Straße, Hausnummer, Postleitzahl und Ort vollständig prüfen.",
+      "Eine erkannte IBAN sorgfältig mit dem Original vergleichen; hier ist das Beispiel bewusst leer. Es wird keine Zahlung ausgelöst."
+    ],
+    "source": "?view=finance&tab=inbox&inbox_doc=b697ada839649419ddb309786439ad84",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 690,
+    "height": 477,
+    "sha256": "d3d44045ddcd1d401c31021e65420acc3057d5d628044d7389494e50c16df7e9",
+    "privacy_reviewed_at": "2026-09-07",
+    "privacy_review": "Real local dialog with unsaved fictional company/address; no bank account number, members, signatures, or secrets."
+  },
+  "inventar-ueberblick": {
+    "file": "hilfe-inventar-ueberblick.png",
+    "title": "Beim Gegenstand: den passenden Arbeitsschritt direkt öffnen",
+    "notes": [
+      "Hier die tatsächliche Menge berichtigen oder einen anderen Lagerort erfassen.",
+      "Hier Bezeichnung, Einheit und Teilezahl pro Satz bearbeiten.",
+      "Hier Rechnungsdateien finden, hochladen und auslesen.",
+      "Zusätzliche Angaben bleiben eingeklappt, bis Sie diesen Bereich benötigen."
+    ],
+    "source": "?view=inventory&tab=items&item=8df1a60da86dcf4ec4a75dc3a1325830",
+    "captured_at": "2026-09-08",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 984,
+    "height": 455,
+    "privacy_reviewed_at": "2026-09-08",
+    "sha256": "e8e0daff04c5c8fc4e33d7e3f9d646045ff2b5ff9b508ac8952153ac25783fa5",
+    "privacy_review": "Actual current local inventory interface with isolated fictional German training records and unsaved examples only. No real member names, invoice files, account details, signatures or secrets. Numbered overlays and crop visually reviewed."
+  },
+  "inventar-bestand": {
+    "file": "hilfe-inventar-bestand.png",
+    "title": "Anzahl berichtigen: gezählten Bestand statt Differenz eintragen",
+    "notes": [
+      "Inventurkorrektur berichtigt die Anzahl. Zugang fügt neue Stücke hinzu; Umlagerung wechselt den Ort.",
+      "Den Lagerort prüfen, dessen nutzbare Menge gezählt wurde.",
+      "Hier den gezählten Gesamtbestand eintragen: fünf statt bisher sechs. Nicht minus eins eintragen.",
+      "Bisherige und neue Anzahl vor dem Speichern vergleichen.",
+      "Erst dieser Knopf speichert die begründete Korrektur. Im Beispiel wurde er nicht gedrückt."
+    ],
+    "source": "?view=inventory&tab=items&item=8df1a60da86dcf4ec4a75dc3a1325830&stock_edit=1",
+    "captured_at": "2026-09-08",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 950,
+    "height": 568,
+    "privacy_reviewed_at": "2026-09-08",
+    "sha256": "430cfd7b75ff429004872621c5a2b16ce6401f8fe73406b78480f09ee9862f01",
+    "privacy_review": "Actual current local inventory interface with isolated fictional German training records and unsaved examples only. No real member names, invoice files, account details, signatures or secrets. Numbered overlays and crop visually reviewed."
+  },
+  "chat-schreiben": {
+    "file": "hilfe-chat-schreiben.png",
+    "title": "Im richtigen Gespräch lesen und eine Nachricht bewusst senden",
+    "notes": [
+      "Deine eigenen Nachrichten stehen rechts und sind mit Du gekennzeichnet.",
+      "Hier die neue Nachricht schreiben. Enter beginnt nur eine neue Zeile. Der Beispieltext ist noch nicht gesendet.",
+      "Hier bei Bedarf den Dateiupload für PDF, PNG oder JPG öffnen.",
+      "Erst Nachricht senden teilt den Text und einen gegebenenfalls hochgeladenen Anhang mit den Teilnehmern."
+    ],
+    "source": "?view=chat&chat=75f0c710b2ffc02ad847134fc43502a9",
+    "captured_at": "2026-09-08",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 678,
+    "height": 685,
+    "privacy_reviewed_at": "2026-09-08",
+    "sha256": "39900b0098f15635aa9f62168e9ccdb32987e67f7e0ea89f19c0ee439ccdb58d",
+    "privacy_review": "Actual local chat UI with an isolated fictional training club. Visible names Anton Muster/Erika Beispiel, invented messages and an unsent example draft only. No live member details, documents, signatures, account data or credentials. Crop and numbered instructions visually reviewed."
+  },
+  "protokoll-vorlage": {
+    "file": "hilfe-protokoll-vorlage.png",
+    "title": "Protokollvorlage: Sitzung und beteiligte Personen beschreiben",
+    "notes": [
+      "Mitglieder- oder Vorstandsversammlung beziehungsweise Besprechung auswählen.",
+      "Den tatsächlichen Sitzungsort eingeben.",
+      "Wer hat die Sitzung geleitet?",
+      "Wer schreibt das Protokoll?",
+      "Namen oder einen Hinweis auf die gesonderte Anwesenheitsliste eintragen."
+    ],
+    "source": "?view=minutes&compose=1",
+    "captured_at": "2026-09-09",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 950,
+    "height": 641,
+    "privacy_reviewed_at": "2026-09-09",
+    "privacy_review": "Current isolated synthetic application; blank fields or explicitly fictional sample text only. Numbered DOM overlays and focused crop reviewed. No real persons, signatures, financial values, or credentials.",
+    "sha256": "da4e8f829eea103facbbdf6cad575aab8e87ff75178cffa67bf3060182067aee"
+  },
+  "protokoll-editor": {
+    "file": "hilfe-protokoll-editor.png",
+    "title": "Protokolltext bearbeiten und einen Zwischenstand sichern",
+    "notes": [
+      "Text markieren und die passende Formatierung wählen. Mit Rückgängig lässt sich der letzte Bearbeitungsschritt zurücknehmen.",
+      "Hier schreiben und bereits übernommenen Vorlagentext frei ergänzen oder korrigieren.",
+      "Zwischenstand im Vereinssystem speichern. Danach bleibt der Editor geöffnet.",
+      "Entwurf speichern und vollständig lesen. Die Vorschau veröffentlicht ihn noch nicht."
+    ],
+    "source": "?view=minutes&compose=1",
+    "captured_at": "2026-09-09",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 992,
+    "height": 721,
+    "privacy_reviewed_at": "2026-09-09",
+    "privacy_review": "Current isolated synthetic application; blank fields or explicitly fictional sample text only. Numbered DOM overlays and focused crop reviewed. No real persons, signatures, financial values, or credentials.",
+    "sha256": "163e780ce174f4af7c8049db3eb52206701d21b909bc3537f751fd15388c9f5f"
+  },
+  "einstellungen-postfaecher": {
+    "file": "hilfe-einstellungen-postfaecher.png",
+    "title": "Postfächer öffnen und aktuellen Stand getrennt prüfen",
+    "notes": [
+      "Öffne die vorhandenen Postfächer und Versandzuordnungen. Speichern startet hier keinen Verbindungstest, Versand oder Abruf.",
+      "Klappe die tatsächlich gespeicherten gemeinsamen Postfächer und Versandzuordnungen zum Lesen auf.",
+      "Das Rechnungspostfach hat seinen unabhängigen aktuellen Stand für IMAP-Eingang und SMTP-Versand.",
+      "Darunter bearbeitest du einen eigenen ungespeicherten Entwurf. Seine Prüfung und Bestätigung folgen getrennt."
+    ],
+    "source": "?view=settings&section=mail",
+    "captured_at": "2026-10-21",
+    "privacy": "owned-isolated-synthetic-application-empty-password-inputs-dom-number-overlays",
+    "width": 849,
+    "height": 778,
+    "sha256": "89a689c02334adc346921d21576f72429457941f359acb78c150ca45074730d8",
+    "privacy_reviewed_at": "2026-10-21",
+    "privacy_review": "Visually reviewed actual isolated current native manager crop with four numbered DOM overlays; only fictional owned draft identifiers and configuration versions, no real persons, mail addresses, passwords, provider credentials or private keys."
+  },
+  "einstellungen-vereinsdaten": {
+    "file": "hilfe-einstellungen-vereinsdaten.png",
+    "title": "Vereinsdaten in überschaubaren Abschnitten bearbeiten",
+    "notes": [
+      "Unter Name & Eintragung stehen die gemeinsamen Vereinsangaben.",
+      "Öffne Anschrift & Kontakt für Adresse, Telefonnummer, E-Mail und Website.",
+      "Unter Weitere Vereinsangaben kannst du unter anderem die Handkasse ein- oder ausschalten.",
+      "Klicke Speichern. Auch Angaben aus wieder zugeklappten Abschnitten werden übernommen."
+    ],
+    "source": "?view=settings",
+    "captured_at": "2026-09-09",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 898,
+    "height": 721,
+    "sha256": "adc91645513d71e7913203c1b9e2a89f31525d7bedcda92f7cf645578b28cc92",
+    "privacy_reviewed_at": "2026-09-09",
+    "privacy_review": "Root visually inspected numbered actual UI crops: synthetic/example inputs only, no member data or credentials."
+  },
+  "member-selbstpflege": {
+    "file": "hilfe-member-selbstpflege.png",
+    "title": "Eigene Angaben ändern: vorausgefüllte Felder und Prüfung durch den Vorstand",
+    "notes": [
+      "Kontrolliere, dass hier dein eigener Name steht.",
+      "Kontakt-E-Mail im Mitgliederprofil; die Anmeldeadresse wird dadurch nicht geändert.",
+      "Straße und Hausnummer, darunter Postleitzahl und Ort.",
+      "Diese Schaltfläche reicht die Änderung ein; sie übernimmt sie noch nicht in das Profil."
+    ],
+    "source": "?view=portal&tab=changes",
+    "captured_at": "2026-09-09",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 908,
+    "height": 560,
+    "privacy_reviewed_at": "2026-09-09",
+    "privacy_review": "Actual local UI with exclusively synthetic club profiles and chat examples; visible crop and numbered controls reviewed. No live member data, bank data, mail recipients, credentials or signatures.",
+    "sha256": "1d76badc97cd03cc8249c1f1e737da09c33a401cb16f2c1d9a112d73ff8b6a69"
+  },
+  "member-aenderung-pruefen": {
+    "file": "hilfe-member-aenderung-pruefen.png",
+    "title": "Datenänderung vergleichen: Beispiel eines bereits übernommenen Antrags",
+    "notes": [
+      "Name und Status des Antrags prüfen. Dieses Beispiel ist bereits übernommen.",
+      "Links steht die frühere Angabe, rechts der übernommene Vorschlag.",
+      "Auch die vollständige Anschrift wird im Vergleich angezeigt."
+    ],
+    "source": "?view=members&tab=changes&change=14cec05a4a9b6a4fad626066b7a4aea8",
+    "captured_at": "2026-09-09",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 908,
+    "height": 405,
+    "privacy_reviewed_at": "2026-09-09",
+    "privacy_review": "Actual local UI with exclusively synthetic club profiles and chat examples; visible crop and numbered controls reviewed. No live member data, bank data, mail recipients, credentials or signatures.",
+    "sha256": "445a22fdc9ce3197850b0c8053c100f03fef6eebeab41f1fd9dd357da719a952"
+  },
+  "chat-umfrage": {
+    "file": "hilfe-chat-umfrage.png",
+    "title": "Eine Umfrage erstellen: Frage, Antworten und Ende prüfen",
+    "notes": [
+      "Eine klare Frage für diese Unterhaltung eingeben.",
+      "Mindestens zwei unterschiedliche Antworten; weitere Antworten lassen sich ergänzen.",
+      "Endzeit prüfen oder leer lassen, um später selbst zu beenden.",
+      "Erst dieser Knopf veröffentlicht die Umfrage. Frage und Antworten sind danach unveränderlich."
+    ],
+    "source": "?view=chat&chat=a3f783eef0867c77ff8a6809a3faa5bb",
+    "captured_at": "2026-09-09",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 598,
+    "height": 748,
+    "privacy_reviewed_at": "2026-09-09",
+    "privacy_review": "Actual local UI with exclusively synthetic club profiles and chat examples; visible crop and numbered controls reviewed. No live member data, bank data, mail recipients, credentials or signatures.",
+    "sha256": "9b00510ed3081380f0b146e879bb837b343cd8aa4ace36dc00d0ad47f7b4527f"
+  },
+  "rechnung-eingang-liste": {
+    "file": "hilfe-rechnung-eingang-liste.png",
+    "title": "Rechnungseingang: suchen und gezielt eine Rechnung öffnen",
+    "notes": [
+      "Noch zu prüfen, Zugeordnet oder Archiviert auswählen.",
+      "Titel, Dateiname oder Absender suchen; bei Bedarf auf ein Belegjahr eingrenzen.",
+      "Prüfen und zuordnen öffnet diese Rechnung; dadurch wird sie noch nicht gebucht."
+    ],
+    "source": "?view=finance&tab=inbox",
+    "captured_at": "2026-09-09",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 908,
+    "height": 376,
+    "privacy_reviewed_at": "2026-09-09",
+    "privacy_review": "Actual isolated local application. Only purpose-built synthetic invoice/company and interface controls. No real members, bank data, signatures or access credentials. Focused numbered crop visually reviewed; capture blocked all POST/external requests.",
+    "sha256": "1d4eb54bf2a4d0a015709cccac60cd8647f7e7befefdf224028db91788cf92e9"
+  },
+  "rechnung-zweck-schritte": {
+    "file": "hilfe-rechnung-zweck-schritte.png",
+    "title": "Rechnung prüfen: zuerst den Zweck der Ausgabe bestimmen",
+    "notes": [
+      "Die drei Schritte zeigen, was noch zu tun ist.",
+      "Auswählen, wofür die Rechnung ist, zum Beispiel Inventar oder eine Veranstaltung.",
+      "Die kurze Hilfe erklärt Sphäre, Steuerkonto und BU-Schlüssel."
+    ],
+    "source": "?view=finance&tab=inbox&inbox_doc=96a1fc69fe18340013c48a9363f36859",
+    "captured_at": "2026-09-09",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 732,
+    "height": 652,
+    "privacy_reviewed_at": "2026-09-09",
+    "privacy_review": "Actual isolated local application. Only purpose-built synthetic invoice/company and interface controls. No real members, bank data, signatures or access credentials. Focused numbered crop visually reviewed; capture blocked all POST/external requests.",
+    "sha256": "278b068bad5df39bc9c301349084f3c513c6bd07476ab02659b5fb18bb12fb75"
+  },
+  "rechnung-original-xml": {
+    "file": "hilfe-rechnung-original-xml.png",
+    "title": "E-Rechnung: Originaldaten lesen und die Textgröße anpassen",
+    "notes": [
+      "Plus und Minus ändern die Textgröße; Normale Textgröße setzt sie zurück.",
+      "Die Rechnungsnummer gehört zum Original des Lieferanten.",
+      "Den Bruttobetrag mit der Rechnung vergleichen. Erkannte Angaben sind noch keine Buchung."
+    ],
+    "source": "?view=finance&tab=inbox&inbox_doc=96a1fc69fe18340013c48a9363f36859",
+    "captured_at": "2026-09-09",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 732,
+    "height": 535,
+    "privacy_reviewed_at": "2026-09-09",
+    "privacy_review": "Actual isolated local application. Only purpose-built synthetic invoice/company and interface controls. No real members, bank data, signatures or access credentials. Focused numbered crop visually reviewed; capture blocked all POST/external requests.",
+    "sha256": "be11264dd7d2919a6b75be5238e03f10e159d44e8673885e0c389d94768ff539"
+  },
+  "rechnung-speichern-schritt": {
+    "file": "hilfe-rechnung-speichern-schritt.png",
+    "title": "Rechnung speichern: offene Angaben zuerst erledigen",
+    "notes": [
+      "Hier endet das Prüfen der Eingaben.",
+      "Der Hinweis nennt fehlende Angaben vor dem Speichern.",
+      "Speichert Ausgabe und Original gemeinsam. Es wird keine Zahlung ausgelöst."
+    ],
+    "source": "?view=finance&tab=inbox&inbox_doc=96a1fc69fe18340013c48a9363f36859",
+    "captured_at": "2026-09-09",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 732,
+    "height": 614,
+    "privacy_reviewed_at": "2026-09-09",
+    "privacy_review": "Actual isolated local application. Only purpose-built synthetic invoice/company and interface controls. No real members, bank data, signatures or access credentials. Focused numbered crop visually reviewed; capture blocked all POST/external requests.",
+    "sha256": "1ca28ecab56e068d2508bdad66103440010b64e30759d64429ae91b806d26574"
+  },
+  "account-themen": {
+    "file": "hilfe-account-themen.png",
+    "title": "Benachrichtigungen: Themen für den eigenen Zugang auswählen",
+    "notes": [
+      "Hier legst du fest, worüber du informiert werden möchtest.",
+      "Chat-Mitteilungen können gesondert gewählt werden.",
+      "Die weiteren Themen richten sich nach deinen Berechtigungen.",
+      "Wähle nur die gewünschten Hinweise; die Auswahl löst keine E-Mail aus."
+    ],
+    "source": "?view=settings&tab=account",
+    "captured_at": "2026-09-09",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 912,
+    "height": 537,
+    "privacy_reviewed_at": "2026-09-09",
+    "privacy_review": "Actual isolated local application. Only purpose-built synthetic invoice/company and interface controls. No real members, bank data, signatures or access credentials. Focused numbered crop visually reviewed; capture blocked all POST/external requests.",
+    "sha256": "cf90b0f88b790b11581b80b8f09e86cbfd4bc4273e6e18d8630a38ef108e1f1e"
+  },
+  "account-geraet": {
+    "file": "hilfe-account-geraet.png",
+    "title": "Benachrichtigungen: erst Themen speichern, dann dieses Gerät einschalten",
+    "notes": [
+      "Speichert deine Themen für alle aktivierten Geräte dieses Zugangs.",
+      "Die Gerätefreigabe ist ein eigener zweiter Schritt.",
+      "Auf einem unterstützten Gerät aktivieren und anschließend die Browserabfrage bestätigen."
+    ],
+    "source": "?view=settings&tab=account",
+    "captured_at": "2026-09-09",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 912,
+    "height": 588,
+    "privacy_reviewed_at": "2026-09-09",
+    "privacy_review": "Actual isolated local application. Only purpose-built synthetic invoice/company and interface controls. No real members, bank data, signatures or access credentials. Focused numbered crop visually reviewed; capture blocked all POST/external requests.",
+    "sha256": "49c6a4d39d40ecd61d58d1f5dc4c39e2adb1943ccbd6516b9dac9a76de5a9836"
+  },
+  "chat-umfrage-abstimmen": {
+    "file": "hilfe-chat-umfrage-abstimmen.png",
+    "title": "Eine Antwort wählen und bewusst speichern",
+    "notes": [
+      "Die Frage und die Unterhaltung vor dem Abstimmen prüfen.",
+      "Eine Antwort auswählen. Die Zahlen zeigen die bereits gespeicherten Stimmen.",
+      "Erst Antwort speichern übernimmt die Auswahl. Später heißt der Knopf Antwort ändern."
+    ],
+    "source": "?view=chat&chat=d34c2ff54e401059d4373272ba9bd741",
+    "captured_at": "2026-09-09",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 649,
+    "height": 406,
+    "privacy_reviewed_at": "2026-09-09",
+    "privacy_review": "Actual isolated local application. Only purpose-built synthetic invoice/company and interface controls. No real members, bank data, signatures or access credentials. Focused numbered crop visually reviewed; capture blocked all POST/external requests.",
+    "sha256": "289ef209438d3d659fed36c7678f76290478ad9f96e80a9c1088f443e0d3b339"
+  },
+  "ehrenamt-allgemein-aktiv": {
+    "file": "hilfe-ehrenamt-allgemein-aktiv.png",
+    "title": "Aktive Mitgliedschaft: jÃ¤hrliche BestÃ¤tigung und vorgeschlagene Aufgaben prÃ¼fen",
+    "notes": [
+      "Die Mitgliedschaft stammt aus dem Mitgliederprofil. Nur der Vorstand kann sie dort berichtigen.",
+      "Der Text zur aktiven Mithilfe ist vorgeschlagen. PrÃ¼fe ihn und ergÃ¤nze tatsÃ¤chliche Aufgaben.",
+      "Die BestÃ¤tigung bezieht sich automatisch auf das aktuelle Kalenderjahr.",
+      "Den zeitlichen Umfang kannst du freiwillig ergÃ¤nzen."
+    ],
+    "source": "?view=portal&tab=safety&volunteer=1&volunteer_kind=general&person=f438fcf9e28840cd5d2d5170a0df3bf8",
+    "captured_at": "2026-09-09",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 862,
+    "height": 523,
+    "privacy_reviewed_at": "2026-09-09",
+    "privacy_review": "Actual isolated local application; synthetic membership identifiers and fictional club only. Unsaved clearly fictional task example. No real member information, signatures or credentials. GET-only capture, no mail/push/document creation.",
+    "sha256": "39126002bb9e381c261f7a85d2028d5f2c47025f8a8e92a4021e7862a2b18a04"
+  },
+  "ehrenamt-allgemein-passiv": {
+    "file": "hilfe-ehrenamt-allgemein-passiv.png",
+    "title": "Passive Mitgliedschaft: Mitgliedsstatus bestÃ¤tigen",
+    "notes": [
+      "Bei passiver Mitgliedschaft werden keine aktiven Aufgaben oder Stunden abgefragt.",
+      "Der Vereinsname und die Anschrift kommen aus den Vereinseinstellungen.",
+      "Erst eine vollstÃ¤ndige Vorschau erstellen und prÃ¼fen. Dadurch wird noch kein Dokument abgelegt."
+    ],
+    "source": "?view=portal&tab=safety&volunteer=1&volunteer_kind=general&person=90a15758a643b200991371dacdcd223b",
+    "captured_at": "2026-09-09",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 862,
+    "height": 430,
+    "privacy_reviewed_at": "2026-09-09",
+    "privacy_review": "Actual isolated local application; synthetic membership identifiers and fictional club only. Unsaved clearly fictional task example. No real member information, signatures or credentials. GET-only capture, no mail/push/document creation.",
+    "sha256": "4e79206753a8f114e00b8123f0158c20cb2f7f7ad6636d08431133a3555fb367"
+  },
+  "textbausteine": {
+    "file": "hilfe-textbausteine.png",
+    "title": "Textbausteine: gespeicherter Stand, eigener Entwurf und Vorlagenfelder",
+    "notes": [
+      "Hier den vorhandenen Textbausteinweg und die getrennte Prüfung und Bestätigung öffnen.",
+      "Der aktuell gespeicherte Stand bleibt mit seiner Fassung nachlesbar.",
+      "Der eigene ungespeicherte Entwurf enthält die Gruppenwahl; die Schaltflächen erhalten seine vollständigen Angaben.",
+      "Alle Felder der Vorlage sind direkt erreichbar. Die Vorschauauswahl bestimmt das angezeigte Muster."
+    ],
+    "width": 849,
+    "height": 1264,
+    "source": "?view=settings&tab=texts&group=contributions",
+    "captured_at": "2026-10-21",
+    "privacy": "owned-isolated-synthetic-application-text-editor-no-private-source-pixels-dom-number-overlays",
+    "sha256": "1b868c73dd91af25a84d8b300ebe1436cc75b2c3100f4e4d773e0e00109cdcd1",
+    "privacy_reviewed_at": "2026-10-21",
+    "privacy_review": "Actual isolated German UI crop visually inspected: four real DOM-numbered controls, synthetic version and text only, no personal data, bank details, private source pixels or authentication data."
+  },
+  "ausgangsrechnung-mail": {
+    "file": "hilfe-ausgangsrechnung-mail.png",
+    "title": "Ausgangsrechnung: Nachricht und unverändertes Original-PDF prüfen",
+    "notes": [
+      "Hier beginnt der gesonderte Mailweg zur bereits ausgestellten Rechnung.",
+      "Empfänger, Originaldokument, aktuell offener Betrag und Versandstand gemeinsam prüfen.",
+      "Dieser eigene Mailentwurf bleibt bis zur gesonderten Bestätigung ungespeichert.",
+      "Hier den ganzen Betreff bearbeiten; direkt darunter folgt die Nachricht mit ihren ursprünglichen Variablen."
+    ],
+    "source": "?view=finance&tab=outgoing – eigene synthetische ausgestellte Rechnung",
+    "captured_at": "2026-10-21",
+    "privacy": "owned-synthetic-invoice-and-recipient-no-credentials-or-signature-pixels-four-dom-number-overlays",
+    "width": 831,
+    "height": 792,
+    "sha256": "00d4ac7a39664d179eb99784a0bb374b7bf655bdeac9f46152a311612f26505b",
+    "privacy_reviewed_at": "2026-10-21",
+    "privacy_review": "Full visible crop inspected: four actual DOM markers, only synthetic buyer email, invoice number and amount, original interface labels and template variables. No real person, credentials, banking numbers or signature pixels."
+  },
+  "ausgangsrechnung-erfassung": {
+    "file": "hilfe-ausgangsrechnung-erfassung.png",
+    "title": "Rechnung vollständig erfassen und das Format bewusst wählen",
+    "notes": [
+      "Hier bleibt der eigene vollständige Entwurf bis zum Speichern erhalten.",
+      "Empfänger und Leistung vollständig erfassen; eine E-Mail-Adresse ist beim gewöhnlichen PDF optional.",
+      "Menge, Einheit, Bruttopreis und tatsächliche Steuerbehandlung je Position prüfen.",
+      "Gewöhnliches PDF oder geprüftes elektronisches Format bewusst auswählen."
+    ],
+    "source": "?view=finance&tab=outgoing&new_invoice=1 – eigener synthetischer leerer Rechnungsentwurf",
+    "captured_at": "2026-10-21",
+    "privacy": "synthetic-only-four-dom-number-overlays-no-credentials-or-signatures",
+    "width": 879,
+    "height": 1810,
+    "sha256": "b297f5c79977dc6871aaabc56f85616914837bce0be55ec87d61524929fc3bde",
+    "privacy_reviewed_at": "2026-10-21",
+    "privacy_review": "Full visible crop visually inspected: four real DOM-numbered controls and empty owned synthetic invoice fields only. No real person, bank details, credentials, source pixels or signature."
+  },
+  "ausgangsrechnung-korrektur": {
+    "file": "hilfe-ausgangsrechnung-korrektur.png",
+    "title": "Korrektur vollständig vorbereiten und vor der Ausgabe prüfen",
+    "notes": [
+      "Hier bleibt der eigene ganze ungespeicherte Korrekturentwurf erhalten.",
+      "Zwischen vollständigem Storno einer unbezahlten Rechnung und Gutschrift für einen tatsächlich bezahlten Anteil wählen.",
+      "Den tatsächlichen Korrekturgrund vollständig angeben.",
+      "Zuerst ganze Angaben und unnummerierte Vorschau prüfen; die verbindliche Ausgabe folgt gesondert."
+    ],
+    "source": "?view=finance&tab=outgoing&outgoingcorrection_new=1 – eigene synthetische ausgegebene Rechnung",
+    "captured_at": "2026-10-21",
+    "privacy": "synthetic-only-four-dom-number-overlays-no-credentials-bank-details-recipient-or-signatures",
+    "width": 879,
+    "height": 690,
+    "sha256": "90ad0cf8c184414e7c90c58885c82263c9a6780f491b181830bf541e195efeaf",
+    "privacy_reviewed_at": "2026-10-21",
+    "privacy_review": "Full actual visible crop inspected: four DOM-numbered editor controls only, empty synthetic correction reason, no real person, bank number, authentication secret or signature."
+  },
+  "beitragslauf-pruefen": {
+    "file": "hilfe-beitragslauf-pruefen.png",
+    "title": "Beitragslauf: zuerst prüfen, dann bewusst vorbereiten",
+    "notes": [
+      "Den gewünschten Stichtag im laufenden Beitragsjahr auswählen.",
+      "Die ganzen Angaben unverbindlich prüfen. Noch wird kein Auftrag angelegt.",
+      "Die geprüften Beitragszahler, Beträge und geplanten Aufträge selbst bestätigen. Die Zustimmung ist zunächst leer.",
+      "Erst hier die geprüften fehlenden Jahresbeiträge und Nachrichtenaufträge vorbereiten. Dies bestätigt keinen Versand und keine Zahlung."
+    ],
+    "source": "?view=finance&tab=contribution-mails",
+    "captured_at": "2026-10-22",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 945,
+    "height": 1069,
+    "sha256": "574c8b843e244541066e05e7e71efedb72fd52df8158cddbaa295b68c24d4f76",
+    "privacy_reviewed_at": "2026-10-22",
+    "privacy_review": "Actual German native review inspected visually. Four numbered DOM markers identify the date, preview, unticked consent and conscious preparation. Only owned synthetic contribution data and example.invalid email are visible; no real persons, bank data or provider actions."
+  },
+  "beitragsmailauftrag-pruefen": {
+    "file": "hilfe-beitragsmailauftrag-pruefen.png",
+    "title": "Beitragsmailauftrag: prüfen und bewusst erneut vormerken",
+    "notes": [
+      "Die angebotene Aktion für genau diesen Auftrag auswählen. Ein unklarer Versand bietet keine direkte Wiederfreigabe.",
+      "Einen eigenen Grund angeben. Die Aufnahme zeigt den absichtlichen synthetischen Beispielwert 0.",
+      "Die ganze Auftragsentscheidung unverbindlich prüfen. Die Prüfung führt noch nichts aus.",
+      "Auftrag, ursprüngliche Rechnung, ganze Angaben und gegebenenfalls Nachweise selbst bestätigen. Die Zustimmung ist zunächst leer.",
+      "Erst hier die geprüfte lokale Entscheidung speichern. Dies verschickt keine Mail und erfasst keine Zahlung."
+    ],
+    "source": "?view=finance&tab=contribution-mails",
+    "captured_at": "2026-10-22",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 945,
+    "height": 1324,
+    "sha256": "fdd8aa050a40cb55aa809f14d0b3ebba396fab1607a588522a01f6016f4e58de",
+    "privacy_reviewed_at": "2026-10-22",
+    "privacy_review": "Actual German native release review visually inspected. Five real DOM markers identify action, whole reason, preview, unticked consent and conscious save. Only owned synthetic payer, example.invalid email, standard synthetic test bank values and original interface text are visible; no real customer data, credentials, signatures or provider action."
+  },
+  "lastschriftentscheidung-pruefen": {
+    "file": "hilfe-lastschriftentscheidung-pruefen.png",
+    "title": "Lastschriftentscheidung mit eigener Prüfung und Zustimmung",
+    "notes": [
+      "Die nächste angebotene Aktion für genau diesen Auftrag auswählen. Die Aufnahme zeigt eine vorbereitete Freigabe.",
+      "Einen eigenen Grund für diese konkrete Entscheidung angeben. Die tatsächliche Prüfung bezieht ursprüngliche Rechnung, Mandat und Einzugsbetrag ein.",
+      "Die ganze Entscheidung unverbindlich prüfen. Diese Schaltfläche sendet und speichert noch keinen Bankauftrag.",
+      "Die angezeigten Quellen selbst prüfen und die zunächst leere eigene Zustimmung setzen.",
+      "Erst hier die geprüfte lokale Entscheidung bewusst speichern. Die Freigabe allein übermittelt nichts an eine Bank und erfasst keine Zahlung."
+    ],
+    "source": "?view=finance&tab=debit",
+    "captured_at": "2026-10-22",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 945,
+    "height": 2402,
+    "sha256": "a8dd07c7f563d91b1c8a916e33b1c15fe12a82aff2001171ba2424bb8cb7bf84",
+    "privacy_reviewed_at": "2026-10-22",
+    "privacy_review": "Actual German native approval review visually inspected. Five real DOM markers identify the operation, complete reason, preview, unticked consent and conscious save. Only owned synthetic association, payer, example.invalid addresses, standard synthetic bank fixtures and current interface text are visible. No real customer data, credentials, signatures or provider activity."
+  },
+  "ueberweisungsentscheidung-pruefen": {
+    "file": "hilfe-ueberweisungsentscheidung-pruefen.png",
+    "title": "Überweisungsentscheidung mit eigener Prüfung und Zustimmung",
+    "notes": [
+      "Die passende nächste Aktion für genau diese Rechnung oder diesen Auftrag auswählen. Die Aufnahme zeigt die Vorbereitung eines Lieferantenauftrags.",
+      "Einen eigenen Grund für diese konkrete Entscheidung angeben. Ganze Angaben bleiben erhalten; ursprüngliche Rechnung, offener Betrag, Kontoinhaber und Bankdaten werden geprüft.",
+      "Die ganze Entscheidung unverbindlich prüfen. Diese Schaltfläche bereitet noch keinen verbindlichen Bankauftrag vor.",
+      "Die tatsächlichen Quellen selbst prüfen und die zunächst leere eigene Zustimmung setzen.",
+      "Erst hier die geprüfte lokale Entscheidung bewusst speichern. Die Vorbereitung übermittelt nichts an eine Bank und erfasst keine Zahlung."
+    ],
+    "source": "?view=finance&tab=receipts",
+    "captured_at": "2026-10-22",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 945,
+    "height": 3732,
+    "sha256": "ed4d74df065580aedc370ba21e2f452ceb5cd3cdb42ba14a28b00be94a9a0a75",
+    "privacy_reviewed_at": "2026-10-22",
+    "privacy_review": "Visually inspected actual German native preparation review. Five real DOM markers identify the operation, complete reason, preview, initially unticked consent and conscious save. Only owned synthetic association, supplier, invoice references, escaped literal markup and masked bank numbers are visible; no real customer data, credentials, signatures or provider activity. Browser-native calendar uses the synthetic browser locale."
+  }
+}

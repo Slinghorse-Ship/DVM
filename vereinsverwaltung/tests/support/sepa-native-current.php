@@ -1,0 +1,46 @@
+<?php declare(strict_types=1);
+use Kulturhus\Native\Shared\Db;
+use Kulturhus\Verein\{Finance,MemberBankVault,SepaOrders,MemberBankSettings};
+use Kulturhus\Verein\Finance\Banking\NativeSepa\{SepaInput,SepaRequests};
+
+final class OwnSepaCommitLoss extends PDO
+{
+    public bool $loseNextCommit=false;
+    public function commit():bool{$result=parent::commit();if($this->loseNextCommit){$this->loseNextCommit=false;throw new RuntimeException('Own actual SEPA commit acknowledgement lost.');}return $result;}
+}
+
+/** Real independent writes, older read views, current bank authority and accepted COMMIT loss. */
+function ownSepaNativeCurrent(PDO $db,callable $check,array $f,array $config):array
+{
+    $name=(string)$db->query('SELECT DATABASE()')->fetchColumn();if(($config['label']??null)!=='native-sepa-interface'||($config['host']??null)!=='127.0.0.1'||(int)($config['port']??0)!==13371||!preg_match('/\Akh_native_[a-f0-9]{24}\z/D',$name))throw new RuntimeException('Owned current SEPA source required.');
+    $dsn='mysql:host=127.0.0.1;port=13371;dbname='.$name.';charset=utf8mb4';$options=[PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC,PDO::ATTR_EMULATE_PREPARES=>false];$connect=static fn():PDO=>new PDO($dsn,$config['username'],$config['password'],$options);$reader=$connect();$proofs=[];
+    $make=static function(string $label)use($f):array{$entry=($f['entry'])($label);$input=($f['inputFor'])($entry);$review=$f['native']->prepare($input);$first=$f['native']->accept($input,($f['key'])(),$review['hash'],true);$f['service']->approve($first['result']['order']['id'],1);return [$entry,$first['result']['order']['id']];};
+    [$entry,$order]=$make('Own stale-read real partial payment source');$reader->beginTransaction();$reader->query('SELECT COUNT(*) FROM finance_entries')->fetchColumn();
+    try{$f['finance']->recordPayment($entry,(int)$f['finance']->entry($entry)['version'],$f['account'],$f['notice'],'5');$before=ownOriginalDatabaseHash($db,$f['allTables']);$denied=false;try{(new SepaOrders($reader,$f['actor'],new MemberBankVault($reader,$f['actor'],$f['path'])))->fintsPayload($order,2);}catch(DomainException $failure){$denied=str_contains($failure->getMessage(),'veränderte Rechnungen');}$check($denied&&$f['finance']->entry($entry)['remaining_cents']===1500&&ownOriginalDatabaseHash($db,$f['allTables'])===$before,'older independent caller refuses actual partial payment before releasing original bank XML and changes no whole row');}
+    finally{if($reader->inTransaction())$reader->rollBack();}
+    [$entry,$order]=$make('Own current authority and actual mandate source');
+    $cases=[
+        'revoked confirmed office'=>[fn()=>Db::run($db,'UPDATE admission_board SET enabled=0 WHERE club_id=? AND actor_id=?',[$f['club'],$f['actor']]),fn()=>Db::run($db,'UPDATE admission_board SET enabled=1 WHERE club_id=? AND actor_id=?',[$f['club'],$f['actor']])],
+        'changed approved office version'=>[function()use($db,$f):void{Db::run($db,'UPDATE admission_board SET version=2 WHERE club_id=? AND actor_id=?',[$f['club'],$f['actor']]);Db::run($db,'INSERT INTO admission_board_checks VALUES(?,?,2,?,?,?)',[$f['club'],$f['actor'],'Kassenwart',$f['admin'],$f['notice']]);},fn()=>Db::run($db,'UPDATE admission_board SET version=1 WHERE club_id=? AND actor_id=?',[$f['club'],$f['actor']])],
+        'ended payer membership'=>[fn()=>Db::run($db,"UPDATE memberships SET status='ehemalig',ends_on=? WHERE club_id=? AND contact_id=?",[(new DateTimeImmutable($f['notice']))->modify('-1 day')->format('Y-m-d'),$f['club'],$f['payer']]),fn()=>Db::run($db,"UPDATE memberships SET status='aktiv',ends_on=NULL WHERE club_id=? AND contact_id=?",[$f['club'],$f['payer']])],
+        'actual disabled SEPA configuration'=>[function()use($db,$f):void{$settings=new MemberBankSettings($db,$f['admin']);$data=$settings->get();$settings->save($data['version'],array_replace($data,['sepa_enabled'=>'']));},function()use($db,$f):void{$settings=new MemberBankSettings($db,$f['admin']);$data=$settings->get();$settings->save($data['version'],array_replace($data,['sepa_enabled'=>'1']));}],
+        'actual owner-revoked mandate'=>[function()use($f):void{$raw=['reason'=>'Own actual revocation behind older bank source'];$f['vault']->revoke($f['payer'],2,$raw,($f['grant'])('revoke',2,$raw),$f['sessionHash']);},function()use($f):void{$terms=$f['vault']->mandateTerms($f['payer'])['payload'];$f['vault']->mandate($f['payer'],3,$terms,($f['grant'])('mandate',3,$terms),$f['sessionHash']);}],
+    ];
+    foreach($cases as$label=>[$change,$restore]){
+        $f['service']->fintsPayload($order,2);$reader->beginTransaction();$reader->query('SELECT COUNT(*) FROM finance_entries')->fetchColumn();
+        try{$change();$fresh=false;try{$f['service']->fintsPayload($order,2);}catch(DomainException){$fresh=true;}$before=ownOriginalDatabaseHash($db,$f['allTables']);$denied=false;try{(new SepaOrders($reader,$f['actor'],new MemberBankVault($reader,$f['actor'],$f['path'])))->fintsPayload($order,2);}catch(DomainException){$denied=true;}$check($fresh&&$denied&&ownOriginalDatabaseHash($db,$f['allTables'])===$before,'older actual bank source observes '.$label.' with no private first or other whole-row write');$proofs[]=$label;}
+        finally{if($reader->inTransaction())$reader->rollBack();$restore();}
+    }
+    [$nestedEntry,$nestedOrder]=$make('Own nested actual returned payment');$f['service']->export($nestedOrder,2);
+    $positive=$f['finance']->createTransaction(['account'=>$f['account'],'booked_on'=>$f['notice'],'direction'=>'income','amount'=>'20','counterparty'=>'Unmatched own movement','description'=>'Own movement without matching references'],($f['key'])());$negative=$f['finance']->createTransaction(['account'=>$f['account'],'booked_on'=>$f['notice'],'direction'=>'expense','amount'=>'20','counterparty'=>'Unmatched own returned movement','description'=>'Own actual whole negative movement'],($f['key'])());
+    $check((int)$f['finance']->transactionDetail($positive)['allocated_cents']===0,'actual nested-return source begins as a genuine unallocated existing positive movement');$reader->beginTransaction();$reader->query('SELECT COUNT(*) FROM finance_allocations')->fetchColumn();
+    try{$f['finance']->allocate($positive,(int)$f['finance']->transactionDetail($positive)['version'],$nestedEntry,(int)$f['finance']->entry($nestedEntry)['version'],'20',($f['key'])());$nested=new SepaOrders($reader,$f['actor'],new MemberBankVault($reader,$f['actor'],$f['path']));$item=$nested->get($nestedOrder)['items'][0]['id'];$count=(int)$db->query('SELECT COUNT(*) FROM finance_transactions')->fetchColumn();$nested->recordReturn($item,$negative,'Own whole return behind older allocation view');$check($reader->inTransaction(),'actual nested return leaves its caller transaction open');$reader->commit();$check($f['finance']->entry($nestedEntry)['payment_state']==='open'&&$f['finance']->transactionDetail($negative)['reversal_of']===$positive&&(int)$db->query('SELECT COUNT(*) FROM finance_transactions')->fetchColumn()===$count,'actual current nested return sees the independent allocation and links only the two existing real movements');}
+    finally{if($reader->inTransaction())$reader->rollBack();}
+    $loss=new OwnSepaCommitLoss($dsn,$config['username'],$config['password'],$options);$lostRequests=new SepaRequests($loss,$f['actor'],new MemberBankVault($loss,$f['actor'],$f['path']));$raw=($f['inputFor'])(($f['entry'])('Own actual SEPA commit-loss demand'));$review=$lostRequests->prepare($raw);$key=($f['key'])();$loss->loseNextCommit=true;$lost=false;
+    try{$lostRequests->accept($raw,$key,$review['hash'],true);}catch(RuntimeException $failure){$lost=$failure->getMessage()==='Own actual SEPA commit acknowledgement lost.';}
+    $first=$f['native']->receipt($key);$before=ownOriginalDatabaseHash($db,$f['allTables']);$check($lost&&!$loss->inTransaction()&&$f['native']->accept($raw,$key,$review['hash'],true)===$first&&ownOriginalDatabaseHash($db,$f['allTables'])===$before,'real COMMIT succeeds before acknowledgement loss and exact same-key read restores its first without a second bank order');
+    $writer=$connect();$pending=($f['inputFor'])(($f['entry'])('Own actual contention demand'));$review=$f['native']->prepare($pending);$key=($f['key'])();$writer->beginTransaction();
+    try{Db::run($writer,'SELECT id FROM clubs WHERE id=? FOR UPDATE',[$f['club']])->fetchColumn();$before=ownOriginalDatabaseHash($db,$f['allTables']);($f['deny'])(fn()=>$f['native']->accept($pending,$key,$review['hash'],true),503,'independent actual club writer produces a known retryable native bank decision rejection');$check(ownOriginalDatabaseHash($db,$f['allTables'])===$before,'actual lock conflict creates no order item audit or private first');}
+    finally{if($writer->inTransaction())$writer->rollBack();}
+    ($f['deny'])(fn()=>$f['native']->receipt($key),404,'known rejected bank decision invents no personal first');$check(hash_file('sha256',$f['path'])===$f['keyHash'],'current source revocation nested-return and actual commit-loss proofs preserve the private bank key');return compact('proofs','first','nestedEntry','nestedOrder','positive','negative');
+}

@@ -1,0 +1,13 @@
+{
+  "templates": {
+    "home": ["title", "hero_title", "hero_text", "hero_image", "featured_events", "body"],
+    "event": ["title", "external_id", "event_status", "start_at", "end_at", "venue_name", "venue_address", "ticket_url", "summary", "body", "event_image", "image_rights", "channels", "sync_hash", "synced_at"],
+    "news": ["title", "publish_at", "summary", "body", "image", "image_rights", "channels", "workflow_status"],
+    "basic_page": ["title", "summary", "body", "image", "image_rights"],
+    "newsletter_recipient": ["email_hash", "email_encrypted", "first_name", "last_name", "topics", "recipient_status", "consent_version", "requested_at", "confirmed_at", "unsubscribed_at", "evidence", "doi_token_hash", "unsubscribe_token_hash"],
+    "publication_job": ["content_page", "channel", "job_status", "attempts", "run_after", "external_id", "last_error"],
+    "image_asset": ["image", "alt_text", "credit", "source_url", "license", "consent_reference", "usage_scope", "expires_at"]
+  },
+  "workflowStatus": ["draft", "review", "approved", "published", "archived"],
+  "channels": ["website", "rss", "newsletter", "facebook_post", "instagram", "press", "tourism"]
+}

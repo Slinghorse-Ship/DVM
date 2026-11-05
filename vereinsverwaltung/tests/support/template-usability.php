@@ -1,0 +1,21 @@
+<?php declare(strict_types=1);
+use Kulturhus\Native\Shared\{Access,Db,RichText};
+use Kulturhus\Native\Communication\{Workspace,TemplateCatalogue,Schema};
+use Kulturhus\Native\Web\Communication\{Templates,TemplateFormState};
+
+$richWorkspace=new Workspace($db,$access,'newsletter',$root.'/media');$richTemplate=$richWorkspace->saveTemplate(['name'=>'Visual rich block','title'=>'Readable template','body'=>'Body','blocks'=>[['type'=>'richtext','html'=>'<p>Original <strong>formatted</strong> block</p>']]]);
+$_GET=['template_focus'=>$richTemplate['id']];$richView=(new Templates($db,$access,$root.'/media','own-csrf'))->manager('newsletter');$_GET=[];
+$doc=new DOMDocument();@$doc->loadHTML($richView);$xp=new DOMXPath($doc);templateCheck($xp->query('//section[@data-kh-richtext]//input[@name="block_html" and @type="hidden"]')->length===1&&$xp->query('//input[@name="block_html" and @type="text"]')->length===0&&$xp->query('//textarea[@name="block_plain"]')->length===1,'formatted template blocks use the existing visual editor and a readable no-script fallback');
+$richPost=['template_focus'=>$richTemplate['id'],'template_form_complete'=>'1','id'=>$richTemplate['id'],'version'=>'1','name'=>$richTemplate['name'],'title'=>$richTemplate['title'],'body_html'=>'<p>Body</p>','blocks_json'=>json_encode($richTemplate['blocks'],JSON_THROW_ON_ERROR),'block_html'=>'<p>Changed <em>visual</em> block</p>'];
+$richState=TemplateFormState::restore($richPost);templateCheck(json_decode($richState['profile']['blocks_json'],true)[0]['html']===$richPost['block_html'],'the visual block editor preserves formatting in unsaved form state');
+$plain=RichText::plain($richPost['block_html']);$noScript=TemplateFormState::restore($richPost+['block_plain'=>$plain]);templateCheck($noScript['profile']['blocks_json']===$richState['profile']['blocks_json'],'unchanged no-script fallback preserves the original formatted block');
+$noScript=TemplateFormState::restore($richPost+['block_plain'=>'Changed without JavaScript <script>plain text</script>']);$block=json_decode($noScript['profile']['blocks_json'],true)[0];templateCheck(str_contains($block['html'],'&lt;script&gt;')&&!str_contains($block['html'],'<script>'),'plain block fallback accepts ordinary text without requiring HTML or executable markup');
+
+Db::run($db,"INSERT IGNORE INTO native_grants VALUES('reader','social','read')");$social=new Workspace($db,$access,'social',$root.'/media');$socialTemplate=$social->saveTemplate(['name'=>'Own visual sample','title'=>'Music together','body'=>'An evening at our club','kind'=>'story','image_design'=>['layout'=>'poster','palette'=>'night']]);
+$beforeSocial=ownOriginalDatabaseHash($db,[Schema::table('social','templates'),Schema::table('social','items'),'khcms_media','native_social_images']);$filesBefore=glob($root.'/media/*');
+$_GET=['template_preview'=>$socialTemplate['id']];$socialView=(new Templates($db,$reader,$root.'/media','own-csrf'))->manager('social');$_GET=[];
+templateCheck(str_contains($socialView,'data-social-template-preview')&&str_contains($socialView,'data:image/png;base64,')&&str_contains($socialView,'Ansehen')&&!str_contains($socialView,'communication-from-template'),'a social reader sees visual thumbnails and a full preview without draft-creation controls');
+templateCheck(ownOriginalDatabaseHash($db,[Schema::table('social','templates'),Schema::table('social','items'),'khcms_media','native_social_images'])===$beforeSocial&&glob($root.'/media/*')===$filesBefore,'social previews create no database originals drafts images or media files');
+for($i=0;$i<7;$i++)$social->saveTemplate(['name'=>'Paged visual '.$i,'title'=>'Template '.$i,'body'=>'Short body']);
+$catalogue=TemplateCatalogue::page($db,$reader,'social',['query'=>'Paged visual','page'=>2]);templateCheck($catalogue['total']===7&&$catalogue['pages']===2&&count($catalogue['rows'])===1,'social template previews page six candidates at a time and retain every later template');
+$foreign=(new Workspace($db,new Access($db,'outsider'),'social'))->saveTemplate(['name'=>'Private foreign social','title'=>'Foreign preview']);$_GET=['template_preview'=>$foreign['id']];templateReject(fn()=>(new Templates($db,$reader,$root.'/media','own-csrf'))->manager('social'),'social preview cannot expose a copied foreign template ID');$_GET=[];

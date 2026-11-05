@@ -1,0 +1,268 @@
+{
+  "schema": 1,
+  "revision": 39,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "related-allowances-r39-001@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.affil",
+          "choices": [
+            "bs.ass.currAss.receiv.affil"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": "upTo1year",
+          "contra_receivable_family": "affil",
+          "disclosures": [
+            "bs.ass.currAss.receiv.affil.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "12760",
+              "semantic": {
+                "name": "Wertberichtigungen auf Forderungen gegen verbundene Unternehmen - Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "12760",
+                "range_end": "12760",
+                "parent": null
+              },
+              "signature": "9594470be4be8ac4b9c2483d24993081cdcbf59b28a1d576a57209ccda2d8854"
+            }
+          ]
+        },
+        {
+          "purpose": "related-allowances-r39-002@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.affil",
+          "choices": [
+            "bs.ass.currAss.receiv.affil"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": "above1year",
+          "contra_receivable_family": "affil",
+          "disclosures": [
+            "bs.ass.currAss.receiv.affil.above1year"
+          ],
+          "sources": [
+            {
+              "code": "12770",
+              "semantic": {
+                "name": "- Restlaufzeit größer 1 Jahr",
+                "function": "",
+                "range_start": "12770",
+                "range_end": "12770",
+                "parent": {
+                  "code": "12760",
+                  "end": "12760",
+                  "name": "Wertberichtigungen auf Forderungen gegen verbundene Unternehmen - Restlaufzeit bis 1 Jahr",
+                  "function": ""
+                }
+              },
+              "signature": "fd3c663249234d21d6666dc64c4ac60a87e5c7729304d66a0aab43c2ffffeb13"
+            }
+          ]
+        },
+        {
+          "purpose": "related-allowances-r39-003@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.particip",
+          "choices": [
+            "bs.ass.currAss.receiv.particip"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": "upTo1year",
+          "contra_receivable_family": "particip",
+          "disclosures": [
+            "bs.ass.currAss.receiv.particip.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "12960",
+              "semantic": {
+                "name": "Wertberichtigungen auf Forderungen gegen Unternehmen, mit denen ein Beteiligungsverhältnis besteht - Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "12960",
+                "range_end": "12960",
+                "parent": null
+              },
+              "signature": "1e7cf2fedd6f23900102092e8f94335b029beb4186bebd1c95065f8d0da6e3fb"
+            }
+          ]
+        },
+        {
+          "purpose": "related-allowances-r39-004@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.particip",
+          "choices": [
+            "bs.ass.currAss.receiv.particip"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": "above1year",
+          "contra_receivable_family": "particip",
+          "disclosures": [
+            "bs.ass.currAss.receiv.particip.above1year"
+          ],
+          "sources": [
+            {
+              "code": "12970",
+              "semantic": {
+                "name": "- Restlaufzeit größer 1 Jahr",
+                "function": "",
+                "range_start": "12970",
+                "range_end": "12970",
+                "parent": {
+                  "code": "12960",
+                  "end": "12960",
+                  "name": "Wertberichtigungen auf Forderungen gegen Unternehmen, mit denen ein Beteiligungsverhältnis besteht - Restlaufzeit bis 1 Jahr",
+                  "function": ""
+                }
+              },
+              "signature": "acbbd6ea9b2025a7ce0e30bcf739389d12cd033937ba09e80b4c76a00bbf8875"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "related-allowances-r39-001@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.affil",
+          "choices": [
+            "bs.ass.currAss.receiv.affil"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": "upTo1year",
+          "contra_receivable_family": "affil",
+          "disclosures": [
+            "bs.ass.currAss.receiv.affil.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "12760",
+              "semantic": {
+                "name": "Wertberichtigungen auf Forderungen gegen verbundene Unternehmen - Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "12760",
+                "range_end": "12760",
+                "parent": null
+              },
+              "signature": "9594470be4be8ac4b9c2483d24993081cdcbf59b28a1d576a57209ccda2d8854"
+            }
+          ]
+        },
+        {
+          "purpose": "related-allowances-r39-002@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.affil",
+          "choices": [
+            "bs.ass.currAss.receiv.affil"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": "above1year",
+          "contra_receivable_family": "affil",
+          "disclosures": [
+            "bs.ass.currAss.receiv.affil.above1year"
+          ],
+          "sources": [
+            {
+              "code": "12770",
+              "semantic": {
+                "name": "- Restlaufzeit größer 1 Jahr",
+                "function": "",
+                "range_start": "12770",
+                "range_end": "12770",
+                "parent": {
+                  "code": "12760",
+                  "end": "12760",
+                  "name": "Wertberichtigungen auf Forderungen gegen verbundene Unternehmen - Restlaufzeit bis 1 Jahr",
+                  "function": ""
+                }
+              },
+              "signature": "fd3c663249234d21d6666dc64c4ac60a87e5c7729304d66a0aab43c2ffffeb13"
+            }
+          ]
+        },
+        {
+          "purpose": "related-allowances-r39-003@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.particip",
+          "choices": [
+            "bs.ass.currAss.receiv.particip"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": "upTo1year",
+          "contra_receivable_family": "particip",
+          "disclosures": [
+            "bs.ass.currAss.receiv.particip.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "12960",
+              "semantic": {
+                "name": "Wertberichtigungen auf Forderungen gegen Unternehmen, mit denen ein Beteiligungsverhältnis besteht - Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "12960",
+                "range_end": "12960",
+                "parent": null
+              },
+              "signature": "1e7cf2fedd6f23900102092e8f94335b029beb4186bebd1c95065f8d0da6e3fb"
+            }
+          ]
+        },
+        {
+          "purpose": "related-allowances-r39-004@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.particip",
+          "choices": [
+            "bs.ass.currAss.receiv.particip"
+          ],
+          "conditional": true,
+          "contra_receivable_maturity": "above1year",
+          "contra_receivable_family": "particip",
+          "disclosures": [
+            "bs.ass.currAss.receiv.particip.above1year"
+          ],
+          "sources": [
+            {
+              "code": "12970",
+              "semantic": {
+                "name": "- Restlaufzeit größer 1 Jahr",
+                "function": "",
+                "range_start": "12970",
+                "range_end": "12970",
+                "parent": {
+                  "code": "12960",
+                  "end": "12960",
+                  "name": "Wertberichtigungen auf Forderungen gegen Unternehmen, mit denen ein Beteiligungsverhältnis besteht - Restlaufzeit bis 1 Jahr",
+                  "function": ""
+                }
+              },
+              "signature": "acbbd6ea9b2025a7ce0e30bcf739389d12cd033937ba09e80b4c76a00bbf8875"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

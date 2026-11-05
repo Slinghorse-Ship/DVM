@@ -1,0 +1,50 @@
+<?php declare(strict_types=1);
+/** Actual Minutes transitions and SQLite delivery queue; synthetic callback, no network. */
+require __DIR__.'/../src/bootstrap.php';
+use Kulturhus\Verein\{Database,Minutes,ManagerNotifications as N,PushNotifications};
+$db=\Kulturhus\Verein\Tests\MySqlFixture::connect(':memory:');Database::migrate($db);$n=0;
+$check=static function(bool $v,string $label)use(&$n){if(!$v)throw new RuntimeException($label);++$n;echo "PASS $label\n";};
+$q=static function(string $sql,array $values=[])use($db){$s=$db->prepare($sql);$s->execute($values);return $s;};
+$db->exec("INSERT INTO clubs VALUES('a','Synthetic A'),('b','Synthetic B');INSERT INTO actors(id,club_id,role,minutes_access,is_superuser) VALUES('writer','a','member','write',0),('reader','a','member','read',0),('later','a','member','read',0),('blocked','a','member','none',0),('editor','a','editor','write',0),('foreign','b','member','read',0),('super','a','member','none',1)");
+$sub=static fn($actor)=>['endpoint'=>'https://fcm.googleapis.com/fcm/send/synthetic-'.$actor,'keys'=>['p256dh'=>rtrim(strtr(base64_encode("\x04".str_repeat("\x00",64)),'+/','-_'),'='),'auth'=>rtrim(strtr(base64_encode(str_repeat('a',16)),'+/','-_'),'=')]];
+foreach(['writer','reader','later','blocked','foreign','super'] as $actor)(new PushNotifications($db,$actor))->save($sub($actor));
+foreach(['reader','foreign','super'] as $actor)(new N($db,$actor))->save(['minutes'],0);
+// A stale or forged historical preference must never override a revoked permission.
+$q("INSERT INTO notification_preferences VALUES('a','blocked','[\"minutes\"]',1,?)",[gmdate('c')]);
+$key=static fn()=>bin2hex(random_bytes(16));$m=new Minutes($db,'writer');
+$base=['title'=>'Fiktive interne Sitzung','meeting_on'=>'2026-09-08','source_kind'=>'editor','body_html'=>'<p>Nur synthetischer vertraulicher Beispielinhalt.</p>'];
+$count=static fn()=>(int)$db->query("SELECT COUNT(*) FROM manager_notifications WHERE topic='minutes'")->fetchColumn();
+$pending=static fn($id)=>(int)$q("SELECT COUNT(*) FROM manager_push_deliveries d JOIN manager_notifications n ON n.id=d.notification_id WHERE n.topic='minutes' AND n.source_id=? AND d.state='pending'",[$id])->fetchColumn();
+$actors=static fn($id)=>$q("SELECT s.actor_id FROM manager_push_deliveries d JOIN manager_notifications n ON n.id=d.notification_id JOIN push_subscriptions s ON s.id=d.subscription_id WHERE n.topic='minutes' AND n.source_id=? ORDER BY s.actor_id",[$id])->fetchAll(PDO::FETCH_COLUMN);
+$id=$m->save('',0,$base,$key());N::minutesAvailable($db,'a',$id);
+$check($count()===0,'saving and previewing a draft enqueue nothing even with direct service call');
+$check(!(new Minutes($db,'reader'))->canWrite()&&(new Minutes($db,'reader'))->canRead(),'reader is permitted without write or general document rights');
+$m->transition($id,1,'publish');
+$check($count()===1&&$actors($id)===['reader','super'],'first release targets only opted-in current same-club readers and superuser');
+$check(!isset((new N($db,'blocked'))->state()['available']['minutes'])&&!isset((new N($db,'editor'))->state()['available']['minutes']),'blocked and editorial accounts cannot choose minutes topic');
+N::minutesAvailable($db,'a',$id,99);$check($count()===1&&$pending($id)===2,'repeated source calls and revision changes do not duplicate hints');
+(new N($db,'later'))->save(['minutes'],0);
+$m->transition($id,2,'withdraw');$check($pending($id)===0,'withdrawal immediately cancels unprocessed hints');
+$m->save($id,3,array_replace($base,['title'=>'Korrigierter fiktiver Titel']),$key());$m->transition($id,4,'publish');
+$check($count()===1&&$pending($id)===0&&$actors($id)===['reader','super'],'editing and republishing do not re-notify or replay to later opt-in');
+$m->transition($id,5,'archive');$m->transition($id,6,'restore');$m->transition($id,7,'publish');
+$check($count()===1&&$pending($id)===0,'restore and republish keep original notification history');
+$fresh=$m->save('',0,array_replace($base,['title'=>'Neue zweite Sitzung']),$key());$m->transition($fresh,1,'publish');
+$check($actors($fresh)===['later','reader','super'],'new protocol includes later opt-ins without replaying earlier protocols');
+$db->exec("UPDATE actors SET minutes_access='none' WHERE id='reader';UPDATE actors SET active=0 WHERE id='later'");
+$calls=[];$sent=N::dispatch($db,static function($subscription,$payload)use(&$calls){$calls[]=json_decode($payload,true,8,JSON_THROW_ON_ERROR);return 'sent';});
+$check($sent===1&&$calls===[['type'=>'minutes']],'dispatch rechecks permission and active status and sends only generic type');
+$check(!str_contains(json_encode($calls),'Fiktiv')&&!str_contains(json_encode($calls),'Beispielinhalt'),'no protocol title, text or author reaches push payload');
+$hidden=$m->save('',0,$base,$key());$m->transition($hidden,1,'publish');$m->transition($hidden,2,'archive');
+$check($pending($hidden)===0&&N::dispatch($db,fn()=>throw new RuntimeException('Unexpected delivery'))===0,'archive cancels pending protocol and dispatch stays silent');
+N::minutesAvailable($db,'b',$hidden);$check($count()===3,'cross-club source ID cannot enqueue protocol from another club');
+$empty=$m->save('',0,array_replace($base,['body_html'=>'']),$key());
+try{$m->transition($empty,1,'publish');throw new RuntimeException('Empty protocol published');}catch(DomainException){}
+$check($m->entry($empty)['state']==='draft'&&$count()===3,'invalid publication remains a draft without notification');
+$rollback=$m->save('',0,$base,$key());$db->exec("CREATE TRIGGER notification_failure BEFORE INSERT ON manager_notifications FOR EACH ROW BEGIN IF NEW.topic='minutes' THEN SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT='synthetic outbox failure'; END IF; END");
+try{$m->transition($rollback,1,'publish');throw new RuntimeException('Injected failure not raised');}catch(PDOException){}
+$check($m->entry($rollback)['state']==='draft'&&(int)$q("SELECT COUNT(*) FROM minutes_history WHERE minutes_id=? AND action='publish'",[$rollback])->fetchColumn()===0,'outbox failure rolls back release state and release audit atomically');
+$db->exec('DROP TRIGGER notification_failure');$m->transition($rollback,1,'publish');
+$check($count()===4&&$pending($rollback)===1,'retry after rollback creates exactly one valid publication hint');
+$check(\Kulturhus\Verein\Tests\MySqlFixture::integrity($db)==='ok'&&!(\Kulturhus\Verein\Tests\MySqlFixture::foreignKeyErrors($db)[0]??false),'protocol and notification histories remain consistent');
+echo "$n minutes notification checks passed; no mail or push-provider calls\n";

@@ -1,0 +1,2 @@
+/* Browser version of the classic mail's responsive rules; email keeps them embedded. */
+@media(max-width:520px){.kh-mail-wrap{padding:0!important}.kh-mail-card{border-radius:0!important}.kh-mail-brand{padding:14px 17px!important}.kh-mail-hero{height:112px!important}.kh-mail-heading,.kh-mail-content,.kh-mail-footer{padding:22px 17px!important}.kh-mail-heading h1{font-size:32px!important}}

@@ -1,0 +1,11 @@
+/* Preserve readable original names, controls and evidence at narrow widths and enlarged text. */
+[data-gema-interface] :is(.card,.content,.form-grid,.actions,label,fieldset,legend){min-width:0;max-width:100%}
+[data-gema-interface]{overflow-wrap:anywhere}
+[data-gema-interface] :is(button,.button,summary){min-height:44px;white-space:normal}
+[data-gema-interface] :is(input,select,textarea){min-width:0;max-width:100%}
+[data-gema-interface] :is(.actions,.doc-actions,form){flex-wrap:wrap}
+[data-gema-interface] .table-scroll{max-width:100%;overflow:auto}
+[data-gema-interface] .table-scroll:focus-visible{outline:3px solid var(--orange,#fa7d19);outline-offset:-3px}
+[data-gema-interface] :is(.section-heading,.section-heading>div){min-width:0;max-width:100%}
+[data-gema-interface] .section-heading{flex-wrap:wrap}
+[data-gema-interface] .section-heading h2{white-space:normal;overflow-wrap:anywhere}

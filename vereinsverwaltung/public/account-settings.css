@@ -1,0 +1,44 @@
+/* Account-only form styles; sidebar rules are limited to its account block. */
+.account-settings{max-width:1100px;font-size:16px;line-height:1.55;color:#263748}
+.account-overview{display:flex;align-items:flex-start;gap:16px;margin:0 0 24px;padding:20px 24px;background:#f0f4f8;border:1px solid #dbe3ec;border-radius:9px}
+.account-overview p{margin:0;color:#526477}
+.account-overview .account-overview-name{margin-bottom:5px;color:#263748}
+.account-overview-icon{display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;border-radius:50%;background:#fff;color:#385a78}
+.account-panel{margin:0 0 16px;border:1px solid #ced9e3;border-radius:9px;background:#fff;overflow:clip}
+.settings-content .account-panel>summary{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:84px;padding:20px 24px;margin:0;cursor:pointer;list-style:none}
+.account-panel>summary::-webkit-details-marker{display:none}
+.account-panel>summary>span{min-width:0}
+.account-panel>summary strong{display:block;font-size:19px;line-height:1.4;font-weight:650;overflow-wrap:anywhere}
+.account-panel>summary small{display:block;margin-top:5px;font-size:14px;line-height:1.5;color:#526477;font-weight:400}
+.account-panel>summary::after{content:'+';display:grid;place-items:center;flex:0 0 34px;width:34px;height:34px;border:1px solid #c5d3df;border-radius:50%;font-size:25px;font-weight:400;color:#385a78;background:#f5f8fb}
+.account-panel[open]>summary{background:#f4f7fa;border-bottom:1px solid #dce4ec}
+.account-panel[open]>summary::after{content:'−'}
+.account-panel>summary:hover{background:#f4f7fa}
+.account-panel>summary:focus-visible{outline:3px solid #477fad;outline-offset:-4px}
+.account-panel-body{padding:24px 28px}
+.account-panel-body>.card{padding:0;border:0;box-shadow:none;margin:0;background:transparent}
+.account-panel-body h2{font-size:21px;line-height:1.4;margin:0 0 18px}
+.account-panel-body h3{font-size:18px;line-height:1.45;margin:24px 0 12px}
+.account-panel-body p{margin:0 0 18px;overflow-wrap:anywhere}
+.account-panel-body :is(label,legend){font-size:16px;line-height:1.5;font-weight:600}
+.account-panel-body label{margin-bottom:18px}
+.account-panel-body input:not([type=checkbox]):not([type=hidden]),.account-panel-body select,.account-panel-body textarea{min-height:48px;font-size:16px;line-height:1.5;padding:12px 14px;border-color:#aebdcd;border-radius:7px;max-width:100%}
+.account-panel-body .form-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px}
+.account-panel-body .form-grid>*{min-width:0}
+.account-panel-body .setting-check{min-height:48px;gap:12px;cursor:pointer;margin:12px 0;padding:10px 12px;background:#f6f8fb;border:1px solid #e1e7ef;border-radius:7px}
+.account-panel-body input[type=checkbox]{width:22px;height:22px;flex:0 0 22px;margin:0}
+.account-panel-body :is(button,.button){min-height:48px;font-size:16px;padding:12px 18px;border-radius:7px;white-space:normal}
+.account-panel-body :is(input,select,textarea):focus{outline:3px solid #bfd7f1;outline-offset:1px;border-color:#36729b}
+.account-panel-body :is(.muted,small){font-size:14px;line-height:1.55;color:#526477}
+.account-panel-body [id]{scroll-margin-top:90px}
+.account-security-option{border-top:1px solid #dce4ec;margin-top:24px;padding-top:4px}
+.sidebar .sidebar-account{border-top:1px solid #ffffff17;font-size:14px}
+.sidebar .sidebar-account>summary{min-height:66px;padding:12px 18px;gap:12px}
+.sidebar-account>summary>span{min-width:0}
+.sidebar-account>summary strong{display:block;font-size:14px;line-height:1.45;font-weight:600}
+.sidebar-account>summary small{display:block;font-size:12px;line-height:1.4;color:#b8c7dc;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:168px}
+.sidebar-account>summary:hover{background:#ffffff09}
+.sidebar-account>summary:focus-visible,.sidebar-account .subnav a:focus-visible{outline:2px solid #ffbb70;outline-offset:-3px}
+.sidebar .sidebar-account .subnav a{min-height:46px;font-size:14px;padding:13px 18px 13px 52px}
+@media(min-width:761px){.sidebar-small .sidebar .sidebar-account>summary{padding:17px;justify-content:center}.sidebar-small .sidebar .sidebar-account[open]>.subnav{top:auto;bottom:52px;max-height:calc(100dvh - 72px)}.sidebar-small .sidebar-account .subnav a{padding-left:18px}}
+@media(max-width:760px){.account-panel-body{padding:20px}.settings-content .account-panel>summary{padding:18px;gap:12px}.account-overview{padding:18px;gap:12px}.account-panel-body .form-grid{grid-template-columns:1fr}.account-panel>summary strong{font-size:18px}.account-panel-body :is(button,.button){max-width:100%}.account-panel-body .settings-actions{align-items:stretch}.account-panel-body .settings-actions>*{flex:1 1 100%}.sidebar .sidebar-account .subnav a{min-height:48px}.account-panel-body fieldset{min-width:0}}

@@ -1,0 +1,618 @@
+{
+  "schema": 1,
+  "kind": "official_appropriation_profit_network",
+  "source_sha256": {
+    "6.9/de-gaap-ci-2025-04-01-presentation-appropriationProfits.xml": "0d4f021387d4ab8d24eee14faa4af1661b74b069c741c2d37104c5297fdb4fa0",
+    "6.9/de-gaap-ci-2025-04-01-calculation-appropriationProfits.xml": "6933ba1d83fc862e65c76ab14fb9ba65d6bc30e75dcf35fe62c0e575460b626d",
+    "6.10/de-gaap-ci-2026-04-01-presentation-appropriationProfits.xml": "03ca69be7783cbadf513477bfcc5f20f55aadc0be00732ebeb8173977b268f80",
+    "6.10/de-gaap-ci-2026-04-01-calculation-appropriationProfits.xml": "688b74095736615321150f821205866857823b737a603d1d54a374b163b00865"
+  },
+  "source_equivalent_6_10": false,
+  "versions": {
+    "6.9": {
+      "parents": {
+        "incomeUse.accumLoss": [
+          "incomeUse"
+        ],
+        "incomeUse.additionalDividends": [
+          "incomeUse"
+        ],
+        "incomeUse.capitalRelease": [
+          "incomeUse"
+        ],
+        "incomeUse.deposits": [
+          "incomeUse"
+        ],
+        "incomeUse.distributionInLineWithLegalRequirements": [
+          "incomeUse"
+        ],
+        "incomeUse.dividends": [
+          "incomeUse"
+        ],
+        "incomeUse.gainLoss": [
+          "incomeUse"
+        ],
+        "incomeUse.gainLoss.DeprPaidUpShares": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.accumLossPrevYear": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.additionCummLoss": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.additionOtherRes": [
+          "incomeUse.gainLoss.additionRevenReserves"
+        ],
+        "incomeUse.gainLoss.additionPartnersAccount": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.additionPartnersLiabAccount": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.additionProfPartCap": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.additionRetainedEarnings": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.additionRevenReserves": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.additionRevenReserves.legalRes": [
+          "incomeUse.gainLoss.additionRevenReserves"
+        ],
+        "incomeUse.gainLoss.additionRevenReserves.sharesParentCompRes": [
+          "incomeUse.gainLoss.additionRevenReserves"
+        ],
+        "incomeUse.gainLoss.additionRevenReserves.statRes": [
+          "incomeUse.gainLoss.additionRevenReserves"
+        ],
+        "incomeUse.gainLoss.assReductionSpinOff": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.dividensPlanned": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.netIncome": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.other": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.releaseCapReserves": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.releaseCapital": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.releaseCapitalReserve": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.releaseOtherRes": [
+          "incomeUse.gainLoss.releaseRevenReserves"
+        ],
+        "incomeUse.gainLoss.releasePartnersAccount": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.releasePartnersLiabAccount": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.releaseProfitPartCap": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.releaseRevenReserves": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.releaseRevenReserves.legalRes": [
+          "incomeUse.gainLoss.releaseRevenReserves"
+        ],
+        "incomeUse.gainLoss.releaseRevenReserves.sharesParentCompRes": [
+          "incomeUse.gainLoss.releaseRevenReserves"
+        ],
+        "incomeUse.gainLoss.releaseRevenReserves.statRes": [
+          "incomeUse.gainLoss.releaseRevenReserves"
+        ],
+        "incomeUse.gainLoss.replentishmentPaidupShares": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.retainedEarningsPrevYear": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.paidInCapital": [
+          "incomeUse"
+        ],
+        "incomeUse.paidInCapital.toReserves": [
+          "incomeUse.paidInCapital"
+        ],
+        "incomeUse.paidInCapital.toSubscrCap": [
+          "incomeUse.paidInCapital"
+        ],
+        "incomeUse.resultFoundations": [
+          "incomeUse"
+        ],
+        "incomeUse.resultFoundations.capTransfers": [
+          "incomeUse.resultFoundations"
+        ],
+        "incomeUse.resultFoundations.capWithdrawals": [
+          "incomeUse.resultFoundations"
+        ],
+        "incomeUse.resultFoundations.currentYear": [
+          "incomeUse.resultFoundations"
+        ],
+        "incomeUse.resultFoundations.increaseDecreaseStatutoryBoundCapital": [
+          "incomeUse.resultFoundations"
+        ],
+        "incomeUse.resultFoundations.prevYear": [
+          "incomeUse.resultFoundations"
+        ],
+        "incomeUse.resultFoundations.transferWithdrawalReallocation": [
+          "incomeUse.resultFoundations"
+        ],
+        "incomeUse.resultFoundations.transferWithdrawalRevenueReserves": [
+          "incomeUse.resultFoundations"
+        ],
+        "incomeUse.retainedEarnings": [
+          "incomeUse"
+        ],
+        "incomeUse.withdrawals": [
+          "incomeUse"
+        ]
+      },
+      "calculations": {
+        "incomeUse.gainLoss": {
+          "incomeUse.gainLoss.DeprPaidUpShares": 1,
+          "incomeUse.gainLoss.accumLossPrevYear": -1,
+          "incomeUse.gainLoss.additionCummLoss": 1,
+          "incomeUse.gainLoss.additionPartnersAccount": -1,
+          "incomeUse.gainLoss.additionPartnersLiabAccount": -1,
+          "incomeUse.gainLoss.additionProfPartCap": -1,
+          "incomeUse.gainLoss.additionRetainedEarnings": -1,
+          "incomeUse.gainLoss.additionRevenReserves": -1,
+          "incomeUse.gainLoss.assReductionSpinOff": -1,
+          "incomeUse.gainLoss.dividensPlanned": -1,
+          "incomeUse.gainLoss.netIncome": 1,
+          "incomeUse.gainLoss.other": -1,
+          "incomeUse.gainLoss.releaseCapReserves": 1,
+          "incomeUse.gainLoss.releaseCapital": 1,
+          "incomeUse.gainLoss.releaseCapitalReserve": -1,
+          "incomeUse.gainLoss.releasePartnersAccount": 1,
+          "incomeUse.gainLoss.releasePartnersLiabAccount": 1,
+          "incomeUse.gainLoss.releaseProfitPartCap": 1,
+          "incomeUse.gainLoss.releaseRevenReserves": 1,
+          "incomeUse.gainLoss.replentishmentPaidupShares": -1,
+          "incomeUse.gainLoss.retainedEarningsPrevYear": 1
+        },
+        "incomeUse.gainLoss.additionRevenReserves": {
+          "incomeUse.gainLoss.additionOtherRes": 1,
+          "incomeUse.gainLoss.additionRevenReserves.legalRes": 1,
+          "incomeUse.gainLoss.additionRevenReserves.sharesParentCompRes": 1,
+          "incomeUse.gainLoss.additionRevenReserves.statRes": 1
+        },
+        "incomeUse.gainLoss.releaseRevenReserves": {
+          "incomeUse.gainLoss.releaseOtherRes": 1,
+          "incomeUse.gainLoss.releaseRevenReserves.legalRes": 1,
+          "incomeUse.gainLoss.releaseRevenReserves.sharesParentCompRes": 1,
+          "incomeUse.gainLoss.releaseRevenReserves.statRes": 1
+        },
+        "incomeUse.resultFoundations": {
+          "incomeUse.resultFoundations.capTransfers": -1,
+          "incomeUse.resultFoundations.capWithdrawals": 1,
+          "incomeUse.resultFoundations.currentYear": 1,
+          "incomeUse.resultFoundations.increaseDecreaseStatutoryBoundCapital": -1,
+          "incomeUse.resultFoundations.prevYear": 1,
+          "incomeUse.resultFoundations.transferWithdrawalReallocation": -1,
+          "incomeUse.resultFoundations.transferWithdrawalRevenueReserves": -1
+        }
+      }
+    },
+    "6.10": {
+      "parents": {
+        "incomeUse.accumLoss": [
+          "incomeUse"
+        ],
+        "incomeUse.additionalDividends": [
+          "incomeUse"
+        ],
+        "incomeUse.capitalRelease": [
+          "incomeUse"
+        ],
+        "incomeUse.deposits": [
+          "incomeUse"
+        ],
+        "incomeUse.distributionInLineWithLegalRequirements": [
+          "incomeUse"
+        ],
+        "incomeUse.dividends": [
+          "incomeUse"
+        ],
+        "incomeUse.gainLoss": [
+          "incomeUse"
+        ],
+        "incomeUse.gainLoss.DeprPaidUpShares": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.accumLossPrevYear": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.additionCummLoss": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.additionOtherRes": [
+          "incomeUse.gainLoss.additionRevenReserves"
+        ],
+        "incomeUse.gainLoss.additionPartnersAccount": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.additionPartnersLiabAccount": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.additionProfPartCap": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.additionRetainedEarnings": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.additionRevenReserves": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.additionRevenReserves.RevRes": [
+          "incomeUse.gainLoss.additionRevenReserves"
+        ],
+        "incomeUse.gainLoss.additionRevenReserves.legalRes": [
+          "incomeUse.gainLoss.additionRevenReserves"
+        ],
+        "incomeUse.gainLoss.additionRevenReserves.sharesParentCompRes": [
+          "incomeUse.gainLoss.additionRevenReserves"
+        ],
+        "incomeUse.gainLoss.additionRevenReserves.statRes": [
+          "incomeUse.gainLoss.additionRevenReserves"
+        ],
+        "incomeUse.gainLoss.assReductionSpinOff": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.creditRes": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.debitRes": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.dividensPlanned": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.netIncome": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.other": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.releaseCapReserves": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.releaseCapital": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.releaseCapitalReserve": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.releaseOtherRes": [
+          "incomeUse.gainLoss.releaseRevenReserves"
+        ],
+        "incomeUse.gainLoss.releasePartnersAccount": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.releasePartnersLiabAccount": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.releaseProfitPartCap": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.releaseRevenReserves": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.releaseRevenReserves.RevRes": [
+          "incomeUse.gainLoss.releaseRevenReserves"
+        ],
+        "incomeUse.gainLoss.releaseRevenReserves.legalRes": [
+          "incomeUse.gainLoss.releaseRevenReserves"
+        ],
+        "incomeUse.gainLoss.releaseRevenReserves.sharesParentCompRes": [
+          "incomeUse.gainLoss.releaseRevenReserves"
+        ],
+        "incomeUse.gainLoss.releaseRevenReserves.statRes": [
+          "incomeUse.gainLoss.releaseRevenReserves"
+        ],
+        "incomeUse.gainLoss.replentishmentPaidupShares": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.gainLoss.retainedEarningsPrevYear": [
+          "incomeUse.gainLoss"
+        ],
+        "incomeUse.paidInCapital": [
+          "incomeUse"
+        ],
+        "incomeUse.paidInCapital.toReserves": [
+          "incomeUse.paidInCapital"
+        ],
+        "incomeUse.paidInCapital.toSubscrCap": [
+          "incomeUse.paidInCapital"
+        ],
+        "incomeUse.resultFoundations": [
+          "incomeUse"
+        ],
+        "incomeUse.resultFoundations.capTransfers": [
+          "incomeUse.resultFoundations"
+        ],
+        "incomeUse.resultFoundations.capWithdrawals": [
+          "incomeUse.resultFoundations"
+        ],
+        "incomeUse.resultFoundations.currentYear": [
+          "incomeUse.resultFoundations"
+        ],
+        "incomeUse.resultFoundations.increaseDecreaseStatutoryBoundCapital": [
+          "incomeUse.resultFoundations"
+        ],
+        "incomeUse.resultFoundations.prevYear": [
+          "incomeUse.resultFoundations"
+        ],
+        "incomeUse.resultFoundations.transferWithdrawalReallocation": [
+          "incomeUse.resultFoundations"
+        ],
+        "incomeUse.resultFoundations.transferWithdrawalRevenueReserves": [
+          "incomeUse.resultFoundations"
+        ],
+        "incomeUse.retainedEarnings": [
+          "incomeUse"
+        ],
+        "incomeUse.withdrawals": [
+          "incomeUse"
+        ]
+      },
+      "calculations": {
+        "incomeUse.gainLoss": {
+          "incomeUse.gainLoss.DeprPaidUpShares": 1,
+          "incomeUse.gainLoss.accumLossPrevYear": -1,
+          "incomeUse.gainLoss.additionCummLoss": 1,
+          "incomeUse.gainLoss.additionPartnersAccount": -1,
+          "incomeUse.gainLoss.additionPartnersLiabAccount": -1,
+          "incomeUse.gainLoss.additionProfPartCap": -1,
+          "incomeUse.gainLoss.additionRetainedEarnings": -1,
+          "incomeUse.gainLoss.additionRevenReserves": -1,
+          "incomeUse.gainLoss.assReductionSpinOff": -1,
+          "incomeUse.gainLoss.creditRes": -1,
+          "incomeUse.gainLoss.debitRes": 1,
+          "incomeUse.gainLoss.dividensPlanned": -1,
+          "incomeUse.gainLoss.netIncome": 1,
+          "incomeUse.gainLoss.other": -1,
+          "incomeUse.gainLoss.releaseCapReserves": 1,
+          "incomeUse.gainLoss.releaseCapital": 1,
+          "incomeUse.gainLoss.releaseCapitalReserve": -1,
+          "incomeUse.gainLoss.releasePartnersAccount": 1,
+          "incomeUse.gainLoss.releasePartnersLiabAccount": 1,
+          "incomeUse.gainLoss.releaseProfitPartCap": 1,
+          "incomeUse.gainLoss.releaseRevenReserves": 1,
+          "incomeUse.gainLoss.replentishmentPaidupShares": -1,
+          "incomeUse.gainLoss.retainedEarningsPrevYear": 1
+        },
+        "incomeUse.gainLoss.additionRevenReserves": {
+          "incomeUse.gainLoss.additionOtherRes": 1,
+          "incomeUse.gainLoss.additionRevenReserves.RevRes": 1,
+          "incomeUse.gainLoss.additionRevenReserves.legalRes": 1,
+          "incomeUse.gainLoss.additionRevenReserves.sharesParentCompRes": 1,
+          "incomeUse.gainLoss.additionRevenReserves.statRes": 1
+        },
+        "incomeUse.gainLoss.releaseRevenReserves": {
+          "incomeUse.gainLoss.releaseOtherRes": 1,
+          "incomeUse.gainLoss.releaseRevenReserves.RevRes": 1,
+          "incomeUse.gainLoss.releaseRevenReserves.legalRes": 1,
+          "incomeUse.gainLoss.releaseRevenReserves.sharesParentCompRes": 1,
+          "incomeUse.gainLoss.releaseRevenReserves.statRes": 1
+        },
+        "incomeUse.resultFoundations": {
+          "incomeUse.resultFoundations.capTransfers": -1,
+          "incomeUse.resultFoundations.capWithdrawals": 1,
+          "incomeUse.resultFoundations.currentYear": 1,
+          "incomeUse.resultFoundations.increaseDecreaseStatutoryBoundCapital": -1,
+          "incomeUse.resultFoundations.prevYear": 1,
+          "incomeUse.resultFoundations.transferWithdrawalReallocation": -1,
+          "incomeUse.resultFoundations.transferWithdrawalRevenueReserves": -1
+        }
+      }
+    }
+  },
+  "parents": {
+    "incomeUse.accumLoss": [
+      "incomeUse"
+    ],
+    "incomeUse.additionalDividends": [
+      "incomeUse"
+    ],
+    "incomeUse.capitalRelease": [
+      "incomeUse"
+    ],
+    "incomeUse.deposits": [
+      "incomeUse"
+    ],
+    "incomeUse.distributionInLineWithLegalRequirements": [
+      "incomeUse"
+    ],
+    "incomeUse.dividends": [
+      "incomeUse"
+    ],
+    "incomeUse.gainLoss": [
+      "incomeUse"
+    ],
+    "incomeUse.gainLoss.DeprPaidUpShares": [
+      "incomeUse.gainLoss"
+    ],
+    "incomeUse.gainLoss.accumLossPrevYear": [
+      "incomeUse.gainLoss"
+    ],
+    "incomeUse.gainLoss.additionCummLoss": [
+      "incomeUse.gainLoss"
+    ],
+    "incomeUse.gainLoss.additionOtherRes": [
+      "incomeUse.gainLoss.additionRevenReserves"
+    ],
+    "incomeUse.gainLoss.additionPartnersAccount": [
+      "incomeUse.gainLoss"
+    ],
+    "incomeUse.gainLoss.additionPartnersLiabAccount": [
+      "incomeUse.gainLoss"
+    ],
+    "incomeUse.gainLoss.additionProfPartCap": [
+      "incomeUse.gainLoss"
+    ],
+    "incomeUse.gainLoss.additionRetainedEarnings": [
+      "incomeUse.gainLoss"
+    ],
+    "incomeUse.gainLoss.additionRevenReserves": [
+      "incomeUse.gainLoss"
+    ],
+    "incomeUse.gainLoss.additionRevenReserves.legalRes": [
+      "incomeUse.gainLoss.additionRevenReserves"
+    ],
+    "incomeUse.gainLoss.additionRevenReserves.sharesParentCompRes": [
+      "incomeUse.gainLoss.additionRevenReserves"
+    ],
+    "incomeUse.gainLoss.additionRevenReserves.statRes": [
+      "incomeUse.gainLoss.additionRevenReserves"
+    ],
+    "incomeUse.gainLoss.assReductionSpinOff": [
+      "incomeUse.gainLoss"
+    ],
+    "incomeUse.gainLoss.dividensPlanned": [
+      "incomeUse.gainLoss"
+    ],
+    "incomeUse.gainLoss.netIncome": [
+      "incomeUse.gainLoss"
+    ],
+    "incomeUse.gainLoss.other": [
+      "incomeUse.gainLoss"
+    ],
+    "incomeUse.gainLoss.releaseCapReserves": [
+      "incomeUse.gainLoss"
+    ],
+    "incomeUse.gainLoss.releaseCapital": [
+      "incomeUse.gainLoss"
+    ],
+    "incomeUse.gainLoss.releaseCapitalReserve": [
+      "incomeUse.gainLoss"
+    ],
+    "incomeUse.gainLoss.releaseOtherRes": [
+      "incomeUse.gainLoss.releaseRevenReserves"
+    ],
+    "incomeUse.gainLoss.releasePartnersAccount": [
+      "incomeUse.gainLoss"
+    ],
+    "incomeUse.gainLoss.releasePartnersLiabAccount": [
+      "incomeUse.gainLoss"
+    ],
+    "incomeUse.gainLoss.releaseProfitPartCap": [
+      "incomeUse.gainLoss"
+    ],
+    "incomeUse.gainLoss.releaseRevenReserves": [
+      "incomeUse.gainLoss"
+    ],
+    "incomeUse.gainLoss.releaseRevenReserves.legalRes": [
+      "incomeUse.gainLoss.releaseRevenReserves"
+    ],
+    "incomeUse.gainLoss.releaseRevenReserves.sharesParentCompRes": [
+      "incomeUse.gainLoss.releaseRevenReserves"
+    ],
+    "incomeUse.gainLoss.releaseRevenReserves.statRes": [
+      "incomeUse.gainLoss.releaseRevenReserves"
+    ],
+    "incomeUse.gainLoss.replentishmentPaidupShares": [
+      "incomeUse.gainLoss"
+    ],
+    "incomeUse.gainLoss.retainedEarningsPrevYear": [
+      "incomeUse.gainLoss"
+    ],
+    "incomeUse.paidInCapital": [
+      "incomeUse"
+    ],
+    "incomeUse.paidInCapital.toReserves": [
+      "incomeUse.paidInCapital"
+    ],
+    "incomeUse.paidInCapital.toSubscrCap": [
+      "incomeUse.paidInCapital"
+    ],
+    "incomeUse.resultFoundations": [
+      "incomeUse"
+    ],
+    "incomeUse.resultFoundations.capTransfers": [
+      "incomeUse.resultFoundations"
+    ],
+    "incomeUse.resultFoundations.capWithdrawals": [
+      "incomeUse.resultFoundations"
+    ],
+    "incomeUse.resultFoundations.currentYear": [
+      "incomeUse.resultFoundations"
+    ],
+    "incomeUse.resultFoundations.increaseDecreaseStatutoryBoundCapital": [
+      "incomeUse.resultFoundations"
+    ],
+    "incomeUse.resultFoundations.prevYear": [
+      "incomeUse.resultFoundations"
+    ],
+    "incomeUse.resultFoundations.transferWithdrawalReallocation": [
+      "incomeUse.resultFoundations"
+    ],
+    "incomeUse.resultFoundations.transferWithdrawalRevenueReserves": [
+      "incomeUse.resultFoundations"
+    ],
+    "incomeUse.retainedEarnings": [
+      "incomeUse"
+    ],
+    "incomeUse.withdrawals": [
+      "incomeUse"
+    ]
+  },
+  "calculations": {
+    "incomeUse.gainLoss": {
+      "incomeUse.gainLoss.DeprPaidUpShares": 1,
+      "incomeUse.gainLoss.accumLossPrevYear": -1,
+      "incomeUse.gainLoss.additionCummLoss": 1,
+      "incomeUse.gainLoss.additionPartnersAccount": -1,
+      "incomeUse.gainLoss.additionPartnersLiabAccount": -1,
+      "incomeUse.gainLoss.additionProfPartCap": -1,
+      "incomeUse.gainLoss.additionRetainedEarnings": -1,
+      "incomeUse.gainLoss.additionRevenReserves": -1,
+      "incomeUse.gainLoss.assReductionSpinOff": -1,
+      "incomeUse.gainLoss.dividensPlanned": -1,
+      "incomeUse.gainLoss.netIncome": 1,
+      "incomeUse.gainLoss.other": -1,
+      "incomeUse.gainLoss.releaseCapReserves": 1,
+      "incomeUse.gainLoss.releaseCapital": 1,
+      "incomeUse.gainLoss.releaseCapitalReserve": -1,
+      "incomeUse.gainLoss.releasePartnersAccount": 1,
+      "incomeUse.gainLoss.releasePartnersLiabAccount": 1,
+      "incomeUse.gainLoss.releaseProfitPartCap": 1,
+      "incomeUse.gainLoss.releaseRevenReserves": 1,
+      "incomeUse.gainLoss.replentishmentPaidupShares": -1,
+      "incomeUse.gainLoss.retainedEarningsPrevYear": 1
+    },
+    "incomeUse.gainLoss.additionRevenReserves": {
+      "incomeUse.gainLoss.additionOtherRes": 1,
+      "incomeUse.gainLoss.additionRevenReserves.legalRes": 1,
+      "incomeUse.gainLoss.additionRevenReserves.sharesParentCompRes": 1,
+      "incomeUse.gainLoss.additionRevenReserves.statRes": 1
+    },
+    "incomeUse.gainLoss.releaseRevenReserves": {
+      "incomeUse.gainLoss.releaseOtherRes": 1,
+      "incomeUse.gainLoss.releaseRevenReserves.legalRes": 1,
+      "incomeUse.gainLoss.releaseRevenReserves.sharesParentCompRes": 1,
+      "incomeUse.gainLoss.releaseRevenReserves.statRes": 1
+    },
+    "incomeUse.resultFoundations": {
+      "incomeUse.resultFoundations.capTransfers": -1,
+      "incomeUse.resultFoundations.capWithdrawals": 1,
+      "incomeUse.resultFoundations.currentYear": 1,
+      "incomeUse.resultFoundations.increaseDecreaseStatutoryBoundCapital": -1,
+      "incomeUse.resultFoundations.prevYear": 1,
+      "incomeUse.resultFoundations.transferWithdrawalReallocation": -1,
+      "incomeUse.resultFoundations.transferWithdrawalRevenueReserves": -1
+    }
+  }
+}

@@ -1,0 +1,139 @@
+/* Native website templates. No external fonts, photos, scripts or CMS runtime. */
+/* Search controls stay compact; native touch/focus scrolling must finish immediately. */
+html:has([data-public-search]) { scroll-behavior:auto; }
+[data-public-search] [data-search-result] { padding:1rem 0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;box-shadow:none;overflow-wrap:anywhere; }
+[data-public-search] [data-search-result] h2 { font-size:clamp(1.2rem,3vw,1.5rem);line-height:1.4;margin:0; }
+[data-public-search] [data-search-result] h2 a { display:inline-block;min-height:44px;align-content:center; }
+[data-public-search] [data-search-result] p { margin:.4rem 0 0; }
+[data-public-search] [data-search-pagination] { gap:.5rem; }
+[data-public-search] [data-search-pagination]>.button { flex:0 0 auto;min-width:44px;min-height:44px; }
+.design-klar { --ink:#162b3c; --muted:#526777; --paper:#f4f7fa; --cream:#fff; --leaf:#145c82; --leaf-dark:#104866; --sun:#bddce9; --yellow:#d7ebf4; --line:#d2dfe6; --coral-dark:#a93c30; }
+.design-magazin { --ink:#262126; --muted:#645b64; --paper:#f8f5ef; --cream:#fffdf8; --leaf:#913347; --leaf-dark:#782639; --sun:#edc6af; --yellow:#eed2b7; --line:#d5cbc3; --coral-dark:#913347; }
+.design-aktiv { --ink:#112748; --muted:#4b617c; --paper:#eef3fa; --cream:#fff; --leaf:#174da7; --leaf-dark:#113e8a; --sun:#c4e85d; --yellow:#d5ef96; --line:#cad7e9; --coral-dark:#ab333e; }
+.design-natur { --ink:#253c31; --muted:#536a5d; --paper:#f1f4ed; --cream:#fffef8; --leaf:#326148; --leaf-dark:#244b35; --sun:#e8ce96; --yellow:#f0deb6; --line:#ced8c8; --coral-dark:#984a29; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) {
+  --body: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --display: var(--body);
+  --focus-ring:var(--ink);
+  background:var(--paper);font:17px/1.7 var(--body);
+}
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) :is(h1,h2,h3,p,a,.brand__type,.culture-strip span) { overflow-wrap:anywhere; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .site-header { background:var(--cream);border-bottom:1px solid var(--line);backdrop-filter:none;gap:1rem; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .brand { min-width:0;max-width:100%;gap:.65rem; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .brand__mark { flex-shrink:0;transform:none;box-shadow:none;border:0;border-radius:.7rem; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .brand__type { font:750 1.05rem/1.25 var(--body); }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .site-header nav a { min-height:44px;display:inline-flex;align-items:center;padding:.45rem .7rem;border-radius:.5rem; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .hero--home { position:relative;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,.6fr);gap:clamp(1rem,4vw,4rem);max-width:1440px;min-height:32rem;margin:auto;padding:clamp(2rem,6vw,6rem) clamp(1rem,6vw,6rem);background:none;border:0;overflow:visible; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .hero--home::before,
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .hero--home::after { content:none; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .hero__content { min-width:0;padding:0;border:0;border-radius:0;background:none;box-shadow:none; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .hero--home h1 { max-width:18ch;font:800 clamp(2.35rem,5.5vw,5.25rem)/1.08 var(--display);letter-spacing:-.045em;margin:.8rem 0 1.5rem; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .hero--home .lead { max-width:52ch;color:var(--muted); }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .hero__poster { position:relative;inset:auto;align-self:center;width:100%;min-width:0;aspect-ratio:1;display:grid;grid-template-columns:minmax(0,1fr);gap:.75rem;padding:clamp(1rem,3vw,2.5rem);background:var(--yellow);border:0;border-radius:2rem;transform:none;box-shadow:none; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .hero__poster>* { min-width:0;overflow-wrap:anywhere; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .hero__poster strong { font:800 clamp(1.4rem,3vw,2.4rem)/1.12 var(--display);text-transform:none; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .button { min-height:44px;display:inline-flex;align-items:center;justify-content:center;max-width:100%;padding:.75rem 1.25rem;border:1px solid var(--leaf);border-radius:.7rem;background:var(--leaf);color:white;box-shadow:none;transform:none; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .button:hover { background:var(--leaf-dark); }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .button--outline { color:var(--leaf);background:var(--cream); }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .button--outline:hover { background:var(--yellow); }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .culture-strip { padding:1.1rem;flex-wrap:wrap;gap:1rem 2rem;border:0;background:var(--cream);color:var(--ink);font-size:.75rem;letter-spacing:.08em; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .culture-strip i { color:var(--leaf); }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .section { padding:clamp(2.5rem,5vw,5rem) clamp(1rem,6vw,6rem); }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .section--events::before { content:none; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .event-feature { padding:clamp(1rem,3vw,2rem);border:1px solid var(--line);background:var(--cream);border-radius:1rem;box-shadow:none; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .event-feature::after { content:none; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) :is(.date-disc,.event-feature__media,.news-card,.event-date) { border:1px solid var(--line);border-radius:.8rem;box-shadow:none; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .section--news { color:var(--ink);background:var(--cream);border-block:1px solid var(--line); }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .section--news :is(a,.eyebrow) { color:var(--leaf); }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .news-card { background:var(--paper); }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .section--news .card:nth-child(n) { transform:none;box-shadow:none;border:1px solid var(--line);border-radius:.8rem; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .date-disc { transform:none; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .newsletter-callout { margin:clamp(1rem,4vw,4rem);padding:clamp(1.25rem,4vw,3rem);background:var(--yellow);border:0;border-radius:1.5rem;box-shadow:none; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .newsletter-callout__burst { display:none; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .site-footer { background:var(--leaf-dark);border:0; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .site-footer a { display:inline-flex;align-items:center;min-height:44px; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .page-hero { background:var(--yellow);border:0; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .page-hero h1 { letter-spacing:-.035em; }
+/* Editorial: the hero panel becomes a tall column; fine rules replace rounded cards. */
+body.design-magazin { --display:Georgia,"Times New Roman",serif; }
+body.design-magazin .hero--home { grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr); }
+body.design-magazin .hero__poster { aspect-ratio:3/4;border-radius:0;border-top:5px solid var(--leaf);text-align:left; }
+body.design-magazin .hero--home h1 { font-weight:500;letter-spacing:-.04em; }
+body.design-magazin :is(.button,.event-feature,.news-card,.date-disc,.newsletter-callout,.brand__mark) { border-radius:0; }
+body.design-magazin .culture-strip { justify-content:space-between;border-block:1px solid var(--line); }
+body.design-magazin .news-card { border:0;border-top:3px solid var(--ink); }
+body.design-magazin .section--news .card:nth-child(n) { border:0;border-top:3px solid var(--ink);border-radius:0; }
+/* Active: a strong blue band with an asymmetrical geometric panel. */
+body.design-aktiv .hero--home { max-width:none;background:var(--leaf-dark);color:#fff; }
+body.design-aktiv .hero--home :is(.lead,.eyebrow) { color:#dfebff; }
+body.design-aktiv .hero__poster { border-radius:3rem .5rem 3rem .5rem;color:var(--ink); }
+body.design-aktiv .hero--home h1 { text-transform:uppercase;font-weight:900; }
+body.design-aktiv .hero--home .button { background:var(--yellow);color:var(--ink);border-color:var(--yellow); }
+body.design-aktiv .hero--home .button--outline { background:none;color:#fff;border-color:#fff; }
+body.design-aktiv .hero--home .button:hover { background:#fff;color:var(--ink); }
+body.design-aktiv .culture-strip { background:var(--yellow); }
+/* Nature: centered editorial rhythm and soft, organic surfaces. */
+body.design-natur { --display:Georgia,serif; }
+body.design-natur .hero--home { grid-template-columns:minmax(0,1fr);text-align:center;max-width:1000px;min-height:0; }
+body.design-natur .hero__content { margin:auto; }
+body.design-natur .hero--home :is(h1,.lead) { margin-inline:auto; }
+body.design-natur .hero__actions { justify-content:center; }
+body.design-natur .hero__poster { max-width:28rem;margin:auto;aspect-ratio:auto;border-radius:4rem 1rem 4rem 1rem;padding:1.5rem; }
+body.design-natur :is(.button,.brand__mark) { border-radius:2rem; }
+body.design-natur .newsletter-callout { border-radius:3rem 1rem; }
+body.design-natur .culture-strip { background:var(--leaf);color:var(--cream); }
+body.design-natur .culture-strip i { color:var(--yellow); }
+.design-preview-note { margin:1rem auto;padding:1rem;max-width:1100px;border:1px solid var(--line);background:var(--cream);border-radius:.5rem;overflow-wrap:anywhere; }
+/* Narrow and zoomed views must wrap the text inside the already bounded box. */
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur,.theme-kultur) .button { white-space:normal;overflow-wrap:anywhere;min-width:0;max-width:100%;text-align:center; }
+body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur,.theme-kultur) .brand__type { white-space:normal;overflow-wrap:anywhere;min-width:0;max-width:100%; }
+.design-preview-note p { margin:.4rem 0; }
+/* Selection cards are scoped to the private settings panel in either manager shell. */
+.website-design-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,19rem),1fr));gap:1.25rem; }
+.website-design-card { display:flex;flex-direction:column;min-width:0;overflow:hidden;padding:1rem;border:1px solid #c5d2de;border-radius:1rem;background:#fff;color:#1c3148; }
+.website-design-card[data-selected] { border:2px solid #155c82; }
+.website-design-card h3 { margin:1rem 0 .5rem; }
+.website-design-card p { flex:1;overflow-wrap:anywhere; }
+.website-design-actions { display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;margin-top:.75rem; }
+.website-design-actions form { margin:0;min-width:0; }
+.website-design-actions :is(a,button) { min-height:44px;white-space:normal;max-width:100%; }
+.website-design-current { font-weight:700; }
+.worker-table { max-width:100%;min-width:0;overflow-x:auto;overscroll-behavior-x:contain; }
+[data-view="settings"] button,
+[aria-labelledby="website-indexing-heading"] button { max-width:100%;white-space:normal;overflow-wrap:anywhere; }
+[aria-labelledby="news-policy-heading"] button,.news-review-panel button { max-width:100%;white-space:normal;overflow-wrap:anywhere;min-height:44px; }
+.worker-table:focus-visible { outline:3px solid currentColor;outline-offset:2px; }
+[data-view="settings"] { overflow-wrap:anywhere; }
+.website-design-sample { --sample-bg:#f4f7fa;--sample-ink:#162b3c;--sample-accent:#bddce9;--sample-radius:.7rem;min-height:150px;padding:.75rem;background:var(--sample-bg);border:1px solid #d2d9de;border-radius:.65rem; }
+.sample-nav { display:flex;gap:.35rem;align-items:center;margin-bottom:1rem; }
+.sample-nav i { width:.75rem;height:.75rem;background:var(--sample-ink);border-radius:var(--sample-radius); }
+.sample-nav span { width:1.7rem;height:3px;background:var(--sample-ink); }
+.sample-nav span:first-of-type { margin-left:auto; }
+.sample-hero { display:grid;grid-template-columns:1.5fr 1fr;gap:.75rem;align-items:center; }
+.sample-hero>div { display:grid;gap:.4rem;min-width:0; }
+.sample-hero span { width:35%;height:3px;background:var(--sample-ink);opacity:.5; }
+.sample-hero strong { width:90%;height:.6rem;background:var(--sample-ink); }
+.sample-hero strong+strong { width:65%; }
+.sample-hero i { margin-top:.35rem;height:.7rem;width:40%;background:var(--sample-ink);border-radius:var(--sample-radius); }
+.sample-hero b { height:4.5rem;background:var(--sample-accent);border-radius:var(--sample-radius); }
+.sample-cards { display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-top:1rem; }
+.sample-cards i { height:1.2rem;background:var(--sample-accent);border-radius:var(--sample-radius);opacity:.6; }
+.sample-magazin { --sample-bg:#f8f5ef;--sample-ink:#913347;--sample-accent:#edc6af;--sample-radius:0; }
+.sample-magazin .sample-hero b { height:5.5rem;border-top:3px solid var(--sample-ink); }
+.sample-aktiv { --sample-bg:#113e8a;--sample-ink:#fff;--sample-accent:#d5ef96;--sample-radius:1rem .2rem; }
+.sample-natur { --sample-bg:#f1f4ed;--sample-ink:#326148;--sample-accent:#e8ce96;--sample-radius:1.5rem .4rem; }
+.sample-natur .sample-hero { grid-template-columns:1fr; }
+.sample-natur .sample-hero>div { width:65%;margin:auto; }
+.sample-natur .sample-hero b { height:1.4rem;width:65%;margin:auto; }
+.sample-kulturhus { --sample-bg:#f5bf42;--sample-ink:#17221c;--sample-accent:#76b8b0;--sample-radius:.2rem 1rem; }
+.sample-kulturhus .sample-hero>div { background:#fffaf0;padding:.5rem;box-shadow:3px 3px #17221c; }
+.sample-kulturhus .sample-hero b { transform:rotate(7deg); }
+@media(max-width:760px) {
+  body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .hero--home { grid-template-columns:minmax(0,1fr);min-height:0; }
+  body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .hero__poster { max-width:22rem;aspect-ratio:auto;justify-self:center; }
+  body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .hero--home h1 { font-size:clamp(2rem,9vw,3.5rem); }
+  body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .site-header { flex-wrap:wrap; }
+  body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .site-header .brand { flex:1 1 10rem; }
+  body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) .site-header nav { flex-basis:100%; }
+  body:is(.design-klar,.design-magazin,.design-aktiv,.design-natur) :is(.section-heading,.news-section-heading) { flex-wrap:wrap; }
+}

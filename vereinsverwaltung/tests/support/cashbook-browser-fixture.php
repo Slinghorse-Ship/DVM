@@ -1,0 +1,15 @@
+<?php declare(strict_types=1);
+require_once __DIR__.'/free-list-interface-browser-fixture.php';
+$profiles=[];foreach(['front','direct']as$app)foreach([false,true]as$js)foreach(['de','en']as$locale)$profiles[]=['tag'=>$app.'-'.($js?'js':'nojs').'-'.$locale,'app'=>$app,'js'=>$js,'locale'=>$locale];
+$expectedPages=[];for($p=1;$p<=3;$p++)$expectedPages[$p]=$f->cashbookPage($cash,'2021-06-01','2021-06-02',$p);
+$fixture=ownFreeListInterfaceBrowser($db,['cash'=>$cash,'bank'=>$bank,'source'=>$source,'receiptA'=>$receiptA,'receiptB'=>$receiptB,'literal'=>$literal,'csv'=>$csv,'pages'=>$expectedPages,'profiles'=>$profiles]);
+$root=$fixture['input']['root'];$protected=array_values(array_diff($tables,['native_auth_sessions','native_auth_limits','native_language_preferences']));
+$primary=[];foreach($db->query("SELECT TABLE_NAME,COLUMN_NAME FROM information_schema.KEY_COLUMN_USAGE WHERE TABLE_SCHEMA=DATABASE() AND CONSTRAINT_NAME='PRIMARY' ORDER BY TABLE_NAME,ORDINAL_POSITION")as$row)$primary[$row['TABLE_NAME']][]=$row['COLUMN_NAME'];$oldKeys=[];
+foreach($protected as$table){if(empty($primary[$table]))throw new RuntimeException('Original cashbook primary keys required.');$oldKeys[$table]=$db->query('SELECT '.implode(',',$primary[$table]).' FROM '.$table)->fetchAll(PDO::FETCH_NUM);}
+$filter=static function(string $table)use($oldKeys,$primary):array{if(!$oldKeys[$table])return[' WHERE 0=1',[]];$args=[];foreach($oldKeys[$table]as$row)array_push($args,...$row);return[' WHERE ('.implode(',',$primary[$table]).') IN ('.implode(',',array_fill(0,count($oldKeys[$table]),'('.implode(',',array_fill(0,count($primary[$table]),'?')).')')).')',$args];};
+$originals=ownOriginalDatabaseHash($db,$protected,$filter);$counts=[];foreach($protected as$table)if(str_starts_with($table,'finance_')||in_array($table,['cash_closures','sepa_orders','club_outbox','native_delivery_jobs'],true))$counts[$table]=(int)$db->query('SELECT COUNT(*) FROM '.$table)->fetchColumn();$private=[];foreach(['auth','private']as$name)$private[$name]=hash_file('sha256',$root.'/'.$name.'.key');
+try{$process=proc_open(['node',dirname(__DIR__).'/cashbook-interface-browser.mjs'],[0=>['pipe','r'],1=>STDOUT,2=>STDERR],$pipes);if(!is_resource($process))throw new RuntimeException('Actual cashbook browser unavailable.');fwrite($pipes[0],json_encode($fixture['input'],JSON_THROW_ON_ERROR));fclose($pipes[0]);if(proc_close($process)!==0)throw new RuntimeException('Actual cashbook browser failed.');}
+finally{foreach($fixture['servers']as[$server,$log]){proc_terminate($server);proc_close($server);fclose($log);}}
+$check(ownOriginalDatabaseHash($db,$protected,$filter)===$originals,'actual cashbook browser reads exports and source navigation preserve every whole previous business row and private original');
+foreach($counts as$table=>$count)$check((int)$db->query('SELECT COUNT(*) FROM '.$table)->fetchColumn()===$count,'actual cashbook navigation and full CSV export create no '.$table.' records');
+foreach($private as$name=>$hash)$check(hash_file('sha256',$root.'/'.$name.'.key')===$hash,'actual cashbook preserves the exact private '.$name.' key');

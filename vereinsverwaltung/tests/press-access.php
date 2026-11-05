@@ -1,0 +1,46 @@
+<?php declare(strict_types=1);
+require __DIR__ . "/../src/bootstrap.php";
+use Kulturhus\Verein\{Database,Permissions,Settings,WebsiteWorkspace,AdmissionVotes,Registry};
+    $n=0;
+    function ok(bool $value,string $label):void{global $n;if(!$value)throw new RuntimeException($label);++$n;echo "PASS $label\n";}
+    function denied(callable $fn,string $label):void{try{$fn();}catch(DomainException){ok(true,$label);return;}throw new RuntimeException($label);}
+    $db=\Kulturhus\Verein\Tests\MySqlFixture::connect(':memory:');Database::migrate($db);Database::migrate($db);
+    $db->exec("INSERT INTO clubs VALUES('a','Test'),('b','Other'); INSERT INTO actors(id,club_id,role,is_superuser) VALUES('manager','a','members',1),('press','a','member',0),('reader','a','member',0),('plain','a','member',0),('foreign','b','member',0),('editor','a','editor',0),('super','a','member',1); INSERT INTO contacts(id,club_id,kind,name) VALUES('self','a','person','Synthetic Press'),('other','a','person','Synthetic Other'); UPDATE actors SET contact_id='self' WHERE id='press';");
+    $settings=new Settings($db,'manager');
+    $roleData=['name'=>'Presse','description'=>'Nur Presse','members_access'=>'none','finance_access'=>'none','settings_access'=>false,'press_access'=>'write'];
+    $role=$settings->saveRole('',0,$roleData);$settings->assignRole('press',$role,0);
+    $readRole=$settings->saveRole('',0,array_replace($roleData,['name'=>'Presse lesen','press_access'=>'read']));$settings->assignRole('reader',$readRole,0);
+    $p=Permissions::actor($db,'press');
+    ok($p['role']==='member'&&$p['press_access']==='write'&&$p['members_access']==='none'&&$p['finance_access']==='none'&&!$p['settings_access'],'press role adds no general member, finance or website administration rights');
+    $registry=new Registry($db,'press');ok(count($registry->contacts())===1&&$registry->contact('self')['id']==='self','base member keeps own profile access');
+    denied(fn()=>$registry->contact('other'),'press role cannot read another member profile');
+    $press=new WebsiteWorkspace($db,'press');$reader=new WebsiteWorkspace($db,'reader');$plain=new WebsiteWorkspace($db,'plain');
+    ok($press->canRead()&&!$press->canManage()&&array_keys($press->areas())===['press'],'press-only account sees precisely the press area');
+    ok($press->canWrite('press')&&!$press->canWrite('pages')&&!$press->canWrite('technical'),'press canWrite excludes general website operations');
+    denied(fn()=>$press->editorialRead('press'),'retired bridge cannot read native press');
+    foreach(['press/save','press/remove','press/prepare','press/send','press/status','press/draft-save','press/campaign-send'] as $operation){denied(fn()=>$press->editorialWrite($operation,[],'version',str_repeat('a',32)),'retired bridge cannot write '.$operation);}
+    foreach(['pages','news','gallery','events','newsletter','recipients','social','technical'] as $section)denied(fn()=>$press->editorialRead($section),'press cannot read '.$section);
+    foreach(['page/save','news/save','image/upload','gallery/save','events/save','newsletter/queue','recipient/remove','social/facebook','settings/save','fixtures/cleanup','press/unknown','press/../news/save'] as $operation)denied(fn()=>$press->editorialWrite($operation,[],'',str_repeat('a',32)),'press rejects native operation '.$operation);
+    denied(fn()=>$press->localRequest('page/save'),'press rejects legacy website bridge');
+    denied(fn()=>$press->connectionStatus(),'press rejects general connection status');
+    denied(fn()=>$press->drafts('news'),'press cannot enumerate website drafts');
+    denied(fn()=>$press->draft('id'),'press cannot read website draft');
+    denied(fn()=>$press->pageDraft('home'),'press cannot read fixed page draft');
+    denied(fn()=>$press->save(null,0,[]),'press cannot create website draft');
+    ok($reader->canRead()&&!$reader->canWrite('press')&&array_keys($reader->areas())===['press'],'read-only press role can open press');
+    denied(fn()=>$reader->editorialRead('press'),'native press requires native controller');denied(fn()=>$reader->editorialWrite('press/draft-save',[],'',''),'read-only press cannot mutate drafts');
+    ok(!$plain->canRead(),'ordinary member has no implicit press access');
+    denied(fn()=>$plain->editorialRead('press'),'ordinary member cannot read press');
+    $super=new WebsiteWorkspace($db,'super');ok($super->canRead()&&$super->canManage()&&$super->canWrite('technical')&&array_keys($super->areas())===array_keys(WebsiteWorkspace::catalog()),'explicit superuser can manage entire website with member base role');
+    ok(!(new AdmissionVotes($db,'press'))->canVote()&&!(new AdmissionVotes($db,'super'))->canVote(),'press and superuser grant no implicit board vote');
+    (new AdmissionVotes($db,'manager'))->grant('press',0,'Schriftführer',true,true);
+    ok((new AdmissionVotes($db,'press'))->canVote()&&!$press->canManage(),'separate board office adds vote without website administration');
+    $settings->saveRole($role,1,array_replace($roleData,['press_access'=>'read']));ok(!$press->canWrite('press'),'role downgrade applies to existing service instance');
+    $withoutPress=$roleData;unset($withoutPress['press_access']);$settings->saveRole($role,2,$withoutPress);ok(Permissions::actor($db,'press')['press_access']==='read','editing unrelated role fields preserves press access');
+    $settings->saveRole($role,3,array_replace($roleData,['press_access'=>'none']));ok(!$press->canRead()&&(new AdmissionVotes($db,'press'))->canVote(),'press revocation leaves independent board assignment intact');
+    denied(fn()=>$settings->saveRole($role,4,array_replace($roleData,['press_access'=>'admin'])),'invalid press permission rejected');
+    denied(fn()=>$settings->assignRole('foreign',$role,0),'cross-club role assignment denied');
+    $db->exec("UPDATE actors SET press_access='write' WHERE id='plain'");ok($plain->canWrite('press'),'explicit actor press access works without a role assignment');
+    $db->exec("UPDATE actors SET active=0 WHERE id='plain'");ok(!$plain->canRead(),'disabled account loses press access');
+    ok(\Kulturhus\Verein\Tests\MySqlFixture::integrity($db)==='ok'&&\Kulturhus\Verein\Tests\MySqlFixture::foreignKeyErrors($db)===[],'schema and tenant relationships remain valid');
+    echo "$n press-access checks passed; isolated MySQL; no external bridge\n";

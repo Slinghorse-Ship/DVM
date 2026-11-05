@@ -1,0 +1,24 @@
+<?php declare(strict_types=1);
+require dirname(__DIR__).'/native/bootstrap.php';
+use Kulturhus\Native\Communication\{ImageDesign,Content,Images};
+$n=0;function check(bool $ok,string $label):void{global $n;if(!$ok)throw new RuntimeException($label);$n++;echo "PASS $label\n";}
+function denied(callable $f,string $label):void{try{$f();}catch(DomainException){check(true,$label);return;}throw new RuntimeException($label);}
+$root=dirname(__DIR__,2).'/.local/cloud-results/image-design';if(!is_dir($root))mkdir($root,0700,true);
+$source=imagecreatetruecolor(1200,600);imagefilledrectangle($source,0,0,599,599,imagecolorallocate($source,220,40,30));imagefilledrectangle($source,600,0,1199,599,imagecolorallocate($source,30,40,220));imagepng($source,$root.'/crop-source.png');unset($source);$picture=['path'=>$root.'/crop-source.png'];
+$identity=['name'=>'Synthetischer Kulturverein','origin'=>'https://example.invalid'];$slide=['title'=>'Kultur gemeinsam erleben','text'=>'Musik, Begegnungen und neue Ideen.'];
+foreach(['editorial','poster','photo','classic'] as $layout)foreach([1350,1920] as $height){$options=ImageDesign::options(['layout'=>$layout]);$im=ImageDesign::canvas($slide,$height,$picture,null,$identity,$identity['origin'],$options);$file=$root.'/'.$layout.'-'.$height.'.png';imagepng($im,$file);unset($im);$size=getimagesize($file);check($size[0]===1080&&$size[1]===$height,$layout.' real PNG format '.$height);}
+foreach([0=>[220,40,30],100=>[30,40,220]] as $focal=>$expected){$im=imagecreatetruecolor(200,600);ImageDesign::crop($im,$picture,0,0,200,600,ImageDesign::options(['focal_x'=>$focal]));$pixel=imagecolorsforindex($im,imagecolorat($im,100,300));check([$pixel['red'],$pixel['green'],$pixel['blue']]===$expected,'focal point selects actual source pixels at '.$focal);unset($im);}
+denied(fn()=>ImageDesign::canvas($slide,1350,null,null,$identity,$identity['origin'],['layout'=>'photo']),'photo template rejects unavailable real photo');
+denied(fn()=>ImageDesign::options(['focal_x'=>101]),'out-of-range crop rejected');
+denied(fn()=>ImageDesign::options(['layout'=>'remote-generator']),'unimplemented renderer rejected');
+$a=Content::document('social',['title'=>'Entwurf']);$b=Content::document('social',['title'=>'Entwurf','image_design'=>['palette'=>'night']]);check(Images::fingerprint($a)!==Images::fingerprint($b),'changed design invalidates exact publication fingerprint');
+$im=ImageDesign::canvas($slide,1350,null,null,$identity,$identity['origin'],[]);imagepng($im,$root.'/local-poster-without-photo.png');check(imagesx($im)===1080,'local typography poster works without photo or remote service');
+$classic=ImageDesign::canvas(['title'=>'Eigenes vollständiges Motiv','text'=>"MORGEN\n14.11.2026 20:00 Uhr\nEigene Halle"],1920,$picture,null,$identity,$identity['origin'],['layout'=>'classic']);
+foreach([100=>[220,40,30],1000=>[30,40,220]]as$x=>$expected){$pixel=imagecolorsforindex($classic,imagecolorat($classic,$x,570));check([$pixel['red'],$pixel['green'],$pixel['blue']]===$expected,'classic event card retains the actual left and right source pixels without cropping');}unset($classic);
+check(\Kulturhus\Native\Communication\ClassicEventImage::details("NOCH 7 TAGE · 14.11.2026 20:00 Uhr\nEigene Halle")===['label'=>'NOCH 7 TAGE','date'=>'14.11.2026  |  20:00 UHR','place'=>'Eigene Halle'],'frozen reminder date and venue feed image and video consistently');
+$english=\Kulturhus\Native\Communication\ClassicEventImage::details("TOMORROW · 2050-01-12 19:30 to 2050-01-13 02:00\nLibrary");check($english['label']==='TOMORROW'&&$english['date']==='2050-01-12  |  19:30'&&$english['place']==='Library','English multi-day source keeps the date and venue separate in the original event card');
+$editable=\Kulturhus\Native\Communication\ClassicCanvas::document(['title'=>'Own actual event','text'=>"NOCH 7 TAGE · 14.11.2026 20:00 Uhr\nOwn event hall",'media_ref'=>str_repeat('a',32)],'story',$identity);$layers=array_column($editable['layers'],null,'id');
+check($layers['event-photo']['media_ref']===str_repeat('a',32)&&$layers['event-photo']['fit']==='contain'&&$layers['reminder-label']['text']==='NOCH 7 TAGE'&&$layers['reminder-label']['x']>500&&$layers['reminder-label']['y']<600,'editable original story has its actual entire source photograph and a separate top-right seven-day reminder');
+check($layers['event-title']['text']==='Own actual event'&&str_contains($layers['event-date']['text'],'14.11.2026')&&$layers['event-location']['text']==='ORT: Own event hall','editable original card keeps title, date, place and reminder as individually movable text layers');
+check(\Kulturhus\Native\Communication\ClassicCanvas::document(['title'=>'Own text only','media_ref'=>''],'story',$identity)===null,'missing source photo never substitutes an unrelated gallery photo');
+echo "$n local image design checks passed; actual pixels, no network or KI.\n";

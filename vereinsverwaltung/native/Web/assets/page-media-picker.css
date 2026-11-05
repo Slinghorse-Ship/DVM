@@ -1,0 +1,111 @@
+.page-media-picker {
+  min-width: 0;
+  margin-block: 1rem;
+}
+.page-media-picker [hidden] {
+  display: none !important;
+}
+.page-media-picker > label {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+.page-media-picker select[multiple] {
+  width: 100%;
+  min-height: 13rem;
+}
+.page-media-picker :is(button, input, select) {
+  min-height: 44px;
+  font-size: 1rem;
+  max-width: 100%;
+}
+.page-media-picker button {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.page-media-tabs {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.7rem;
+}
+.page-media-tabs [aria-pressed="true"] {
+  border-width: 2px;
+  font-weight: 700;
+}
+.page-media-search {
+  margin-bottom: 0.6rem;
+}
+.page-media-search input {
+  width: 100%;
+}
+.page-media-results {
+  display: grid;
+  gap: 0.45rem;
+}
+.page-media-row {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  align-items: center;
+  gap: 0.35rem 0.6rem;
+  padding: 0.5rem;
+  border: 1px solid #ccd5dc;
+  border-radius: 0.5rem;
+  min-width: 0;
+}
+.page-media-row img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  border-radius: 0.2rem;
+}
+.page-media-label {
+  grid-column: 2;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.page-media-row-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.page-media-picker [data-page-media-results] .page-media-row-actions button {
+  min-width: 44px;
+  min-inline-size: 44px;
+}
+.page-sidebar-picker {
+  margin: 0;
+}
+.page-sidebar-picker > summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+.page-media-pagination {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  gap: 0.4rem;
+  align-items: center;
+  margin-top: 0.6rem;
+}
+.page-media-pagination select {
+  min-width: 0;
+  width: 100%;
+}
+.page-media-status {
+  margin-block: 0.55rem 0;
+  overflow-wrap: anywhere;
+}
+.page-media-upload {
+  min-width: 0;
+  margin-block: 0.7rem;
+}
+.page-media-upload input[type="file"] {
+  width: 100%;
+  min-width: 0;
+  font-size: 1rem;
+}
+.page-media-upload label {
+  display: block;
+}

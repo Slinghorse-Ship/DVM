@@ -1,0 +1,4 @@
+<?php declare(strict_types=1);$selectionText=$ivMoveText??static fn(string $s):string=>$s;if($pieceOptions): ?>
+<details class="iv-piece-selection" <?= !empty($pieceSelectionOpen)||input($_POST,'action')==='inventory-move'?'open':'' ?>><summary><?= e($selectionText('Betroffene Stücke auswählen')) ?></summary><p><?= e($selectionText('Nur die Stücke markieren, die aus dem Bestand entfernt werden. Bei einer vollständigen Entfernung aller Stücke ist keine einzelne Auswahl nötig.')) ?></p>
+<?php foreach($pieceOptions as $piece): ?><label class="check"><input class="check" type="checkbox" name="<?= e($pieceSelectionName) ?>[]" value="<?= e($piece['id']) ?>" <?= in_array($piece['id'],$pieceSelected,true)?'checked':'' ?>><?= e($piece['label']) ?></label><?php endforeach ?></details>
+<?php endif ?>

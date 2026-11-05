@@ -1,0 +1,15 @@
+.finance-original-cards{display:grid;gap:.75rem;margin:1rem 0}.finance-original-card{padding:.75rem;border:1px solid #bdcbd5;border-radius:.75rem;min-width:0;overflow-wrap:anywhere}.finance-original-card header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}.finance-original-card a{display:flex;align-items:center;min-height:44px;white-space:normal;text-align:left}.finance-original-card dl,.finance-filter-totals{display:grid;gap:.5rem;margin:.75rem 0 0}.finance-original-card dl div,.finance-filter-totals div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:.75rem}.finance-original-card dd,.finance-filter-totals dd{margin:0;min-width:0;overflow-wrap:anywhere}.finance-pages{display:flex;align-items:end;flex-wrap:wrap;gap:.5rem;margin:.75rem 0}.finance-pages input{max-width:8rem}#finance-catalogue summary,#finance-catalogue button,.finance-pages a{min-height:44px}#finance-catalogue summary{padding:.75rem;cursor:pointer}#finance-catalogue .form-grid>*{min-width:0}#finance-catalogue button{white-space:normal}#finance-catalogue details{margin:.75rem 0}
+
+/* Receipt labels use their full card width when columns would split words. */
+#finance-catalogue{container:finance-catalogue / inline-size}
+.finance-original-card{container:finance-receipt / inline-size}
+@container finance-receipt (max-width:30em){
+ .finance-original-card dl div{grid-template-columns:minmax(0,1fr);gap:.2rem}
+ .finance-original-card dt{overflow-wrap:break-word;word-break:normal;hyphens:auto}
+ .finance-original-card dd{padding-bottom:.35rem}
+}
+@container finance-catalogue (max-width:30em){
+ .finance-filter-totals div{grid-template-columns:minmax(0,1fr);gap:.2rem}
+ .finance-filter-totals dt{overflow-wrap:break-word;word-break:normal;hyphens:auto}
+ .finance-filter-totals dd{padding-bottom:.35rem}
+}

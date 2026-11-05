@@ -1,0 +1,404 @@
+{
+  "schema": 1,
+  "revision": 47,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "transition-reserves-r47-001@1",
+          "group": "reserves",
+          "target": "bs.eqLiab.equity.revenueRes.other",
+          "choices": [
+            "bs.eqLiab.equity.revenueRes.other"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.equity.revenueRes.other.AktG58_2a"
+          ],
+          "sources": [
+            {
+              "code": "29620",
+              "semantic": {
+                "name": "Eigenkapitalanteil von Wertaufholungen",
+                "function": "",
+                "range_start": "29620",
+                "range_end": "29620",
+                "parent": null
+              },
+              "signature": "da28192d3563db14b212bfa0d5ca65b3fd5f59494e03ee90ed7e42d74cbdcbf2"
+            }
+          ]
+        },
+        {
+          "purpose": "transition-reserves-r47-002@1",
+          "group": "reserves",
+          "target": "bs.eqLiab.equity.revenueRes.other",
+          "choices": [
+            "bs.eqLiab.equity.revenueRes.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29630",
+              "semantic": {
+                "name": "Gewinnrücklagen aus den Übergangsvorschriften BilMoG",
+                "function": "",
+                "range_start": "29630",
+                "range_end": "29630",
+                "parent": null
+              },
+              "signature": "d747228c4c1133b4ecd0d02332fb9b949e7aaa0539a6da7361b3206e56fca065"
+            }
+          ]
+        },
+        {
+          "purpose": "transition-reserves-r47-003@1",
+          "group": "reserves",
+          "target": "bs.eqLiab.equity.revenueRes.other",
+          "choices": [
+            "bs.eqLiab.equity.revenueRes.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29640",
+              "semantic": {
+                "name": "Gewinnrücklagen aus den Übergangsvorschriften BilMoG (Zuschreibung Sachanlagevermögen)",
+                "function": "",
+                "range_start": "29640",
+                "range_end": "29640",
+                "parent": null
+              },
+              "signature": "9de91a4b3e264727f15f14aa7222275dcb92cbe2c7880191d251b49f8a4792ff"
+            }
+          ]
+        },
+        {
+          "purpose": "transition-reserves-r47-004@1",
+          "group": "reserves",
+          "target": "bs.eqLiab.equity.revenueRes.other",
+          "choices": [
+            "bs.eqLiab.equity.revenueRes.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29650",
+              "semantic": {
+                "name": "Gewinnrücklagen aus den Übergangsvorschriften BilMoG (Zuschreibung Finanzanlagevermögen)",
+                "function": "",
+                "range_start": "29650",
+                "range_end": "29650",
+                "parent": null
+              },
+              "signature": "76f0e8cfa615aa202aeb8a3918a321e770ca71fcf34ed7c1d4fec48e5c585634"
+            }
+          ]
+        },
+        {
+          "purpose": "transition-reserves-r47-005@1",
+          "group": "reserves",
+          "target": "bs.eqLiab.equity.revenueRes.other",
+          "choices": [
+            "bs.eqLiab.equity.revenueRes.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29660",
+              "semantic": {
+                "name": "Gewinnrücklagen aus den Übergangsvorschriften BilMoG (Auflösung der Sonderposten mit Rücklageanteil)",
+                "function": "",
+                "range_start": "29660",
+                "range_end": "29660",
+                "parent": null
+              },
+              "signature": "fa891a754d12d79b04bf0a18f72da271c6cea5be2b3a8da7d0183cbc8150f58b"
+            }
+          ]
+        },
+        {
+          "purpose": "transition-reserves-r47-006@1",
+          "group": "reserves",
+          "target": "bs.eqLiab.equity.revenueRes.other",
+          "choices": [
+            "bs.eqLiab.equity.revenueRes.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29670",
+              "semantic": {
+                "name": "Latente Steuern (Gewinnrücklage Haben) aus erfolgsneutralen Verrechnungen",
+                "function": "",
+                "range_start": "29670",
+                "range_end": "29670",
+                "parent": null
+              },
+              "signature": "ec19f9960e9016263dcab5449708e00224af98789e8b1600b22eb5829528e0a6"
+            }
+          ]
+        },
+        {
+          "purpose": "transition-reserves-r47-007@1",
+          "group": "reserves",
+          "target": "bs.eqLiab.equity.revenueRes.other",
+          "choices": [
+            "bs.eqLiab.equity.revenueRes.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29680",
+              "semantic": {
+                "name": "Latente Steuern (Gewinnrücklage Soll) aus erfolgsneutralen Verrechnungen",
+                "function": "",
+                "range_start": "29680",
+                "range_end": "29680",
+                "parent": null
+              },
+              "signature": "4f9c2a54ff8920fa0093cd4a3550410d1da4257193cc5cc5ac70739f7c432e44"
+            }
+          ]
+        },
+        {
+          "purpose": "transition-reserves-r47-008@1",
+          "group": "reserves",
+          "target": "bs.eqLiab.equity.revenueRes.other",
+          "choices": [
+            "bs.eqLiab.equity.revenueRes.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29690",
+              "semantic": {
+                "name": "Rechnungsabgrenzungsposten (Gewinnrücklage Soll) aus erfolgsneutralen Verrechnungen",
+                "function": "",
+                "range_start": "29690",
+                "range_end": "29690",
+                "parent": null
+              },
+              "signature": "0bf1d30389637ae033ae8a22b5e44cfaf9572dec388ce6cffa0f98b82f403c2e"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "transition-reserves-r47-001@1",
+          "group": "reserves",
+          "target": "bs.eqLiab.equity.revenueRes.other",
+          "choices": [
+            "bs.eqLiab.equity.revenueRes.other"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "bs.eqLiab.equity.revenueRes.other.AktG58_2a"
+          ],
+          "sources": [
+            {
+              "code": "29620",
+              "semantic": {
+                "name": "Eigenkapitalanteil von Wertaufholungen",
+                "function": "",
+                "range_start": "29620",
+                "range_end": "29620",
+                "parent": null
+              },
+              "signature": "da28192d3563db14b212bfa0d5ca65b3fd5f59494e03ee90ed7e42d74cbdcbf2"
+            }
+          ]
+        },
+        {
+          "purpose": "transition-reserves-r47-002@1",
+          "group": "reserves",
+          "target": "bs.eqLiab.equity.revenueRes.other",
+          "choices": [
+            "bs.eqLiab.equity.revenueRes.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29630",
+              "semantic": {
+                "name": "Gewinnrücklagen aus den Übergangsvorschriften BilMoG11)",
+                "function": "",
+                "range_start": "29630",
+                "range_end": "29630",
+                "parent": null
+              },
+              "signature": "74dacd2567e0561b53b5259c40fc93c7d1ef27f86231fc9c305609176569ee65"
+            }
+          ]
+        },
+        {
+          "purpose": "transition-reserves-r47-003@1",
+          "group": "reserves",
+          "target": "bs.eqLiab.equity.revenueRes.other",
+          "choices": [
+            "bs.eqLiab.equity.revenueRes.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29640",
+              "semantic": {
+                "name": "Gewinnrücklagen aus den Übergangsvorschriften BilMoG (Zuschreibung Sachanlagevermögen)11)",
+                "function": "",
+                "range_start": "29640",
+                "range_end": "29640",
+                "parent": null
+              },
+              "signature": "e7986d19c405acec1a041dc2c6ffa829498745a4a8b1d5f8eae98d7fe02c65d8"
+            }
+          ]
+        },
+        {
+          "purpose": "transition-reserves-r47-004@1",
+          "group": "reserves",
+          "target": "bs.eqLiab.equity.revenueRes.other",
+          "choices": [
+            "bs.eqLiab.equity.revenueRes.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29650",
+              "semantic": {
+                "name": "Gewinnrücklagen aus den Übergangsvorschriften BilMoG (Zuschreibung Finanzanlagevermögen)11)",
+                "function": "",
+                "range_start": "29650",
+                "range_end": "29650",
+                "parent": null
+              },
+              "signature": "b386e1ab6d00a59ede50cc12566cb8c2ff8cbc44ce76d63ba55e921b630ad7c2"
+            }
+          ]
+        },
+        {
+          "purpose": "transition-reserves-r47-005@1",
+          "group": "reserves",
+          "target": "bs.eqLiab.equity.revenueRes.other",
+          "choices": [
+            "bs.eqLiab.equity.revenueRes.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29660",
+              "semantic": {
+                "name": "Gewinnrücklagen aus den Übergangsvorschriften BilMoG (Auflösung der Sonderposten mit Rücklageanteil)11)",
+                "function": "",
+                "range_start": "29660",
+                "range_end": "29660",
+                "parent": null
+              },
+              "signature": "93d7a17494aa65a118943a52433b103b77e2f9bb9639ebed0ea5a8ef2e5fa103"
+            }
+          ]
+        },
+        {
+          "purpose": "transition-reserves-r47-006@1",
+          "group": "reserves",
+          "target": "bs.eqLiab.equity.revenueRes.other",
+          "choices": [
+            "bs.eqLiab.equity.revenueRes.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29670",
+              "semantic": {
+                "name": "Latente Steuern (Gewinnrücklage Haben) aus erfolgsneutralen Verrechnungen11)",
+                "function": "",
+                "range_start": "29670",
+                "range_end": "29670",
+                "parent": null
+              },
+              "signature": "9b17aca2d6034a118b79ff436561a8c558241d14e6df726f4a4270998bd44195"
+            }
+          ]
+        },
+        {
+          "purpose": "transition-reserves-r47-007@1",
+          "group": "reserves",
+          "target": "bs.eqLiab.equity.revenueRes.other",
+          "choices": [
+            "bs.eqLiab.equity.revenueRes.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29680",
+              "semantic": {
+                "name": "Latente Steuern (Gewinnrücklage Soll) aus erfolgsneutralen Verrechnungen11)",
+                "function": "",
+                "range_start": "29680",
+                "range_end": "29680",
+                "parent": null
+              },
+              "signature": "af0d9af3b537a9d8ecd0ccfd1973a417e1966f3208c02d370d8746674a20b599"
+            }
+          ]
+        },
+        {
+          "purpose": "transition-reserves-r47-008@1",
+          "group": "reserves",
+          "target": "bs.eqLiab.equity.revenueRes.other",
+          "choices": [
+            "bs.eqLiab.equity.revenueRes.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29690",
+              "semantic": {
+                "name": "Rechnungsabgrenzungsposten (Gewinnrücklage Soll) aus erfolgsneutralen Verrechnungen11)",
+                "function": "",
+                "range_start": "29690",
+                "range_end": "29690",
+                "parent": null
+              },
+              "signature": "7c89d78edee2a18ead94ad453f829b77186385d9f583e95d8c2ce961356cc3fa"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

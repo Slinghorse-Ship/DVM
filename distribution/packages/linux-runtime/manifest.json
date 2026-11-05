@@ -1,0 +1,688 @@
+{
+  "schema_version": 1,
+  "platform": {
+    "os": "linux",
+    "arch": "x86_64",
+    "python_abi": "cp311",
+    "landlock_abi_minimum": 6,
+    "requires": [
+      "PHP >= 8.3",
+      "proc_open",
+      "Linux seccomp",
+      "glibc host compatible with bundled Java 17"
+    ]
+  },
+  "components": [
+    {
+      "id": "pdf-python",
+      "version": "Python 3.11.2; ReportLab 4.4.9; pypdf 6.10.0; Pillow 9.4.0; charset-normalizer 3.5.1",
+      "bytes": 20274621,
+      "sha256": "6c403e45f1a72ce1106d45c658b8f31c33ccfd148229ea4f69fed92586d44dd5",
+      "parts": [
+        {
+          "file": "blobs/pdf-runtime-linux-amd64.tar.gz",
+          "bytes": 20274621,
+          "sha256": "6c403e45f1a72ce1106d45c658b8f31c33ccfd148229ea4f69fed92586d44dd5"
+        }
+      ],
+      "install": {
+        "type": "tar.gz",
+        "target": "python",
+        "strip_components": 0
+      },
+      "source_ids": [
+        "reportlab-4.4.9",
+        "pypdf-6.10.0",
+        "Pillow-9.4.0",
+        "charset_normalizer-3.5.1"
+      ]
+    },
+    {
+      "id": "ocr",
+      "version": "Tesseract 5.5.3; PDFium 5.13.0; Pillow 12.3.0",
+      "bytes": 20854331,
+      "sha256": "06841b6defb1533abe00b1c2cf58c0d5d4042242c702acdade765831dfab24c5",
+      "parts": [
+        {
+          "file": "blobs/ocr-5.5.3-linux-amd64.tar.gz",
+          "bytes": 20854331,
+          "sha256": "06841b6defb1533abe00b1c2cf58c0d5d4042242c702acdade765831dfab24c5"
+        }
+      ],
+      "install": {
+        "type": "tar.gz",
+        "target": "ocr-5.5.3",
+        "strip_components": 0
+      },
+      "source_ids": [
+        "tesseract-5.5.3-source"
+      ]
+    },
+    {
+      "id": "ocr-models",
+      "version": "e12c65a915945e4c28e237a9b52bc4a8f39a0cec",
+      "bytes": 20513907,
+      "sha256": "d4ffa34029afb983a1078a1fa39a21f768bd65a49bf0b163a200e424990e36cf",
+      "parts": [
+        {
+          "file": "blobs/tessdata-best-e12c65a91594.tar.gz",
+          "bytes": 20513907,
+          "sha256": "d4ffa34029afb983a1078a1fa39a21f768bd65a49bf0b163a200e424990e36cf"
+        }
+      ],
+      "install": {
+        "type": "tar.gz",
+        "target": "ocr-5.5.3/tessdata-best-e12c65a91594",
+        "strip_components": 0
+      },
+      "source_ids": [],
+      "upstream": "https://github.com/tesseract-ocr/tessdata_best/tree/e12c65a915945e4c28e237a9b52bc4a8f39a0cec"
+    },
+    {
+      "id": "heic",
+      "version": "pillow-heif 1.7.0; libheif 1.23.3; libde265 1.1.2; x265 4.2",
+      "bytes": 5621744,
+      "sha256": "d7b31b45bfab2b3f6893199bd13387283445ba656d2febb13c386fc749b2438a",
+      "parts": [
+        {
+          "file": "blobs/pillow_heif-1.7.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+          "bytes": 5621744,
+          "sha256": "d7b31b45bfab2b3f6893199bd13387283445ba656d2febb13c386fc749b2438a"
+        }
+      ],
+      "install": {
+        "type": "zip",
+        "target": "ocr-5.5.3/python",
+        "strip_components": 0
+      },
+      "source_ids": [
+        "pillow-heif-source-1.7.0",
+        "libheif-source-1.23.3",
+        "libde265-source-1.1.2",
+        "x265-source-4.2"
+      ],
+      "license": "GPL-2.0; component details in LICENSES_bundled.txt"
+    },
+    {
+      "id": "glibc-compat-2.36",
+      "version": "glibc-compat-2.36",
+      "bytes": 538612,
+      "sha256": "ae61f16f9c5a226848dfd36c5e25a006a27d7d205e0c4b520a4d88e6683c30bf",
+      "parts": [
+        {
+          "file": "blobs/glibc-compat-2.36.tar.gz",
+          "bytes": 538612,
+          "sha256": "ae61f16f9c5a226848dfd36c5e25a006a27d7d205e0c4b520a4d88e6683c30bf"
+        }
+      ],
+      "install": {
+        "type": "tar.gz",
+        "target": "ocr-5.5.3/python-compat",
+        "strip_components": 0
+      },
+      "source_ids": []
+    },
+    {
+      "id": "glibc-compat-2.41",
+      "version": "glibc-compat-2.41",
+      "bytes": 14073,
+      "sha256": "6e329feea6580cd23d1895d0111ea79adb3ff84867b3d233fb1514e0c6a32bba",
+      "parts": [
+        {
+          "file": "blobs/glibc-compat-2.41.tar.gz",
+          "bytes": 14073,
+          "sha256": "6e329feea6580cd23d1895d0111ea79adb3ff84867b3d233fb1514e0c6a32bba"
+        }
+      ],
+      "install": {
+        "type": "tar.gz",
+        "target": "kosit-1.6.3-xrechnung-20260831/glibc-compat-2.41",
+        "strip_components": 0
+      },
+      "source_ids": []
+    },
+    {
+      "id": "java17",
+      "version": "Temurin 17.0.20.1+1",
+      "bytes": 46693863,
+      "sha256": "bab1c557ff08d4595bf3a61819fee2aaaa2d9788d74afb5b5c00a061db5c82d3",
+      "parts": [
+        {
+          "file": "blobs/java17-linux-amd64.tar.gz.part01",
+          "bytes": 46137344,
+          "sha256": "89499dd902c2336b3ccb2f8d6330ece5ebdb3336d8a804a5868d2a7bb6ea5a4d"
+        },
+        {
+          "file": "blobs/java17-linux-amd64.tar.gz.part02",
+          "bytes": 556519,
+          "sha256": "19c4fcbf94616a9107a891e02e451b3b4bd6c80e7edfa8c9567e322a0c157f5e"
+        }
+      ],
+      "install": {
+        "type": "tar.gz",
+        "target": "kosit-1.6.3-xrechnung-20260831",
+        "strip_components": 0
+      },
+      "source_ids": [],
+      "upstream": "https://github.com/adoptium/temurin17-binaries/releases/tag/jdk-17.0.20.1%2B1"
+    },
+    {
+      "id": "kosit",
+      "version": "1.6.3",
+      "bytes": 10648594,
+      "sha256": "799e64befca97d4080e03608c80b85dd5a5ecc5f4ae4f35d1116ec2855b9a7c9",
+      "parts": [
+        {
+          "file": "blobs/kosit-validator-1.6.3.jar",
+          "bytes": 10648594,
+          "sha256": "799e64befca97d4080e03608c80b85dd5a5ecc5f4ae4f35d1116ec2855b9a7c9"
+        }
+      ],
+      "install": {
+        "type": "file",
+        "target": "kosit-1.6.3-xrechnung-20260831/validator.jar",
+        "strip_components": 0
+      },
+      "source_ids": []
+    },
+    {
+      "id": "kosit-config",
+      "version": "XRechnung 3.0.2; 2026-08-31",
+      "bytes": 499607,
+      "sha256": "2530cd107c414511c5d0462ec10f886910395abfca820db82e83d70bf01221a8",
+      "parts": [
+        {
+          "file": "blobs/xrechnung-20260831.zip",
+          "bytes": 499607,
+          "sha256": "2530cd107c414511c5d0462ec10f886910395abfca820db82e83d70bf01221a8"
+        }
+      ],
+      "install": {
+        "type": "zip",
+        "target": "kosit-1.6.3-xrechnung-20260831/config",
+        "strip_components": 0
+      },
+      "source_ids": [
+        "xrechnung-config-source-20260831"
+      ]
+    },
+    {
+      "id": "mustang",
+      "version": "2.26.0",
+      "bytes": 59163641,
+      "sha256": "42d7868cb68264874a7b8cab4c3587b03b23ccc7cd72373da917f66758bb9736",
+      "parts": [
+        {
+          "file": "blobs/mustang-2.26.0.jar.part01",
+          "bytes": 46137344,
+          "sha256": "ebd9b2014d6767180de0f6309aa4b1e015995bd189fe7466de2787e8251b8a56"
+        },
+        {
+          "file": "blobs/mustang-2.26.0.jar.part02",
+          "bytes": 13026297,
+          "sha256": "e6a64a531af3bb1a8146ac64d8edd1cada57bbd46bfdc2af084db516bb3e6666"
+        }
+      ],
+      "install": {
+        "type": "file",
+        "target": "hybrid-2.26.0/mustang.jar",
+        "strip_components": 0
+      },
+      "source_ids": []
+    },
+    {
+      "id": "hybrid-python-certifi",
+      "version": "2026.7.22",
+      "bytes": 136983,
+      "sha256": "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775",
+      "parts": [
+        {
+          "file": "blobs/certifi-2026.7.22-py3-none-any.whl",
+          "bytes": 136983,
+          "sha256": "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775"
+        }
+      ],
+      "install": {
+        "type": "zip",
+        "target": "hybrid-2.26.0/packages",
+        "strip_components": 0
+      },
+      "source_ids": []
+    },
+    {
+      "id": "hybrid-python-charset_normalizer",
+      "version": "3.5.1",
+      "bytes": 262325,
+      "sha256": "c7b742bf31c88566b4bb6335a7f393bb322e580b6bb98df7bd0c25e6e3519ce8",
+      "parts": [
+        {
+          "file": "blobs/charset_normalizer-3.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+          "bytes": 262325,
+          "sha256": "c7b742bf31c88566b4bb6335a7f393bb322e580b6bb98df7bd0c25e6e3519ce8"
+        }
+      ],
+      "install": {
+        "type": "zip",
+        "target": "hybrid-2.26.0/packages",
+        "strip_components": 0
+      },
+      "source_ids": []
+    },
+    {
+      "id": "hybrid-python-factur_x",
+      "version": "6.8",
+      "bytes": 906687,
+      "sha256": "02b57dd57f59d0cdd87f034a538bf30a4b9241a72a19cd75fe1538233163ee15",
+      "parts": [
+        {
+          "file": "blobs/factur_x-6.8-py3-none-any.whl",
+          "bytes": 906687,
+          "sha256": "02b57dd57f59d0cdd87f034a538bf30a4b9241a72a19cd75fe1538233163ee15"
+        }
+      ],
+      "install": {
+        "type": "zip",
+        "target": "hybrid-2.26.0/packages",
+        "strip_components": 0
+      },
+      "source_ids": []
+    },
+    {
+      "id": "hybrid-python-idna",
+      "version": "3.19",
+      "bytes": 68550,
+      "sha256": "815e7be7a7806d54abb586dc943addc79e8b2ee16915059658cbeff4b1b43bf4",
+      "parts": [
+        {
+          "file": "blobs/idna-3.19-py3-none-any.whl",
+          "bytes": 68550,
+          "sha256": "815e7be7a7806d54abb586dc943addc79e8b2ee16915059658cbeff4b1b43bf4"
+        }
+      ],
+      "install": {
+        "type": "zip",
+        "target": "hybrid-2.26.0/packages",
+        "strip_components": 0
+      },
+      "source_ids": []
+    },
+    {
+      "id": "hybrid-python-lxml",
+      "version": "6.1.3",
+      "bytes": 5211431,
+      "sha256": "527195c188d7d0af748cd48d220ab8cdc5cb99be3d49ac4d9be7324d8abf9bc0",
+      "parts": [
+        {
+          "file": "blobs/lxml-6.1.3-cp311-cp311-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl",
+          "bytes": 5211431,
+          "sha256": "527195c188d7d0af748cd48d220ab8cdc5cb99be3d49ac4d9be7324d8abf9bc0"
+        }
+      ],
+      "install": {
+        "type": "zip",
+        "target": "hybrid-2.26.0/packages",
+        "strip_components": 0
+      },
+      "source_ids": []
+    },
+    {
+      "id": "hybrid-python-pillow",
+      "version": "12.3.0",
+      "bytes": 6934408,
+      "sha256": "23d27a3e0307ec2244cc51e7287b919aa68d097504ebe19df4e76a98a3eea5bd",
+      "parts": [
+        {
+          "file": "blobs/pillow-12.3.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+          "bytes": 6934408,
+          "sha256": "23d27a3e0307ec2244cc51e7287b919aa68d097504ebe19df4e76a98a3eea5bd"
+        }
+      ],
+      "install": {
+        "type": "zip",
+        "target": "hybrid-2.26.0/packages",
+        "strip_components": 0
+      },
+      "source_ids": []
+    },
+    {
+      "id": "hybrid-python-pypdf",
+      "version": "6.18.0",
+      "bytes": 393848,
+      "sha256": "05b762b77bcb9dcb4a7c91fcf5dded585b25bee7269ab3d3001d7c55fa1b324b",
+      "parts": [
+        {
+          "file": "blobs/pypdf-6.18.0-py3-none-any.whl",
+          "bytes": 393848,
+          "sha256": "05b762b77bcb9dcb4a7c91fcf5dded585b25bee7269ab3d3001d7c55fa1b324b"
+        }
+      ],
+      "install": {
+        "type": "zip",
+        "target": "hybrid-2.26.0/packages",
+        "strip_components": 0
+      },
+      "source_ids": []
+    },
+    {
+      "id": "hybrid-python-python_stdnum",
+      "version": "2.2",
+      "bytes": 1193213,
+      "sha256": "bdf98fd117a0ca152e4047aa8ad254bae63853d4e915ddd4e0effb33ba0e9260",
+      "parts": [
+        {
+          "file": "blobs/python_stdnum-2.2-py3-none-any.whl",
+          "bytes": 1193213,
+          "sha256": "bdf98fd117a0ca152e4047aa8ad254bae63853d4e915ddd4e0effb33ba0e9260"
+        }
+      ],
+      "install": {
+        "type": "zip",
+        "target": "hybrid-2.26.0/packages",
+        "strip_components": 0
+      },
+      "source_ids": []
+    },
+    {
+      "id": "hybrid-python-requests",
+      "version": "2.34.2",
+      "bytes": 73075,
+      "sha256": "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0",
+      "parts": [
+        {
+          "file": "blobs/requests-2.34.2-py3-none-any.whl",
+          "bytes": 73075,
+          "sha256": "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0"
+        }
+      ],
+      "install": {
+        "type": "zip",
+        "target": "hybrid-2.26.0/packages",
+        "strip_components": 0
+      },
+      "source_ids": []
+    },
+    {
+      "id": "hybrid-python-urllib3",
+      "version": "2.7.0",
+      "bytes": 131087,
+      "sha256": "9fb4c81ebbb1ce9531cce37674bbc6f1360472bc18ca9a553ede278ef7276897",
+      "parts": [
+        {
+          "file": "blobs/urllib3-2.7.0-py3-none-any.whl",
+          "bytes": 131087,
+          "sha256": "9fb4c81ebbb1ce9531cce37674bbc6f1360472bc18ca9a553ede278ef7276897"
+        }
+      ],
+      "install": {
+        "type": "zip",
+        "target": "hybrid-2.26.0/packages",
+        "strip_components": 0
+      },
+      "source_ids": []
+    },
+    {
+      "id": "eric-runtime",
+      "version": "44.3.6.0",
+      "bytes": 515721865,
+      "sha256": "8920de055ff2a5ce50db09209d5a7c672fd904dac1f4f2dd4d404bf6d43b6fb0",
+      "parts": [
+        {
+          "file": "eric-44.3.6.0/ERiC-44.3.6.0-DVM-runtime-linux-amd64.tar.gz.part-000",
+          "bytes": 33554432,
+          "sha256": "6ae360ec55815c53ec8951abb435798fb72533f1fdc9060a6ccf8da17c797a2d"
+        },
+        {
+          "file": "eric-44.3.6.0/ERiC-44.3.6.0-DVM-runtime-linux-amd64.tar.gz.part-001",
+          "bytes": 33554432,
+          "sha256": "45ef2c541c56e21395c90f773ef66ea2de393178285ed92bae8a978279e9e4d4"
+        },
+        {
+          "file": "eric-44.3.6.0/ERiC-44.3.6.0-DVM-runtime-linux-amd64.tar.gz.part-002",
+          "bytes": 33554432,
+          "sha256": "9b8e9e1098745c35db4ef2cd8f49ade15508443894b98fa762404673a3aa7768"
+        },
+        {
+          "file": "eric-44.3.6.0/ERiC-44.3.6.0-DVM-runtime-linux-amd64.tar.gz.part-003",
+          "bytes": 33554432,
+          "sha256": "6312db6a9ac0fd5d9e21340cd9484be3e360a5ee26c7ef5105e84c5c6d7b9f28"
+        },
+        {
+          "file": "eric-44.3.6.0/ERiC-44.3.6.0-DVM-runtime-linux-amd64.tar.gz.part-004",
+          "bytes": 33554432,
+          "sha256": "d80d7e7e1983a068e345c8eb7bb41d70aacc644007e01a08824cf02fa98f17d8"
+        },
+        {
+          "file": "eric-44.3.6.0/ERiC-44.3.6.0-DVM-runtime-linux-amd64.tar.gz.part-005",
+          "bytes": 33554432,
+          "sha256": "b69b4e0ce24dd95bfa05c9d01923027cdce1492d7998816518e68cce01b3310a"
+        },
+        {
+          "file": "eric-44.3.6.0/ERiC-44.3.6.0-DVM-runtime-linux-amd64.tar.gz.part-006",
+          "bytes": 33554432,
+          "sha256": "0027503e40ef79d27c779eb9643ba20f731c1dd1f79fb2fa67023d0925c4fb78"
+        },
+        {
+          "file": "eric-44.3.6.0/ERiC-44.3.6.0-DVM-runtime-linux-amd64.tar.gz.part-007",
+          "bytes": 33554432,
+          "sha256": "19e40777a6bc9adcec5d77dcc9055cc9d2329a19357c697d57980d9c5fbd95fc"
+        },
+        {
+          "file": "eric-44.3.6.0/ERiC-44.3.6.0-DVM-runtime-linux-amd64.tar.gz.part-008",
+          "bytes": 33554432,
+          "sha256": "8fa1b2bae349e767f8935a04c9f55554001e323d85c8088e0f72a110aa57d07a"
+        },
+        {
+          "file": "eric-44.3.6.0/ERiC-44.3.6.0-DVM-runtime-linux-amd64.tar.gz.part-009",
+          "bytes": 33554432,
+          "sha256": "dae372cb969870f28e107a142d4820542072783a10a0f43924522eedeaae69e8"
+        },
+        {
+          "file": "eric-44.3.6.0/ERiC-44.3.6.0-DVM-runtime-linux-amd64.tar.gz.part-010",
+          "bytes": 33554432,
+          "sha256": "7d3c27ce26985f46a2225e3b6ee62a85a647c780519f54b3605c9a379516f3c7"
+        },
+        {
+          "file": "eric-44.3.6.0/ERiC-44.3.6.0-DVM-runtime-linux-amd64.tar.gz.part-011",
+          "bytes": 33554432,
+          "sha256": "c5d3fa2ca86024e6ca03a898dd1c2bf046c660df83485c22b2c4df424e3da7c8"
+        },
+        {
+          "file": "eric-44.3.6.0/ERiC-44.3.6.0-DVM-runtime-linux-amd64.tar.gz.part-012",
+          "bytes": 33554432,
+          "sha256": "eb3b625f413f8e85004526eb8ed052479690182b8dec7abf5da183abfcd3250e"
+        },
+        {
+          "file": "eric-44.3.6.0/ERiC-44.3.6.0-DVM-runtime-linux-amd64.tar.gz.part-013",
+          "bytes": 33554432,
+          "sha256": "526c6ff4586f6706a702589a94cb79d3977df54b7cafd74f31cc31207092953c"
+        },
+        {
+          "file": "eric-44.3.6.0/ERiC-44.3.6.0-DVM-runtime-linux-amd64.tar.gz.part-014",
+          "bytes": 33554432,
+          "sha256": "0318ffd9e9ee73f460da0262e83e998da78f10a4997b8ede961dc25404164da5"
+        },
+        {
+          "file": "eric-44.3.6.0/ERiC-44.3.6.0-DVM-runtime-linux-amd64.tar.gz.part-015",
+          "bytes": 12405385,
+          "sha256": "fd50ad8628493214d4949629e7d19aaae75856bbf3b309f27ace1c03024f00b3"
+        }
+      ],
+      "install": {
+        "type": "tar.gz",
+        "target": "eric-44.3.6.0",
+        "strip_components": 0
+      },
+      "source_ids": [],
+      "original_name": "ERiC-44.3.6.0-DVM-runtime-linux-amd64.tar.gz",
+      "license": "ERiC manufacturer agreement; integrated DVM product runtime, section4(1)",
+      "license_file": "LICENSES/ERiC-44.3.6.0/lizenz.pdf",
+      "upstream_archive_sha256": "e36df8b02045ff3449eb23e086a39f5455b709c967e708eae44f27099ce4de95",
+      "developer_documentation_included": false
+    }
+  ],
+  "sources": [
+    {
+      "id": "pillow-heif-source-1.7.0",
+      "version": "pillow-heif-source-1.7.0",
+      "url": "https://codeload.github.com/bigcat88/pillow_heif/tar.gz/refs/tags/v1.7.0",
+      "bytes": 26588905,
+      "sha256": "b1760e34384d3d8d7af2ab0b047c4e2a2967743a45066668e02959612dc98a1e",
+      "parts": [
+        {
+          "file": "sources/pillow-heif-source-1.7.0.tar.gz",
+          "bytes": 26588905,
+          "sha256": "b1760e34384d3d8d7af2ab0b047c4e2a2967743a45066668e02959612dc98a1e"
+        }
+      ],
+      "upstream_hash_verified": false
+    },
+    {
+      "id": "libheif-source-1.23.3",
+      "version": "libheif-source-1.23.3",
+      "url": "https://github.com/strukturag/libheif/releases/download/v1.23.3/libheif-1.23.3.tar.gz",
+      "bytes": 2178756,
+      "sha256": "11c1179e0e4bec33624b87f22ec42c1e993a40d946d44d26f9c431cf1456a863",
+      "parts": [
+        {
+          "file": "sources/libheif-source-1.23.3.tar.gz",
+          "bytes": 2178756,
+          "sha256": "11c1179e0e4bec33624b87f22ec42c1e993a40d946d44d26f9c431cf1456a863"
+        }
+      ],
+      "upstream_hash_verified": false
+    },
+    {
+      "id": "libde265-source-1.1.2",
+      "version": "libde265-source-1.1.2",
+      "url": "https://github.com/strukturag/libde265/releases/download/v1.1.2/libde265-1.1.2.tar.gz",
+      "bytes": 319593,
+      "sha256": "eaacd1943ab0c452c19f6136a36ca227e6b761b39a81eaca8454d48c147e1f67",
+      "parts": [
+        {
+          "file": "sources/libde265-source-1.1.2.tar.gz",
+          "bytes": 319593,
+          "sha256": "eaacd1943ab0c452c19f6136a36ca227e6b761b39a81eaca8454d48c147e1f67"
+        }
+      ],
+      "upstream_hash_verified": false
+    },
+    {
+      "id": "x265-source-4.2",
+      "version": "x265-source-4.2",
+      "url": "https://bitbucket.org/multicoreware/x265_git/downloads/x265_4.2.tar.gz",
+      "bytes": 1833442,
+      "sha256": "40b1ea0453e0309f0eba934e0ddf533f8f6295966679e8894e8f1c1c8d5e1210",
+      "parts": [
+        {
+          "file": "sources/x265-source-4.2.tar.gz",
+          "bytes": 1833442,
+          "sha256": "40b1ea0453e0309f0eba934e0ddf533f8f6295966679e8894e8f1c1c8d5e1210"
+        }
+      ],
+      "upstream_hash_verified": false
+    },
+    {
+      "id": "xrechnung-config-source-20260831",
+      "version": "xrechnung-config-source-20260831",
+      "url": "https://codeload.github.com/itplr-kosit/validator-configuration-xrechnung/tar.gz/refs/tags/v2026-08-31",
+      "bytes": 103850,
+      "sha256": "e4a8f51f2c691a612fcf76f3ccadc5ea933da958e196dc732b35aa97623be9e1",
+      "parts": [
+        {
+          "file": "sources/xrechnung-config-source-20260831.tar.gz",
+          "bytes": 103850,
+          "sha256": "e4a8f51f2c691a612fcf76f3ccadc5ea933da958e196dc732b35aa97623be9e1"
+        }
+      ],
+      "upstream_hash_verified": false
+    },
+    {
+      "id": "pypdf-6.10.0",
+      "version": "pypdf-6.10.0",
+      "url": "https://files.pythonhosted.org/packages/b8/9f/ca96abf18683ca12602065e4ed2bec9050b672c87d317f1079abc7b6d993/pypdf-6.10.0.tar.gz",
+      "bytes": 5314833,
+      "sha256": "4c5a48ba258c37024ec2505f7e8fd858525f5502784a2e1c8d415604af29f6ef",
+      "parts": [
+        {
+          "file": "sources/pypdf-6.10.0.tar.gz",
+          "bytes": 5314833,
+          "sha256": "4c5a48ba258c37024ec2505f7e8fd858525f5502784a2e1c8d415604af29f6ef"
+        }
+      ],
+      "upstream_hash_verified": true
+    },
+    {
+      "id": "Pillow-9.4.0",
+      "version": "Pillow-9.4.0",
+      "url": "https://files.pythonhosted.org/packages/bc/07/830784e061fb94d67649f3e438ff63cfb902dec6d48ac75aeaaac7c7c30e/Pillow-9.4.0.tar.gz",
+      "bytes": 50403076,
+      "sha256": "a1c2d7780448eb93fbcc3789bf3916aa5720d942e37945f4056680317f1cd23e",
+      "parts": [
+        {
+          "file": "sources/Pillow-9.4.0.tar.gz.part01",
+          "bytes": 46137344,
+          "sha256": "9bac7afe5cd0e624be9247e208b5c3f800a537bfc2411ec75f764dff56457e74"
+        },
+        {
+          "file": "sources/Pillow-9.4.0.tar.gz.part02",
+          "bytes": 4265732,
+          "sha256": "980e9767fd61b8e2d1232ee3066cb3499a27bb3f2c5e21eaf3dcae2357f209e9"
+        }
+      ],
+      "upstream_hash_verified": true
+    },
+    {
+      "id": "tesseract-5.5.3-source",
+      "version": "5.5.3",
+      "url": "https://codeload.github.com/tesseract-ocr/tesseract/tar.gz/refs/tags/5.5.3",
+      "bytes": 1916037,
+      "sha256": "9218e62793116d42a9f6d14cd9348518b27f382096eea3d0f2d1a24616bb5884",
+      "parts": [
+        {
+          "file": "sources/tesseract-5.5.3-source.tar.gz",
+          "bytes": 1916037,
+          "sha256": "9218e62793116d42a9f6d14cd9348518b27f382096eea3d0f2d1a24616bb5884"
+        }
+      ]
+    },
+    {
+      "id": "reportlab-4.4.9",
+      "version": "reportlab-4.4.9",
+      "url": "https://files.pythonhosted.org/packages/1a/39/42cf24aee570a80e1903221ae3a92a2e34c324794a392eb036cbb6dc3839/reportlab-4.4.9.tar.gz",
+      "bytes": 3911246,
+      "sha256": "7cf487764294ee791a4781f5a157bebce262a666ae4bbb87786760a9676c9378",
+      "parts": [
+        {
+          "file": "sources/reportlab-4.4.9.tar.gz",
+          "bytes": 3911246,
+          "sha256": "7cf487764294ee791a4781f5a157bebce262a666ae4bbb87786760a9676c9378"
+        }
+      ],
+      "upstream_hash_verified": true
+    },
+    {
+      "id": "charset_normalizer-3.5.1",
+      "version": "charset_normalizer-3.5.1",
+      "url": "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz",
+      "bytes": 171764,
+      "sha256": "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3",
+      "parts": [
+        {
+          "file": "sources/charset_normalizer-3.5.1.tar.gz",
+          "bytes": 171764,
+          "sha256": "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+        }
+      ],
+      "upstream_hash_verified": true
+    }
+  ],
+  "runtime_configuration": "../../src/RuntimeInstaller.php",
+  "notes": [
+    "No credentials, club records, session files or production runtime configs included.",
+    "RuntimeInstaller creates wrappers and configuration for the selected private destination.",
+    "This is a pinned Linux x86_64 runtime snapshot, not a portable Windows/macOS runtime.",
+    "HEIC source archives include the upstream wheel build scripts and each bundled codec source.",
+    "Developer documentation and schema-documentation archives are not distributed. Obtain them separately through the official ELSTER developer access when needed.",
+    "ERiC program libraries and plugins are bundled only as an integrated DVM product component. No developer SDK, examples, headers, documentation archives, operator identifiers or certificates are included."
+  ]
+}

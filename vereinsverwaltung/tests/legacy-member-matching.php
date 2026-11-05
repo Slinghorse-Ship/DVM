@@ -1,0 +1,34 @@
+<?php declare(strict_types=1);
+require __DIR__.'/../src/bootstrap.php';
+use Kulturhus\Verein\{Database,Registry,Finance};
+$n=0;function ok(bool $v,string $m):void{global $n;if(!$v)throw new RuntimeException($m);++$n;echo "PASS $m\n";}
+function denied(callable $f,string $m):void{try{$f();}catch(DomainException){ok(true,$m);return;}throw new RuntimeException($m);}
+$db=\Kulturhus\Verein\Tests\MySqlFixture::connect(':memory:');Database::migrate($db);Database::migrate($db);
+$db->exec("INSERT INTO clubs VALUES('a','A'),('b','B');INSERT INTO actors(id,club_id,role,is_superuser) VALUES('admin','a','members',1),('reader','a','member',0),('other','b','members',1)");
+$r=new Registry($db,'admin');$f=new Finance($db,'admin');$bank=$f->createAccount('Bank','offline','0','2026-01-01');$key=fn()=>bin2hex(random_bytes(16));
+$member=function($name,$legacy='')use($r){$id=$r->saveContact(null,0,'person',$name,'','',['legacy_member_number'=>$legacy]);$r->addMembership($id,'','aktiv','2026-01-01');return $id;};
+$pay=fn($purpose,$payer='',$amount='48')=>$f->createTransaction(['account'=>$bank,'booked_on'=>'2026-08-02','direction'=>'income','amount'=>$amount,'description'=>$purpose,'counterparty'=>$payer],$key());
+$unresolved=fn($id)=>(int)$f->transactionDetail($id)['remaining_cents']>0;
+$a=$member('Anna Müller','0017');$e=$f->createAnnualContribution($a,2026,'');
+ok($r->contact($a)['legacy_member_number']==='0017','legacy number preserves leading zeros');
+ok($r->contactPage(['q'=>'0017'])['total']===1,'member search finds legacy number');
+ok($r->memberships($a)[0]['member_number']!=='0017','current number remains separate');
+ok($unresolved($pay('Beitrag 00179')),'number substring does not match');
+ok(!$unresolved($pay('Beitrag 0017'))&&$f->entry($e)['payment_state']==='paid','legacy number matches real contribution');
+$r->saveContact($a,1,'person','Anna Müller','','',['phone'=>'123']);ok($r->contact($a)['legacy_member_number']==='0017','unrelated updates preserve legacy number');
+denied(fn()=>$r->saveContact($a,1,'person','Anna Müller','','',['legacy_member_number'=>'OTHER']),'stale write rejected');
+denied(fn()=>(new Registry($db,'reader'))->saveContact($a,2,'person','Anna Müller','','',['legacy_member_number'=>'OTHER']),'member cannot edit aliases');
+denied(fn()=>$r->saveContact($a,2,'person','Anna Müller','','',['legacy_member_number'=>str_repeat('x',81)]),'invalid legacy rolls back');
+ok($r->contact($a)['version']===2,'invalid edit does not advance version');
+$b=$member('Beate Schröder','OLD-B');$f->createAnnualContribution($b,2026,'');ok(!$unresolved($pay('Jahresbeitrag','SCHRÖDER, BEATE')),'full bank payer name matches reordered and Unicode case');
+$c=$member('Clara Schmidt');$f->createAnnualContribution($c,2026,'');ok(!$unresolved($pay('Beitrag für Clara Schmidt')),'full name in purpose matches');
+$d=$member('Doris Meyer');$f->createAnnualContribution($d,2026,'');ok($unresolved($pay('Beitrag','Meyer')),'surname alone stays manual');ok($unresolved($pay('Beitrag','Doris Meyer','24')),'partial amount stays manual');
+$d2=$member('Doris Meyer');ok($unresolved($pay('Beitrag','Doris Meyer')),'namesake without open dues still blocks matching');
+$x=$member('Eva Fischer','DUP');$y=$member('Frieda Fischer','DUP');$f->createAnnualContribution($x,2026,'');ok($unresolved($pay('Beitrag DUP')),'duplicate legacy number stays manual');
+$z=$member('Greta Klein',$r->memberships($x)[0]['member_number']);ok($unresolved($pay($r->memberships($x)[0]['member_number'])),'legacy/current number collision stays manual');
+$h=$member('Hanna Peters');$f->createAnnualContribution($h,2026,'');$f->createAnnualContribution($h,2027,'');ok($unresolved($pay('Beitrag','Hanna Peters')),'multiple open years stay manual');
+$i=$member('Ida Weber','OLD-I');$ie=$f->createAnnualContribution($i,2026,'');ok(!$unresolved($pay('OLD-I','Doris Meyer')),'explicit number permits payment by another person');
+$j=$member('Julia Becker','OLD-J');$je=$f->createAnnualContribution($j,2026,'');ok($unresolved($pay($f->entry($je)['display_number'].' OLD-I')),'conflicting invoice and legacy number stays manual');
+$k=$member('Klara Weber');$f->createAnnualContribution($k,2026,'');$foreign=new Registry($db,'other');$fk=$foreign->saveContact(null,0,'person','Klara Weber','','',['legacy_member_number'=>'0017']);$foreign->addMembership($fk,'','aktiv','2026-01-01');ok(!$unresolved($pay('Beitrag','Klara Weber')),'other club names do not create conflicts');
+ok((\Kulturhus\Verein\Tests\MySqlFixture::foreignKeyErrors($db)[0]??false)===false,'foreign keys intact');
+echo "$n legacy matching checks passed; no mail or bank connection\n";

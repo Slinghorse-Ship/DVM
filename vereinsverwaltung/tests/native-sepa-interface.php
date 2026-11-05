@@ -1,0 +1,17 @@
+<?php declare(strict_types=1);
+require dirname(__DIR__,2).'/vendor/autoload.php';
+require __DIR__.'/native-document-interface.php';
+require __DIR__.'/support/sepa-native-contracts.php';
+$sepaFixture=ownSepaNativeContracts($db,$check);
+require __DIR__.'/support/sepa-native-current.php';
+$sepaCurrent=ownSepaNativeCurrent($db,$check,$sepaFixture,\Kulturhus\Native\TestSupport::config());
+require __DIR__.'/support/sepa-native-history.php';
+$sepaHistory=ownSepaNativeHistory($db,$check,$sepaFixture);
+require __DIR__.'/support/sepa-native-transport.php';
+$sepaTransport=ownSepaNativeTransport($db,$check,$sepaFixture,\Kulturhus\Native\TestSupport::config());
+require __DIR__.'/support/sepa-native-legacy.php';
+$sepaLegacy=ownSepaNativeLegacy($db,$check,$sepaFixture,\Kulturhus\Native\TestSupport::config());
+if(getenv('DVM_SEPA_INTERFACE_BROWSER')==='1')require __DIR__.'/support/sepa-native-browser-fixture.php';
+require __DIR__.'/support/sepa-native-large.php';
+$sepaLarge=ownSepaNativeLarge($db,$check,$sepaFixture);
+echo json_encode(['suite'=>'native-sepa-interface','checks'=>$n,'large_source'=>$sepaLarge,'external_actions'=>0],JSON_THROW_ON_ERROR)."\n";

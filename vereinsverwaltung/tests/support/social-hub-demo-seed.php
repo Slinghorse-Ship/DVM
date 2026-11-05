@@ -1,0 +1,13 @@
+<?php declare(strict_types=1);
+if(PHP_SAPI!=='cli')exit(1);
+require dirname(__DIR__,2).'/src/bootstrap.php';require dirname(__DIR__,2).'/native/bootstrap.php';
+use Kulturhus\Native\TestSupport;
+use Kulturhus\Native\Shared\{Db,SecretBox};
+use Kulturhus\Native\Integration\ManagerBridge;
+use Kulturhus\Native\Communication\Schema;
+$config=TestSupport::config();if(($config['label']??'')!=='integrated-manager')throw new RuntimeException('Own synthetic fixture required.');$db=TestSupport::db();Schema::install($db);$runtime=dirname(getenv('KH_NATIVE_TEST_CONFIG')).'/integrated-manager-runtime';
+$a=(new ManagerBridge($db,'manager-admin','native',static function(){if(PHP_SAPI!=='cli')throw new DomainException('CLI only');}))->access();$club=$a->club();
+$source=imagecreatefrompng($runtime.'/social-source.png');$thumb=imagecreatetruecolor(480,300);imagecopyresampled($thumb,$source,0,0,0,0,480,300,imagesx($source),imagesy($source));ob_start();imagepng($thumb);$png=ob_get_clean();unset($source,$thumb);
+for($i=0;$i<29;$i++){$channel=$i%2?'instagram':'facebook';$kind=$i%3===0?'reel':'post';$id=substr(hash('sha256',$club.':browser-contract:'.$i),0,32);$remote='browser_fixture_'.$i;$p=['remote_id'=>$remote,'kind'=>$kind,'caption'=>'Synthetischer Bibliotheksinhalt '.$i,'permalink'=>'','thumbnail'=>'https://scontent.synthetic.fbcdn.net/fixture.png','media_type'=>$kind==='reel'?'VIDEO':'IMAGE','like_count'=>null,'comments_count'=>null];Db::run($db,'INSERT INTO native_social_objects(club_id,id,channel,remote_id,kind,caption,created_at,payload_json,last_seen,thumbnail_blob,thumbnail_sha256) VALUES(?,?,?,?,?,?,UTC_TIMESTAMP(),?,UTC_TIMESTAMP(),?,?) ON DUPLICATE KEY UPDATE payload_json=VALUES(payload_json),thumbnail_blob=VALUES(thumbnail_blob),thumbnail_sha256=VALUES(thumbnail_sha256)',[$club,$id,$channel,$remote,$kind,$p['caption'],json_encode($p,JSON_THROW_ON_ERROR),$png,hash('sha256',$png)]);}
+$box=SecretBox::fromFile($runtime.'/private.key');$id=substr(hash('sha256',$club.':browser-inbox-fixture'),0,32);$p=['messages'=>[['id'=>'browser_message','text'=>'Private synthetische Browsernachricht','from_name'=>'Synthetische Person','incoming'=>true,'created_at'=>gmdate('Y-m-d H:i:s')]]];Db::run($db,'INSERT INTO native_social_inbox(club_id,id,channel,ciphertext,last_incoming,updated_at) VALUES(?,?,?, ?,UTC_TIMESTAMP(),UTC_TIMESTAMP()) ON DUPLICATE KEY UPDATE ciphertext=VALUES(ciphertext),last_incoming=VALUES(last_incoming),updated_at=VALUES(updated_at)',[$club,$id,'instagram',$box->seal('social-inbox:'.$club.':'.$id,$p)]);
+echo "Explicit synthetic library/inbox fixture ready; actual cached pixels; no provider connection or external action.\n";

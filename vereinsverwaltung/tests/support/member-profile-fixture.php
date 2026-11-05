@@ -1,0 +1,22 @@
+<?php declare(strict_types=1);
+require __DIR__.'/member-profile-environment.php';
+use Kulturhus\Verein\{Database,Registry,Settings};
+$db=\Kulturhus\Verein\Tests\MySqlFixture::existing($memberTestDatabase);Database::migrate($db);
+$club='member-profile-'.bin2hex(random_bytes(5));$actor=$club.'-admin';
+$db->prepare('INSERT INTO clubs VALUES(?,?)')->execute([$club,'Synthetic member profile regression']);
+$db->prepare("INSERT INTO actors(id,club_id,role,is_superuser) VALUES(?,?,'member',1)")->execute([$actor,$club]);
+$custom=bin2hex(random_bytes(16));
+(new Settings($db,$actor))->save('fields',['rows'=>[['id'=>$custom,'name'=>'Synthetic required reference','type'=>'text','required'=>true,'options'=>'']]],0);
+$registry=new Registry($db,$actor);$details=['phone'=>'01234 567890','birthday'=>'1961-02-03','notes'=>'Synthetic existing profile note','legacy_member_number'=>'SYN-OLD-44','custom_fields'=>[$custom=>'Synthetic original reference'],'custom_fields_version'=>1];
+$member=$registry->createMemberContact('person','Synthetic Current Member','current@example.invalid',"Testweg 4\n12345 Musterort",$details,['number'=>'SYN-44','status'=>'aktiv','start'=>'2015-03-04','family'=>'new','family_name'=>'Synthetic original family'],false);
+$family=$registry->family($member);
+$relative=$registry->createMemberContact('person','Synthetic Family Member','relative@example.invalid','Synthetic family address',$details,['number'=>'SYN-45','status'=>'aktiv','start'=>'2016-04-05','family'=>$family['id']],false);
+$organisation=$registry->saveContact(null,0,'organisation','Synthetic Supplier Contact','supplier@example.invalid','Synthetic supplier address',$details);
+$contact=$registry->saveContact(null,0,'person','Synthetic Prospective Member','prospective@example.invalid','Synthetic contact address',$details);
+$ownActor=$club.'-reader';$db->prepare("INSERT INTO actors(id,club_id,role,contact_id,is_superuser) VALUES(?,?,'member',?,0)")->execute([$ownActor,$club,$member]);
+if(!is_dir($memberTestSessions)&&!mkdir($memberTestSessions,0700,true)&&!is_dir($memberTestSessions))throw new RuntimeException('Cannot create local sessions.');
+$sessions=[];foreach(['admin'=>$actor,'own'=>$ownActor] as $key=>$identity){session_name('KH_VEREIN_DEMO');session_save_path($memberTestSessions);session_id(bin2hex(random_bytes(20)));session_start();$_SESSION=['actor'=>$identity,'csrf'=>bin2hex(random_bytes(32))];$sessions[$key]=session_id();session_write_close();}
+$run=$memberTestOutput.'/'.$club;if(!mkdir($run,0700,true))throw new RuntimeException('Cannot create private fixture directory.');
+$file=$run.'/fixture.json';
+file_put_contents($file,json_encode(['base'=>$memberTestBase,'club'=>$club,'actor'=>$actor,'sessions'=>$sessions,'member'=>$member,'relative'=>$relative,'organisation'=>$organisation,'contact'=>$contact,'family'=>$family['id'],'custom'=>$custom,'readback'=>__DIR__.'/member-profile-readback.php','project_hash'=>hash('sha256',strtolower(str_replace('\\','/',$memberTestRoot)))],JSON_THROW_ON_ERROR|JSON_PRETTY_PRINT));
+echo $file,"\n";

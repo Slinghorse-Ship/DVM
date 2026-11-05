@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "revision": 67,
+  "production_authorized": false,
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "atypical-income-r67-73980@1",
+          "group": "expense",
+          "target": "is.netIncome.incomeSharing.gain.silentAtypical",
+          "choices": [
+            "is.netIncome.incomeSharing.gain.silentAtypical",
+            "is.netIncome.incomeSharing.loss.atypPart"
+          ],
+          "sources": [
+            {
+              "code": "73980",
+              "semantic": {
+                "name": "Abgeführte Gewinnanteile (Soll) / ausgeglichene Verlustanteile (Haben) bei atypisch stiller Beteiligung",
+                "function": "",
+                "range_start": "73980",
+                "range_end": "73980",
+                "parent": null
+              },
+              "signature": "9ef5c988981a458d6677a95b1d5a4cdf244cb42b159cd303917f3b1daf36e748"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "atypical-income-r67-73980@1",
+          "group": "expense",
+          "target": "is.netIncome.incomeSharing.gain.silentAtypical",
+          "choices": [
+            "is.netIncome.incomeSharing.gain.silentAtypical",
+            "is.netIncome.incomeSharing.loss.atypPart"
+          ],
+          "sources": [
+            {
+              "code": "73980",
+              "semantic": {
+                "name": "Abgeführte Gewinnanteile (Soll) / ausgeglichene Verlustanteile (Haben) bei atypisch stiller Beteiligung",
+                "function": "",
+                "range_start": "73980",
+                "range_end": "73980",
+                "parent": null
+              },
+              "signature": "9ef5c988981a458d6677a95b1d5a4cdf244cb42b159cd303917f3b1daf36e748"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

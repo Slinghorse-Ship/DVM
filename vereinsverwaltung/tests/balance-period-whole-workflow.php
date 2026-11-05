@@ -1,0 +1,58 @@
+<?php declare(strict_types=1);
+// Reuse a persisted corrected two-period ledger, not a fabricated source packet.
+require __DIR__.'/balance-period-filing-workflow.php';
+use Kulturhus\Verein\{BalanceTaxFiling as WholeFiling,BalanceFilingRevision,Tests\MySqlFixture};
+$baseChecks=$checks;$checks=0;$before=MySqlFixture::rows($db,'balance_period_events');
+$wp=$profile;unset($wp['whole_business_name'],$wp['whole_book_standard']);$wp['tax_privileged']=false;$wp['business_name']='Synthetic whole club';
+$wr=['complete'=>true,'opening_adjustments'=>[],'current_adjustments'=>[],'asset_tax_plans'=>[],'capital_movements'=>[]];
+$wid=$f->createPeriod($pid,'complete_club_ledger');$wf=$tax->get($wid);$source=$f->sourceReport($wf);
+putenv('VEREIN_BALANCE_PERIODS=0');denied(fn()=>$f->createPeriod($pid,'complete_club_ledger'),'whole respects separate period gate');denied(fn()=>$f->sourceReport($wf),'disabled period cannot prepare fresh source');putenv('VEREIN_BALANCE_PERIODS=1');
+check($source['calculation']['annual_result_cents']===$l->report($pid)['calculation']['annual_result_cents'],'dated whole source includes every sphere');
+foreach(['reader','member','other'] as $actor)denied(fn()=>(new WholeFiling($db,$actor))->createPeriod($pid,'complete_club_ledger'),'whole create tenant/role '.$actor);
+$bad=$wf;$bad['form_data']['balance_preparation']['whole_source']['source']['opening'][0]['debit_cents']++;denied(fn()=>$f->sourceReport($bad),'retained whole snapshot tampering denied');
+denied(fn()=>$f->save($wid,1,array_replace($wp,['tax_privileged'=>true]),$mapping,$wr),'whole filing cannot become privileged');
+$f->save($wid,1,$wp,$mapping,$wr);
+$f->revision($wid,2,['status'=>'E','reason'=>'Synthetic first whole filing after internal correction','legal_basis'=>'','source_id'=>'','confirmed'=>true]);
+check($tax->validate($wid,3)['valid'],'dated nonprivileged whole workflow generates real XML');
+file_put_contents(__DIR__.'/balance-period-workflow-whole-first.xml',$tax->get($wid)['xml_data']);
+$html=$render($wid,'finance');check(str_contains($html,'01.07.2025 – 30.06.2026')&&str_contains($html,'Gesamter Verein · nicht steuerbegünstigt'),'whole UI exact dates and scope');
+denied(fn()=>$f->approve($wid,4,true),'whole needs board approval');$fb->approve($wid,4,true);
+check($tax->send($wid,5,'dummy','123456','SEND-TEST',true,true)['state']==='sent_test','whole simulated receipt persisted');$original=$tax->get($wid);
+// Tax capital is distinct from period profit and invalidates the exact prior approval.
+$am=$f->createPeriod($pid,'complete_club_ledger');$f->save($am,1,$wp,$mapping,$wr);
+$f->appendAdjustment($am,2,'current_adjustments','Synthetic capital contribution','cash','equity',1000);
+$preview=$f->previewValues($tax->get($am));$key=array_key_first($preview['capital_comparison']['sources']);
+check(!$preview['capital_comparison']['complete']&&$preview['tax']['annual_result_cents']===$source['calculation']['annual_result_cents'],'unreviewed capital is visible and not income');
+$changed=$tax->get($am)['form_data']['balance_preparation']['review'];unset($changed['year'],$changed['journal_sha256'],$changed['period']);$changed['complete']=true;
+$f->save($am,3,$wp,$mapping,$changed);denied(fn()=>$tax->validate($am,4),'unreviewed dated capital blocks validation');
+denied(fn()=>$f->capitalMovements($am,4,[$key=>['kind'=>'withdrawal','reason'=>'wrong side']]),'wrong capital side denied');
+$f->capitalMovements($am,4,[$key=>['kind'=>'contribution','reason'=>'Synthetic reviewed contribution']]);
+$changed=$tax->get($am)['form_data']['balance_preparation']['review'];unset($changed['year'],$changed['journal_sha256'],$changed['period']);$changed['complete']=true;
+$f->save($am,5,$wp,$mapping,$changed);$f->revision($am,6,['status'=>'B','reason'=>'Synthetic amended tax capital','legal_basis'=>'Synthetic checked amendment','source_id'=>$wid,'confirmed'=>true]);
+check($tax->validate($am,7)['valid'],'dated capital reaches real generator with correction identity');$fb->approve($am,8,true);
+check($tax->send($am,9,'dummy','123456','SEND-TEST',true,true)['state']==='sent_test','corrected whole receipt persisted');
+file_put_contents(__DIR__.'/balance-period-workflow-whole-correction.xml',$tax->get($am)['xml_data']);
+// Both periods end in 2026. Carry the confirmed correction, not 2025 by year arithmetic.
+$nextWhole=$f->createPeriod($pid2,'complete_club_ledger');
+check(array_column($f->carryForwardChoices(2026,$tax->get($nextWhole)['form_data']['balance_preparation']['period']),'id')===[$am],'carry choice hides superseded whole declaration');
+$html=$render($nextWhole,'finance');check(str_contains($html,'Vorherigen Abschluss übernehmen')&&str_contains($html,'01.07.2025 – 30.06.2026')&&!str_contains($html,'Test jetzt senden'),'carry screen precedes any invented zero preview');
+denied(fn()=>$f->carryForward($nextWhole,1,$id,true),'privileged subsidiary cannot carry into whole');
+denied(fn()=>$f->carryForward($nextWhole,1,$wid,true),'superseded whole tax values cannot become next-period opening');
+$f->carryForward($nextWhole,1,$am,true);$carried=$tax->get($nextWhole)['form_data']['balance_preparation'];
+check($carried['profile']['company']===$tax->get($am)['form_data']['balance_preparation']['profile']['company']&&!$carried['review']['complete'],'prior identity copied once and review reset');
+$nextReview=$carried['review'];unset($nextReview['year'],$nextReview['journal_sha256'],$nextReview['period']);$nextReview['complete']=true;$f->save($nextWhole,2,$wp,$mapping,$nextReview);
+$vv=$f->assertCurrent($tax->get($nextWhole));check($vv['accounts']['cash']['tax_opening_cents']-$vv['accounts']['cash']['book_opening_cents']===1000&&$vv['tax']['annual_result_cents']===0,'exact prior tax capital not repeated as current income');
+check((new BalanceFilingRevision($db,'finance'))->choices($tax->get($nextWhole))===[],'second short period is separate obligation');
+check($tax->validate($nextWhole,3)['valid'],'whole short successor uses exact retained prior values');$fb->approve($nextWhole,4,true);
+check($tax->send($nextWhole,5,'dummy','123456','SEND-TEST',true,true)['state']==='sent_test','whole short successor simulated receipt');
+file_put_contents(__DIR__.'/balance-period-workflow-whole-successor.xml',$tax->get($nextWhole)['xml_data']);
+check($original===$tax->get($wid)&&str_contains($render($wid,'reader'),'Übermittlungsprotokoll öffnen'),'historical whole approval and UI survive tax correction');
+check($before===MySqlFixture::rows($db,'balance_period_events'),'whole workflow never rewrites journal');
+// A subsequent original-journal correction must not rewrite historical filing figures.
+$originalHtml=$render($wid,'reader');$r=$l->report($pid);$proof=['kind'=>'error','reason'=>'Synthetic additional original cost','legal_basis'=>'Synthetic checked correction','confirmed'=>true,'entries'=>[['id'=>str_repeat('f',32),'date'=>'2026-06-30','description'=>'Synthetic later cost','evidence'=>'Synthetic document','lines'=>[['account'=>'expense','debit_cents'=>10,'credit_cents'=>0,'sphere'=>'4'],['account'=>'cash','debit_cents'=>0,'credit_cents'=>10,'sphere'=>'']]]]];
+$l->prepareClosingCorrection($pid,$r['version'],$r['closed_sha256'],$proof);$r=$l->report($pid);$l->confirmClosingCorrection($pid,$r['version'],$r['closed_sha256'],$r['correction_draft']['proof']['sha256'],true,'Synthetic reviewed later original');
+check($render($wid,'reader')===$originalHtml&&$tax->get($wid)===$original,'historic whole UI and source survive original journal correction');
+denied(fn()=>$f->assertCurrent($tax->get($nextWhole)),'changed predecessor blocks new sends without altering past receipt');
+putenv('VEREIN_MODE=production');denied(fn()=>$f->createPeriod($pid,'complete_club_ledger'),'whole period cannot leak into production');putenv('VEREIN_MODE=synthetic');
+check(MySqlFixture::foreignKeyErrors($db)===[],'whole workflow foreign keys intact');
+echo "$checks dated whole workflow checks passed plus $baseChecks subsidiary checks; simulated transport only\n";

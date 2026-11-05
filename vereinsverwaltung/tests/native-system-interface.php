@@ -1,0 +1,13 @@
+<?php declare(strict_types=1);
+ini_set('zend.exception_ignore_args','1');ob_start();require dirname(__DIR__).'/native/bootstrap.php';require dirname(__DIR__).'/src/bootstrap.php';require __DIR__.'/support/api-fixture.php';require __DIR__.'/support/original-database-hash.php';
+use Kulturhus\Native\{TestSupport};use Kulturhus\Native\Api\Factory as ApiFactory;use Kulturhus\Native\System\{Authority,Controller,PrivateFiles};
+$db=TestSupport::db();$cfg=TestSupport::config();if(($cfg['owner']??'')!=='isolated-native-ci'||($cfg['label']??'')!=='native-system-interface'||($cfg['host']??'')!=='127.0.0.1'||($cfg['port']??0)!==13371||!preg_match('/\Akh_native_[a-f0-9]{24}\z/D',$cfg['database']??'')||$db->query('SELECT DATABASE()')->fetchColumn()!==$cfg['database']||$db->query('SHOW TABLES')->fetchAll(PDO::FETCH_COLUMN)!==[])throw new RuntimeException('Exact fresh owned system interface database required.');
+$f=ownApiFixture($db);$n=0;$check=static function(bool$ok,string$why)use(&$n):void{if(!$ok)throw new RuntimeException($why);++$n;echo 'PASS '.$why.PHP_EOL;};$access=ApiFactory::session($db,$f['accounts']['admin']['token'])->access;$controller=new Controller($db,new Authority($db,$access),new PrivateFiles($f['root']),'own-system-ui-csrf');
+$_POST=['action'=>'system-task-save','csrf'=>'own-system-ui-csrf','task'=>'cache-cleanup','version'=>['0'],'interval'=>'15','enabled'=>'1'];$error='';try{$controller->action($_POST);}catch(DomainException$failure){$error=$failure->getMessage();}$html=$controller->render([],error:$error);$dom=new DOMDocument();@$dom->loadHTML('<?xml encoding="UTF-8">'.$html);$xp=new DOMXPath($dom);$replacement=$xp->query('//*[@data-system-task="cache-cleanup"]//input[@name="version"]');$shown=$replacement->length?$replacement->item(0)->getAttribute('value'):null;$original=$xp->query('//*[@data-system-original-field="version"]');
+echo json_encode(['suite'=>'system-interface-original-version','rejected_structured_version'=>true,'replacement_current_version'=>$shown,'original_retained'=>$original->length===1],JSON_THROW_ON_ERROR).PHP_EOL;
+$check($shown===null&&$original->length===1,'actual rejected structured system version is retained without substitution by the current editable version');$_POST=[];
+require __DIR__.'/support/system-interface-models.php';
+if(ob_get_level()>0)ob_end_flush();
+if(getenv('DVM_SYSTEM_INTERFACE_BROWSER')==='1')require __DIR__.'/support/system-interface-browser-fixture.php';
+if(ob_get_level()>0)ob_end_flush();
+echo json_encode(['suite'=>'native-system-interface','checks'=>$n,'external_actions'=>0],JSON_THROW_ON_ERROR).PHP_EOL;

@@ -1,0 +1,11 @@
+<?php declare(strict_types=1);
+$groupHistory=null;$groupHistoryError='';try{$groupHistory=$importService->groupHistoryPage($importRecord,$draft('group_history_page','1'));}catch(DomainException $failure){$groupHistoryError=$failure->getMessage();}
+if($groupHistoryError!==''):?><p class="error" role="alert"><?=e($bankEvidenceText($groupHistoryError))?></p><?php endif;
+if(!$groupHistory||!$groupHistory['total'])return;
+?>
+<section class="card" data-bank-group-history><h2><?=e($bankEvidenceText('Sammelbankzuordnungen'))?></h2>
+<?php foreach($groupHistory['rows']as$groupFirst):?><article class="bank-import-history" data-bank-group-link="<?=e($groupFirst['id'])?>"><strong><?=e($bankEvidenceText($groupFirst['released_at']?'Früheren Sammelbankbezug begründet gelöst':'Vorhandene Teilbewegungen gemeinsam belegt'))?></strong><?php $bankReasonOriginal($groupFirst['reason']);?><p class="muted"><?=e($groupFirst['created_at'])?> · <?=(int)$groupFirst['record_version']?></p>
+<?php if($groupFirst['released_at']):?><p><?=e($groupFirst['release_reason'])?></p><?php endif ?>
+<?php if(!$groupFirst['verified']):?><p class="error" role="alert"><?=e($bankEvidenceText('Das ursprüngliche Sammelbankoriginal ist nicht unverändert lesbar. Zuerst den gespeicherten Nachweis prüfen.'))?></p><?php endif ?>
+<a class="btn btn-outline theme-secondary" data-bank-group-history-original download data-navigation-native href="<?=e(url(array_replace($importContext,['import_group_original'=>$groupFirst['id']])))?>"><?=e($bankEvidenceText('Ursprünglichen Sammelbanknachweis herunterladen'))?></a><p class="muted">SHA-256: <?=e($groupFirst['original_sha256'])?></p></article><?php endforeach ?>
+<div class="filter-form"><p><?=(int)$groupHistory['page']?> / <?=(int)$groupHistory['pages']?> · <?=(int)$groupHistory['total']?></p><label><?=e($bankEvidenceText('Sammelbankverlaufsseite'))?><input class="form-control" name="group_history_page" inputmode="numeric" value="<?=e($draft('group_history_page',(string)$groupHistory['page']))?>"></label><button class="btn btn-outline theme-secondary" name="review_move" value="group-history-page" formnovalidate><?=e($bankEvidenceText('Sammelbankverlauf anzeigen'))?></button></div></section>

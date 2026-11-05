@@ -1,0 +1,14 @@
+<?php declare(strict_types=1);
+function ownInspectionInterfaceBrowser(PDO $db,array $data):array{
+ $cfg=\Kulturhus\Native\TestSupport::config();if(($cfg['label']??'')!=='native-hse-inspection-interface'||($cfg['owner']??'')!=='isolated-native-ci')throw new RuntimeException('Owned operational safety fixture required.');
+ $root=dirname(getenv('KH_NATIVE_TEST_CONFIG')).'/inspection-interface-'.$cfg['database'];mkdir($root,0700);foreach(['web','sessions','media']as$dir)mkdir($root.'/'.$dir,0700);foreach(['auth','private']as$name){file_put_contents($root.'/'.$name.'.key',random_bytes(32));chmod($root.'/'.$name.'.key',0600);}file_put_contents($root.'/features.json','{"periods":false}');chmod($root.'/features.json',0600);
+ putenv('KH_NATIVE_AUTH_KEY_FILE='.$root.'/auth.key');putenv('KH_NATIVE_PRIVATE_KEY_FILE='.$root.'/private.key');$auth=\Kulturhus\Native\Auth\Runtime::service($db);$accounts=[];$password='Owned complete list interface password 2026!';
+ foreach(['admin'=>'author','reader'=>'reader','member'=>'member','outsider'=>'outsider','foreign'=>'foreign']as$role=>$actor){$bridge=new \Kulturhus\Native\Integration\ManagerBridge($db,$actor,'native',static fn()=>null);$access=$bridge->access();$email=$actor.'@example.invalid';$invite=$auth->createInvitation(in_array($role,['reader','member','outsider'],true)?(new \Kulturhus\Native\Integration\ManagerBridge($db,'author','native',static fn()=>null))->access():$access,$bridge->nativeActorId(),$email);$auth->acceptInvitation($invite['token'],$password);$accounts[$role]=['email'=>$email,'actor'=>$actor];}
+ $fixture=['root'=>$root,'club'=>'measure-a','origins'=>[],'accounts'=>$accounts,'password'=>$password,'data'=>$data];
+ foreach(['front','direct']as$app){$socket=stream_socket_server('tcp://127.0.0.1:0');$port=(int)substr(strrchr(stream_socket_get_name($socket,false),':'),1);fclose($socket);$fixture['origins'][$app]='http://localhost:'.$port;}
+ $file=$root.'/fixture.json';file_put_contents($file,json_encode($fixture,JSON_THROW_ON_ERROR));chmod($file,0600);putenv('DVM_BALANCE_PRODUCTION_FIXTURE='.$file);$servers=[];
+ try{
+  foreach($fixture['origins']as$app=>$origin){$port=parse_url($origin,PHP_URL_PORT);$log=fopen($root.'/'.$app.'.log','wb');$p=proc_open([...\Kulturhus\Native\TestSupport::phpCommand(),'-S','127.0.0.1:'.$port,'-t',$root.'/web',__DIR__.'/balance-period-production-controller.php'],[0=>['pipe','r'],1=>$log,2=>$log],$pipes);if(!is_resource($p))throw new RuntimeException('Owned controller unavailable.');fclose($pipes[0]);$servers[]=[$p,$log];$ready=false;for($i=0;$i<100;$i++){$probe=@stream_socket_client('tcp://127.0.0.1:'.$port,$err,$message,.1);if($probe){fclose($probe);$ready=true;break;}usleep(20000);}if(!$ready)throw new RuntimeException('Owned controller not ready.');}
+  return ['input'=>$fixture,'servers'=>$servers];
+ }catch(Throwable $error){foreach($servers as[$p,$log]){proc_terminate($p);proc_close($p);fclose($log);}throw $error;}
+}

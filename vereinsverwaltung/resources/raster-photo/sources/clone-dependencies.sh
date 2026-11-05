@@ -1,0 +1,137 @@
+#/bin/bash
+set -e
+
+clone()
+{
+  local repo=$1
+  local commit=$2
+
+  echo ''
+  echo "Cloning $repo"
+
+  if [ -d "$repo" ]; then
+    cd $repo
+  else
+    git clone https://github.com/ImageMagick/$repo.git $repo
+
+    cd $repo
+    git remote add sshpush git@github.com:ImageMagick/$repo.git
+    git config remote.pushDefault sshpush
+  fi
+
+  git reset --hard
+  git checkout main
+  git pull origin main
+  git reset --hard $commit
+
+  cd ..
+}
+
+clone_dependencies()
+{
+  local platform=$1
+
+  if [ ! -d "Dependencies" ]; then
+    mkdir -p "Dependencies"
+  fi
+
+  cd "Dependencies"
+
+  clone 'aom' '689067b48df9548d25e37abaa618ebd4b6015c67'
+  clone 'brotli' '6225e7a93b6bcc1f3e3b267e9523a8eaea49eb5e'
+  clone 'bzip2' 'abffe764f875f71d051efb19d4c83139375f82d7'
+  clone 'de265' '5a0bf9f624d810de6af20e41ac3cfd92bf7de508'
+  clone 'exr' '60ff3e20b06690fdbe938e2134872e43640cf1cb'
+  clone 'ffi' '91982d4ac97b179dd1fb878caef2ed2847bc38b6'
+  clone 'freetype' '6cf8b1a08bdec1d41246f51bcd12e5a62c9845e2'
+  clone 'glib' 'ea0118ca0d408473d320b21262a1cdc6ce3e5f40'
+  clone 'heif' 'b8fbb502979530d5e4baa7d24d8c353c3d13d1cd'
+  clone 'highway' 'e1a586af5be6358bb983ff608f9678a622209ca3'
+  clone 'imath' '1ec391453dd33f3432018d3a266e3d177a705235'
+  clone 'jpeg-turbo' 'b91492930ceb23c0b5282e8b9fc21de54182d92e'
+  clone 'jpeg-xl' '8503118ff13ab8b11680296900da3361d6703dc1'
+  clone 'lcms' 'd261ab6fda30fd7578a2ce7ace5c0b2c7d3fc0b8'
+  clone 'lqr' 'a2e9e8b5b41bf0569f51482707a12d354a086f3a'
+  clone 'openjpeg' '5a52e8e0690da686ddb6e98310e7bb5190a9a7c5'
+  clone 'openjph' 'c1a1ffc1e3f90eb9397407f1f545a47e01390aef'
+  clone 'png' '88ee938ef91b0289339be463b29003f65d486210'
+  clone 'raw' '9f7613ef48877180225b9377c87b0f3a65a2ca8e'
+  clone 'tiff' '3021cd03440ba6954f8bdf2b7ad4557a36092cd8'
+  clone 'webp' 'b981ef267195cb12f2cb97e4dd23e12a1323a4ce'
+  clone 'xml' '3ba73c8312b7ac88adc1a2e62df13d0827e93a0f'
+  clone 'zlib' 'e42706934e4e7564d960031ae62ff29d918ee06d'
+  clone 'zstd' '4d5752ffeca8defb48ad744274f4f76b2866d71d'
+
+  if [ "$platform" = "wasm" ]; then
+    cd ..
+    return
+  fi
+
+  clone 'cairo' '4334da83d8f44abe5aab1a11956e3f8e6e58eac7'
+  clone 'croco' '178785cdc6faecad555a4e6fe4fda2b625046e8e'
+  clone 'fribidi' 'f62e4ce7160f0c9d70a6a448c83122c920370324'
+  clone 'gdk-pixbuf' '92a234886a0337480770ef93dc74ea920bf39ab3'
+  clone 'harfbuzz' 'b1dcf2b4cc1635fc6845101c4bc800e99dd9f1c2'
+  clone 'lzma' '131e9a49425f51b8dd8710c57fbaa527baed3989'
+  clone 'openh264' '5ed6416df5c4eb35e275f759792c9253c5f1f5f3'
+  clone 'pango' '0b1e4536e0005f3c36b523c17ea12322490efd45'
+  clone 'pixman' 'f7b55a8d3c39380724da9fbdef72ad70be800efc'
+  clone 'raqm' 'a699b8b7838acb4ac8d5891f42ecf3d84a00a9ad'
+  clone 'rsvg' '7415a6765db7554ba6f0f1b3dcb0877f36ff581b'
+  clone 'zip' '745377bdab21cf5e5fc19d0bbfcde93030d3af5e'
+
+  case "$platform" in
+    "" | windows) ;;
+    *) cd ..; return ;;
+  esac
+
+  clone 'jpeg-turbo-12' '9837071e8c0e5fba6daa03f31aba4416ff5eaf7c'
+  clone 'jpeg-turbo-16' 'd16d0839d655478b4d517ebe2aeabfecce8192d9'
+
+  cd ..
+}
+
+clone_optional_dependencies()
+{
+  local platform=$1
+
+  case "$platform" in
+    "" | windows) ;;
+    *) return ;;
+  esac
+
+  if [ ! -d "OptionalDependencies" ]; then
+    mkdir -p "OptionalDependencies"
+  fi
+
+  cd "OptionalDependencies"
+
+  clone 'fftw' '6d33fb83ae4f2014834b1f506b444916e9a19ef7'
+  clone 'flif' '2f4c78d6c88025de551d461a9981be2004b36beb'
+  clone 'jbig' 'c431166292d1590280b30a8edefee4d36c7a6219'
+
+  cd ..
+}
+
+clone_non_windows_dependencies()
+{
+  local platform=$1
+
+  if [ "$platform" = "wasm" ]; then
+    return
+  fi
+
+  if [ ! -d "NonWindowsDependencies" ]; then
+    mkdir -p "NonWindowsDependencies"
+  fi
+
+  cd "NonWindowsDependencies"
+
+  clone 'fontconfig' '943048d94dfa3d7d4a213f36f9ef7af988397cd4'
+
+  cd ..
+}
+
+clone_dependencies "$1"
+clone_optional_dependencies "$1"
+clone_non_windows_dependencies "$1"

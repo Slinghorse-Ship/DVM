@@ -1,0 +1,144 @@
+{
+  "schema": 1,
+  "revision": 53,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "securities-r53-001@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.securities",
+          "choices": [
+            "bs.ass.fixAss.fin.securities",
+            "bs.ass.fixAss.fin.securities.shares",
+            "bs.ass.fixAss.fin.securitiesOtherForeign",
+            "bs.ass.fixAss.fin.securities.partCertificate",
+            "bs.ass.fixAss.fin.securities.bonds",
+            "bs.ass.fixAss.fin.securities.convertBond",
+            "bs.ass.fixAss.fin.securities.mutInvestm",
+            "bs.ass.fixAss.fin.securities.warrants",
+            "bs.ass.fixAss.fin.securities.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "09000",
+              "semantic": {
+                "name": "Wertpapiere des Anlagevermögens",
+                "function": "",
+                "range_start": "09000",
+                "range_end": "09000",
+                "parent": null
+              },
+              "signature": "28423ebd708797cb820d06a51149a0694499e8b089fcd4068e81a46ff14e837b"
+            }
+          ]
+        },
+        {
+          "purpose": "securities-r53-002@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.securities.partCertificate",
+          "choices": [
+            "bs.ass.fixAss.fin.securities.partCertificate",
+            "bs.ass.fixAss.fin.securitiesOtherForeign",
+            "bs.ass.fixAss.fin.securities.shares"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "09100",
+              "semantic": {
+                "name": "Wertpapiere mit Gewinnbeteiligungsansprüchen, die dem Teileinkünfteverfahren unterliegen",
+                "function": "",
+                "range_start": "09100",
+                "range_end": "09100",
+                "parent": null
+              },
+              "signature": "c82ac5aa23089d178f437fdf8e805a005ce11754c8f963a458fc56560869efd5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "securities-r53-001@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.securities",
+          "choices": [
+            "bs.ass.fixAss.fin.securities",
+            "bs.ass.fixAss.fin.securities.shares",
+            "bs.ass.fixAss.fin.securitiesOtherForeign",
+            "bs.ass.fixAss.fin.securities.partCertificate",
+            "bs.ass.fixAss.fin.securities.bonds",
+            "bs.ass.fixAss.fin.securities.convertBond",
+            "bs.ass.fixAss.fin.securities.mutInvestm",
+            "bs.ass.fixAss.fin.securities.warrants",
+            "bs.ass.fixAss.fin.securities.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "09000",
+              "semantic": {
+                "name": "Wertpapiere des Anlagevermögens",
+                "function": "",
+                "range_start": "09000",
+                "range_end": "09000",
+                "parent": null
+              },
+              "signature": "28423ebd708797cb820d06a51149a0694499e8b089fcd4068e81a46ff14e837b"
+            }
+          ]
+        },
+        {
+          "purpose": "securities-r53-002@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.securities.partCertificate",
+          "choices": [
+            "bs.ass.fixAss.fin.securities.partCertificate",
+            "bs.ass.fixAss.fin.securitiesOtherForeign",
+            "bs.ass.fixAss.fin.securities.shares"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "09100",
+              "semantic": {
+                "name": "Wertpapiere mit Gewinnbeteiligungsansprüchen, die dem Teileinkünfteverfahren unterliegen",
+                "function": "",
+                "range_start": "09100",
+                "range_end": "09100",
+                "parent": null
+              },
+              "signature": "c82ac5aa23089d178f437fdf8e805a005ce11754c8f963a458fc56560869efd5"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

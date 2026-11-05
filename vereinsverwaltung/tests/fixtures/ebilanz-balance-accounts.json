@@ -1,0 +1,450 @@
+[
+  {
+    "codes": [
+      "10010",
+      "10020",
+      "10030",
+      "10040",
+      "10050",
+      "10060",
+      "10070",
+      "10080",
+      "10090",
+      "10100",
+      "10110",
+      "10120",
+      "10130",
+      "10140",
+      "10150",
+      "10160",
+      "10170",
+      "10180",
+      "10190",
+      "10200",
+      "10210",
+      "10220",
+      "10230",
+      "10240",
+      "10250",
+      "10260",
+      "10270",
+      "10280",
+      "10290",
+      "10300",
+      "10310",
+      "10320",
+      "10330",
+      "10340",
+      "10350",
+      "10360",
+      "10370",
+      "10380",
+      "10390"
+    ],
+    "group": "inventory",
+    "target": "bs.ass.currAss.inventory.material",
+    "source_range": {
+      "start": "10000",
+      "end": "10399",
+      "name": "Roh-, Hilfs- und Betriebsstoffe (Bestand)"
+    }
+  },
+  {
+    "codes": [
+      "10410",
+      "10420",
+      "10430",
+      "10440",
+      "10450",
+      "10460",
+      "10470",
+      "10480",
+      "10490"
+    ],
+    "group": "inventory",
+    "target": "bs.ass.currAss.inventory.inProgress",
+    "source_range": {
+      "start": "10400",
+      "end": "10499",
+      "name": "Unfertige Erzeugnisse, unfertige Leistungen (Bestand)"
+    }
+  },
+  {
+    "codes": [
+      "10510",
+      "10520",
+      "10530",
+      "10540",
+      "10550",
+      "10560",
+      "10570",
+      "10580",
+      "10590",
+      "10600",
+      "10610",
+      "10620",
+      "10630",
+      "10640",
+      "10650",
+      "10660",
+      "10670",
+      "10680",
+      "10690",
+      "10700",
+      "10710",
+      "10720",
+      "10730",
+      "10740",
+      "10750",
+      "10760",
+      "10770",
+      "10780",
+      "10790"
+    ],
+    "group": "inventory",
+    "target": "bs.ass.currAss.inventory.inProgress.goods",
+    "source_range": {
+      "start": "10500",
+      "end": "10799",
+      "name": "Unfertige Erzeugnisse (Bestand)"
+    }
+  },
+  {
+    "codes": [
+      "10810",
+      "10820",
+      "10830",
+      "10840",
+      "10850",
+      "10860",
+      "10870",
+      "10880",
+      "10890"
+    ],
+    "group": "inventory",
+    "target": "bs.ass.currAss.inventory.inProgress.services",
+    "source_range": {
+      "start": "10800",
+      "end": "10899",
+      "name": "Unfertige Leistungen (Bestand)"
+    }
+  },
+  {
+    "codes": [
+      "11010",
+      "11020",
+      "11030",
+      "11040",
+      "11050",
+      "11060",
+      "11070",
+      "11080",
+      "11090"
+    ],
+    "group": "inventory",
+    "target": "bs.ass.currAss.inventory.finishedAndMerch",
+    "source_range": {
+      "start": "11000",
+      "end": "11099",
+      "name": "Fertige Erzeugnisse und Waren (Bestand)"
+    }
+  },
+  {
+    "codes": [
+      "11110",
+      "11120",
+      "11130",
+      "11140",
+      "11150",
+      "11160",
+      "11170",
+      "11180",
+      "11190",
+      "11200",
+      "11210",
+      "11220",
+      "11230",
+      "11240",
+      "11250",
+      "11260",
+      "11270",
+      "11280",
+      "11290",
+      "11300",
+      "11310",
+      "11320",
+      "11330",
+      "11340",
+      "11350",
+      "11360",
+      "11370",
+      "11380",
+      "11390"
+    ],
+    "group": "inventory",
+    "target": "bs.ass.currAss.inventory.finishedAndMerch.goods",
+    "source_range": {
+      "start": "11100",
+      "end": "11399",
+      "name": "Fertige Erzeugnisse (Bestand)"
+    }
+  },
+  {
+    "codes": [
+      "11410",
+      "11420",
+      "11430",
+      "11440",
+      "11450",
+      "11460",
+      "11470",
+      "11480",
+      "11490",
+      "11500",
+      "11510",
+      "11520",
+      "11530",
+      "11540",
+      "11550",
+      "11560",
+      "11570",
+      "11580",
+      "11590"
+    ],
+    "group": "inventory",
+    "target": "bs.ass.currAss.inventory.finishedAndMerch.merchandise",
+    "source_range": {
+      "start": "11400",
+      "end": "11599",
+      "name": "Waren (Bestand)"
+    }
+  },
+  {
+    "codes": [
+      "12500",
+      "12510",
+      "12520"
+    ],
+    "group": "receivables",
+    "target": "bs.ass.currAss.receiv.trade.shareholders"
+  },
+  {
+    "codes": [
+      "13010",
+      "13020",
+      "13500",
+      "13510",
+      "13520",
+      "13600",
+      "13610",
+      "13620"
+    ],
+    "group": "other_assets",
+    "target": "bs.ass.currAss.receiv.other.other"
+  },
+  {
+    "codes": [
+      "13070",
+      "13080",
+      "13090",
+      "13300",
+      "13310",
+      "13320"
+    ],
+    "group": "other_assets",
+    "target": "bs.ass.currAss.receiv.other.shareholders"
+  },
+  {
+    "codes": [
+      "13100",
+      "13110",
+      "13120",
+      "13200",
+      "13210",
+      "13220"
+    ],
+    "group": "other_assets",
+    "target": "bs.ass.currAss.receiv.other.bodies"
+  },
+  {
+    "codes": [
+      "13400",
+      "13410",
+      "13420"
+    ],
+    "group": "other_assets",
+    "target": "bs.ass.currAss.receiv.other.employees"
+  },
+  {
+    "codes": [
+      "13640",
+      "13670",
+      "14690"
+    ],
+    "group": "other_assets",
+    "target": "bs.ass.currAss.receiv.other.otherTaxRec"
+  },
+  {
+    "codes": [
+      "13650"
+    ],
+    "group": "other_assets",
+    "target": "bs.ass.currAss.receiv.other.tradeTaxOverpayment"
+  },
+  {
+    "codes": [
+      "13660"
+    ],
+    "group": "other_assets",
+    "target": "bs.ass.currAss.receiv.other.corpTaxOverpayment"
+  },
+  {
+    "codes": [
+      "13690"
+    ],
+    "group": "other_assets",
+    "target": "bs.ass.currAss.receiv.other.socInsur"
+  },
+  {
+    "codes": [
+      "13910"
+    ],
+    "group": "other_assets",
+    "target": "bs.ass.currAss.receiv.other.jointWork"
+  },
+  {
+    "codes": [
+      "30350"
+    ],
+    "group": "provisions",
+    "target": "bs.eqLiab.accruals.tax.gewst"
+  },
+  {
+    "codes": [
+      "30400"
+    ],
+    "group": "provisions",
+    "target": "bs.eqLiab.accruals.tax.kst"
+  },
+  {
+    "codes": [
+      "30900"
+    ],
+    "group": "provisions",
+    "target": "bs.eqLiab.accruals.other.guarantees"
+  },
+  {
+    "codes": [
+      "30960"
+    ],
+    "group": "provisions",
+    "target": "bs.eqLiab.accruals.other.businessRecordsRetension"
+  },
+  {
+    "codes": [
+      "31510",
+      "31520",
+      "31530",
+      "31800",
+      "31810",
+      "31820",
+      "31830",
+      "32100"
+    ],
+    "group": "liabilities",
+    "target": "bs.eqLiab.liab.bank.other",
+    "requires_review": true
+  },
+  {
+    "codes": [
+      "33400",
+      "33410",
+      "33420",
+      "33430"
+    ],
+    "group": "liabilities",
+    "target": "bs.eqLiab.liab.trade.shareholders"
+  },
+  {
+    "codes": [
+      "34910"
+    ],
+    "group": "liabilities",
+    "target": "bs.eqLiab.liab.statutoryBenefits.commitments"
+  },
+  {
+    "codes": [
+      "34930"
+    ],
+    "group": "liabilities",
+    "target": "bs.eqLiab.liab.conditionalRepayableDonations"
+  },
+  {
+    "codes": [
+      "35010",
+      "35020",
+      "35030",
+      "35500",
+      "35510",
+      "35520",
+      "35530",
+      "35600",
+      "35610",
+      "35620",
+      "35630",
+      "35700",
+      "36100",
+      "37860"
+    ],
+    "group": "liabilities",
+    "target": "bs.eqLiab.liab.other.other"
+  },
+  {
+    "codes": [
+      "35100",
+      "35110",
+      "35120",
+      "35130",
+      "35190",
+      "36400",
+      "36410",
+      "36420",
+      "36430"
+    ],
+    "group": "liabilities",
+    "target": "bs.eqLiab.liab.other.shareholders"
+  },
+  {
+    "codes": [
+      "35400",
+      "35410",
+      "35420",
+      "35430"
+    ],
+    "group": "liabilities",
+    "target": "bs.eqLiab.liab.other.profitPartLoans"
+  },
+  {
+    "codes": [
+      "37200",
+      "37250",
+      "37700",
+      "37710",
+      "37720",
+      "37730"
+    ],
+    "group": "liabilities",
+    "target": "bs.eqLiab.liab.other.employees"
+  },
+  {
+    "codes": [
+      "37400",
+      "37410",
+      "37420",
+      "37430",
+      "37590"
+    ],
+    "group": "liabilities",
+    "target": "bs.eqLiab.liab.other.thereoffSocSec"
+  }
+]

@@ -1,0 +1,12 @@
+<?php declare(strict_types=1);
+require_once __DIR__.'/../../src/Documents/InterfaceText.php';$documentText=\Kulturhus\Verein\Documents\InterfaceText::text(...);$documentFormat=\Kulturhus\Verein\Documents\InterfaceText::format(...);$trashFilters=scalarFields($_GET,['q','folder','kind','source_type','source_id','scope']);$trashFilters['state']='trash';$trashFilters['recursive']=input($_GET,'recursive','1');$trashPage=$documentLibrary->page($trashFilters,(int)input($_GET,'page','1'),6);$trashRows=$trashPage['rows']; ?>
+<section class="card"><h2><?= e($documentText('Papierkorb')) ?></h2><p><?= e($documentText('Gelöschte Eingangsrechnungen sind hier wiederherstellbar.')) ?></p>
+<?php if(!$trashRows): ?><p><?= e($documentText('Der Papierkorb ist leer.')) ?></p><?php else: ?>
+<div class="table-scroll"><table class="table"><thead><tr><th><?= e($documentText('Rechnung')) ?></th><th><?= e($documentText('Datum')) ?></th><th><?= e($documentText('Aktion')) ?></th></tr></thead><tbody>
+<?php foreach($trashRows as $trash): ?><tr data-document-summary><td><?= e($trash['title']) ?><small><?= e($trash['name']) ?></small></td><td><?= dateDe($trash['document_date']) ?></td><td>
+<?php if($documents->canScope('finance',true)): ?><form method="post" data-confirm="<?= e($documentText('Diese Rechnung wiederherstellen?')) ?>">
+<?= csrf().hidden('action','document-receipt-restore').hidden('doc',$trash['id']).hidden('version',$trash['version']) ?><button class="btn btn-outline theme-secondary secondary"><?= e($documentText('Wiederherstellen')) ?></button></form>
+<?php $deleteReceipt=$trash;$deleteReturn='documents';require __DIR__.'/document-delete.php';endif ?>
+</td></tr><?php endforeach ?></tbody></table></div><?php endif ?></section>
+
+<nav class="card actions" aria-label="<?= e($documentText('Papierkorbseiten')) ?>"><span><?= e($documentFormat('Dokumentseite {page} von {pages} · {count} Dokumente',['page'=>$trashPage['page'],'pages'=>$trashPage['pages'],'count'=>$trashPage['total']])) ?></span><?php if($trashPage['page']>1): ?><a class="btn btn-outline theme-secondary" href="<?= e(url(['view'=>'documents']+$trashFilters+['page'=>$trashPage['page']-1])) ?>"><?= e($documentText('Vorherige')) ?></a><?php endif;if($trashPage['page']<$trashPage['pages']): ?><a class="btn btn-outline theme-secondary" href="<?= e(url(['view'=>'documents']+$trashFilters+['page'=>$trashPage['page']+1])) ?>"><?= e($documentText('Nächste')) ?></a><?php endif ?></nav>

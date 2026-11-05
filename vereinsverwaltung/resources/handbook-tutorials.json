@@ -1,0 +1,546 @@
+[
+  {
+    "id": "start",
+    "chapter": 1,
+    "title": "Im Vereinsmanager zurechtfinden",
+    "path": "Start → Übersicht",
+    "scenes": [
+      {
+        "title": "Eine Aufgabe finden",
+        "figure": "menue",
+        "text": "Willkommen im Vereinsmanager. Klicke links in Funktion finden und schreibe zum Beispiel Rechnung oder Bilder. Wähle dann den passenden Menüpunkt. Auf dem Smartphone öffnest du zuerst das Menü. Die Suche ändert keine gespeicherten Daten.",
+        "start": 0.0,
+        "duration": 20.465
+      },
+      {
+        "title": "Direkt zur richtigen Maske",
+        "figure": "dashboard",
+        "text": "Auf der Startseite findest du häufige Aufgaben. Dokumente ablegen öffnet die Ablage. Website bearbeiten öffnet die Redaktion. Diese Links führen zu den Formularen. Sie speichern, versenden oder veröffentlichen noch nichts.",
+        "start": 20.465,
+        "duration": 20.649
+      },
+      {
+        "title": "So arbeitest du sicher weiter",
+        "text": "Lies zuerst die Überschrift der geöffneten Seite. Nach einer Eingabe wartest du beim Speichern auf die Rückmeldung. Ein Entwurf ist eine vorbereitete Fassung. Eine Vorschau zeigt das Ergebnis. Versenden oder Veröffentlichen sind eigene Aktionen. Die genaue Schrittfolge zu jedem Menüpunkt steht im Handbuch. Halte das Video jederzeit an und probiere einen Schritt in Ruhe aus.",
+        "start": 41.114,
+        "duration": 31.036
+      }
+    ],
+    "file": "video-start.mp4",
+    "poster": "video-start.png",
+    "subtitles": "video-start.vtt",
+    "duration": 72.15
+  },
+  {
+    "id": "mitglied",
+    "chapter": 2,
+    "title": "Ein Mitglied mit Eintritt und Familie anlegen",
+    "path": "Mitglieder & Kontakte → Mitglieder → Aktuelle Mitglieder",
+    "scenes": [
+      {
+        "title": "Erst suchen, dann anlegen",
+        "text": "Öffne links Mitglieder und Kontakte und darunter Mitglieder. Wähle oben Alle Mitglieder und suche zuerst nach der Person. Prüfe auch ehemalige Mitglieder und vorhandene Kontakte. Gibt es schon ein Profil, ergänze dort die Mitgliedschaft. Lege dieselbe Person nicht ein zweites Mal an. In dieser Anleitung sind alle Namen frei erfunden.",
+        "start": 0.0,
+        "duration": 28.053
+      },
+      {
+        "title": "Personendaten eintragen",
+        "figure": "member-stammdaten",
+        "text": "Trage beim neuen Mitglied den vollständigen Namen dieser einen Person ein. Name, Telefon, E-Mail und Anschrift stehen oben. Öffne Weitere persönliche Angaben für Geburtstag, alte Mitgliedsnummer und zusätzliche Vereinsangaben. Eine gemeinsame Familienadresse ist erlaubt. Jedes Familienmitglied behält trotzdem sein eigenes Profil. Wenn ein erforderliches Feld fehlt, wird es beim Speichern markiert.",
+        "start": 28.053,
+        "duration": 34.652
+      },
+      {
+        "title": "Den bekannten Eintritt angeben",
+        "figure": "member-eintritt",
+        "text": "Wähle bei Datumsgenauigkeit, ob du den genauen Eintrittstag oder nur das Eintrittsjahr kennst. Bei nur bekanntem Jahr trägst du ausschließlich dieses Jahr ein. Erfinde keinen Tag. So bleiben spätere Jubiläumsangaben nachvollziehbar.",
+        "start": 62.705,
+        "duration": 20.413
+      },
+      {
+        "title": "Familie und Zugang bewusst wählen",
+        "figure": "member-familie",
+        "text": "Wähle Einzelmitglied, eine vorhandene Familie oder eine neue Familie. Ein neuer Familienname ist nur bei einer neuen Familie nötig. Öffne Website-Zugang und Zugangsmail. Vorausgewählt ist Konto anlegen, keine Mail senden. Wähle eine Zugangsmail nur, wenn die echte Einladung gewünscht ist. Speichere nach der Prüfung und kontrolliere im Profil Mitgliedschaft, Familie und Beitragszahler.",
+        "start": 83.118,
+        "duration": 34.187
+      }
+    ],
+    "file": "video-mitglied.mp4",
+    "poster": "video-mitglied.png",
+    "subtitles": "video-mitglied.vtt",
+    "duration": 117.305
+  },
+  {
+    "id": "import",
+    "chapter": 4,
+    "title": "Eine Mitgliederdatei zur Vorschau laden",
+    "path": "Mitglieder & Kontakte → Mitglieder → Excelimport",
+    "scenes": [
+      {
+        "title": "Die Datei vorbereiten",
+        "text": "Öffne links Mitglieder und Kontakte und darunter Mitglieder. Klicke oben auf Excelimport. Verwende eine Excel- oder CSV-Datei mit einer Person pro Zeile. Vorhandene Mitgliedsnummern und alte Nummern gehören in getrennte Spalten. Hebe deine Originaldatei auf. Der Upload beginnt nach der Dateiauswahl; dadurch werden noch keine Mitglieder übernommen.",
+        "start": 0.0,
+        "duration": 29.648
+      },
+      {
+        "title": "Spalten zuordnen",
+        "figure": "member-import",
+        "text": "Wähle bei Excel zuerst das richtige Tabellenblatt und die Kopfzeile. Bei Spalten zuordnen bestimmst du, welche Dateispalte zum Namen, zur aktuellen Nummer und zur alten Nummer gehört. Nicht übernehmen lässt ein Feld aus. Kontrolliere auch Eintritt, Austritt und E-Mail. Verwechsle ein Eintrittsjahr nicht mit einem vollständigen Datum.",
+        "start": 29.648,
+        "duration": 28.374
+      },
+      {
+        "title": "Vor der Übernahme alle Zeilen prüfen",
+        "text": "Öffne danach die Vorschau. Lies neue, vorhandene und unklare Einträge. Gemeinsame Familien-E-Mails sind kein Grund zum Zusammenlegen. Kläre doppelte Nummern und unverständliche Datumswerte. Erst die ausdrücklich bestätigte Übernahme verändert den Bestand. Kontrolliere anschließend mehrere Profile und ihre Nummern. Die ausführliche Anleitung beschreibt die einzelnen Vorschauzustände.",
+        "start": 58.022,
+        "duration": 32.691
+      }
+    ],
+    "file": "video-import.mp4",
+    "poster": "video-import.png",
+    "subtitles": "video-import.vtt",
+    "duration": 90.713
+  },
+  {
+    "id": "dokumente",
+    "chapter": 11,
+    "title": "Zehn Dateien auf zwei Ziele verteilen",
+    "path": "Organisation → Dokumente & Nachweise → Datei hochladen",
+    "scenes": [
+      {
+        "title": "Was ist ein Ablageziel?",
+        "text": "Ein Ablageziel ist ein konkreter Vorgang, zum Beispiel eine Rechnung oder eine Person. Ein Ordner sortiert die Dateien. Die Zuordnung sorgt dafür, dass du ein Dokument auch beim passenden Vorgang findest. Wir verteilen jetzt fünf Dateien auf die Rechnung und fünf auf ein Mitglied.",
+        "start": 0.0,
+        "duration": 23.446
+      },
+      {
+        "title": "Ziele und nächste Auswahl",
+        "figure": "dokument-ziel",
+        "text": "Wähle die Rechnung als Ziel eins. Neue Dateien ablegen bei bestimmt das Ziel der nächsten Dateiauswahl. Lade die ersten fünf Dateien. Über Weiteres Ablageziel ergänzt du die Person als Ziel zwei. Wähle jetzt Ziel zwei für die nächsten fünf Dateien. Bereits vorhandene Dateien behalten ihr bisheriges Ziel.",
+        "start": 23.446,
+        "duration": 26.322
+      },
+      {
+        "title": "Jede Datei einzeln prüfen",
+        "figure": "dokument-dateien",
+        "text": "Jede Datei erhält einen eigenen Titel, ein Dokumentdatum und ein Ablageziel. Ersetze unverständliche Dateinamen durch klare Titel. Trage das Datum auf der jeweiligen Unterlage ein. Gehört eine Datei zum anderen Vorgang, ändere nur ihr Ablageziel. Das Hochladen allein schließt die Ablage noch nicht ab.",
+        "start": 49.768,
+        "duration": 26.692
+      },
+      {
+        "title": "Die Aufteilung bestätigen",
+        "figure": "dokument-bestaetigung",
+        "text": "Klicke Zuordnung prüfen und speichern. Die Bestätigung zeigt die Dateien nach Ziel getrennt. Es müssen fünf Dateien unter der Rechnung und fünf unter dem Mitglied stehen. Lies auch ihre Titel und Daten. Bei einem Fehler gehe zurück zur Bearbeitung. Erst wenn die Aufteilung stimmt, bestätigst du alle angezeigten Zuordnungen.",
+        "start": 76.46,
+        "duration": 27.397
+      },
+      {
+        "title": "Später nur eine Datei korrigieren",
+        "text": "Öffne später den Dokumenttitel in der Ablage. Unter Titel, Datum und Ablageziel ändern korrigierst du diese eine Datei. Gib einen Änderungsgrund an und speichere. Die übrigen Dateien des früheren Sammeluploads bleiben unverändert. Ein Rechnungs-PDF hochzuladen ist übrigens keine Zahlungsbuchung.",
+        "start": 103.857,
+        "duration": 25.545
+      }
+    ],
+    "file": "video-dokumente.mp4",
+    "poster": "video-dokumente.png",
+    "subtitles": "video-dokumente.vtt",
+    "duration": 129.402
+  },
+  {
+    "id": "newsletter",
+    "chapter": 18,
+    "title": "Einen Newsletter gestalten und prüfen",
+    "path": "Website → Newsletter & Öffentlichkeit → Newsletter",
+    "scenes": [
+      {
+        "title": "Mit dem Betreff beginnen",
+        "figure": "newsletter-betreff",
+        "text": "Öffne links Website und darunter Newsletter und Öffentlichkeit. Wähle oben Newsletter und suche zuerst nach einem vorhandenen Entwurf. Mit Neu anlegen beginnst du eine neue Ausgabe. Der Betreff ist die Überschrift, die Empfänger später im Postfach sehen. Darunter beginnt der Baukasten. Alle Beispiele in diesem Video sind erfunden.",
+        "start": 0.0,
+        "duration": 27.67
+      },
+      {
+        "title": "Den Text direkt bearbeiten",
+        "figure": "newsletter-text",
+        "text": "Klicke in den Text eines Bausteins und schreibe. Hoch und Runter verschieben diesen Abschnitt. Kopie erstellt einen weiteren Abschnitt mit gleichem Inhalt. Löschen entfernt genau den ausgewählten Baustein. Mit den weiteren Knöpfen änderst du Schriftgröße, Ausrichtung und Farbe. Verwende gut lesbare Schrift.",
+        "start": 27.67,
+        "duration": 26.535
+      },
+      {
+        "title": "Bilder und Veranstaltungen ergänzen",
+        "figure": "newsletter-bausteine",
+        "text": "Unter Bausteine ergänzt du Text, Überschriften, Bilder, Schaltflächen und Trennlinien. Bei Bild wählst du eine Datei und wartest auf die Übertragung. Ergänze die Bildbeschreibung. Eine kommende Veranstaltung lässt sich aus der Auswahl einsetzen. Prüfe anschließend Termin, Ort und Link. Der eingefügte Abschnitt muss vor dem Versand aktuell sein.",
+        "start": 54.205,
+        "duration": 30.824
+      },
+      {
+        "title": "Auch die Handyansicht prüfen",
+        "figure": "newsletter-vorschau",
+        "text": "Computer und Handy ändern die Vorschau-Breite. Lies die Mail in beiden Ansichten. Vollständige Mail-Vorschau öffnet eine Ansicht ohne Bearbeitungsknöpfe. Vorschau schließen bringt dich zurück. Korrigiere gefundene Fehler und speichere den Entwurf.",
+        "start": 85.029,
+        "duration": 21.214
+      },
+      {
+        "title": "Speichern, testen, dann einplanen",
+        "figure": "newsletter-speichern",
+        "text": "Wähle die passende Zielgruppe. Klicke nach jeder Änderung zuerst Entwurf speichern. Testmail und Versand verwenden die gespeicherte Fassung. Trage bei Test an deine Probeadresse ein und kontrolliere die angekommene Mail. Erst danach beauftragst du mit Versand einplanen die echte Ausgabe. Hier in der Schulungsumgebung ist der Versand gesperrt. Wir lösen keinen Versand aus.",
+        "start": 106.243,
+        "duration": 31.005
+      }
+    ],
+    "file": "video-newsletter.mp4",
+    "poster": "video-newsletter.png",
+    "subtitles": "video-newsletter.vtt",
+    "duration": 137.248
+  },
+  {
+    "id": "galerie",
+    "chapter": 17,
+    "title": "Fotos und Albumreihenfolge verwalten",
+    "path": "Website → Seiten & Programm → Fotogalerie",
+    "scenes": [
+      {
+        "title": "Das richtige Album öffnen",
+        "text": "Öffne links Website und darunter Seiten und Programm. Wähle oben Fotogalerie. Suche das gewünschte Album und wähle Bearbeiten. Für ein neues Album nutze Neu anlegen, gib einen Titel ein und speichere es zuerst. Prüfe die Veröffentlichungseinstellung: In einem öffentlichen Album können neue Bilder sofort sichtbar werden.",
+        "start": 0.0,
+        "duration": 27.371
+      },
+      {
+        "title": "Fotos ohne zusätzlichen Uploadknopf",
+        "figure": "galerie-upload",
+        "text": "Klicke auf Bilder hier hineinziehen oder auswählen. Wähle die Bilddateien im Dateifenster oder ziehe sie aus einem Ordner auf das Feld. Die Übertragung beginnt automatisch. Warte auf die fertigen Bilder und die Rückmeldung. Wiederhole bei einem Fehler nur die fehlgeschlagenen Bilder. Bildangaben und die Reihenfolge einzelner Fotos bearbeitest du direkt am jeweiligen Foto.",
+        "start": 27.371,
+        "duration": 30.023
+      },
+      {
+        "title": "Ganze Alben umsortieren",
+        "figure": "galerie-sortieren",
+        "text": "Gehe zurück zur Albumliste. Album nach oben und Album nach unten verschieben das ganze Album. Sie verändern nicht die Reihenfolge seiner Fotos. Kontrolliere die gewünschte Folge anschließend auf der öffentlichen Galerie. Zum Ändern eines einzelnen Fotos öffnest du dagegen das Album und dort Bildangaben und Reihenfolge.",
+        "start": 57.394,
+        "duration": 25.562
+      }
+    ],
+    "file": "video-galerie.mp4",
+    "poster": "video-galerie.png",
+    "subtitles": "video-galerie.vtt",
+    "duration": 82.956
+  },
+  {
+    "id": "gema",
+    "chapter": 14,
+    "title": "GEMA erledigen, ohne alles doppelt einzugeben",
+    "path": "Organisation → GEMA",
+    "scenes": [
+      {
+        "title": "Ein Veranstaltungsvorgang",
+        "text": "Öffne links Organisation und darunter GEMA. Wähle die kommende Veranstaltung. Anmeldung und Einreichung passieren im GEMA-Portal. Im Vereinsmanager hältst du fest, was dafür noch offen oder bereits erledigt ist. Ein Archivtermin wird nicht als neue Aufgabe behandelt.",
+        "start": 0.0,
+        "duration": 23.387
+      },
+      {
+        "title": "Den tatsächlichen Stand festhalten",
+        "figure": "orga-gema",
+        "text": "Trage den geklärten Bedarf ein. Setze Anmeldung erst auf erledigt, wenn sie tatsächlich erfolgt ist. Pflege den Musiklistenstatus getrennt. Ein Häkchen hier führt keine Anmeldung bei GEMA durch. Speichere den Erledigungsstand und kontrolliere die Rückmeldung.",
+        "start": 23.387,
+        "duration": 22.75
+      },
+      {
+        "title": "Die Musikliste kommt von der Band",
+        "text": "Am einfachsten reichst du den Link zur Musiklistenabgabe aus dem GEMA-Portal an die Band weiter. Sie kennt die tatsächlich gespielten Titel. Wenn die Band eingereicht hat, schreibe die Liste nicht nochmals ab. Alternativ kannst du die Musikliste hier selbst vorbereiten und als GEMA-Excel herunterladen. Der Download ist noch keine Einreichung.",
+        "start": 46.137,
+        "duration": 28.054
+      },
+      {
+        "title": "Rechnung und Zahlung verbinden",
+        "text": "Ordne die GEMA-Rechnung dem Veranstaltungsvorgang zu. Verbinde den vorhandenen Finanzbeleg oder erfasse ihn über den vorgesehenen Ablauf. Lade die Rechnungsdatei hinzu. Der Zahlungsstand kommt aus der Zuordnung der tatsächlichen Zahlung in Finanzen. Das Hochladen der Rechnung setzt sie nicht auf bezahlt.",
+        "start": 74.191,
+        "duration": 25.206
+      }
+    ],
+    "file": "video-gema.mp4",
+    "poster": "video-gema.png",
+    "subtitles": "video-gema.vtt",
+    "duration": 99.397
+  },
+  {
+    "id": "nachweise",
+    "chapter": 12,
+    "title": "Versicherungen und Fristen im Blick behalten",
+    "path": "Organisation → Dokumente & Nachweise → Fristen & Nachweise",
+    "scenes": [
+      {
+        "title": "Ein Nachweis pro Vorgang",
+        "figure": "orga-nachweis",
+        "text": "Öffne Dokumente und Nachweise und oben Fristen und Nachweise. Suche zuerst nach einem bestehenden Eintrag. Mit Nachweis erfassen beginnst du einen neuen. Gib einen verständlichen Titel und die passende Nachweisart an, zum Beispiel Vereinshaftpflicht. Wähle eine vorhandene Unterlage oder lade sie direkt hier hoch. Eine Person oder Veranstaltung musst du nur auswählen, wenn der Nachweis tatsächlich dazu gehört.",
+        "start": 0.0,
+        "duration": 34.128
+      },
+      {
+        "title": "Zuständigkeit und Termine",
+        "figure": "orga-fristen",
+        "text": "Gehe zu Frist und Zuständigkeit. Trage ein, wer sich kümmert. Gültig bis ist die tatsächliche Befristung der Unterlage. Nächste Prüfung ist der Tag, an dem ihr kontrollieren oder handeln müsst. Der Vorlauf bestimmt, wie früh die Erinnerung erscheint. Wenn es keine solche Frist gibt, lässt du das Datum leer. Speichere den Nachweis und prüfe den Eintrag in der Übersicht.",
+        "start": 34.128,
+        "duration": 32.818
+      },
+      {
+        "title": "Bei Verlängerung aktualisieren",
+        "text": "Kommt eine neue Bescheinigung oder Police, lege ihre neue Fassung ab und aktualisiere die zugehörigen Termine. Prüfe alle Dokumentseiten. Ein Upload stellt den fachlichen Status nicht von selbst auf erledigt. Unter Sicher helfen finden Mitglieder die freigegebenen allgemeinen Hinweise; interne Policen gehören nicht in die öffentliche Galerie.",
+        "start": 66.946,
+        "duration": 27.326
+      }
+    ],
+    "file": "video-nachweise.mp4",
+    "poster": "video-nachweise.png",
+    "subtitles": "video-nachweise.vtt",
+    "duration": 94.272
+  },
+  {
+    "id": "finanzexport",
+    "chapter": 9,
+    "title": "Finanzunterlagen exportieren und DATEV prüfen",
+    "path": "Finanzen → Auswertungen & Steuer → Export & DATEV",
+    "scenes": [
+      {
+        "title": "Zeitraum und Unterlagen wählen",
+        "figure": "finanz-export",
+        "text": "Öffne links Finanzen und darunter Auswertungen und Steuer. Wähle oben Export und DATEV. Wähle Von und Bis sowie die gewünschten Belegfilter. CSV enthält die Finanzliste. Das ZIP-Belegpaket enthält zusätzlich die zugehörigen Originaldateien. Prüfe das heruntergeladene Paket vor der Weitergabe. Ein Export verändert keine Zahlung.",
+        "start": 0.0,
+        "duration": 29.809
+      },
+      {
+        "title": "DATEV braucht abgestimmte Angaben",
+        "figure": "finanz-datev",
+        "text": "Für DATEV trägst du die abgestimmte Beraternummer, Mandantennummer und die Geldkonten ein. Verwende keine geratenen Werte. DATEV-Vorschau erstellen prüft die Angaben und den Zahlungsbestand. Kläre sämtliche Fehler vor dem Download. Die Vorschau ist noch kein Import in DATEV.",
+        "start": 29.809,
+        "duration": 23.82
+      },
+      {
+        "title": "Doppelte Buchungen vermeiden",
+        "text": "Der vorhandene DATEV-Export arbeitet auf Zahlungsbasis. Wenn dieselben Rechnungen anderweitig schon gebucht wurden, importiere ihre Zahlungen nicht ungeprüft als neue Einnahmen. Stimme Kontierung und tatsächlichen Import mit der zuständigen Fachperson ab. Im Handbuch findest du die genaue Abgrenzung der verfügbaren Exportarten.",
+        "start": 53.629,
+        "duration": 26.467
+      }
+    ],
+    "file": "video-finanzexport.mp4",
+    "poster": "video-finanzexport.png",
+    "subtitles": "video-finanzexport.vtt",
+    "duration": 80.096
+  },
+  {
+    "id": "finanzaufnahme",
+    "chapter": 7,
+    "title": "Eine eingegangene Rechnung Schritt für Schritt prüfen",
+    "path": "Finanzen → Rechnungseingang",
+    "scenes": [
+      {
+        "title": "Die richtige Rechnung öffnen",
+        "figure": "rechnung-eingang-liste",
+        "text": "Öffne den Rechnungseingang. Unter Noch zu prüfen stehen die offenen Rechnungen. Suche nach Titel, Dateiname oder Absender und grenze bei Bedarf das Jahr ein. Klicke bei der passenden Rechnung auf Prüfen und zuordnen. Schon zugeordnete Rechnungen findest du im anderen Reiter. Lege dieselbe Ausgabe nicht nochmals an. Alle Unterlagen in diesem Video sind frei erfundene Beispiele.",
+        "start": 0.0,
+        "duration": 32.335
+      },
+      {
+        "title": "Zuerst klären: Wofür ist die Rechnung?",
+        "figure": "rechnung-zweck-schritte",
+        "text": "Beginne mit dem Rechnungszweck. Wähle zum Beispiel Inventar, Versicherung oder eine Veranstaltungsausgabe. Bei einer Veranstaltung wählst du anschließend den passenden Termin. Die drei Schritte zeigen, welche Angaben noch fehlen. Unter Kleine Hilfe werden die Begriffe zur Buchhaltung erklärt. Ein Vorschlag ersetzt nicht die Prüfung, wofür der Verein die Ausgabe tatsächlich verwendet.",
+        "start": 32.335,
+        "duration": 32.248
+      },
+      {
+        "title": "Das Original daneben lesen",
+        "figure": "rechnung-original-xml",
+        "text": "Am Computer stehen Eingaben und Original nebeneinander. Bei einer elektronischen Rechnung liest du die Daten aus der Originaldatei. Plus und Minus machen den Text größer oder kleiner. Vergleiche besonders Rechnungsnummer, Datum und Gesamtbetrag. Bei einer PDF nutzt du die Vergrößerung in der Vorschau. Auf dem Handy wechselst du über Original ansehen und Zweck und Angaben. Die Erkennung macht Vorschläge; sie bucht noch nichts.",
+        "start": 64.583,
+        "duration": 35.805
+      },
+      {
+        "title": "Firma und jede Position kontrollieren",
+        "notes": [
+          "Vorhandene Firma suchen; nur bei Bedarf neu anlegen.",
+          "Artikel, Menge, Einzelpreis und Gesamtbetrag am Original vergleichen.",
+          "Vorschläge für die Buchhaltung prüfen; offene Fragen später klären."
+        ],
+        "text": "Suche die Firma in den Kontakten. Ist sie noch nicht vorhanden, öffnet Neue Firma anlegen das Formular direkt auf dieser Seite. Prüfe anschließend jede Artikelposition, ihre Menge, Preise und den Gesamtbetrag. Einzelpreise können netto angegeben sein; der Gesamtbetrag einschließlich Steuern muss zur Originalrechnung passen. Prüfe auch die Zuordnung der Positionen. Bei unklarer Buchhaltung lasse die vorgesehenen Angaben offen und kläre sie mit dem Kassenwart, statt einen Wert zu raten.",
+        "start": 100.388,
+        "duration": 41.066
+      },
+      {
+        "title": "Fehlende Angaben ergänzen und einmal speichern",
+        "figure": "rechnung-speichern-schritt",
+        "text": "Unter Was ist vor dem Speichern noch zu tun stehen fehlende Angaben als anklickbare Punkte. Öffne jeden Punkt und ergänze oder prüfe das Feld. Bestätige Artikel und Preise erst nach dem Vergleich mit dem Original. Rechnung speichern legt die Ausgabe mit ihrem Original gemeinsam ab. Es wird keine Zahlung ausgelöst. Die Freigabe durch ein berechtigtes Vorstandsamt oder den Superuser und die Zuordnung einer tatsächlichen Zahlung sind eigene nachfolgende Schritte.",
+        "start": 141.454,
+        "duration": 33.989
+      }
+    ],
+    "file": "video-finanzaufnahme.mp4",
+    "poster": "video-finanzaufnahme.png",
+    "subtitles": "video-finanzaufnahme.vtt",
+    "duration": 175.443
+  },
+  {
+    "id": "protokolle",
+    "chapter": 13,
+    "title": "Ein Protokoll mit Vorlage schreiben und später fortsetzen",
+    "path": "Vereinsportal → Protokolle",
+    "scenes": [
+      {
+        "title": "Einen neuen Entwurf beginnen",
+        "notes": [
+          "Protokolle öffnen und nach einem vorhandenen Entwurf suchen.",
+          "Für ein neues Protokoll Titel und Sitzungsdatum eintragen.",
+          "Im Editor schreiben wählen und die Vorlage öffnen."
+        ],
+        "text": "Öffne Protokolle und prüfe unter Entwürfe, ob bereits jemand begonnen hat. Für ein neues Protokoll klicke Protokoll anlegen. Trage Titel und das Datum der Besprechung ein. Wähle Im Editor schreiben. Unter Protokoll schreiben öffnest du Mit einer Protokollvorlage beginnen. Ein fertiges PDF kannst du stattdessen über PDF hochladen ablegen.",
+        "start": 0.0,
+        "duration": 29.133
+      },
+      {
+        "title": "Die Vorlage passend zur Sitzung ausfüllen",
+        "figure": "protokoll-vorlage",
+        "text": "Wähle Mitgliederversammlung, Vorstandsversammlung oder Besprechung. Trage Ort, Sitzungsleitung und Protokollführung ein. Ergänze die Anwesenden oder verweise auf eure Anwesenheitsliste. Die Vorlage hilft beim Aufbau. Sie weiß aber nicht, wer tatsächlich anwesend war oder was beschlossen wurde. Lass unbekannte Angaben nicht durch erfundene Namen oder Zahlen ersetzen.",
+        "start": 29.133,
+        "duration": 31.822
+      },
+      {
+        "title": "Tagesordnung und Beschlüsse aufschreiben",
+        "notes": [
+          "Jeden Tagesordnungspunkt öffnen und tatsächliche Inhalte eintragen.",
+          "Beschluss und Abstimmung nur ergänzen, wenn es sie wirklich gab.",
+          "Vorlage in den Protokolltext übernehmen; dort weiterbearbeiten."
+        ],
+        "text": "Öffne die einzelnen Tagesordnungspunkte und beschreibe, was besprochen wurde. Falls es einen Beschluss gab, öffne Beschluss und Abstimmung ergänzen. Trage den wirklichen Beschlusstext, Stimmen und das Ergebnis ein. Null bedeutet null Stimmen, ein leeres Feld bedeutet noch nicht erfasst. Ergänze oder entferne Tagesordnungspunkte nach Bedarf. Mit Vorlage in den Protokolltext übernehmen werden deine Angaben in den frei bearbeitbaren Text eingefügt.",
+        "start": 60.955,
+        "duration": 37.301
+      },
+      {
+        "title": "Regelmäßig speichern und die Vorschau lesen",
+        "figure": "protokoll-editor",
+        "text": "Im großen Textfeld kannst du frei weiterschreiben. Markiere Text, bevor du Fett oder Kursiv wählst. Entwurf speichern und weiterschreiben sichert deinen Zwischenstand und lässt den Editor offen. Warte auf die Speicherbestätigung. Speichern und Vorschau öffnen speichert und zeigt anschließend die gesamte Fassung. Beide Wege bleiben zunächst ein interner Entwurf.",
+        "start": 98.256,
+        "duration": 30.141
+      },
+      {
+        "title": "Später fortsetzen und erst dann freigeben",
+        "notes": [
+          "Unter Entwürfe das Protokoll öffnen und Bearbeiten wählen.",
+          "Gespeicherten Text fortsetzen; keine neue Vorlage erforderlich.",
+          "Vorschau prüfen und erst die fertige Fassung freigeben."
+        ],
+        "text": "Zum Weiterarbeiten öffne später denselben Eintrag unter Entwürfe und klicke Bearbeiten. Du schreibst im gespeicherten Text weiter; eine neue Vorlage ist nicht nötig. Bei einer Meldung zu zwischenzeitlichen Änderungen sichere deinen Text und vergleiche die neuere Fassung. Erst nach der vollständigen Prüfung und erforderlichen Unterschriften gibst du das fertige Protokoll für Mitglieder frei. Die Freigabe kann eine Benachrichtigung auslösen; bloßes Speichern eines Entwurfs tut das nicht.",
+        "start": 128.397,
+        "duration": 37.25
+      }
+    ],
+    "file": "video-protokolle.mp4",
+    "poster": "video-protokolle.png",
+    "subtitles": "video-protokolle.vtt",
+    "duration": 165.647
+  },
+  {
+    "id": "account",
+    "chapter": 1,
+    "title": "Benachrichtigungen und Anmeldedauer selbst einstellen",
+    "path": "Einstellungen → Mein Account",
+    "scenes": [
+      {
+        "title": "Im eigenen Account den richtigen Bereich öffnen",
+        "notes": [
+          "Mein Account öffnen.",
+          "Benachrichtigungen für Themen und Geräte aufklappen.",
+          "Anmeldung und Sicherheit regelt die Anmeldedauer."
+        ],
+        "text": "Öffne Mein Account. Die einzelnen Bereiche sind zunächst eingeklappt. Wähle Benachrichtigungen, wenn du Hinweise auf deinem Gerät möchtest. Anmeldung und Sicherheit ist ein anderer Bereich: Dort bestimmst du, wie lange du auf diesem Gerät angemeldet bleiben möchtest. Jede Änderung wird in ihrem eigenen Bereich gespeichert.",
+        "start": 0.0,
+        "duration": 27.291
+      },
+      {
+        "title": "Die gewünschten Themen wählen",
+        "figure": "account-themen",
+        "text": "Unter Benachrichtigungen wählst du zuerst die gewünschten Themen. Neue Chat-Nachrichten kannst du einzeln ein- oder ausschalten. Je nach deinen Berechtigungen gibt es außerdem Hinweise auf neue Rechnungen, Zahlungen, Veranstaltungen, eigene Dokumente oder Protokolle. Wähle nur, was du erhalten möchtest. Die Einstellung gilt für deinen eigenen Zugang und verändert keine E-Mails oder Einstellungen anderer Mitglieder.",
+        "start": 27.291,
+        "duration": 33.834
+      },
+      {
+        "title": "Themen speichern und das Gerät freigeben",
+        "figure": "account-geraet",
+        "text": "Klicke zuerst Benachrichtigungen speichern. Danach folgt der zweite Schritt: Dieses Gerät aktivieren. Auf einem unterstützten Gerät klicke Benachrichtigungen aktivieren und bestätige die Browserabfrage mit Erlauben. Warte auf die erfolgreiche Rückmeldung der Website. In dieser Schulungsumgebung ist das Aktivieren gesperrt, damit keine Testmitteilungen verschickt werden. Die Themenauswahl allein aktiviert noch kein Gerät.",
+        "start": 61.125,
+        "duration": 34.295
+      },
+      {
+        "title": "Auf dem iPhone die Web-App öffnen",
+        "notes": [
+          "In Safari über Teilen zum Home-Bildschirm hinzufügen.",
+          "Kulturhus über das neue Symbol öffnen und anmelden.",
+          "Im Account aktivieren; bei Problemen den eingeblendeten Hinweis lesen."
+        ],
+        "text": "Auf dem iPhone müssen Mitteilungen aus der installierten Web-App aktiviert werden. Öffne Kulturhus in Safari und füge die Seite über Teilen zum Home-Bildschirm hinzu. Öffne dann das Kulturhus-Symbol und melde dich dort an. Gehe erneut zu den Benachrichtigungen im Account. Falls dein Gerät eine fehlende Unterstützung oder eine gesperrte Erlaubnis meldet, folge der dort angezeigten Anleitung. Im normalen Safari-Fenster ist diese Aktivierung nicht möglich.",
+        "start": 95.42,
+        "duration": 35.823
+      },
+      {
+        "title": "Angemeldet bleiben oder ausdrücklich abmelden",
+        "notes": [
+          "Anmeldung und Sicherheit öffnen.",
+          "24 Stunden, 30 Tage oder Bis ich mich abmelde auswählen.",
+          "Anmeldedauer speichern; auf fremden Geräten anschließend abmelden."
+        ],
+        "text": "Mit deiner persönlichen Website-Anmeldung öffne Anmeldung und Sicherheit. Unter Auf diesem Gerät angemeldet bleiben wähle 24 Stunden, 30 Tage oder Bis ich mich abmelde. Klicke Anmeldedauer speichern und prüfe die Rückmeldung. Die Auswahl gilt nur für diesen Browser oder diese Web-App. Gelöschte Cookies oder Sicherheitsänderungen können trotzdem eine neue Anmeldung erfordern. Auf gemeinsam verwendeten Geräten melde dich nach der Arbeit ausdrücklich ab. Die zusätzliche Zwei-Faktor-Anmeldung bleibt freiwillig.",
+        "start": 131.243,
+        "duration": 40.517
+      }
+    ],
+    "file": "video-account.mp4",
+    "poster": "video-account.png",
+    "subtitles": "video-account.vtt",
+    "duration": 171.76
+  },
+  {
+    "id": "chatumfragen",
+    "chapter": 16,
+    "title": "Im Chat eine Umfrage erstellen und abstimmen",
+    "path": "Vereinsportal → Chat → Unterhaltung",
+    "scenes": [
+      {
+        "title": "Die richtige Gruppe auswählen",
+        "notes": [
+          "Unterhaltung öffnen und Teilnehmer kontrollieren.",
+          "Unter dem Nachrichtenfeld Umfrage erstellen aufklappen.",
+          "Frage und Antwortmöglichkeiten vor dem Start prüfen."
+        ],
+        "text": "Öffne im Chat die richtige Unterhaltung. Kontrolliere Titel und Teilnehmer, denn nur diese Personen sehen die Umfrage. Unter dem normalen Nachrichtenformular klappe Umfrage erstellen auf. Eine Umfrage hilft bei Absprachen, zum Beispiel beim Termin für den Aufbau. Sie ersetzt kein förmliches Versammlungsprotokoll.",
+        "start": 0.0,
+        "duration": 26.676
+      },
+      {
+        "title": "Frage, Antworten und Ende festlegen",
+        "figure": "chat-umfrage",
+        "text": "Schreibe eine klare Frage. Trage mindestens zwei unterschiedliche Antworten ein. Mit Weitere Antwort ergänzt du zusätzliche Möglichkeiten, höchstens zehn. Prüfe Abstimmen bis. Ein leeres Enddatum bedeutet, dass du die Umfrage selbst beendest. Klicke erst nach der Prüfung Umfrage in der Unterhaltung starten. Frage und Antworten sind danach nicht mehr veränderbar. Bei einem Fehler beende die falsche Umfrage und erstelle eine berichtigte neue.",
+        "start": 26.676,
+        "duration": 38.244
+      },
+      {
+        "title": "Eine Antwort bewusst speichern",
+        "figure": "chat-umfrage-abstimmen",
+        "text": "Tippe in der Umfrage auf die große Zeile deiner Antwort. Klicke anschließend Antwort speichern. Erst damit zählt deine Stimme. Die Zahlen zeigen, wie viele gespeicherte Stimmen jede Antwort hat. Solange die Umfrage läuft, kannst du eine andere Zeile wählen und Antwort ändern klicken. Deine bisherige Stimme wird ersetzt. Wer welche andere Antwort gewählt hat, wird nicht angezeigt.",
+        "start": 64.92,
+        "duration": 33.499
+      },
+      {
+        "title": "Beenden und das Ergebnis nachlesen",
+        "notes": [
+          "Nur die erstellende Person kann vorzeitig beenden.",
+          "Umfrage jetzt beenden öffnen und Abstimmung beenden klicken.",
+          "Beendete Ergebnisse bleiben im Gespräch lesbar."
+        ],
+        "text": "Die erstellende Person kann Umfrage jetzt beenden öffnen und anschließend Abstimmung beenden klicken. Mit einer Endzeit geschieht das auch automatisch. Danach sind keine neuen Stimmen und Änderungen mehr möglich. Die Ergebnisse bleiben im Chat sichtbar. Wenn du beim Auswählen eine Aktualisierung bemerkst, speichere zuerst deine Antwort. Deine noch nicht gespeicherte Auswahl wird nicht durch neue Nachrichten ersetzt.",
+        "start": 98.419,
+        "duration": 33.187
+      }
+    ],
+    "file": "video-chatumfragen.mp4",
+    "poster": "video-chatumfragen.png",
+    "subtitles": "video-chatumfragen.vtt",
+    "duration": 131.606
+  }
+]

@@ -1,0 +1,6 @@
+<?php declare(strict_types=1);
+require_once __DIR__.'/original-database-hash.php';
+function ownInventoryFileProof():void
+{
+ $cfg=\Kulturhus\Native\TestSupport::config();$db=\Kulturhus\Native\TestSupport::db();if(($cfg['owner']??'')!=='isolated-native-ci'||($cfg['label']??'')!=='native-inventory-file-interface'||!preg_match('/\Akh_native_[a-f0-9]{24}\z/D',$cfg['database']??'')||$db->query('SELECT DATABASE()')->fetchColumn()!==$cfg['database'])throw new RuntimeException('Owned file proof required.');$tables=array_values(array_diff($db->query('SHOW TABLES')->fetchAll(PDO::FETCH_COLUMN),['native_auth_sessions','native_auth_limits','native_language_preferences']));$whole=ownOriginalDatabaseHash($db,$tables);$links=$db->query("SELECT l.document_id,l.source_id,f.name,f.sha256 FROM document_links l JOIN document_files f ON f.club_id=l.club_id AND f.document_id=l.document_id WHERE l.club_id='own-list-club' AND l.source_type='item' ORDER BY l.source_id,l.document_id")->fetchAll(PDO::FETCH_ASSOC);$balances=array_column((new \Kulturhus\Verein\Finance($db,'own-list-admin'))->accounts(),'balance_cents','id');header('Content-Type: application/json');header('Cache-Control: private, no-store');echo json_encode(compact('whole','links','balances'),JSON_THROW_ON_ERROR);
+}

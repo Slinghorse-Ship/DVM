@@ -1,0 +1,15 @@
+<?php declare(strict_types=1);
+require __DIR__.'/../src/bootstrap.php';
+use Kulturhus\Verein\{Database,MySqlConstraints};
+use Kulturhus\Verein\Tests\MySqlFixture;
+$db=MySqlFixture::connect();$db->exec(file_get_contents(__DIR__.'/../migrations/mysql/083_baseline.sql'));
+$db->exec('ALTER TABLE accounting_revisions MODIFY id INTEGER NOT NULL');
+$db->exec("INSERT INTO schema_migrations VALUES(79,'synthetic');INSERT INTO clubs VALUES('legacy','Synthetic');INSERT INTO actors(id,club_id,role) VALUES('root','legacy','admin')");
+$db->prepare('INSERT INTO accounting_revisions VALUES(?,?,?,?,?,?,?,?,?,?)')->execute([0,'legacy','entry','synthetic',1,'[]','[]','Historical zero identity','root','2026-09-01T10:00:00Z']);
+$before=$db->query('SELECT * FROM accounting_revisions')->fetchAll();
+Database::migrate($db);
+if((int)$db->query('SELECT MAX(version) FROM schema_migrations')->fetchColumn()!==Database::SCHEMA_VERSION||$before!==$db->query('SELECT * FROM accounting_revisions')->fetchAll())throw new RuntimeException('Legacy upgrade changed audit identity or evidence');
+echo "PASS schema79 upgrades natively and preserves zero audit identity and evidence\n";
+$snapshot=MySqlFixture::snapshot($db);Database::migrate($db);
+if($snapshot!==MySqlFixture::snapshot($db)||MySqlConstraints::preflight($db)||MySqlFixture::foreignKeyErrors($db))throw new RuntimeException('Legacy upgrade is not idempotent or consistent');
+echo "PASS repeated migration preserves data and all constraints\n";

@@ -1,0 +1,18 @@
+.voucher-manager-workspace{overflow-wrap:anywhere}
+.voucher-manager-workspace,.voucher-manager-workspace *{min-width:0}
+.voucher-manager-workspace :is(h1,h2,h3,p,a,label,small,button,strong,code){overflow-wrap:anywhere}
+.voucher-manager-workspace :is(form,input,select,textarea){max-width:100%;box-sizing:border-box}
+.voucher-manager-workspace :is(input:not([type=checkbox]),select,textarea){width:100%;min-height:44px}
+.voucher-manager-workspace :is(button,.dwf-button,summary){min-height:44px;height:auto;white-space:normal}
+.voucher-manager-search,.voucher-manager-fields{display:flex;flex-wrap:wrap;gap:.75em;align-items:flex-end;margin-block:1em}
+.voucher-manager-search label,.voucher-manager-fields label{flex:1 1 14em}
+.voucher-manager-workspace :is(fieldset,article,details){max-width:100%}
+.voucher-manager-workspace fieldset{border:1px solid var(--border,#ccd4df);border-radius:.75em;padding:1em;margin-block:1em}
+.voucher-manager-workspace legend{width:auto;max-width:100%;float:none;font-size:1.1em}
+.voucher-manager-person{display:flex;align-items:center;gap:.75em;min-height:44px;padding:.5em;border-block-end:1px solid var(--border,#ccd4df)}
+.voucher-manager-person input{width:1.25em;height:1.25em;flex:none}
+.voucher-manager-person span{flex:1}
+.voucher-manager-original{white-space:pre-wrap;overflow-wrap:anywhere}
+.voucher-manager-target{border:2px solid var(--border,#ccd4df);padding:1em;border-radius:.75em}
+.voucher-manager-workspace .dwf-actions{flex-wrap:wrap}
+.voucher-manager-camera video{display:block;width:100%;max-height:28rem;background:#111}

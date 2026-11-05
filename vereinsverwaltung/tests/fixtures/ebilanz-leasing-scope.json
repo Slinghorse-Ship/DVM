@@ -1,0 +1,2953 @@
+{
+  "synthetic_only": true,
+  "database_origin": "owned native MySQL fixture; no owner data",
+  "source_revision": 76,
+  "rows": [
+    {
+      "year": 2025,
+      "original": {
+        "year": 2025,
+        "journal_sha256": "d1da295f33663d67a46655c8a53fd34417c4239fec1a4478fc286aa960029882",
+        "accounts": {
+          "equity": {
+            "name": "Original capital",
+            "group": "equity",
+            "skr_code": "29700",
+            "book_opening_cents": 0,
+            "tax_opening_cents": 0,
+            "book_cents": 0,
+            "tax_cents": 0,
+            "difference_cents": 0
+          },
+          "src_code_06300": {
+            "name": "SKR42 06300 · Betriebsausstattung",
+            "group": "fixed_assets",
+            "skr_code": "06300",
+            "book_opening_cents": 0,
+            "tax_opening_cents": 0,
+            "book_cents": 9800,
+            "tax_cents": 9800,
+            "difference_cents": 0
+          },
+          "src_depreciation_62500": {
+            "name": "Abschreibung Ausstattung",
+            "group": "expense",
+            "skr_code": "62500",
+            "book_opening_cents": 0,
+            "tax_opening_cents": 0,
+            "book_cents": 2200,
+            "tax_cents": 2200,
+            "difference_cents": 0
+          },
+          "src_pay_a9a0d0c9652990547a83": {
+            "name": "Verbindlichkeit LEASING",
+            "group": "liabilities",
+            "skr_code": "",
+            "book_opening_cents": 0,
+            "tax_opening_cents": 0,
+            "book_cents": 12000,
+            "tax_cents": 12000,
+            "difference_cents": 0
+          }
+        },
+        "book": {
+          "year": 2025,
+          "accounts": {
+            "equity": {
+              "name": "Original capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            "src_code_06300": {
+              "name": "SKR42 06300 · Betriebsausstattung",
+              "group": "fixed_assets",
+              "skr_code": "06300",
+              "id": "src_code_06300",
+              "opening_cents": 0,
+              "debit_cents": 12000,
+              "credit_cents": 2200,
+              "closing_cents": 9800,
+              "amount_cents": 9800
+            },
+            "src_depreciation_62500": {
+              "name": "Abschreibung Ausstattung",
+              "group": "expense",
+              "skr_code": "62500",
+              "id": "src_depreciation_62500",
+              "opening_cents": 0,
+              "debit_cents": 2200,
+              "credit_cents": 0,
+              "closing_cents": 2200,
+              "amount_cents": 2200
+            },
+            "src_pay_a9a0d0c9652990547a83": {
+              "name": "Verbindlichkeit LEASING",
+              "group": "liabilities",
+              "skr_code": "",
+              "id": "src_pay_a9a0d0c9652990547a83",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 12000,
+              "closing_cents": -12000,
+              "amount_cents": 12000
+            }
+          },
+          "assets": [
+            {
+              "name": "SKR42 06300 · Betriebsausstattung",
+              "group": "fixed_assets",
+              "skr_code": "06300",
+              "id": "src_code_06300",
+              "opening_cents": 0,
+              "debit_cents": 12000,
+              "credit_cents": 2200,
+              "closing_cents": 9800,
+              "amount_cents": 9800
+            }
+          ],
+          "capital": [
+            {
+              "name": "Original capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            }
+          ],
+          "liabilities": [
+            {
+              "name": "Verbindlichkeit LEASING",
+              "group": "liabilities",
+              "skr_code": "",
+              "id": "src_pay_a9a0d0c9652990547a83",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 12000,
+              "closing_cents": -12000,
+              "amount_cents": 12000
+            }
+          ],
+          "profit_and_loss": [
+            {
+              "name": "Abschreibung Ausstattung",
+              "group": "expense",
+              "skr_code": "62500",
+              "id": "src_depreciation_62500",
+              "opening_cents": 0,
+              "debit_cents": 2200,
+              "credit_cents": 0,
+              "closing_cents": 2200,
+              "amount_cents": 2200
+            }
+          ],
+          "spheres": {
+            "1": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "2": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "3": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "4": {
+              "income_cents": 0,
+              "expense_cents": 2200,
+              "result_cents": -2200
+            }
+          },
+          "asset_total_cents": 9800,
+          "capital_total_cents": 0,
+          "liability_total_cents": 12000,
+          "income_cents": 0,
+          "expense_cents": 2200,
+          "annual_result_cents": -2200,
+          "passive_total_cents": 9800,
+          "debit_cents": 14200,
+          "credit_cents": 14200,
+          "difference_cents": 0,
+          "issues": [],
+          "entry_count": 2
+        },
+        "tax": {
+          "year": 2025,
+          "accounts": {
+            "equity": {
+              "name": "Original capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            "src_code_06300": {
+              "name": "SKR42 06300 · Betriebsausstattung",
+              "group": "fixed_assets",
+              "skr_code": "06300",
+              "id": "src_code_06300",
+              "opening_cents": 0,
+              "debit_cents": 12000,
+              "credit_cents": 2200,
+              "closing_cents": 9800,
+              "amount_cents": 9800
+            },
+            "src_depreciation_62500": {
+              "name": "Abschreibung Ausstattung",
+              "group": "expense",
+              "skr_code": "62500",
+              "id": "src_depreciation_62500",
+              "opening_cents": 0,
+              "debit_cents": 2200,
+              "credit_cents": 0,
+              "closing_cents": 2200,
+              "amount_cents": 2200
+            },
+            "src_pay_a9a0d0c9652990547a83": {
+              "name": "Verbindlichkeit LEASING",
+              "group": "liabilities",
+              "skr_code": "",
+              "id": "src_pay_a9a0d0c9652990547a83",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 12000,
+              "closing_cents": -12000,
+              "amount_cents": 12000
+            }
+          },
+          "assets": [
+            {
+              "name": "SKR42 06300 · Betriebsausstattung",
+              "group": "fixed_assets",
+              "skr_code": "06300",
+              "id": "src_code_06300",
+              "opening_cents": 0,
+              "debit_cents": 12000,
+              "credit_cents": 2200,
+              "closing_cents": 9800,
+              "amount_cents": 9800
+            }
+          ],
+          "capital": [
+            {
+              "name": "Original capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            }
+          ],
+          "liabilities": [
+            {
+              "name": "Verbindlichkeit LEASING",
+              "group": "liabilities",
+              "skr_code": "",
+              "id": "src_pay_a9a0d0c9652990547a83",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 12000,
+              "closing_cents": -12000,
+              "amount_cents": 12000
+            }
+          ],
+          "profit_and_loss": [
+            {
+              "name": "Abschreibung Ausstattung",
+              "group": "expense",
+              "skr_code": "62500",
+              "id": "src_depreciation_62500",
+              "opening_cents": 0,
+              "debit_cents": 2200,
+              "credit_cents": 0,
+              "closing_cents": 2200,
+              "amount_cents": 2200
+            }
+          ],
+          "spheres": {
+            "1": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "2": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "3": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "4": {
+              "income_cents": 0,
+              "expense_cents": 2200,
+              "result_cents": -2200
+            }
+          },
+          "asset_total_cents": 9800,
+          "capital_total_cents": 0,
+          "liability_total_cents": 12000,
+          "income_cents": 0,
+          "expense_cents": 2200,
+          "annual_result_cents": -2200,
+          "passive_total_cents": 9800,
+          "debit_cents": 14200,
+          "credit_cents": 14200,
+          "difference_cents": 0,
+          "issues": [],
+          "entry_count": 2
+        },
+        "opening_adjustments": [],
+        "current_adjustments": [],
+        "result_difference_cents": 0,
+        "source_spheres": [
+          "4"
+        ],
+        "asset_schedule": {
+          "year": 2025,
+          "items": {
+            "78a934b3b5ec8bc0dc158da2ec1db108": {
+              "item_id": "78a934b3b5ec8bc0dc158da2ec1db108",
+              "invoice_id": "cb6e4264c26e4dce07a08a6fbdbb7449",
+              "receipt_number": "LEASING",
+              "account": "src_code_06300",
+              "skr_code": "06300",
+              "sphere": "4",
+              "acquired_on": "2025-02-15",
+              "months": 60,
+              "residual_cents": 0,
+              "cost_opening_cents": 0,
+              "additions_cents": 12000,
+              "cost_closing_cents": 12000,
+              "accumulated_opening_cents": 0,
+              "depreciation_cents": 2200,
+              "accumulated_closing_cents": 2200,
+              "book_opening_cents": 0,
+              "book_closing_cents": 9800,
+              "expected_depreciation_cents": 2200,
+              "acquisition_hash": "3ad5fa3e84ea784744397aa88596afba08134cae35365e233abd3315e281308e",
+              "depreciation_hash": "4cbbf5a6795afccb2a2bbb842c412d7f72c49e6d51ff1549a6644837da92afd7",
+              "depreciation_code": "62500",
+              "original_leasing": {
+                "schema": 1,
+                "hgb_economic_owner": "club",
+                "tax_economic_owner": "club",
+                "ordinary_only": true,
+                "document": {
+                  "document_id": "d338cda8373b2133bd5d6424dd7eaf94",
+                  "revision": 1,
+                  "sha256": "ae66ea23403816321fc3ea0f43a4f44b0a18a6c389cd101ffb0fa5140018b70a"
+                }
+              },
+              "name": "LEASING · Original individually leased movable asset"
+            }
+          },
+          "totals": {
+            "cost_opening_cents": 0,
+            "additions_cents": 12000,
+            "cost_closing_cents": 12000,
+            "accumulated_opening_cents": 0,
+            "depreciation_cents": 2200,
+            "accumulated_closing_cents": 2200,
+            "book_opening_cents": 0,
+            "book_closing_cents": 9800
+          },
+          "issues": [],
+          "ready_for_xbrl": false
+        },
+        "whole_club_scope": {
+          "schema": 1,
+          "kind": "whole_taxable_club",
+          "source": {
+            "year": 2025,
+            "state": "closed",
+            "closed_sha256": "d1da295f33663d67a46655c8a53fd34417c4239fec1a4478fc286aa960029882",
+            "previous_sha256": null,
+            "result_account": "equity",
+            "issues": [],
+            "accounts": {
+              "equity": {
+                "name": "Original capital",
+                "group": "equity",
+                "skr_code": "29700"
+              },
+              "src_code_06300": {
+                "name": "SKR42 06300 · Betriebsausstattung",
+                "group": "fixed_assets",
+                "skr_code": "06300"
+              },
+              "src_depreciation_62500": {
+                "name": "Abschreibung Ausstattung",
+                "group": "expense",
+                "skr_code": "62500"
+              },
+              "src_pay_a9a0d0c9652990547a83": {
+                "name": "Verbindlichkeit LEASING",
+                "group": "liabilities",
+                "skr_code": ""
+              }
+            },
+            "opening": [],
+            "entries": [
+              {
+                "club_id": "synthetic-pool-original-2025-EV",
+                "tax_year": 2025,
+                "id": "c7c0bd8d0433be2ef1e296247a718732",
+                "booked_on": "2025-02-15",
+                "description": "Rechnung LEASING · Original leased asset acquisition and contractual liability",
+                "evidence": "invoice: cb6e4264c26e4dce07a08a6fbdbb7449",
+                "reversal_of": null,
+                "created_by": "reader",
+                "created_at": "2026-10-06T21:53:56+00:00",
+                "date": "2025-02-15",
+                "lines": [
+                  {
+                    "account": "src_code_06300",
+                    "debit_cents": 12000,
+                    "credit_cents": 0,
+                    "sphere": ""
+                  },
+                  {
+                    "account": "src_pay_a9a0d0c9652990547a83",
+                    "debit_cents": 0,
+                    "credit_cents": 12000,
+                    "sphere": ""
+                  }
+                ]
+              },
+              {
+                "club_id": "synthetic-pool-original-2025-EV",
+                "tax_year": 2025,
+                "id": "e452fd54db51bdd646c6ba9f2d299fa4",
+                "booked_on": "2025-12-31",
+                "description": "Abschreibung 78a934b3b5ec8bc0dc158da2ec1db108:2025",
+                "evidence": "depreciation: 78a934b3b5ec8bc0dc158da2ec1db108:2025",
+                "reversal_of": null,
+                "created_by": "reader",
+                "created_at": "2026-10-06T21:53:56+00:00",
+                "date": "2025-12-31",
+                "lines": [
+                  {
+                    "account": "src_depreciation_62500",
+                    "debit_cents": 2200,
+                    "credit_cents": 0,
+                    "sphere": "4"
+                  },
+                  {
+                    "account": "src_code_06300",
+                    "debit_cents": 0,
+                    "credit_cents": 2200,
+                    "sphere": ""
+                  }
+                ]
+              }
+            ],
+            "calculation": {
+              "year": 2025,
+              "accounts": {
+                "equity": {
+                  "name": "Original capital",
+                  "group": "equity",
+                  "skr_code": "29700",
+                  "id": "equity",
+                  "opening_cents": 0,
+                  "debit_cents": 0,
+                  "credit_cents": 0,
+                  "closing_cents": 0,
+                  "amount_cents": 0
+                },
+                "src_code_06300": {
+                  "name": "SKR42 06300 · Betriebsausstattung",
+                  "group": "fixed_assets",
+                  "skr_code": "06300",
+                  "id": "src_code_06300",
+                  "opening_cents": 0,
+                  "debit_cents": 12000,
+                  "credit_cents": 2200,
+                  "closing_cents": 9800,
+                  "amount_cents": 9800
+                },
+                "src_depreciation_62500": {
+                  "name": "Abschreibung Ausstattung",
+                  "group": "expense",
+                  "skr_code": "62500",
+                  "id": "src_depreciation_62500",
+                  "opening_cents": 0,
+                  "debit_cents": 2200,
+                  "credit_cents": 0,
+                  "closing_cents": 2200,
+                  "amount_cents": 2200
+                },
+                "src_pay_a9a0d0c9652990547a83": {
+                  "name": "Verbindlichkeit LEASING",
+                  "group": "liabilities",
+                  "skr_code": "",
+                  "id": "src_pay_a9a0d0c9652990547a83",
+                  "opening_cents": 0,
+                  "debit_cents": 0,
+                  "credit_cents": 12000,
+                  "closing_cents": -12000,
+                  "amount_cents": 12000
+                }
+              },
+              "assets": [
+                {
+                  "name": "SKR42 06300 · Betriebsausstattung",
+                  "group": "fixed_assets",
+                  "skr_code": "06300",
+                  "id": "src_code_06300",
+                  "opening_cents": 0,
+                  "debit_cents": 12000,
+                  "credit_cents": 2200,
+                  "closing_cents": 9800,
+                  "amount_cents": 9800
+                }
+              ],
+              "capital": [
+                {
+                  "name": "Original capital",
+                  "group": "equity",
+                  "skr_code": "29700",
+                  "id": "equity",
+                  "opening_cents": 0,
+                  "debit_cents": 0,
+                  "credit_cents": 0,
+                  "closing_cents": 0,
+                  "amount_cents": 0
+                }
+              ],
+              "liabilities": [
+                {
+                  "name": "Verbindlichkeit LEASING",
+                  "group": "liabilities",
+                  "skr_code": "",
+                  "id": "src_pay_a9a0d0c9652990547a83",
+                  "opening_cents": 0,
+                  "debit_cents": 0,
+                  "credit_cents": 12000,
+                  "closing_cents": -12000,
+                  "amount_cents": 12000
+                }
+              ],
+              "profit_and_loss": [
+                {
+                  "name": "Abschreibung Ausstattung",
+                  "group": "expense",
+                  "skr_code": "62500",
+                  "id": "src_depreciation_62500",
+                  "opening_cents": 0,
+                  "debit_cents": 2200,
+                  "credit_cents": 0,
+                  "closing_cents": 2200,
+                  "amount_cents": 2200
+                }
+              ],
+              "spheres": {
+                "1": {
+                  "income_cents": 0,
+                  "expense_cents": 0,
+                  "result_cents": 0
+                },
+                "2": {
+                  "income_cents": 0,
+                  "expense_cents": 0,
+                  "result_cents": 0
+                },
+                "3": {
+                  "income_cents": 0,
+                  "expense_cents": 0,
+                  "result_cents": 0
+                },
+                "4": {
+                  "income_cents": 0,
+                  "expense_cents": 2200,
+                  "result_cents": -2200
+                }
+              },
+              "asset_total_cents": 9800,
+              "capital_total_cents": 0,
+              "liability_total_cents": 12000,
+              "income_cents": 0,
+              "expense_cents": 2200,
+              "annual_result_cents": -2200,
+              "passive_total_cents": 9800,
+              "debit_cents": 14200,
+              "credit_cents": 14200,
+              "difference_cents": 0,
+              "issues": [],
+              "entry_count": 2
+            },
+            "asset_schedule": {
+              "year": 2025,
+              "items": {
+                "78a934b3b5ec8bc0dc158da2ec1db108": {
+                  "item_id": "78a934b3b5ec8bc0dc158da2ec1db108",
+                  "invoice_id": "cb6e4264c26e4dce07a08a6fbdbb7449",
+                  "receipt_number": "LEASING",
+                  "account": "src_code_06300",
+                  "skr_code": "06300",
+                  "sphere": "4",
+                  "acquired_on": "2025-02-15",
+                  "months": 60,
+                  "residual_cents": 0,
+                  "cost_opening_cents": 0,
+                  "additions_cents": 12000,
+                  "cost_closing_cents": 12000,
+                  "accumulated_opening_cents": 0,
+                  "depreciation_cents": 2200,
+                  "accumulated_closing_cents": 2200,
+                  "book_opening_cents": 0,
+                  "book_closing_cents": 9800,
+                  "expected_depreciation_cents": 2200,
+                  "acquisition_hash": "3ad5fa3e84ea784744397aa88596afba08134cae35365e233abd3315e281308e",
+                  "depreciation_hash": "4cbbf5a6795afccb2a2bbb842c412d7f72c49e6d51ff1549a6644837da92afd7",
+                  "depreciation_code": "62500",
+                  "original_leasing": {
+                    "schema": 1,
+                    "hgb_economic_owner": "club",
+                    "tax_economic_owner": "club",
+                    "ordinary_only": true,
+                    "document": {
+                      "document_id": "d338cda8373b2133bd5d6424dd7eaf94",
+                      "revision": 1,
+                      "sha256": "ae66ea23403816321fc3ea0f43a4f44b0a18a6c389cd101ffb0fa5140018b70a"
+                    }
+                  },
+                  "name": "LEASING · Original individually leased movable asset"
+                }
+              },
+              "totals": {
+                "cost_opening_cents": 0,
+                "additions_cents": 12000,
+                "cost_closing_cents": 12000,
+                "accumulated_opening_cents": 0,
+                "depreciation_cents": 2200,
+                "accumulated_closing_cents": 2200,
+                "book_opening_cents": 0,
+                "book_closing_cents": 9800
+              },
+              "issues": [],
+              "ready_for_xbrl": false
+            }
+          }
+        },
+        "capital_comparison": {
+          "year": 2025,
+          "book_opening_cents": 0,
+          "opening_adjustment_cents": 0,
+          "tax_opening_cents": 0,
+          "tax_closing_cents": -2200,
+          "contributions_cents": 0,
+          "withdrawals_cents": 0,
+          "profit_cents": -2200,
+          "sources": [],
+          "decisions": [],
+          "issues": [],
+          "complete": true
+        },
+        "sha256": "528ec29839525eafb3e6def1a0daa32b1aefd13f661f194175bcdc58f83e8768",
+        "transmission": "unavailable"
+      },
+      "different": {
+        "year": 2025,
+        "journal_sha256": "d1da295f33663d67a46655c8a53fd34417c4239fec1a4478fc286aa960029882",
+        "accounts": {
+          "equity": {
+            "name": "Original capital",
+            "group": "equity",
+            "skr_code": "29700",
+            "book_opening_cents": 0,
+            "tax_opening_cents": 0,
+            "book_cents": 0,
+            "tax_cents": 0,
+            "difference_cents": 0
+          },
+          "src_code_06300": {
+            "name": "SKR42 06300 · Betriebsausstattung",
+            "group": "fixed_assets",
+            "skr_code": "06300",
+            "book_opening_cents": 0,
+            "tax_opening_cents": 0,
+            "book_cents": 9800,
+            "tax_cents": 10900,
+            "difference_cents": 1100
+          },
+          "src_depreciation_62500": {
+            "name": "Abschreibung Ausstattung",
+            "group": "expense",
+            "skr_code": "62500",
+            "book_opening_cents": 0,
+            "tax_opening_cents": 0,
+            "book_cents": 2200,
+            "tax_cents": 1100,
+            "difference_cents": -1100
+          },
+          "src_pay_a9a0d0c9652990547a83": {
+            "name": "Verbindlichkeit LEASING",
+            "group": "liabilities",
+            "skr_code": "",
+            "book_opening_cents": 0,
+            "tax_opening_cents": 0,
+            "book_cents": 12000,
+            "tax_cents": 12000,
+            "difference_cents": 0
+          }
+        },
+        "book": {
+          "year": 2025,
+          "accounts": {
+            "equity": {
+              "name": "Original capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            "src_code_06300": {
+              "name": "SKR42 06300 · Betriebsausstattung",
+              "group": "fixed_assets",
+              "skr_code": "06300",
+              "id": "src_code_06300",
+              "opening_cents": 0,
+              "debit_cents": 12000,
+              "credit_cents": 2200,
+              "closing_cents": 9800,
+              "amount_cents": 9800
+            },
+            "src_depreciation_62500": {
+              "name": "Abschreibung Ausstattung",
+              "group": "expense",
+              "skr_code": "62500",
+              "id": "src_depreciation_62500",
+              "opening_cents": 0,
+              "debit_cents": 2200,
+              "credit_cents": 0,
+              "closing_cents": 2200,
+              "amount_cents": 2200
+            },
+            "src_pay_a9a0d0c9652990547a83": {
+              "name": "Verbindlichkeit LEASING",
+              "group": "liabilities",
+              "skr_code": "",
+              "id": "src_pay_a9a0d0c9652990547a83",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 12000,
+              "closing_cents": -12000,
+              "amount_cents": 12000
+            }
+          },
+          "assets": [
+            {
+              "name": "SKR42 06300 · Betriebsausstattung",
+              "group": "fixed_assets",
+              "skr_code": "06300",
+              "id": "src_code_06300",
+              "opening_cents": 0,
+              "debit_cents": 12000,
+              "credit_cents": 2200,
+              "closing_cents": 9800,
+              "amount_cents": 9800
+            }
+          ],
+          "capital": [
+            {
+              "name": "Original capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            }
+          ],
+          "liabilities": [
+            {
+              "name": "Verbindlichkeit LEASING",
+              "group": "liabilities",
+              "skr_code": "",
+              "id": "src_pay_a9a0d0c9652990547a83",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 12000,
+              "closing_cents": -12000,
+              "amount_cents": 12000
+            }
+          ],
+          "profit_and_loss": [
+            {
+              "name": "Abschreibung Ausstattung",
+              "group": "expense",
+              "skr_code": "62500",
+              "id": "src_depreciation_62500",
+              "opening_cents": 0,
+              "debit_cents": 2200,
+              "credit_cents": 0,
+              "closing_cents": 2200,
+              "amount_cents": 2200
+            }
+          ],
+          "spheres": {
+            "1": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "2": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "3": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "4": {
+              "income_cents": 0,
+              "expense_cents": 2200,
+              "result_cents": -2200
+            }
+          },
+          "asset_total_cents": 9800,
+          "capital_total_cents": 0,
+          "liability_total_cents": 12000,
+          "income_cents": 0,
+          "expense_cents": 2200,
+          "annual_result_cents": -2200,
+          "passive_total_cents": 9800,
+          "debit_cents": 14200,
+          "credit_cents": 14200,
+          "difference_cents": 0,
+          "issues": [],
+          "entry_count": 2
+        },
+        "tax": {
+          "year": 2025,
+          "accounts": {
+            "equity": {
+              "name": "Original capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            "src_code_06300": {
+              "name": "SKR42 06300 · Betriebsausstattung",
+              "group": "fixed_assets",
+              "skr_code": "06300",
+              "id": "src_code_06300",
+              "opening_cents": 0,
+              "debit_cents": 13100,
+              "credit_cents": 2200,
+              "closing_cents": 10900,
+              "amount_cents": 10900
+            },
+            "src_depreciation_62500": {
+              "name": "Abschreibung Ausstattung",
+              "group": "expense",
+              "skr_code": "62500",
+              "id": "src_depreciation_62500",
+              "opening_cents": 0,
+              "debit_cents": 2200,
+              "credit_cents": 1100,
+              "closing_cents": 1100,
+              "amount_cents": 1100
+            },
+            "src_pay_a9a0d0c9652990547a83": {
+              "name": "Verbindlichkeit LEASING",
+              "group": "liabilities",
+              "skr_code": "",
+              "id": "src_pay_a9a0d0c9652990547a83",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 12000,
+              "closing_cents": -12000,
+              "amount_cents": 12000
+            }
+          },
+          "assets": [
+            {
+              "name": "SKR42 06300 · Betriebsausstattung",
+              "group": "fixed_assets",
+              "skr_code": "06300",
+              "id": "src_code_06300",
+              "opening_cents": 0,
+              "debit_cents": 13100,
+              "credit_cents": 2200,
+              "closing_cents": 10900,
+              "amount_cents": 10900
+            }
+          ],
+          "capital": [
+            {
+              "name": "Original capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            }
+          ],
+          "liabilities": [
+            {
+              "name": "Verbindlichkeit LEASING",
+              "group": "liabilities",
+              "skr_code": "",
+              "id": "src_pay_a9a0d0c9652990547a83",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 12000,
+              "closing_cents": -12000,
+              "amount_cents": 12000
+            }
+          ],
+          "profit_and_loss": [
+            {
+              "name": "Abschreibung Ausstattung",
+              "group": "expense",
+              "skr_code": "62500",
+              "id": "src_depreciation_62500",
+              "opening_cents": 0,
+              "debit_cents": 2200,
+              "credit_cents": 1100,
+              "closing_cents": 1100,
+              "amount_cents": 1100
+            }
+          ],
+          "spheres": {
+            "1": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "2": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "3": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "4": {
+              "income_cents": 0,
+              "expense_cents": 1100,
+              "result_cents": -1100
+            }
+          },
+          "asset_total_cents": 10900,
+          "capital_total_cents": 0,
+          "liability_total_cents": 12000,
+          "income_cents": 0,
+          "expense_cents": 1100,
+          "annual_result_cents": -1100,
+          "passive_total_cents": 10900,
+          "debit_cents": 15300,
+          "credit_cents": 15300,
+          "difference_cents": 0,
+          "issues": [],
+          "entry_count": 3
+        },
+        "opening_adjustments": [],
+        "current_adjustments": [
+          {
+            "id": "asset-tax-b37c026c8178da1bec9c4521",
+            "reason": "Steuerliche Abschreibung: Synthetic independently confirmed different tax useful life for code review only.",
+            "lines": [
+              {
+                "account": "src_code_06300",
+                "debit_cents": 1100,
+                "credit_cents": 0,
+                "sphere": ""
+              },
+              {
+                "account": "src_depreciation_62500",
+                "debit_cents": 0,
+                "credit_cents": 1100,
+                "sphere": "4"
+              }
+            ]
+          }
+        ],
+        "result_difference_cents": 1100,
+        "source_spheres": [
+          "4"
+        ],
+        "asset_schedule": {
+          "year": 2025,
+          "items": {
+            "78a934b3b5ec8bc0dc158da2ec1db108": {
+              "item_id": "78a934b3b5ec8bc0dc158da2ec1db108",
+              "invoice_id": "cb6e4264c26e4dce07a08a6fbdbb7449",
+              "receipt_number": "LEASING",
+              "account": "src_code_06300",
+              "skr_code": "06300",
+              "sphere": "4",
+              "acquired_on": "2025-02-15",
+              "months": 60,
+              "residual_cents": 0,
+              "cost_opening_cents": 0,
+              "additions_cents": 12000,
+              "cost_closing_cents": 12000,
+              "accumulated_opening_cents": 0,
+              "depreciation_cents": 2200,
+              "accumulated_closing_cents": 2200,
+              "book_opening_cents": 0,
+              "book_closing_cents": 9800,
+              "expected_depreciation_cents": 2200,
+              "acquisition_hash": "3ad5fa3e84ea784744397aa88596afba08134cae35365e233abd3315e281308e",
+              "depreciation_hash": "4cbbf5a6795afccb2a2bbb842c412d7f72c49e6d51ff1549a6644837da92afd7",
+              "depreciation_code": "62500",
+              "original_leasing": {
+                "schema": 1,
+                "hgb_economic_owner": "club",
+                "tax_economic_owner": "club",
+                "ordinary_only": true,
+                "document": {
+                  "document_id": "d338cda8373b2133bd5d6424dd7eaf94",
+                  "revision": 1,
+                  "sha256": "ae66ea23403816321fc3ea0f43a4f44b0a18a6c389cd101ffb0fa5140018b70a"
+                }
+              },
+              "name": "LEASING · Original individually leased movable asset"
+            }
+          },
+          "totals": {
+            "cost_opening_cents": 0,
+            "additions_cents": 12000,
+            "cost_closing_cents": 12000,
+            "accumulated_opening_cents": 0,
+            "depreciation_cents": 2200,
+            "accumulated_closing_cents": 2200,
+            "book_opening_cents": 0,
+            "book_closing_cents": 9800
+          },
+          "issues": [],
+          "ready_for_xbrl": false
+        },
+        "asset_tax": {
+          "book_schedule_sha256": "8498b313872fc0b537ced06d5f265766d8ae15c162d756a9423f4a783b77f0d1",
+          "items": {
+            "78a934b3b5ec8bc0dc158da2ec1db108": {
+              "book_item_sha256": "9eec2bce3897ab0ca38a09b53003ddaa869d28ab92c494830b5a6ef7cd5f170f",
+              "plan": {
+                "months": 120,
+                "depreciation_account": "src_depreciation_62500",
+                "reason": "Synthetic independently confirmed different tax useful life for code review only.",
+                "confirmed": true
+              },
+              "opening_difference_cents": 0,
+              "depreciation_difference_cents": -1100
+            }
+          },
+          "equity_account": "equity",
+          "generated_opening": [],
+          "generated_current": [
+            {
+              "id": "asset-tax-b37c026c8178da1bec9c4521",
+              "reason": "Steuerliche Abschreibung: Synthetic independently confirmed different tax useful life for code review only.",
+              "lines": [
+                {
+                  "account": "src_code_06300",
+                  "debit_cents": 1100,
+                  "credit_cents": 0,
+                  "sphere": ""
+                },
+                {
+                  "account": "src_depreciation_62500",
+                  "debit_cents": 0,
+                  "credit_cents": 1100,
+                  "sphere": "4"
+                }
+              ]
+            }
+          ],
+          "tax_schedule": {
+            "year": 2025,
+            "items": {
+              "78a934b3b5ec8bc0dc158da2ec1db108": {
+                "item_id": "78a934b3b5ec8bc0dc158da2ec1db108",
+                "invoice_id": "cb6e4264c26e4dce07a08a6fbdbb7449",
+                "receipt_number": "LEASING",
+                "account": "src_code_06300",
+                "skr_code": "06300",
+                "sphere": "4",
+                "acquired_on": "2025-02-15",
+                "months": 120,
+                "residual_cents": 0,
+                "cost_opening_cents": 0,
+                "additions_cents": 12000,
+                "cost_closing_cents": 12000,
+                "accumulated_opening_cents": 0,
+                "depreciation_cents": 1100,
+                "accumulated_closing_cents": 1100,
+                "book_opening_cents": 0,
+                "book_closing_cents": 10900,
+                "expected_depreciation_cents": 1100,
+                "acquisition_hash": "3ad5fa3e84ea784744397aa88596afba08134cae35365e233abd3315e281308e",
+                "depreciation_hash": "4cbbf5a6795afccb2a2bbb842c412d7f72c49e6d51ff1549a6644837da92afd7",
+                "depreciation_code": "62500",
+                "original_leasing": {
+                  "schema": 1,
+                  "hgb_economic_owner": "club",
+                  "tax_economic_owner": "club",
+                  "ordinary_only": true,
+                  "document": {
+                    "document_id": "d338cda8373b2133bd5d6424dd7eaf94",
+                    "revision": 1,
+                    "sha256": "ae66ea23403816321fc3ea0f43a4f44b0a18a6c389cd101ffb0fa5140018b70a"
+                  }
+                },
+                "name": "LEASING · Original individually leased movable asset"
+              }
+            },
+            "totals": {
+              "cost_opening_cents": 0,
+              "additions_cents": 12000,
+              "cost_closing_cents": 12000,
+              "accumulated_opening_cents": 0,
+              "depreciation_cents": 1100,
+              "accumulated_closing_cents": 1100,
+              "book_opening_cents": 0,
+              "book_closing_cents": 10900
+            },
+            "issues": [],
+            "ready_for_xbrl": false
+          }
+        },
+        "whole_club_scope": {
+          "schema": 1,
+          "kind": "whole_taxable_club",
+          "source": {
+            "year": 2025,
+            "state": "closed",
+            "closed_sha256": "d1da295f33663d67a46655c8a53fd34417c4239fec1a4478fc286aa960029882",
+            "previous_sha256": null,
+            "result_account": "equity",
+            "issues": [],
+            "accounts": {
+              "equity": {
+                "name": "Original capital",
+                "group": "equity",
+                "skr_code": "29700"
+              },
+              "src_code_06300": {
+                "name": "SKR42 06300 · Betriebsausstattung",
+                "group": "fixed_assets",
+                "skr_code": "06300"
+              },
+              "src_depreciation_62500": {
+                "name": "Abschreibung Ausstattung",
+                "group": "expense",
+                "skr_code": "62500"
+              },
+              "src_pay_a9a0d0c9652990547a83": {
+                "name": "Verbindlichkeit LEASING",
+                "group": "liabilities",
+                "skr_code": ""
+              }
+            },
+            "opening": [],
+            "entries": [
+              {
+                "club_id": "synthetic-pool-original-2025-EV",
+                "tax_year": 2025,
+                "id": "c7c0bd8d0433be2ef1e296247a718732",
+                "booked_on": "2025-02-15",
+                "description": "Rechnung LEASING · Original leased asset acquisition and contractual liability",
+                "evidence": "invoice: cb6e4264c26e4dce07a08a6fbdbb7449",
+                "reversal_of": null,
+                "created_by": "reader",
+                "created_at": "2026-10-06T21:53:56+00:00",
+                "date": "2025-02-15",
+                "lines": [
+                  {
+                    "account": "src_code_06300",
+                    "debit_cents": 12000,
+                    "credit_cents": 0,
+                    "sphere": ""
+                  },
+                  {
+                    "account": "src_pay_a9a0d0c9652990547a83",
+                    "debit_cents": 0,
+                    "credit_cents": 12000,
+                    "sphere": ""
+                  }
+                ]
+              },
+              {
+                "club_id": "synthetic-pool-original-2025-EV",
+                "tax_year": 2025,
+                "id": "e452fd54db51bdd646c6ba9f2d299fa4",
+                "booked_on": "2025-12-31",
+                "description": "Abschreibung 78a934b3b5ec8bc0dc158da2ec1db108:2025",
+                "evidence": "depreciation: 78a934b3b5ec8bc0dc158da2ec1db108:2025",
+                "reversal_of": null,
+                "created_by": "reader",
+                "created_at": "2026-10-06T21:53:56+00:00",
+                "date": "2025-12-31",
+                "lines": [
+                  {
+                    "account": "src_depreciation_62500",
+                    "debit_cents": 2200,
+                    "credit_cents": 0,
+                    "sphere": "4"
+                  },
+                  {
+                    "account": "src_code_06300",
+                    "debit_cents": 0,
+                    "credit_cents": 2200,
+                    "sphere": ""
+                  }
+                ]
+              }
+            ],
+            "calculation": {
+              "year": 2025,
+              "accounts": {
+                "equity": {
+                  "name": "Original capital",
+                  "group": "equity",
+                  "skr_code": "29700",
+                  "id": "equity",
+                  "opening_cents": 0,
+                  "debit_cents": 0,
+                  "credit_cents": 0,
+                  "closing_cents": 0,
+                  "amount_cents": 0
+                },
+                "src_code_06300": {
+                  "name": "SKR42 06300 · Betriebsausstattung",
+                  "group": "fixed_assets",
+                  "skr_code": "06300",
+                  "id": "src_code_06300",
+                  "opening_cents": 0,
+                  "debit_cents": 12000,
+                  "credit_cents": 2200,
+                  "closing_cents": 9800,
+                  "amount_cents": 9800
+                },
+                "src_depreciation_62500": {
+                  "name": "Abschreibung Ausstattung",
+                  "group": "expense",
+                  "skr_code": "62500",
+                  "id": "src_depreciation_62500",
+                  "opening_cents": 0,
+                  "debit_cents": 2200,
+                  "credit_cents": 0,
+                  "closing_cents": 2200,
+                  "amount_cents": 2200
+                },
+                "src_pay_a9a0d0c9652990547a83": {
+                  "name": "Verbindlichkeit LEASING",
+                  "group": "liabilities",
+                  "skr_code": "",
+                  "id": "src_pay_a9a0d0c9652990547a83",
+                  "opening_cents": 0,
+                  "debit_cents": 0,
+                  "credit_cents": 12000,
+                  "closing_cents": -12000,
+                  "amount_cents": 12000
+                }
+              },
+              "assets": [
+                {
+                  "name": "SKR42 06300 · Betriebsausstattung",
+                  "group": "fixed_assets",
+                  "skr_code": "06300",
+                  "id": "src_code_06300",
+                  "opening_cents": 0,
+                  "debit_cents": 12000,
+                  "credit_cents": 2200,
+                  "closing_cents": 9800,
+                  "amount_cents": 9800
+                }
+              ],
+              "capital": [
+                {
+                  "name": "Original capital",
+                  "group": "equity",
+                  "skr_code": "29700",
+                  "id": "equity",
+                  "opening_cents": 0,
+                  "debit_cents": 0,
+                  "credit_cents": 0,
+                  "closing_cents": 0,
+                  "amount_cents": 0
+                }
+              ],
+              "liabilities": [
+                {
+                  "name": "Verbindlichkeit LEASING",
+                  "group": "liabilities",
+                  "skr_code": "",
+                  "id": "src_pay_a9a0d0c9652990547a83",
+                  "opening_cents": 0,
+                  "debit_cents": 0,
+                  "credit_cents": 12000,
+                  "closing_cents": -12000,
+                  "amount_cents": 12000
+                }
+              ],
+              "profit_and_loss": [
+                {
+                  "name": "Abschreibung Ausstattung",
+                  "group": "expense",
+                  "skr_code": "62500",
+                  "id": "src_depreciation_62500",
+                  "opening_cents": 0,
+                  "debit_cents": 2200,
+                  "credit_cents": 0,
+                  "closing_cents": 2200,
+                  "amount_cents": 2200
+                }
+              ],
+              "spheres": {
+                "1": {
+                  "income_cents": 0,
+                  "expense_cents": 0,
+                  "result_cents": 0
+                },
+                "2": {
+                  "income_cents": 0,
+                  "expense_cents": 0,
+                  "result_cents": 0
+                },
+                "3": {
+                  "income_cents": 0,
+                  "expense_cents": 0,
+                  "result_cents": 0
+                },
+                "4": {
+                  "income_cents": 0,
+                  "expense_cents": 2200,
+                  "result_cents": -2200
+                }
+              },
+              "asset_total_cents": 9800,
+              "capital_total_cents": 0,
+              "liability_total_cents": 12000,
+              "income_cents": 0,
+              "expense_cents": 2200,
+              "annual_result_cents": -2200,
+              "passive_total_cents": 9800,
+              "debit_cents": 14200,
+              "credit_cents": 14200,
+              "difference_cents": 0,
+              "issues": [],
+              "entry_count": 2
+            },
+            "asset_schedule": {
+              "year": 2025,
+              "items": {
+                "78a934b3b5ec8bc0dc158da2ec1db108": {
+                  "item_id": "78a934b3b5ec8bc0dc158da2ec1db108",
+                  "invoice_id": "cb6e4264c26e4dce07a08a6fbdbb7449",
+                  "receipt_number": "LEASING",
+                  "account": "src_code_06300",
+                  "skr_code": "06300",
+                  "sphere": "4",
+                  "acquired_on": "2025-02-15",
+                  "months": 60,
+                  "residual_cents": 0,
+                  "cost_opening_cents": 0,
+                  "additions_cents": 12000,
+                  "cost_closing_cents": 12000,
+                  "accumulated_opening_cents": 0,
+                  "depreciation_cents": 2200,
+                  "accumulated_closing_cents": 2200,
+                  "book_opening_cents": 0,
+                  "book_closing_cents": 9800,
+                  "expected_depreciation_cents": 2200,
+                  "acquisition_hash": "3ad5fa3e84ea784744397aa88596afba08134cae35365e233abd3315e281308e",
+                  "depreciation_hash": "4cbbf5a6795afccb2a2bbb842c412d7f72c49e6d51ff1549a6644837da92afd7",
+                  "depreciation_code": "62500",
+                  "original_leasing": {
+                    "schema": 1,
+                    "hgb_economic_owner": "club",
+                    "tax_economic_owner": "club",
+                    "ordinary_only": true,
+                    "document": {
+                      "document_id": "d338cda8373b2133bd5d6424dd7eaf94",
+                      "revision": 1,
+                      "sha256": "ae66ea23403816321fc3ea0f43a4f44b0a18a6c389cd101ffb0fa5140018b70a"
+                    }
+                  },
+                  "name": "LEASING · Original individually leased movable asset"
+                }
+              },
+              "totals": {
+                "cost_opening_cents": 0,
+                "additions_cents": 12000,
+                "cost_closing_cents": 12000,
+                "accumulated_opening_cents": 0,
+                "depreciation_cents": 2200,
+                "accumulated_closing_cents": 2200,
+                "book_opening_cents": 0,
+                "book_closing_cents": 9800
+              },
+              "issues": [],
+              "ready_for_xbrl": false
+            }
+          }
+        },
+        "capital_comparison": {
+          "year": 2025,
+          "book_opening_cents": 0,
+          "opening_adjustment_cents": 0,
+          "tax_opening_cents": 0,
+          "tax_closing_cents": -1100,
+          "contributions_cents": 0,
+          "withdrawals_cents": 0,
+          "profit_cents": -1100,
+          "sources": [],
+          "decisions": [],
+          "issues": [],
+          "complete": true
+        },
+        "sha256": "34fdc3115baf1a0e36693f9896d90dff57c662fe4e75828e356a0e9871b3b3cf",
+        "transmission": "unavailable"
+      },
+      "mapping": {
+        "equity": "bs.eqLiab.equity.SurplusOfUnspentFunds",
+        "src_code_06300": "bs.ass.fixAss.tan.otherEquipm.factory",
+        "src_depreciation_62500": "is.netIncome.regular.operatingTC.deprAmort.fixAss.tan.other",
+        "src_pay_a9a0d0c9652990547a83": "bs.eqLiab.liab.other.other"
+      },
+      "profile": {
+        "kind": "whole_taxable_club",
+        "scope_confirmed": true,
+        "source_scope": "complete_club_ledger",
+        "tax_privileged": false,
+        "asset_scope": "whole_club",
+        "asset_values_unchanged": false,
+        "asset_tax_values_reviewed": true,
+        "no_retained_fixed_assets": false,
+        "tax_values_sha256": "34fdc3115baf1a0e36693f9896d90dff57c662fe4e75828e356a0e9871b3b3cf",
+        "business_name": "Synthetischer Test-Geschäftsbetrieb",
+        "supplier": "Synthetischer Softwaretest",
+        "company": {
+          "tax_number": "5192050001276",
+          "name": "Synthetischer Testverein",
+          "street": "Testweg",
+          "house_number": "1",
+          "postal_code": "11111",
+          "city": "Teststadt",
+          "country": "Deutschland",
+          "legal_status": "EV"
+        }
+      }
+    },
+    {
+      "year": 2026,
+      "original": {
+        "year": 2026,
+        "journal_sha256": "0b6ca2e40e2ca2fa4eb398e0dd4ee62f97c8124255571ed219d1eecf56684307",
+        "accounts": {
+          "equity": {
+            "name": "Original capital",
+            "group": "equity",
+            "skr_code": "29700",
+            "book_opening_cents": 0,
+            "tax_opening_cents": 0,
+            "book_cents": 0,
+            "tax_cents": 0,
+            "difference_cents": 0
+          },
+          "src_code_06300": {
+            "name": "SKR42 06300 · Betriebsausstattung",
+            "group": "fixed_assets",
+            "skr_code": "06300",
+            "book_opening_cents": 0,
+            "tax_opening_cents": 0,
+            "book_cents": 9800,
+            "tax_cents": 9800,
+            "difference_cents": 0
+          },
+          "src_depreciation_62500": {
+            "name": "Abschreibung Ausstattung",
+            "group": "expense",
+            "skr_code": "62500",
+            "book_opening_cents": 0,
+            "tax_opening_cents": 0,
+            "book_cents": 2200,
+            "tax_cents": 2200,
+            "difference_cents": 0
+          },
+          "src_pay_a85b80072c78ca7c9e14": {
+            "name": "Verbindlichkeit LEASING",
+            "group": "liabilities",
+            "skr_code": "",
+            "book_opening_cents": 0,
+            "tax_opening_cents": 0,
+            "book_cents": 12000,
+            "tax_cents": 12000,
+            "difference_cents": 0
+          }
+        },
+        "book": {
+          "year": 2026,
+          "accounts": {
+            "equity": {
+              "name": "Original capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            "src_code_06300": {
+              "name": "SKR42 06300 · Betriebsausstattung",
+              "group": "fixed_assets",
+              "skr_code": "06300",
+              "id": "src_code_06300",
+              "opening_cents": 0,
+              "debit_cents": 12000,
+              "credit_cents": 2200,
+              "closing_cents": 9800,
+              "amount_cents": 9800
+            },
+            "src_depreciation_62500": {
+              "name": "Abschreibung Ausstattung",
+              "group": "expense",
+              "skr_code": "62500",
+              "id": "src_depreciation_62500",
+              "opening_cents": 0,
+              "debit_cents": 2200,
+              "credit_cents": 0,
+              "closing_cents": 2200,
+              "amount_cents": 2200
+            },
+            "src_pay_a85b80072c78ca7c9e14": {
+              "name": "Verbindlichkeit LEASING",
+              "group": "liabilities",
+              "skr_code": "",
+              "id": "src_pay_a85b80072c78ca7c9e14",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 12000,
+              "closing_cents": -12000,
+              "amount_cents": 12000
+            }
+          },
+          "assets": [
+            {
+              "name": "SKR42 06300 · Betriebsausstattung",
+              "group": "fixed_assets",
+              "skr_code": "06300",
+              "id": "src_code_06300",
+              "opening_cents": 0,
+              "debit_cents": 12000,
+              "credit_cents": 2200,
+              "closing_cents": 9800,
+              "amount_cents": 9800
+            }
+          ],
+          "capital": [
+            {
+              "name": "Original capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            }
+          ],
+          "liabilities": [
+            {
+              "name": "Verbindlichkeit LEASING",
+              "group": "liabilities",
+              "skr_code": "",
+              "id": "src_pay_a85b80072c78ca7c9e14",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 12000,
+              "closing_cents": -12000,
+              "amount_cents": 12000
+            }
+          ],
+          "profit_and_loss": [
+            {
+              "name": "Abschreibung Ausstattung",
+              "group": "expense",
+              "skr_code": "62500",
+              "id": "src_depreciation_62500",
+              "opening_cents": 0,
+              "debit_cents": 2200,
+              "credit_cents": 0,
+              "closing_cents": 2200,
+              "amount_cents": 2200
+            }
+          ],
+          "spheres": {
+            "1": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "2": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "3": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "4": {
+              "income_cents": 0,
+              "expense_cents": 2200,
+              "result_cents": -2200
+            }
+          },
+          "asset_total_cents": 9800,
+          "capital_total_cents": 0,
+          "liability_total_cents": 12000,
+          "income_cents": 0,
+          "expense_cents": 2200,
+          "annual_result_cents": -2200,
+          "passive_total_cents": 9800,
+          "debit_cents": 14200,
+          "credit_cents": 14200,
+          "difference_cents": 0,
+          "issues": [],
+          "entry_count": 2
+        },
+        "tax": {
+          "year": 2026,
+          "accounts": {
+            "equity": {
+              "name": "Original capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            "src_code_06300": {
+              "name": "SKR42 06300 · Betriebsausstattung",
+              "group": "fixed_assets",
+              "skr_code": "06300",
+              "id": "src_code_06300",
+              "opening_cents": 0,
+              "debit_cents": 12000,
+              "credit_cents": 2200,
+              "closing_cents": 9800,
+              "amount_cents": 9800
+            },
+            "src_depreciation_62500": {
+              "name": "Abschreibung Ausstattung",
+              "group": "expense",
+              "skr_code": "62500",
+              "id": "src_depreciation_62500",
+              "opening_cents": 0,
+              "debit_cents": 2200,
+              "credit_cents": 0,
+              "closing_cents": 2200,
+              "amount_cents": 2200
+            },
+            "src_pay_a85b80072c78ca7c9e14": {
+              "name": "Verbindlichkeit LEASING",
+              "group": "liabilities",
+              "skr_code": "",
+              "id": "src_pay_a85b80072c78ca7c9e14",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 12000,
+              "closing_cents": -12000,
+              "amount_cents": 12000
+            }
+          },
+          "assets": [
+            {
+              "name": "SKR42 06300 · Betriebsausstattung",
+              "group": "fixed_assets",
+              "skr_code": "06300",
+              "id": "src_code_06300",
+              "opening_cents": 0,
+              "debit_cents": 12000,
+              "credit_cents": 2200,
+              "closing_cents": 9800,
+              "amount_cents": 9800
+            }
+          ],
+          "capital": [
+            {
+              "name": "Original capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            }
+          ],
+          "liabilities": [
+            {
+              "name": "Verbindlichkeit LEASING",
+              "group": "liabilities",
+              "skr_code": "",
+              "id": "src_pay_a85b80072c78ca7c9e14",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 12000,
+              "closing_cents": -12000,
+              "amount_cents": 12000
+            }
+          ],
+          "profit_and_loss": [
+            {
+              "name": "Abschreibung Ausstattung",
+              "group": "expense",
+              "skr_code": "62500",
+              "id": "src_depreciation_62500",
+              "opening_cents": 0,
+              "debit_cents": 2200,
+              "credit_cents": 0,
+              "closing_cents": 2200,
+              "amount_cents": 2200
+            }
+          ],
+          "spheres": {
+            "1": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "2": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "3": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "4": {
+              "income_cents": 0,
+              "expense_cents": 2200,
+              "result_cents": -2200
+            }
+          },
+          "asset_total_cents": 9800,
+          "capital_total_cents": 0,
+          "liability_total_cents": 12000,
+          "income_cents": 0,
+          "expense_cents": 2200,
+          "annual_result_cents": -2200,
+          "passive_total_cents": 9800,
+          "debit_cents": 14200,
+          "credit_cents": 14200,
+          "difference_cents": 0,
+          "issues": [],
+          "entry_count": 2
+        },
+        "opening_adjustments": [],
+        "current_adjustments": [],
+        "result_difference_cents": 0,
+        "source_spheres": [
+          "4"
+        ],
+        "asset_schedule": {
+          "year": 2026,
+          "items": {
+            "b627211fbf6c91400ca28019070b9b42": {
+              "item_id": "b627211fbf6c91400ca28019070b9b42",
+              "invoice_id": "133df8ff95cb74bd1f8a1405639d97fa",
+              "receipt_number": "LEASING",
+              "account": "src_code_06300",
+              "skr_code": "06300",
+              "sphere": "4",
+              "acquired_on": "2026-02-15",
+              "months": 60,
+              "residual_cents": 0,
+              "cost_opening_cents": 0,
+              "additions_cents": 12000,
+              "cost_closing_cents": 12000,
+              "accumulated_opening_cents": 0,
+              "depreciation_cents": 2200,
+              "accumulated_closing_cents": 2200,
+              "book_opening_cents": 0,
+              "book_closing_cents": 9800,
+              "expected_depreciation_cents": 2200,
+              "acquisition_hash": "e5cd9cd47e792c2d40a01d40c5d627f0a3ffa5bb1746148d52181bc85b311fff",
+              "depreciation_hash": "88866b2554380a6a452ae9ac462c910d838e57bed11a75ce2c86d14aa7979aac",
+              "depreciation_code": "62500",
+              "original_leasing": {
+                "schema": 1,
+                "hgb_economic_owner": "club",
+                "tax_economic_owner": "club",
+                "ordinary_only": true,
+                "document": {
+                  "document_id": "407c945d4f29cc8c7e84fd4c71a7039f",
+                  "revision": 1,
+                  "sha256": "a0093317dafccb06f1558602467f4cfe4467a6b97aea428035d21ad23ccea0aa"
+                }
+              },
+              "name": "LEASING · Original individually leased movable asset"
+            }
+          },
+          "totals": {
+            "cost_opening_cents": 0,
+            "additions_cents": 12000,
+            "cost_closing_cents": 12000,
+            "accumulated_opening_cents": 0,
+            "depreciation_cents": 2200,
+            "accumulated_closing_cents": 2200,
+            "book_opening_cents": 0,
+            "book_closing_cents": 9800
+          },
+          "issues": [],
+          "ready_for_xbrl": false
+        },
+        "whole_club_scope": {
+          "schema": 1,
+          "kind": "whole_taxable_club",
+          "source": {
+            "year": 2026,
+            "state": "closed",
+            "closed_sha256": "0b6ca2e40e2ca2fa4eb398e0dd4ee62f97c8124255571ed219d1eecf56684307",
+            "previous_sha256": null,
+            "result_account": "equity",
+            "issues": [],
+            "accounts": {
+              "equity": {
+                "name": "Original capital",
+                "group": "equity",
+                "skr_code": "29700"
+              },
+              "src_code_06300": {
+                "name": "SKR42 06300 · Betriebsausstattung",
+                "group": "fixed_assets",
+                "skr_code": "06300"
+              },
+              "src_depreciation_62500": {
+                "name": "Abschreibung Ausstattung",
+                "group": "expense",
+                "skr_code": "62500"
+              },
+              "src_pay_a85b80072c78ca7c9e14": {
+                "name": "Verbindlichkeit LEASING",
+                "group": "liabilities",
+                "skr_code": ""
+              }
+            },
+            "opening": [],
+            "entries": [
+              {
+                "club_id": "synthetic-pool-original-2026-EV",
+                "tax_year": 2026,
+                "id": "744808de9e81e84a9dce242c56fd8c29",
+                "booked_on": "2026-02-15",
+                "description": "Rechnung LEASING · Original leased asset acquisition and contractual liability",
+                "evidence": "invoice: 133df8ff95cb74bd1f8a1405639d97fa",
+                "reversal_of": null,
+                "created_by": "reader",
+                "created_at": "2026-10-06T21:54:24+00:00",
+                "date": "2026-02-15",
+                "lines": [
+                  {
+                    "account": "src_code_06300",
+                    "debit_cents": 12000,
+                    "credit_cents": 0,
+                    "sphere": ""
+                  },
+                  {
+                    "account": "src_pay_a85b80072c78ca7c9e14",
+                    "debit_cents": 0,
+                    "credit_cents": 12000,
+                    "sphere": ""
+                  }
+                ]
+              },
+              {
+                "club_id": "synthetic-pool-original-2026-EV",
+                "tax_year": 2026,
+                "id": "3bee0403086336a4129e00cbc9af5073",
+                "booked_on": "2026-12-31",
+                "description": "Abschreibung b627211fbf6c91400ca28019070b9b42:2026",
+                "evidence": "depreciation: b627211fbf6c91400ca28019070b9b42:2026",
+                "reversal_of": null,
+                "created_by": "reader",
+                "created_at": "2026-10-06T21:54:24+00:00",
+                "date": "2026-12-31",
+                "lines": [
+                  {
+                    "account": "src_depreciation_62500",
+                    "debit_cents": 2200,
+                    "credit_cents": 0,
+                    "sphere": "4"
+                  },
+                  {
+                    "account": "src_code_06300",
+                    "debit_cents": 0,
+                    "credit_cents": 2200,
+                    "sphere": ""
+                  }
+                ]
+              }
+            ],
+            "calculation": {
+              "year": 2026,
+              "accounts": {
+                "equity": {
+                  "name": "Original capital",
+                  "group": "equity",
+                  "skr_code": "29700",
+                  "id": "equity",
+                  "opening_cents": 0,
+                  "debit_cents": 0,
+                  "credit_cents": 0,
+                  "closing_cents": 0,
+                  "amount_cents": 0
+                },
+                "src_code_06300": {
+                  "name": "SKR42 06300 · Betriebsausstattung",
+                  "group": "fixed_assets",
+                  "skr_code": "06300",
+                  "id": "src_code_06300",
+                  "opening_cents": 0,
+                  "debit_cents": 12000,
+                  "credit_cents": 2200,
+                  "closing_cents": 9800,
+                  "amount_cents": 9800
+                },
+                "src_depreciation_62500": {
+                  "name": "Abschreibung Ausstattung",
+                  "group": "expense",
+                  "skr_code": "62500",
+                  "id": "src_depreciation_62500",
+                  "opening_cents": 0,
+                  "debit_cents": 2200,
+                  "credit_cents": 0,
+                  "closing_cents": 2200,
+                  "amount_cents": 2200
+                },
+                "src_pay_a85b80072c78ca7c9e14": {
+                  "name": "Verbindlichkeit LEASING",
+                  "group": "liabilities",
+                  "skr_code": "",
+                  "id": "src_pay_a85b80072c78ca7c9e14",
+                  "opening_cents": 0,
+                  "debit_cents": 0,
+                  "credit_cents": 12000,
+                  "closing_cents": -12000,
+                  "amount_cents": 12000
+                }
+              },
+              "assets": [
+                {
+                  "name": "SKR42 06300 · Betriebsausstattung",
+                  "group": "fixed_assets",
+                  "skr_code": "06300",
+                  "id": "src_code_06300",
+                  "opening_cents": 0,
+                  "debit_cents": 12000,
+                  "credit_cents": 2200,
+                  "closing_cents": 9800,
+                  "amount_cents": 9800
+                }
+              ],
+              "capital": [
+                {
+                  "name": "Original capital",
+                  "group": "equity",
+                  "skr_code": "29700",
+                  "id": "equity",
+                  "opening_cents": 0,
+                  "debit_cents": 0,
+                  "credit_cents": 0,
+                  "closing_cents": 0,
+                  "amount_cents": 0
+                }
+              ],
+              "liabilities": [
+                {
+                  "name": "Verbindlichkeit LEASING",
+                  "group": "liabilities",
+                  "skr_code": "",
+                  "id": "src_pay_a85b80072c78ca7c9e14",
+                  "opening_cents": 0,
+                  "debit_cents": 0,
+                  "credit_cents": 12000,
+                  "closing_cents": -12000,
+                  "amount_cents": 12000
+                }
+              ],
+              "profit_and_loss": [
+                {
+                  "name": "Abschreibung Ausstattung",
+                  "group": "expense",
+                  "skr_code": "62500",
+                  "id": "src_depreciation_62500",
+                  "opening_cents": 0,
+                  "debit_cents": 2200,
+                  "credit_cents": 0,
+                  "closing_cents": 2200,
+                  "amount_cents": 2200
+                }
+              ],
+              "spheres": {
+                "1": {
+                  "income_cents": 0,
+                  "expense_cents": 0,
+                  "result_cents": 0
+                },
+                "2": {
+                  "income_cents": 0,
+                  "expense_cents": 0,
+                  "result_cents": 0
+                },
+                "3": {
+                  "income_cents": 0,
+                  "expense_cents": 0,
+                  "result_cents": 0
+                },
+                "4": {
+                  "income_cents": 0,
+                  "expense_cents": 2200,
+                  "result_cents": -2200
+                }
+              },
+              "asset_total_cents": 9800,
+              "capital_total_cents": 0,
+              "liability_total_cents": 12000,
+              "income_cents": 0,
+              "expense_cents": 2200,
+              "annual_result_cents": -2200,
+              "passive_total_cents": 9800,
+              "debit_cents": 14200,
+              "credit_cents": 14200,
+              "difference_cents": 0,
+              "issues": [],
+              "entry_count": 2
+            },
+            "asset_schedule": {
+              "year": 2026,
+              "items": {
+                "b627211fbf6c91400ca28019070b9b42": {
+                  "item_id": "b627211fbf6c91400ca28019070b9b42",
+                  "invoice_id": "133df8ff95cb74bd1f8a1405639d97fa",
+                  "receipt_number": "LEASING",
+                  "account": "src_code_06300",
+                  "skr_code": "06300",
+                  "sphere": "4",
+                  "acquired_on": "2026-02-15",
+                  "months": 60,
+                  "residual_cents": 0,
+                  "cost_opening_cents": 0,
+                  "additions_cents": 12000,
+                  "cost_closing_cents": 12000,
+                  "accumulated_opening_cents": 0,
+                  "depreciation_cents": 2200,
+                  "accumulated_closing_cents": 2200,
+                  "book_opening_cents": 0,
+                  "book_closing_cents": 9800,
+                  "expected_depreciation_cents": 2200,
+                  "acquisition_hash": "e5cd9cd47e792c2d40a01d40c5d627f0a3ffa5bb1746148d52181bc85b311fff",
+                  "depreciation_hash": "88866b2554380a6a452ae9ac462c910d838e57bed11a75ce2c86d14aa7979aac",
+                  "depreciation_code": "62500",
+                  "original_leasing": {
+                    "schema": 1,
+                    "hgb_economic_owner": "club",
+                    "tax_economic_owner": "club",
+                    "ordinary_only": true,
+                    "document": {
+                      "document_id": "407c945d4f29cc8c7e84fd4c71a7039f",
+                      "revision": 1,
+                      "sha256": "a0093317dafccb06f1558602467f4cfe4467a6b97aea428035d21ad23ccea0aa"
+                    }
+                  },
+                  "name": "LEASING · Original individually leased movable asset"
+                }
+              },
+              "totals": {
+                "cost_opening_cents": 0,
+                "additions_cents": 12000,
+                "cost_closing_cents": 12000,
+                "accumulated_opening_cents": 0,
+                "depreciation_cents": 2200,
+                "accumulated_closing_cents": 2200,
+                "book_opening_cents": 0,
+                "book_closing_cents": 9800
+              },
+              "issues": [],
+              "ready_for_xbrl": false
+            }
+          }
+        },
+        "capital_comparison": {
+          "year": 2026,
+          "book_opening_cents": 0,
+          "opening_adjustment_cents": 0,
+          "tax_opening_cents": 0,
+          "tax_closing_cents": -2200,
+          "contributions_cents": 0,
+          "withdrawals_cents": 0,
+          "profit_cents": -2200,
+          "sources": [],
+          "decisions": [],
+          "issues": [],
+          "complete": true
+        },
+        "sha256": "5925cb5bb81d5270afbd6166f4633a1be0846221c27154031597bee96cc5abd2",
+        "transmission": "unavailable"
+      },
+      "different": {
+        "year": 2026,
+        "journal_sha256": "0b6ca2e40e2ca2fa4eb398e0dd4ee62f97c8124255571ed219d1eecf56684307",
+        "accounts": {
+          "equity": {
+            "name": "Original capital",
+            "group": "equity",
+            "skr_code": "29700",
+            "book_opening_cents": 0,
+            "tax_opening_cents": 0,
+            "book_cents": 0,
+            "tax_cents": 0,
+            "difference_cents": 0
+          },
+          "src_code_06300": {
+            "name": "SKR42 06300 · Betriebsausstattung",
+            "group": "fixed_assets",
+            "skr_code": "06300",
+            "book_opening_cents": 0,
+            "tax_opening_cents": 0,
+            "book_cents": 9800,
+            "tax_cents": 10900,
+            "difference_cents": 1100
+          },
+          "src_depreciation_62500": {
+            "name": "Abschreibung Ausstattung",
+            "group": "expense",
+            "skr_code": "62500",
+            "book_opening_cents": 0,
+            "tax_opening_cents": 0,
+            "book_cents": 2200,
+            "tax_cents": 1100,
+            "difference_cents": -1100
+          },
+          "src_pay_a85b80072c78ca7c9e14": {
+            "name": "Verbindlichkeit LEASING",
+            "group": "liabilities",
+            "skr_code": "",
+            "book_opening_cents": 0,
+            "tax_opening_cents": 0,
+            "book_cents": 12000,
+            "tax_cents": 12000,
+            "difference_cents": 0
+          }
+        },
+        "book": {
+          "year": 2026,
+          "accounts": {
+            "equity": {
+              "name": "Original capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            "src_code_06300": {
+              "name": "SKR42 06300 · Betriebsausstattung",
+              "group": "fixed_assets",
+              "skr_code": "06300",
+              "id": "src_code_06300",
+              "opening_cents": 0,
+              "debit_cents": 12000,
+              "credit_cents": 2200,
+              "closing_cents": 9800,
+              "amount_cents": 9800
+            },
+            "src_depreciation_62500": {
+              "name": "Abschreibung Ausstattung",
+              "group": "expense",
+              "skr_code": "62500",
+              "id": "src_depreciation_62500",
+              "opening_cents": 0,
+              "debit_cents": 2200,
+              "credit_cents": 0,
+              "closing_cents": 2200,
+              "amount_cents": 2200
+            },
+            "src_pay_a85b80072c78ca7c9e14": {
+              "name": "Verbindlichkeit LEASING",
+              "group": "liabilities",
+              "skr_code": "",
+              "id": "src_pay_a85b80072c78ca7c9e14",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 12000,
+              "closing_cents": -12000,
+              "amount_cents": 12000
+            }
+          },
+          "assets": [
+            {
+              "name": "SKR42 06300 · Betriebsausstattung",
+              "group": "fixed_assets",
+              "skr_code": "06300",
+              "id": "src_code_06300",
+              "opening_cents": 0,
+              "debit_cents": 12000,
+              "credit_cents": 2200,
+              "closing_cents": 9800,
+              "amount_cents": 9800
+            }
+          ],
+          "capital": [
+            {
+              "name": "Original capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            }
+          ],
+          "liabilities": [
+            {
+              "name": "Verbindlichkeit LEASING",
+              "group": "liabilities",
+              "skr_code": "",
+              "id": "src_pay_a85b80072c78ca7c9e14",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 12000,
+              "closing_cents": -12000,
+              "amount_cents": 12000
+            }
+          ],
+          "profit_and_loss": [
+            {
+              "name": "Abschreibung Ausstattung",
+              "group": "expense",
+              "skr_code": "62500",
+              "id": "src_depreciation_62500",
+              "opening_cents": 0,
+              "debit_cents": 2200,
+              "credit_cents": 0,
+              "closing_cents": 2200,
+              "amount_cents": 2200
+            }
+          ],
+          "spheres": {
+            "1": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "2": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "3": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "4": {
+              "income_cents": 0,
+              "expense_cents": 2200,
+              "result_cents": -2200
+            }
+          },
+          "asset_total_cents": 9800,
+          "capital_total_cents": 0,
+          "liability_total_cents": 12000,
+          "income_cents": 0,
+          "expense_cents": 2200,
+          "annual_result_cents": -2200,
+          "passive_total_cents": 9800,
+          "debit_cents": 14200,
+          "credit_cents": 14200,
+          "difference_cents": 0,
+          "issues": [],
+          "entry_count": 2
+        },
+        "tax": {
+          "year": 2026,
+          "accounts": {
+            "equity": {
+              "name": "Original capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            "src_code_06300": {
+              "name": "SKR42 06300 · Betriebsausstattung",
+              "group": "fixed_assets",
+              "skr_code": "06300",
+              "id": "src_code_06300",
+              "opening_cents": 0,
+              "debit_cents": 13100,
+              "credit_cents": 2200,
+              "closing_cents": 10900,
+              "amount_cents": 10900
+            },
+            "src_depreciation_62500": {
+              "name": "Abschreibung Ausstattung",
+              "group": "expense",
+              "skr_code": "62500",
+              "id": "src_depreciation_62500",
+              "opening_cents": 0,
+              "debit_cents": 2200,
+              "credit_cents": 1100,
+              "closing_cents": 1100,
+              "amount_cents": 1100
+            },
+            "src_pay_a85b80072c78ca7c9e14": {
+              "name": "Verbindlichkeit LEASING",
+              "group": "liabilities",
+              "skr_code": "",
+              "id": "src_pay_a85b80072c78ca7c9e14",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 12000,
+              "closing_cents": -12000,
+              "amount_cents": 12000
+            }
+          },
+          "assets": [
+            {
+              "name": "SKR42 06300 · Betriebsausstattung",
+              "group": "fixed_assets",
+              "skr_code": "06300",
+              "id": "src_code_06300",
+              "opening_cents": 0,
+              "debit_cents": 13100,
+              "credit_cents": 2200,
+              "closing_cents": 10900,
+              "amount_cents": 10900
+            }
+          ],
+          "capital": [
+            {
+              "name": "Original capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            }
+          ],
+          "liabilities": [
+            {
+              "name": "Verbindlichkeit LEASING",
+              "group": "liabilities",
+              "skr_code": "",
+              "id": "src_pay_a85b80072c78ca7c9e14",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 12000,
+              "closing_cents": -12000,
+              "amount_cents": 12000
+            }
+          ],
+          "profit_and_loss": [
+            {
+              "name": "Abschreibung Ausstattung",
+              "group": "expense",
+              "skr_code": "62500",
+              "id": "src_depreciation_62500",
+              "opening_cents": 0,
+              "debit_cents": 2200,
+              "credit_cents": 1100,
+              "closing_cents": 1100,
+              "amount_cents": 1100
+            }
+          ],
+          "spheres": {
+            "1": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "2": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "3": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "4": {
+              "income_cents": 0,
+              "expense_cents": 1100,
+              "result_cents": -1100
+            }
+          },
+          "asset_total_cents": 10900,
+          "capital_total_cents": 0,
+          "liability_total_cents": 12000,
+          "income_cents": 0,
+          "expense_cents": 1100,
+          "annual_result_cents": -1100,
+          "passive_total_cents": 10900,
+          "debit_cents": 15300,
+          "credit_cents": 15300,
+          "difference_cents": 0,
+          "issues": [],
+          "entry_count": 3
+        },
+        "opening_adjustments": [],
+        "current_adjustments": [
+          {
+            "id": "asset-tax-fe783c5a66e0378f23b19839",
+            "reason": "Steuerliche Abschreibung: Synthetic independently confirmed different tax useful life for code review only.",
+            "lines": [
+              {
+                "account": "src_code_06300",
+                "debit_cents": 1100,
+                "credit_cents": 0,
+                "sphere": ""
+              },
+              {
+                "account": "src_depreciation_62500",
+                "debit_cents": 0,
+                "credit_cents": 1100,
+                "sphere": "4"
+              }
+            ]
+          }
+        ],
+        "result_difference_cents": 1100,
+        "source_spheres": [
+          "4"
+        ],
+        "asset_schedule": {
+          "year": 2026,
+          "items": {
+            "b627211fbf6c91400ca28019070b9b42": {
+              "item_id": "b627211fbf6c91400ca28019070b9b42",
+              "invoice_id": "133df8ff95cb74bd1f8a1405639d97fa",
+              "receipt_number": "LEASING",
+              "account": "src_code_06300",
+              "skr_code": "06300",
+              "sphere": "4",
+              "acquired_on": "2026-02-15",
+              "months": 60,
+              "residual_cents": 0,
+              "cost_opening_cents": 0,
+              "additions_cents": 12000,
+              "cost_closing_cents": 12000,
+              "accumulated_opening_cents": 0,
+              "depreciation_cents": 2200,
+              "accumulated_closing_cents": 2200,
+              "book_opening_cents": 0,
+              "book_closing_cents": 9800,
+              "expected_depreciation_cents": 2200,
+              "acquisition_hash": "e5cd9cd47e792c2d40a01d40c5d627f0a3ffa5bb1746148d52181bc85b311fff",
+              "depreciation_hash": "88866b2554380a6a452ae9ac462c910d838e57bed11a75ce2c86d14aa7979aac",
+              "depreciation_code": "62500",
+              "original_leasing": {
+                "schema": 1,
+                "hgb_economic_owner": "club",
+                "tax_economic_owner": "club",
+                "ordinary_only": true,
+                "document": {
+                  "document_id": "407c945d4f29cc8c7e84fd4c71a7039f",
+                  "revision": 1,
+                  "sha256": "a0093317dafccb06f1558602467f4cfe4467a6b97aea428035d21ad23ccea0aa"
+                }
+              },
+              "name": "LEASING · Original individually leased movable asset"
+            }
+          },
+          "totals": {
+            "cost_opening_cents": 0,
+            "additions_cents": 12000,
+            "cost_closing_cents": 12000,
+            "accumulated_opening_cents": 0,
+            "depreciation_cents": 2200,
+            "accumulated_closing_cents": 2200,
+            "book_opening_cents": 0,
+            "book_closing_cents": 9800
+          },
+          "issues": [],
+          "ready_for_xbrl": false
+        },
+        "asset_tax": {
+          "book_schedule_sha256": "ebb3c9a20259e36d05bc4bce8cb696711a7c6113be3896e02fb4d51d3a204425",
+          "items": {
+            "b627211fbf6c91400ca28019070b9b42": {
+              "book_item_sha256": "a4cf9eebef147bdb37c3afe4509e90d5bd0c420f174b8205aca42e2d6379af1b",
+              "plan": {
+                "months": 120,
+                "depreciation_account": "src_depreciation_62500",
+                "reason": "Synthetic independently confirmed different tax useful life for code review only.",
+                "confirmed": true
+              },
+              "opening_difference_cents": 0,
+              "depreciation_difference_cents": -1100
+            }
+          },
+          "equity_account": "equity",
+          "generated_opening": [],
+          "generated_current": [
+            {
+              "id": "asset-tax-fe783c5a66e0378f23b19839",
+              "reason": "Steuerliche Abschreibung: Synthetic independently confirmed different tax useful life for code review only.",
+              "lines": [
+                {
+                  "account": "src_code_06300",
+                  "debit_cents": 1100,
+                  "credit_cents": 0,
+                  "sphere": ""
+                },
+                {
+                  "account": "src_depreciation_62500",
+                  "debit_cents": 0,
+                  "credit_cents": 1100,
+                  "sphere": "4"
+                }
+              ]
+            }
+          ],
+          "tax_schedule": {
+            "year": 2026,
+            "items": {
+              "b627211fbf6c91400ca28019070b9b42": {
+                "item_id": "b627211fbf6c91400ca28019070b9b42",
+                "invoice_id": "133df8ff95cb74bd1f8a1405639d97fa",
+                "receipt_number": "LEASING",
+                "account": "src_code_06300",
+                "skr_code": "06300",
+                "sphere": "4",
+                "acquired_on": "2026-02-15",
+                "months": 120,
+                "residual_cents": 0,
+                "cost_opening_cents": 0,
+                "additions_cents": 12000,
+                "cost_closing_cents": 12000,
+                "accumulated_opening_cents": 0,
+                "depreciation_cents": 1100,
+                "accumulated_closing_cents": 1100,
+                "book_opening_cents": 0,
+                "book_closing_cents": 10900,
+                "expected_depreciation_cents": 1100,
+                "acquisition_hash": "e5cd9cd47e792c2d40a01d40c5d627f0a3ffa5bb1746148d52181bc85b311fff",
+                "depreciation_hash": "88866b2554380a6a452ae9ac462c910d838e57bed11a75ce2c86d14aa7979aac",
+                "depreciation_code": "62500",
+                "original_leasing": {
+                  "schema": 1,
+                  "hgb_economic_owner": "club",
+                  "tax_economic_owner": "club",
+                  "ordinary_only": true,
+                  "document": {
+                    "document_id": "407c945d4f29cc8c7e84fd4c71a7039f",
+                    "revision": 1,
+                    "sha256": "a0093317dafccb06f1558602467f4cfe4467a6b97aea428035d21ad23ccea0aa"
+                  }
+                },
+                "name": "LEASING · Original individually leased movable asset"
+              }
+            },
+            "totals": {
+              "cost_opening_cents": 0,
+              "additions_cents": 12000,
+              "cost_closing_cents": 12000,
+              "accumulated_opening_cents": 0,
+              "depreciation_cents": 1100,
+              "accumulated_closing_cents": 1100,
+              "book_opening_cents": 0,
+              "book_closing_cents": 10900
+            },
+            "issues": [],
+            "ready_for_xbrl": false
+          }
+        },
+        "whole_club_scope": {
+          "schema": 1,
+          "kind": "whole_taxable_club",
+          "source": {
+            "year": 2026,
+            "state": "closed",
+            "closed_sha256": "0b6ca2e40e2ca2fa4eb398e0dd4ee62f97c8124255571ed219d1eecf56684307",
+            "previous_sha256": null,
+            "result_account": "equity",
+            "issues": [],
+            "accounts": {
+              "equity": {
+                "name": "Original capital",
+                "group": "equity",
+                "skr_code": "29700"
+              },
+              "src_code_06300": {
+                "name": "SKR42 06300 · Betriebsausstattung",
+                "group": "fixed_assets",
+                "skr_code": "06300"
+              },
+              "src_depreciation_62500": {
+                "name": "Abschreibung Ausstattung",
+                "group": "expense",
+                "skr_code": "62500"
+              },
+              "src_pay_a85b80072c78ca7c9e14": {
+                "name": "Verbindlichkeit LEASING",
+                "group": "liabilities",
+                "skr_code": ""
+              }
+            },
+            "opening": [],
+            "entries": [
+              {
+                "club_id": "synthetic-pool-original-2026-EV",
+                "tax_year": 2026,
+                "id": "744808de9e81e84a9dce242c56fd8c29",
+                "booked_on": "2026-02-15",
+                "description": "Rechnung LEASING · Original leased asset acquisition and contractual liability",
+                "evidence": "invoice: 133df8ff95cb74bd1f8a1405639d97fa",
+                "reversal_of": null,
+                "created_by": "reader",
+                "created_at": "2026-10-06T21:54:24+00:00",
+                "date": "2026-02-15",
+                "lines": [
+                  {
+                    "account": "src_code_06300",
+                    "debit_cents": 12000,
+                    "credit_cents": 0,
+                    "sphere": ""
+                  },
+                  {
+                    "account": "src_pay_a85b80072c78ca7c9e14",
+                    "debit_cents": 0,
+                    "credit_cents": 12000,
+                    "sphere": ""
+                  }
+                ]
+              },
+              {
+                "club_id": "synthetic-pool-original-2026-EV",
+                "tax_year": 2026,
+                "id": "3bee0403086336a4129e00cbc9af5073",
+                "booked_on": "2026-12-31",
+                "description": "Abschreibung b627211fbf6c91400ca28019070b9b42:2026",
+                "evidence": "depreciation: b627211fbf6c91400ca28019070b9b42:2026",
+                "reversal_of": null,
+                "created_by": "reader",
+                "created_at": "2026-10-06T21:54:24+00:00",
+                "date": "2026-12-31",
+                "lines": [
+                  {
+                    "account": "src_depreciation_62500",
+                    "debit_cents": 2200,
+                    "credit_cents": 0,
+                    "sphere": "4"
+                  },
+                  {
+                    "account": "src_code_06300",
+                    "debit_cents": 0,
+                    "credit_cents": 2200,
+                    "sphere": ""
+                  }
+                ]
+              }
+            ],
+            "calculation": {
+              "year": 2026,
+              "accounts": {
+                "equity": {
+                  "name": "Original capital",
+                  "group": "equity",
+                  "skr_code": "29700",
+                  "id": "equity",
+                  "opening_cents": 0,
+                  "debit_cents": 0,
+                  "credit_cents": 0,
+                  "closing_cents": 0,
+                  "amount_cents": 0
+                },
+                "src_code_06300": {
+                  "name": "SKR42 06300 · Betriebsausstattung",
+                  "group": "fixed_assets",
+                  "skr_code": "06300",
+                  "id": "src_code_06300",
+                  "opening_cents": 0,
+                  "debit_cents": 12000,
+                  "credit_cents": 2200,
+                  "closing_cents": 9800,
+                  "amount_cents": 9800
+                },
+                "src_depreciation_62500": {
+                  "name": "Abschreibung Ausstattung",
+                  "group": "expense",
+                  "skr_code": "62500",
+                  "id": "src_depreciation_62500",
+                  "opening_cents": 0,
+                  "debit_cents": 2200,
+                  "credit_cents": 0,
+                  "closing_cents": 2200,
+                  "amount_cents": 2200
+                },
+                "src_pay_a85b80072c78ca7c9e14": {
+                  "name": "Verbindlichkeit LEASING",
+                  "group": "liabilities",
+                  "skr_code": "",
+                  "id": "src_pay_a85b80072c78ca7c9e14",
+                  "opening_cents": 0,
+                  "debit_cents": 0,
+                  "credit_cents": 12000,
+                  "closing_cents": -12000,
+                  "amount_cents": 12000
+                }
+              },
+              "assets": [
+                {
+                  "name": "SKR42 06300 · Betriebsausstattung",
+                  "group": "fixed_assets",
+                  "skr_code": "06300",
+                  "id": "src_code_06300",
+                  "opening_cents": 0,
+                  "debit_cents": 12000,
+                  "credit_cents": 2200,
+                  "closing_cents": 9800,
+                  "amount_cents": 9800
+                }
+              ],
+              "capital": [
+                {
+                  "name": "Original capital",
+                  "group": "equity",
+                  "skr_code": "29700",
+                  "id": "equity",
+                  "opening_cents": 0,
+                  "debit_cents": 0,
+                  "credit_cents": 0,
+                  "closing_cents": 0,
+                  "amount_cents": 0
+                }
+              ],
+              "liabilities": [
+                {
+                  "name": "Verbindlichkeit LEASING",
+                  "group": "liabilities",
+                  "skr_code": "",
+                  "id": "src_pay_a85b80072c78ca7c9e14",
+                  "opening_cents": 0,
+                  "debit_cents": 0,
+                  "credit_cents": 12000,
+                  "closing_cents": -12000,
+                  "amount_cents": 12000
+                }
+              ],
+              "profit_and_loss": [
+                {
+                  "name": "Abschreibung Ausstattung",
+                  "group": "expense",
+                  "skr_code": "62500",
+                  "id": "src_depreciation_62500",
+                  "opening_cents": 0,
+                  "debit_cents": 2200,
+                  "credit_cents": 0,
+                  "closing_cents": 2200,
+                  "amount_cents": 2200
+                }
+              ],
+              "spheres": {
+                "1": {
+                  "income_cents": 0,
+                  "expense_cents": 0,
+                  "result_cents": 0
+                },
+                "2": {
+                  "income_cents": 0,
+                  "expense_cents": 0,
+                  "result_cents": 0
+                },
+                "3": {
+                  "income_cents": 0,
+                  "expense_cents": 0,
+                  "result_cents": 0
+                },
+                "4": {
+                  "income_cents": 0,
+                  "expense_cents": 2200,
+                  "result_cents": -2200
+                }
+              },
+              "asset_total_cents": 9800,
+              "capital_total_cents": 0,
+              "liability_total_cents": 12000,
+              "income_cents": 0,
+              "expense_cents": 2200,
+              "annual_result_cents": -2200,
+              "passive_total_cents": 9800,
+              "debit_cents": 14200,
+              "credit_cents": 14200,
+              "difference_cents": 0,
+              "issues": [],
+              "entry_count": 2
+            },
+            "asset_schedule": {
+              "year": 2026,
+              "items": {
+                "b627211fbf6c91400ca28019070b9b42": {
+                  "item_id": "b627211fbf6c91400ca28019070b9b42",
+                  "invoice_id": "133df8ff95cb74bd1f8a1405639d97fa",
+                  "receipt_number": "LEASING",
+                  "account": "src_code_06300",
+                  "skr_code": "06300",
+                  "sphere": "4",
+                  "acquired_on": "2026-02-15",
+                  "months": 60,
+                  "residual_cents": 0,
+                  "cost_opening_cents": 0,
+                  "additions_cents": 12000,
+                  "cost_closing_cents": 12000,
+                  "accumulated_opening_cents": 0,
+                  "depreciation_cents": 2200,
+                  "accumulated_closing_cents": 2200,
+                  "book_opening_cents": 0,
+                  "book_closing_cents": 9800,
+                  "expected_depreciation_cents": 2200,
+                  "acquisition_hash": "e5cd9cd47e792c2d40a01d40c5d627f0a3ffa5bb1746148d52181bc85b311fff",
+                  "depreciation_hash": "88866b2554380a6a452ae9ac462c910d838e57bed11a75ce2c86d14aa7979aac",
+                  "depreciation_code": "62500",
+                  "original_leasing": {
+                    "schema": 1,
+                    "hgb_economic_owner": "club",
+                    "tax_economic_owner": "club",
+                    "ordinary_only": true,
+                    "document": {
+                      "document_id": "407c945d4f29cc8c7e84fd4c71a7039f",
+                      "revision": 1,
+                      "sha256": "a0093317dafccb06f1558602467f4cfe4467a6b97aea428035d21ad23ccea0aa"
+                    }
+                  },
+                  "name": "LEASING · Original individually leased movable asset"
+                }
+              },
+              "totals": {
+                "cost_opening_cents": 0,
+                "additions_cents": 12000,
+                "cost_closing_cents": 12000,
+                "accumulated_opening_cents": 0,
+                "depreciation_cents": 2200,
+                "accumulated_closing_cents": 2200,
+                "book_opening_cents": 0,
+                "book_closing_cents": 9800
+              },
+              "issues": [],
+              "ready_for_xbrl": false
+            }
+          }
+        },
+        "capital_comparison": {
+          "year": 2026,
+          "book_opening_cents": 0,
+          "opening_adjustment_cents": 0,
+          "tax_opening_cents": 0,
+          "tax_closing_cents": -1100,
+          "contributions_cents": 0,
+          "withdrawals_cents": 0,
+          "profit_cents": -1100,
+          "sources": [],
+          "decisions": [],
+          "issues": [],
+          "complete": true
+        },
+        "sha256": "f9e1b214ea03d27b5ec76017a3e9ad039a2248fe0e5031a10bfcb0057a8a8dbb",
+        "transmission": "unavailable"
+      },
+      "mapping": {
+        "equity": "bs.eqLiab.equity.SurplusOfUnspentFunds",
+        "src_code_06300": "bs.ass.fixAss.tan.otherEquipm.factory",
+        "src_depreciation_62500": "is.netIncome.regular.operatingTC.deprAmort.fixAss.tan.other",
+        "src_pay_a85b80072c78ca7c9e14": "bs.eqLiab.liab.other.other"
+      },
+      "profile": {
+        "kind": "whole_taxable_club",
+        "scope_confirmed": true,
+        "source_scope": "complete_club_ledger",
+        "tax_privileged": false,
+        "asset_scope": "whole_club",
+        "asset_values_unchanged": false,
+        "asset_tax_values_reviewed": true,
+        "no_retained_fixed_assets": false,
+        "tax_values_sha256": "f9e1b214ea03d27b5ec76017a3e9ad039a2248fe0e5031a10bfcb0057a8a8dbb",
+        "business_name": "Synthetischer Test-Geschäftsbetrieb",
+        "supplier": "Synthetischer Softwaretest",
+        "company": {
+          "tax_number": "5192050001276",
+          "name": "Synthetischer Testverein",
+          "street": "Testweg",
+          "house_number": "1",
+          "postal_code": "11111",
+          "city": "Teststadt",
+          "country": "Deutschland",
+          "legal_status": "EV"
+        }
+      }
+    }
+  ]
+}

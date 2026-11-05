@@ -1,0 +1,139 @@
+{
+  "schema": 1,
+  "cost_source_review": "../accounting/reviews/cost-assets.json",
+  "types": {
+    "software": {
+      "kind": "software",
+      "depreciation_code": "62000",
+      "depreciation_target": "is.netIncome.regular.operatingTC.deprAmort.fixAss.otherIntan",
+      "targets": [
+        "bs.ass.fixAss.intan.concessionBrands.software"
+      ]
+    },
+    "movable": {
+      "kind": "movable",
+      "depreciation_code": "62200",
+      "depreciation_target": "is.netIncome.regular.operatingTC.deprAmort.fixAss.tan.other",
+      "targets": [
+        "bs.ass.fixAss.tan.machinery.technEquipm",
+        "bs.ass.fixAss.tan.machinery.machinery",
+        "bs.ass.fixAss.tan.machinery.installations",
+        "bs.ass.fixAss.tan.otherEquipm.other",
+        "bs.ass.fixAss.tan.otherEquipm.passengerCars",
+        "bs.ass.fixAss.tan.otherEquipm.comVehicle",
+        "bs.ass.fixAss.tan.otherEquipm.otherTransportMeans",
+        "bs.ass.fixAss.tan.otherEquipm.factory",
+        "bs.ass.fixAss.tan.otherEquipm.office",
+        "bs.ass.fixAss.tan.otherEquipm.otherbga"
+      ]
+    },
+    "gwg": {
+      "kind": "gwg",
+      "depreciation_code": "62600",
+      "depreciation_target": "is.netIncome.regular.operatingTC.deprAmort.fixAss.tan.lowValueAs",
+      "targets": [
+        "bs.ass.fixAss.tan.otherEquipm.gwg"
+      ]
+    },
+    "land": {
+      "kind": "land",
+      "depreciation_code": null,
+      "depreciation_target": null,
+      "targets": [
+        "bs.ass.fixAss.tan.landBuildings.landWithoutBuildings",
+        "bs.ass.fixAss.tan.landBuildings.buildingsOnOwnLand.land",
+        "bs.ass.fixAss.tan.landBuildings.rightEquivalentToLandWithoutBuildings"
+      ]
+    },
+    "financial": {
+      "kind": "financial",
+      "depreciation_code": null,
+      "depreciation_target": null,
+      "targets": [
+        "bs.ass.fixAss.fin.loansToAffil.corporations",
+        "bs.ass.fixAss.fin.loansToAffil.partnerships.other",
+        "bs.ass.fixAss.fin.loansToAffil.soleProprietor",
+        "bs.ass.fixAss.fin.loansToParticip.corporations",
+        "bs.ass.fixAss.fin.loansToParticip.partnerships.other",
+        "bs.ass.fixAss.fin.loansToParticip.soleProprietor",
+        "bs.ass.fixAss.fin.loansToSharehold.gmbh",
+        "bs.ass.fixAss.fin.loansToSharehold.misc",
+        "bs.ass.fixAss.fin.otherLoans.other",
+        "bs.ass.fixAss.fin.otherLoans.silent",
+        "bs.ass.fixAss.fin.particip.corporations",
+        "bs.ass.fixAss.fin.particip.silent",
+        "bs.ass.fixAss.fin.participOtherForeign",
+        "bs.ass.fixAss.fin.securities",
+        "bs.ass.fixAss.fin.securities.bonds",
+        "bs.ass.fixAss.fin.securities.convertBond",
+        "bs.ass.fixAss.fin.securities.mutInvestm",
+        "bs.ass.fixAss.fin.securities.other",
+        "bs.ass.fixAss.fin.securities.partCertificate",
+        "bs.ass.fixAss.fin.securities.securities",
+        "bs.ass.fixAss.fin.securities.shares",
+        "bs.ass.fixAss.fin.securities.warrants",
+        "bs.ass.fixAss.fin.securitiesOtherForeign",
+        "bs.ass.fixAss.fin.sharesInAffil.corporations",
+        "bs.ass.fixAss.fin.sharesInAffilOtherForeign",
+        "bs.ass.fixAss.fin.otherFinAss.reInsurClaim"
+      ]
+    },
+    "intangible": {
+      "kind": "intangible",
+      "depreciation_code": "62000",
+      "depreciation_target": "is.netIncome.regular.operatingTC.deprAmort.fixAss.otherIntan",
+      "targets": [
+        "bs.ass.fixAss.intan.concessionBrands.concession",
+        "bs.ass.fixAss.intan.concessionBrands.tradeMarks",
+        "bs.ass.fixAss.intan.concessionBrands.other",
+        "bs.ass.fixAss.intan.concessionBrands.licenses"
+      ]
+    },
+    "construction": {
+      "kind": "construction",
+      "depreciation_code": null,
+      "depreciation_target": null,
+      "targets": [
+        "bs.ass.fixAss.tan.inConstrAdvPaym.advPaym",
+        "bs.ass.fixAss.tan.inConstrAdvPaym.buildingUnderConstr",
+        "bs.ass.fixAss.tan.inConstrAdvPaym.equipmUnderConstr"
+      ]
+    },
+    "building": {
+      "kind": "building",
+      "depreciation_code": "62210",
+      "depreciation_target": "is.netIncome.regular.operatingTC.deprAmort.fixAss.tan.buildings",
+      "targets": [
+        "bs.ass.fixAss.tan.landBuildings.buildingsOnOwnLand.buildings",
+        "bs.ass.fixAss.tan.landBuildings.buildingsOnNonOwnedLand"
+      ]
+    },
+    "goodwill": {
+      "kind": "goodwill",
+      "depreciation_code": "62050",
+      "depreciation_target": "is.netIncome.regular.operatingTC.deprAmort.fixAss.goodwill",
+      "targets": [
+        "bs.ass.fixAss.intan.goodwill.purchased"
+      ]
+    },
+    "intangible_advance": {
+      "kind": "intangible_advance",
+      "depreciation_code": null,
+      "depreciation_target": null,
+      "targets": [
+        "bs.ass.fixAss.intan.advPaym"
+      ]
+    }
+  },
+  "source_types": {
+    "immovable_fixture": {
+      "kind": "immovable_fixture",
+      "depreciation_code": "62200",
+      "depreciation_target": "is.netIncome.regular.operatingTC.deprAmort.fixAss.tan.other",
+      "targets": [
+        "bs.ass.fixAss.tan.landBuildings.buildingsOnOwnLand.buildings",
+        "bs.ass.fixAss.tan.landBuildings.buildingsOnNonOwnedLand"
+      ]
+    }
+  }
+}

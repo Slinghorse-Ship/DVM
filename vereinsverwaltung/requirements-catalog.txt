@@ -1,0 +1,4 @@
+# Separate private Python environment for the annual DATEV catalog import.
+# Do not replace the OCR, bank or ELSTER environment with these packages.
+pdfplumber==0.11.9
+openpyxl==3.1.5

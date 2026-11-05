@@ -1,0 +1,3 @@
+<?php declare(strict_types=1);
+try{$languageState=(new \Kulturhus\Native\Language\Controller($db,$nativeAccess))->handle('GET',$_GET,(string)$_SESSION['csrf']);echo \Kulturhus\Native\Language\View::render($languageState,(string)$_SESSION['csrf'],'/vereinsverwaltung/?view=settings&tab=languages');}
+catch(\Throwable $error){http_response_code(422);$languageFailureMessages=[];try{$languageFailureMessages=(new \Kulturhus\Native\Language\Catalog($db,$nativeAccess))->messages();}catch(\Throwable){}echo \Kulturhus\Native\Language\View::failure('Sprachverwaltung nicht verfügbar. Bitte neu laden.',$languageFailureMessages,$_GET);}

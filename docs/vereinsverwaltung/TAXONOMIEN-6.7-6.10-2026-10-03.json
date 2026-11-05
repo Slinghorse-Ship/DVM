@@ -1,0 +1,254 @@
+{
+  "schema": 1,
+  "checked_at": "2026-10-03T13:21:59.858781+02:00",
+  "scope": "four_official_taxonomy_sources_and_2027_catalog_preparation",
+  "source_base_commit": "a5335feb8d373ee933ef22f8238bd770d46f6677",
+  "sources_normalized_lf": {
+    "vereinsverwaltung/resources/accounting/purposes.json": "b6ff6e9750f8e8f9620a3da287863700b9af37151268b227fb2c3b1d65185590",
+    "vereinsverwaltung/resources/accounting/reviews/taxonomy-6.10.json": "6e1e09e37b027ed41dd784d8ec7ee192544648a44154613212e6a0ed110c8e93",
+    "vereinsverwaltung/resources/ebilanz/releases.json": "5b9abfc8ac18ca3bfaa443941c99a2b5ec6a40b666c880629dbe583969ff9f8b",
+    "vereinsverwaltung/resources/ebilanz/taxonomies.json": "276e2574ac28dd7e516912ee975bdd0f11e8fa2653e938b0975e4dfe9367eb61",
+    "vereinsverwaltung/resources/ebilanz/taxonomy-6.10.json": "81de3aa1768b4bb0a1e48a88aeb93f8cad4a2febe48c7201cabe0944db5dd8a8",
+    "vereinsverwaltung/resources/ebilanz/taxonomy-6.7.json": "c7ad65b29fbd84f6fbc72e598e9b20b8a76e016fe9ca071c3f91c15a8d086847",
+    "vereinsverwaltung/resources/ebilanz/taxonomy-6.8.json": "ed891b1bed30b6cbf8f57f33b5425b73094cddc8a9c72e068797360b0726a3a2",
+    "vereinsverwaltung/src/CatalogImports.php": "6fac1ea45ae7c5c9ed9bb9555938093ff1c3c66ccc26eeefe1eada2dfadf3fef",
+    "vereinsverwaltung/src/TaxFilings.php": "ffc4d8124579366020b2ff12daab42c63187fa414e3ef562c83105e912d1ae9a",
+    "vereinsverwaltung/src/TaxonomySources.php": "dbf411c101b1bed7ba54cee4aec4f309f7ba78532c8e93618ba62be2af778c72",
+    "vereinsverwaltung/tests/balance-suite.json": "8b58f9cfcd896429fb7ed97862d07ab9e4a040e321aea6910cf272851b0ef426",
+    "vereinsverwaltung/tests/catalog-imports.php": "70e9cce29ca4024629865778903c50797262d15526865d07a5d686cf743cbb0b",
+    "vereinsverwaltung/tests/catalog-taxonomies.php": "62a87491901fb817c985e413bd99cc0b11099a0e6d1689fd3a00abdb6b4dfec4",
+    "vereinsverwaltung/tests/datev-web-process.php": "bf5f7656a3bf0086ce47fa24e8ed1bd040e1622aa3b6e7596261d1c6741421f0",
+    "vereinsverwaltung/tests/ebilanz-future-year-test.py": "77867260627da803fa2434dac4d007484b98057c379a1631e74c4da532f167e8",
+    "vereinsverwaltung/tests/ebilanz-taxonomy-sources-test.py": "f0ab55e21811082ca2cd2e9c37a254da6751e85d1eb64986909520569a3fe4b2",
+    "vereinsverwaltung/tests/tax-runtime-fingerprint.php": "e2ee40744be03a71372f8216afc9b4c56c565f3f0320161c8aa8c75de30cc345",
+    "vereinsverwaltung/tools/compile-ebalance-taxonomy.py": "4a3aa8dbbdf99c423fa6659e92c7d7357bf6ed5a6b39eefb14d8d79d265b524a",
+    "vereinsverwaltung/tools/datev_web.py": "2f58be554d0096bccdbe098431d4f524f896156bc413fcfb121f4c3794069b0e",
+    "vereinsverwaltung/tools/datev_years.py": "faf210802ebd4721528d121d0bbded3cb344b984c2f4f459e80a610a9b43ab2b",
+    "vereinsverwaltung/tools/ebilanz_builder.py": "8efa1bceb675d82bc5440aab46c01da4dc75bf312a8e31679fd4a73dad658ec2",
+    "vereinsverwaltung/tools/ebilanz_release.py": "8c88dbb124bf031710a7b1434e611b1dcfd38fc7804c4d6a0ec4833e6c5345a9",
+    "vereinsverwaltung/tools/maintain-datev-skr42.py": "66f312705edc7027d2511950ad29475a4029f2dd4a97a050f077b4b96de25278",
+    "vereinsverwaltung/tools/taxonomy_purposes.py": "9bb51b777ec27a2577bc5b7d4a1f399a74b85161371c44190b6375d0fdffaceb",
+    "vereinsverwaltung/tools/taxonomy_sources.py": "c3a956bf7f519c072692b283a1717f4b68f95bf95079087f9b8be96b851bc7d2",
+    "vereinsverwaltung/views/Catalog/catalog-import.php": "b8091edf210ad31affc2e1a014e5d8b268109c38fd5edb70abe05f04211bee0e"
+  },
+  "official_taxonomies": [
+    {
+      "version": "6.7",
+      "date": "2023-04-01",
+      "regular_start_year": 2024,
+      "optional_start_year": 2023,
+      "source": "https://www.esteuer.de/download/taxonomie_20230619/german-gaap-taxonomy-v6.7-2023-04-01.zip",
+      "sha256": "c7ad65b29fbd84f6fbc72e598e9b20b8a76e016fe9ca071c3f91c15a8d086847",
+      "archive_sha256": "ad0768cb42aab2fc48d0971120591d37815d335a0ea6949f60819dca3a40df05",
+      "recompiled_from_original_modules": true,
+      "parsed_source_files": 14,
+      "concepts": {
+        "de-gaap-ci": 3255,
+        "de-gcd": 846
+      }
+    },
+    {
+      "version": "6.8",
+      "date": "2024-04-01",
+      "regular_start_year": 2025,
+      "optional_start_year": 2024,
+      "source": "https://www.esteuer.de/download/taxonomie_20240610/german-gaap-taxonomy-v6.8-2024-04-01-xbrl.zip",
+      "sha256": "ed891b1bed30b6cbf8f57f33b5425b73094cddc8a9c72e068797360b0726a3a2",
+      "archive_sha256": "1283dec2d45bce76d3194bb035bdf432ab477d688fc342bb5c17d16ec02285d7",
+      "recompiled_from_original_modules": true,
+      "parsed_source_files": 14,
+      "concepts": {
+        "de-gaap-ci": 3329,
+        "de-gcd": 847
+      }
+    },
+    {
+      "version": "6.9",
+      "date": "2025-04-01",
+      "regular_start_year": 2026,
+      "optional_start_year": 2025,
+      "source": "https://www.esteuer.de/download/taxonomie_20250618/german-gaap-taxonomy-v6.9-2025-04-01-xbrl.zip",
+      "sha256": "936d8f7ca8e8989ead200f70f5438d0d6c209821cfcbea972ba84c011b04c0cb",
+      "archive_sha256": "accd62202d73c036910fee118b30730f0392934afc9730617788e30a0480df87",
+      "recompiled_from_original_modules": true,
+      "parsed_source_files": 14,
+      "concepts": {
+        "de-gaap-ci": 3347,
+        "de-gcd": 855
+      }
+    },
+    {
+      "version": "6.10",
+      "date": "2026-04-01",
+      "regular_start_year": 2027,
+      "optional_start_year": 2026,
+      "source": "https://www.esteuer.de/download/taxonomie_20260615/germany-gaap-taxonomy-v6.10-2026-04-01-xbrl.zip",
+      "sha256": "81de3aa1768b4bb0a1e48a88aeb93f8cad4a2febe48c7201cabe0944db5dd8a8",
+      "archive_sha256": "de00ceaad0e532d238dea24a48160ec335422a3a71c38dd03c7b2b34b32fff76",
+      "recompiled_from_original_modules": true,
+      "parsed_source_files": 14,
+      "concepts": {
+        "de-gaap-ci": 3343,
+        "de-gcd": 855
+      }
+    }
+  ],
+  "year_basis": "fiscal_year_start",
+  "choices_for_2025": {
+    "regular": "6.8",
+    "optional": "6.9"
+  },
+  "native_output_implemented_taxonomies": [
+    "6.9"
+  ],
+  "catalog_preparation_taxonomies": [
+    "6.10"
+  ],
+  "projection": {
+    "eligible": 314,
+    "blocked": {
+      "purpose-0005@1": {
+        "changed_targets": [
+          "bs.ass.currAss.inventory.material"
+        ]
+      },
+      "purpose-0009@1": {
+        "changed_targets": [
+          "bs.ass.currAss.inventory.finishedAndMerch"
+        ]
+      },
+      "purpose-0087@1": {
+        "changed_targets": [
+          "is.netIncome.otherTaxes.other"
+        ]
+      },
+      "operating-r16-044@1": {
+        "changed_targets": [
+          "is.netIncome.otherTaxes.other"
+        ]
+      },
+      "operating-r16-045@1": {
+        "changed_targets": [
+          "is.netIncome.otherTaxes.releaseTaxProvision"
+        ]
+      },
+      "working-capital-r18-004@1": {
+        "changed_targets": [
+          "bs.ass.currAss.inventory.material"
+        ]
+      }
+    },
+    "historic_definitions_unchanged": true,
+    "historic_years_and_6_9_registry_unchanged": [
+      "vereinsverwaltung/resources/accounting/years/2025-r14.json",
+      "vereinsverwaltung/resources/accounting/years/2025-r15.json",
+      "vereinsverwaltung/resources/accounting/years/2025-r16.json",
+      "vereinsverwaltung/resources/accounting/years/2025-r17.json",
+      "vereinsverwaltung/resources/accounting/years/2025-r18.json",
+      "vereinsverwaltung/resources/accounting/years/2025-r19.json",
+      "vereinsverwaltung/resources/accounting/years/2025.json",
+      "vereinsverwaltung/resources/accounting/years/2026-r14.json",
+      "vereinsverwaltung/resources/accounting/years/2026-r15.json",
+      "vereinsverwaltung/resources/accounting/years/2026-r16.json",
+      "vereinsverwaltung/resources/accounting/years/2026-r17.json",
+      "vereinsverwaltung/resources/accounting/years/2026-r18.json",
+      "vereinsverwaltung/resources/accounting/years/2026-r19.json",
+      "vereinsverwaltung/resources/accounting/years/2026.json",
+      "vereinsverwaltung/resources/accounting/years/active.json",
+      "vereinsverwaltung/resources/ebilanz/skr42-6.9.json"
+    ],
+    "report": {
+      "file": "vereinsverwaltung/resources/accounting/reviews/taxonomy-6.10.json",
+      "sha256": "6e1e09e37b027ed41dd784d8ec7ee192544648a44154613212e6a0ed110c8e93"
+    }
+  },
+  "local_checks": {
+    "passed": true,
+    "programs": 14,
+    "sources_unchanged": true,
+    "selected_checks": [
+      "datev-years-test.py",
+      "datev-web-test.py",
+      "datev-statements-test.py",
+      "ebilanz-builder-test.py",
+      "ebilanz-combined-club-test.py",
+      "ebilanz-subsidiary-test.py",
+      "ebilanz-whole-club-test.py",
+      "ebilanz-release-test.py",
+      "ebilanz-future-year-test.py",
+      "ebilanz-taxonomy-sources-test.py",
+      "balance-suite-test.py",
+      "catalog-taxonomies.php",
+      "tax-runtime-fingerprint.php",
+      "ebilanz-native.py"
+    ],
+    "report": {
+      "file": "audit/four-taxonomy-check-20261003.json",
+      "sha256": "5f4454ec6d2c85bbf757c207c742b8af7a846a9b683f9e96be9977ec37e50c17"
+    }
+  },
+  "native": {
+    "accepted": 3,
+    "expected_rejections": 1,
+    "flags": 2,
+    "sent": false,
+    "report": {
+      "file": "audit/four-taxonomy-native-20261003.json",
+      "sha256": "a462705cdacf5302b30c2c3e13caa55e14d928f1e4421d600b75c2631350bd43"
+    }
+  },
+  "mysql": {
+    "passed": true,
+    "programs": 4,
+    "checks": {
+      "catalog-imports.php": 94,
+      "catalog-taxonomies.php": 21,
+      "datev-web-process.php": 10,
+      "tax-runtime-fingerprint.php": 260
+    },
+    "dedicated_synthetic_database": true,
+    "production_database_connected": false,
+    "backup_created": false,
+    "protected_files_unchanged": true,
+    "temporary_files_removed": true,
+    "report": {
+      "file": "audit/ebilanz-mysql-host-20260918-f3ccf507b074b425.json",
+      "sha256": "4aebe10b2ade611410b77188a8702096f29748060f23056db854b52393a95e47"
+    }
+  },
+  "earlier_runs": {
+    "failed_mysql": {
+      "file": "audit/ebilanz-mysql-host-20260918-f7853d3de0c2773b.json",
+      "sha256": "aa7ec7aefd94959ffe8df5072c8c004fb3d05ec2d48a3b9c5aa752f89239a54a"
+    },
+    "test_setup_repair_mysql": {
+      "file": "audit/ebilanz-mysql-host-20260918-7d85141c0a11a3e0.json",
+      "sha256": "6b6e8f17dd0fcaac8afbc329bce2573ee165ffbeb2cbca886259366fd6d58353"
+    },
+    "superseded_incomplete_offline": {
+      "file": "audit/future-year-offline-20261003.json",
+      "sha256": "3a7b28ddb1f85ce4741a379918fa8730f60692a46e761b4f94b796c315da9e47"
+    },
+    "results_remain_separate": true,
+    "full_new_regression_run_claimed": false
+  },
+  "test_inventory": {
+    "mysql": 164,
+    "offline_python": 47
+  },
+  "actual_2027_datev_pdf_accepted": false,
+  "synthetic_2027_process_only": true,
+  "native_6_10_accepted": false,
+  "release_ready": false,
+  "production_authorized": false,
+  "kulturhus_accounting": "euer",
+  "full_ui_audit_started": false,
+  "remaining": [
+    "actual_published_2027_datev_pdf",
+    "review_changed_6_10_purposes_and_new_source_families",
+    "output_adapter_and_native_eric_acceptance_for_other_taxonomies",
+    "general_account_asset_valuation_sphere_period_combinations",
+    "safe_transport_and_feedback_acceptance",
+    "full_release_then_full_ui_audit"
+  ]
+}

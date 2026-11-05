@@ -1,0 +1,52 @@
+<?php declare(strict_types=1);
+require dirname(__DIR__).'/native/bootstrap.php';
+require __DIR__.'/support/original-database-hash.php';
+use Kulturhus\Native\TestSupport;
+use Kulturhus\Native\Shared\{Access,Db,RichText};
+use Kulturhus\Native\Cms\Pages;
+
+$db=TestSupport::db();TestSupport::seed($db);Kulturhus\Native\Cms\Schema::install($db);Kulturhus\Native\Communication\Schema::install($db);
+$pages=new Pages($db,new Access($db,'admin'));
+$protected=$pages->save(['slug'=>'kontakt','title'=>'Protected original contact Ä','body_html'=>'<p><a href="mailto:original@example.invalid">Original mail</a> <a href="tel:+49445412345">Original phone</a></p>','nav_visible'=>false]);$pages->publish($protected['id'],1);
+$foreign=new Pages($db,new Access($db,'outsider'));$foreign->save(['slug'=>'foreign-contact','title'=>'Foreign original','body_html'=>'<p>Foreign original bytes</p>']);
+$tables=$db->query("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA=DATABASE() AND TABLE_TYPE='BASE TABLE' ORDER BY TABLE_NAME")->fetchAll(PDO::FETCH_COLUMN);$keys=[];$counts=[];
+foreach($tables as$table){$columns=Db::run($db,"SELECT COLUMN_NAME FROM information_schema.KEY_COLUMN_USAGE WHERE TABLE_SCHEMA=DATABASE() AND TABLE_NAME=? AND CONSTRAINT_NAME='PRIMARY' ORDER BY ORDINAL_POSITION",[$table])->fetchAll(PDO::FETCH_COLUMN);if(!$columns)throw new RuntimeException('Stable original keys required.');$keys[$table]=['columns'=>$columns,'values'=>Db::run($db,'SELECT `'.implode('`,`',$columns).'` FROM `'.$table.'`')->fetchAll(PDO::FETCH_NUM)];$counts[$table]=count($keys[$table]['values']);}
+$filter=static function(string $table)use($keys):array{$entry=$keys[$table];if(!$entry['values'])return[' WHERE 0=1',[]];$args=[];foreach($entry['values']as$values)array_push($args,...$values);return[' WHERE (`'.implode('`,`',$entry['columns']).'`) IN ('.implode(',',array_fill(0,count($entry['values']),'('.implode(',',array_fill(0,count($entry['columns']),'?')).')')).')',$args];};
+$before=ownOriginalDatabaseHash($db,$tables,$filter);
+$own=$pages->save(['slug'=>'own-http-contact','title'=>'Own HTTP contact Ä','body_html'=>'<p>Own unsent original</p>','nav_visible'=>false]);
+$browserPage=$pages->save(['slug'=>'own-browser-contact','title'=>'Own browser contact Ä','body_html'=>'<p>E-Mail Ä</p><p>Telefon</p><p>Website</p><p>Sonderpostfach</p>','nav_visible'=>false]);
+$config=TestSupport::config();$root=dirname(getenv('KH_NATIVE_TEST_CONFIG')).'/runtime-'.$config['database'];foreach(['media','web','sessions']as$dir)mkdir($root.'/'.$dir,0700,true);
+$image=imagecreatetruecolor(32,24);imagepng($image,$root.'/media/protected.png');unset($image);$imageHash=hash_file('sha256',$root.'/media/protected.png');file_put_contents($root.'/private.key',random_bytes(32));chmod($root.'/private.key',0600);$keyHash=hash_file('sha256',$root.'/private.key');
+$socket=stream_socket_server('tcp://127.0.0.1:0',$errno,$error);if(!$socket)throw new RuntimeException('Own HTTP port required.');$port=(int)substr(strrchr(stream_socket_get_name($socket,false),':'),1);fclose($socket);$origin='http://127.0.0.1:'.$port;
+$n=0;$server=null;$check=static function(bool $ok,string $label)use(&$n):void{if(!$ok)throw new RuntimeException($label);$n++;echo 'PASS '.$label."\n";};
+$http=static function(string $path,?array $post=null)use($origin,$root):array{$headers=[];$curl=curl_init($origin.$path);curl_setopt_array($curl,[CURLOPT_RETURNTRANSFER=>true,CURLOPT_TIMEOUT=>15,CURLOPT_COOKIEFILE=>$root.'/cookies',CURLOPT_COOKIEJAR=>$root.'/cookies',CURLOPT_HEADERFUNCTION=>static function($handle,string $line)use(&$headers):int{$headers[]=trim($line);return strlen($line);}]);if($post!==null)curl_setopt_array($curl,[CURLOPT_POST=>true,CURLOPT_POSTFIELDS=>http_build_query($post),CURLOPT_HTTPHEADER=>['Origin: '.$origin]]);$body=curl_exec($curl);$status=curl_getinfo($curl,CURLINFO_RESPONSE_CODE);curl_close($curl);if(!is_string($body))throw new RuntimeException('Own HTTP response required.');return[$status,$body,$headers];};
+try{
+    putenv('KH_NATIVE_LOCAL_DEMO=synthetic');putenv('KH_NATIVE_DEMO_PORT='.$port);putenv('KH_NATIVE_REQUIRE_LOGIN=0');
+    $server=proc_open([...TestSupport::phpCommand(),'-d','session.cookie_secure=0','-S','127.0.0.1:'.$port,'-t',$root.'/web',dirname(__DIR__).'/native/Web/router.php'],[0=>['pipe','r'],1=>['file',$root.'/server.log','a'],2=>['file',$root.'/server.log','a']],$pipes,dirname(__DIR__,2));if(!is_resource($server))throw new RuntimeException('Own native server required.');fclose($pipes[0]);
+    for($i=0;$i<100;$i++){$ready=@stream_socket_client('tcp://127.0.0.1:'.$port,$errno,$error,.1);if($ready){fclose($ready);break;}usleep(50000);}
+    $url='/?view=website&item='.$own['id'];[$status,$html]=$http($url);$check($status===200,'actual native page editor opens the selected own draft');$dom=new DOMDocument();@$dom->loadHTML($html);$xpath=new DOMXPath($dom);$csrf=$xpath->query('//form[input[@name="operation" and @value="page-save"]]/input[@name="csrf"]')->item(0)?->getAttribute('value');$check(is_string($csrf)&&strlen($csrf)===64,'actual own native save form provides its original CSRF');
+    $check($xpath->query('//section[@data-kh-richtext and input[@name="body_html"]]//select[@data-rt-link-kind]/option')->length===3,'actual shared editor offers website, email and telephone link kinds');
+    $base=['operation'=>'page-save','csrf'=>$csrf,'id'=>$own['id'],'version'=>1,'slug'=>$own['slug'],'title'=>$own['title'],'template'=>'standard','nav_order'=>0,'body_html'=>'<p>Own changed text</p>'];
+    $snapshot=ownOriginalDatabaseHash($db,$tables);[$status]=$http($url,array_replace($base,['csrf'=>'wrong']));$check($status===422&&ownOriginalDatabaseHash($db,$tables)===$snapshot,'wrong native CSRF retains every original and own draft byte');
+    $safe='<p><a href="mailto:own%23news@example.invalid">Own Ä🙂</a> <a href="tel:+49(0)4454-12345;ext=12">Own phone</a> <a href="/kontakt/">Own website</a></p>';
+    [$status,,$headers]=$http($url,array_replace($base,['body_html'=>$safe]));$check($status===303&&in_array('Location: '.$url,$headers,true),'actual native contact save redirects to the same own draft');$saved=$pages->get($own['id']);$check($saved['version']===2&&$saved['body_html']===RichText::sanitize($safe),'actual native save stores the exact canonical own contact links');
+    [$status,$html]=$http($url);$dom=new DOMDocument();@$dom->loadHTML($html);$xpath=new DOMXPath($dom);$check($status===200&&$xpath->query('//input[@name="body_html"]')->item(0)?->getAttribute('value')===$saved['body_html'],'actual native reload restores exact own links to the shared editor');
+    $snapshot=ownOriginalDatabaseHash($db,$tables);[$status]=$http($url,$base);$check($status===409&&ownOriginalDatabaseHash($db,$tables)===$snapshot,'stale actual contact save cannot replace the newer own original');
+    $unsafe='<p><a href="mailto:own@example.invalid?subject=Invented">Own text Ä</a> <a href="mailto:own%0d%0aBcc:foreign@example.invalid">Own mail</a> <a href="tel:123;ext=bad">Own phone</a> <a href="javascript:alert(1)">Own website</a></p>';
+    [$status]=$http($url,array_replace($base,['version'=>2,'body_html'=>$unsafe]));$clean=$pages->get($own['id']);$check($status===303&&$clean['version']===3&&!str_contains($clean['body_html'],'href=')&&str_contains($clean['body_html'],'Own text Ä'),'actual native save removes unsafe contact targets while retaining own visible text');
+    [$status,$publication]=$http('/kontakt/');$check($status===200&&str_contains($publication,'href="mailto:original@example.invalid"')&&str_contains($publication,'href="tel:+49445412345"')&&!str_contains($publication,'Own text'),'actual anonymous contact publication retains its exact earlier original links');
+    foreach([$own,$browserPage]as$page){[$status]=$http('/site/'.$page['slug']);$check($status===404,'saving own contact links never publishes a private draft');}
+    $browserSaves=0;
+    if(getenv('DVM_CONTACT_LINK_BROWSER')==='1'){
+        $fixture=$root.'/browser.json';file_put_contents($fixture,json_encode(['origin'=>$origin,'id'=>$browserPage['id']],JSON_THROW_ON_ERROR));chmod($fixture,0600);putenv('DVM_CONTACT_LINK_FIXTURE='.$fixture);
+        $process=proc_open(['node',__DIR__.'/contact-links-browser.mjs'],[0=>STDIN,1=>STDOUT,2=>STDERR],$nodePipes,dirname(__DIR__,2));if(!is_resource($process)||proc_close($process)!==0)throw new RuntimeException('Actual contact editor browser failed.');
+        $actual=$pages->get($browserPage['id']);$browserSaves=1;$check($actual['version']===2,'actual browser changes only one own private draft revision');
+        foreach(['mailto:own%2Bnews@example.invalid','tel:+49(0)4454-12345;ext=12','/kontakt/','mailto:own%23%25news@example.invalid']as$href)$check(str_contains($actual['body_html'],'href="'.$href.'"'),'actual stored browser draft retains the exact selected own contact target');
+        $check(!str_contains($actual['body_html'],'Prefilled')&&!str_contains($actual['body_html'],'javascript:'),'actual browser storage never includes rejected contact targets');
+    }
+    $check(ownOriginalDatabaseHash($db,$tables,$filter)===$before,'all earlier complete original rows, revisions, publications and accounts remain byte identical');
+    foreach($counts as$table=>$count){$delta=match($table){'khcms_pages'=>2,'khcms_revisions'=>4+$browserSaves,default=>0};$check((int)Db::run($db,'SELECT COUNT(*) FROM `'.$table.'`')->fetchColumn()===$count+$delta,'exact complete original table count plus selected own changes: '.$table);}
+    $revisions=Db::run($db,'SELECT page_id,revision FROM khcms_revisions WHERE page_id IN (?,?) ORDER BY page_id,revision',[$own['id'],$browserPage['id']])->fetchAll();$check(count($revisions)===4+$browserSaves,'every new saved revision belongs exclusively to the two own drafts');
+    $check(hash_file('sha256',$root.'/media/protected.png')===$imageHash&&hash_file('sha256',$root.'/private.key')===$keyHash,'all private original pixel and key bytes remain intact');
+    echo json_encode(['suite'=>'native-contact-links','checks'=>$n,'own_drafts'=>2,'browser_saves'=>$browserSaves,'external_requests'=>0],JSON_THROW_ON_ERROR).PHP_EOL;
+}finally{if(is_resource($server)){proc_terminate($server);proc_close($server);}$files=new RecursiveIteratorIterator(new RecursiveDirectoryIterator($root,FilesystemIterator::SKIP_DOTS),RecursiveIteratorIterator::CHILD_FIRST);foreach($files as$file)$file->isDir()?rmdir($file->getPathname()):unlink($file->getPathname());rmdir($root);}

@@ -1,0 +1,25 @@
+.publication-history,.publication-row{min-width:0;overflow-wrap:anywhere}
+.workspace-tabs .nav-link{min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+.publication-controls{display:grid;gap:.75rem;margin:1rem 0}
+.publication-filters,.publication-row-heading,.publication-row-actions{display:flex;flex-wrap:wrap;gap:.65rem;align-items:center}
+.publication-filters label{flex:1;min-width:130px;margin:0}
+.publication-filters button{align-self:end}
+.publication-row{padding:1rem;margin:.75rem 0;scroll-margin-top:6rem}
+.publication-row h3{font-size:1rem;margin:.65rem 0 .3rem}
+.publication-row p{margin:.3rem 0 .75rem}
+.publication-row-actions form{margin:0}
+.publication-row-actions .btn{min-height:44px;white-space:normal}
+.publication-row[data-publication-focus]{outline:2px solid var(--green,#285942);outline-offset:2px}
+.personal-publication summary,.publication-suggestions summary{min-height:44px;padding:.65rem 0;cursor:pointer}
+.personal-publication form{margin:.5rem 0}
+.personal-publication .check{align-items:start}
+.publication-suggestions-list{max-height:360px;overflow:auto;overscroll-behavior:contain;padding:.2rem}
+@media(max-width:420px){.publication-filters label{min-width:100%}.publication-row-actions>*{flex:1 1 100%}.publication-row-actions .btn{width:100%}.publication-row{padding:.75rem}}
+
+#publication-planning{scroll-margin-top:6rem}
+.publication-controls .btn,.planning-read-status .btn,.planning-recovery .btn,.publication-suggestions .btn{min-height:44px;white-space:normal;overflow-wrap:anywhere}
+[data-planning-action]{min-width:0;overflow-wrap:anywhere}
+[data-planning-error]{max-width:48rem}
+[data-planning-error][hidden],[data-planning-check][hidden]{display:none!important}
+.publication-controls .website-pagination{display:flex;flex-wrap:wrap;align-items:center;gap:.65rem}
+.publication-suggestions-list article h4{overflow-wrap:anywhere}

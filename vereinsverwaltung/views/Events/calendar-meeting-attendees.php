@@ -1,0 +1,26 @@
+<?php declare(strict_types=1);
+$people=\Kulturhus\Verein\CalendarPeoplePicker::page($registry,$eventForm,$calendarPeopleState??[]);
+$meetingSelection=$people['selection'];$json=static fn(array $ids):string=>json_encode(array_values($ids),JSON_THROW_ON_ERROR|JSON_UNESCAPED_UNICODE);
+$meetingIndividualOpen=$people['query']!==''||$people['only_selected']||(count($meetingSelection)>0&&count($meetingSelection)<$people['total'])||in_array($calendarPeopleState['browse']??'',['search','previous','next','page','all','clear'],true);
+?>
+<section data-meeting-attendees data-meeting-initial="<?= e($people['kind']) ?>" data-meeting-total="<?= $people['total'] ?>" class="contact-choice-picker">
+ <?php if($meetingAttendeeHeading??true): ?><h2><?= e($calendarText('Teilnehmer auswählen')) ?></h2><?php endif ?>
+ <p data-meeting-help><?= e($calendarText($people['kind']==='board'?'Aktuell bestätigter Vorstand.':($people['kind']==='assembly'?'Aktuelle aktive und passive Mitglieder.':'Eigene aktive Kontakte.'))) ?></p>
+ <?= hidden('calendar_selected',$json($meetingSelection)).hidden('calendar_visible',$json(array_column($people['rows'],'id'))).hidden('calendar_kind',$people['kind']) ?>
+ <div class="actions" data-meeting-groups><?php if($people['kind']!=='board'): ?><button class="btn btn-outline theme-secondary" name="calendar_browse" value="members" formnovalidate><?= e($calendarText('Alle Mitglieder auswählen')) ?></button><?php endif ?><button class="btn btn-outline theme-secondary" name="calendar_browse" value="board" formnovalidate><?= e($calendarText('Vorstand auswählen')) ?></button></div>
+ <p role="status" data-meeting-count><?= e($calendarFormat(count($meetingSelection)===1?'{selected} Person ausgewählt · {total} Suchtreffer':'{selected} Personen ausgewählt · {total} Suchtreffer',['selected'=>count($meetingSelection),'total'=>$people['total']])) ?></p>
+ <details data-meeting-individual <?= $meetingIndividualOpen?'open':'' ?>><summary><?= e($calendarText('Einzelne Personen auswählen')) ?></summary>
+ <div class="contact-choice-search"><label for="meeting-person-search"><?= e($calendarText('Name suchen')) ?><input class="form-control" type="search" id="meeting-person-search" name="calendar_query" maxlength="150" value="<?= e($people['query']) ?>"></label><button class="btn btn-outline theme-secondary" name="calendar_browse" value="search" formnovalidate><?= e($calendarText('Suchen')) ?></button></div>
+ <label class="check"><input class="check" type="checkbox" name="calendar_only_selected" value="1" <?= $people['only_selected']?'checked':'' ?>><?= e($calendarText('Nur ausgewählte Personen anzeigen')) ?></label>
+ <fieldset class="attendee-options contact-choice-options"><legend data-meeting-legend><?= e($calendarText('Verfügbare Teilnehmer')) ?></legend>
+ <?php foreach($people['rows'] as $person): ?>
+ <label class="check" data-meeting-person><input class="check" type="checkbox" name="attendees[]" value="<?= e($person['id']) ?>" <?= in_array($person['id'],$meetingSelection,true)?'checked':'' ?>><span><?= e($person['name']) ?></span></label>
+ <?php endforeach ?>
+ <?php if(!$people['rows']): ?><p><?= e($calendarText('Keine passenden Kontakte.')) ?></p><?php endif ?>
+ </fieldset>
+ <?php if($people['pages']>1): ?><nav class="contact-choice-pages" aria-label="<?= e($calendarText('Teilnehmerseiten')) ?>"><p><?= e($calendarFormat('Seite {page} von {pages}',['page'=>$people['page'],'pages'=>$people['pages']])) ?></p><button class="btn btn-outline theme-secondary" name="calendar_browse" value="previous" formnovalidate <?= $people['page']===1?'disabled':'' ?>><?= e($calendarText('Zurück')) ?></button><button class="btn btn-outline theme-secondary" name="calendar_browse" value="next" formnovalidate <?= $people['page']===$people['pages']?'disabled':'' ?>><?= e($calendarText('Weiter')) ?></button></nav><?php endif ?>
+ <details><summary><?= e($calendarText('Weitere Auswahlfunktionen')) ?></summary><div class="actions"><button class="btn btn-outline theme-secondary" name="calendar_browse" value="group" formnovalidate><?= e($calendarText('Alle verfügbaren Teilnehmer auswählen')) ?></button><button class="btn btn-outline theme-secondary" name="calendar_browse" value="all" formnovalidate data-meeting-all><?= e($calendarText('Diese Seite auswählen')) ?></button><button class="btn btn-outline theme-secondary" name="calendar_browse" value="clear" formnovalidate data-meeting-clear><?= e($calendarText('Gesamte Auswahl aufheben')) ?></button><button class="btn btn-outline theme-secondary" name="calendar_browse" value="refresh" formnovalidate data-meeting-refresh><?= e($calendarText('Teilnehmer aktualisieren')) ?></button></div><label><?= e($calendarText('Seite öffnen')) ?><input class="form-control" type="number" name="calendar_page" min="1" max="<?= $people['pages'] ?>" value="<?= $people['page'] ?>"></label><button class="btn btn-outline theme-secondary" name="calendar_browse" value="page" formnovalidate><?= e($calendarText('Öffnen')) ?></button></details>
+ </details>
+ <noscript><p><?= e($calendarText('Nach einem Wechsel der Terminart die gewünschte Gruppe erneut auswählen oder unter „Einzelne Personen auswählen“ die Teilnehmer aktualisieren.')) ?></p></noscript>
+</section>
+<script src="calendar-meeting-attendees.js?v=5" defer></script>

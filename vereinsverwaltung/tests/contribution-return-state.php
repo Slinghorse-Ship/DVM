@@ -1,0 +1,25 @@
+<?php declare(strict_types=1);
+require __DIR__.'/bank-return.php';
+use Kulturhus\Verein\{Documents,PortalDocuments,ContributionMail};
+$start=$n;
+$db->exec("INSERT INTO contacts(id,club_id,kind,name,email) VALUES('member','a','person','Synthetic member','same@example.invalid'),('other','a','person','Other member','same@example.invalid'),('member','b','person','Foreign member','same@example.invalid'); INSERT INTO actors(id,club_id,role,contact_id) VALUES('member-a','a','member','member'),('other-a','a','member','other'),('member-b','b','member','member')");
+$docs=new Documents($db,'a');$document=$docs->upload('synthetic-invoice.txt','Unchanged synthetic invoice',['title'=>'Synthetic original invoice','scope'=>'finance','kind'=>'invoice'],$key());
+$db->prepare('INSERT INTO contribution_invoices VALUES(?,?,?,?,?,?,?, ?,?)')->execute(['a',$entry,$document,'member','same@example.invalid',2025,'issued','[]',gmdate('c')]);
+$portal=new PortalDocuments($db,'member-a');$bytes=$portal->file($document)['bytes'];
+$check($portal->listing()[0]['payment_state']==='partial','portal counts only actual later partial payment');
+$check(str_contains(ContributionMail::build($db,'a',$entry,'reminder')['text'],'Offener Betrag: 8,99'),'reminder excludes both returned full payments');
+// Clear the later partial allocation; both earlier actual debit returns remain recorded.
+$partialLink=array_values(array_filter($f->allocations($entry),fn($l)=>$l['transaction_id']===$partial))[0];
+$f->releaseAllocation($partialLink['id'],(int)$f->transactionDetail($partial)['version'],(int)$f->entry($entry)['version'],'Synthetic allocation correction');
+$check($portal->listing()[0]['payment_state']==='open','portal is open after all original payments returned');
+$check(str_contains(ContributionMail::build($db,'a',$entry,'reminder')['text'],'Offener Betrag: 15,99'),'reminder restores full demand after return');
+$repaid=$move('2025-08-01','income');$pay($repaid,'15.99');
+$check($portal->listing()[0]['payment_state']==='paid','new actual payment restores paid portal state');
+$check(str_contains(ContributionMail::build($db,'a',$entry,'reminder')['text'],'Offener Betrag: 0,00'),'new actual payment reduces reminder balance once');
+$check($portal->file($document)['bytes']===$bytes,'original invoice download remains unchanged');
+$check((new PortalDocuments($db,'other-a'))->listing()===[]&&(new PortalDocuments($db,'member-b'))->listing()===[],'same email grants neither another member nor foreign club access');
+$deny(fn()=>(new PortalDocuments($db,'other-a'))->file($document),'other member cannot download original');
+$db->prepare("UPDATE documents SET state='archived' WHERE club_id='a' AND id=?")->execute([$document]);
+$check($portal->listing()===[],'archived original excluded from portal list');
+$deny(fn()=>$portal->file($document),'archived original download denied');
+echo ($n-$start)." contribution return state checks passed\n";

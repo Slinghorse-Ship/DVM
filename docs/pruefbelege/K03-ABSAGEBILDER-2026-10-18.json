@@ -1,0 +1,84 @@
+{
+  "format": 1,
+  "date": "2026-10-18",
+  "feature": "K-03 original media on public cancellation notices",
+  "generation": 2026101553,
+  "before": {
+    "commit": "4a51dd4032ab8cb15210dfcdb0b2dfef921e7307",
+    "failure": "only media from the original public cancellation snapshot remains readable",
+    "log_sha256": "14b8cc0790ee2d4ab676b61c4eeab75dfeb3629abca87fd76687b956240fa046"
+  },
+  "accepted": {
+    "git_tree": "ce4ba2da133acb5d1d952a7bd823522133135325",
+    "checks": 70,
+    "source_files": 6892,
+    "log_sha256": "afaebe17d823c71b1ac8b12e797dd4e131ec59f462cfe27acac0ffb4902f030f",
+    "source_after": "all 6892 original source files byte-identical",
+    "http_responses": [
+      {
+        "status": 200,
+        "mime": "image/png",
+        "bytes": 112,
+        "sha256": "0dc22d1931f82c4abfbe6c41471740d6d15d63d840c72f3c36dbb8e6a7cb219e"
+      },
+      {
+        "status": 404,
+        "mime": "text/html; charset=UTF-8",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "status": 200,
+        "mime": "image/png",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "status": 404,
+        "mime": "text/html; charset=UTF-8",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "status": 200,
+        "mime": "image/png",
+        "bytes": 112,
+        "sha256": "0dc22d1931f82c4abfbe6c41471740d6d15d63d840c72f3c36dbb8e6a7cb219e"
+      },
+      {
+        "status": 404,
+        "mime": "text/html; charset=UTF-8",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ]
+  },
+  "unchanged_neighbors": {
+    "git_tree": "a023de8ba2ac227ed654890917653ec7180e6e2b",
+    "suites": [
+      "native-events",
+      "native-event-programme",
+      "native-event-workflows",
+      "native-feed-http",
+      "native-feed-images",
+      "native-template-policy",
+      "native-field-policy",
+      "native-public-asset-channels",
+      "native-image-attribution",
+      "native-news-policy",
+      "native-media-metadata"
+    ],
+    "log_sha256": "255401f670f80d427205dcaacdd779760cbc35e1bf1d99df505c8c09924f1909",
+    "qualification": "The eleven neighbor groups pass. The additional native HEAD test originally expected an ETag that this router does not supply; its strict corrected type/length/body contract passes with the entire 70-condition catalogue in the accepted tree. Only that test file and its manifest differ between the two trees."
+  },
+  "runtime_file_sha256": "a677be3d79e1765f402c5a9f2519e7c2c22761a39adaacf4281a0d05a09fa9eb",
+  "external_actions": 0,
+  "not_a_total_completion": true,
+  "remaining": [
+    "K-35 fresh joint acceptance",
+    "P-12 all UI language and usability",
+    "P-25 operations/package acceptance",
+    "accounting remainder",
+    "licensed ERiC and actual device acceptance"
+  ]
+}

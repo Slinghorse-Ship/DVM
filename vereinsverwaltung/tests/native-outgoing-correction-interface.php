@@ -1,0 +1,13 @@
+<?php declare(strict_types=1);
+require dirname(__DIR__,2).'/vendor/autoload.php';
+require __DIR__.'/native-document-interface.php';
+require __DIR__.'/support/outgoing-correction-contracts.php';
+$outgoingCorrectionFixture=ownOutgoingCorrectionContracts($db,$check);
+require __DIR__.'/support/outgoing-correction-failures.php';
+ownOutgoingCorrectionFailures($db,$check,$outgoingCorrectionFixture,\Kulturhus\Native\TestSupport::config());
+require __DIR__.'/support/outgoing-catalogue-contracts.php';
+ownOutgoingCatalogueContracts($db,$check,$outgoingCorrectionFixture);
+require __DIR__.'/support/outgoing-correction-history.php';
+$outgoingCorrectionHistory=ownOutgoingCorrectionHistory($db,$check,$outgoingCorrectionFixture);
+if(getenv('DVM_OUTGOING_CORRECTION_INTERFACE_BROWSER')==='1')require __DIR__.'/support/outgoing-correction-browser-fixture.php';
+echo json_encode(['suite'=>'native-outgoing-correction-interface','checks'=>$n,'external_actions'=>0],JSON_THROW_ON_ERROR)."\n";

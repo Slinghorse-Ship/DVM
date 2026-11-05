@@ -1,0 +1,1568 @@
+{
+  "schema": 1,
+  "revision": 24,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "operating-r24-001@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.EStG6b_3",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.EStG6b_3"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49270",
+              "semantic": {
+                "name": "Erträge aus der Auflösung einer steuerlichen Rücklage nach § 6b Abs. 3 EStG",
+                "function": "",
+                "range_start": "49270",
+                "range_end": "49270",
+                "parent": null
+              },
+              "signature": "c878d3d0a2503a674066e236b6811a8e656d5caf0d9d16329e39c0ce784e8f0a"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-002@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.substEStR6_6",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.substEStR6_6"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49290",
+              "semantic": {
+                "name": "Erträge aus der Auflösung der Rücklage für Ersatzbeschaffung, R 6.6 EStR",
+                "function": "",
+                "range_start": "49290",
+                "range_end": "49290",
+                "parent": null
+              },
+              "signature": "2ea3dc9d0af12001596afb9e17f80bd9ce93286f8a28607a977f33bbae49964b"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-003@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.EStG4g",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.EStG4g"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49380",
+              "semantic": {
+                "name": "Erträge aus der Auflösung einer steuerlichen Rücklage nach § 4g EStG",
+                "function": "",
+                "range_start": "49380",
+                "range_end": "49380",
+                "parent": null
+              },
+              "signature": "484bf66f59f8bf596ba2d50ae3fa5e93549d2b1e11e95f7f2286b98f62111ce2"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-004@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.EStG6b_3",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.EStG6b_3",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.substEStR6_6",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.EStG4g",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.EStG5_7",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.KStGs34_6e",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.investmentShares",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.other",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.misc"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49350",
+              "semantic": {
+                "name": "Erträge aus der Auflösung sonstiger steuerlicher Rücklagen",
+                "function": "",
+                "range_start": "49350",
+                "range_end": "49350",
+                "parent": null
+              },
+              "signature": "9d727cdf11b9151f9d6e31d06b9c3372e641eaf925aa2bdb8db3f73c00fc6c7b"
+            },
+            {
+              "code": "49810",
+              "semantic": {
+                "name": "Steuerfreie Erträge aus der Auflösung von steuerlichen Rücklagen",
+                "function": "",
+                "range_start": "49810",
+                "range_end": "49810",
+                "parent": null
+              },
+              "signature": "44a53e44eb4d0217369c353855bef1c126527e45cff08bf3c49568f322f0d2da"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-005@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.other"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49370",
+              "semantic": {
+                "name": "Erträge aus der Auflösung steuerrechtlicher Sonderabschreibungen",
+                "function": "",
+                "range_start": "49370",
+                "range_end": "49370",
+                "parent": null
+              },
+              "signature": "e4dc0f7c2f754f3d5e5f45ecba475787eac8cc0215f34256de21677c7b525cfd"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-006@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.EStG6b_3",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.EStG6b_3"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69220",
+              "semantic": {
+                "name": "Einstellungen in die steuerliche Rücklage nach § 6b Abs. 3 EStG",
+                "function": "",
+                "range_start": "69220",
+                "range_end": "69220",
+                "parent": null
+              },
+              "signature": "c3063029a3f9c6c3781cf776a0eba4673def32443562d5efe9a1b97ed9f81a9b"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-007@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.substEStR6_6",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.substEStR6_6"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69280",
+              "semantic": {
+                "name": "Einstellungen in die Rücklage für Ersatzbeschaffung nach R 6.6 EStR",
+                "function": "",
+                "range_start": "69280",
+                "range_end": "69280",
+                "parent": null
+              },
+              "signature": "df2e192b718acb074d5de4281e63302a774dfe593a240fde4a5fe88ab7cfad88"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-008@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.EStG4g",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.EStG4g"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69290",
+              "semantic": {
+                "name": "Einstellungen in die steuerliche Rücklage nach § 4g EStG",
+                "function": "",
+                "range_start": "69290",
+                "range_end": "69290",
+                "parent": null
+              },
+              "signature": "8060923ab390b66b59b436cac1ff502a92eb7b8553ab20009c30d094cd8fdd48"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-009@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.EStG6b_3",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.EStG6b_3",
+            "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.substEStR6_6",
+            "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.EStG4g",
+            "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.EStG5_7",
+            "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.other",
+            "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.misc"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69270",
+              "semantic": {
+                "name": "Einstellungen in sonstige steuerliche Rücklagen",
+                "function": "",
+                "range_start": "69270",
+                "range_end": "69270",
+                "parent": null
+              },
+              "signature": "1c8efafb718c612270338e5adec0cf3cae73cc595ee4ff29b25df5ca55afe0f1"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-010@1",
+          "group": "revenue",
+          "target": "is.netIncome.extraord.income.merger",
+          "choices": [
+            "is.netIncome.extraord.income.merger"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "74510",
+              "semantic": {
+                "name": "Erträge durch Verschmelzung und Umwandlung",
+                "function": "",
+                "range_start": "74510",
+                "range_end": "74510",
+                "parent": null
+              },
+              "signature": "e93d2dfd58195c8eea406d0314125b8c39047c92411becb6f1d9786cef6acce0"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-011@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.merger",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.merger"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "75510",
+              "semantic": {
+                "name": "Verluste durch Verschmelzung und Umwandlung",
+                "function": "",
+                "range_start": "75510",
+                "range_end": "75510",
+                "parent": null
+              },
+              "signature": "937483e2c61f3c3715cd65bd7f4be8c301e77eb67ba47b5cfd95311ce8222cae"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-012@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.deprAmort.currAss.inventory",
+          "choices": [
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.inventory"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "62780",
+              "semantic": {
+                "name": "Abschreibungen auf Roh-, Hilfs- und Betriebsstoffe/Waren (soweit unüblich hoch)",
+                "function": "",
+                "range_start": "62780",
+                "range_end": "62780",
+                "parent": null
+              },
+              "signature": "d31493392b0511c744de57415931b9cfd54ff99294b75209f3ac87958797974a"
+            },
+            {
+              "code": "62790",
+              "semantic": {
+                "name": "Abschreibungen auf fertige und unfertige Erzeugnisse (soweit unüblich hoch)",
+                "function": "",
+                "range_start": "62790",
+                "range_end": "62790",
+                "parent": null
+              },
+              "signature": "227d3f584bc94973578e7b9a66c41b8fae9a65bc5c06800bcbff11aae575e641"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-013@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.other"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "62800",
+              "semantic": {
+                "name": "Forderungsverluste (soweit unüblich hoch)",
+                "function": "",
+                "range_start": "62800",
+                "range_end": "62800",
+                "parent": null
+              },
+              "signature": "1a1a198554ff41eea112210122e58341f7987c2daf29fc74523391fae0e47d62"
+            },
+            {
+              "code": "62810",
+              "semantic": {
+                "name": "Forderungsverluste 7 % USt (soweit unüblich hoch)",
+                "function": "AM",
+                "range_start": "62810",
+                "range_end": "62819",
+                "parent": null
+              },
+              "signature": "b61d3cd82a8dae548c8518a9d87a10de3b4317d5828a1a5824967af196a2c0b6"
+            },
+            {
+              "code": "62860",
+              "semantic": {
+                "name": "Forderungsverluste 19 % USt (soweit unüblich hoch)",
+                "function": "AM",
+                "range_start": "62860",
+                "range_end": "62869",
+                "parent": null
+              },
+              "signature": "dbdd196df516f7be69c2d3f9071ea649685f3fe6100f9e96a0d2c6dca2793a03"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-014@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.domesticRelated",
+          "choices": [
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.domesticRelated",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.domesticUnrelated",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.foreignRelated",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.foreignUnrelated"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "62900",
+              "semantic": {
+                "name": "Abschreibungen auf Forderungen gegenüber Kapitalgesellschaften, an denen eine Beteiligung besteht (soweit unüblich hoch), § 3c EStG bzw. § 8b Abs. 3 KStG",
+                "function": "",
+                "range_start": "62900",
+                "range_end": "62900",
+                "parent": null
+              },
+              "signature": "e60f41369079e26ca3150a45d05441fd4334b1a8ecd96b0daa13cadf6161a61e"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-015@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.sharehRelPart.domestic",
+          "choices": [
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.sharehRelPart.domestic",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.sharehRelPart.foreign"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "62910",
+              "semantic": {
+                "name": "Abschreibungen auf Forderungen gegenüber Gesellschaftern und nahe stehenden Personen (soweit unüblich hoch), § 3 Nr. 40 EStG bzw. § 8b Abs. 3 KStG8)",
+                "function": "",
+                "range_start": "62910",
+                "range_end": "62910",
+                "parent": null
+              },
+              "signature": "8bbb107926aa34acceee092cc4e13bbbff3ff138edfa5ad81d8e5402019ccd83"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-016@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.other",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.domesticRelated",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.domesticUnrelated",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.foreignRelated",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.foreignUnrelated",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.sharehRelPart.domestic",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.sharehRelPart.foreign",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.misc",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.misc"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "62700",
+              "semantic": {
+                "name": "Abschreibungen auf sonstige Vermögensgegenstände des Umlaufvermögens (soweit unüblich hoch)",
+                "function": "",
+                "range_start": "62700",
+                "range_end": "62700",
+                "parent": null
+              },
+              "signature": "7e7f5ab9fa6e910845dd61841b0a28e0422596a944e98985e8eead8f14bca641"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-017@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.deprAmort.currAss.inventory",
+          "choices": [
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.inventory",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.other",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.domesticRelated",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.domesticUnrelated",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.foreignRelated",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.foreignUnrelated",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.sharehRelPart.domestic",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.sharehRelPart.foreign",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.misc",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.misc"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "62720",
+              "semantic": {
+                "name": "Abschreibungen auf Umlaufvermögen, steuerrechtlich bedingt (soweit unüblich hoch)",
+                "function": "",
+                "range_start": "62720",
+                "range_end": "62720",
+                "parent": null
+              },
+              "signature": "25dfe1d9aa436a08efac26a77ca2c33958e92575e3bdc207cff765a6f2a34acf"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-018@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interest",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interest",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.domesticCorp.less10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.domesticCorp.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.domesticCorp.larger15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.domesticCorp.nonAllocable",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.less10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.10to15pt.EU",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.10to15pt.thirdCountry",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.larger15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.NonAllocableInterests",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.NonAllocable",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.shareholder",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interestOtherLoans.Employee",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interestOtherLoans.misc",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interestOtherLoans.nonAllocable",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.minorInterestReceived",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.partnerships",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.smaller10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.notLessThan15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.other",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.smaller10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.notLessThan15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.other",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "70100",
+              "semantic": {
+                "name": "Erträge aus anderen Wertpapieren und Ausleihungen des Finanzanlagevermögens",
+                "function": "",
+                "range_start": "70100",
+                "range_end": "70100",
+                "parent": null
+              },
+              "signature": "abecc612732a729e7c130601554f8fd5ba270919d5a6641487ed96ac33127cf3"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-019@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interest",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interest",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.domesticCorp.less10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.domesticCorp.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.domesticCorp.larger15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.domesticCorp.nonAllocable",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.less10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.10to15pt.EU",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.10to15pt.thirdCountry",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.larger15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.NonAllocableInterests",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.NonAllocable",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.shareholder",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interestOtherLoans.Employee",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interestOtherLoans.misc",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interestOtherLoans.nonAllocable",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.minorInterestReceived",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.partnerships",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.smaller10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.notLessThan15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.other",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.smaller10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.notLessThan15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.other",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.other"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.assoc"
+          ],
+          "sources": [
+            {
+              "code": "70190",
+              "semantic": {
+                "name": "Erträge aus anderen Wertpapieren und Ausleihungen des Finanzanlagevermögens aus verbundenen Unternehmen",
+                "function": "",
+                "range_start": "70190",
+                "range_end": "70190",
+                "parent": null
+              },
+              "signature": "ddb671dc8ea7d4719f7c5a32099fb311c91546953150cf7fcd06f9193bbb8219"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-020@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interest",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interest",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.domesticCorp.less10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.domesticCorp.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.domesticCorp.larger15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.domesticCorp.nonAllocable",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.less10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.10to15pt.EU",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.10to15pt.thirdCountry",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.larger15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.NonAllocableInterests",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.NonAllocable"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "70200",
+              "semantic": {
+                "name": "Zins- und Dividendenerträge",
+                "function": "",
+                "range_start": "70200",
+                "range_end": "70200",
+                "parent": null
+              },
+              "signature": "c3e73d9dd81b37dde0733fe122f0bf996325463558266b5132538d666089bd1d"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-021@1",
+          "group": "revenue",
+          "target": "is.netIncome.incomeSharing.loss.profitTransfer",
+          "choices": [
+            "is.netIncome.incomeSharing.loss.profitTransfer",
+            "is.netIncome.incomeSharing.loss.partialProfitTransfer",
+            "is.netIncome.incomeSharing.loss.profPooling",
+            "is.netIncome.incomeSharing.loss.typPart"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "71900",
+              "semantic": {
+                "name": "Erträge aus Verlustübernahme",
+                "function": "",
+                "range_start": "71900",
+                "range_end": "71900",
+                "parent": null
+              },
+              "signature": "4c9be4506446a627df85b9c0b59e2e4d4e2fce91055003fcf299101b336e773e"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-022@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.subsidies.taxExempt",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.subsidies.taxExempt"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "71910",
+              "semantic": {
+                "name": "Ertragsteuerfreie Einzahlungen zum Verlustausgleich",
+                "function": "",
+                "range_start": "71910",
+                "range_end": "71910",
+                "parent": null
+              },
+              "signature": "734920863cf2d44c9722107f444784921ccf7b705221d2e34a19df392bb8da87"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-023@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earningProfSharing.profPooling",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earningProfSharing.profPooling"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "71920",
+              "semantic": {
+                "name": "Erhaltene Gewinne auf Grund einer Gewinngemeinschaft",
+                "function": "",
+                "range_start": "71920",
+                "range_end": "71920",
+                "parent": null
+              },
+              "signature": "43135839fd25ec29b00fc62d4725b034bc3a7c663c6646d31d53d00db778f18b"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-024@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earningProfSharing.fiscalUnity.profitTransfer",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earningProfSharing.fiscalUnity.profitTransfer",
+            "is.netIncome.regular.fin.netParticipation.earningProfSharing.partialProfitTransfer"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "71940",
+              "semantic": {
+                "name": "Erhaltene Gewinne auf Grund eines Gewinn- oder Teilgewinnabführungsvertrags",
+                "function": "",
+                "range_start": "71940",
+                "range_end": "71940",
+                "parent": null
+              },
+              "signature": "63c254c422ca5d5095522c732d0cc0a04d02c88ac457bd679215c30b01fb0e2e"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-025@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netParticipation.loss.fiscalUnity.lossTransfer",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.loss.fiscalUnity.lossTransfer",
+            "is.netIncome.regular.fin.netParticipation.loss.partialProfitTransfer.silentPart",
+            "is.netIncome.regular.fin.netParticipation.loss.partialProfitTransfer.other",
+            "is.netIncome.regular.fin.netParticipation.loss.profPooling"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "73900",
+              "semantic": {
+                "name": "Aufwendungen aus Verlustübernahme",
+                "function": "",
+                "range_start": "73900",
+                "range_end": "73900",
+                "parent": null
+              },
+              "signature": "589a3f15c695e0386048cf620b7db779734f6975ced66a901253812c89280d29"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-026@1",
+          "group": "expense",
+          "target": "is.netIncome.incomeSharing.gain.profPooling",
+          "choices": [
+            "is.netIncome.incomeSharing.gain.profPooling"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "73920",
+              "semantic": {
+                "name": "Abgeführte Gewinne auf Grund einer Gewinngemeinschaft",
+                "function": "",
+                "range_start": "73920",
+                "range_end": "73920",
+                "parent": null
+              },
+              "signature": "1087e430064a70e450304469a4bf51eb08961187b132f03b97c8f448eee0c79b"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-027@1",
+          "group": "expense",
+          "target": "is.netIncome.incomeSharing.gain.fiscalUnity",
+          "choices": [
+            "is.netIncome.incomeSharing.gain.fiscalUnity",
+            "is.netIncome.incomeSharing.gain.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "73940",
+              "semantic": {
+                "name": "Abgeführte Gewinne auf Grund eines Gewinn- oder Teilgewinnabführungsvertrags",
+                "function": "",
+                "range_start": "73940",
+                "range_end": "73940",
+                "parent": null
+              },
+              "signature": "07891606301e2a84ac1e724e8358b493c2eb81b9f046f877066a2229854baea6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "operating-r24-001@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.EStG6b_3",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.EStG6b_3"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49270",
+              "semantic": {
+                "name": "Erträge aus der Auflösung einer steuerlichen Rücklage nach § 6b Abs. 3 EStG",
+                "function": "",
+                "range_start": "49270",
+                "range_end": "49270",
+                "parent": null
+              },
+              "signature": "c878d3d0a2503a674066e236b6811a8e656d5caf0d9d16329e39c0ce784e8f0a"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-002@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.substEStR6_6",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.substEStR6_6"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49290",
+              "semantic": {
+                "name": "Erträge aus der Auflösung der Rücklage für Ersatzbeschaffung, R 6.6 EStR",
+                "function": "",
+                "range_start": "49290",
+                "range_end": "49290",
+                "parent": null
+              },
+              "signature": "2ea3dc9d0af12001596afb9e17f80bd9ce93286f8a28607a977f33bbae49964b"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-003@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.EStG4g",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.EStG4g"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49380",
+              "semantic": {
+                "name": "Erträge aus der Auflösung einer steuerlichen Rücklage nach § 4g EStG",
+                "function": "",
+                "range_start": "49380",
+                "range_end": "49380",
+                "parent": null
+              },
+              "signature": "484bf66f59f8bf596ba2d50ae3fa5e93549d2b1e11e95f7f2286b98f62111ce2"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-004@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.EStG6b_3",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.EStG6b_3",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.substEStR6_6",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.EStG4g",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.EStG5_7",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.KStGs34_6e",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.investmentShares",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.other",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.misc"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49350",
+              "semantic": {
+                "name": "Erträge aus der Auflösung sonstiger steuerlicher Rücklagen",
+                "function": "",
+                "range_start": "49350",
+                "range_end": "49350",
+                "parent": null
+              },
+              "signature": "9d727cdf11b9151f9d6e31d06b9c3372e641eaf925aa2bdb8db3f73c00fc6c7b"
+            },
+            {
+              "code": "49810",
+              "semantic": {
+                "name": "Steuerfreie Erträge aus der Auflösung von steuerlichen Rücklagen",
+                "function": "",
+                "range_start": "49810",
+                "range_end": "49810",
+                "parent": null
+              },
+              "signature": "44a53e44eb4d0217369c353855bef1c126527e45cff08bf3c49568f322f0d2da"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-005@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.releasePreTaxRes.other"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49370",
+              "semantic": {
+                "name": "Erträge aus der Auflösung steuerrechtlicher Sonderabschreibungen",
+                "function": "",
+                "range_start": "49370",
+                "range_end": "49370",
+                "parent": null
+              },
+              "signature": "e4dc0f7c2f754f3d5e5f45ecba475787eac8cc0215f34256de21677c7b525cfd"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-006@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.EStG6b_3",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.EStG6b_3"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69220",
+              "semantic": {
+                "name": "Einstellungen in die steuerliche Rücklage nach § 6b Abs. 3 EStG",
+                "function": "",
+                "range_start": "69220",
+                "range_end": "69220",
+                "parent": null
+              },
+              "signature": "c3063029a3f9c6c3781cf776a0eba4673def32443562d5efe9a1b97ed9f81a9b"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-007@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.substEStR6_6",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.substEStR6_6"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69280",
+              "semantic": {
+                "name": "Einstellungen in die Rücklage für Ersatzbeschaffung nach R 6.6 EStR",
+                "function": "",
+                "range_start": "69280",
+                "range_end": "69280",
+                "parent": null
+              },
+              "signature": "df2e192b718acb074d5de4281e63302a774dfe593a240fde4a5fe88ab7cfad88"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-008@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.EStG4g",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.EStG4g"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69290",
+              "semantic": {
+                "name": "Einstellungen in die steuerliche Rücklage nach § 4g EStG",
+                "function": "",
+                "range_start": "69290",
+                "range_end": "69290",
+                "parent": null
+              },
+              "signature": "8060923ab390b66b59b436cac1ff502a92eb7b8553ab20009c30d094cd8fdd48"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-009@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.EStG6b_3",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.EStG6b_3",
+            "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.substEStR6_6",
+            "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.EStG4g",
+            "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.EStG5_7",
+            "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.other",
+            "is.netIncome.regular.operatingTC.otherCost.addPreTaxRes.misc"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69270",
+              "semantic": {
+                "name": "Einstellungen in sonstige steuerliche Rücklagen",
+                "function": "",
+                "range_start": "69270",
+                "range_end": "69270",
+                "parent": null
+              },
+              "signature": "1c8efafb718c612270338e5adec0cf3cae73cc595ee4ff29b25df5ca55afe0f1"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-010@1",
+          "group": "revenue",
+          "target": "is.netIncome.extraord.income.merger",
+          "choices": [
+            "is.netIncome.extraord.income.merger"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "74510",
+              "semantic": {
+                "name": "Erträge durch Verschmelzung und Umwandlung",
+                "function": "",
+                "range_start": "74510",
+                "range_end": "74510",
+                "parent": null
+              },
+              "signature": "e93d2dfd58195c8eea406d0314125b8c39047c92411becb6f1d9786cef6acce0"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-011@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.merger",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.merger"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "75510",
+              "semantic": {
+                "name": "Verluste durch Verschmelzung und Umwandlung",
+                "function": "",
+                "range_start": "75510",
+                "range_end": "75510",
+                "parent": null
+              },
+              "signature": "937483e2c61f3c3715cd65bd7f4be8c301e77eb67ba47b5cfd95311ce8222cae"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-012@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.deprAmort.currAss.inventory",
+          "choices": [
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.inventory"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "62780",
+              "semantic": {
+                "name": "Abschreibungen auf Roh-, Hilfs- und Betriebsstoffe/Waren (soweit unüblich hoch)",
+                "function": "",
+                "range_start": "62780",
+                "range_end": "62780",
+                "parent": null
+              },
+              "signature": "d31493392b0511c744de57415931b9cfd54ff99294b75209f3ac87958797974a"
+            },
+            {
+              "code": "62790",
+              "semantic": {
+                "name": "Abschreibungen auf fertige und unfertige Erzeugnisse (soweit unüblich hoch)",
+                "function": "",
+                "range_start": "62790",
+                "range_end": "62790",
+                "parent": null
+              },
+              "signature": "227d3f584bc94973578e7b9a66c41b8fae9a65bc5c06800bcbff11aae575e641"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-013@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.other"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "62800",
+              "semantic": {
+                "name": "Forderungsverluste (soweit unüblich hoch)",
+                "function": "",
+                "range_start": "62800",
+                "range_end": "62800",
+                "parent": null
+              },
+              "signature": "1a1a198554ff41eea112210122e58341f7987c2daf29fc74523391fae0e47d62"
+            },
+            {
+              "code": "62810",
+              "semantic": {
+                "name": "Forderungsverluste 7 % USt (soweit unüblich hoch)",
+                "function": "AM",
+                "range_start": "62810",
+                "range_end": "62819",
+                "parent": null
+              },
+              "signature": "b61d3cd82a8dae548c8518a9d87a10de3b4317d5828a1a5824967af196a2c0b6"
+            },
+            {
+              "code": "62860",
+              "semantic": {
+                "name": "Forderungsverluste 19 % USt (soweit unüblich hoch)",
+                "function": "AM",
+                "range_start": "62860",
+                "range_end": "62869",
+                "parent": null
+              },
+              "signature": "dbdd196df516f7be69c2d3f9071ea649685f3fe6100f9e96a0d2c6dca2793a03"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-014@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.domesticRelated",
+          "choices": [
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.domesticRelated",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.domesticUnrelated",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.foreignRelated",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.foreignUnrelated"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "62900",
+              "semantic": {
+                "name": "Abschreibungen auf Forderungen gegenüber Kapitalgesellschaften, an denen eine Beteiligung besteht (soweit unüblich hoch), § 3c EStG bzw. § 8b Abs. 3 KStG",
+                "function": "",
+                "range_start": "62900",
+                "range_end": "62900",
+                "parent": null
+              },
+              "signature": "e60f41369079e26ca3150a45d05441fd4334b1a8ecd96b0daa13cadf6161a61e"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-015@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.sharehRelPart.domestic",
+          "choices": [
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.sharehRelPart.domestic",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.sharehRelPart.foreign"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "62910",
+              "semantic": {
+                "name": "Abschreibungen auf Forderungen gegenüber Gesellschaftern und nahe stehenden Personen (soweit unüblich hoch), § 3 Nr. 40 EStG bzw. § 8b Abs. 3 KStG",
+                "function": "",
+                "range_start": "62910",
+                "range_end": "62910",
+                "parent": null
+              },
+              "signature": "afae894ccb4a89602f9f7d9d5195a508d1939eebce7a7fb94109c7435caa8e00"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-016@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.other",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.domesticRelated",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.domesticUnrelated",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.foreignRelated",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.foreignUnrelated",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.sharehRelPart.domestic",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.sharehRelPart.foreign",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.misc",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.misc"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "62700",
+              "semantic": {
+                "name": "Abschreibungen auf sonstige Vermögensgegenstände des Umlaufvermögens (soweit unüblich hoch)",
+                "function": "",
+                "range_start": "62700",
+                "range_end": "62700",
+                "parent": null
+              },
+              "signature": "7e7f5ab9fa6e910845dd61841b0a28e0422596a944e98985e8eead8f14bca641"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-017@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.deprAmort.currAss.inventory",
+          "choices": [
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.inventory",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.other",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.domesticRelated",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.domesticUnrelated",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.foreignRelated",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.againstCorpParticip.foreignUnrelated",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.sharehRelPart.domestic",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.sharehRelPart.foreign",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.misc",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.misc"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "62720",
+              "semantic": {
+                "name": "Abschreibungen auf Umlaufvermögen, steuerrechtlich bedingt (soweit unüblich hoch)",
+                "function": "",
+                "range_start": "62720",
+                "range_end": "62720",
+                "parent": null
+              },
+              "signature": "25dfe1d9aa436a08efac26a77ca2c33958e92575e3bdc207cff765a6f2a34acf"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-018@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interest",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interest",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.domesticCorp.less10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.domesticCorp.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.domesticCorp.larger15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.domesticCorp.nonAllocable",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.less10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.10to15pt.EU",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.10to15pt.thirdCountry",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.larger15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.NonAllocableInterests",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.NonAllocable",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.shareholder",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interestOtherLoans.Employee",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interestOtherLoans.misc",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interestOtherLoans.nonAllocable",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.minorInterestReceived",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.partnerships",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.smaller10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.notLessThan15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.other",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.smaller10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.notLessThan15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.other",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "70100",
+              "semantic": {
+                "name": "Erträge aus anderen Wertpapieren und Ausleihungen des Finanzanlagevermögens",
+                "function": "",
+                "range_start": "70100",
+                "range_end": "70100",
+                "parent": null
+              },
+              "signature": "abecc612732a729e7c130601554f8fd5ba270919d5a6641487ed96ac33127cf3"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-019@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interest",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interest",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.domesticCorp.less10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.domesticCorp.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.domesticCorp.larger15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.domesticCorp.nonAllocable",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.less10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.10to15pt.EU",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.10to15pt.thirdCountry",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.larger15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.NonAllocableInterests",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.NonAllocable",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.shareholder",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interestOtherLoans.Employee",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interestOtherLoans.misc",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interestOtherLoans.nonAllocable",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.minorInterestReceived",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.partnerships",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.smaller10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.notLessThan15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.domestic.other",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.smaller10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.notLessThan15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.foreign.other",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.corporations.other"
+          ],
+          "conditional": true,
+          "disclosures": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.assoc"
+          ],
+          "sources": [
+            {
+              "code": "70190",
+              "semantic": {
+                "name": "Erträge aus anderen Wertpapieren und Ausleihungen des Finanzanlagevermögens aus verbundenen Unternehmen",
+                "function": "",
+                "range_start": "70190",
+                "range_end": "70190",
+                "parent": null
+              },
+              "signature": "ddb671dc8ea7d4719f7c5a32099fb311c91546953150cf7fcd06f9193bbb8219"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-020@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interest",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.interest",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.domesticCorp.less10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.domesticCorp.10to15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.domesticCorp.larger15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.domesticCorp.nonAllocable",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.less10pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.10to15pt.EU",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.10to15pt.thirdCountry",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.larger15pt",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.nonDomesticCorp.NonAllocableInterests",
+            "is.netIncome.regular.fin.netParticipation.earningSecurities.interestDividend.dividend.NonAllocable"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "70200",
+              "semantic": {
+                "name": "Zins- und Dividendenerträge",
+                "function": "",
+                "range_start": "70200",
+                "range_end": "70200",
+                "parent": null
+              },
+              "signature": "c3e73d9dd81b37dde0733fe122f0bf996325463558266b5132538d666089bd1d"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-021@1",
+          "group": "revenue",
+          "target": "is.netIncome.incomeSharing.loss.profitTransfer",
+          "choices": [
+            "is.netIncome.incomeSharing.loss.profitTransfer",
+            "is.netIncome.incomeSharing.loss.partialProfitTransfer",
+            "is.netIncome.incomeSharing.loss.profPooling",
+            "is.netIncome.incomeSharing.loss.typPart"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "71900",
+              "semantic": {
+                "name": "Erträge aus Verlustübernahme",
+                "function": "",
+                "range_start": "71900",
+                "range_end": "71900",
+                "parent": null
+              },
+              "signature": "4c9be4506446a627df85b9c0b59e2e4d4e2fce91055003fcf299101b336e773e"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-022@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.subsidies.taxExempt",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.subsidies.taxExempt"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "71910",
+              "semantic": {
+                "name": "Ertragsteuerfreie Einzahlungen zum Verlustausgleich",
+                "function": "",
+                "range_start": "71910",
+                "range_end": "71910",
+                "parent": null
+              },
+              "signature": "734920863cf2d44c9722107f444784921ccf7b705221d2e34a19df392bb8da87"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-023@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earningProfSharing.profPooling",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earningProfSharing.profPooling"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "71920",
+              "semantic": {
+                "name": "Erhaltene Gewinne auf Grund einer Gewinngemeinschaft",
+                "function": "",
+                "range_start": "71920",
+                "range_end": "71920",
+                "parent": null
+              },
+              "signature": "43135839fd25ec29b00fc62d4725b034bc3a7c663c6646d31d53d00db778f18b"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-024@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netParticipation.earningProfSharing.fiscalUnity.profitTransfer",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.earningProfSharing.fiscalUnity.profitTransfer",
+            "is.netIncome.regular.fin.netParticipation.earningProfSharing.partialProfitTransfer"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "71940",
+              "semantic": {
+                "name": "Erhaltene Gewinne auf Grund eines Gewinn- oder Teilgewinnabführungsvertrags",
+                "function": "",
+                "range_start": "71940",
+                "range_end": "71940",
+                "parent": null
+              },
+              "signature": "63c254c422ca5d5095522c732d0cc0a04d02c88ac457bd679215c30b01fb0e2e"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-025@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netParticipation.loss.fiscalUnity.lossTransfer",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.loss.fiscalUnity.lossTransfer",
+            "is.netIncome.regular.fin.netParticipation.loss.partialProfitTransfer.silentPart",
+            "is.netIncome.regular.fin.netParticipation.loss.partialProfitTransfer.other",
+            "is.netIncome.regular.fin.netParticipation.loss.profPooling"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "73900",
+              "semantic": {
+                "name": "Aufwendungen aus Verlustübernahme",
+                "function": "",
+                "range_start": "73900",
+                "range_end": "73900",
+                "parent": null
+              },
+              "signature": "589a3f15c695e0386048cf620b7db779734f6975ced66a901253812c89280d29"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-026@1",
+          "group": "expense",
+          "target": "is.netIncome.incomeSharing.gain.profPooling",
+          "choices": [
+            "is.netIncome.incomeSharing.gain.profPooling"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "73920",
+              "semantic": {
+                "name": "Abgeführte Gewinne auf Grund einer Gewinngemeinschaft",
+                "function": "",
+                "range_start": "73920",
+                "range_end": "73920",
+                "parent": null
+              },
+              "signature": "1087e430064a70e450304469a4bf51eb08961187b132f03b97c8f448eee0c79b"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r24-027@1",
+          "group": "expense",
+          "target": "is.netIncome.incomeSharing.gain.fiscalUnity",
+          "choices": [
+            "is.netIncome.incomeSharing.gain.fiscalUnity",
+            "is.netIncome.incomeSharing.gain.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "73940",
+              "semantic": {
+                "name": "Abgeführte Gewinne auf Grund eines Gewinn- oder Teilgewinnabführungsvertrags",
+                "function": "",
+                "range_start": "73940",
+                "range_end": "73940",
+                "parent": null
+              },
+              "signature": "07891606301e2a84ac1e724e8358b493c2eb81b9f046f877066a2229854baea6"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

@@ -1,0 +1,11 @@
+<?php declare(strict_types=1);
+ini_set('zend.exception_ignore_args','1');
+if(PHP_SAPI!=='cli'||getenv('KH_NATIVE_CI')!=='1')exit(1);
+require dirname(__DIR__,2).'/native/bootstrap.php';require dirname(__DIR__,2).'/src/bootstrap.php';
+$input=json_decode((string)fgets(STDIN),true,32,JSON_THROW_ON_ERROR);
+$db=\Kulturhus\Native\TestSupport::db();
+echo "ready\n";flush();
+if(trim((string)fgets(STDIN))!=='save')exit(1);
+$service=new \Kulturhus\Verein\VolunteerForm($db,'own-list-reader','general');
+$id=$service->save($input['contact'],$input['input'],false,$input['key'],$input['hash']);
+echo json_encode(['document'=>$id])."\n";

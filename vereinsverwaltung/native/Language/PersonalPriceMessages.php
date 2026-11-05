@@ -1,0 +1,85 @@
+<?php declare(strict_types=1);
+namespace Kulturhus\Native\Language;
+/** Owned individual-price labels; actual amounts and original source values remain literal. */
+final class PersonalPriceMessages
+{
+    public const ENGLISH=[
+        'Persönlicher Tarifpreis'=>'Individual tariff price',
+        'Tarifpreis'=>'Tariff price',
+        'Preisart'=>'Price type',
+        'Zugehörige Zuweisung'=>'Related assignment',
+        'Zuweisungskennung'=>'Assignment ID',
+        'Ursprüngliche Betragseingabe'=>'Original amount input',
+        'Gespeicherter Betrag oder Prozentsatz'=>'Saved amount or percentage',
+        'Lesender Preiszugriff. Änderungen benötigen Finanzschreibrecht und Mitgliederleserecht.'=>'Read-only price access. Changes require finance write permission and member read permission.',
+        'Aktueller gespeicherter persönlicher Preis'=>'Current saved individual price',
+        'Es wurde noch kein persönlicher Preis gespeichert.'=>'No individual price has been saved yet.',
+        'Preisbestätigung'=>'Original individual price confirmation',
+        'Ursprüngliche persönliche Preiskennung'=>'Original individual price key',
+        'Ungespeicherte persönliche Preisänderung'=>'Unsaved individual price change',
+        'Ursprünglichen persönlichen Preisausgang lesend prüfen'=>'Read original individual price outcome',
+        'Damals gelesener persönlicher Preis'=>'Individual price read at the time',
+        'Festpreis brutto (EUR) oder Rabatt (%)'=>'Fixed gross price (EUR) or discount (%)',
+        'Den vollständigen Betrag oder Prozentsatz eingeben. Beim Tarifpreis bleibt eine frühere Eingabe im ursprünglichen Entwurf erhalten.'=>'Enter the complete amount or percentage. When using the tariff price, an earlier input remains in the original draft.',
+        'Eine Preisänderung erstellt keinen Beleg und startet keine Automatik. Vorhandene Belege behalten ihren ursprünglichen Betrag.'=>'Changing a price creates no receipt and starts no automation. Existing receipts keep their original amount.',
+        'Persönlichen Preis prüfen'=>'Review individual price',
+        'Aktuellen persönlichen Preis bewusst prüfen'=>'Deliberately review current individual price',
+        'Eine aktuelle Prüfung übernimmt nur die aktuelle Fassung und Quellen. Deine gewünschten Preisangaben bleiben vollständig erhalten.'=>'A current review adopts only the current version and sources. Your desired price details are retained in full.',
+        'Kennung des früheren Preisformulars'=>'Earlier price form key',
+        'Frühere tatsächlich gespeicherte Preisfassungen stehen im getrennten Preisverlauf. Eine damalige Vorschau oder Zustimmung wird daraus nicht erfunden.'=>'Earlier actual saved price versions have their own history. No earlier preview or approval is invented.',
+        'Kontakt, Tarifquelle und vollständige persönliche Preisangaben sind geprüft.'=>'I have reviewed the contact, tariff source and complete individual price details.',
+        'Geprüften persönlichen Preis bestätigen'=>'Confirm reviewed individual price',
+        'Frühere persönliche Preisvorschläge'=>'Earlier individual price proposals',
+        'Entwürfe'=>'Your open individual price drafts',
+        'Tarifzuweisung auswählen'=>'Select tariff assignment',
+        'Persönlichen Preis öffnen'=>'Open individual price',
+        'Preisbestätigungen'=>'Your original individual price confirmations',
+        'Tatsächlich gespeicherter persönlicher Preisverlauf'=>'Actual saved individual price history',
+        'Gespeicherte persönliche Preisfelder'=>'Original saved individual price fields',
+        'Vollständige ursprüngliche Preisangaben prüfen.'=>'Check the complete original price details.',
+        'Vollständige persönliche Preisfelder prüfen.'=>'Check all individual price fields.',
+        'Ursprüngliche persönliche Preisart auswählen.'=>'Select the original individual price type.',
+        'Persönlicher Preis enthält ungültige Daten.'=>'The individual price contains invalid data.',
+        'Vollständigen persönlichen Preis mit höchstens 30 Zeichen prüfen.'=>'Check the complete individual price using at most 30 characters.',
+        'Aktuelle Finanz- und Mitgliederrechte für persönliche Preise erforderlich.'=>'Current finance and member permissions are required for individual prices.',
+        'Vollständige persönliche Preisverlaufsseite prüfen.'=>'Check the complete individual price history page.',
+        'Ursprüngliche persönliche Preisfassung nicht verfügbar.'=>'Original individual price version unavailable.',
+        'Persönliche Preisbestätigungen benötigen das aktuelle installierte Paket.'=>'Individual price confirmations require the current installed package.',
+        'Die ursprüngliche persönliche Preisfassung ist nicht mehr aktuell.'=>'The original individual price version is no longer current.',
+        'Verknüpfte Einzel- und Familienjahresbeiträge behalten ihren vollständigen Tarif.'=>'Linked individual and family yearly fees retain their full tariff.',
+        'Aktiven zusätzlichen Tarif auswählen.'=>'Select an active additional tariff.',
+        'Die vollständig geprüfte persönliche Preisänderung ausdrücklich bestätigen.'=>'Explicitly confirm the fully reviewed individual price change.',
+        'Ursprüngliche persönliche Preiskennung und Prüfung auswählen.'=>'Select the original individual price key and review.',
+        'Diese persönliche Preiskennung gehört zu anderen ursprünglichen Angaben.'=>'This individual price key belongs to different original details.',
+        'Persönlicher Preis oder Quellen inzwischen geändert. Aktuellen Stand bewusst erneut prüfen.'=>'The individual price or sources have changed. Deliberately review the current state again.',
+        'Tatsächliches persönliches Preisergebnis bitte prüfen lassen.'=>'Have the actual individual price result checked.',
+        'Persönlicher Preis wird gerade bearbeitet. Bitte erneut prüfen.'=>'The individual price is being edited. Please review again.',
+        'Ursprüngliche persönliche Preisbestätigung bitte prüfen lassen.'=>'Have the original individual price confirmation checked.',
+        'Ursprüngliche persönliche Preisbestätigung ist mit den aktuellen Profilrechten nicht verfügbar.'=>'The original individual price confirmation is unavailable with the current profile permissions.',
+        'Ursprüngliche persönliche Preisbestätigung nicht verfügbar.'=>'Original individual price confirmation unavailable.',
+        'Vollständige persönliche Preisbestätigungssuche und Seite prüfen.'=>'Check the complete individual price confirmation search and page.',
+        'Verfügbare persönliche Preisbestätigungsseite auswählen.'=>'Select an available individual price confirmation page.',
+        'Verfügbare persönliche Preisverlaufsseite auswählen.'=>'Select an available individual price history page.',
+        'Eigenen persönlichen Preis im passenden Bereich öffnen.'=>'Open your individual price in the matching area.',
+        'Eigenen ursprünglichen persönlichen Preisentwurf öffnen.'=>'Open your original individual price draft.',
+        'Persönliche Preise im vorhandenen Einstellungsbereich öffnen.'=>'Open individual prices in the existing settings area.',
+        'Ursprüngliche persönliche Preisbestätigung auswählen.'=>'Select an original individual price confirmation.',
+        'Dieses frühere persönliche Preisformular wurde nicht gespeichert. Erhaltene Angaben zuerst prüfen und danach gesondert bestätigen.'=>'This earlier individual price form was not saved. Review the retained details first, then confirm them separately.',
+        'Gültige ungespeicherte persönliche Preisaktion auswählen.'=>'Select a valid unsaved individual price action.',
+        'Zuerst den ursprünglichen persönlichen Preisausgang lesen.'=>'Read the original individual price outcome first.',
+        'Persönlicher Preisausgang nicht bestätigt. Die ursprüngliche Bestätigung über ihre Kennung lesen.'=>'The individual price outcome is unconfirmed. Read the original confirmation by its key.',
+        'Persönliche Preise konnten nicht geladen werden.'=>'Individual prices could not be loaded.',
+        'Eigene Tarifzuweisung für den persönlichen Preis auswählen.'=>'Select your tariff assignment for the individual price.',
+        'Rabatt zwischen 0 und 100 Prozent auswählen.'=>'Choose a discount between zero and one hundred percent.',
+        'Keine ausreichende Finanzberechtigung.'=>'Insufficient finance permission.',
+        'Steuerkonten werden gerade bearbeitet. Bitte erneut prüfen.'=>'Tax accounts are being edited. Please review again.',
+    ];
+    public static function key(string $source):string{return'personal_price_'.substr(hash('sha256',$source),0,24);}
+    public static function messages(string $locale):array
+    {
+        $out=[];$en=explode('-',$locale,2)[0]==='en';
+        foreach(self::ENGLISH as$source=>$translation)$out[self::key($source)]=$en?$translation:$source;
+        return$out;
+    }
+    public static function text(string $source,array $messages):string{return$messages[self::key($source)]??AssignmentMessages::text($source,$messages);}
+}

@@ -1,0 +1,6 @@
+{
+  "name": "kulturhus/voucher-qr-runtime",
+  "description": "Private QR encoder for personalized event vouchers",
+  "require": {"php": ">=8.3", "bacon/bacon-qr-code": "^3.0"},
+  "config": {"platform": {"php": "8.3.0"}, "allow-plugins": {}, "sort-packages": true}
+}

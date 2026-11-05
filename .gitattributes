@@ -1,0 +1,11 @@
+# Distribution archives, hashes and upstream notices are byte-exact on every checkout.
+distribution/packages/** -text -whitespace
+distribution/extras/event-sync-source/** -whitespace
+# Camera decoder artefacts and upstream notices retain their exact licensed bytes.
+vereinsverwaltung/resources/photo-import/** -text -whitespace
+vereinsverwaltung/tests/fixtures/photo-import/*.heic -text
+vereinsverwaltung/tests/fixtures/photo-import/*.dng -text
+composer.lock text eol=lf
+banking/composer.lock text eol=lf
+vereinsverwaltung/push-runtime/composer.lock text eol=lf
+distribution/source-files.json text eol=lf

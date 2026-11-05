@@ -1,0 +1,58 @@
+<?php declare(strict_types=1);
+ini_set('zend.exception_ignore_args','1');
+require dirname(__DIR__).'/src/bootstrap.php';require dirname(__DIR__).'/native/bootstrap.php';
+require dirname(__DIR__).'/src/Documents/DocumentLibrary.php';
+use Kulturhus\Verein\{Database,Documents,DocumentLibrary,ManagerDocumentWorkflows};
+use Kulturhus\Verein\DocumentWorkflow\WorkflowSchema;
+use Kulturhus\Native\Shared\Db;
+$db=\Kulturhus\Native\TestSupport::db();Database::migrate($db);WorkflowSchema::install($db);
+$db->exec("INSERT INTO clubs VALUES('hse-a','Synthetic HSE'),('hse-b','Foreign synthetic');INSERT INTO actors(id,club_id,role,is_superuser) VALUES('hse-author','hse-a','member',1),('hse-reader','hse-a','member',0),('hse-member','hse-a','member',0),('hse-editor','hse-a','editor',1),('hse-foreign','hse-b','member',1);INSERT INTO settings_roles(club_id,id,name,description,members_access,finance_access,settings_access,documents_access,version) VALUES('hse-a','hse-reader','Synthetic reader','','none','none',0,'read',1);INSERT INTO settings_role_assignments(actor_id,club_id,role_id,version) VALUES('hse-reader','hse-a','hse-reader',1)");
+$author=new ManagerDocumentWorkflows($db,'hse-author');$reader=new ManagerDocumentWorkflows($db,'hse-reader');$member=new ManagerDocumentWorkflows($db,'hse-member');
+$store=$author->store;$template=$store->saveTemplate('',0,['title'=>'HSE original template','fields'=>[['key'=>'hazards','label'=>'Gefährdungen','type'=>'risk_register','required'=>true,'matrix_profile'=>'rwe_reference_de_v1']],'provenance'=>[]]);$store->publishTemplate($template,1);
+$ids=[];for($i=0;$i<26;$i++)$ids[]=$store->createDocument($template,'','HSE Katalog '.sprintf('%02d',$i));
+$first=$ids[0];$store->saveDocument($first,1,['hazards'=>[['category'=>'Aufbau','hazard'=>'Kabel','impact'=>'Sturz','initial'=>['likelihood'=>3,'severity'=>3],'controls'=>'Kabelbrücken','residual'=>['likelihood'=>1,'severity'=>2],'responsible'=>'Synthetische Verantwortung','effectiveness'=>'Sichtprüfung']]],'HSE Katalog 00','');
+$pdf=$store->export($first,2,'pdf');
+$process=proc_open([getenv('VEREIN_PYTHON')?:'python3',__DIR__.'/hse-reference-pdf-contract.py'],[0=>['pipe','r'],1=>STDOUT,2=>STDERR],$pipes);
+if(!is_resource($process))throw new RuntimeException('Reference PDF inspection cannot start.');
+fwrite($pipes[0],$pdf['bytes']);fclose($pipes[0]);
+if(proc_close($process)!==0)throw new RuntimeException('Reference PDF dimensions or colours differ.');
+$attachment=$store->addAttachment($first,2,'Original-HSE-Anlage.pdf',$pdf['bytes']);
+$store->transition($first,3,'submit');$store->transition($first,4,'approve');
+$central=new Documents($db,'hse-author');$original=$central->upload('Originalablage.txt','Unverändertes Zentraloriginal',['title'=>'Originalablage','kind'=>'other','scope'=>'orga'],bin2hex(random_bytes(16)));
+$catalog=new DocumentLibrary($central,$author);$readCatalog=new DocumentLibrary(new Documents($db,'hse-reader'),$reader);
+$n=0;function check(bool $v,string $label):void{global $n;if(!$v)throw new RuntimeException($label);$n++;echo "PASS $label\n";}function denied(callable $f,string $label):void{try{$f();}catch(DomainException){check(true,$label);return;}throw new RuntimeException($label);}
+$before=['files'=>(int)$db->query('SELECT COUNT(*) FROM document_files')->fetchColumn(),'documents'=>(int)$db->query('SELECT COUNT(*) FROM documents')->fetchColumn(),'hse_files'=>(int)$db->query('SELECT COUNT(*) FROM dwf_attachments')->fetchColumn()];
+$one=$catalog->page(['scope'=>'hse'],1);$two=$catalog->page(['scope'=>'hse'],2);
+check($one['total']===27&&count($one['rows'])===25&&count($two['rows'])===2,'26 original assessments and one attachment share a paginated HSE view');
+check(count(array_unique(array_column([...$one['rows'],...$two['rows']],'id')))===27,'HSE pages contain unique canonical source entries');
+$all=$catalog->page([],1,100);check($all['total']===28&&count(array_filter($all['rows'],fn($r)=>$r['id']===$original))===1,'central all-view combines original file and protected HSE entries without a duplicate file');
+$file=array_values(array_filter($all['rows'],fn($r)=>$r['id']==='assessment-attachment:'.$attachment))[0];
+check($file['file_route']===['wf_doc'=>$first,'wf_attachment'=>$attachment,'wf_revision'=>5]&&$file['size']===strlen($pdf['bytes']),'attachment link pins the original document, attachment and revision');
+check(array_intersect_key($file,array_flip(['bytes','file_bytes','values','signature_png']))===[],'shared catalogue returns metadata without source file bytes, fields or signatures');
+check($reader->store->attachment($first,$attachment,5)['bytes']===$pdf['bytes'],'current HSE reader downloads unchanged original attachment');
+$reports=$catalog->page(['scope'=>'hse','kind'=>'assessment'],1,100);check($reports['total']===26&&$reports['rows'][0]['generated_output']===true,'assessment PDF is explicitly an output generated from its pinned source revision');
+check($catalog->page(['scope'=>'hse','q'=>'Original-HSE-Anlage'],1)['total']===1,'HSE source files are searchable in the common catalogue');
+check($catalog->page(['scope'=>'orga'],1)['total']===1&&$catalog->page(['unassigned'=>'1'],1)['total']===1,'ordinary scope and unassigned filters retain their original meaning');
+check($readCatalog->page(['scope'=>'hse'],1)['total']===27,'assigned HSE read permission applies to the common view');
+denied(fn()=>$reader->store->saveDocument($first,5,[],'Unauthorized',''),'HSE reader cannot edit via the shared view');
+foreach(['hse-member','hse-editor'] as $actor){
+    $restricted=new ManagerDocumentWorkflows($db,$actor);$library=new DocumentLibrary(new Documents($db,$actor),$restricted);
+    check(!$library->canHse()&&$library->page([],1)['total']===0,'restricted account cannot see HSE metadata: '.$actor);
+    denied(fn()=>$library->page(['scope'=>'hse'],1),'direct HSE scope denied: '.$actor);
+    denied(fn()=>$restricted->store->attachment($first,$attachment,5),'direct original attachment denied: '.$actor);
+}
+$foreign=new ManagerDocumentWorkflows($db,'hse-foreign');check((new DocumentLibrary(new Documents($db,'hse-foreign'),$foreign))->page(['scope'=>'hse'],1)['total']===0,'other club sees no HSE metadata');denied(fn()=>$foreign->store->attachment($first,$attachment,5),'other club cannot download HSE attachment');
+$after=['files'=>(int)$db->query('SELECT COUNT(*) FROM document_files')->fetchColumn(),'documents'=>(int)$db->query('SELECT COUNT(*) FROM documents')->fetchColumn(),'hse_files'=>(int)$db->query('SELECT COUNT(*) FROM dwf_attachments')->fetchColumn()];check($after===$before,'catalogue search, views and pagination create no document or file copies');
+$db->exec("UPDATE settings_roles SET documents_access='none' WHERE id='hse-reader'");check(!$readCatalog->canHse()&&$readCatalog->page([],1)['total']===0,'same catalogue object immediately loses revoked HSE metadata rights');denied(fn()=>$reader->store->attachment($first,$attachment,5),'current rights checked again before downloading original bytes');
+denied(fn()=>$catalog->page(['q'=>[]]),'array search input rejected');denied(fn()=>$catalog->page(['scope'=>'missing']),'unknown source scope rejected');
+
+$author->signatures->request($first,5,['hse-member']);$request=$member->signatures->own()[0];$owned=$member->signatures->ownRequest($request['id']);
+$signatureTest=file_get_contents(dirname(__DIR__,2).'/tests/document-workflow-signatures.php');preg_match("~\\\$png='([^']+)';~",$signatureTest,$match);$png=$match[1]??throw new RuntimeException('Explicit synthetic signature fixture missing.');
+$member->signatures->sign($request['id'],$owned['document_sha256'],true,$png);$member->archive($request['id']);
+check(count($member->ownFiles())===1&&str_starts_with($member->ownFile($request['id'])['bytes'],'%PDF-'),'member retains only their signed frozen PDF including original attachment');
+check(!$member->allows()&&$member->allows(true),'personal signing grant does not become module-wide document access');
+$store->transition($first,5,'reopen');$store->removeAttachment($first,6,$attachment);
+check($catalog->page(['scope'=>'hse','kind'=>'assessment-attachment'])['total']===0,'removed attachment leaves current view without deleting historical source');
+check($store->attachment($first,$attachment,5)['bytes']===$pdf['bytes']&&str_starts_with($member->ownFile($request['id'])['bytes'],'%PDF-'),'historical original and personal frozen signed PDF remain available through their existing protected source');
+$db->exec("UPDATE actors SET active=0 WHERE id='hse-author'");check(!$catalog->canHse(),'disabled account loses HSE catalogue permission');denied(fn()=>$store->attachment($first,$attachment,5),'disabled account cannot use a previously obtained file link');
+echo "$n shared HSE document checks passed; real PDF generation and original file bytes, isolated database, no external sends.\n";

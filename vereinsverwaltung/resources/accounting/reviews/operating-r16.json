@@ -1,0 +1,3298 @@
+{
+  "schema": 1,
+  "revision": 16,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "operating-r16-001@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.statutoryDuties.membershipFees",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.statutoryDuties.membershipFees"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "40000",
+              "semantic": {
+                "name": "Echte Mitgliedsbeiträge",
+                "function": "",
+                "range_start": "40000",
+                "range_end": "40000",
+                "parent": null
+              },
+              "signature": "cafa4da24ed0e5b3ba24b3fc9bb756d2f666ff759bd08d13ef0ff39c7593756d"
+            },
+            {
+              "code": "40100",
+              "semantic": {
+                "name": "Aufnahmegebühren",
+                "function": "",
+                "range_start": "40100",
+                "range_end": "40100",
+                "parent": null
+              },
+              "signature": "91d958dd56010fafa3b1bbe46613317ba39a093e7542e359e10edd0a5fd6ecd6"
+            },
+            {
+              "code": "40200",
+              "semantic": {
+                "name": "Einnahmen aus Mitgliederumlagen",
+                "function": "",
+                "range_start": "40200",
+                "range_end": "40200",
+                "parent": null
+              },
+              "signature": "8644964c7fca2d325f944dc223d3d8fa4ccd0c89e164f4bfd302f755c2abbb6e"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-002@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.statutoryDuties.contributions",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.statutoryDuties.contributions"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "40310",
+              "semantic": {
+                "name": "Einnahmen aus Erbschaften",
+                "function": "",
+                "range_start": "40310",
+                "range_end": "40310",
+                "parent": null
+              },
+              "signature": "b46db4035cfd66d62e87e817cc991e773d1a6f229442b06a17a3292d902c34d8"
+            },
+            {
+              "code": "40320",
+              "semantic": {
+                "name": "Einnahmen aus Vermächtnissen",
+                "function": "",
+                "range_start": "40320",
+                "range_end": "40320",
+                "parent": null
+              },
+              "signature": "3518384be2859345b6943d0ca9ac94fb7c1e291ab59c5fa5664704af9fdf7989"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-003@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.statutoryDuties.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.statutoryDuties.other"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "40300",
+              "semantic": {
+                "name": "Einnahmen aus Schenkungen",
+                "function": "",
+                "range_start": "40300",
+                "range_end": "40300",
+                "parent": null
+              },
+              "signature": "cd6365a5c1069abe8541665c56f677cf002cfed22f58295c807f75639fc1cdf3"
+            },
+            {
+              "code": "40330",
+              "semantic": {
+                "name": "Übrige ertragsteuerneutrale Einnahmen",
+                "function": "",
+                "range_start": "40330",
+                "range_end": "40330",
+                "parent": null
+              },
+              "signature": "7ec9e4126c9ff555e87e30770ee3eb25d8ee3f8ec27732117c9c97401d0a15e7"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-004@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.statutoryDuties.donations.immediatelyRecognised",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.statutoryDuties.donations.immediatelyRecognised"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "40400",
+              "semantic": {
+                "name": "Erträge aus Spenden / Zuwendungen",
+                "function": "",
+                "range_start": "40400",
+                "range_end": "40400",
+                "parent": null
+              },
+              "signature": "ca5b139e203e1a81b8be3311a68a6a7ea329b918b7ad579f7e3424d57277e2bf"
+            },
+            {
+              "code": "40450",
+              "semantic": {
+                "name": "Geldzuwendungen gegen Zuwendungsbestätigung",
+                "function": "",
+                "range_start": "40450",
+                "range_end": "40450",
+                "parent": null
+              },
+              "signature": "614fafbfe5cd300e5d8c229ea07368bb27abc73022441491c92ca1438240ff83"
+            },
+            {
+              "code": "40500",
+              "semantic": {
+                "name": "Geldzuwendungen ohne Zuwendungsbestätigung",
+                "function": "",
+                "range_start": "40500",
+                "range_end": "40500",
+                "parent": null
+              },
+              "signature": "532d3c3fb6b6fdde1918e2087d3ad8b6420c176cbeed42ae222f7bcf2bfbe0c3"
+            },
+            {
+              "code": "40550",
+              "semantic": {
+                "name": "Sachzuwendungen gegen Zuwendungsbestätigung",
+                "function": "",
+                "range_start": "40550",
+                "range_end": "40550",
+                "parent": null
+              },
+              "signature": "41e46c597d9035bfa328157cc88d392fed473da1bae9c2909bc07217835d4176"
+            },
+            {
+              "code": "40600",
+              "semantic": {
+                "name": "Sachzuwendungen ohne Zuwendungsbestätigung",
+                "function": "",
+                "range_start": "40600",
+                "range_end": "40600",
+                "parent": null
+              },
+              "signature": "8f0702c284c1672324cab90d7530e94c78f6c34e740d02dc9ae9abc9ad1c8da9"
+            },
+            {
+              "code": "40650",
+              "semantic": {
+                "name": "Aufwandszuwendungen gegen Zuwendungsbestätigung",
+                "function": "",
+                "range_start": "40650",
+                "range_end": "40650",
+                "parent": null
+              },
+              "signature": "b0f38c5dc9648b5cfb084ebd22ee988fafc13f834ba78b55318064470173bdcc"
+            },
+            {
+              "code": "40700",
+              "semantic": {
+                "name": "Aufwandszuwendungen ohne Zuwendungsbestätigung",
+                "function": "",
+                "range_start": "40700",
+                "range_end": "40700",
+                "parent": null
+              },
+              "signature": "4098413d46f01a64fed4c8d54168465e513b935c5499c5d4c6499301b78fee71"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-005@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.statutoryDuties.donations.use",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.statutoryDuties.donations.use"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "40750",
+              "semantic": {
+                "name": "Ertrag aus Spendenverbrauch",
+                "function": "",
+                "range_start": "40750",
+                "range_end": "40750",
+                "parent": null
+              },
+              "signature": "65fdc00d15d0776dc9d8a3892463ea10131ec6287325c2af5ea29b873a98344f"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-006@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.otherRateVAT",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.otherRateVAT"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "42900",
+              "semantic": {
+                "name": "Erlöse 0 % USt",
+                "function": "AM",
+                "range_start": "42900",
+                "range_end": "42909",
+                "parent": null
+              },
+              "signature": "8d5f888daab4ce608c25d21fbef96b01238efa4556efaa9c02f400f18ee948e2"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-007@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.reductionsFromGrossSales.otherRateVAT",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.reductionsFromGrossSales.otherRateVAT"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "47190",
+              "semantic": {
+                "name": "Erlösschmälerungen 0 % USt",
+                "function": "AM",
+                "range_start": "47190",
+                "range_end": "47199",
+                "parent": null
+              },
+              "signature": "8cf6489bcdc5fa56876d0e668ec95e0480403369641fc851a0f4e036dd4d40c9"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-008@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.taxExemptUStG4_8.UStG4_12",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.taxExemptUStG4_8.UStG4_12"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "48610",
+              "semantic": {
+                "name": "Erlöse aus Vermietung und Verpachtung, umsatzsteuerfrei § 4 Nr. 12 UStG",
+                "function": "AM",
+                "range_start": "48610",
+                "range_end": "48619",
+                "parent": null
+              },
+              "signature": "2e33e71ecd0cec440714ac6b96763718cbef3e8e2ea8467ffa1b6c9bf3b61dd8"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-009@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.generalRateVAT",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.generalRateVAT"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "48620",
+              "semantic": {
+                "name": "Erlöse aus Vermietung und Verpachtung 19 % USt",
+                "function": "AM",
+                "range_start": "48620",
+                "range_end": "48629",
+                "parent": null
+              },
+              "signature": "f2467198dfdaee08043ba41f0d86e390d001c7be098087d2dc36ab9ec49a0652"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-010@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.reducedRateVAT",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.reducedRateVAT"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "48630",
+              "semantic": {
+                "name": "Erlöse aus Vermietung und Verpachtung 7 % USt",
+                "function": "AM",
+                "range_start": "48630",
+                "range_end": "48649",
+                "parent": null
+              },
+              "signature": "f2410da615aa87bf0921b91bf40afbc49f1c241cfd8e4a77d6316451595891ec"
+            },
+            {
+              "code": "48640",
+              "semantic": {
+                "name": "Erlöse aus Vermietung und Verpachtung 7 % USt",
+                "function": "AM",
+                "range_start": "48630",
+                "range_end": "48649",
+                "parent": null
+              },
+              "signature": "f2410da615aa87bf0921b91bf40afbc49f1c241cfd8e4a77d6316451595891ec"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-011@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.ownConsumption.otherWithdrawals",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.ownConsumption.otherWithdrawals"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "46000",
+              "semantic": {
+                "name": "Unentgeltliche Wertabgaben",
+                "function": "",
+                "range_start": "46000",
+                "range_end": "46000",
+                "parent": null
+              },
+              "signature": "b4b3f8bad39eea56badd7c92ebb731fe8cd8857ad3077efc97cb49afbb37e1e5"
+            },
+            {
+              "code": "46500",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 7 % USt",
+                "function": "AM",
+                "range_start": "46500",
+                "range_end": "46559",
+                "parent": null
+              },
+              "signature": "eb8c03044cd96464eac8a6b9afcfbcad813eb6aff4a44ad73026d7e7de552322"
+            },
+            {
+              "code": "46510",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 7 % USt",
+                "function": "AM",
+                "range_start": "46500",
+                "range_end": "46559",
+                "parent": null
+              },
+              "signature": "eb8c03044cd96464eac8a6b9afcfbcad813eb6aff4a44ad73026d7e7de552322"
+            },
+            {
+              "code": "46520",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 7 % USt",
+                "function": "AM",
+                "range_start": "46500",
+                "range_end": "46559",
+                "parent": null
+              },
+              "signature": "eb8c03044cd96464eac8a6b9afcfbcad813eb6aff4a44ad73026d7e7de552322"
+            },
+            {
+              "code": "46530",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 7 % USt",
+                "function": "AM",
+                "range_start": "46500",
+                "range_end": "46559",
+                "parent": null
+              },
+              "signature": "eb8c03044cd96464eac8a6b9afcfbcad813eb6aff4a44ad73026d7e7de552322"
+            },
+            {
+              "code": "46540",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 7 % USt",
+                "function": "AM",
+                "range_start": "46500",
+                "range_end": "46559",
+                "parent": null
+              },
+              "signature": "eb8c03044cd96464eac8a6b9afcfbcad813eb6aff4a44ad73026d7e7de552322"
+            },
+            {
+              "code": "46550",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 7 % USt",
+                "function": "AM",
+                "range_start": "46500",
+                "range_end": "46559",
+                "parent": null
+              },
+              "signature": "eb8c03044cd96464eac8a6b9afcfbcad813eb6aff4a44ad73026d7e7de552322"
+            },
+            {
+              "code": "46560",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 7 % USt",
+                "function": "AM",
+                "range_start": "46560",
+                "range_end": "46569",
+                "parent": null
+              },
+              "signature": "880912e1c8bb580f2e30120d380e72bcb8b3e4b4b901e425301225610e8f322d"
+            },
+            {
+              "code": "46590",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung ohne USt",
+                "function": "",
+                "range_start": "46590",
+                "range_end": "46590",
+                "parent": null
+              },
+              "signature": "11773ca76695d611678c0bf41e24c1254d59670a58742eb96b290decbe13ed03"
+            },
+            {
+              "code": "46600",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 19 % USt",
+                "function": "AM",
+                "range_start": "46600",
+                "range_end": "46669",
+                "parent": null
+              },
+              "signature": "1abebd6e78e3dbb498355ab3a05fa613eb934e18b7910f3cbe7fa4643dac284e"
+            },
+            {
+              "code": "46610",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 19 % USt",
+                "function": "AM",
+                "range_start": "46600",
+                "range_end": "46669",
+                "parent": null
+              },
+              "signature": "1abebd6e78e3dbb498355ab3a05fa613eb934e18b7910f3cbe7fa4643dac284e"
+            },
+            {
+              "code": "46620",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 19 % USt",
+                "function": "AM",
+                "range_start": "46600",
+                "range_end": "46669",
+                "parent": null
+              },
+              "signature": "1abebd6e78e3dbb498355ab3a05fa613eb934e18b7910f3cbe7fa4643dac284e"
+            },
+            {
+              "code": "46630",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 19 % USt",
+                "function": "AM",
+                "range_start": "46600",
+                "range_end": "46669",
+                "parent": null
+              },
+              "signature": "1abebd6e78e3dbb498355ab3a05fa613eb934e18b7910f3cbe7fa4643dac284e"
+            },
+            {
+              "code": "46640",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 19 % USt",
+                "function": "AM",
+                "range_start": "46600",
+                "range_end": "46669",
+                "parent": null
+              },
+              "signature": "1abebd6e78e3dbb498355ab3a05fa613eb934e18b7910f3cbe7fa4643dac284e"
+            },
+            {
+              "code": "46650",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 19 % USt",
+                "function": "AM",
+                "range_start": "46600",
+                "range_end": "46669",
+                "parent": null
+              },
+              "signature": "1abebd6e78e3dbb498355ab3a05fa613eb934e18b7910f3cbe7fa4643dac284e"
+            },
+            {
+              "code": "46660",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 19 % USt",
+                "function": "AM",
+                "range_start": "46600",
+                "range_end": "46669",
+                "parent": null
+              },
+              "signature": "1abebd6e78e3dbb498355ab3a05fa613eb934e18b7910f3cbe7fa4643dac284e"
+            },
+            {
+              "code": "46860",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Gegenständen 19 % USt",
+                "function": "AM",
+                "range_start": "46860",
+                "range_end": "46879",
+                "parent": null
+              },
+              "signature": "871b5b11e529b59d1e2ea1aa4d5f050cbbcee1e3f7201f0876b0116f4a9a2f5c"
+            },
+            {
+              "code": "46870",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Gegenständen 19 % USt",
+                "function": "AM",
+                "range_start": "46860",
+                "range_end": "46879",
+                "parent": null
+              },
+              "signature": "871b5b11e529b59d1e2ea1aa4d5f050cbbcee1e3f7201f0876b0116f4a9a2f5c"
+            },
+            {
+              "code": "46890",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Gegenständen ohne USt",
+                "function": "",
+                "range_start": "46890",
+                "range_end": "46890",
+                "parent": null
+              },
+              "signature": "28e01eff4c814b2bdc2ac1c5d278dc7206073f78508dc3d07f84578f6077a19b"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-012@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.ownConsumption.nonCashBenefitsOther",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.ownConsumption.nonCashBenefitsOther"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "49400",
+              "semantic": {
+                "name": "Verrechnete sonstige Sachbezüge (keine Waren)",
+                "function": "",
+                "range_start": "49400",
+                "range_end": "49400",
+                "parent": null
+              },
+              "signature": "6b222d362f16fadf15568481fa1fe981604a12771266032c9b1d9baebe9a4660"
+            },
+            {
+              "code": "49410",
+              "semantic": {
+                "name": "Sachbezüge 7 % USt (Waren)",
+                "function": "AM",
+                "range_start": "49410",
+                "range_end": "49419",
+                "parent": null
+              },
+              "signature": "d19d5adc2b4ecab93b7f0bee2bc9d4fd06ef0406d2d95b894c847af827efdaa3"
+            },
+            {
+              "code": "49450",
+              "semantic": {
+                "name": "Sachbezüge 19 % USt (Waren)",
+                "function": "AM",
+                "range_start": "49450",
+                "range_end": "49459",
+                "parent": null
+              },
+              "signature": "0be95efa9ee96bd49ca1f5836d84eb44194f5bca89ff6df3913611f965c103e9"
+            },
+            {
+              "code": "49460",
+              "semantic": {
+                "name": "Verrechnete sonstige Sachbezüge",
+                "function": "",
+                "range_start": "49460",
+                "range_end": "49460",
+                "parent": null
+              },
+              "signature": "64e03038dc5126a14050361e160c95565d7cab70b2c03843108b7a46dabafbeb"
+            },
+            {
+              "code": "49480",
+              "semantic": {
+                "name": "Verrechnete sonstige Sachbezüge 19 % USt",
+                "function": "AM",
+                "range_start": "49480",
+                "range_end": "49489",
+                "parent": null
+              },
+              "signature": "2eb18958a17f9775738f8cacb6f0e75c05d3f001e69ff6459ce6f2b2f5c306d0"
+            },
+            {
+              "code": "49490",
+              "semantic": {
+                "name": "Verrechnete sonstige Sachbezüge ohne Umsatzsteuer",
+                "function": "",
+                "range_start": "49490",
+                "range_end": "49490",
+                "parent": null
+              },
+              "signature": "0c48bff0a9eeb422d2bdd8f36e64079a89f32b942eebde522097bd713077c390"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-013@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.ownConsumption.nonCashBenefitsCompCar",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.ownConsumption.nonCashBenefitsCompCar"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "49440",
+              "semantic": {
+                "name": "Verrechnete sonstige Sachbezüge aus Fahrzeug-Gestellung zum ermäßigten Umsatzsteuersatz",
+                "function": "AM",
+                "range_start": "49440",
+                "range_end": "49449",
+                "parent": null
+              },
+              "signature": "6792a356b97a9876450102f8af81d8f22fa08f927566cce8230e455720f41be7"
+            },
+            {
+              "code": "49470",
+              "semantic": {
+                "name": "Verrechnete sonstige Sachbezüge aus Fahrzeug-Gestellung 19 % USt",
+                "function": "AM",
+                "range_start": "49470",
+                "range_end": "49479",
+                "parent": null
+              },
+              "signature": "dab0c138563a72aafdeecf1b003f9ee5535c1a24a58af126a26dd879aa2a56a4"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-014@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.miscellaneous",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.miscellaneous"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "48300",
+              "semantic": {
+                "name": "Sonstige betriebliche Erträge",
+                "function": "",
+                "range_start": "48300",
+                "range_end": "48300",
+                "parent": null
+              },
+              "signature": "ce6bab70e61e281b009d4a666a1b6365f77713189147183fd9d2ad3072eb4e35"
+            },
+            {
+              "code": "48320",
+              "semantic": {
+                "name": "Sonstige betriebliche Erträge von verbundenen Unternehmen",
+                "function": "",
+                "range_start": "48320",
+                "range_end": "48320",
+                "parent": null
+              },
+              "signature": "d3ffcf84e64f7629f5757848b0ea40ef843c04731a9ed2dccece0fdf7354c54d"
+            },
+            {
+              "code": "49820",
+              "semantic": {
+                "name": "Sonstige steuerfreie Betriebseinnahmen",
+                "function": "",
+                "range_start": "49820",
+                "range_end": "49820",
+                "parent": null
+              },
+              "signature": "60de39ab6d4de0a47f36a3a50ad2eddafeec0669fa1f0315a8d13fb6bced196c"
+            },
+            {
+              "code": "49860",
+              "semantic": {
+                "name": "Ertrag aus pauschaler Vorsteuer § 23a UStG",
+                "function": "",
+                "range_start": "49860",
+                "range_end": "49860",
+                "parent": null
+              },
+              "signature": "cb1ca235347a689ca6e7d02fbb5f3cb1ac29c4d3f6b081ad57acf4fdb12a7bb3"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-015@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.acqudFreeOfCharge",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.acqudFreeOfCharge"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "49870",
+              "semantic": {
+                "name": "Erträge aus der Aktivierung unentgeltlich erworbener Vermögensgegenstände",
+                "function": "",
+                "range_start": "49870",
+                "range_end": "49870",
+                "parent": null
+              },
+              "signature": "63753494a1aab2cbfdc7e08ead300b92b809bf176f1fb6a0c75ef1e6b97f5db9"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-016@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.inventoryChange.increasefinished",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.inventoryChange.increasefinished",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.inventoryChange.decreasefinished"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "48000",
+              "semantic": {
+                "name": "Bestandsveränderungen - fertige Erzeugnisse",
+                "function": "",
+                "range_start": "48000",
+                "range_end": "48000",
+                "parent": null
+              },
+              "signature": "27ef0bf575be88c153ba503998e41e3bea59f79b704d86f233a8e4d988f4d9d3"
+            }
+          ],
+          "negative_target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.inventoryChange.decreasefinished"
+        },
+        {
+          "purpose": "operating-r16-017@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.inventoryChange.increaseGoodsInProgress",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.inventoryChange.increaseGoodsInProgress",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.inventoryChange.decreaseGoodsInProgress"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "48100",
+              "semantic": {
+                "name": "Bestandsveränderungen - unfertige Erzeugnisse",
+                "function": "",
+                "range_start": "48100",
+                "range_end": "48100",
+                "parent": null
+              },
+              "signature": "649a9de03ebad74e1c957b8e2ec8a14b0eb21f2fe42628458f1ea6c780d73d36"
+            },
+            {
+              "code": "48150",
+              "semantic": {
+                "name": "Bestandsveränderungen - unfertige Leistungen",
+                "function": "",
+                "range_start": "48150",
+                "range_end": "48150",
+                "parent": null
+              },
+              "signature": "901e61c7ff5e44d9e2630bb56e997b92af9893806849ef95bc599cc5d39a1520"
+            }
+          ],
+          "negative_target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.inventoryChange.decreaseGoodsInProgress"
+        },
+        {
+          "purpose": "operating-r16-018@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.inventoryChange.increaseConstructionInProgress",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.inventoryChange.increaseConstructionInProgress",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.inventoryChange.decreaseConstructionInProgress"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "48160",
+              "semantic": {
+                "name": "Bestandsveränderungen in Ausführung befindlicher Bauaufträge",
+                "function": "",
+                "range_start": "48160",
+                "range_end": "48160",
+                "parent": null
+              },
+              "signature": "b91af3b1b5d349a598f1e8a90f0e19a724cafecf480a6833dc12ec4b6ba005dd"
+            },
+            {
+              "code": "48180",
+              "semantic": {
+                "name": "Bestandsveränderungen in Arbeit befindlicher Aufträge",
+                "function": "",
+                "range_start": "48180",
+                "range_end": "48180",
+                "parent": null
+              },
+              "signature": "2710e82b03648c5d297eac012bef276fc21163fa48af0114e04e141112fb880c"
+            }
+          ],
+          "negative_target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.inventoryChange.decreaseConstructionInProgress"
+        },
+        {
+          "purpose": "operating-r16-019@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "63000",
+              "semantic": {
+                "name": "Sonstige betriebliche Aufwendungen",
+                "function": "",
+                "range_start": "63000",
+                "range_end": "63000",
+                "parent": null
+              },
+              "signature": "c05ec0f90bfeb030bc1bae1418d8424f5ed3b01dfd9ee729b53564993d1b9dde"
+            },
+            {
+              "code": "63020",
+              "semantic": {
+                "name": "Aufwandsentschädigungen / Erstattungen",
+                "function": "",
+                "range_start": "63020",
+                "range_end": "63020",
+                "parent": null
+              },
+              "signature": "3ebf74d9713208d45e60144227b60aaab31b069f7c277c0192dc2d8697a900e9"
+            },
+            {
+              "code": "63040",
+              "semantic": {
+                "name": "Veranstaltungskosten",
+                "function": "",
+                "range_start": "63040",
+                "range_end": "63040",
+                "parent": null
+              },
+              "signature": "bbd2da39eed3dba642464eeaf846a83120ce918f4a339838a95e8fbc6a1bad2d"
+            },
+            {
+              "code": "63090",
+              "semantic": {
+                "name": "Raumkosten",
+                "function": "",
+                "range_start": "63090",
+                "range_end": "63090",
+                "parent": null
+              },
+              "signature": "9f31563b40fd0254b8dd2870fd7230505af75091b4a9272acf74092ef7e7db6b"
+            },
+            {
+              "code": "63180",
+              "semantic": {
+                "name": "Miet- und Pachtnebenkosten, die gewerbesteuerlich nicht hinzuzurechnen sind",
+                "function": "",
+                "range_start": "63180",
+                "range_end": "63180",
+                "parent": null
+              },
+              "signature": "f56be9681f39b96ea9880ffa1ff71d56c574c9d4bc94adb49f327408b9f9edc7"
+            },
+            {
+              "code": "63500",
+              "semantic": {
+                "name": "Grundstücksaufwendungen betrieblich",
+                "function": "",
+                "range_start": "63500",
+                "range_end": "63500",
+                "parent": null
+              },
+              "signature": "5851a0eba0edff87bf9ed9d6f68a637837c7f21adee9d5fdc4c8cb317eb2b802"
+            },
+            {
+              "code": "63520",
+              "semantic": {
+                "name": "Sonstige Grundstücksaufwendungen (neutral)",
+                "function": "",
+                "range_start": "63520",
+                "range_end": "63520",
+                "parent": null
+              },
+              "signature": "2c9f5d98b17abf60a6e84d862c1a853651b983a7e2d66113a5bce600ea75690e"
+            },
+            {
+              "code": "66300",
+              "semantic": {
+                "name": "Repräsentationskosten",
+                "function": "",
+                "range_start": "66300",
+                "range_end": "66300",
+                "parent": null
+              },
+              "signature": "6d3e7fe2103de3ffbf152eb9da9fa669e30bdd8baff6a1066a083a4b544f086d"
+            },
+            {
+              "code": "69600",
+              "semantic": {
+                "name": "Periodenfremde Aufwendungen",
+                "function": "",
+                "range_start": "69600",
+                "range_end": "69600",
+                "parent": null
+              },
+              "signature": "78b095ed8122ca1283c157e9b0aee7f469ff135aa1238337600d8df690092b57"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-020@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.provisions",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.provisions"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "64750",
+              "semantic": {
+                "name": "Zuführung zu Aufwandsrückstellungen",
+                "function": "",
+                "range_start": "64750",
+                "range_end": "64750",
+                "parent": null
+              },
+              "signature": "d8215c7284f32bb47d6383c9f3bd97c6ab8d695f8ea909241ff0f65d98a8a4ea"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-021@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.staff.salaries.misc",
+          "choices": [
+            "is.netIncome.regular.operatingTC.staff.salaries.misc"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "60020",
+              "semantic": {
+                "name": "Ehrenamtspauschale",
+                "function": "",
+                "range_start": "60020",
+                "range_end": "60020",
+                "parent": null
+              },
+              "signature": "02cbe6ea4eb2ded5f5cde36e4a8ce37b96df35172c545f8f66c1ef5927f89cfc"
+            },
+            {
+              "code": "60040",
+              "semantic": {
+                "name": "Übungsleiterpauschale",
+                "function": "",
+                "range_start": "60040",
+                "range_end": "60040",
+                "parent": null
+              },
+              "signature": "dfb99345b071a757b1e76b91ca08e06f6db940c5627a454cfeaa27742a3b3c74"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-022@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.staff.salaries.managerPartner",
+          "choices": [
+            "is.netIncome.regular.operatingTC.staff.salaries.managerPartner"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "60670",
+              "semantic": {
+                "name": "Freiwillige Zuwendungen an Gesellschafter-Geschäftsführer",
+                "function": "",
+                "range_start": "60670",
+                "range_end": "60670",
+                "parent": null
+              },
+              "signature": "964fd4a1b00cdbd0d80bc8870a09195437221ee95e9a7f5784b3417718ab69ba"
+            },
+            {
+              "code": "60730",
+              "semantic": {
+                "name": "Sachzuwendungen und Dienstleistungen an Gesellschafter- Geschäftsführer",
+                "function": "",
+                "range_start": "60730",
+                "range_end": "60730",
+                "parent": null
+              },
+              "signature": "94a108206c6e072f13e749eddb8dab7d6015006dc9c22373c4a3b9df076ef9c0"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-023@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.staff.social.welfare",
+          "choices": [
+            "is.netIncome.regular.operatingTC.staff.social.welfare"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "61300",
+              "semantic": {
+                "name": "Freiwillige soziale Aufwendungen, lohnsteuerfrei",
+                "function": "",
+                "range_start": "61300",
+                "range_end": "61300",
+                "parent": null
+              },
+              "signature": "43f1b8c2121f76b23ab48bec6563a16b45d5df042f1bd19ad57d24eb27282b54"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-024@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.donations.nondeductibleOther.nonallocable",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.donations.nondeductibleOther.nonallocable"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "63900",
+              "semantic": {
+                "name": "Zuwendungen, Spenden, steuerlich nicht abziehbar",
+                "function": "",
+                "range_start": "63900",
+                "range_end": "63900",
+                "parent": null
+              },
+              "signature": "30772ebe71ab96c09dc30c25b545005c7f82d734d156bb8e3bc88453756d2ac7"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-025@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.donations.nondeductiblePoliticalParties",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.donations.nondeductiblePoliticalParties"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "63940",
+              "semantic": {
+                "name": "Zuwendungen, Spenden an politische Parteien",
+                "function": "",
+                "range_start": "63940",
+                "range_end": "63940",
+                "parent": null
+              },
+              "signature": "5c9021c3585c4255e3fd9dadf17c3902ed4d83a36b2ef766a36edc9d84be4b32"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-026@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.donations.taxprivileged",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.donations.taxprivileged",
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.donations.nondeductibleOther.nonallocable"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "63910",
+              "semantic": {
+                "name": "Zuwendungen, Spenden für wissenschaftliche und kulturelle Zwecke",
+                "function": "",
+                "range_start": "63910",
+                "range_end": "63910",
+                "parent": null
+              },
+              "signature": "ac5c6d1ea50b1cbcce2d09e5c17dd2e07d0c805b7e17ee227d2667402e660899"
+            },
+            {
+              "code": "63920",
+              "semantic": {
+                "name": "Zuwendungen, Spenden für mildtätige Zwecke",
+                "function": "",
+                "range_start": "63920",
+                "range_end": "63920",
+                "parent": null
+              },
+              "signature": "9ecd0743a59c8687fa01c892cde1898b9f041e46428e301ded988723e5be0b40"
+            },
+            {
+              "code": "63930",
+              "semantic": {
+                "name": "Zuwendungen, Spenden für kirchliche, religiöse und gemeinnützige Zwecke",
+                "function": "",
+                "range_start": "63930",
+                "range_end": "63930",
+                "parent": null
+              },
+              "signature": "7971d76183d67dee8e61c961179393c40f7e04b748d3153e3986e1603573ec2b"
+            },
+            {
+              "code": "63950",
+              "semantic": {
+                "name": "Zuwendungen, Spenden in das zu erhaltende Vermögen (Vermögensstock) einer Stiftung für gemeinnützige Zwecke",
+                "function": "",
+                "range_start": "63950",
+                "range_end": "63950",
+                "parent": null
+              },
+              "signature": "1f04385f1601448d768875b385838ea5ed076d5f9913baa0801def8fbc29e513"
+            },
+            {
+              "code": "63970",
+              "semantic": {
+                "name": "Zuwendungen, Spenden in das zu erhaltende Vermögen (Vermögensstock) einer Stiftung für kirchliche, religiöse und gemeinnützige Zwecke",
+                "function": "",
+                "range_start": "63970",
+                "range_end": "63970",
+                "parent": null
+              },
+              "signature": "da6650bb47d00829cf6ed749dc76aeded88a41cc5176e10e6c19ff4a690d8fb1"
+            },
+            {
+              "code": "63980",
+              "semantic": {
+                "name": "Zuwendungen, Spenden an Stiftungen in das zu erhaltende Vermögen (Vermögensstock) für wissenschaftliche, mildtätige, kulturelle Zwecke",
+                "function": "",
+                "range_start": "63980",
+                "range_end": "63980",
+                "parent": null
+              },
+              "signature": "7c029e656c5dd14ce309f1a1776a487ec33f8aa1be8aaeeaed1f00f5bfc0e676"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-027@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.supervisoryboard.domesticMembers.nonDeductible",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.supervisoryboard.domesticMembers.nonDeductible",
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.supervisoryboard.foreignMembers.nonDeductible"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "68750",
+              "semantic": {
+                "name": "Nicht abziehbare Hälfte der Aufsichtsratsvergütungen",
+                "function": "",
+                "range_start": "68750",
+                "range_end": "68750",
+                "parent": null
+              },
+              "signature": "20e4574622a94ad975c0f50d2ad1e79844ad2172297593a51fb6b6eb82de6624"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-028@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.supervisoryboard.domesticMembers.deductible",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.supervisoryboard.domesticMembers.deductible",
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.supervisoryboard.foreignMembers.deductible"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "68760",
+              "semantic": {
+                "name": "Abziehbare Aufsichtsratsvergütungen",
+                "function": "",
+                "range_start": "68760",
+                "range_end": "68760",
+                "parent": null
+              },
+              "signature": "ffe5ec1a407bb845835fc972d412782ee9a3a0e072338eeb4724c28f8e33672e"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-029@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.leaseFix.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.leaseFix.other",
+            "is.netIncome.regular.operatingTC.otherCost.leaseFix.shareholders"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "63170",
+              "semantic": {
+                "name": "Aufwendungen für gemietete oder gepachtete unbewegliche Wirtschaftsgüter, die gewerbesteuerlich hinzuzurechnen sind",
+                "function": "",
+                "range_start": "63170",
+                "range_end": "63170",
+                "parent": null
+              },
+              "signature": "b0afe87f3eec80363ec15fd6043608e8fc826d0b3fd026edf8c6b8e5f5c26ada"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-030@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.leaseMoveable.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.leaseMoveable.other",
+            "is.netIncome.regular.operatingTC.otherCost.leaseMoveable.shareholders"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "68380",
+              "semantic": {
+                "name": "Aufwendungen für gemietete oder gepachtete bewegliche Wirtschaftsgüter, die gewerbesteuerlich hinzuzurechnen sind",
+                "function": "",
+                "range_start": "68380",
+                "range_end": "68380",
+                "parent": null
+              },
+              "signature": "98a6e1db15dca1ca5a89aa24782a11d2a1579f3ed15e2310f55704966b22f66d"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-031@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.kst",
+          "choices": [
+            "is.netIncome.tax.kst"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76000",
+              "semantic": {
+                "name": "Körperschaftsteuer",
+                "function": "",
+                "range_start": "76000",
+                "range_end": "76000",
+                "parent": null
+              },
+              "signature": "1596a024d037ee97aeea9ac108f82a13bf7b70d87c8e8120cd1671cc87855236"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-032@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.prevPeriodPaid.kst",
+          "choices": [
+            "is.netIncome.tax.prevPeriodPaid.kst"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76030",
+              "semantic": {
+                "name": "Körperschaftsteuer für Vorjahre",
+                "function": "",
+                "range_start": "76030",
+                "range_end": "76030",
+                "parent": null
+              },
+              "signature": "14e1286538a1ab4b5bb9a3288de0b968979b2734eae6c707838d26f62a3ce3ed"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-033@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.prevPeriodReceived.kst",
+          "choices": [
+            "is.netIncome.tax.prevPeriodReceived.kst"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76040",
+              "semantic": {
+                "name": "Körperschaftsteuererstattungen für Vorjahre",
+                "function": "",
+                "range_start": "76040",
+                "range_end": "76040",
+                "parent": null
+              },
+              "signature": "5e263dcfbc64c25990f75afcdf8ec767d70b9be194f3978c705b52e0d6ec1d69"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-034@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.prevPeriodReceived.soli",
+          "choices": [
+            "is.netIncome.tax.prevPeriodReceived.soli"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76070",
+              "semantic": {
+                "name": "Solidaritätszuschlagerstattungen für Vorjahre",
+                "function": "",
+                "range_start": "76070",
+                "range_end": "76070",
+                "parent": null
+              },
+              "signature": "5ce5ee0df840eb6111f6924665b85a27ca21d27df127412e1a5414bffe34cd7a"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-035@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.soli.other",
+          "choices": [
+            "is.netIncome.tax.soli.other"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76080",
+              "semantic": {
+                "name": "Solidaritätszuschlag",
+                "function": "",
+                "range_start": "76080",
+                "range_end": "76080",
+                "parent": null
+              },
+              "signature": "d9eca4f1fd507826ad705592176b3a0f9432e0235135f0d1ee7e7cfc7583d4c5"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-036@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.prevPeriodPaid.soli",
+          "choices": [
+            "is.netIncome.tax.prevPeriodPaid.soli"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76090",
+              "semantic": {
+                "name": "Solidaritätszuschlag für Vorjahre",
+                "function": "",
+                "range_start": "76090",
+                "range_end": "76090",
+                "parent": null
+              },
+              "signature": "fef64076036fed1668c7c5bab317f6aa601a6d439c598f0c8fd41609e6437e45"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-037@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.gewst",
+          "choices": [
+            "is.netIncome.tax.gewst"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76100",
+              "semantic": {
+                "name": "Gewerbesteuer",
+                "function": "",
+                "range_start": "76100",
+                "range_end": "76100",
+                "parent": null
+              },
+              "signature": "14c2c361c179df98962e5d7032f40ce8e3c93d41ef0d16f7d87e3ab2491c8afa"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-038@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.soli.kestcreditable",
+          "choices": [
+            "is.netIncome.tax.soli.kestcreditable"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76330",
+              "semantic": {
+                "name": "Anrechenbarer Solidaritätszuschlag auf Kapitalertragsteuer 25 %",
+                "function": "",
+                "range_start": "76330",
+                "range_end": "76330",
+                "parent": null
+              },
+              "signature": "44a562b8f90bccfb4c3be82c2e38e7940bbd84a3e09d3b957c757dcd175c9786"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-039@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.nonDeductableForeignIncomeTaxes",
+          "choices": [
+            "is.netIncome.tax.nonDeductableForeignIncomeTaxes"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76380",
+              "semantic": {
+                "name": "Ausländische Steuer auf im Inland steuerfreie DBA-Einkünfte",
+                "function": "",
+                "range_start": "76380",
+                "range_end": "76380",
+                "parent": null
+              },
+              "signature": "1cb0e6b35666452a3d131346a39a6ebb6e4f8028e53d4799263d20dfc22db307"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-040@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.releaseTaxProv.Gew",
+          "choices": [
+            "is.netIncome.tax.releaseTaxProv.Gew"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76430",
+              "semantic": {
+                "name": "Erträge aus der Auflösung von Gewerbesteuerrückstellungen nach § 4 Abs. 5b EStG",
+                "function": "",
+                "range_start": "76430",
+                "range_end": "76430",
+                "parent": null
+              },
+              "signature": "b625487a5f58ae48d4320e01854961e3a41b975e3c7fce4fc61a032f32b5d6fb"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-041@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.prevPeriodPaid.gewst",
+          "choices": [
+            "is.netIncome.tax.prevPeriodPaid.gewst",
+            "is.netIncome.tax.prevPeriodReceived.gewst"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76410",
+              "semantic": {
+                "name": "Gewerbesteuernachzahlungen und Gewerbesteuererstattungen für Vorjahre nach § 4 Abs. 5b EStG",
+                "function": "",
+                "range_start": "76410",
+                "range_end": "76410",
+                "parent": null
+              },
+              "signature": "d845ac4e014417e7f3488ac8908fc4dcfa9ec32c83a2fd47fc6a8eca252c0179"
+            }
+          ],
+          "negative_target": "is.netIncome.tax.prevPeriodReceived.gewst"
+        },
+        {
+          "purpose": "operating-r16-042@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.kest.other",
+          "choices": [
+            "is.netIncome.tax.kest.creditable",
+            "is.netIncome.tax.kest.noncreditable",
+            "is.netIncome.tax.kest.other"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "76300",
+              "semantic": {
+                "name": "Kapitalertragsteuer 25 %",
+                "function": "",
+                "range_start": "76300",
+                "range_end": "76300",
+                "parent": null
+              },
+              "signature": "015635ec9ccf9943c0a4c301e95ae009f380057336b52eacb9578b31d7151f24"
+            },
+            {
+              "code": "76310",
+              "semantic": {
+                "name": "Kapitalertragsteuererstattung",
+                "function": "",
+                "range_start": "76310",
+                "range_end": "76310",
+                "parent": null
+              },
+              "signature": "41a04f40aa86c105c3f3e6b9bc2486eb5924ecdd8937d3e31751a7440829a7e2"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-043@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.deductableForeignIncomeTaxes",
+          "choices": [
+            "is.netIncome.tax.deductableForeignIncomeTaxes",
+            "is.netIncome.tax.nonDeductableForeignIncomeTaxes"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "76390",
+              "semantic": {
+                "name": "Anrechnung / Abzug ausländische Quellensteuer",
+                "function": "",
+                "range_start": "76390",
+                "range_end": "76390",
+                "parent": null
+              },
+              "signature": "8d63a23928962d2d555440cc4865422192dd7546d5f107ebe5b0bb3ac1c65781"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-044@1",
+          "group": "expense",
+          "target": "is.netIncome.otherTaxes.other",
+          "choices": [
+            "is.netIncome.otherTaxes.other"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76900",
+              "semantic": {
+                "name": "Steuernachzahlungen Vorjahre für sonstige Steuern",
+                "function": "",
+                "range_start": "76900",
+                "range_end": "76900",
+                "parent": null
+              },
+              "signature": "5a6c76d2d6363a2be2f93756b6d751dfed4fac678054d10e26a5da9602e6db43"
+            },
+            {
+              "code": "76920",
+              "semantic": {
+                "name": "Steuererstattungen Vorjahre für sonstige Steuern",
+                "function": "",
+                "range_start": "76920",
+                "range_end": "76920",
+                "parent": null
+              },
+              "signature": "c6b5661218119c816e6887a1351469597eeff6545f0f7e9b1b9b759d7c2dea21"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-045@1",
+          "group": "expense",
+          "target": "is.netIncome.otherTaxes.releaseTaxProvision",
+          "choices": [
+            "is.netIncome.otherTaxes.releaseTaxProvision"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76940",
+              "semantic": {
+                "name": "Erträge aus der Auflösung von Rückstellungen für sonstige Steuern",
+                "function": "",
+                "range_start": "76940",
+                "range_end": "76940",
+                "parent": null
+              },
+              "signature": "1eef7d113376133ae47acd5353a510fa42b7c48468a189be9fffd2d599e62a99"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "operating-r16-001@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.statutoryDuties.membershipFees",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.statutoryDuties.membershipFees"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "40000",
+              "semantic": {
+                "name": "Echte Mitgliedsbeiträge",
+                "function": "",
+                "range_start": "40000",
+                "range_end": "40000",
+                "parent": null
+              },
+              "signature": "cafa4da24ed0e5b3ba24b3fc9bb756d2f666ff759bd08d13ef0ff39c7593756d"
+            },
+            {
+              "code": "40100",
+              "semantic": {
+                "name": "Aufnahmegebühren",
+                "function": "",
+                "range_start": "40100",
+                "range_end": "40100",
+                "parent": null
+              },
+              "signature": "91d958dd56010fafa3b1bbe46613317ba39a093e7542e359e10edd0a5fd6ecd6"
+            },
+            {
+              "code": "40200",
+              "semantic": {
+                "name": "Einnahmen aus Mitgliederumlagen",
+                "function": "",
+                "range_start": "40200",
+                "range_end": "40200",
+                "parent": null
+              },
+              "signature": "8644964c7fca2d325f944dc223d3d8fa4ccd0c89e164f4bfd302f755c2abbb6e"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-002@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.statutoryDuties.contributions",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.statutoryDuties.contributions"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "40310",
+              "semantic": {
+                "name": "Einnahmen aus Erbschaften",
+                "function": "",
+                "range_start": "40310",
+                "range_end": "40310",
+                "parent": null
+              },
+              "signature": "b46db4035cfd66d62e87e817cc991e773d1a6f229442b06a17a3292d902c34d8"
+            },
+            {
+              "code": "40320",
+              "semantic": {
+                "name": "Einnahmen aus Vermächtnissen",
+                "function": "",
+                "range_start": "40320",
+                "range_end": "40320",
+                "parent": null
+              },
+              "signature": "3518384be2859345b6943d0ca9ac94fb7c1e291ab59c5fa5664704af9fdf7989"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-003@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.statutoryDuties.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.statutoryDuties.other"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "40300",
+              "semantic": {
+                "name": "Einnahmen aus Schenkungen",
+                "function": "",
+                "range_start": "40300",
+                "range_end": "40300",
+                "parent": null
+              },
+              "signature": "cd6365a5c1069abe8541665c56f677cf002cfed22f58295c807f75639fc1cdf3"
+            },
+            {
+              "code": "40330",
+              "semantic": {
+                "name": "Übrige ertragsteuerneutrale Einnahmen",
+                "function": "",
+                "range_start": "40330",
+                "range_end": "40330",
+                "parent": null
+              },
+              "signature": "7ec9e4126c9ff555e87e30770ee3eb25d8ee3f8ec27732117c9c97401d0a15e7"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-004@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.statutoryDuties.donations.immediatelyRecognised",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.statutoryDuties.donations.immediatelyRecognised"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "40400",
+              "semantic": {
+                "name": "Erträge aus Spenden/Zuwendungen",
+                "function": "",
+                "range_start": "40400",
+                "range_end": "40400",
+                "parent": null
+              },
+              "signature": "ebbd59c29b90f0ddf2fd540cca6d303c30449f2bd10830057de0cbe6205a9691"
+            },
+            {
+              "code": "40450",
+              "semantic": {
+                "name": "Geldzuwendungen gegen Zuwendungsbestätigung",
+                "function": "",
+                "range_start": "40450",
+                "range_end": "40450",
+                "parent": null
+              },
+              "signature": "614fafbfe5cd300e5d8c229ea07368bb27abc73022441491c92ca1438240ff83"
+            },
+            {
+              "code": "40500",
+              "semantic": {
+                "name": "Geldzuwendungen ohne Zuwendungsbestätigung",
+                "function": "",
+                "range_start": "40500",
+                "range_end": "40500",
+                "parent": null
+              },
+              "signature": "532d3c3fb6b6fdde1918e2087d3ad8b6420c176cbeed42ae222f7bcf2bfbe0c3"
+            },
+            {
+              "code": "40550",
+              "semantic": {
+                "name": "Sachzuwendungen gegen Zuwendungsbestätigung",
+                "function": "",
+                "range_start": "40550",
+                "range_end": "40550",
+                "parent": null
+              },
+              "signature": "41e46c597d9035bfa328157cc88d392fed473da1bae9c2909bc07217835d4176"
+            },
+            {
+              "code": "40600",
+              "semantic": {
+                "name": "Sachzuwendungen ohne Zuwendungsbestätigung",
+                "function": "",
+                "range_start": "40600",
+                "range_end": "40600",
+                "parent": null
+              },
+              "signature": "8f0702c284c1672324cab90d7530e94c78f6c34e740d02dc9ae9abc9ad1c8da9"
+            },
+            {
+              "code": "40650",
+              "semantic": {
+                "name": "Aufwandszuwendungen gegen Zuwendungsbestätigung",
+                "function": "",
+                "range_start": "40650",
+                "range_end": "40650",
+                "parent": null
+              },
+              "signature": "b0f38c5dc9648b5cfb084ebd22ee988fafc13f834ba78b55318064470173bdcc"
+            },
+            {
+              "code": "40700",
+              "semantic": {
+                "name": "Aufwandszuwendungen ohne Zuwendungsbestätigung",
+                "function": "",
+                "range_start": "40700",
+                "range_end": "40700",
+                "parent": null
+              },
+              "signature": "4098413d46f01a64fed4c8d54168465e513b935c5499c5d4c6499301b78fee71"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-005@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.statutoryDuties.donations.use",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.statutoryDuties.donations.use"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "40750",
+              "semantic": {
+                "name": "Ertrag aus Spendenverbrauch",
+                "function": "",
+                "range_start": "40750",
+                "range_end": "40750",
+                "parent": null
+              },
+              "signature": "65fdc00d15d0776dc9d8a3892463ea10131ec6287325c2af5ea29b873a98344f"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-006@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.otherRateVAT",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.otherRateVAT"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "42900",
+              "semantic": {
+                "name": "Erlöse 0 % USt",
+                "function": "AM",
+                "range_start": "42900",
+                "range_end": "42909",
+                "parent": null
+              },
+              "signature": "8d5f888daab4ce608c25d21fbef96b01238efa4556efaa9c02f400f18ee948e2"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-007@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.reductionsFromGrossSales.otherRateVAT",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.reductionsFromGrossSales.otherRateVAT"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "47190",
+              "semantic": {
+                "name": "Erlösschmälerungen 0 % USt",
+                "function": "AM",
+                "range_start": "47190",
+                "range_end": "47199",
+                "parent": null
+              },
+              "signature": "8cf6489bcdc5fa56876d0e668ec95e0480403369641fc851a0f4e036dd4d40c9"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-008@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.taxExemptUStG4_8.UStG4_12",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.taxExemptUStG4_8.UStG4_12"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "48610",
+              "semantic": {
+                "name": "Erlöse aus Vermietung und Verpachtung, umsatzsteuerfrei § 4 Nr. 12 UStG",
+                "function": "AM",
+                "range_start": "48610",
+                "range_end": "48619",
+                "parent": null
+              },
+              "signature": "2e33e71ecd0cec440714ac6b96763718cbef3e8e2ea8467ffa1b6c9bf3b61dd8"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-009@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.generalRateVAT",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.generalRateVAT"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "48620",
+              "semantic": {
+                "name": "Erlöse aus Vermietung und Verpachtung 19 % USt",
+                "function": "AM",
+                "range_start": "48620",
+                "range_end": "48629",
+                "parent": null
+              },
+              "signature": "f2467198dfdaee08043ba41f0d86e390d001c7be098087d2dc36ab9ec49a0652"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-010@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.reducedRateVAT",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.reducedRateVAT"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "48630",
+              "semantic": {
+                "name": "Erlöse aus Vermietung und Verpachtung 7 % USt",
+                "function": "AM",
+                "range_start": "48630",
+                "range_end": "48649",
+                "parent": null
+              },
+              "signature": "f2410da615aa87bf0921b91bf40afbc49f1c241cfd8e4a77d6316451595891ec"
+            },
+            {
+              "code": "48640",
+              "semantic": {
+                "name": "Erlöse aus Vermietung und Verpachtung 7 % USt",
+                "function": "AM",
+                "range_start": "48630",
+                "range_end": "48649",
+                "parent": null
+              },
+              "signature": "f2410da615aa87bf0921b91bf40afbc49f1c241cfd8e4a77d6316451595891ec"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-011@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.ownConsumption.otherWithdrawals",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.ownConsumption.otherWithdrawals"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "46000",
+              "semantic": {
+                "name": "Unentgeltliche Wertabgaben",
+                "function": "",
+                "range_start": "46000",
+                "range_end": "46000",
+                "parent": null
+              },
+              "signature": "b4b3f8bad39eea56badd7c92ebb731fe8cd8857ad3077efc97cb49afbb37e1e5"
+            },
+            {
+              "code": "46500",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 7 % USt",
+                "function": "AM",
+                "range_start": "46500",
+                "range_end": "46559",
+                "parent": null
+              },
+              "signature": "eb8c03044cd96464eac8a6b9afcfbcad813eb6aff4a44ad73026d7e7de552322"
+            },
+            {
+              "code": "46510",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 7 % USt",
+                "function": "AM",
+                "range_start": "46500",
+                "range_end": "46559",
+                "parent": null
+              },
+              "signature": "eb8c03044cd96464eac8a6b9afcfbcad813eb6aff4a44ad73026d7e7de552322"
+            },
+            {
+              "code": "46520",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 7 % USt",
+                "function": "AM",
+                "range_start": "46500",
+                "range_end": "46559",
+                "parent": null
+              },
+              "signature": "eb8c03044cd96464eac8a6b9afcfbcad813eb6aff4a44ad73026d7e7de552322"
+            },
+            {
+              "code": "46530",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 7 % USt",
+                "function": "AM",
+                "range_start": "46500",
+                "range_end": "46559",
+                "parent": null
+              },
+              "signature": "eb8c03044cd96464eac8a6b9afcfbcad813eb6aff4a44ad73026d7e7de552322"
+            },
+            {
+              "code": "46540",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 7 % USt",
+                "function": "AM",
+                "range_start": "46500",
+                "range_end": "46559",
+                "parent": null
+              },
+              "signature": "eb8c03044cd96464eac8a6b9afcfbcad813eb6aff4a44ad73026d7e7de552322"
+            },
+            {
+              "code": "46550",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 7 % USt",
+                "function": "AM",
+                "range_start": "46500",
+                "range_end": "46559",
+                "parent": null
+              },
+              "signature": "eb8c03044cd96464eac8a6b9afcfbcad813eb6aff4a44ad73026d7e7de552322"
+            },
+            {
+              "code": "46560",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 7 % USt",
+                "function": "AM",
+                "range_start": "46560",
+                "range_end": "46569",
+                "parent": null
+              },
+              "signature": "880912e1c8bb580f2e30120d380e72bcb8b3e4b4b901e425301225610e8f322d"
+            },
+            {
+              "code": "46590",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung ohne USt",
+                "function": "",
+                "range_start": "46590",
+                "range_end": "46590",
+                "parent": null
+              },
+              "signature": "11773ca76695d611678c0bf41e24c1254d59670a58742eb96b290decbe13ed03"
+            },
+            {
+              "code": "46600",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 19 % USt",
+                "function": "AM",
+                "range_start": "46600",
+                "range_end": "46669",
+                "parent": null
+              },
+              "signature": "1abebd6e78e3dbb498355ab3a05fa613eb934e18b7910f3cbe7fa4643dac284e"
+            },
+            {
+              "code": "46610",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 19 % USt",
+                "function": "AM",
+                "range_start": "46600",
+                "range_end": "46669",
+                "parent": null
+              },
+              "signature": "1abebd6e78e3dbb498355ab3a05fa613eb934e18b7910f3cbe7fa4643dac284e"
+            },
+            {
+              "code": "46620",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 19 % USt",
+                "function": "AM",
+                "range_start": "46600",
+                "range_end": "46669",
+                "parent": null
+              },
+              "signature": "1abebd6e78e3dbb498355ab3a05fa613eb934e18b7910f3cbe7fa4643dac284e"
+            },
+            {
+              "code": "46630",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 19 % USt",
+                "function": "AM",
+                "range_start": "46600",
+                "range_end": "46669",
+                "parent": null
+              },
+              "signature": "1abebd6e78e3dbb498355ab3a05fa613eb934e18b7910f3cbe7fa4643dac284e"
+            },
+            {
+              "code": "46640",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 19 % USt",
+                "function": "AM",
+                "range_start": "46600",
+                "range_end": "46669",
+                "parent": null
+              },
+              "signature": "1abebd6e78e3dbb498355ab3a05fa613eb934e18b7910f3cbe7fa4643dac284e"
+            },
+            {
+              "code": "46650",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 19 % USt",
+                "function": "AM",
+                "range_start": "46600",
+                "range_end": "46669",
+                "parent": null
+              },
+              "signature": "1abebd6e78e3dbb498355ab3a05fa613eb934e18b7910f3cbe7fa4643dac284e"
+            },
+            {
+              "code": "46660",
+              "semantic": {
+                "name": "Unentgeltliche Erbringung einer sonstigen Leistung 19 % USt",
+                "function": "AM",
+                "range_start": "46600",
+                "range_end": "46669",
+                "parent": null
+              },
+              "signature": "1abebd6e78e3dbb498355ab3a05fa613eb934e18b7910f3cbe7fa4643dac284e"
+            },
+            {
+              "code": "46860",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Gegenständen 19 % USt",
+                "function": "AM",
+                "range_start": "46860",
+                "range_end": "46879",
+                "parent": null
+              },
+              "signature": "871b5b11e529b59d1e2ea1aa4d5f050cbbcee1e3f7201f0876b0116f4a9a2f5c"
+            },
+            {
+              "code": "46870",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Gegenständen 19 % USt",
+                "function": "AM",
+                "range_start": "46860",
+                "range_end": "46879",
+                "parent": null
+              },
+              "signature": "871b5b11e529b59d1e2ea1aa4d5f050cbbcee1e3f7201f0876b0116f4a9a2f5c"
+            },
+            {
+              "code": "46890",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Gegenständen ohne USt",
+                "function": "",
+                "range_start": "46890",
+                "range_end": "46890",
+                "parent": null
+              },
+              "signature": "28e01eff4c814b2bdc2ac1c5d278dc7206073f78508dc3d07f84578f6077a19b"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-012@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.ownConsumption.nonCashBenefitsOther",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.ownConsumption.nonCashBenefitsOther"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "49400",
+              "semantic": {
+                "name": "Verrechnete sonstige Sachbezüge (keine Waren)",
+                "function": "",
+                "range_start": "49400",
+                "range_end": "49400",
+                "parent": null
+              },
+              "signature": "6b222d362f16fadf15568481fa1fe981604a12771266032c9b1d9baebe9a4660"
+            },
+            {
+              "code": "49410",
+              "semantic": {
+                "name": "Sachbezüge 7 % USt (Waren)",
+                "function": "AM",
+                "range_start": "49410",
+                "range_end": "49419",
+                "parent": null
+              },
+              "signature": "d19d5adc2b4ecab93b7f0bee2bc9d4fd06ef0406d2d95b894c847af827efdaa3"
+            },
+            {
+              "code": "49450",
+              "semantic": {
+                "name": "Sachbezüge 19 % USt (Waren)",
+                "function": "AM",
+                "range_start": "49450",
+                "range_end": "49459",
+                "parent": null
+              },
+              "signature": "0be95efa9ee96bd49ca1f5836d84eb44194f5bca89ff6df3913611f965c103e9"
+            },
+            {
+              "code": "49460",
+              "semantic": {
+                "name": "Verrechnete sonstige Sachbezüge",
+                "function": "",
+                "range_start": "49460",
+                "range_end": "49460",
+                "parent": null
+              },
+              "signature": "64e03038dc5126a14050361e160c95565d7cab70b2c03843108b7a46dabafbeb"
+            },
+            {
+              "code": "49480",
+              "semantic": {
+                "name": "Verrechnete sonstige Sachbezüge 19 % USt",
+                "function": "AM",
+                "range_start": "49480",
+                "range_end": "49489",
+                "parent": null
+              },
+              "signature": "2eb18958a17f9775738f8cacb6f0e75c05d3f001e69ff6459ce6f2b2f5c306d0"
+            },
+            {
+              "code": "49490",
+              "semantic": {
+                "name": "Verrechnete sonstige Sachbezüge ohne Umsatzsteuer",
+                "function": "",
+                "range_start": "49490",
+                "range_end": "49490",
+                "parent": null
+              },
+              "signature": "0c48bff0a9eeb422d2bdd8f36e64079a89f32b942eebde522097bd713077c390"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-013@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.ownConsumption.nonCashBenefitsCompCar",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.ownConsumption.nonCashBenefitsCompCar"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "49440",
+              "semantic": {
+                "name": "Verrechnete sonstige Sachbezüge aus Fahrzeug-Gestellung zum ermäßigten Umsatzsteuersatz",
+                "function": "AM",
+                "range_start": "49440",
+                "range_end": "49449",
+                "parent": null
+              },
+              "signature": "6792a356b97a9876450102f8af81d8f22fa08f927566cce8230e455720f41be7"
+            },
+            {
+              "code": "49470",
+              "semantic": {
+                "name": "Verrechnete sonstige Sachbezüge aus Fahrzeug-Gestellung 19 % USt",
+                "function": "AM",
+                "range_start": "49470",
+                "range_end": "49479",
+                "parent": null
+              },
+              "signature": "dab0c138563a72aafdeecf1b003f9ee5535c1a24a58af126a26dd879aa2a56a4"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-014@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.miscellaneous",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.miscellaneous"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "48300",
+              "semantic": {
+                "name": "Sonstige betriebliche Erträge",
+                "function": "",
+                "range_start": "48300",
+                "range_end": "48300",
+                "parent": null
+              },
+              "signature": "ce6bab70e61e281b009d4a666a1b6365f77713189147183fd9d2ad3072eb4e35"
+            },
+            {
+              "code": "48320",
+              "semantic": {
+                "name": "Sonstige betriebliche Erträge von verbundenen Unternehmen",
+                "function": "",
+                "range_start": "48320",
+                "range_end": "48320",
+                "parent": null
+              },
+              "signature": "d3ffcf84e64f7629f5757848b0ea40ef843c04731a9ed2dccece0fdf7354c54d"
+            },
+            {
+              "code": "49820",
+              "semantic": {
+                "name": "Sonstige steuerfreie Betriebseinnahmen",
+                "function": "",
+                "range_start": "49820",
+                "range_end": "49820",
+                "parent": null
+              },
+              "signature": "60de39ab6d4de0a47f36a3a50ad2eddafeec0669fa1f0315a8d13fb6bced196c"
+            },
+            {
+              "code": "49860",
+              "semantic": {
+                "name": "Ertrag aus pauschaler Vorsteuer § 23a UStG",
+                "function": "",
+                "range_start": "49860",
+                "range_end": "49860",
+                "parent": null
+              },
+              "signature": "cb1ca235347a689ca6e7d02fbb5f3cb1ac29c4d3f6b081ad57acf4fdb12a7bb3"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-015@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.acqudFreeOfCharge",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.acqudFreeOfCharge"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "49870",
+              "semantic": {
+                "name": "Erträge aus der Aktivierung unentgeltlich erworbener Vermögensgegenstände",
+                "function": "",
+                "range_start": "49870",
+                "range_end": "49870",
+                "parent": null
+              },
+              "signature": "63753494a1aab2cbfdc7e08ead300b92b809bf176f1fb6a0c75ef1e6b97f5db9"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-016@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.inventoryChange.increasefinished",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.inventoryChange.increasefinished",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.inventoryChange.decreasefinished"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "48000",
+              "semantic": {
+                "name": "Bestandsveränderungen - fertige Erzeugnisse",
+                "function": "",
+                "range_start": "48000",
+                "range_end": "48000",
+                "parent": null
+              },
+              "signature": "27ef0bf575be88c153ba503998e41e3bea59f79b704d86f233a8e4d988f4d9d3"
+            }
+          ],
+          "negative_target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.inventoryChange.decreasefinished"
+        },
+        {
+          "purpose": "operating-r16-017@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.inventoryChange.increaseGoodsInProgress",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.inventoryChange.increaseGoodsInProgress",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.inventoryChange.decreaseGoodsInProgress"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "48100",
+              "semantic": {
+                "name": "Bestandsveränderungen - unfertige Erzeugnisse",
+                "function": "",
+                "range_start": "48100",
+                "range_end": "48100",
+                "parent": null
+              },
+              "signature": "649a9de03ebad74e1c957b8e2ec8a14b0eb21f2fe42628458f1ea6c780d73d36"
+            },
+            {
+              "code": "48150",
+              "semantic": {
+                "name": "Bestandsveränderungen - unfertige Leistungen",
+                "function": "",
+                "range_start": "48150",
+                "range_end": "48150",
+                "parent": null
+              },
+              "signature": "901e61c7ff5e44d9e2630bb56e997b92af9893806849ef95bc599cc5d39a1520"
+            }
+          ],
+          "negative_target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.inventoryChange.decreaseGoodsInProgress"
+        },
+        {
+          "purpose": "operating-r16-018@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.inventoryChange.increaseConstructionInProgress",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.inventoryChange.increaseConstructionInProgress",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.inventoryChange.decreaseConstructionInProgress"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "48160",
+              "semantic": {
+                "name": "Bestandsveränderungen in Ausführung befindlicher Bauaufträge",
+                "function": "",
+                "range_start": "48160",
+                "range_end": "48160",
+                "parent": null
+              },
+              "signature": "b91af3b1b5d349a598f1e8a90f0e19a724cafecf480a6833dc12ec4b6ba005dd"
+            },
+            {
+              "code": "48180",
+              "semantic": {
+                "name": "Bestandsveränderungen in Arbeit befindlicher Aufträge",
+                "function": "",
+                "range_start": "48180",
+                "range_end": "48180",
+                "parent": null
+              },
+              "signature": "2710e82b03648c5d297eac012bef276fc21163fa48af0114e04e141112fb880c"
+            }
+          ],
+          "negative_target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.inventoryChange.decreaseConstructionInProgress"
+        },
+        {
+          "purpose": "operating-r16-019@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "63000",
+              "semantic": {
+                "name": "Sonstige betriebliche Aufwendungen",
+                "function": "",
+                "range_start": "63000",
+                "range_end": "63000",
+                "parent": null
+              },
+              "signature": "c05ec0f90bfeb030bc1bae1418d8424f5ed3b01dfd9ee729b53564993d1b9dde"
+            },
+            {
+              "code": "63020",
+              "semantic": {
+                "name": "Aufwandsentschädigungen / Erstattungen",
+                "function": "",
+                "range_start": "63020",
+                "range_end": "63020",
+                "parent": null
+              },
+              "signature": "3ebf74d9713208d45e60144227b60aaab31b069f7c277c0192dc2d8697a900e9"
+            },
+            {
+              "code": "63040",
+              "semantic": {
+                "name": "Veranstaltungskosten",
+                "function": "",
+                "range_start": "63040",
+                "range_end": "63040",
+                "parent": null
+              },
+              "signature": "bbd2da39eed3dba642464eeaf846a83120ce918f4a339838a95e8fbc6a1bad2d"
+            },
+            {
+              "code": "63090",
+              "semantic": {
+                "name": "Raumkosten",
+                "function": "",
+                "range_start": "63090",
+                "range_end": "63090",
+                "parent": null
+              },
+              "signature": "9f31563b40fd0254b8dd2870fd7230505af75091b4a9272acf74092ef7e7db6b"
+            },
+            {
+              "code": "63180",
+              "semantic": {
+                "name": "Miet- und Pachtnebenkosten, die gewerbesteuerlich nicht hinzuzurechnen sind",
+                "function": "",
+                "range_start": "63180",
+                "range_end": "63180",
+                "parent": null
+              },
+              "signature": "f56be9681f39b96ea9880ffa1ff71d56c574c9d4bc94adb49f327408b9f9edc7"
+            },
+            {
+              "code": "63500",
+              "semantic": {
+                "name": "Grundstücksaufwendungen betrieblich",
+                "function": "",
+                "range_start": "63500",
+                "range_end": "63500",
+                "parent": null
+              },
+              "signature": "5851a0eba0edff87bf9ed9d6f68a637837c7f21adee9d5fdc4c8cb317eb2b802"
+            },
+            {
+              "code": "63520",
+              "semantic": {
+                "name": "Sonstige Grundstücksaufwendungen (neutral)",
+                "function": "",
+                "range_start": "63520",
+                "range_end": "63520",
+                "parent": null
+              },
+              "signature": "2c9f5d98b17abf60a6e84d862c1a853651b983a7e2d66113a5bce600ea75690e"
+            },
+            {
+              "code": "66300",
+              "semantic": {
+                "name": "Repräsentationskosten",
+                "function": "",
+                "range_start": "66300",
+                "range_end": "66300",
+                "parent": null
+              },
+              "signature": "6d3e7fe2103de3ffbf152eb9da9fa669e30bdd8baff6a1066a083a4b544f086d"
+            },
+            {
+              "code": "69600",
+              "semantic": {
+                "name": "Periodenfremde Aufwendungen",
+                "function": "",
+                "range_start": "69600",
+                "range_end": "69600",
+                "parent": null
+              },
+              "signature": "78b095ed8122ca1283c157e9b0aee7f469ff135aa1238337600d8df690092b57"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-020@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.provisions",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.provisions"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "64750",
+              "semantic": {
+                "name": "Zuführung zu Aufwandsrückstellungen",
+                "function": "",
+                "range_start": "64750",
+                "range_end": "64750",
+                "parent": null
+              },
+              "signature": "d8215c7284f32bb47d6383c9f3bd97c6ab8d695f8ea909241ff0f65d98a8a4ea"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-021@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.staff.salaries.misc",
+          "choices": [
+            "is.netIncome.regular.operatingTC.staff.salaries.misc"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "60020",
+              "semantic": {
+                "name": "Ehrenamtspauschale",
+                "function": "",
+                "range_start": "60020",
+                "range_end": "60020",
+                "parent": null
+              },
+              "signature": "02cbe6ea4eb2ded5f5cde36e4a8ce37b96df35172c545f8f66c1ef5927f89cfc"
+            },
+            {
+              "code": "60040",
+              "semantic": {
+                "name": "Übungsleiterpauschale",
+                "function": "",
+                "range_start": "60040",
+                "range_end": "60040",
+                "parent": null
+              },
+              "signature": "dfb99345b071a757b1e76b91ca08e06f6db940c5627a454cfeaa27742a3b3c74"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-022@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.staff.salaries.managerPartner",
+          "choices": [
+            "is.netIncome.regular.operatingTC.staff.salaries.managerPartner"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "60670",
+              "semantic": {
+                "name": "Freiwillige Zuwendungen an Gesellschafter-Geschäftsführer",
+                "function": "",
+                "range_start": "60670",
+                "range_end": "60670",
+                "parent": null
+              },
+              "signature": "964fd4a1b00cdbd0d80bc8870a09195437221ee95e9a7f5784b3417718ab69ba"
+            },
+            {
+              "code": "60730",
+              "semantic": {
+                "name": "Sachzuwendungen und Dienstleistungen an Gesellschafter- Geschäftsführer",
+                "function": "",
+                "range_start": "60730",
+                "range_end": "60730",
+                "parent": null
+              },
+              "signature": "94a108206c6e072f13e749eddb8dab7d6015006dc9c22373c4a3b9df076ef9c0"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-023@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.staff.social.welfare",
+          "choices": [
+            "is.netIncome.regular.operatingTC.staff.social.welfare"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "61300",
+              "semantic": {
+                "name": "Freiwillige soziale Aufwendungen, lohnsteuerfrei",
+                "function": "",
+                "range_start": "61300",
+                "range_end": "61300",
+                "parent": null
+              },
+              "signature": "43f1b8c2121f76b23ab48bec6563a16b45d5df042f1bd19ad57d24eb27282b54"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-024@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.donations.nondeductibleOther.nonallocable",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.donations.nondeductibleOther.nonallocable"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "63900",
+              "semantic": {
+                "name": "Zuwendungen, Spenden, steuerlich nicht abziehbar",
+                "function": "",
+                "range_start": "63900",
+                "range_end": "63900",
+                "parent": null
+              },
+              "signature": "30772ebe71ab96c09dc30c25b545005c7f82d734d156bb8e3bc88453756d2ac7"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-025@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.donations.nondeductiblePoliticalParties",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.donations.nondeductiblePoliticalParties"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "63940",
+              "semantic": {
+                "name": "Zuwendungen, Spenden an politische Parteien",
+                "function": "",
+                "range_start": "63940",
+                "range_end": "63940",
+                "parent": null
+              },
+              "signature": "5c9021c3585c4255e3fd9dadf17c3902ed4d83a36b2ef766a36edc9d84be4b32"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-026@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.donations.taxprivileged",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.donations.taxprivileged",
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.donations.nondeductibleOther.nonallocable"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "63910",
+              "semantic": {
+                "name": "Zuwendungen, Spenden für wissenschaftliche und kulturelle Zwecke",
+                "function": "",
+                "range_start": "63910",
+                "range_end": "63910",
+                "parent": null
+              },
+              "signature": "ac5c6d1ea50b1cbcce2d09e5c17dd2e07d0c805b7e17ee227d2667402e660899"
+            },
+            {
+              "code": "63920",
+              "semantic": {
+                "name": "Zuwendungen, Spenden für mildtätige Zwecke",
+                "function": "",
+                "range_start": "63920",
+                "range_end": "63920",
+                "parent": null
+              },
+              "signature": "9ecd0743a59c8687fa01c892cde1898b9f041e46428e301ded988723e5be0b40"
+            },
+            {
+              "code": "63930",
+              "semantic": {
+                "name": "Zuwendungen, Spenden für kirchliche, religiöse und gemeinnützige Zwecke",
+                "function": "",
+                "range_start": "63930",
+                "range_end": "63930",
+                "parent": null
+              },
+              "signature": "7971d76183d67dee8e61c961179393c40f7e04b748d3153e3986e1603573ec2b"
+            },
+            {
+              "code": "63950",
+              "semantic": {
+                "name": "Zuwendungen, Spenden in das zu erhaltende Vermögen (Vermögensstock) einer Stiftung für gemeinnützige Zwecke",
+                "function": "",
+                "range_start": "63950",
+                "range_end": "63950",
+                "parent": null
+              },
+              "signature": "1f04385f1601448d768875b385838ea5ed076d5f9913baa0801def8fbc29e513"
+            },
+            {
+              "code": "63970",
+              "semantic": {
+                "name": "Zuwendungen, Spenden in das zu erhaltende Vermögen (Vermögensstock) einer Stiftung für kirchliche, religiöse und gemeinnützige Zwecke",
+                "function": "",
+                "range_start": "63970",
+                "range_end": "63970",
+                "parent": null
+              },
+              "signature": "da6650bb47d00829cf6ed749dc76aeded88a41cc5176e10e6c19ff4a690d8fb1"
+            },
+            {
+              "code": "63980",
+              "semantic": {
+                "name": "Zuwendungen, Spenden an Stiftungen in das zu erhaltende Vermögen (Vermögensstock) für wissenschaftliche, mildtätige, kulturelle Zwecke",
+                "function": "",
+                "range_start": "63980",
+                "range_end": "63980",
+                "parent": null
+              },
+              "signature": "7c029e656c5dd14ce309f1a1776a487ec33f8aa1be8aaeeaed1f00f5bfc0e676"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-027@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.supervisoryboard.domesticMembers.nonDeductible",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.supervisoryboard.domesticMembers.nonDeductible",
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.supervisoryboard.foreignMembers.nonDeductible"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "68750",
+              "semantic": {
+                "name": "Nicht abziehbare Hälfte der Aufsichtsratsvergütungen",
+                "function": "",
+                "range_start": "68750",
+                "range_end": "68750",
+                "parent": null
+              },
+              "signature": "20e4574622a94ad975c0f50d2ad1e79844ad2172297593a51fb6b6eb82de6624"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-028@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.supervisoryboard.domesticMembers.deductible",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.supervisoryboard.domesticMembers.deductible",
+            "is.netIncome.regular.operatingTC.otherCost.limitedDeductible.other.supervisoryboard.foreignMembers.deductible"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "68760",
+              "semantic": {
+                "name": "Abziehbare Aufsichtsratsvergütungen",
+                "function": "",
+                "range_start": "68760",
+                "range_end": "68760",
+                "parent": null
+              },
+              "signature": "ffe5ec1a407bb845835fc972d412782ee9a3a0e072338eeb4724c28f8e33672e"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-029@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.leaseFix.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.leaseFix.other",
+            "is.netIncome.regular.operatingTC.otherCost.leaseFix.shareholders"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "63170",
+              "semantic": {
+                "name": "Aufwendungen für gemietete oder gepachtete unbewegliche Wirtschaftsgüter, die gewerbesteuerlich hinzuzurechnen sind",
+                "function": "",
+                "range_start": "63170",
+                "range_end": "63170",
+                "parent": null
+              },
+              "signature": "b0afe87f3eec80363ec15fd6043608e8fc826d0b3fd026edf8c6b8e5f5c26ada"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-030@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.leaseMoveable.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.leaseMoveable.other",
+            "is.netIncome.regular.operatingTC.otherCost.leaseMoveable.shareholders"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "68380",
+              "semantic": {
+                "name": "Aufwendungen für gemietete oder gepachtete bewegliche Wirtschaftsgüter, die gewerbesteuerlich hinzuzurechnen sind",
+                "function": "",
+                "range_start": "68380",
+                "range_end": "68380",
+                "parent": null
+              },
+              "signature": "98a6e1db15dca1ca5a89aa24782a11d2a1579f3ed15e2310f55704966b22f66d"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-031@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.kst",
+          "choices": [
+            "is.netIncome.tax.kst"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76000",
+              "semantic": {
+                "name": "Körperschaftsteuer",
+                "function": "",
+                "range_start": "76000",
+                "range_end": "76000",
+                "parent": null
+              },
+              "signature": "1596a024d037ee97aeea9ac108f82a13bf7b70d87c8e8120cd1671cc87855236"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-032@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.prevPeriodPaid.kst",
+          "choices": [
+            "is.netIncome.tax.prevPeriodPaid.kst"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76030",
+              "semantic": {
+                "name": "Körperschaftsteuer für Vorjahre",
+                "function": "",
+                "range_start": "76030",
+                "range_end": "76030",
+                "parent": null
+              },
+              "signature": "14e1286538a1ab4b5bb9a3288de0b968979b2734eae6c707838d26f62a3ce3ed"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-033@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.prevPeriodReceived.kst",
+          "choices": [
+            "is.netIncome.tax.prevPeriodReceived.kst"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76040",
+              "semantic": {
+                "name": "Körperschaftsteuererstattungen für Vorjahre",
+                "function": "",
+                "range_start": "76040",
+                "range_end": "76040",
+                "parent": null
+              },
+              "signature": "5e263dcfbc64c25990f75afcdf8ec767d70b9be194f3978c705b52e0d6ec1d69"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-034@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.prevPeriodReceived.soli",
+          "choices": [
+            "is.netIncome.tax.prevPeriodReceived.soli"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76070",
+              "semantic": {
+                "name": "Solidaritätszuschlagerstattungen für Vorjahre",
+                "function": "",
+                "range_start": "76070",
+                "range_end": "76070",
+                "parent": null
+              },
+              "signature": "5ce5ee0df840eb6111f6924665b85a27ca21d27df127412e1a5414bffe34cd7a"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-035@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.soli.other",
+          "choices": [
+            "is.netIncome.tax.soli.other"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76080",
+              "semantic": {
+                "name": "Solidaritätszuschlag",
+                "function": "",
+                "range_start": "76080",
+                "range_end": "76080",
+                "parent": null
+              },
+              "signature": "d9eca4f1fd507826ad705592176b3a0f9432e0235135f0d1ee7e7cfc7583d4c5"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-036@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.prevPeriodPaid.soli",
+          "choices": [
+            "is.netIncome.tax.prevPeriodPaid.soli"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76090",
+              "semantic": {
+                "name": "Solidaritätszuschlag für Vorjahre",
+                "function": "",
+                "range_start": "76090",
+                "range_end": "76090",
+                "parent": null
+              },
+              "signature": "fef64076036fed1668c7c5bab317f6aa601a6d439c598f0c8fd41609e6437e45"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-037@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.gewst",
+          "choices": [
+            "is.netIncome.tax.gewst"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76100",
+              "semantic": {
+                "name": "Gewerbesteuer",
+                "function": "",
+                "range_start": "76100",
+                "range_end": "76100",
+                "parent": null
+              },
+              "signature": "14c2c361c179df98962e5d7032f40ce8e3c93d41ef0d16f7d87e3ab2491c8afa"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-038@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.soli.kestcreditable",
+          "choices": [
+            "is.netIncome.tax.soli.kestcreditable"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76330",
+              "semantic": {
+                "name": "Anrechenbarer Solidaritätszuschlag auf Kapitalertragsteuer 25 %",
+                "function": "",
+                "range_start": "76330",
+                "range_end": "76330",
+                "parent": null
+              },
+              "signature": "44a562b8f90bccfb4c3be82c2e38e7940bbd84a3e09d3b957c757dcd175c9786"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-039@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.nonDeductableForeignIncomeTaxes",
+          "choices": [
+            "is.netIncome.tax.nonDeductableForeignIncomeTaxes"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76380",
+              "semantic": {
+                "name": "Ausländische Steuer auf im Inland steuerfreie DBA-Einkünfte",
+                "function": "",
+                "range_start": "76380",
+                "range_end": "76380",
+                "parent": null
+              },
+              "signature": "1cb0e6b35666452a3d131346a39a6ebb6e4f8028e53d4799263d20dfc22db307"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-040@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.releaseTaxProv.Gew",
+          "choices": [
+            "is.netIncome.tax.releaseTaxProv.Gew"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76430",
+              "semantic": {
+                "name": "Erträge aus der Auflösung von Gewerbesteuerrückstellungen nach § 4 Abs. 5b EStG",
+                "function": "",
+                "range_start": "76430",
+                "range_end": "76430",
+                "parent": null
+              },
+              "signature": "b625487a5f58ae48d4320e01854961e3a41b975e3c7fce4fc61a032f32b5d6fb"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-041@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.prevPeriodPaid.gewst",
+          "choices": [
+            "is.netIncome.tax.prevPeriodPaid.gewst",
+            "is.netIncome.tax.prevPeriodReceived.gewst"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76410",
+              "semantic": {
+                "name": "Gewerbesteuernachzahlungen und Gewerbesteuererstattungen für Vorjahre nach § 4 Abs. 5b EStG",
+                "function": "",
+                "range_start": "76410",
+                "range_end": "76410",
+                "parent": null
+              },
+              "signature": "d845ac4e014417e7f3488ac8908fc4dcfa9ec32c83a2fd47fc6a8eca252c0179"
+            }
+          ],
+          "negative_target": "is.netIncome.tax.prevPeriodReceived.gewst"
+        },
+        {
+          "purpose": "operating-r16-042@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.kest.other",
+          "choices": [
+            "is.netIncome.tax.kest.creditable",
+            "is.netIncome.tax.kest.noncreditable",
+            "is.netIncome.tax.kest.other"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "76300",
+              "semantic": {
+                "name": "Kapitalertragsteuer 25 %",
+                "function": "",
+                "range_start": "76300",
+                "range_end": "76300",
+                "parent": null
+              },
+              "signature": "015635ec9ccf9943c0a4c301e95ae009f380057336b52eacb9578b31d7151f24"
+            },
+            {
+              "code": "76310",
+              "semantic": {
+                "name": "Kapitalertragsteuererstattung",
+                "function": "",
+                "range_start": "76310",
+                "range_end": "76310",
+                "parent": null
+              },
+              "signature": "41a04f40aa86c105c3f3e6b9bc2486eb5924ecdd8937d3e31751a7440829a7e2"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-043@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.deductableForeignIncomeTaxes",
+          "choices": [
+            "is.netIncome.tax.deductableForeignIncomeTaxes",
+            "is.netIncome.tax.nonDeductableForeignIncomeTaxes"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "76390",
+              "semantic": {
+                "name": "Anrechnung / Abzug ausländische Quellensteuer",
+                "function": "",
+                "range_start": "76390",
+                "range_end": "76390",
+                "parent": null
+              },
+              "signature": "8d63a23928962d2d555440cc4865422192dd7546d5f107ebe5b0bb3ac1c65781"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-044@1",
+          "group": "expense",
+          "target": "is.netIncome.otherTaxes.other",
+          "choices": [
+            "is.netIncome.otherTaxes.other"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76900",
+              "semantic": {
+                "name": "Steuernachzahlungen Vorjahre für sonstige Steuern",
+                "function": "",
+                "range_start": "76900",
+                "range_end": "76900",
+                "parent": null
+              },
+              "signature": "5a6c76d2d6363a2be2f93756b6d751dfed4fac678054d10e26a5da9602e6db43"
+            },
+            {
+              "code": "76920",
+              "semantic": {
+                "name": "Steuererstattungen Vorjahre für sonstige Steuern",
+                "function": "",
+                "range_start": "76920",
+                "range_end": "76920",
+                "parent": null
+              },
+              "signature": "c6b5661218119c816e6887a1351469597eeff6545f0f7e9b1b9b759d7c2dea21"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r16-045@1",
+          "group": "expense",
+          "target": "is.netIncome.otherTaxes.releaseTaxProvision",
+          "choices": [
+            "is.netIncome.otherTaxes.releaseTaxProvision"
+          ],
+          "conditional": false,
+          "sources": [
+            {
+              "code": "76940",
+              "semantic": {
+                "name": "Erträge aus der Auflösung von Rückstellungen für sonstige Steuern",
+                "function": "",
+                "range_start": "76940",
+                "range_end": "76940",
+                "parent": null
+              },
+              "signature": "1eef7d113376133ae47acd5353a510fa42b7c48468a189be9fffd2d599e62a99"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

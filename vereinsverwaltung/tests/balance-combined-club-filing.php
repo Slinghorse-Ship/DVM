@@ -1,0 +1,90 @@
+<?php declare(strict_types=1);
+require __DIR__.'/balance-whole-club-filing.php';
+use Kulturhus\Verein\{BalanceTaxFiling,TaxFilings,BalanceTaxFeedback,SettingsSchema};
+use Kulturhus\Verein\Tests\MySqlFixture;
+// The inherited revocation test intentionally left 2025 unapproved. Review the
+// same synthetic allocation again, then explicitly rebase/review its successor.
+$s=$segments->get(2025);$segments->confirm(2025,$s['version'],true,'Synthetic allocation re-reviewed for combined workflow');
+$s=$segments->get(2026);$segments->rebase(2026,$s['version'],true,'Synthetic unchanged allocation carried from renewed review');
+$s=$segments->get(2026);$segments->confirm(2026,$s['version'],true,'Synthetic successor reviewed for combined workflow');
+$journalBefore=MySqlFixture::rows($db,'balance_years');$allocationBefore=MySqlFixture::rows($db,'balance_segment_reviews');
+$combinedProfile=$clubProfile+['whole_business_name'=>'Synthetic cultural activities <not-html>','whole_book_standard'=>'HGBM'];
+$cid=$service->create(2025,BalanceTaxFiling::COMBINED_SOURCE);$cf=$filings->get($cid);
+check($cf['form_data']['balance_preparation']['whole_journal_sha256']===$ledger->report(2025)['closed_sha256'],'combined original journal bound separately');
+check($cf['form_data']['balance_preparation']['profile']['whole_book_standard']==='','book standard requires explicit choice');
+check($service->previewValues($cf)['whole']['book']['annual_result_cents']===4012,'unreviewed preview includes whole club');
+denied(fn()=>$filings->validate($cid,1),'combined draft requires full review');
+denied(fn()=>(new BalanceTaxFiling($db,'club-member'))->create(2025,BalanceTaxFiling::COMBINED_SOURCE),'member cannot create combined filing');
+denied(fn()=>(new BalanceTaxFiling($db,'other'))->previewValues($cf),'cross-club preview blocked');
+$bad=$cf;$bad['form_data']['balance_preparation']['whole_journal_sha256']=str_repeat('0',64);denied(fn()=>$service->previewValues($bad),'whole binding cannot be forged');
+$bad=$combinedProfile;$bad['tax_privileged']=false;denied(fn()=>$service->save($cid,1,$bad,$mapping,$review,$mapping),'combined cannot become taxable whole');
+$bad=$combinedProfile;$bad['whole_book_standard']='AO';denied(fn()=>$service->save($cid,1,$bad,$mapping,$review,$mapping),'no silent switch to tax standard');
+denied(fn()=>$service->save($cid,1,$combinedProfile,$mapping,$review,['cash'=>'bs.eqLiab.liab.trade']),'whole mapping respects account class');
+$service->save($cid,1,$combinedProfile,$mapping,$review,[]);denied(fn()=>$filings->validate($cid,2),'missing whole mapping cannot hide behind complete taxable mapping');
+$service->save($cid,2,$combinedProfile,$mapping,$review,$mapping);check($filings->validate($cid,3)['valid'],'combined UI workflow invokes actual combined generator');
+$cf=$filings->get($cid);$cv=$service->assertCurrent($cf);
+check($cv['taxable']['tax']['annual_result_cents']===1006&&$cv['whole']['book']['annual_result_cents']===4012,'both result sections preserved in approved values');
+check(isset($cf['form_data']['balance_preparation']['generated']['sections']['whole'],$cf['form_data']['balance_preparation']['generated']['sections']['taxable']),'generated proof records both section hashes');
+denied(fn()=>$service->approve($cid,4,true),'treasurer cannot approve combined report');
+denied(fn()=>$filings->ready($cid,4,'SEND-TEST',true,true),'combined needs board review');
+$approver->approve($cid,4,true);check($filings->ready($cid,5,'SEND-TEST',true,true)['id']===$cid,'combined approved exact version ready');
+$html=$render($cid,'club-finance');
+check(str_contains($html,'Gesamter Verein mit steuerpflichtigen Geschäftsbetrieben')&&str_contains($html,'40,12')&&str_contains($html,'10,06'),'combined UI displays both amounts and scope');
+check(str_contains($html,'name="whole_mapping[cash]"')&&str_contains($html,'name="mapping[cash]"'),'separate whole and taxable mapping inputs');
+check(str_contains($html,'&lt;not-html&gt;')&&!str_contains($html,'<not-html>')&&str_contains($html,'synthetic-csrf'),'escaped names and CSRF retained');
+check(str_contains($html,'balance-local-send-review')&&!str_contains($html,'name="certificate_pin"'),'approved combined initial view keeps certificate behind its separate complete approval transition');
+$html=$render($cid,'club-finance',[],true);
+check(str_contains($html,'Test jetzt senden'),'only approved combined view offers send');
+check(str_contains($html,'name="profile[tax_privileged]" value="yes"')&&!str_contains($html,'<select name="profile[tax_privileged]"'),'combined scope does not offer contradictory tax status');
+file_put_contents(__DIR__.'/balance-combined-club-ui.html',$html);
+$badBefore=$filings->get($cid);
+$badHtml=$render($cid,'club-finance',['action'=>'tax-filing-balance-save','filing'=>$cid,'profile'=>['kind'=>'whole_taxable_club','whole_business_name'=>['bad'],'company'=>['name'=>['bad']]],'mapping'=>['cash'=>['bad']],'whole_mapping'=>['cash'=>['bad']]]);
+check(str_contains($badHtml,'data-balance-local-error')&&!str_contains($badHtml,'Array')&&!str_contains($badHtml,'<select name="profile[tax_privileged]"')&&$filings->get($cid)===$badBefore,'incomplete nested legacy form renders a safe refusal and leaves the entire original combined filing exact');
+$service->save($cid,5,$combinedProfile,$mapping,$review,$mapping);$cf=$filings->get($cid);
+check($cf['state']==='draft'&&$cf['xml_data']===null&&!isset($cf['form_data']['balance_preparation']['approval']),'whole mapping save clears exact validation and approval');
+denied(fn()=>$service->save($cid,5,$combinedProfile,$mapping,$review,[]),'stale whole edit cannot erase current mapping');
+$service->appendAdjustment($cid,6,'current_adjustments','Synthetic tax-only difference','cash','expense',100);
+$cf=$filings->get($cid);$cv=$service->previewValues($cf);
+check($cv['whole']['book']['annual_result_cents']===4012&&$cv['taxable']['tax']['annual_result_cents']===1106,'tax adjustment does not alter whole profit');
+check($cf['form_data']['balance_preparation']['whole_mapping']===$mapping,'tax adjustment retains whole mapping');
+check(!$cf['form_data']['balance_preparation']['review']['complete'],'adjustment needs renewed overall review');
+$changedReview=$cf['form_data']['balance_preparation']['review'];unset($changedReview['year'],$changedReview['journal_sha256']);$changedReview['complete']=true;
+$service->save($cid,7,$combinedProfile,$mapping,$changedReview,$mapping);check($filings->validate($cid,8)['valid'],'changed combined report generated');
+$approver->approve($cid,9,true);
+// Ordinary application writers already use the database-wide advisory lock.
+// Native SQL simulates a maintenance connection that does not take that lock;
+// the explicit club-row lock must still stop the claim before external transport.
+$writer=MySqlFixture::existing(MySqlFixture::dsn($db));$writer->exec('START TRANSACTION');
+$writer->query("SELECT id FROM clubs WHERE id='club' FOR UPDATE")->fetchColumn();
+$wait=(int)$db->query('SELECT @@SESSION.innodb_lock_wait_timeout')->fetchColumn();$db->exec('SET SESSION innodb_lock_wait_timeout=1');$locked=false;
+try{$filings->send($cid,10,'dummy','123456','SEND-TEST',true,true);}
+catch(PDOException $e){if(($e->errorInfo[1]??null)!==1205)throw $e;$locked=true;}
+finally{$writer->rollBack();$db->exec('SET SESSION innodb_lock_wait_timeout='.$wait);}
+check($locked&&!$db->inTransaction()&&$filings->get($cid)['state']==='validated'&&$filings->attempts($cid)===[],'concurrent source writer prevents claim and leaves no send attempt');
+check($filings->send($cid,10,'dummy','123456','SEND-TEST',true,true)['state']==='sent_test','combined simulated send stores receipt');
+check($filings->attempts($cid)[0]['receipt_bound'],'combined receipt bound to exact XML');
+$feedback=BalanceTaxFeedback::describe($filings->get($cid),$filings->attempts($cid));check($feedback['technical']==='confirmed','combined technical receipt confirmed');
+denied(fn()=>$filings->send($cid,10,'dummy','123456','SEND-TEST',true,true),'same combined send cannot repeat');
+$copyId=$service->create(2025,BalanceTaxFiling::COMBINED_SOURCE);$service->save($copyId,1,$combinedProfile,$mapping,$changedReview,$mapping);
+denied(fn()=>$filings->validate($copyId,2),'new combined draft cannot repeat same content');
+$nextId=$service->create(2026,BalanceTaxFiling::COMBINED_SOURCE);$service->save($nextId,1,$combinedProfile,$mapping,$review,$mapping);
+denied(fn()=>$service->assertCurrent($filings->get($nextId)),'combined next year requires historical tax carry');
+denied(fn()=>$service->carryForward($nextId,2,$fid,true),'partial-only prior cannot substitute combined prior');
+denied(fn()=>$service->carryForward($nextId,2,$wid,true),'taxable whole prior cannot substitute combined prior');
+$service->carryForward($nextId,2,$cid,true);$cf=$filings->get($nextId);$nextReview=$cf['form_data']['balance_preparation']['review'];unset($nextReview['year'],$nextReview['journal_sha256']);$nextReview['complete']=true;
+$service->save($nextId,3,$combinedProfile,$mapping,$nextReview,$mapping);$nv=$service->assertCurrent($filings->get($nextId));
+check($nv['whole']['book']['capital_total_cents']===104012&&$nv['taxable']['tax']['capital_total_cents']===41106,'original and tax-adjusted prior profit carried separately');
+check($nv['taxable']['tax']['annual_result_cents']===0,'prior tax adjustment not counted as current income');
+check($filings->validate($nextId,4)['valid'],'combined carry passes real generator');
+$badReview=$nextReview;$badReview['opening_adjustments']=[];denied(fn()=>$service->save($nextId,5,$combinedProfile,$mapping,$badReview,$mapping),'inherited tax difference cannot be deleted');
+$approver->approve($nextId,5,true);
+$db->exec("UPDATE actors SET is_superuser=0 WHERE id='club-board'");denied(fn()=>$filings->ready($nextId,6,'SEND-TEST',true,true),'revoked board blocks combined send');$db->exec("UPDATE actors SET is_superuser=1 WHERE id='club-board'");
+check(MySqlFixture::rows($db,'balance_years')===$journalBefore&&MySqlFixture::rows($db,'balance_segment_reviews')===$allocationBefore,'combined workflow does not mutate source journals or allocation');
+$s=$segments->get(2025);$segments->save(2025,$s['version'],$s['allocation']['units'],$s['allocation']['allocations']);
+denied(fn()=>$filings->ready($nextId,6,'SEND-TEST',true,true),'prior allocation edit blocks downstream combined send');
+check($filings->download($cid,'receipt')['mime']==='application/xml','historical combined receipt still available');
+putenv('VEREIN_MODE=production');denied(fn()=>$service->create(2025,BalanceTaxFiling::COMBINED_SOURCE),'combined profile remains isolated from production');putenv('VEREIN_MODE=synthetic');
+if(getenv('VEREIN_TEST_SKIP_BACKUP_ROUNDTRIP')!=='1'){
+    $restored=MySqlFixture::restoreBackup($db);foreach(['tax_filings','tax_filing_attempts'] as $table)check(MySqlFixture::rows($db,$table)===MySqlFixture::rows($restored,$table),'combined backup restore preserves '.$table);
+}else echo "SKIP optional backup roundtrip: dedicated synthetic database\n";
+echo "$checks total combined integration checks passed; synthetic MySQL, simulated transport only\n";

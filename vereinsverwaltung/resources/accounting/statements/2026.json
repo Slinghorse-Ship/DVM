@@ -1,0 +1,6619 @@
+{
+  "schema": 1,
+  "chart": "SKR42",
+  "edition": "balance",
+  "year": 2026,
+  "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+  "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+  "positions": [
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Entgeltlich erworbene Konzessionen, gewerbliche Schutzrechte und ähnliche Rechte und Werte sowie Lizenzen an solchen Rechten und Werten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          120.96,
+          136.64,
+          224.82
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Selbst geschaffene gewerbliche Schutzrechte und ähnliche Rechte und Werte",
+        "marks": [
+          "HB"
+        ],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          231.9,
+          136.64,
+          309.48
+        ]
+      },
+      "alternatives": [
+        {
+          "kind": "balance",
+          "label": "Selbst geschaffene gewerbliche Schutzrechte und ähnliche Rechte und Werte",
+          "marks": [
+            "HB"
+          ],
+          "status": "printed",
+          "bbox": [
+            83.02,
+            231.9,
+            136.64,
+            309.48
+          ]
+        }
+      ]
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Selbst geschaffene gewerbliche Schutzrechte und ähnliche Rechte und Werte",
+        "marks": [
+          "HB"
+        ],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          231.9,
+          136.64,
+          309.48
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "In der Entwicklung befindliche immaterielle Vermögensgegenstände",
+        "marks": [
+          "HB"
+        ],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          316.56,
+          136.64,
+          364.02
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Geschäfts- oder Firmenwert",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          371.16,
+          136.64,
+          396.24
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Geleistete Anzahlungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          403.26,
+          136.64,
+          437.04
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Grundstücke, grundstücksgleiche Rechte und Bauten einschließlich der Bauten auf fremden Grundstücken",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          444.18,
+          136.64,
+          761.34
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Grundstücke, grundstücksgleiche Rechte und Bauten einschließlich der Bauten auf fremden Grundstücken",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          116,
+          376.58,
+          207.18
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Technische Anlagen und Maschinen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          214.26,
+          376.58,
+          274.32
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Andere Anlagen, Betriebs- und Geschäftsausstattung",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          281.46,
+          376.58,
+          464.1
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Geleistete Anzahlungen und Anlagen im Bau",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          471.18,
+          376.58,
+          741.48
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Anteile an verbundenen Unternehmen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          120.96,
+          109.94,
+          242.34
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Ausleihungen an verbundene Unternehmen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          249.48,
+          109.94,
+          318.24
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Beteiligungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          325.32,
+          109.94,
+          385.32
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Ausleihungen an Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          392.46,
+          109.94,
+          469.98
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Wertpapiere des Anlagevermögens",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          477.12,
+          109.94,
+          528.36
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Ausleihungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          535.5,
+          109.94,
+          569.22
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Ausleihungen an Gesellschafter",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          576.36,
+          109.94,
+          618.78
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Ausleihungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          625.92,
+          109.94,
+          647.16
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Genossenschaftsanteile",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          654.24,
+          109.94,
+          675.54
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Rückdeckungsansprüche aus Lebensversicherungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          682.68,
+          109.94,
+          721.38
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Roh-, Hilfs- und Betriebsstoffe",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          120.96,
+          349.94,
+          142.2
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Unfertige Erzeugnisse, unfertige Leistungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          149.34,
+          349.94,
+          200.58
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "In Ausführung befindliche Bauaufträge",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          207.66,
+          349.94,
+          237.66
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "In Arbeit befindliche Aufträge",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          244.74,
+          349.94,
+          274.8
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Fertige Erzeugnisse und Waren",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          281.94,
+          349.94,
+          350.64
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Geleistete Anzahlungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          357.78,
+          349.94,
+          522.9
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Erhaltene Anzahlungen auf Bestellungen (von Vorräten offen abgesetzt)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          530.04,
+          349.94,
+          577.56
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Forderungen aus Lieferungen und Leistungen oder Sonstige Verbindlichkeiten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          584.64,
+          349.94,
+          714.78
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Forderungen aus Lieferungen und Leistungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          120.96,
+          136.64,
+          194.76
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Forderungen gegen Gesellschafter oder Verbindlichkeiten gegenüber Gesellschaftern oder Sonstige Verbindlichkeiten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          202.38,
+          136.64,
+          284.88
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Forderungen aus Lieferungen und Leistungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          292.02,
+          136.64,
+          322.02
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Forderungen aus Lieferungen und Leistungen oder Sonstige Verbindlichkeiten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          329.1,
+          136.64,
+          385.38
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Forderungen gegen verbundene Unternehmen oder Verbindlichkeiten gegenüber verbundenen Unternehmen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          392.52,
+          136.64,
+          498.78
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Forderungen gegen verbundene Unternehmen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          505.92,
+          136.64,
+          548.46
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Forderungen gegen Unternehmen, mit denen ein Beteiligungsverhältnis besteht oder Verbindlichkeiten gegenüber Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          555.54,
+          136.64,
+          673.14
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Forderungen gegen Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          680.22,
+          136.64,
+          736.5
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Eingeforderte, noch ausstehende Kapitaleinlagen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          120.96,
+          376.58,
+          163.56
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Eingeforderte Nachschüsse",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          170.58,
+          376.58,
+          191.82
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Vermögensgegenstände oder Sonstige Verbindlichkeiten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          198.96,
+          376.58,
+          246.48
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Vermögensgegenstände",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          253.56,
+          376.58,
+          283.56
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Forderungen gegen Gesellschafter oder Verbindlichkeiten gegenüber Gesellschaftern",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          290.64,
+          376.58,
+          346.92
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Vermögensgegenstände oder Sonstige Verbindlichkeiten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          354.06,
+          376.58,
+          401.52
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Vermögensgegenstände",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          408.66,
+          376.58,
+          438.6
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Vermögensgegenstände oder Sonstige Verbindlichkeiten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          445.74,
+          376.58,
+          493.26
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Vermögensgegenstände",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          500.4,
+          376.58,
+          530.34
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Forderungen gegen Gesellschafter",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          537.48,
+          376.58,
+          567.42
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Forderungen gegen Gesellschafter oder Verbindlichkeiten gegenüber Gesellschaftern oder Sonstige Verbindlichkeiten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          574.56,
+          376.58,
+          657.06
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Vermögensgegenstände",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          120.96,
+          109.94,
+          259.86
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Vermögensgegenstände oder Sonstige Verbindlichkeiten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          266.94,
+          109.94,
+          314.46
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Vermögensgegenstände",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          321.6,
+          109.94,
+          351.6
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Vermögensgegenstände oder Sonstige Verbindlichkeiten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          358.68,
+          109.94,
+          436.2
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Vermögensgegenstände",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          443.28,
+          109.94,
+          494.58
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Aktiver Unterschiedsbetrag aus der Vermögensverrechnung oder Rückstellungen für Pensionen und ähnliche Verpflichtungen",
+        "marks": [
+          "HB"
+        ],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          501.66,
+          109.94,
+          584.28
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Vermögensgegenstände",
+        "marks": [
+          "SB"
+        ],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          591.36,
+          109.94,
+          625.14
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Aktiver Unterschiedsbetrag aus der Vermögensverrechnung oder Sonstige Rückstellungen",
+        "marks": [
+          "HB"
+        ],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          632.16,
+          109.94,
+          697.2
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Vermögensgegenstände",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          704.34,
+          109.94,
+          734.28
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Vermögensgegenstände oder Sonstige Verbindlichkeiten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          120.96,
+          349.94,
+          168.48
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Vermögensgegenstände",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          175.62,
+          349.94,
+          218.1
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Vermögensgegenstände oder Sonstige Verbindlichkeiten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          225.24,
+          349.94,
+          740.76
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Vermögensgegenstände",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          120.96,
+          136.64,
+          163.5
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Vermögensgegenstände oder Sonstige Verbindlichkeiten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          170.58,
+          136.64,
+          218.1
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Vermögensgegenstände",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          225.24,
+          136.64,
+          255.24
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Vermögensgegenstände oder Sonstige Verbindlichkeiten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          262.32,
+          136.64,
+          686.52
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Anteile an verbundenen Unternehmen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          694.08,
+          136.64,
+          727.86
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Wertpapiere",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          120.96,
+          376.58,
+          180.96
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Kassenbestand, Bundesbankguthaben, Guthaben bei Kreditinstituten und Schecks",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          188.1,
+          376.58,
+          244.38
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Kassenbestand, Bundesbankguthaben, Guthaben bei Kreditinstituten und Schecks oder Verbindlichkeiten gegenüber Kreditinstituten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          251.46,
+          376.58,
+          404.1
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Verbindlichkeiten gegenüber Kreditinstituten oder Kassenbestand, Bundesbankguthaben, Guthaben bei Kreditinstituten und Schecks",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          411.72,
+          376.58,
+          503.04
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Rechnungsabgrenzungsposten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          510.12,
+          376.58,
+          561.42
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Rechnungsabgrenzungsposten",
+        "marks": [
+          "SB"
+        ],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          510.12,
+          376.58,
+          561.42
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Aktive latente Steuern",
+        "marks": [
+          "HB"
+        ],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          568.5,
+          376.58,
+          589.74
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Gebundene Rücklage (Vereine/Stiftungen) / andere Gewinnrücklagen (gGmbH)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          120.96,
+          109.94,
+          177.24
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Freie Rücklage (Vereine/Stiftungen) / andere Gewinnrücklagen (gGmbH)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          184.38,
+          109.94,
+          244.44
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Nutzungsgebundenes Kapital",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          251.46,
+          109.94,
+          281.46
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Ergebnisse Vermögensumschichtungen (Vereine/Stiftungen)/ andere Gewinnrücklagen (gGmbH)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          288.6,
+          109.94,
+          353.58
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Vereinskapital / sonstige nicht zeitnah zu verwendende Mittel (Stiftungen) / Kapitalrücklage (gGmbH)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          360.72,
+          109.94,
+          425.76
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Errichtungskapital",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          432.84,
+          109.94,
+          454.08
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Zustiftungskapital",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          461.22,
+          109.94,
+          482.4
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Zuführungskapital",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          489.54,
+          109.94,
+          510.78
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Verbrauchskapital",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          517.86,
+          109.94,
+          539.1
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "",
+        "marks": [],
+        "status": "not_printed",
+        "bbox": null
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Kapitalerhaltungsrücklage",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          569.4,
+          109.94,
+          590.64
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Ansparrücklage",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          597.78,
+          109.94,
+          613.98
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Ergebnisrücklagen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          621.06,
+          109.94,
+          642.3
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Gezeichnetes Kapital",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          649.38,
+          109.94,
+          674.4
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Eigene Anteile",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          681.48,
+          109.94,
+          693.96
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Nicht eingeforderte ausstehende Einlagen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          701.04,
+          109.94,
+          752.34
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Kapitalrücklage",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          120.96,
+          349.94,
+          242.34
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Gesetzliche Rücklage",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          249.48,
+          349.94,
+          270.66
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Rücklage für Anteile an einem herrschenden oder mehrheitlich beteiligten Unternehmen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          277.8,
+          349.94,
+          342.84
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Satzungsmäßige Rücklagen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          349.92,
+          349.94,
+          371.16
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Andere Gewinnrücklagen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          378.3,
+          349.94,
+          622.26
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Andere Gewinnrücklagen",
+        "marks": [
+          "HB"
+        ],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          378.3,
+          349.94,
+          622.26
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Ergebnisvortrag (Vereine/Stiftungen) / Gewinnvortrag (gGmbH)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          629.34,
+          349.94,
+          676.86
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Ergebnisvortrag (Vereine/Stiftungen) / Verlustvortrag (gGmbH)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          683.94,
+          349.94,
+          731.46
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Genussrechtskapital mit Eigenkapital- Charakter",
+        "marks": [
+          "HB"
+        ],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          120.96,
+          136.64,
+          159.78
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Andere Sonderposten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          166.86,
+          136.64,
+          209.34
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Andere Sonderposten",
+        "marks": [
+          "SB"
+        ],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          166.86,
+          136.64,
+          209.34
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonderposten mit Rücklageanteil",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          216.42,
+          136.64,
+          246.48
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Andere Sonderposten",
+        "marks": [
+          "SB"
+        ],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          253.56,
+          136.64,
+          274.8
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonderposten mit Rücklageanteil",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          281.94,
+          136.64,
+          311.88
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonderposten für Investitionszulagen",
+        "marks": [
+          "HB"
+        ],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          319.02,
+          136.64,
+          348.96
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonderposten für Investitionszulagen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          319.02,
+          136.64,
+          348.96
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Nutzungsgebundenes Kapital",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          356.1,
+          136.64,
+          386.04
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Längerfristig gebundene Spenden",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          393.18,
+          136.64,
+          423.18
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Noch nicht satzungsgemäß verwendete Spenden",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          430.26,
+          136.64,
+          469.02
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Rückstellungen für Pensionen und ähnliche Verpflichtungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.08,
+          120.96,
+          376.64,
+          172.26
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Rückstellungen für Pensionen und ähnliche Verpflichtungen oder Aktiver Unterschiedsbetrag aus der Vermögensverrechnung",
+        "marks": [
+          "HB"
+        ],
+        "status": "printed",
+        "bbox": [
+          323.08,
+          179.34,
+          376.64,
+          270.66
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Rückstellungen für Pensionen und ähnliche Verpflichtungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.08,
+          277.8,
+          376.64,
+          329.04
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Steuerrückstellungen (allgemein)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.08,
+          336.18,
+          376.64,
+          387.42
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Rückstellungen für latente Steuern",
+        "marks": [
+          "HB"
+        ],
+        "status": "printed",
+        "bbox": [
+          323.08,
+          394.56,
+          376.64,
+          424.5
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Passive latente Steuern",
+        "marks": [
+          "HB"
+        ],
+        "status": "printed",
+        "bbox": [
+          323.08,
+          431.64,
+          376.64,
+          452.82
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Rückstellungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.08,
+          459.96,
+          376.64,
+          546.24
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Rückstellungen oder Aktiver Unterschiedsbetrag aus der Vermögensverrechnung",
+        "marks": [
+          "HB"
+        ],
+        "status": "printed",
+        "bbox": [
+          323.08,
+          553.38,
+          376.64,
+          618.42
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Rückstellungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.08,
+          625.5,
+          376.64,
+          738.06
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Rückstellungen",
+        "marks": [
+          "HB"
+        ],
+        "status": "printed",
+        "bbox": [
+          323.08,
+          625.5,
+          376.64,
+          738.06
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Anleihen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.38,
+          120.96,
+          110.0,
+          194.76
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Schuld- und Finanztitel",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.38,
+          202.38,
+          110.0,
+          236.16
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Verbindlichkeiten gegenüber Kreditinstituten oder Kassenbestand, Bundesbankguthaben, Guthaben bei Kreditinstituten und Schecks",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.38,
+          243.18,
+          110.0,
+          369.54
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Verbindlichkeiten gegenüber Kreditinstituten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.38,
+          377.16,
+          110.0,
+          407.1
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Erhaltene Anzahlungen auf Bestellungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.38,
+          414.24,
+          110.0,
+          628.2
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Verbindlichkeiten aus Lieferungen und Leistungen oder Sonstige Vermögensgegenstände",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.38,
+          635.76,
+          110.0,
+          718.26
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Verbindlichkeiten aus Lieferungen und Leistungen oder Sonstige Vermögensgegenstände oder Forderungen gegen Gesellschafter",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          120.96,
+          349.94,
+          212.34
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Verbindlichkeiten aus Lieferungen und Leistungen oder Sonstige Vermögensgegenstände",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          219.42,
+          349.94,
+          284.46
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Verbindlichkeiten aus der Annahme gezogener Wechsel und der Ausstellung eigener Wechsel",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          291.54,
+          349.94,
+          356.52
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Verbindlichkeiten gegenüber verbundenen Unternehmen oder Forderungen gegen verbundene Unternehmen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          363.66,
+          349.94,
+          458.7
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Verbindlichkeiten gegenüber Unternehmen, mit denen ein Beteiligungsverhältnis besteht oder Forderungen gegen Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          465.84,
+          349.94,
+          583.44
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Verbindlichkeiten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          591.06,
+          349.94,
+          659.76
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Verbindlichkeiten oder Sonstige Vermögensgegenstände",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          666.9,
+          349.94,
+          723.18
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Verbindlichkeiten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          730.32,
+          349.94,
+          751.5
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Verbindlichkeiten gegenüber Gesellschaftern oder Forderungen gegen Gesellschafter oder Sonstige Vermögensgegenstände",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          120.96,
+          136.64,
+          212.34
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Verbindlichkeiten gegenüber Gesellschaftern",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          219.42,
+          136.64,
+          261.9
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Verbindlichkeiten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          268.98,
+          136.64,
+          535.5
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Verbindlichkeiten oder Sonstige Vermögensgegenstände",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          542.58,
+          136.64,
+          598.86
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Verbindlichkeiten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          606.0,
+          136.64,
+          627.24
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Verbindlichkeiten oder Sonstige Vermögensgegenstände",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          634.32,
+          136.64,
+          694.38
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Verbindlichkeiten gegenüber Gesellschaftern oder Forderungen gegen Gesellschafter",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.08,
+          120.96,
+          376.64,
+          177.24
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Verbindlichkeiten gegenüber Gesellschaftern",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.08,
+          184.38,
+          376.64,
+          214.32
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Verbindlichkeiten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.08,
+          221.46,
+          376.64,
+          263.94
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Vermögensgegenstände",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.08,
+          271.08,
+          376.64,
+          301.02
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Verbindlichkeiten oder Sonstige Vermögensgegenstände",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.08,
+          308.16,
+          376.64,
+          355.68
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Verbindlichkeiten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.08,
+          362.82,
+          376.64,
+          384.06
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Verbindlichkeiten oder Sonstige Vermögensgegenstände",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.08,
+          391.14,
+          376.64,
+          620.1
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Verbindlichkeiten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.08,
+          627.24,
+          376.64,
+          652.2
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Verbindlichkeiten oder Sonstige Vermögensgegenstände",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.38,
+          120.96,
+          110.0,
+          259.86
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Steuerrückstellungen (allgemein) oder Sonstige Vermögensgegenstände",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.38,
+          266.94,
+          110.0,
+          432.06
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Verbindlichkeiten oder Sonstige Vermögensgegenstände",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.38,
+          439.2,
+          110.0,
+          560.58
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Verbindlichkeiten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.38,
+          567.66,
+          110.0,
+          601.38
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Verbindlichkeiten oder Sonstige Vermögensgegenstände",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          120.96,
+          349.94,
+          592.74
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Sonstige Verbindlichkeiten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          120.96,
+          136.64,
+          338.7
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "balance",
+        "label": "Rechnungsabgrenzungsposten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          345.84,
+          136.64,
+          375.78
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Erträge aus Mitgliedsbeiträgen, Aufnahmegebühren und Umlagen (nur Vereine)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.08,
+          120.96,
+          376.58,
+          177.24
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Erträge aus Erbschaften und Vermächtnissen (Vereine und Stiftungen) / Umsatzerlöse (gGmbH)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.08,
+          184.38,
+          376.58,
+          249.42
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Erträge aus Spenden",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.08,
+          256.5,
+          376.58,
+          377.82
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Umsatzerlöse",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.08,
+          384.96,
+          376.58,
+          762.54
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Umsatzerlöse",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          57.34,
+          116,
+          108.92,
+          759.72
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Umsatzerlöse",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.44,
+          116,
+          349.88,
+          730.32
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Sonstige betriebliche Erträge",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.08,
+          120.96,
+          136.58,
+          391.26
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Umsatzerlöse",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.08,
+          398.34,
+          136.58,
+          758.4
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Umsatzerlöse",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          324.04,
+          116,
+          375.62,
+          763.5
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Umsatzerlöse",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          324.04,
+          116,
+          375.62,
+          763.5
+        ]
+      },
+      "alternatives": [
+        {
+          "kind": "guv",
+          "label": "Umsatzerlöse",
+          "marks": [],
+          "status": "printed",
+          "bbox": [
+            324.04,
+            116,
+            375.62,
+            763.5
+          ]
+        }
+      ]
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Umsatzerlöse",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.38,
+          116,
+          109.88,
+          283.56
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Erhöhung oder Verminderung des Bestandes an fertigen und unfertigen Erzeugnissen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.38,
+          290.64,
+          109.88,
+          346.86
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Erhöhung oder Verminderung des Bestands in Ausführung befindlicher Bauaufträge",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.38,
+          354.0,
+          109.88,
+          410.28
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Erhöhung oder Verminderung des Bestands in Arbeit befindlicher Aufträge",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.38,
+          417.42,
+          109.88,
+          464.94
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Andere aktivierte Eigenleistungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.38,
+          472.02,
+          109.88,
+          540.78
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Andere aktivierte Eigenleistungen",
+        "marks": [
+          "HB"
+        ],
+        "status": "printed",
+        "bbox": [
+          56.38,
+          472.02,
+          109.88,
+          540.78
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Sonstige betriebliche Erträge",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.38,
+          547.92,
+          109.88,
+          604.2
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Umsatzerlöse",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.38,
+          611.76,
+          109.88,
+          624.24
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Sonstige betriebliche Erträge",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.44,
+          120.96,
+          349.88,
+          566.4
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Umsatzerlöse",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.44,
+          573.54,
+          349.88,
+          642.36
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Sonstige betriebliche Erträge",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.08,
+          120.96,
+          136.58,
+          757.26
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Sonstige betriebliche Erträge",
+        "marks": [
+          "SB"
+        ],
+        "status": "printed",
+        "bbox": [
+          83.08,
+          120.96,
+          136.58,
+          757.26
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Sonstige betriebliche Erträge",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.08,
+          116,
+          376.58,
+          312.36
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Umsatzerlöse",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.08,
+          319.44,
+          376.58,
+          335.7
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Aufwendungen für Roh-, Hilfs- und Betriebsstoffe und für bezogene Waren",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          120.96,
+          109.94,
+          759.84
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Aufwendungen für Roh-, Hilfs- und Betriebsstoffe und für bezogene Waren",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          297.34,
+          116,
+          348.98,
+          759.72
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Aufwendungen für Roh-, Hilfs- und Betriebsstoffe und für bezogene Waren",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.98,
+          116,
+          135.68,
+          759.72
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Aufwendungen für Roh-, Hilfs- und Betriebsstoffe und für bezogene Waren",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.98,
+          116,
+          375.62,
+          759.72
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Aufwendungen für Roh-, Hilfs- und Betriebsstoffe und für bezogene Waren",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          116,
+          109.94,
+          590.16
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Aufwendungen für bezogene Leistungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          120.96,
+          349.94,
+          753.54
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Aufwendungen für bezogene Leistungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          116,
+          136.64,
+          469.98
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Löhne und Gehälter",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          120.96,
+          376.58,
+          540.18
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Soziale Abgaben und Aufwendungen für Altersversorgung und für Unterstützung",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          547.26,
+          376.58,
+          703.68
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Abschreibungen auf immaterielle Vermögensgegenstände des Anlagevermögens und Sachanlagen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          120.96,
+          109.94,
+          618.96
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Abschreibungen auf immaterielle Vermögensgegenstände des Anlagevermögens und Sachanlagen",
+        "marks": [
+          "HB"
+        ],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          120.96,
+          109.94,
+          618.96
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Abschreibungen auf immaterielle Vermögensgegenstände des Anlagevermögens und Sachanlagen",
+        "marks": [
+          "SB"
+        ],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          120.96,
+          109.94,
+          618.96
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Abschreibung auf Vermögensgegenstände des Umlaufvermögens, soweit diese die üblichen Abschreibungen überschreiten",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          120.96,
+          349.94,
+          400.02
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Abschreibung auf Vermögensgegenstände des Umlaufvermögens, soweit diese die üblichen Abschreibungen überschreiten",
+        "marks": [
+          "SB"
+        ],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          120.96,
+          349.94,
+          400.02
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Sonstige betriebliche Aufwendungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          407.1,
+          349.94,
+          759.36
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Sonstige betriebliche Aufwendungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.98,
+          116,
+          135.68,
+          759.72
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Sonstige betriebliche Aufwendungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.98,
+          116,
+          375.62,
+          759.72
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Sonstige betriebliche Aufwendungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          57.28,
+          116,
+          108.98,
+          759.72
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Sonstige betriebliche Aufwendungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          297.34,
+          116,
+          348.98,
+          759.72
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Sonstige betriebliche Aufwendungen",
+        "marks": [
+          "SB"
+        ],
+        "status": "printed",
+        "bbox": [
+          297.34,
+          116,
+          348.98,
+          759.72
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Sonstige betriebliche Aufwendungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          116,
+          136.64,
+          353.58
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Erträge aus Beteiligungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          120.96,
+          376.58,
+          312.42
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Erträge aus anderen Wertpapieren und Ausleihungen des Finanzanlagevermögens",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          319.5,
+          376.58,
+          642.36
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Sonstige Zinsen und ähnliche Erträge",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          120.96,
+          109.94,
+          513.84
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Sonstige Zinsen und ähnliche Erträge",
+        "marks": [
+          "HB"
+        ],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          120.96,
+          109.94,
+          513.84
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Sonstige Zinsen und ähnliche Erträge oder Zinsen und ähnliche Aufwendungen",
+        "marks": [
+          "HB"
+        ],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          520.98,
+          109.94,
+          589.8
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Erträge aus Verlustübernahme",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          596.88,
+          109.94,
+          621.9
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Auf Grund einer Gewinngemeinschaft, eines Gewinn- oder Teilgewinnabführungsvertrags erhaltene Gewinne",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          628.98,
+          109.94,
+          702.72
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Abschreibungen auf Finanzanlagen und auf Wertpapiere des Umlaufvermögens",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          120.96,
+          349.94,
+          356.22
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Abschreibungen auf Finanzanlagen und auf Wertpapiere des Umlaufvermögens",
+        "marks": [
+          "HB"
+        ],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          120.96,
+          349.94,
+          356.22
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Abschreibungen auf Finanzanlagen und auf Wertpapiere des Umlaufvermögens",
+        "marks": [
+          "SB"
+        ],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          120.96,
+          349.94,
+          356.22
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Zinsen und ähnliche Aufwendungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          363.3,
+          349.94,
+          759.36
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Zinsen und ähnliche Aufwendungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          116,
+          136.64,
+          391.14
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Zinsen und ähnliche Aufwendungen",
+        "marks": [
+          "HB"
+        ],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          116,
+          136.64,
+          391.14
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Zinsen und ähnliche Aufwendungen oder sonstige Zinsen und ähnliche Erträge",
+        "marks": [
+          "HB"
+        ],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          398.28,
+          136.64,
+          467.1
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Zinsen und ähnliche Aufwendungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          474.18,
+          136.64,
+          504.18
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Aufwendungen aus Verlustübernahmen (Mutter)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          511.26,
+          136.64,
+          550.02
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "aufgrund einer Gewinngemeinschaft, eines Gewinnabführungs- oder Teilgewinnabführungsvertrags abgeführte Gewinne",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          557.1,
+          136.64,
+          639.66
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Aufgrund einer Gewinngemeinschaft, eines Gewinnabführungs- oder Teilgewinnabführungsvertrags abgeführte Gewinne oder Erträge aus Verlustübernahme",
+        "marks": [
+          "HB"
+        ],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          646.74,
+          136.64,
+          755.58
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Aufgrund einer Gewinngemeinschaft, eines Gewinnabführungs- oder Teilgewinnabführungsvertrags abgeführte Gewinne oder Erträge aus Verlustübernahme",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          646.74,
+          136.64,
+          755.58
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Sonstige betriebliche Erträge",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          120.96,
+          376.58,
+          172.26
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Sonstige betriebliche Aufwendungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          179.34,
+          376.58,
+          274.38
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Steuern vom Einkommen und vom Ertrag",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          281.52,
+          376.58,
+          578.04
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Steuern vom Einkommen und vom Ertrag",
+        "marks": [
+          "HB"
+        ],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          281.52,
+          376.58,
+          578.04
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Sonstige Steuern",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          585.18,
+          376.58,
+          688.98
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Ergebnisvorträge aus dem Vorjahr oder Gewinnvortrag aus dem Vorjahr (gGmbH)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          323.02,
+          696.06,
+          376.58,
+          752.34
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Ergebnisvorträge aus dem Vorjahr (Vereine / Stiftungen) / Verlustvortrag aus dem Vorjahr (gGmbH)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          120.96,
+          109.94,
+          186.0
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Entnahme aus der Kapitalrücklage (gGmbH/ Stiftungen)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          193.14,
+          109.94,
+          231.84
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Entnahmen aus der gesetzlichen Rücklage",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          238.98,
+          109.94,
+          268.98
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Entnahmen aus der Rücklage für Anteile an einem herrschenden oder mehrheitlich beteiligten Unternehmen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          276.12,
+          109.94,
+          349.86
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Entnahmen aus satzungsmäßigen Rücklagen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          357.0,
+          109.94,
+          386.94
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Entnahmen aus anderen Gewinnrücklagen (gGmbH)/ sonstigen Ergebnisrücklagen (Vereine/Stiftungen)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          394.08,
+          109.94,
+          459.12
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Ertrag aus Kapitalherabsetzung",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          466.2,
+          109.94,
+          487.44
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Entnahmen ausanderen Gewinnrücklagen (gGmbH) / Verminderung des Vereins-/Stiftungskapitals aus realisierten Vermögensumschichtungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          494.58,
+          109.94,
+          585.84
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Entnahme aus dem Vereinskapital / den sonstigen nicht zeitnah zu verwendenden Mitteln (Stiftungen) / der Kapitalrücklage (gGmbH)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          592.98,
+          109.94,
+          675.54
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Entnahmen aus anderen Gewinnrücklagen (gGmbH) / der gebundenen Rücklage (Vereine/Stiftungen)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          56.32,
+          682.68,
+          109.94,
+          756.42
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Entnahmen aus anderen Gewinnrücklagen (gGmbH) / der freien Rücklage (Vereine/ Stiftungen)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          120.96,
+          349.94,
+          186.0
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Entnahmen aus anderen Gewinnrücklagen (gGmbH) / der Rücklage zum Erwerb von Gesellschaftsrechten (Vereine / Stiftungen)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          193.14,
+          349.94,
+          275.64
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Verminderung des nutzungsgebundenen Kapitals",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          282.78,
+          349.94,
+          321.54
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Entnahmen aus der Kapitalerhaltungsrücklage (Stiftungen)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          328.68,
+          349.94,
+          376.14
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Entnahmen aus der Ansparrücklage (Stiftungen)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          383.22,
+          349.94,
+          422.04
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Einstellung in die Kapitalrücklage (gGmbH/ Stiftungen)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          429.12,
+          349.94,
+          467.88
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Einstellungen in die gesetzliche Rücklage",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          474.96,
+          349.94,
+          504.96
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Einstellungen in die Rücklage für Anteile an einem herrschenden oder mehrheitlich beteiligten Unternehmen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          512.04,
+          349.94,
+          585.84
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Einstellungen in die satzungsmäßige Rücklagen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          592.98,
+          349.94,
+          631.74
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Einstellungen in andere Gewinnrücklagen (gGmbH) / Sonstigen Ergebnisrücklagen (Vereine/Stiftungen)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          296.38,
+          638.82,
+          349.94,
+          712.62
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Steuerliches Mehr-/Minderergebnis lfd. Jahr (steuerlicher Ausgleichsposten)",
+        "marks": [
+          "SB"
+        ],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          120.96,
+          136.64,
+          177.24
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Einstellung in andere Gewinnrücklagen (gGmbH) / Erhöhung des Vereins-/Stiftungskapitals aus realisierten Vermögensumschichtungen",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          184.38,
+          136.64,
+          275.64
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Einstellung in das Vereinskapital / die sonstigen nicht zeitnah zu verwendenden Mittel (Stiftung) / die Kapitalrücklage (gGmbH)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          282.78,
+          136.64,
+          365.34
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Einstellung in anderen Gewinnrücklagen (gGmbH) / die gebundene Rücklage (Vereine/Stiftungen)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          372.48,
+          136.64,
+          437.46
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Einstellung in andere Gewinnrücklagen (gGmbH) / die freie Rücklage (Vereine/Stiftungen)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          444.54,
+          136.64,
+          509.58
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Einstellung in andere Gewinnrücklagen (gGmbH) / die Rücklage zum Erwerb von Gesellschaftsrechten (Vereine/ Stiftungen)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          516.66,
+          136.64,
+          599.28
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Erhöhung des nutzungsgebundenen Kapitals",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          606.36,
+          136.64,
+          645.12
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Einstellungen in die Kapitalerhaltungsrücklage (Stiftungen)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          652.2,
+          136.64,
+          690.96
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Einstellungen in die Ansparrücklage (Stiftungen)",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          698.04,
+          136.64,
+          736.86
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "guv",
+        "label": "Ausschüttung",
+        "marks": [],
+        "status": "printed",
+        "bbox": [
+          83.02,
+          743.94,
+          136.64,
+          756.42
+        ]
+      },
+      "alternatives": []
+    },
+    {
+      "statement": {
+        "kind": "statistical",
+        "label": "",
+        "marks": [],
+        "status": "not_printed",
+        "bbox": null
+      },
+      "alternatives": []
+    }
+  ],
+  "accounts": {
+    "01000": 0,
+    "01100": 0,
+    "01200": 0,
+    "01300": 0,
+    "01350": 0,
+    "01400": 0,
+    "01430": 1,
+    "01440": 2,
+    "01450": 2,
+    "01460": 2,
+    "01470": 2,
+    "01480": 3,
+    "01500": 4,
+    "01600": 4,
+    "01610": 4,
+    "01620": 4,
+    "01630": 4,
+    "01640": 4,
+    "01650": 4,
+    "01660": 4,
+    "01670": 4,
+    "01680": 4,
+    "01690": 4,
+    "01700": 5,
+    "01790": 5,
+    "02000": 6,
+    "02100": 6,
+    "02150": 6,
+    "02200": 6,
+    "02250": 6,
+    "02300": 6,
+    "02350": 6,
+    "02400": 6,
+    "02410": 6,
+    "02430": 6,
+    "02440": 6,
+    "02500": 6,
+    "02600": 6,
+    "02700": 6,
+    "02800": 6,
+    "02850": 6,
+    "02900": 6,
+    "03000": 6,
+    "03050": 6,
+    "03100": 6,
+    "03150": 6,
+    "03200": 6,
+    "03300": 7,
+    "03400": 7,
+    "03500": 7,
+    "03600": 7,
+    "03700": 7,
+    "03800": 7,
+    "03900": 7,
+    "03950": 7,
+    "03980": 7,
+    "04000": 8,
+    "04200": 8,
+    "04400": 8,
+    "04500": 8,
+    "04600": 8,
+    "04700": 8,
+    "05000": 9,
+    "05100": 9,
+    "05200": 9,
+    "05250": 9,
+    "05400": 9,
+    "05600": 9,
+    "05700": 9,
+    "06200": 9,
+    "06300": 9,
+    "06310": 9,
+    "06320": 9,
+    "06350": 9,
+    "06400": 9,
+    "06500": 9,
+    "06600": 9,
+    "06700": 9,
+    "06750": 9,
+    "06800": 9,
+    "06900": 9,
+    "07000": 10,
+    "07050": 10,
+    "07100": 10,
+    "07200": 10,
+    "07250": 10,
+    "07350": 10,
+    "07400": 10,
+    "07500": 10,
+    "07550": 10,
+    "07650": 10,
+    "07700": 10,
+    "07800": 10,
+    "07850": 10,
+    "07950": 10,
+    "08000": 11,
+    "08030": 11,
+    "08040": 11,
+    "08050": 11,
+    "08080": 11,
+    "08090": 11,
+    "08100": 12,
+    "08130": 12,
+    "08140": 12,
+    "08150": 12,
+    "08200": 13,
+    "08300": 13,
+    "08400": 13,
+    "08500": 13,
+    "08600": 13,
+    "08800": 14,
+    "08830": 14,
+    "08850": 14,
+    "09000": 15,
+    "09100": 15,
+    "09200": 15,
+    "09300": 16,
+    "09350": 16,
+    "09400": 16,
+    "09600": 17,
+    "09610": 17,
+    "09640": 17,
+    "09650": 17,
+    "09660": 17,
+    "09670": 17,
+    "09680": 17,
+    "09690": 17,
+    "09700": 18,
+    "09800": 19,
+    "09900": 20,
+    "10000": 21,
+    "10010": 21,
+    "10020": 21,
+    "10030": 21,
+    "10040": 21,
+    "10050": 21,
+    "10060": 21,
+    "10070": 21,
+    "10080": 21,
+    "10090": 21,
+    "10100": 21,
+    "10110": 21,
+    "10120": 21,
+    "10130": 21,
+    "10140": 21,
+    "10150": 21,
+    "10160": 21,
+    "10170": 21,
+    "10180": 21,
+    "10190": 21,
+    "10200": 21,
+    "10210": 21,
+    "10220": 21,
+    "10230": 21,
+    "10240": 21,
+    "10250": 21,
+    "10260": 21,
+    "10270": 21,
+    "10280": 21,
+    "10290": 21,
+    "10300": 21,
+    "10310": 21,
+    "10320": 21,
+    "10330": 21,
+    "10340": 21,
+    "10350": 21,
+    "10360": 21,
+    "10370": 21,
+    "10380": 21,
+    "10390": 21,
+    "10400": 22,
+    "10410": 22,
+    "10420": 22,
+    "10430": 22,
+    "10440": 22,
+    "10450": 22,
+    "10460": 22,
+    "10470": 22,
+    "10480": 22,
+    "10490": 22,
+    "10500": 22,
+    "10510": 22,
+    "10520": 22,
+    "10530": 22,
+    "10540": 22,
+    "10550": 22,
+    "10560": 22,
+    "10570": 22,
+    "10580": 22,
+    "10590": 22,
+    "10600": 22,
+    "10610": 22,
+    "10620": 22,
+    "10630": 22,
+    "10640": 22,
+    "10650": 22,
+    "10660": 22,
+    "10670": 22,
+    "10680": 22,
+    "10690": 22,
+    "10700": 22,
+    "10710": 22,
+    "10720": 22,
+    "10730": 22,
+    "10740": 22,
+    "10750": 22,
+    "10760": 22,
+    "10770": 22,
+    "10780": 22,
+    "10790": 22,
+    "10800": 22,
+    "10810": 22,
+    "10820": 22,
+    "10830": 22,
+    "10840": 22,
+    "10850": 22,
+    "10860": 22,
+    "10870": 22,
+    "10880": 22,
+    "10890": 22,
+    "10900": 23,
+    "10910": 23,
+    "10920": 23,
+    "10930": 23,
+    "10940": 23,
+    "10950": 24,
+    "10960": 24,
+    "10970": 24,
+    "10980": 24,
+    "10990": 24,
+    "11000": 25,
+    "11010": 25,
+    "11020": 25,
+    "11030": 25,
+    "11040": 25,
+    "11050": 25,
+    "11060": 25,
+    "11070": 25,
+    "11080": 25,
+    "11090": 25,
+    "11100": 25,
+    "11110": 25,
+    "11120": 25,
+    "11130": 25,
+    "11140": 25,
+    "11150": 25,
+    "11160": 25,
+    "11170": 25,
+    "11180": 25,
+    "11190": 25,
+    "11200": 25,
+    "11210": 25,
+    "11220": 25,
+    "11230": 25,
+    "11240": 25,
+    "11250": 25,
+    "11260": 25,
+    "11270": 25,
+    "11280": 25,
+    "11290": 25,
+    "11300": 25,
+    "11310": 25,
+    "11320": 25,
+    "11330": 25,
+    "11340": 25,
+    "11350": 25,
+    "11360": 25,
+    "11370": 25,
+    "11380": 25,
+    "11390": 25,
+    "11400": 25,
+    "11410": 25,
+    "11420": 25,
+    "11430": 25,
+    "11440": 25,
+    "11450": 25,
+    "11460": 25,
+    "11470": 25,
+    "11480": 25,
+    "11490": 25,
+    "11500": 25,
+    "11510": 25,
+    "11520": 25,
+    "11530": 25,
+    "11540": 25,
+    "11550": 25,
+    "11560": 25,
+    "11570": 25,
+    "11580": 25,
+    "11590": 25,
+    "11600": 25,
+    "11800": 26,
+    "11801": 26,
+    "11810": 26,
+    "11811": 26,
+    "11820": 26,
+    "11821": 26,
+    "11830": 26,
+    "11840": 26,
+    "11841": 26,
+    "11850": 26,
+    "11860": 26,
+    "11861": 26,
+    "11870": 26,
+    "11880": 26,
+    "11890": 26,
+    "11900": 27,
+    "12000": 28,
+    "12001": 28,
+    "12010": 28,
+    "12020": 28,
+    "12030": 28,
+    "12040": 28,
+    "12050": 28,
+    "12060": 28,
+    "12100": 28,
+    "12110": 28,
+    "12120": 28,
+    "12130": 28,
+    "12140": 28,
+    "12210": 28,
+    "12250": 28,
+    "12300": 28,
+    "12310": 28,
+    "12320": 28,
+    "12330": 28,
+    "12340": 28,
+    "12350": 28,
+    "12360": 28,
+    "12370": 28,
+    "12380": 28,
+    "12390": 28,
+    "12400": 28,
+    "12410": 28,
+    "12420": 28,
+    "12460": 29,
+    "12470": 29,
+    "12480": 29,
+    "12490": 29,
+    "12500": 30,
+    "12510": 30,
+    "12520": 30,
+    "12580": 31,
+    "12590": 32,
+    "12600": 33,
+    "12610": 33,
+    "12620": 33,
+    "12660": 33,
+    "12670": 33,
+    "12680": 33,
+    "12690": 33,
+    "12700": 33,
+    "12710": 33,
+    "12720": 33,
+    "12760": 34,
+    "12770": 34,
+    "12800": 35,
+    "12810": 35,
+    "12820": 35,
+    "12860": 35,
+    "12870": 35,
+    "12880": 35,
+    "12890": 35,
+    "12900": 35,
+    "12910": 35,
+    "12920": 35,
+    "12960": 36,
+    "12970": 36,
+    "12980": 37,
+    "12990": 38,
+    "13000": 39,
+    "13010": 39,
+    "13020": 40,
+    "13070": 41,
+    "13080": 41,
+    "13090": 41,
+    "13100": 42,
+    "13110": 42,
+    "13120": 43,
+    "13200": 44,
+    "13210": 44,
+    "13220": 45,
+    "13270": 46,
+    "13280": 46,
+    "13290": 46,
+    "13300": 47,
+    "13310": 47,
+    "13320": 47,
+    "13370": 48,
+    "13380": 48,
+    "13390": 48,
+    "13400": 48,
+    "13410": 48,
+    "13420": 48,
+    "13500": 48,
+    "13510": 48,
+    "13520": 48,
+    "13600": 48,
+    "13610": 48,
+    "13620": 48,
+    "13640": 49,
+    "13650": 49,
+    "13660": 49,
+    "13670": 50,
+    "13680": 51,
+    "13690": 51,
+    "13700": 51,
+    "13720": 51,
+    "13740": 51,
+    "13750": 51,
+    "13780": 52,
+    "13800": 52,
+    "13810": 53,
+    "13820": 54,
+    "13830": 55,
+    "13900": 56,
+    "13910": 57,
+    "13930": 58,
+    "13940": 58,
+    "13950": 58,
+    "14000": 59,
+    "14001": 59,
+    "14010": 59,
+    "14011": 59,
+    "14020": 59,
+    "14030": 59,
+    "14040": 59,
+    "14050": 59,
+    "14060": 59,
+    "14061": 59,
+    "14070": 59,
+    "14080": 59,
+    "14090": 59,
+    "14100": 59,
+    "14101": 59,
+    "14110": 59,
+    "14120": 59,
+    "14130": 59,
+    "14140": 59,
+    "14150": 59,
+    "14160": 59,
+    "14161": 59,
+    "14170": 59,
+    "14180": 59,
+    "14190": 59,
+    "14200": 59,
+    "14201": 59,
+    "14210": 59,
+    "14220": 59,
+    "14230": 59,
+    "14240": 59,
+    "14250": 59,
+    "14260": 59,
+    "14261": 59,
+    "14270": 59,
+    "14280": 59,
+    "14290": 59,
+    "14291": 59,
+    "14300": 59,
+    "14301": 59,
+    "14310": 59,
+    "14311": 59,
+    "14320": 59,
+    "14330": 59,
+    "14340": 59,
+    "14350": 59,
+    "14360": 59,
+    "14361": 59,
+    "14400": 59,
+    "14401": 59,
+    "14410": 59,
+    "14420": 59,
+    "14430": 59,
+    "14440": 59,
+    "14450": 59,
+    "14460": 59,
+    "14461": 59,
+    "14470": 59,
+    "14480": 59,
+    "14490": 59,
+    "14500": 59,
+    "14501": 59,
+    "14510": 59,
+    "14520": 59,
+    "14530": 59,
+    "14540": 59,
+    "14550": 59,
+    "14560": 59,
+    "14561": 59,
+    "14570": 59,
+    "14580": 59,
+    "14590": 59,
+    "14610": 60,
+    "14620": 60,
+    "14630": 60,
+    "14640": 61,
+    "14641": 61,
+    "14650": 61,
+    "14660": 61,
+    "14670": 61,
+    "14680": 61,
+    "14690": 62,
+    "14700": 63,
+    "14701": 63,
+    "14710": 63,
+    "14711": 63,
+    "14720": 63,
+    "14721": 63,
+    "14730": 63,
+    "14731": 63,
+    "14740": 63,
+    "14741": 63,
+    "14750": 63,
+    "14760": 63,
+    "14770": 63,
+    "14780": 63,
+    "14790": 63,
+    "14800": 63,
+    "14801": 63,
+    "14810": 63,
+    "14811": 63,
+    "14820": 63,
+    "14821": 63,
+    "14870": 63,
+    "14871": 63,
+    "14880": 63,
+    "14890": 63,
+    "14900": 63,
+    "14910": 63,
+    "14920": 63,
+    "14950": 63,
+    "14970": 63,
+    "14980": 63,
+    "14990": 63,
+    "15000": 64,
+    "15040": 64,
+    "15100": 65,
+    "15200": 65,
+    "15210": 65,
+    "15220": 65,
+    "15230": 65,
+    "15240": 65,
+    "15250": 65,
+    "15300": 65,
+    "15500": 66,
+    "16000": 66,
+    "16100": 66,
+    "16200": 66,
+    "17000": 67,
+    "17100": 67,
+    "17200": 67,
+    "17300": 67,
+    "17800": 67,
+    "17900": 67,
+    "18000": 67,
+    "18100": 67,
+    "18200": 67,
+    "18300": 67,
+    "18400": 67,
+    "18500": 67,
+    "18890": 67,
+    "18900": 67,
+    "18950": 68,
+    "19000": 69,
+    "19200": 70,
+    "19300": 70,
+    "19400": 69,
+    "19500": 71,
+    "20000": 72,
+    "20800": 72,
+    "20900": 72,
+    "21000": 73,
+    "22000": 73,
+    "22500": 73,
+    "23000": 74,
+    "24000": 75,
+    "25000": 76,
+    "26000": 77,
+    "26500": 78,
+    "27000": 79,
+    "27100": 80,
+    "27400": 81,
+    "27500": 82,
+    "28000": 83,
+    "28500": 84,
+    "29000": 85,
+    "29080": 85,
+    "29090": 86,
+    "29100": 87,
+    "29200": 88,
+    "29250": 88,
+    "29260": 88,
+    "29270": 88,
+    "29280": 88,
+    "29290": 88,
+    "29300": 89,
+    "29350": 90,
+    "29500": 91,
+    "29600": 92,
+    "29610": 92,
+    "29620": 92,
+    "29630": 93,
+    "29640": 93,
+    "29650": 93,
+    "29660": 93,
+    "29670": 93,
+    "29680": 93,
+    "29690": 93,
+    "29700": 94,
+    "29780": 95,
+    "29790": 96,
+    "29800": 97,
+    "29810": 98,
+    "29820": 98,
+    "29830": 98,
+    "29840": 99,
+    "29850": 100,
+    "29860": 101,
+    "29870": 102,
+    "29880": 103,
+    "29950": 104,
+    "29960": 105,
+    "29970": 106,
+    "30000": 107,
+    "30050": 107,
+    "30090": 108,
+    "30100": 109,
+    "30110": 109,
+    "30150": 109,
+    "30200": 110,
+    "30350": 110,
+    "30400": 110,
+    "30500": 110,
+    "30600": 111,
+    "30650": 112,
+    "30700": 113,
+    "30740": 113,
+    "30750": 113,
+    "30760": 113,
+    "30770": 114,
+    "30790": 115,
+    "30850": 115,
+    "30900": 115,
+    "30920": 116,
+    "30950": 115,
+    "30960": 115,
+    "30980": 115,
+    "30990": 115,
+    "31000": 117,
+    "31010": 117,
+    "31020": 117,
+    "31030": 117,
+    "31200": 117,
+    "31210": 117,
+    "31220": 117,
+    "31230": 117,
+    "31400": 118,
+    "31410": 118,
+    "31420": 118,
+    "31500": 119,
+    "31510": 119,
+    "31520": 119,
+    "31530": 119,
+    "31800": 119,
+    "31810": 119,
+    "31820": 119,
+    "31830": 119,
+    "32100": 119,
+    "32490": 120,
+    "32500": 121,
+    "32600": 121,
+    "32610": 121,
+    "32620": 121,
+    "32630": 121,
+    "32640": 121,
+    "32700": 121,
+    "32710": 121,
+    "32720": 121,
+    "32730": 121,
+    "32740": 121,
+    "32750": 121,
+    "32760": 121,
+    "32770": 121,
+    "32780": 121,
+    "32790": 121,
+    "32800": 121,
+    "32810": 121,
+    "32820": 121,
+    "32830": 121,
+    "33000": 122,
+    "33001": 122,
+    "33010": 122,
+    "33020": 122,
+    "33030": 122,
+    "33100": 122,
+    "33110": 122,
+    "33120": 122,
+    "33130": 122,
+    "33140": 122,
+    "33310": 122,
+    "33320": 122,
+    "33330": 122,
+    "33400": 123,
+    "33410": 123,
+    "33420": 123,
+    "33430": 123,
+    "33490": 124,
+    "33500": 125,
+    "33510": 125,
+    "33520": 125,
+    "33530": 125,
+    "33540": 125,
+    "33550": 125,
+    "33560": 125,
+    "33570": 125,
+    "33580": 125,
+    "33590": 125,
+    "33600": 125,
+    "33610": 125,
+    "33620": 125,
+    "33630": 125,
+    "33640": 125,
+    "33650": 125,
+    "33660": 125,
+    "33670": 125,
+    "33680": 125,
+    "33690": 125,
+    "33700": 125,
+    "33710": 125,
+    "33720": 125,
+    "33730": 125,
+    "33740": 125,
+    "33750": 125,
+    "33760": 125,
+    "33770": 125,
+    "33780": 125,
+    "33790": 125,
+    "33800": 125,
+    "33810": 125,
+    "33820": 125,
+    "33830": 125,
+    "33840": 125,
+    "33850": 125,
+    "33860": 125,
+    "33870": 125,
+    "33880": 125,
+    "33890": 125,
+    "33900": 125,
+    "33910": 125,
+    "33920": 125,
+    "33930": 125,
+    "33940": 125,
+    "33950": 125,
+    "33960": 125,
+    "33970": 125,
+    "33980": 125,
+    "33990": 125,
+    "34000": 126,
+    "34010": 126,
+    "34020": 126,
+    "34030": 126,
+    "34200": 126,
+    "34210": 126,
+    "34220": 126,
+    "34230": 126,
+    "34500": 127,
+    "34510": 127,
+    "34520": 127,
+    "34530": 127,
+    "34700": 127,
+    "34710": 127,
+    "34720": 127,
+    "34730": 127,
+    "34900": 128,
+    "34910": 128,
+    "34920": 128,
+    "34930": 128,
+    "35000": 129,
+    "35010": 129,
+    "35020": 130,
+    "35030": 130,
+    "35100": 131,
+    "35110": 131,
+    "35120": 132,
+    "35130": 132,
+    "35190": 132,
+    "35200": 133,
+    "35210": 133,
+    "35220": 133,
+    "35230": 133,
+    "35300": 133,
+    "35310": 133,
+    "35320": 133,
+    "35330": 133,
+    "35400": 133,
+    "35410": 133,
+    "35420": 133,
+    "35430": 133,
+    "35500": 133,
+    "35510": 133,
+    "35520": 133,
+    "35530": 133,
+    "35600": 133,
+    "35610": 133,
+    "35620": 133,
+    "35630": 133,
+    "35700": 133,
+    "35990": 133,
+    "36000": 134,
+    "36100": 135,
+    "36110": 136,
+    "36200": 136,
+    "36300": 136,
+    "36400": 137,
+    "36410": 137,
+    "36420": 138,
+    "36430": 138,
+    "36500": 139,
+    "36510": 139,
+    "36520": 139,
+    "36530": 139,
+    "36950": 140,
+    "37000": 141,
+    "37010": 141,
+    "37020": 142,
+    "37030": 142,
+    "37200": 143,
+    "37250": 143,
+    "37260": 143,
+    "37300": 143,
+    "37400": 143,
+    "37410": 143,
+    "37420": 143,
+    "37430": 143,
+    "37590": 143,
+    "37600": 143,
+    "37610": 143,
+    "37700": 143,
+    "37710": 143,
+    "37720": 144,
+    "37730": 144,
+    "37860": 144,
+    "37900": 145,
+    "38000": 145,
+    "38010": 145,
+    "38011": 145,
+    "38020": 145,
+    "38030": 145,
+    "38040": 145,
+    "38050": 145,
+    "38060": 145,
+    "38061": 145,
+    "38070": 145,
+    "38080": 145,
+    "38090": 145,
+    "38100": 145,
+    "38101": 145,
+    "38110": 145,
+    "38120": 145,
+    "38130": 145,
+    "38140": 145,
+    "38150": 145,
+    "38160": 145,
+    "38161": 145,
+    "38170": 145,
+    "38180": 145,
+    "38190": 145,
+    "38200": 146,
+    "38201": 146,
+    "38210": 146,
+    "38211": 146,
+    "38220": 146,
+    "38230": 146,
+    "38240": 146,
+    "38250": 146,
+    "38260": 146,
+    "38261": 146,
+    "38270": 146,
+    "38280": 146,
+    "38290": 146,
+    "38300": 146,
+    "38301": 146,
+    "38310": 146,
+    "38320": 146,
+    "38330": 146,
+    "38340": 146,
+    "38350": 146,
+    "38360": 146,
+    "38361": 146,
+    "38370": 146,
+    "38380": 146,
+    "38390": 146,
+    "38400": 147,
+    "38401": 147,
+    "38410": 147,
+    "38411": 147,
+    "38420": 147,
+    "38421": 147,
+    "38430": 147,
+    "38431": 147,
+    "38440": 148,
+    "38441": 148,
+    "38450": 149,
+    "38451": 149,
+    "38460": 149,
+    "38470": 149,
+    "38480": 149,
+    "38490": 149,
+    "38500": 149,
+    "38501": 149,
+    "38510": 149,
+    "38511": 149,
+    "38520": 149,
+    "38530": 149,
+    "38540": 149,
+    "38550": 149,
+    "38560": 149,
+    "38561": 149,
+    "38570": 149,
+    "38571": 149,
+    "38580": 149,
+    "38581": 149,
+    "38590": 149,
+    "38600": 149,
+    "38601": 149,
+    "38610": 149,
+    "38611": 149,
+    "38620": 149,
+    "38630": 149,
+    "38640": 149,
+    "38650": 149,
+    "38660": 149,
+    "38661": 149,
+    "38670": 149,
+    "38680": 149,
+    "38690": 149,
+    "38700": 149,
+    "38701": 149,
+    "38710": 149,
+    "38720": 149,
+    "38721": 149,
+    "38730": 149,
+    "38740": 149,
+    "38750": 149,
+    "38760": 149,
+    "38770": 149,
+    "38780": 149,
+    "38790": 149,
+    "38800": 150,
+    "38801": 150,
+    "38810": 150,
+    "38811": 150,
+    "38820": 150,
+    "38821": 150,
+    "38830": 150,
+    "38840": 150,
+    "38850": 150,
+    "38851": 150,
+    "38860": 150,
+    "38870": 150,
+    "38880": 150,
+    "38890": 150,
+    "38900": 150,
+    "38910": 150,
+    "38920": 150,
+    "38930": 150,
+    "38940": 150,
+    "38950": 150,
+    "38960": 150,
+    "38970": 150,
+    "38980": 150,
+    "38990": 150,
+    "39000": 151,
+    "39500": 81,
+    "40000": 152,
+    "40100": 152,
+    "40200": 152,
+    "40300": 153,
+    "40310": 153,
+    "40320": 153,
+    "40330": 153,
+    "40400": 154,
+    "40450": 154,
+    "40500": 154,
+    "40550": 154,
+    "40600": 154,
+    "40650": 154,
+    "40700": 154,
+    "40750": 154,
+    "40900": 155,
+    "40910": 155,
+    "40920": 155,
+    "40930": 155,
+    "40940": 155,
+    "40950": 155,
+    "40960": 155,
+    "40970": 155,
+    "40980": 155,
+    "40990": 155,
+    "41000": 155,
+    "41010": 155,
+    "41020": 155,
+    "41030": 155,
+    "41040": 155,
+    "41050": 155,
+    "41060": 155,
+    "41070": 155,
+    "41080": 155,
+    "41090": 155,
+    "41100": 155,
+    "41110": 155,
+    "41120": 155,
+    "41130": 155,
+    "41140": 155,
+    "41150": 155,
+    "41160": 155,
+    "41170": 155,
+    "41180": 155,
+    "41190": 155,
+    "41200": 155,
+    "41250": 155,
+    "41270": 155,
+    "41280": 155,
+    "41300": 155,
+    "41310": 155,
+    "41320": 155,
+    "41330": 155,
+    "41340": 155,
+    "41350": 155,
+    "41360": 156,
+    "41370": 156,
+    "41380": 156,
+    "41390": 156,
+    "41400": 156,
+    "41500": 156,
+    "41600": 156,
+    "41650": 156,
+    "41800": 156,
+    "41820": 156,
+    "41830": 156,
+    "41840": 156,
+    "41850": 156,
+    "42000": 156,
+    "42010": 156,
+    "42030": 156,
+    "42050": 156,
+    "42070": 156,
+    "42090": 156,
+    "42110": 156,
+    "42130": 156,
+    "42201": 156,
+    "42202": 156,
+    "42203": 156,
+    "42204": 156,
+    "42205": 156,
+    "42900": 156,
+    "43000": 156,
+    "43010": 156,
+    "43020": 156,
+    "43030": 156,
+    "43040": 156,
+    "43050": 156,
+    "43060": 156,
+    "43070": 156,
+    "43080": 156,
+    "43090": 156,
+    "43100": 156,
+    "43110": 156,
+    "43120": 156,
+    "43130": 156,
+    "43140": 156,
+    "43150": 156,
+    "43160": 156,
+    "43170": 156,
+    "43180": 156,
+    "43190": 156,
+    "43200": 156,
+    "43210": 156,
+    "43220": 156,
+    "43230": 156,
+    "43240": 156,
+    "43250": 156,
+    "43260": 156,
+    "43270": 156,
+    "43280": 156,
+    "43290": 156,
+    "43300": 156,
+    "43310": 156,
+    "43320": 157,
+    "43330": 157,
+    "43340": 157,
+    "43350": 157,
+    "43360": 157,
+    "43370": 157,
+    "43380": 157,
+    "43390": 157,
+    "43400": 157,
+    "43410": 157,
+    "43420": 157,
+    "43430": 157,
+    "43440": 157,
+    "43450": 157,
+    "43460": 157,
+    "43470": 157,
+    "43480": 157,
+    "43490": 157,
+    "44000": 157,
+    "44010": 157,
+    "44020": 157,
+    "44030": 157,
+    "44040": 157,
+    "44050": 157,
+    "44060": 157,
+    "44070": 157,
+    "44080": 157,
+    "44090": 157,
+    "44100": 157,
+    "44110": 157,
+    "44120": 157,
+    "44130": 157,
+    "44140": 157,
+    "44150": 157,
+    "44160": 157,
+    "44170": 157,
+    "44180": 157,
+    "44190": 157,
+    "44200": 157,
+    "44210": 157,
+    "44220": 157,
+    "44230": 157,
+    "44240": 157,
+    "44250": 157,
+    "44260": 157,
+    "44270": 157,
+    "44280": 157,
+    "44290": 157,
+    "44300": 157,
+    "44310": 157,
+    "44320": 157,
+    "44330": 157,
+    "44340": 157,
+    "44350": 157,
+    "44360": 157,
+    "44370": 157,
+    "44380": 157,
+    "44390": 157,
+    "44400": 157,
+    "44410": 157,
+    "44420": 157,
+    "44430": 157,
+    "44440": 157,
+    "44450": 157,
+    "44460": 157,
+    "44470": 157,
+    "44480": 157,
+    "44490": 157,
+    "44990": 157,
+    "45100": 157,
+    "45200": 157,
+    "45600": 157,
+    "45610": 157,
+    "45620": 157,
+    "45630": 157,
+    "45640": 157,
+    "45650": 157,
+    "45660": 157,
+    "45670": 157,
+    "45680": 157,
+    "45690": 157,
+    "45700": 157,
+    "45710": 157,
+    "45720": 157,
+    "45730": 157,
+    "45740": 157,
+    "45750": 157,
+    "45760": 157,
+    "45770": 157,
+    "45780": 157,
+    "45790": 157,
+    "46000": 158,
+    "46500": 158,
+    "46510": 158,
+    "46520": 158,
+    "46530": 158,
+    "46540": 158,
+    "46550": 158,
+    "46560": 158,
+    "46570": 158,
+    "46580": 158,
+    "46590": 158,
+    "46600": 158,
+    "46610": 158,
+    "46620": 158,
+    "46630": 158,
+    "46640": 158,
+    "46650": 158,
+    "46660": 158,
+    "46670": 158,
+    "46680": 158,
+    "46690": 158,
+    "46700": 158,
+    "46710": 158,
+    "46720": 158,
+    "46730": 158,
+    "46740": 158,
+    "46750": 158,
+    "46760": 158,
+    "46770": 158,
+    "46780": 158,
+    "46790": 158,
+    "46800": 158,
+    "46810": 158,
+    "46820": 158,
+    "46830": 158,
+    "46840": 158,
+    "46850": 158,
+    "46860": 158,
+    "46870": 158,
+    "46880": 158,
+    "46890": 158,
+    "46900": 159,
+    "46950": 159,
+    "46990": 159,
+    "47000": 159,
+    "47010": 159,
+    "47020": 159,
+    "47030": 159,
+    "47040": 159,
+    "47050": 159,
+    "47060": 159,
+    "47070": 159,
+    "47080": 159,
+    "47090": 159,
+    "47100": 159,
+    "47110": 159,
+    "47120": 160,
+    "47130": 160,
+    "47140": 160,
+    "47150": 160,
+    "47160": 160,
+    "47170": 160,
+    "47180": 160,
+    "47190": 160,
+    "47200": 160,
+    "47210": 160,
+    "47220": 160,
+    "47230": 160,
+    "47240": 160,
+    "47250": 160,
+    "47260": 160,
+    "47270": 160,
+    "47280": 160,
+    "47290": 160,
+    "47300": 160,
+    "47310": 160,
+    "47320": 160,
+    "47330": 160,
+    "47340": 161,
+    "47350": 160,
+    "47360": 160,
+    "47370": 160,
+    "47380": 160,
+    "47410": 160,
+    "47420": 160,
+    "47430": 160,
+    "47440": 160,
+    "47450": 160,
+    "47460": 160,
+    "47470": 160,
+    "47480": 160,
+    "47490": 160,
+    "47500": 162,
+    "47510": 162,
+    "47520": 162,
+    "47530": 162,
+    "47540": 162,
+    "47550": 162,
+    "47560": 162,
+    "47570": 162,
+    "47580": 162,
+    "47590": 162,
+    "47600": 162,
+    "47610": 162,
+    "47620": 162,
+    "47630": 162,
+    "47640": 162,
+    "47650": 162,
+    "47660": 162,
+    "47670": 162,
+    "47680": 162,
+    "47690": 162,
+    "47700": 162,
+    "47800": 162,
+    "47810": 162,
+    "47820": 162,
+    "47830": 162,
+    "47840": 162,
+    "47850": 162,
+    "47860": 162,
+    "47870": 162,
+    "47880": 162,
+    "47890": 162,
+    "47900": 162,
+    "47910": 162,
+    "47920": 162,
+    "47930": 162,
+    "47940": 162,
+    "47950": 162,
+    "47960": 162,
+    "47970": 162,
+    "47980": 162,
+    "47990": 162,
+    "48000": 163,
+    "48100": 163,
+    "48150": 163,
+    "48160": 164,
+    "48180": 165,
+    "48200": 166,
+    "48240": 166,
+    "48250": 167,
+    "48280": 168,
+    "48290": 168,
+    "48300": 168,
+    "48320": 168,
+    "48330": 169,
+    "48340": 170,
+    "48350": 170,
+    "48360": 170,
+    "48370": 170,
+    "48380": 170,
+    "48390": 170,
+    "48400": 170,
+    "48410": 170,
+    "48420": 170,
+    "48430": 170,
+    "48440": 170,
+    "48450": 170,
+    "48460": 170,
+    "48470": 170,
+    "48480": 170,
+    "48490": 170,
+    "48500": 170,
+    "48510": 170,
+    "48520": 170,
+    "48550": 170,
+    "48560": 170,
+    "48570": 170,
+    "48580": 170,
+    "48600": 171,
+    "48610": 171,
+    "48620": 171,
+    "48630": 171,
+    "48640": 171,
+    "49000": 172,
+    "49010": 172,
+    "49020": 172,
+    "49030": 172,
+    "49040": 172,
+    "49050": 172,
+    "49060": 172,
+    "49100": 172,
+    "49110": 172,
+    "49120": 172,
+    "49130": 172,
+    "49140": 172,
+    "49150": 172,
+    "49160": 172,
+    "49200": 172,
+    "49230": 172,
+    "49250": 172,
+    "49270": 172,
+    "49290": 173,
+    "49300": 172,
+    "49320": 172,
+    "49350": 172,
+    "49370": 172,
+    "49380": 173,
+    "49400": 172,
+    "49410": 172,
+    "49420": 172,
+    "49430": 172,
+    "49440": 172,
+    "49450": 172,
+    "49460": 172,
+    "49470": 172,
+    "49480": 172,
+    "49490": 174,
+    "49600": 174,
+    "49700": 174,
+    "49720": 174,
+    "49750": 174,
+    "49800": 174,
+    "49810": 174,
+    "49820": 174,
+    "49860": 174,
+    "49870": 174,
+    "49890": 174,
+    "49920": 175,
+    "50000": 176,
+    "50010": 176,
+    "50020": 176,
+    "50030": 176,
+    "50040": 176,
+    "50050": 176,
+    "50060": 176,
+    "50070": 176,
+    "50080": 176,
+    "50090": 176,
+    "50100": 176,
+    "50110": 176,
+    "50120": 176,
+    "50130": 176,
+    "50140": 176,
+    "50150": 176,
+    "50160": 176,
+    "50170": 176,
+    "50180": 176,
+    "50190": 176,
+    "50200": 176,
+    "50210": 176,
+    "50220": 176,
+    "50230": 176,
+    "50240": 176,
+    "50250": 176,
+    "50260": 176,
+    "50270": 176,
+    "50280": 176,
+    "50290": 176,
+    "50300": 176,
+    "50310": 176,
+    "50320": 176,
+    "50330": 176,
+    "50340": 176,
+    "50350": 176,
+    "50360": 176,
+    "50370": 176,
+    "50380": 176,
+    "50390": 176,
+    "50400": 176,
+    "50410": 176,
+    "50420": 176,
+    "50430": 176,
+    "50440": 176,
+    "50450": 176,
+    "50460": 176,
+    "50470": 176,
+    "50480": 176,
+    "50490": 176,
+    "50500": 176,
+    "50510": 176,
+    "50520": 176,
+    "50530": 176,
+    "50540": 176,
+    "50550": 176,
+    "50560": 176,
+    "50570": 176,
+    "50580": 176,
+    "50590": 176,
+    "50600": 176,
+    "50610": 176,
+    "50620": 176,
+    "50630": 176,
+    "50640": 176,
+    "50650": 176,
+    "50660": 176,
+    "50670": 176,
+    "50680": 176,
+    "50690": 176,
+    "50700": 176,
+    "50710": 176,
+    "50720": 176,
+    "50730": 176,
+    "50740": 176,
+    "50750": 176,
+    "50760": 176,
+    "50770": 176,
+    "50780": 176,
+    "50790": 176,
+    "50800": 176,
+    "50810": 176,
+    "50820": 176,
+    "50830": 176,
+    "50840": 176,
+    "50850": 176,
+    "50860": 176,
+    "50870": 176,
+    "50880": 176,
+    "50890": 176,
+    "50900": 176,
+    "50910": 176,
+    "50920": 176,
+    "50930": 176,
+    "50940": 176,
+    "50950": 176,
+    "50960": 176,
+    "50970": 176,
+    "50980": 176,
+    "50990": 176,
+    "51000": 176,
+    "51100": 176,
+    "51110": 176,
+    "51120": 176,
+    "51130": 176,
+    "51140": 176,
+    "51150": 176,
+    "51160": 176,
+    "51170": 176,
+    "51180": 176,
+    "51190": 176,
+    "51200": 176,
+    "51210": 176,
+    "51220": 176,
+    "51230": 176,
+    "51240": 176,
+    "51250": 176,
+    "51260": 176,
+    "51270": 176,
+    "51280": 176,
+    "51290": 176,
+    "51300": 176,
+    "51310": 176,
+    "51320": 176,
+    "51330": 176,
+    "51340": 176,
+    "51350": 176,
+    "51360": 176,
+    "51370": 176,
+    "51380": 176,
+    "51390": 176,
+    "51400": 176,
+    "51410": 176,
+    "51420": 176,
+    "51430": 176,
+    "51440": 176,
+    "51450": 176,
+    "51460": 176,
+    "51470": 176,
+    "51480": 176,
+    "51490": 176,
+    "51500": 176,
+    "51510": 176,
+    "51520": 176,
+    "51530": 176,
+    "51540": 176,
+    "51550": 176,
+    "51560": 176,
+    "51570": 176,
+    "51580": 176,
+    "51590": 176,
+    "51600": 176,
+    "51610": 176,
+    "51620": 176,
+    "51630": 176,
+    "51640": 176,
+    "51650": 176,
+    "51660": 176,
+    "51670": 176,
+    "51680": 176,
+    "51690": 176,
+    "51700": 176,
+    "51710": 176,
+    "51720": 176,
+    "51730": 176,
+    "51740": 176,
+    "51750": 176,
+    "51760": 176,
+    "51770": 176,
+    "51780": 176,
+    "51790": 176,
+    "51800": 176,
+    "51810": 176,
+    "51820": 176,
+    "51830": 176,
+    "51840": 176,
+    "51850": 176,
+    "51860": 176,
+    "51870": 176,
+    "51880": 176,
+    "51890": 176,
+    "51900": 176,
+    "51910": 176,
+    "51920": 176,
+    "51930": 176,
+    "51940": 176,
+    "51950": 176,
+    "51960": 176,
+    "51970": 176,
+    "51980": 176,
+    "52000": 177,
+    "53000": 177,
+    "53010": 177,
+    "53020": 177,
+    "53030": 177,
+    "53040": 177,
+    "53050": 177,
+    "53060": 177,
+    "53070": 177,
+    "53080": 177,
+    "53090": 177,
+    "53100": 177,
+    "53110": 177,
+    "53120": 177,
+    "53130": 177,
+    "53140": 177,
+    "53150": 177,
+    "53160": 177,
+    "53170": 177,
+    "53180": 177,
+    "53190": 177,
+    "53200": 177,
+    "53210": 177,
+    "53220": 177,
+    "53230": 177,
+    "53240": 177,
+    "53250": 177,
+    "53260": 177,
+    "53270": 177,
+    "53280": 177,
+    "53290": 177,
+    "53300": 177,
+    "53310": 177,
+    "53320": 177,
+    "53330": 177,
+    "53340": 177,
+    "53350": 177,
+    "53360": 177,
+    "53370": 177,
+    "53380": 177,
+    "53390": 177,
+    "53400": 177,
+    "53410": 177,
+    "53420": 177,
+    "53430": 177,
+    "53440": 177,
+    "53450": 177,
+    "53460": 177,
+    "53470": 177,
+    "53480": 177,
+    "53490": 177,
+    "53500": 177,
+    "53510": 177,
+    "53520": 177,
+    "53530": 177,
+    "53540": 177,
+    "53550": 177,
+    "53560": 177,
+    "53570": 177,
+    "53580": 177,
+    "53590": 177,
+    "53600": 177,
+    "53610": 177,
+    "53620": 177,
+    "53630": 177,
+    "53640": 177,
+    "53650": 177,
+    "53660": 177,
+    "53670": 177,
+    "53680": 177,
+    "53690": 177,
+    "53700": 177,
+    "53710": 177,
+    "53720": 177,
+    "53730": 177,
+    "53740": 177,
+    "53750": 177,
+    "53760": 177,
+    "53770": 177,
+    "53780": 177,
+    "53790": 177,
+    "53800": 177,
+    "53810": 177,
+    "53820": 177,
+    "53830": 177,
+    "53840": 177,
+    "53850": 177,
+    "53860": 177,
+    "53870": 177,
+    "53880": 177,
+    "53890": 177,
+    "53900": 177,
+    "53910": 177,
+    "53920": 177,
+    "53930": 177,
+    "53940": 177,
+    "53950": 177,
+    "53960": 177,
+    "53970": 177,
+    "53980": 177,
+    "53990": 177,
+    "54000": 177,
+    "54010": 177,
+    "54020": 177,
+    "54030": 177,
+    "54040": 177,
+    "54050": 177,
+    "54060": 177,
+    "54070": 177,
+    "54080": 177,
+    "54090": 177,
+    "54100": 177,
+    "54110": 177,
+    "54120": 177,
+    "54130": 177,
+    "54140": 177,
+    "54150": 177,
+    "54160": 177,
+    "54170": 177,
+    "54180": 177,
+    "54190": 177,
+    "54200": 177,
+    "54210": 177,
+    "54220": 177,
+    "54230": 177,
+    "54240": 177,
+    "54250": 177,
+    "54260": 177,
+    "54270": 177,
+    "54280": 177,
+    "54290": 177,
+    "54300": 177,
+    "54310": 177,
+    "54320": 177,
+    "54330": 177,
+    "54340": 177,
+    "54350": 177,
+    "54360": 177,
+    "54370": 177,
+    "54380": 177,
+    "54390": 177,
+    "54400": 177,
+    "54410": 177,
+    "54420": 177,
+    "54430": 177,
+    "54440": 177,
+    "54450": 177,
+    "54460": 177,
+    "54470": 177,
+    "54480": 177,
+    "54490": 177,
+    "55000": 177,
+    "55010": 177,
+    "55020": 177,
+    "55030": 177,
+    "55040": 177,
+    "55050": 177,
+    "55060": 177,
+    "55070": 177,
+    "55080": 177,
+    "55090": 177,
+    "55100": 177,
+    "55110": 177,
+    "55120": 177,
+    "55130": 177,
+    "55140": 177,
+    "55150": 177,
+    "55160": 177,
+    "55170": 177,
+    "55180": 177,
+    "55190": 177,
+    "55200": 177,
+    "55210": 177,
+    "55220": 177,
+    "55230": 177,
+    "55240": 177,
+    "55250": 177,
+    "55260": 177,
+    "55270": 177,
+    "55280": 177,
+    "55290": 177,
+    "55300": 177,
+    "55310": 177,
+    "55320": 177,
+    "55330": 177,
+    "55340": 177,
+    "55350": 177,
+    "55360": 177,
+    "55370": 177,
+    "55380": 177,
+    "55390": 177,
+    "55400": 177,
+    "55410": 177,
+    "55420": 177,
+    "55430": 177,
+    "55440": 177,
+    "55450": 177,
+    "55460": 177,
+    "55470": 177,
+    "55480": 177,
+    "55490": 177,
+    "55500": 177,
+    "55510": 177,
+    "55520": 177,
+    "55530": 177,
+    "55540": 177,
+    "55550": 177,
+    "55560": 177,
+    "55570": 177,
+    "55580": 177,
+    "55590": 177,
+    "55600": 177,
+    "55610": 177,
+    "55620": 177,
+    "55630": 177,
+    "55640": 177,
+    "55650": 178,
+    "55660": 178,
+    "55670": 178,
+    "55680": 178,
+    "55690": 178,
+    "56000": 178,
+    "56010": 178,
+    "56020": 178,
+    "56030": 178,
+    "56040": 178,
+    "56050": 178,
+    "56060": 178,
+    "56070": 178,
+    "56080": 178,
+    "56090": 178,
+    "56100": 178,
+    "56110": 178,
+    "56120": 178,
+    "56130": 178,
+    "56140": 178,
+    "56150": 178,
+    "56160": 178,
+    "56170": 178,
+    "56180": 178,
+    "56190": 178,
+    "56500": 178,
+    "56510": 178,
+    "56520": 178,
+    "56530": 178,
+    "56540": 178,
+    "56550": 178,
+    "56560": 178,
+    "56570": 178,
+    "56580": 178,
+    "56590": 178,
+    "56600": 178,
+    "56610": 178,
+    "56620": 178,
+    "56630": 178,
+    "56640": 178,
+    "56650": 178,
+    "56660": 178,
+    "56670": 178,
+    "56680": 178,
+    "56690": 178,
+    "57000": 178,
+    "57010": 178,
+    "57100": 178,
+    "57110": 178,
+    "57120": 178,
+    "57130": 178,
+    "57140": 178,
+    "57150": 178,
+    "57160": 178,
+    "57170": 178,
+    "57180": 178,
+    "57190": 178,
+    "57200": 178,
+    "57210": 178,
+    "57220": 178,
+    "57230": 178,
+    "57240": 178,
+    "57250": 178,
+    "57260": 178,
+    "57270": 178,
+    "57280": 178,
+    "57290": 178,
+    "57300": 178,
+    "57310": 178,
+    "57320": 178,
+    "57330": 178,
+    "57340": 178,
+    "57350": 178,
+    "57360": 178,
+    "57370": 178,
+    "57380": 178,
+    "57390": 179,
+    "57400": 179,
+    "57410": 179,
+    "57420": 179,
+    "57430": 179,
+    "57440": 179,
+    "57450": 179,
+    "57460": 179,
+    "57470": 179,
+    "57480": 179,
+    "57490": 179,
+    "57500": 179,
+    "57510": 179,
+    "57520": 179,
+    "57530": 179,
+    "57540": 179,
+    "57550": 179,
+    "57560": 179,
+    "57570": 179,
+    "57580": 179,
+    "57590": 179,
+    "57600": 179,
+    "57610": 179,
+    "57620": 179,
+    "57630": 179,
+    "57640": 179,
+    "57650": 179,
+    "57660": 179,
+    "57670": 179,
+    "57680": 179,
+    "57690": 179,
+    "57700": 180,
+    "57800": 180,
+    "57810": 180,
+    "57820": 180,
+    "57830": 180,
+    "57840": 180,
+    "57850": 180,
+    "57860": 180,
+    "57870": 180,
+    "57880": 180,
+    "57890": 180,
+    "57900": 180,
+    "57910": 180,
+    "57920": 180,
+    "57930": 180,
+    "57940": 180,
+    "57950": 180,
+    "57960": 180,
+    "57970": 180,
+    "57980": 180,
+    "57990": 180,
+    "58000": 180,
+    "58200": 180,
+    "58400": 180,
+    "58600": 180,
+    "58800": 180,
+    "58810": 180,
+    "58850": 180,
+    "59000": 181,
+    "59060": 181,
+    "59070": 181,
+    "59080": 181,
+    "59090": 181,
+    "59100": 181,
+    "59110": 181,
+    "59120": 181,
+    "59130": 181,
+    "59140": 181,
+    "59150": 181,
+    "59160": 181,
+    "59170": 181,
+    "59180": 181,
+    "59190": 181,
+    "59200": 181,
+    "59210": 181,
+    "59220": 181,
+    "59230": 181,
+    "59240": 181,
+    "59250": 181,
+    "59260": 181,
+    "59270": 181,
+    "59280": 181,
+    "59290": 181,
+    "59300": 181,
+    "59310": 181,
+    "59320": 181,
+    "59330": 181,
+    "59340": 181,
+    "59350": 181,
+    "59360": 181,
+    "59370": 181,
+    "59380": 181,
+    "59390": 181,
+    "59400": 181,
+    "59410": 181,
+    "59420": 181,
+    "59430": 181,
+    "59440": 181,
+    "59450": 182,
+    "59460": 182,
+    "59470": 182,
+    "59480": 182,
+    "59490": 182,
+    "59500": 182,
+    "59510": 182,
+    "59520": 182,
+    "59530": 182,
+    "59540": 182,
+    "59550": 182,
+    "59560": 182,
+    "59570": 182,
+    "59580": 182,
+    "59590": 182,
+    "59600": 182,
+    "59650": 182,
+    "59700": 182,
+    "59750": 182,
+    "59800": 182,
+    "60000": 183,
+    "60020": 183,
+    "60040": 183,
+    "60100": 183,
+    "60200": 183,
+    "60240": 183,
+    "60260": 183,
+    "60270": 183,
+    "60290": 183,
+    "60300": 183,
+    "60350": 183,
+    "60360": 183,
+    "60370": 183,
+    "60390": 183,
+    "60400": 183,
+    "60450": 183,
+    "60600": 183,
+    "60660": 183,
+    "60670": 183,
+    "60690": 183,
+    "60700": 183,
+    "60710": 183,
+    "60720": 183,
+    "60730": 183,
+    "60750": 183,
+    "60760": 183,
+    "60770": 183,
+    "60790": 183,
+    "60800": 183,
+    "60900": 183,
+    "61000": 184,
+    "61100": 184,
+    "61200": 184,
+    "61300": 184,
+    "61400": 184,
+    "61470": 184,
+    "61490": 184,
+    "61500": 184,
+    "61600": 184,
+    "61700": 184,
+    "61710": 184,
+    "62000": 185,
+    "62010": 186,
+    "62050": 185,
+    "62090": 185,
+    "62100": 185,
+    "62110": 186,
+    "62200": 185,
+    "62210": 185,
+    "62220": 185,
+    "62300": 185,
+    "62310": 185,
+    "62320": 185,
+    "62330": 185,
+    "62400": 187,
+    "62410": 187,
+    "62420": 187,
+    "62430": 187,
+    "62440": 187,
+    "62450": 187,
+    "62490": 187,
+    "62500": 185,
+    "62600": 185,
+    "62620": 185,
+    "62640": 185,
+    "62660": 185,
+    "62700": 188,
+    "62720": 189,
+    "62780": 188,
+    "62790": 188,
+    "62800": 188,
+    "62810": 188,
+    "62820": 188,
+    "62830": 188,
+    "62840": 188,
+    "62850": 188,
+    "62860": 188,
+    "62870": 188,
+    "62880": 188,
+    "62890": 188,
+    "62900": 188,
+    "62910": 188,
+    "63000": 190,
+    "63010": 190,
+    "63001": 190,
+    "63002": 190,
+    "63020": 190,
+    "63030": 190,
+    "63040": 190,
+    "63050": 190,
+    "63060": 190,
+    "63070": 190,
+    "63080": 190,
+    "63090": 190,
+    "63100": 190,
+    "63130": 190,
+    "63150": 190,
+    "63160": 190,
+    "63170": 190,
+    "63180": 190,
+    "63200": 190,
+    "63250": 190,
+    "63300": 191,
+    "63350": 191,
+    "63400": 191,
+    "63450": 191,
+    "63500": 191,
+    "63520": 191,
+    "63900": 191,
+    "63910": 191,
+    "63920": 191,
+    "63930": 191,
+    "63940": 191,
+    "63950": 191,
+    "63970": 191,
+    "63980": 191,
+    "64000": 191,
+    "64050": 191,
+    "64100": 191,
+    "64200": 191,
+    "64300": 191,
+    "64360": 191,
+    "64370": 191,
+    "64400": 191,
+    "64500": 191,
+    "64600": 191,
+    "64700": 191,
+    "64750": 191,
+    "64850": 191,
+    "64900": 191,
+    "64950": 191,
+    "64980": 191,
+    "65000": 191,
+    "65200": 191,
+    "65300": 191,
+    "65400": 191,
+    "65500": 191,
+    "65600": 191,
+    "65650": 192,
+    "65700": 192,
+    "65800": 192,
+    "65950": 192,
+    "66000": 192,
+    "66050": 192,
+    "66100": 192,
+    "66110": 192,
+    "66120": 192,
+    "66200": 192,
+    "66210": 192,
+    "66220": 192,
+    "66250": 192,
+    "66290": 192,
+    "66300": 192,
+    "66310": 192,
+    "66400": 192,
+    "66410": 192,
+    "66420": 192,
+    "66430": 192,
+    "66440": 192,
+    "66450": 192,
+    "66490": 192,
+    "66500": 192,
+    "66600": 192,
+    "66630": 192,
+    "66640": 192,
+    "66650": 192,
+    "66660": 192,
+    "66670": 192,
+    "66680": 192,
+    "67000": 192,
+    "67100": 192,
+    "67400": 192,
+    "67600": 192,
+    "67700": 192,
+    "67800": 192,
+    "67900": 192,
+    "68000": 192,
+    "68050": 192,
+    "68100": 192,
+    "68150": 192,
+    "68200": 192,
+    "68210": 192,
+    "68220": 192,
+    "68250": 192,
+    "68270": 192,
+    "68300": 193,
+    "68330": 193,
+    "68350": 193,
+    "68360": 193,
+    "68370": 193,
+    "68380": 193,
+    "68400": 193,
+    "68450": 193,
+    "68500": 193,
+    "68550": 193,
+    "68560": 193,
+    "68570": 193,
+    "68580": 193,
+    "68590": 193,
+    "68600": 193,
+    "68650": 193,
+    "68710": 193,
+    "68750": 193,
+    "68760": 193,
+    "68790": 193,
+    "68800": 193,
+    "68810": 193,
+    "68830": 193,
+    "68840": 193,
+    "68850": 193,
+    "68860": 193,
+    "68870": 193,
+    "68880": 193,
+    "68890": 193,
+    "68900": 193,
+    "68910": 193,
+    "68920": 193,
+    "68950": 194,
+    "68960": 194,
+    "68970": 194,
+    "68980": 194,
+    "69000": 194,
+    "69010": 194,
+    "69020": 194,
+    "69030": 194,
+    "69040": 194,
+    "69050": 194,
+    "69060": 194,
+    "69100": 194,
+    "69120": 195,
+    "69180": 194,
+    "69200": 194,
+    "69220": 195,
+    "69230": 194,
+    "69270": 195,
+    "69280": 195,
+    "69290": 195,
+    "69300": 194,
+    "69310": 194,
+    "69320": 194,
+    "69330": 194,
+    "69340": 194,
+    "69350": 194,
+    "69360": 194,
+    "69370": 194,
+    "69380": 194,
+    "69390": 194,
+    "69400": 194,
+    "69410": 194,
+    "69420": 194,
+    "69430": 194,
+    "69440": 194,
+    "69450": 194,
+    "69460": 194,
+    "69470": 194,
+    "69480": 194,
+    "69490": 194,
+    "69500": 194,
+    "69510": 194,
+    "69520": 194,
+    "69530": 194,
+    "69540": 194,
+    "69550": 194,
+    "69560": 194,
+    "69570": 194,
+    "69580": 194,
+    "69590": 194,
+    "69600": 196,
+    "69670": 196,
+    "69680": 196,
+    "69700": 196,
+    "69720": 196,
+    "69740": 196,
+    "69760": 196,
+    "69780": 196,
+    "69790": 196,
+    "69800": 196,
+    "69820": 196,
+    "69840": 196,
+    "69860": 196,
+    "69880": 196,
+    "69890": 196,
+    "69900": 196,
+    "69920": 196,
+    "69940": 196,
+    "69990": 196,
+    "70000": 197,
+    "70020": 197,
+    "70030": 197,
+    "70040": 197,
+    "70050": 197,
+    "70060": 197,
+    "70080": 197,
+    "70090": 197,
+    "70100": 198,
+    "70110": 198,
+    "70120": 198,
+    "70130": 198,
+    "70140": 198,
+    "70150": 198,
+    "70160": 198,
+    "70170": 198,
+    "70180": 198,
+    "70190": 198,
+    "70200": 198,
+    "70300": 198,
+    "71000": 199,
+    "71030": 199,
+    "71040": 199,
+    "71050": 199,
+    "71060": 199,
+    "71070": 199,
+    "71090": 199,
+    "71100": 199,
+    "71150": 199,
+    "71190": 199,
+    "71200": 199,
+    "71290": 199,
+    "71300": 199,
+    "71310": 199,
+    "71320": 199,
+    "71330": 199,
+    "71340": 199,
+    "71350": 199,
+    "71360": 199,
+    "71370": 199,
+    "71380": 199,
+    "71390": 199,
+    "71400": 199,
+    "71410": 200,
+    "71420": 199,
+    "71430": 199,
+    "71440": 201,
+    "71450": 201,
+    "71900": 202,
+    "71910": 202,
+    "71920": 203,
+    "71940": 203,
+    "72000": 204,
+    "72010": 205,
+    "72040": 204,
+    "72070": 204,
+    "72080": 204,
+    "72100": 204,
+    "72140": 204,
+    "72170": 204,
+    "72500": 206,
+    "72550": 206,
+    "73000": 207,
+    "73020": 207,
+    "73030": 207,
+    "73040": 207,
+    "73050": 207,
+    "73060": 207,
+    "73080": 207,
+    "73090": 207,
+    "73100": 207,
+    "73110": 207,
+    "73160": 207,
+    "73170": 207,
+    "73180": 207,
+    "73190": 207,
+    "73200": 207,
+    "73230": 207,
+    "73240": 207,
+    "73250": 207,
+    "73260": 207,
+    "73270": 208,
+    "73290": 208,
+    "73300": 208,
+    "73390": 208,
+    "73400": 208,
+    "73410": 208,
+    "73420": 208,
+    "73430": 208,
+    "73440": 208,
+    "73450": 208,
+    "73460": 208,
+    "73470": 208,
+    "73480": 208,
+    "73490": 208,
+    "73500": 208,
+    "73510": 208,
+    "73550": 208,
+    "73600": 208,
+    "73610": 209,
+    "73620": 208,
+    "73630": 208,
+    "73640": 210,
+    "73650": 210,
+    "73660": 211,
+    "73900": 212,
+    "73920": 213,
+    "73940": 213,
+    "73980": 214,
+    "73990": 215,
+    "74510": 216,
+    "74540": 216,
+    "74600": 216,
+    "74610": 216,
+    "74620": 216,
+    "74630": 216,
+    "74640": 216,
+    "75510": 217,
+    "75520": 217,
+    "75530": 217,
+    "75540": 217,
+    "75600": 217,
+    "75610": 217,
+    "75630": 217,
+    "76000": 218,
+    "76030": 218,
+    "76040": 218,
+    "76070": 218,
+    "76080": 218,
+    "76090": 218,
+    "76100": 218,
+    "76300": 218,
+    "76310": 218,
+    "76330": 218,
+    "76380": 218,
+    "76390": 218,
+    "76410": 218,
+    "76430": 218,
+    "76450": 219,
+    "76460": 218,
+    "76480": 218,
+    "76490": 219,
+    "76500": 220,
+    "76750": 220,
+    "76780": 220,
+    "76800": 220,
+    "76850": 220,
+    "76900": 220,
+    "76920": 220,
+    "76940": 220,
+    "77000": 221,
+    "77200": 222,
+    "77300": 223,
+    "77320": 224,
+    "77340": 225,
+    "77360": 226,
+    "77380": 227,
+    "77400": 228,
+    "77450": 229,
+    "77470": 230,
+    "77490": 231,
+    "77510": 232,
+    "77530": 233,
+    "77550": 234,
+    "77570": 235,
+    "77590": 236,
+    "77600": 237,
+    "77620": 238,
+    "77640": 239,
+    "77660": 240,
+    "77680": 241,
+    "77690": 242,
+    "77750": 243,
+    "77770": 244,
+    "77790": 245,
+    "77810": 246,
+    "77830": 247,
+    "77850": 248,
+    "77870": 249,
+    "77890": 250,
+    "77900": 251,
+    "90000": 252,
+    "90010": 252,
+    "90020": 252,
+    "90030": 252,
+    "90040": 252,
+    "90050": 252,
+    "90060": 252,
+    "90070": 252,
+    "90080": 252,
+    "90090": 252,
+    "90500": 252,
+    "90510": 252,
+    "90520": 252,
+    "90530": 252,
+    "90540": 252,
+    "90550": 252,
+    "90560": 252,
+    "90570": 252,
+    "90580": 252,
+    "90590": 252,
+    "90600": 252,
+    "90610": 252,
+    "90620": 252,
+    "90630": 252,
+    "90640": 252,
+    "90650": 252,
+    "90660": 252,
+    "90670": 252,
+    "90680": 252,
+    "90690": 252,
+    "90700": 252,
+    "90710": 252,
+    "90720": 252,
+    "90730": 252,
+    "90740": 252,
+    "90750": 252,
+    "90760": 252,
+    "90770": 252,
+    "90780": 252,
+    "90790": 252,
+    "90800": 252,
+    "90810": 252,
+    "90820": 252,
+    "90830": 252,
+    "90840": 252,
+    "90850": 252,
+    "90860": 252,
+    "90870": 252,
+    "90880": 252,
+    "90890": 252,
+    "90900": 252,
+    "90910": 252,
+    "90920": 252,
+    "90930": 252,
+    "90940": 252,
+    "90950": 252,
+    "90960": 252,
+    "90970": 252,
+    "90980": 252,
+    "90990": 252,
+    "91000": 252,
+    "91010": 252,
+    "91020": 252,
+    "91030": 252,
+    "91040": 252,
+    "91050": 252,
+    "91060": 252,
+    "91070": 252,
+    "91080": 252,
+    "91090": 252,
+    "91100": 252,
+    "91110": 252,
+    "91120": 252,
+    "91130": 252,
+    "91140": 252,
+    "91150": 252,
+    "91160": 252,
+    "91170": 252,
+    "91180": 252,
+    "91200": 252,
+    "91300": 252,
+    "91310": 252,
+    "91350": 252,
+    "91400": 252,
+    "91900": 252,
+    "91990": 252,
+    "92000": 252,
+    "92010": 252,
+    "92020": 252,
+    "92030": 252,
+    "92040": 252,
+    "92050": 252,
+    "92060": 252,
+    "92070": 252,
+    "92080": 252,
+    "92090": 252,
+    "92100": 252,
+    "92190": 252,
+    "92200": 252,
+    "92290": 252,
+    "92400": 252,
+    "92410": 252,
+    "92420": 252,
+    "92430": 252,
+    "92440": 252,
+    "92450": 252,
+    "92460": 252,
+    "92470": 252,
+    "92490": 252,
+    "92500": 252,
+    "92510": 252,
+    "92520": 252,
+    "92530": 252,
+    "92540": 252,
+    "92550": 252,
+    "92560": 252,
+    "92570": 252,
+    "92580": 252,
+    "92590": 252,
+    "92600": 252,
+    "92620": 252,
+    "92640": 252,
+    "92690": 252,
+    "92700": 252,
+    "92701": 252,
+    "92710": 252,
+    "92720": 252,
+    "92730": 252,
+    "92740": 252,
+    "92750": 252,
+    "92760": 252,
+    "92770": 252,
+    "92780": 252,
+    "92790": 252,
+    "92791": 252,
+    "92800": 252,
+    "92810": 252,
+    "92820": 252,
+    "92830": 252,
+    "92840": 252,
+    "92850": 252,
+    "92860": 252,
+    "92870": 252,
+    "92880": 252,
+    "92890": 252,
+    "92900": 252,
+    "92910": 252,
+    "92920": 252,
+    "92930": 252,
+    "92950": 252,
+    "92970": 252,
+    "93000": 252,
+    "93010": 252,
+    "93020": 252,
+    "93030": 252,
+    "93040": 252,
+    "93050": 252,
+    "93060": 252,
+    "93070": 252,
+    "93080": 252,
+    "93090": 252,
+    "93100": 252,
+    "93110": 252,
+    "93120": 252,
+    "93130": 252,
+    "93140": 252,
+    "93150": 252,
+    "93160": 252,
+    "93170": 252,
+    "93180": 252,
+    "93190": 252,
+    "93200": 252,
+    "93260": 252,
+    "93270": 252,
+    "93280": 252,
+    "93290": 252,
+    "93300": 252,
+    "93310": 252,
+    "93320": 252,
+    "93330": 252,
+    "93340": 252,
+    "93350": 252,
+    "93360": 252,
+    "93370": 252,
+    "93380": 252,
+    "93390": 252,
+    "93400": 252,
+    "93410": 252,
+    "93420": 252,
+    "93430": 252,
+    "93460": 252,
+    "93470": 252,
+    "93480": 252,
+    "93490": 252,
+    "93570": 252,
+    "93580": 252,
+    "93590": 252,
+    "93600": 252,
+    "93650": 252,
+    "93660": 252,
+    "93670": 252,
+    "93710": 252,
+    "93720": 252,
+    "93900": 252,
+    "93910": 252,
+    "93920": 252,
+    "93930": 252,
+    "93940": 252,
+    "93950": 252,
+    "93960": 252,
+    "93970": 252,
+    "93980": 252,
+    "93990": 252,
+    "98900": 252,
+    "98910": 252,
+    "99060": 252,
+    "99070": 252,
+    "99080": 252,
+    "99090": 252,
+    "99400": 252,
+    "99410": 252,
+    "99420": 252,
+    "99430": 252,
+    "99440": 252,
+    "99450": 252,
+    "99460": 252,
+    "99470": 252,
+    "99480": 252,
+    "99490": 252,
+    "99600": 252,
+    "99610": 252,
+    "99620": 252,
+    "99630": 252,
+    "99640": 252,
+    "99650": 252,
+    "99660": 252,
+    "99670": 252,
+    "99680": 252,
+    "99690": 252,
+    "99700": 252,
+    "99710": 252,
+    "99720": 252,
+    "99730": 252,
+    "99740": 252,
+    "99750": 252,
+    "99760": 252,
+    "99770": 252,
+    "99780": 252,
+    "99790": 252,
+    "99840": 252,
+    "99850": 252,
+    "99860": 252,
+    "99870": 252,
+    "99890": 252,
+    "99900": 252,
+    "99910": 252,
+    "99920": 252,
+    "99930": 252,
+    "99940": 252,
+    "99950": 252,
+    "99980": 252
+  },
+  "sha256": "43fae5069aae1fabb4d2cb83ad8193eb8554cbba59116966391840db7c709e4e"
+}

@@ -1,0 +1,11 @@
+.personal-voucher-workspace,.personal-voucher-workspace *{min-width:0}
+.personal-voucher-workspace :is(h1,h2,h3,p,a,label,small,button,strong){overflow-wrap:anywhere}
+.personal-voucher-workspace :is(form,input,select){max-width:100%;box-sizing:border-box}
+.personal-voucher-workspace :is(input,select){width:100%;min-height:44px}
+.personal-voucher-workspace :is(button,.dwf-button){min-height:44px;height:auto;white-space:normal}
+.personal-voucher-search,.personal-voucher-state{display:flex;flex-wrap:wrap;align-items:flex-end;gap:.75em;margin-block:1em}
+.personal-voucher-search label,.personal-voucher-state label{flex:1 1 16em}
+.personal-voucher-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,19rem),1fr));gap:1em}
+.personal-voucher-card,.personal-voucher-event,.personal-voucher-move{border:1px solid var(--border,#ccd4df);border-radius:.75em;padding:1em;margin-block:.75em}
+.personal-voucher-qr{display:block;max-width:100%;width:246px;height:auto;image-rendering:pixelated;background:white;margin-block:1em}
+.personal-voucher-code{font-family:ui-monospace,monospace;letter-spacing:.03em}

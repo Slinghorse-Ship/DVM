@@ -1,0 +1,36 @@
+{
+  "release": "documents-invoices-dialogs-20260928",
+  "source_commits": [
+    "80f0537",
+    "38be5b0",
+    "501630f"
+  ],
+  "excluded_balance_commit": "2385da5",
+  "files": 59,
+  "native_checks": 28,
+  "native_exit": 0,
+  "protected_unchanged": true,
+  "synthetic_suite_passed": true,
+  "business_rows_unchanged": true,
+  "global_schema_unchanged": true,
+  "mail_sent": 0,
+  "bank_calls": 0,
+  "tax_submissions": 0,
+  "live_business_data_test_writes": 0,
+  "club_accounting_changed": false,
+  "verification_utc": "2026-09-28T00:39:16.8937023Z",
+  "native_proof_sha256": "7241f0e05e77d1a188afc1cd06778d69ac5165fcb0e4980ca889d5afb633074c",
+  "synthetic_proof_sha256": "03f1d056bcc76361f8a9a891485a54f566b9e0d5ce3d1a7787a338c723b66b26",
+  "release_proof_sha256": "b80fae728152fb046e790c4a3b607530317e06107f868849f67d15e93edfec10",
+  "browser_checks": 27,
+  "browser_viewports": [
+    "desktop",
+    "390x844"
+  ],
+  "live_readonly_pages": [
+    "documents",
+    "documents-archive",
+    "documents-folder",
+    "outgoing-new-invoice"
+  ]
+}

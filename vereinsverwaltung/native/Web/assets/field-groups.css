@@ -1,0 +1,68 @@
+/* Shared structured forms in both DVM editor shells. */
+[data-group-editor],
+.model-fields {
+  container-type: inline-size;
+  min-width: 0;
+}
+.group-editor-row,
+.field-group {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  border: 1px solid var(--bs-border-color, #d7ded5);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+.group-editor-actions,
+.group-order-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+.group-field-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--bs-border-color, #d7ded5);
+}
+.group-field-row > *,
+.field-group-controls > * {
+  min-width: 0;
+}
+.field-group > summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+.field-group-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+  container-type: inline-size;
+}
+.field-group-controls[data-group-columns="2"] {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.field-group-controls > .model-field:has(textarea, [data-kh-richtext]) {
+  grid-column: 1 / -1;
+}
+.field-group[hidden] {
+  display: none !important;
+}
+@container (max-width: 640px) {
+  .group-field-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .group-field-row,
+  .field-group-controls[data-group-columns="2"] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .field-group .field-group {
+    padding: 0.75rem;
+  }
+}

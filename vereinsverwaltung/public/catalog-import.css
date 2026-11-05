@@ -1,0 +1,11 @@
+.catalog-import{font-size:16px;line-height:1.6}
+.catalog-import .card{min-width:0}
+.catalog-import label,.catalog-import input,.catalog-import select,.catalog-import button,.catalog-import .button{font-size:16px}
+.catalog-import input:not([type=hidden]):not([type=checkbox]),.catalog-import select,.catalog-import button,.catalog-import .button{min-height:48px}
+.catalog-import summary{min-height:48px;cursor:pointer;align-content:center;font-weight:600}
+.catalog-import details>form,.catalog-import details>h2{margin-top:20px}
+.catalog-import dl{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 24px;max-width:540px}
+.catalog-import dd{margin:0;font-weight:600}
+.catalog-import li{padding-block:6px;overflow-wrap:anywhere}
+.catalog-import :is(button,a,input,select,summary):focus-visible{outline:3px solid #205b94;outline-offset:3px}
+@media(max-width:600px){.catalog-import .form-grid{grid-template-columns:minmax(0,1fr)}.catalog-import .page-heading{align-items:flex-start;gap:16px;flex-direction:column}.catalog-import .card{padding:20px}.catalog-import .content{padding-inline:12px}.catalog-import .page-heading{padding-inline:12px}}

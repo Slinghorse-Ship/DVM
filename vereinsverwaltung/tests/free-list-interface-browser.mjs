@@ -1,0 +1,87 @@
+import fs from 'node:fs';
+const f=JSON.parse(fs.readFileSync(0,'utf8'));
+const {chromium}=await import(process.env.PLAYWRIGHT_MODULE);
+const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE,headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
+let checks=0,views=0,external=0;const errors=[];const trials=[];
+const check=(ok,label)=>{if(!ok)throw Error(label);checks++;console.log('PASS '+label);};
+const formFor=(page,action)=>page.locator('form').filter({has:page.locator('[name=action][value="'+action+'"]')});
+async function login(page,origin,role){
+ await page.goto(origin+'/login');await page.locator('[name=email]').fill(f.accounts[role].email);await page.locator('[name=password]').fill(f.password);
+ await Promise.all([page.waitForURL(url=>url.pathname==='/vereinsverwaltung/'),page.getByRole('button',{name:/^(Anmelden und Vereinsmanager öffnen|Sign in and open club manager)$/}).click()]);
+}
+async function language(page,origin,locale){
+ await page.goto(origin+'/account?section=language#account-language');const form=page.locator('form:has([name=operation][value=select-language])');await form.locator('[name=interface_locale]').selectOption(locale);await Promise.all([page.waitForNavigation(),form.getByRole('button').click()]);await page.waitForFunction(code=>document.documentElement.lang===code,locale);
+}
+async function sizes(page,label,field){
+ for(const width of[320,390,820])for(const scale of[100,200]){
+  await page.setViewportSize({width,height:1000});await page.evaluate(n=>document.documentElement.style.fontSize=n+'%',scale);views++;
+  const fits=await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1);
+  if(!fits)console.log('OVERFLOW '+JSON.stringify(await page.evaluate(()=>[...document.querySelectorAll('main *')].map(el=>({tag:el.tagName,cls:el.className,width:el.getBoundingClientRect().width,right:el.getBoundingClientRect().right,min:getComputedStyle(el).minWidth})).filter(el=>el.right>innerWidth+1&&el.width>100).slice(0,14))));
+  check(fits,'localized list fits touch and enlarged text '+label+' '+width+' '+scale);
+  check(await field.evaluate(el=>el.getBoundingClientRect().height>=43.9),'localized control retains a touch-sized target '+label+' '+width+' '+scale);
+  const link=page.locator('.free-workspace .free-pagination>a,.free-tools .section-heading>a').first();if(await link.count())check(await link.evaluate(el=>el.getBoundingClientRect().height>=43.9),'list navigation retains a touch-sized target '+label+' '+width+' '+scale);
+ }
+ await page.setViewportSize({width:390,height:1000});await page.evaluate(()=>document.documentElement.style.fontSize='100%');
+}
+async function context(origin,js){const ctx=await browser.newContext({javaScriptEnabled:js,viewport:{width:390,height:1000},hasTouch:true,acceptDownloads:true,serviceWorkers:'block'});await ctx.route('**/*',r=>{if(new URL(r.request().url()).origin===origin)return r.continue();external++;return r.abort();});return ctx;}
+try{
+ for(const[app,js]of[['front',true],['direct',false]]){
+  const origin=f.origins[app];const ctx=await context(origin,js);const page=await ctx.newPage();let posts=0;page.on('request',r=>{if(r.method()==='POST')posts++;});page.setDefaultTimeout(45000);page.on('pageerror',e=>{errors.push(e.message);console.log('PAGE ERROR '+e.message);});page.on('console',m=>{if(m.type()==='error'&&m.text().includes('Kulturhus module failed')){errors.push(m.text());console.log(m.text());}});await login(page,origin,'admin');
+  const url=sheet=>origin+'/vereinsverwaltung/?view=free&sheet='+sheet;
+  for(const locale of['de','en']){
+   const en=locale==='en';const label=app+' '+locale;const t=(de,english)=>en?english:de;const submit=async button=>js?button.click():Promise.all([page.waitForNavigation(),button.click()]);
+   await language(page,origin,locale);const response=await page.goto(url(f.data.sheet));
+   check(response.status()===200&&response.headers()['x-owned-period-mode']==='production'&&await page.locator('html').getAttribute('lang')===locale,'actual personal '+locale+' list opens in '+app+' production controller');
+   if(js)await page.locator('.free-workspace[data-free-ready]').waitFor();const original=page.locator('tr[data-free-id="'+f.data.row+'"]');const originalError=page.locator('tr[data-free-id="'+f.data.error_row+'"]');
+   check((await page.locator('h1').innerText()).startsWith('Speichern ä🙂 <&>')&&await original.locator('[name="cells[]"]').nth(0).inputValue()==='Speichern'&&await originalError.locator('[name="cells[]"]').nth(0).inputValue()==='Division durch null.','saved names and human text equal to interface labels remain exact '+label);
+   check(await original.locator('select[name="cells[]"]').inputValue()==='Ja'&&(await original.locator('select[name="cells[]"] option:checked').innerText())===t('Ja','Yes')&&(await original.locator('[data-free-calculation="4"]').innerText())===t('Ergebnis: Nein','Result: No'),'boolean controls and linked boolean results use typed labels while retaining original values '+label);
+   check((await originalError.locator('[data-free-calculation="3"]').innerText())===t('Division durch null.','Division by zero.')&&(await originalError.locator('[data-free-calculation="4"]').innerText())===t('Ergebnis: Speichern <&>🙂','Result: Speichern <&>🙂'),'fixed calculation errors translate while linked human text remains exact '+label);
+   check(await page.getByRole('button',{name:en?f.data.override:'CSV exportieren',exact:true}).count()===1,'reviewed domain pack is escaped as plain control text '+label);
+   check(await page.locator('[data-own-pack]').count()===0&&await page.locator('.free-archive-link').innerText()===t('Listenarchiv','Archive <em data-own-pack>reviewed</em>'),'both fixed and conditional reviewed labels remain escaped text '+label);
+   const csrfFailure=await ctx.request.post(url(f.data.sheet),{maxRedirects:0,headers:{Origin:origin},form:{action:'free-archive',sheet:f.data.sheet,version:'2',archived:'1',csrf:'invalid-owned-list-csrf'}});check(csrfFailure.status()===403&&(await csrfFailure.text()).includes(t('Formular abgelaufen. Bitte neu laden.','This form has expired. Please reload.')),'actual CSRF rejection uses the current list language and protects the original '+label);
+   await sizes(page,label+' original',original.locator('input[name="cells[]"]').first());
+   await page.goto(origin+'/vereinsverwaltung/?view=free&new_table=1');const create=formFor(page,'free-create');
+   check(await create.locator('[name="column_names[]"]').first().inputValue()===t('Aufgabe','Task'),'new template labels follow the chosen language without renaming a saved column '+label);
+   await create.locator('[name=title]').fill('');const beforeRequired=posts;await create.getByRole('button',{name:t('Liste speichern','Save list'),exact:true}).click();
+   if(js){await create.locator('[name=title] + .field-validation-error').waitFor();check(await create.locator('[name=title] + .field-validation-error').innerText()===t('Bitte dieses Feld ausfüllen.','Complete this field.')&&await create.locator('.form-validation-summary strong').innerText()===t('Bitte die markierten Angaben prüfen:','Check the marked fields:'),'actual required-field guidance uses the list language '+label);}
+   check(posts===beforeRequired&&await create.locator('[name=title]').inputValue()==='','required title refuses a write and retains correction '+label);
+   const title='Eigener ursprünglicher Text '+label+' ä🙂 <&>';await create.locator('[name=title]').fill(title);
+   for(let i=0;i<6;i++){await create.locator('[name="column_names[]"]').nth(i).fill(['Speichern','Menge Ä🙂 <&>','Ja/Nein','Ergebnis','',''][i]);if(i<4)await create.locator('[name="column_types[]"]').nth(i).selectOption(['text','number','boolean','formula'][i]);}
+   await sizes(page,label+' configuration',create.locator('[name=title]'));await submit(create.getByRole('button',{name:t('Liste speichern','Save list'),exact:true}));await page.waitForURL(u=>u.searchParams.has('sheet'));const id=new URL(page.url()).searchParams.get('sheet');trials.push(id);await page.locator('.free-add-row').waitFor();if(js)await page.locator('.free-workspace[data-free-ready]').waitFor();
+   const draft=page.locator('.free-add-row');await draft.locator('[name="cells[]"]').nth(0).fill('Freie Listen <&>🙂');await draft.locator('[name="cells[]"]').nth(1).fill('2');await draft.locator('[name="cells[]"]').nth(2).selectOption('Ja');await draft.locator('[name="cells[]"]').nth(3).fill('=ROUND([B]*0.1;2)');await submit(draft.getByRole('button',{name:t('Neue Zeile hinzufügen','Add new row'),exact:true}));
+   await page.waitForFunction(()=>document.querySelectorAll('tr[data-free-id]:not(.free-add-row)').length===1);if(js)await page.locator('.free-workspace[data-free-ready]').waitFor();let row=page.locator('tr[data-free-id]:not(.free-add-row)').first();await row.locator('[data-free-calculation="3"]').filter({hasText:t('Ergebnis: 0.2','Result: 0.2')}).waitFor();const version=await row.locator('[name=version]').inputValue();
+   await row.locator('[name="cells[]"]').nth(1).fill('invalid');await row.locator('[name="cells[]"]').nth(1).press('Tab');
+   if(js)await page.locator('[data-free-status][data-error]').waitFor();else{await submit(row.getByRole('button',{name:t('Speichern','Save'),exact:true}));await page.getByRole('alert').waitFor();}
+   row=page.locator('tr[data-free-id]:not(.free-add-row)').first();const rejection=js?await page.locator('[data-free-status]').innerText():await page.getByRole('alert').innerText();
+   check(rejection.includes(t('Zahl in Menge Ä🙂 <&> prüfen.','Check the number in Menge Ä🙂 <&>.'))&&await row.locator('[name="cells[]"]').nth(1).inputValue()==='invalid'&&await row.locator('[name=version]').inputValue()===version,'actual typed rejection preserves exact correction, original column name and previous row version '+label);
+   await row.locator('[name="cells[]"]').nth(1).fill('3');await row.locator('[name="cells[]"]').nth(1).press('Tab');if(!js)await submit(row.getByRole('button',{name:t('Speichern','Save'),exact:true}));
+   await page.waitForFunction(prefix=>[...document.querySelectorAll('tr[data-free-id]:not(.free-add-row) [data-free-calculation="3"]')].some(n=>n.textContent===prefix+'0.3'),t('Ergebnis: ','Result: '));
+   check(await row.locator('[name="cells[]"]').nth(0).inputValue()==='Freie Listen <&>🙂','corrected actual save retains the original human value '+label);
+   if(js){
+    const failedText='Eigene erhaltene Netzkorrektur ä🙂 <&>';let fail=true;
+    const offline=route=>{if(fail&&route.request().method()==='POST'&&route.request().postData()?.includes('name="autosave"')){fail=false;return route.abort('connectionfailed');}return route.fallback();};await page.route('**/*',offline);
+    await row.locator('[name="cells[]"]').nth(0).fill(failedText);await row.locator('[name="cells[]"]').nth(0).press('Tab');await page.locator('[data-free-status][data-error]').waitFor();
+    check((await page.locator('[data-free-status]').innerText()).includes(t('Sitzung oder Verbindung prüfen.','Check your session or connection.'))&&await row.locator('[name="cells[]"]').nth(0).inputValue()===failedText,'actual failed save retains exact human correction and localized connection guidance '+label);
+    await page.unroute('**/*',offline);await submit(row.getByRole('button',{name:t('Speichern','Save'),exact:true}));await page.waitForFunction(value=>document.querySelector('tr[data-free-id]:not(.free-add-row) [name="cells[]"]')?.value===value,failedText);row=page.locator('tr[data-free-id]:not(.free-add-row)').first();
+    await row.locator('[name="cells[]"]').nth(0).fill('Freie Listen <&>🙂');await row.locator('[name="cells[]"]').nth(0).press('Tab');await page.waitForFunction(label=>document.querySelector('[data-free-status]')?.textContent===label,t('Alle Änderungen gespeichert.','All changes saved.'));
+   }
+   const downloadPromise=page.waitForEvent('download');await page.getByRole('button',{name:en?f.data.override:'CSV exportieren',exact:true}).click();const download=await downloadPromise;const csv=fs.readFileSync(await download.path(),'utf8');check(csv.includes('Menge Ä🙂 <&>')&&csv.includes('Freie Listen <&>🙂')&&csv.includes(';Ja;0.3')&&!csv.includes('ROUND('),'actual localized export retains original headers, canonical boolean and exact calculated value '+label);
+   await page.goto(url(id)+'&tools=1');const preview=formFor(page,'free-import-preview');await preview.locator('[name=csv]').fill('Wrong;headers\n1;2\n');await submit(preview.getByRole('button',{name:t('Importvorschau','Preview import'),exact:true}));await page.getByRole('alert').waitFor();check((await page.getByRole('alert').innerText()).includes(t('CSV-Kopfzeile muss genau','The CSV header must match'))&&await formFor(page,'free-import-preview').locator('[name=csv]').inputValue()==='Wrong;headers\n1;2\n','actual localized CSV failure preserves complete original input '+label);
+   const input='Speichern;Menge Ä🙂 <&>;Ja/Nein;Ergebnis\nNeuer ursprünglicher Text ä🙂;4;'+t('Nein','No')+';=[B]*0.1\n';
+   await formFor(page,'free-import-preview').locator('[name=csv_file]').setInputFiles({name:'own-original.csv',mimeType:'text/csv',buffer:Buffer.from(input)});await submit(formFor(page,'free-import-preview').getByRole('button',{name:t('Importvorschau','Preview import'),exact:true}));await formFor(page,'free-import').waitFor();
+   check(await formFor(page,'free-import').locator('[name=csv]').inputValue()===input,'actual uploaded CSV preview retains complete original bytes '+label);await sizes(page,label+' import',formFor(page,'free-import-preview').locator('[name=csv]'));
+   await submit(formFor(page,'free-import').getByRole('button',{name:t('Geprüfte Zeilen importieren','Import reviewed rows'),exact:true}));await page.waitForFunction(()=>document.querySelectorAll('tr[data-free-id]:not(.free-add-row)').length===2);check((await page.locator('.notice[role=status]').innerText()).includes(t('1 neue Zeilen importiert.','1 new rows imported.')),'actual reviewed import completes with a localized status '+label);
+   await page.goto(url(id)+'&tools=1');const share=formFor(page,'free-share').filter({has:page.locator('[name=target_actor][value=own-list-reader]')});await share.locator('[name=access]').selectOption('read');await submit(share.getByRole('button',{name:t('Freigabe speichern','Save access'),exact:true}));await page.waitForURL(u=>!u.searchParams.has('tools'));await page.locator('.free-workspace').waitFor();
+   const copy=formFor(page,'free-duplicate');await copy.locator('..').locator('summary').click();await copy.locator('[name=title]').fill('Eigene unveränderte Kopie '+label+' ä🙂');await submit(copy.getByRole('button',{name:t('Liste mit Zeilen kopieren','Copy list with rows'),exact:true}));await page.waitForURL(u=>u.searchParams.has('sheet')&&u.searchParams.get('sheet')!==id);const copied=new URL(page.url()).searchParams.get('sheet');await page.locator('tr[data-free-id]').first().waitFor();
+   check(await page.locator('tr[data-free-id]:not(.free-add-row)').count()===2,'actual localized copy retains both whole original rows '+label);
+   await page.goto(url(copied)+'&tools=1');await submit(formFor(page,'free-archive').getByRole('button',{name:t('Liste archivieren','Archive list'),exact:true}));await page.waitForURL(u=>!u.searchParams.has('sheet'));await page.goto(url(copied));
+   check(await formFor(page,'free-row').count()===0&&await page.locator('tr[data-free-id]').count()===2,'actual archived list remains readable without editing controls '+label);
+   await page.goto(url(copied)+'&tools=1');await submit(formFor(page,'free-archive').getByRole('button',{name:t('Liste wiederherstellen','Restore list'),exact:true}));await page.waitForURL(u=>!u.searchParams.has('sheet'));await page.goto(url(copied));check(await page.locator('tr[data-free-id]:not(.free-add-row)').count()===2&&await formFor(page,'free-row').count()===3,'actual localized restore resumes the same original copy and its row controls '+label);
+  }
+  await ctx.close();
+ }
+ // A separate genuine read-only identity selects its own language; the owner stays unaffected.
+ const origin=f.origins.front;const ctx=await context(origin,true);const page=await ctx.newPage();page.on('pageerror',e=>errors.push(e.message));await login(page,origin,'reader');await language(page,origin,'en');await page.goto(origin+'/vereinsverwaltung/?view=free&sheet='+f.data.sheet);
+ check(await formFor(page,'free-row').count()===0&&await page.getByRole('button',{name:'Save access',exact:true}).count()===0&&(await page.locator('tr[data-free-id="'+f.data.row+'"] [data-free-calculation="4"]').innerText()).includes('source is missing'),'actual English reader receives no write controls or another person’s private linked source');await ctx.close();
+ check(errors.length===0,'all localized list workflows have no application JavaScript error');check(external===0,'all localized list workflows make no external request');console.log(JSON.stringify({suite:'free-list-interface-browser',checks,views,trials,external_actions:0}));
+}catch(error){for(const ctx of browser.contexts())for(const page of ctx.pages())try{console.log('FAILED STATE '+JSON.stringify({url:page.url(),alerts:await page.getByRole('alert').allTextContents(),rows:await page.locator('tr[data-free-id]:not(.free-add-row)').count(),status:await page.locator('[data-free-status]').allTextContents()}));}catch{}throw error;}finally{await browser.close();}

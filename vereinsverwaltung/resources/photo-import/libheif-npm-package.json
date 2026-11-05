@@ -1,0 +1,102 @@
+{
+  "_id": "libheif-js@1.23.5",
+  "bugs": {
+    "url": "https://github.com/catdad-experiments/libheif-js/issues"
+  },
+  "dist": {
+    "shasum": "6d44e05c7004b98d08ab9bec664d8121056112eb",
+    "tarball": "https://registry.npmjs.org/libheif-js/-/libheif-js-1.23.5.tgz",
+    "fileCount": 15,
+    "integrity": "sha512-umXZPthnWZtF3iG/5mQG+AZ2V6i0UeYpo3z2CkggTEgL8dKmIIwJT6TDuAMuabXa1yTW8uJ1ZAgR+CxNTklYYw==",
+    "signatures": [
+      {
+        "sig": "MEQCIHvVSQnt/S9yd4LjZOwMgCcKK0KtlTxaZhoE1fu/CFI2AiAQGR22vvJYZQAohYlI71Yy36Pk5hSj2wB3TfFJQMsf2g==",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      },
+      {
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+        "sig": "MEUCICceJKn08wmhm6pq1NkNm+0vve0GsxMPu/pEZNd5CFvcAiEA6mrr7S5PWf2YN2inXrZq0ey1qVYooH5ILbAxa49DKBo="
+      }
+    ],
+    "attestations": {
+      "url": "https://registry.npmjs.org/-/npm/v1/attestations/libheif-js@1.23.5",
+      "provenance": {
+        "predicateType": "https://slsa.dev/provenance/v1"
+      }
+    },
+    "unpackedSize": 9046551
+  },
+  "main": "index.js",
+  "name": "libheif-js",
+  "author": {
+    "name": "Kiril Vatev",
+    "email": "vatev.1@gmail.com"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "gitHead": "d8ec4bc3bc5bf8055975577bccbbc7e1d7313c2d",
+  "license": "LGPL-3.0",
+  "scripts": {
+    "lint": "eslint test/**/*.js",
+    "test": "mocha test/**/*.test.js --timeout 4000",
+    "fetch": "node scripts/install.js",
+    "images": "node scripts/images.js",
+    "inspect": "node scripts/convert.js < temp/0002.heic > out.png",
+    "pretest": "npm run -s images"
+  },
+  "version": "1.23.5",
+  "_npmUser": {
+    "name": "GitHub Actions",
+    "email": "npm-oidc-no-reply@github.com",
+    "trustedPublisher": {
+      "id": "github",
+      "oidcConfigId": "6fb92791-acaa-460d-afd9-6d07766b9a4e"
+    }
+  },
+  "homepage": "https://github.com/catdad-experiments/libheif-js#readme",
+  "keywords": [
+    "heif",
+    "heic",
+    "libheif",
+    "decoder",
+    "node",
+    "browser",
+    "emscripten",
+    "wasm"
+  ],
+  "repository": {
+    "url": "git+https://github.com/catdad-experiments/libheif-js.git",
+    "type": "git"
+  },
+  "_npmVersion": "11.19.0",
+  "description": "Emscripten distribution of libheif for Node.JS and the browser",
+  "directories": {},
+  "maintainers": [
+    {
+      "name": "kirilv",
+      "email": "vatev.1+npm@gmail.com"
+    }
+  ],
+  "_nodeVersion": "24.21.0",
+  "_hasShrinkwrap": false,
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.0.0",
+    "pngjs": "^3.4.0",
+    "eslint": "^5.16.0",
+    "esbuild": "^0.19.5",
+    "fs-extra": "^8.1.0",
+    "node-fetch": "^2.6.0",
+    "pixelmatch": "^5.2.1",
+    "tar-stream": "^3.1.6",
+    "rootrequire": "^1.0.0",
+    "babel-eslint": "^10.1.0",
+    "gunzip-maybe": "^1.4.2",
+    "esbuild-plugins-node-modules-polyfill": "^1.6.7"
+  },
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages-npm-production",
+    "tmp": "tmp/libheif-js_1.23.5_1791151470123_0.36162369279150175"
+  }
+}

@@ -1,0 +1,4 @@
+<?php declare(strict_types=1);?>
+<form method="post" action="<?=e($changeUrl($changeUi['operation']!==null?['change'=>$changeUi['operation']['id']]:[]))?>" class="card" data-member-change-original-retry>
+<?=csrf()?><?php foreach($_POST as$key=>$value)if(is_string($value)&&!in_array($key,['csrf','retry_original','retry_confirm','confirm_change'],true))echo hidden($key,$value);?><?=hidden('retry_original','1')?><?php if($changeUi['operation']!==null):?><?=hidden('confirm_change','1')?><?php endif?>
+<label class="check"><input class="check" type="checkbox" name="retry_confirm" value="1" required><span><?=e($changeText('Ich habe den gespeicherten Stand geprüft und möchte genau diesen ursprünglichen Vorgang erneut prüfen.'))?></span></label><button class="btn btn-outline theme-secondary"><?=e($changeText('Ursprünglichen Vorgang erneut prüfen'))?></button></form>

@@ -1,0 +1,16 @@
+<?php declare(strict_types=1);
+if(PHP_SAPI!=='cli')exit(1);umask(0077);
+require dirname(__DIR__,2).'/native/bootstrap.php';require dirname(__DIR__,2).'/src/bootstrap.php';
+use Kulturhus\Native\TestSupport;
+use Kulturhus\Native\Shared\{Db,SecretBox};
+use Kulturhus\Native\Integration\{ManagerBridge,Accounts};
+use Kulturhus\Native\Communication\{Attention,MessageReplyProvider};
+$config=TestSupport::config();if(($config['owner']??'')!=='cloud-onboarding-synthetic'||($config['label']??'')!=='integrated-manager')throw new RuntimeException('Own synthetic manager required.');
+$db=TestSupport::db();$access=(new ManagerBridge($db,'manager-admin','native',static fn()=>null))->access();$club=$access->club();$box=SecretBox::fromFile(dirname(getenv('KH_NATIVE_TEST_CONFIG')).'/integrated-manager-runtime/private.key');$path=dirname(__DIR__,3).'/.local/browser-tests/inbox-catalogue.json';
+require __DIR__.'/original-database-hash.php';
+$snapshot=static fn():string=>ownOriginalDatabaseHash($db,['native_social_inbox','native_social_attention','native_social_originals','native_social_objects','native_private_settings','native_social_replies','native_social_mail_threads','native_social_mail_replies','native_social_mail_cursors','native_social_mail_dispatch','native_delivery_jobs','documents','document_files','document_links','dwf_document_versions','dwf_signatures','khcms_pages','khcms_revisions','khcms_media']);
+if(($argv[1]??'prepare')==='check'){$fixture=json_decode(file_get_contents($path),true,64,JSON_THROW_ON_ERROR);if($fixture['database']!==$config['database']||$fixture['originals']!==$snapshot())throw new RuntimeException('Private original messages, mail, approvals, documents, accounts or jobs changed.');echo "All original bytes and jobs retained after read-only paginated catalogue.\n";exit;}
+\Kulturhus\Native\Installer\SchemaRegistry::install($db);$account=(new Accounts($db,$box))->get($club,'meta');$suffix=bin2hex(random_bytes(5));$prefix='Eigener Kataloggast '.$suffix;$threads=[];$messages=[];
+for($i=0;$i<55;$i++){$key=str_pad((string)$i,3,'0',STR_PAD_LEFT);$channel=$i%2?'instagram':'facebook';$conversation='own_catalogue_'.$suffix.'_'.$key;$guest='own_catalogue_guest_'.$key;$id=MessageReplyProvider::threadId($club,$channel,$conversation);$date=gmdate('Y-m-d H:i:s',time()-$i*86400);$message=['id'=>'own_original_'.$suffix.'_'.$key,'text'=>'Genaue ursprüngliche Nachricht '.$key.' ä🙂 <script>kein Code</script>','incoming'=>true,'from_id'=>$guest,'from_name'=>$prefix.' '.$key,'created_at'=>$date];
+ Db::run($db,'INSERT INTO native_social_inbox VALUES(?,?,?,?,?,UTC_TIMESTAMP())',[$club,$id,$channel,$box->seal('social-inbox:'.$club.':'.$id,['conversation'=>$conversation,'recipient'=>$guest,'page_id'=>$account['page_id'],'instagram_id'=>$account['instagram_id'],'connection_id'=>Accounts::binding($account),'messages'=>[$message]]),$date]);(new Attention($db,$box))->observe($access,$channel,'message',$conversation,[$message],true);$threads[$key]=$id;$messages[$key]=$message['text'];}
+$fixture=['database'=>$config['database'],'prefix'=>$prefix,'threads'=>$threads,'messages'=>$messages,'originals'=>$snapshot()];file_put_contents($path,json_encode($fixture,JSON_THROW_ON_ERROR),LOCK_EX);chmod($path,0600);echo "55 owned original catalogue conversations, including 54-day-old history, prepared without provider call.\n";

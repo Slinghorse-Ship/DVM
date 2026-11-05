@@ -1,0 +1,27 @@
+.tax-filings { max-width: 76rem; }
+.tax-filings label, .tax-filings p, .tax-filings summary, .tax-filings li { font-size: 1rem; line-height: 1.5; }
+.tax-filings h2 { font-size: 1.25rem; }
+.tax-filings button, .tax-filings .button { min-height: 2.75rem; font-size: 1rem; }
+.tax-filings label:not(.check) { display: block; margin-block: 1.1rem; }
+.tax-filings label:not(.check) > span { display: block; margin-block: .35rem; font-weight: normal; }
+.tax-filings .balance-account-assigned { margin-block: 1.1rem; overflow-wrap: anywhere; }
+.tax-filings .balance-account-assigned p { margin-block: .35rem; }
+.tax-filings input:not([type=checkbox]), .tax-filings select { display: block; width: 100%; min-height: 2.8rem; font-size: 1rem; }
+.tax-filings small { display: block; overflow-wrap: anywhere; opacity: .8; }
+.tax-filings details { margin-block: 1rem; }
+.tax-filings summary { padding: .65rem 0; cursor: pointer; font-weight: 600; }
+.tax-filings pre { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 24rem; overflow: auto; }
+.tax-filings code { overflow-wrap: anywhere; }
+.tax-family { border-bottom: 1px solid #b6bdc5; padding-bottom: .7rem; }
+.tax-sections { display: flex; flex-wrap: wrap; gap: .6rem; margin-block: 1.2rem; }
+.tax-sections a { padding: .6rem .8rem; border: 1px solid #6d7a89; border-radius: .3rem; }
+.tax-sections a[aria-current] { font-weight: 700; outline: 2px solid currentColor; }
+.tax-environment { font-weight: 700; border: 2px solid currentColor; padding: .75rem; }
+.tax-environment.production { color: #962000; }
+.tax-environment.test { color: #16446f; }
+.tax-filings form { margin-block: 1rem; }
+.tax-filings fieldset { min-width: 0; }
+.tax-filings[data-tax-guided] :is(label,button,.button) { font-size: 17px; }
+.tax-filings[data-tax-guided] :is(p,li) { font-size: 16px; }
+.tax-filings[data-tax-guided] :is(button,.button) { min-height: 48px; }
+.tax-filings[data-tax-guided] summary { font-size: 18px; min-height: 48px; }

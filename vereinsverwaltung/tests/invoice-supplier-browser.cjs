@@ -1,0 +1,14 @@
+const {chromium}=require('playwright'),assert=require('node:assert/strict'),fs=require('node:fs');
+(async()=>{const browser=await chromium.launch({headless:true,channel:'msedge'});try{
+ const p=await browser.newPage();let companies=[{id:'one',name:'Example <supplier>',version:1}];
+ await p.route('http://127.0.0.1:8091/options',r=>r.fulfill({json:{suppliers:companies}}));
+ await p.setContent('<form><input name="description" value="Unsaved invoice"><input name="amount" value="119,00"><input name="counterparty" value="Draft name"><div data-invoice-supplier data-options-url="http://127.0.0.1:8091/options"><select name="supplier_contact"><option value="">Free text</option></select><input name="supplier_version" value="0"><button type="button" data-supplier-refresh>Refresh</button><p data-supplier-status></p></div></form>');
+ await p.addScriptTag({content:fs.readFileSync('vereinsverwaltung/public/invoice-supplier.js','utf8')});
+ const refresh=async()=>{await p.locator('button').click();await p.waitForFunction(()=>!document.querySelector('button').disabled);};
+ await refresh();assert.equal(await p.locator('[name=description]').inputValue(),'Unsaved invoice');assert.equal(await p.locator('[name=amount]').inputValue(),'119,00');assert.equal(await p.locator('[name=counterparty]').inputValue(),'Draft name');
+ await p.selectOption('select','one');assert.equal(await p.locator('[name=counterparty]').inputValue(),'Example <supplier>');assert.equal(await p.locator('[name=supplier_version]').inputValue(),'1');assert.equal(await p.locator('supplier').count(),0);assert(await p.locator('[name=counterparty]').evaluate(e=>e.readOnly));
+ companies=[{id:'one',name:'Renamed company',version:2}];await refresh();assert.equal(await p.locator('select').inputValue(),'');assert.match(await p.locator('[data-supplier-status]').innerText(),/erneut auswählen/);assert.equal(await p.locator('[name=counterparty]').inputValue(),'Example <supplier>');
+ await p.selectOption('select','one');assert.equal(await p.locator('[name=supplier_version]').inputValue(),'2');assert.equal(await p.locator('[name=counterparty]').inputValue(),'Renamed company');
+ companies=[];await refresh();assert.equal(await p.locator('select').inputValue(),'');assert.equal(await p.locator('[name=supplier_version]').inputValue(),'0');assert.equal(await p.locator('[name=counterparty]').evaluate(e=>e.readOnly),false);assert.match(await p.locator('[data-supplier-status]').innerText(),/nicht mehr verfügbar/);
+ assert.equal(await p.locator('[name=description]').inputValue(),'Unsaved invoice');console.log('PASS refresh retains draft, safe name/version, readonly selection, changed contact requires reselection, missing contact releases free text');
+}finally{await browser.close();}})().catch(e=>{console.error(e);process.exit(1)});

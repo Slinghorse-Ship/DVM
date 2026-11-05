@@ -1,0 +1,12 @@
+.live-upload{padding:16px;border:2px dashed #a8bacd;border-radius:8px;background:#f5f8fc;margin:12px 0;min-width:0}.live-upload.dragging{border-color:#fa7d19;background:#fff4e8}.live-upload-picker{width:100%;background:white;color:#183451;border-color:#a8bacd}.live-upload-list{padding:0;list-style:none}.live-upload-list li{padding:10px 0;border-bottom:1px solid #dfe5ec;overflow-wrap:anywhere}.live-upload progress{width:100%;height:14px;display:block}.live-upload-status{font-size:13px;white-space:normal}.live-upload-native{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important}.live-upload-list button{padding:5px 10px;min-height:32px;margin:6px 6px 0 0}.live-upload .upload-error{color:#a52929}.live-upload-list .upload-ready{color:#28734a}
+
+.live-upload [hidden]{display:none!important}
+
+.live-upload-review{max-width:650px;width:calc(100% - 32px);max-height:85vh;overflow:auto;border:1px solid #a8bacd;border-radius:12px;padding:24px}.live-upload-review::backdrop{background:#10263ccc}.live-upload-review button{margin:8px 8px 0 0}.live-upload-review li{margin:8px 0;overflow-wrap:anywhere}
+
+/* Original file names and review destinations remain readable at enlarged text sizes. */
+.live-upload,.document-upload-groups,.live-upload-review{min-width:0;overflow-wrap:anywhere}
+.live-upload button,.document-upload-groups button,.live-upload-review button{min-height:44px;max-width:100%;white-space:normal}
+.live-upload label,.document-upload-groups label,.live-upload-review>*{min-width:0;max-width:100%}
+.live-upload input,.live-upload select,.document-upload-groups input,.document-upload-groups select{min-width:0;max-width:100%}
+.live-upload-review{box-sizing:border-box}

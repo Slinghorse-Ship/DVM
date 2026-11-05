@@ -1,0 +1,10 @@
+.personal-document-workspace{min-width:0;max-width:100%;box-sizing:border-box}
+.personal-document-workspace :is(section,article,form,label,nav,div,p,h1,h2,h3,a,button,li){min-width:0;max-width:100%;box-sizing:border-box;overflow-wrap:anywhere}
+.personal-document-workspace :is(a,button){white-space:normal;min-height:44px}
+.personal-document-workspace .personal-document-search{display:flex;flex-wrap:wrap;align-items:end;gap:12px;margin:16px 0}
+.personal-document-workspace .personal-document-search label{flex:1 1 220px}
+.personal-document-workspace :is(input,select){min-width:0;max-width:100%;box-sizing:border-box}
+.personal-document-workspace .personal-document-section{margin:20px 0;padding:16px}
+.personal-document-workspace .personal-document-item{padding:16px 0;border-top:1px solid var(--dwf-line)}
+.personal-document-workspace .personal-document-item h3{margin:0 0 10px}
+.personal-document-workspace .dwf-actions{flex-wrap:wrap}

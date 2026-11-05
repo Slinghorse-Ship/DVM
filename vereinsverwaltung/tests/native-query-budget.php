@@ -1,0 +1,15 @@
+<?php declare(strict_types=1);
+require dirname(__DIR__).'/native/bootstrap.php';require __DIR__.'/support/original-database-hash.php';
+use Kulturhus\Native\{TestSupport};use Kulturhus\Native\Cms\{Schema,DataModel,Pages};use Kulturhus\Native\Shared\{Access,Db};
+$db=TestSupport::db();TestSupport::seed($db);Schema::install($db);$access=new Access($db,'admin');$model=new DataModel($db,$access);$pages=new Pages($db,$access);$fields=[];$values=[];$checks=0;
+function budgetCheck(bool $ok,string $message):void{if(!$ok)throw new RuntimeException($message);++$GLOBALS['checks'];echo 'PASS '.$message.PHP_EOL;}
+for($i=0;$i<10;++$i){$key='own_budget_'.$i;$fields[]=$key;$values[$key]=str_repeat('x',95000);$model->saveField(['key'=>$key,'label'=>'Own budget '.$i,'type'=>'textarea']);}
+$model->saveTemplate(['key'=>'own_budget','label'=>'Own bounded response','fields'=>$fields]);
+for($i=0;$i<12;++$i)$pages->save(['title'=>'Original budget '.$i,'slug'=>'own-budget-'.str_pad((string)$i,2,'0',STR_PAD_LEFT),'template'=>'own_budget','custom_fields'=>$values]);unset($values);
+$tables=['khcms_pages','khcms_revisions','khcms_state','khcms_definitions','khcms_definition_revisions','native_users','native_grants'];$before=ownOriginalDatabaseHash($db,$tables);$bytes=(int)Db::run($db,'SELECT SUM(OCTET_LENGTH(draft_json)) FROM khcms_pages')->fetchColumn();budgetCheck($bytes>8*1024*1024,'twelve genuinely saved canonical originals exceed the response budget');
+foreach([['16M','oversize'],['16M','one'],['32M','two'],['64M','eight'],['32M','version'],['32M','bytes'],['32M','rights']] as [$memory,$mode]){
+ $process=proc_open([...TestSupport::phpCommand(),'-d','memory_limit='.$memory,__DIR__.'/support/query-budget-worker.php',$mode],[0=>['pipe','r'],1=>['pipe','w'],2=>['pipe','w']],$pipes);if(!is_resource($process))throw new RuntimeException('Own query worker unavailable.');fclose($pipes[0]);$output=stream_get_contents($pipes[1]);$error=stream_get_contents($pipes[2]);fclose($pipes[1]);fclose($pipes[2]);$exit=proc_close($process);if($exit!==0)throw new RuntimeException('Own '.$memory.' '.$mode.': '.$output.$error);$result=json_decode(trim($output),true,16,JSON_THROW_ON_ERROR);budgetCheck($result['peak_memory_bytes']<(int)$memory*1024*1024,'real '.$memory.' process closes '.$mode.' without OOM');echo json_encode(['query_budget_worker'=>$result],JSON_THROW_ON_ERROR).PHP_EOL;
+ budgetCheck(ownOriginalDatabaseHash($db,$tables)===$before,'worker '.$mode.' retains every original row, version, right and publication byte');
+}
+foreach([[0,0,8*1024*1024],[501,0,8*1024*1024],[1,-1,8*1024*1024],[1,0,0],[1,0,8*1024*1024+1]]as[$limit,$offset,$maximum]){try{$pages->searchBounded([],$limit,$offset,[],$maximum);throw new RuntimeException('Invalid query bound accepted.');}catch(InvalidArgumentException){budgetCheck(true,'invalid query count,offset or byte budget fails before payload reads');}}
+echo json_encode(['suite'=>'native-query-budget','checks'=>$checks,'original_payload_bytes'=>$bytes,'original_bytes'=>'exact','external_actions'=>0],JSON_THROW_ON_ERROR).PHP_EOL;

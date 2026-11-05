@@ -1,0 +1,51 @@
+// npm package jsdom needed only for this synthetic DOM test; no real browser/network.
+const fs=require('node:fs'),assert=require('node:assert/strict');
+const {JSDOM,VirtualConsole}=require('../../.local/newsletter-dom-tests/node_modules/jsdom');
+const source=fs.readFileSync('vereinsverwaltung/public/live-search.js','utf8');
+let checks=0;
+const check=(ok,label)=>{assert.ok(ok,label);checks++;console.log('PASS '+label);};
+const settle=()=>new Promise(resolve=>setImmediate(resolve));
+const form=(tab='tax-accounts',extra='')=>`<form method="get"><input type="hidden" name="view" value="settings"><input type="hidden" name="tab" value="${tab}"><input type="hidden" name="page" value="4"><label>Suche<input type="search" name="q" value=""></label><select name="active"><option value="1">Aktiv</option><option value="0">Inaktiv</option></select><button>Anwenden</button>${extra}</form>`;
+const result=(text)=>`<p>1 Konten · Seite 1 / 1</p><table><tbody><tr><td>${text}</td><td><form method="post"><input name="name" value="Original"><button>Speichern</button></form></td></tr></tbody></table>`;
+const page=(text='Original',tab='tax-accounts')=>`<main><section class="card"><h1>Konten</h1>${form(tab)}${result(text)}</section><section><form method="post" id="unrelated"><input name="notes" value=""></form></section></main>`;
+function setup(html=page(),url='https://example.org/vereinsverwaltung/?view=settings&tab=tax-accounts&page=4'){
+ const vc=new VirtualConsole(),dom=new JSDOM(html,{url,runScripts:'outside-only',pretendToBeVisual:true,virtualConsole:vc});
+ const w=dom.window,requests=[],timers=new Map();let seq=0;
+ w.setTimeout=(fn,ms)=>{timers.set(++seq,{fn,ms});return seq;};w.clearTimeout=id=>timers.delete(id);
+ w.fetch=(url,options)=>new Promise((resolve,reject)=>requests.push({url,options,resolve,reject}));
+ w.scrollTo=()=>{};w.eval(source);
+ return {w,dom,requests,input:w.document.querySelector('input[name=q]'),flush:async()=>{for(const [id,t] of [...timers])if(t.ms===500){timers.delete(id);t.fn();}await settle();},type(text){this.input.value=text;this.input.dispatchEvent(new w.Event('input',{bubbles:true}));},reply:async(i,text,overrides={})=>{requests[i].resolve({ok:true,url:requests[i].url,headers:{get:()=> 'text/html; charset=utf-8'},text:async()=>text,...overrides});await settle();}};
+}
+(async()=>{
+ const t=setup();t.input.focus();t.type('0');t.type('063');t.type('06300');await t.flush();
+ check(t.requests.length===1,'typing is debounced');
+ check(new URL(t.requests[0].url).searchParams.get('q')==='06300'&&!new URL(t.requests[0].url).searchParams.has('page'),'query sent to server and pagination reset');
+ check(new URL(t.requests[0].url).searchParams.get('active')==='1','other filters retained');
+ await t.reply(0,page('06300 synthetic'));
+ check(t.w.document.querySelector('[data-live-search-results]').textContent.includes('06300 synthetic'),'server results replaced');
+ check(t.w.document.activeElement===t.input&&t.input.value==='06300','input node, focus and text retained');
+ check(t.w.location.search.includes('q=06300'),'URL reflects live query');
+ check(t.w.document.querySelector('[role=status]').textContent.includes('1 Konten'),'accessible result count');
+ t.type('old');await t.flush();t.type('new');await t.flush();
+ check(t.requests[1].options.signal.aborted,'outdated request cancelled');
+ await t.reply(2,page('New result'));await t.reply(1,page('Old result'));
+ check(t.w.document.querySelector('table').textContent.includes('New result'),'late response cannot overwrite current results');
+ t.input.dispatchEvent(new t.w.CompositionEvent('compositionstart'));t.type('composing');await t.flush();check(t.requests.length===3,'composition does not trigger premature search');
+ t.input.dispatchEvent(new t.w.CompositionEvent('compositionend'));await t.flush();check(t.requests.length===4,'composition end triggers search');
+ await t.reply(3,page('Final'));
+ const edit=t.w.document.querySelector('table input');edit.value='Unsaved';edit.dispatchEvent(new t.w.Event('input',{bubbles:true}));
+ t.type('dirty');await t.flush();check(t.requests.length===4&&edit.value==='Unsaved','unsaved inline edit blocks automatic replacement');
+ edit.value='Original';edit.dispatchEvent(new t.w.Event('input',{bubbles:true}));t.type('safe');await t.flush();check(t.requests.length===5,'reverting edit unblocks search on replaced forms');
+ const unrelated=t.w.document.querySelector('#unrelated input');unrelated.value='keep';unrelated.dispatchEvent(new t.w.Event('input',{bubbles:true}));await t.reply(4,page('Must not replace'));
+ check(!t.w.document.querySelector('table').textContent.includes('Must not replace'),'edit during request prevents replacement');
+ unrelated.value='';unrelated.dispatchEvent(new t.w.Event('input',{bubbles:true}));t.type('expiry');await t.flush();await t.reply(5,'<main><form method="post">Please login</form></main>');
+ check(t.w.document.querySelector('[role=status]').textContent.includes('nicht aktualisiert'),'expired login does not erase results');
+ const submit=new t.w.Event('submit',{bubbles:true,cancelable:true});t.input.form.dispatchEvent(submit);check(!submit.defaultPrevented,'manual server submission remains fallback after failure');
+ t.dom.window.close();
+ const b=setup(page('Initial','booking-keys'),'https://example.org/vereinsverwaltung/?view=settings&tab=booking-keys');b.type('401');await b.flush();await b.reply(0,page('BU 401','booking-keys'));check(b.w.document.querySelector('table').textContent.includes('BU 401'),'BU catalog uses server live search');b.dom.window.close();
+ const complex=setup('<main>'+form('other')+'</main>');complex.type('find');await complex.flush();const resume=JSON.parse(complex.w.sessionStorage.getItem('kh-live-search-focus'));check(resume.name==='q'&&resume.url.includes('q=find'),'complex screens preserve search focus for normal navigation');complex.dom.window.close();
+ const post=setup('<main><form method="post"><input type="hidden" name="view" value="settings"><input name="q"><button>Send</button></form></main>');post.type('do not send');await post.flush();check(post.requests.length===0&&!post.w.sessionStorage.getItem('kh-live-search-focus'),'POST form never auto-submitted');post.dom.window.close();
+ const bank=setup('<main>'+form('bank','<input name="bank_q" data-bank-journal-search type="search">').replace('<input type="search" name="q" value="">','')+'</main>');check(!bank.w.document.querySelector('[role=status]'),'existing bank live filter left unchanged');bank.dom.window.close();
+ const noempty=setup();noempty.type('');await noempty.flush();await noempty.reply(0,page('Restored all'));check(noempty.w.document.querySelector('table').textContent.includes('Restored all'),'clearing query restores results');noempty.dom.window.close();
+ console.log(`${checks} isolated DOM checks passed; no real network or data.`);
+})().catch(error=>{console.error(error);process.exitCode=1;});

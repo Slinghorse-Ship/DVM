@@ -1,0 +1,9 @@
+.invoice-assignment,.invoice-assignment .card,.invoice-assignment-launcher{min-width:0;overflow-wrap:anywhere}
+.invoice-assignment dl,.invoice-assignment dd{min-width:0;margin-inline:0}
+.invoice-assignment pre{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word}
+.invoice-assignment form,.invoice-assignment label{min-width:0}
+.invoice-assignment input{width:100%;max-width:100%;min-height:44px;font-size:1rem}
+.invoice-assignment .btn,.invoice-assignment-launcher .btn,.invoice-assignment-launcher>summary{min-height:44px;max-width:100%;font-size:1rem;white-space:normal;overflow-wrap:anywhere}
+.invoice-assignment .btn,.invoice-assignment-launcher .btn{display:inline-flex;align-items:center;justify-content:center;text-align:center}
+.invoice-assignment-pages{display:flex;align-items:center;flex-wrap:wrap;gap:.75rem;margin-block:1rem}
+.invoice-assignment [data-invoice-assignment-confirm]{margin-block:1rem}

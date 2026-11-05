@@ -1,0 +1,23 @@
+<?php declare(strict_types=1);
+// Synthetic invoice fixture from transfer-orders.php, before its regular order.
+$instantPreview=$orders->preview($invoice,$bank,'2099-12-31','Synthetic instant','instant');
+check($instantPreview['execution_date']===date('Y-m-d')&&$instantPreview['transfer_mode']==='instant','instant preview is today, not future input');
+denied(fn()=>$orders->preview($invoice,$bank,date('Y-m-d'),'Test','unknown'),'unknown transfer mode rejected');
+$normalPreview=$orders->preview($invoice,$bank,date('Y-m-d'),'Synthetic instant');
+check($normalPreview['hash']!==$instantPreview['hash'],'mode is part of immutable approval');
+denied(fn()=>$orders->prepare($invoice,$bank,date('Y-m-d'),'Synthetic instant',$instantPreview['hash'],$key(),'standard'),'instant approval cannot become normal');
+denied(fn()=>$orders->prepare($invoice,$bank,date('Y-m-d',strtotime('+1 day')),'Synthetic instant',$instantPreview['hash'],$key(),'instant'),'instant cannot be scheduled tomorrow');
+$instantOrder=$orders->prepare($invoice,$bank,date('Y-m-d'),'Synthetic instant',$instantPreview['hash'],$key(),'instant');
+$instantStored=$orders->get($instantOrder);
+check($instantStored['snapshot']['transfer_mode']==='instant','encrypted snapshot preserves instant mode');
+$orders->approve($instantOrder,1);
+$instantPayload=$orders->fintsPayload($instantOrder,2);
+check($instantPayload['transfer_mode']==='instant'&&str_contains($instantPayload['xml'],'<Cd>INST</Cd>'),'approved FinTS payload contains instant mode and XML marker');
+$order=$instantOrder;
+$db->exec("INSERT INTO actors(id,club_id,role) VALUES('writer','a','members');INSERT INTO actor_capabilities VALUES('writer','local_finance')");
+require __DIR__.'/payment-authorization-cases.inc.php';
+$db->exec("DELETE FROM actor_capabilities WHERE actor_id='writer';DELETE FROM actors WHERE id='writer'");
+check($finance->entry($invoice)['payment_state']==='open'&&$finance->transactions()===[],'instant approval does not book money');
+require __DIR__.'/simple-payment-cases.inc.php';
+$orders->cancel($instantOrder,2);
+check($orders->get($instantOrder)['state']==='cancelled','instant preparation can be cancelled before sending');

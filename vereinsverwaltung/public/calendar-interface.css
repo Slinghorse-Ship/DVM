@@ -1,0 +1,21 @@
+/* Calendar controls remain usable with long original names and enlarged interface text. */
+[data-calendar-interface] :is(.card,.content,.page-heading,.calendar-heading,.calendar-top,.form-grid,.actions,label,fieldset,legend){min-width:0;max-width:100%}
+[data-calendar-interface] :is(.content,.page-heading,.calendar-agenda,.calendar-list){overflow-wrap:anywhere}
+[data-calendar-interface] :is(button,.button,summary,.segments a,.calendar-event,.event-list-item,.icon-button){min-height:44px;white-space:normal}
+[data-calendar-interface] .segments a{display:inline-flex;align-items:center;justify-content:center;min-width:44px}
+[data-calendar-interface] :is(input,select,textarea){max-width:100%}
+[data-calendar-interface] :is(.actions,.contact-choice-pages){flex-wrap:wrap}
+[data-calendar-interface] .calendar-scroll:focus-visible{outline:3px solid var(--orange,#fa7d19);outline-offset:-3px}
+[data-calendar-interface] .record-more>summary>span{min-width:0;overflow-wrap:anywhere}
+[data-calendar-interface] .calendar-upcoming-heading{padding:1rem 1rem .5rem;border-bottom:1px solid var(--admin-line,#dfe3ea)}
+[data-calendar-interface] .calendar-upcoming-heading h2{margin:0 0 .5rem;font-size:1.1rem}
+[data-calendar-interface] .calendar-upcoming-heading p{margin:.25rem 0;font-size:.9rem}
+[data-calendar-interface] .calendar-upcoming-month h3{margin:0;padding:.75rem 1rem;background:var(--admin-surface,#f4f6f9);font-size:1rem;border-block:1px solid var(--admin-line,#dfe3ea)}
+[data-calendar-interface] .calendar-upcoming-pages{display:flex;flex-wrap:wrap;gap:.5rem;padding:.75rem 1rem}
+[data-calendar-interface] .calendar-upcoming-pages:empty{display:none}
+[data-calendar-interface] .calendar-upcoming-pages a{min-width:44px;min-height:44px;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+[data-calendar-interface] .calendar-upcoming-reset{margin:.75rem 1rem}
+[data-calendar-interface] .calendar-upcoming-entries{max-height:65vh;overflow:auto;overscroll-behavior:contain}
+@media(max-width:900px){[data-calendar-interface] .calendar-list{max-height:none;overflow:visible}[data-calendar-interface] .calendar-upcoming-entries{max-height:65vh;overflow:auto}}
+
+[data-calendar-interface] .calendar-upcoming-entries:focus-visible{outline:3px solid var(--admin-accent,#164e63);outline-offset:-3px}

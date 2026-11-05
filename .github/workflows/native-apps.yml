@@ -1,0 +1,101 @@
+name: Native apps
+# Hosted Actions are manual while quota is exhausted; use tools/ci/local-release.py.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: native-apps-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  ios:
+    name: iPhone and iPad Xcode
+    runs-on: macos-15
+    timeout-minutes: 60
+    env:
+      DVM_APP_ARTIFACT_DIR: ${{ github.workspace }}_app_artifacts/ios
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check acceptance guards and fixed language resources
+        run: |
+          python3 native-app/tests/test-ios-ci.py
+          python3 native-app/tests/test-mobile-release.py
+          python3 native-app/tools/interface-resources.py --check
+      - name: Build and execute both actual simulator families
+        run: python3 native-app/tools/ci-ios.py --artifacts "$DVM_APP_ARTIFACT_DIR"
+      - name: Retain real Xcode diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-ios-simulators
+          retention-days: 7
+          if-no-files-found: ignore
+          path: |
+            ${{ env.DVM_APP_ARTIFACT_DIR }}/*.ipa
+            ${{ env.DVM_APP_ARTIFACT_DIR }}/*.sha256
+            ${{ env.DVM_APP_ARTIFACT_DIR }}/*.json
+            ${{ env.DVM_APP_ARTIFACT_DIR }}/*.log
+            ${{ env.DVM_APP_ARTIFACT_DIR }}/*.png
+            ${{ env.DVM_APP_ARTIFACT_DIR }}/*.xcresult
+  android:
+    name: Android APKs and protected WebView
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      DVM_MOBILE_TOOLS: ${{ github.workspace }}_mobile_tools
+      DVM_APP_ARTIFACT_DIR: ${{ github.workspace }}_app_artifacts/android
+      KULTURHUS_DISABLE_MAIL: '1'
+      KULTURHUS_DISABLE_WEBSITE: '1'
+      VEREIN_ERIC_DISABLE_TRANSPORT: '1'
+      VEREIN_TEST_SKIP_BACKUP_ROUNDTRIP: '1'
+      KH_NATIVE_CI_PASSWORD: synthetic-ci-only
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Start isolated pinned MySQL
+        run: bash tools/ci/start-mysql.sh
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: none, ctype, curl, dom, exif, fileinfo, gd, iconv, intl, pdo_mysql, mbstring, phar, posix, simplexml, sockets, sodium, tokenizer, xml, xmlreader, xmlwriter, zip
+          coverage: none
+      - name: Install locked PHP dependencies
+        run: composer install --no-interaction --no-progress --prefer-dist
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install locked browser automation
+        run: |
+          npm install --no-save --package-lock=false playwright@1.56.1
+          node <<'NODE'
+          const fs = require('node:fs');
+          const path = require('node:path');
+          fs.appendFileSync(process.env.GITHUB_ENV,
+            'PLAYWRIGHT_MODULE=' + path.join(path.dirname(require.resolve('playwright')), 'index.mjs') + '\n');
+          NODE
+      - name: Enable the fresh runner's KVM device
+        run: |
+          test -c /dev/kvm
+          sudo chown "$(id -u):$(id -g)" /dev/kvm
+          sudo chmod u+rw /dev/kvm
+      - name: Check fixed language resources
+        run: python3 native-app/tools/interface-resources.py --check
+      - name: Build both APKs, lint and run the installed app
+        run: bash native-app/tools/ci-android.sh
+      - name: Retain actual Android diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-android-emulator
+          retention-days: 7
+          if-no-files-found: ignore
+          path: |
+            ${{ env.DVM_APP_ARTIFACT_DIR }}/**/*.json
+            ${{ env.DVM_APP_ARTIFACT_DIR }}/**/*.log
+            ${{ env.DVM_APP_ARTIFACT_DIR }}/**/*.png
+            ${{ env.DVM_APP_ARTIFACT_DIR }}/**/*.xml
+            native-app/android/app/build/outputs/apk/*/debug/*.apk
+            native-app/android/app/build/outputs/apk/*/release/*-unsigned.apk

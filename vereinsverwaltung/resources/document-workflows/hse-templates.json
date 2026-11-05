@@ -1,0 +1,64 @@
+[
+  {
+    "key": "hse-risk-assessment",
+    "title": "Gefährdungsbeurteilung – generische Demo",
+    "description": "Eigene deutsche Formularfassung nach den HSE-Grundfeldern. Für synthetische lokale Beispiele; konkrete Tätigkeiten, Orte und Maßnahmen müssen fachkundig geprüft werden. Ein Dokumentstatus ist keine sicherheitsfachliche Freigabe.",
+    "provenance": {
+      "title": "Health and Safety Executive: Risk assessment template and examples",
+      "url": "https://www.hse.gov.uk/simple-health-safety/risk/risk-assessment-template-and-examples.htm",
+      "licence": "Open Government Licence v3.0 für die verwendeten HSE-Sachinformationen; eigene deutsche Formularfassung.",
+      "licence_url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "attribution": "Contains public sector information published by the Health and Safety Executive and licensed under the Open Government Licence.",
+      "adaptation": "Eigenständig formulierte deutsche Felder nach HSE-Grundstruktur, ergänzt um Kontext, Wirksamkeitsprüfung und Wiedervorlage. Keine amtliche Übersetzung, kein HSE-Logo, keine HSE-Zertifizierung. Herkunft und Grenzen: docs/local-workflows-hse-sources.md.",
+      "verified_at": "2026-10-07"
+    },
+    "fields": [
+      {"key": "activity", "label": "Tätigkeit und Umfang", "type": "text", "required": true, "help": "Synthetisches Beispiel: Vorbereitung eines Demo-Vereinsraums."},
+      {"key": "location", "label": "Ort oder Arbeitsbereich", "type": "text", "required": true},
+      {"key": "assessment_date", "label": "Datum der Beurteilung", "type": "date", "required": true},
+      {"key": "assessor", "label": "Erstellt durch", "type": "text", "required": true, "help": "In der Demo einen erfundenen Namen oder eine Demo-Rolle verwenden."},
+      {"key": "hazard", "label": "Gefährdungen", "type": "textarea", "required": true, "help": "Jede Gefährdung mit einer eigenen Kennung beschreiben, etwa G1 oder G2. Die gleiche Kennung in den weiteren Feldern verwenden."},
+      {"key": "affected_people", "label": "Betroffene Personen und mögliche Folgen", "type": "textarea", "required": true, "help": "Pro Gefährdungskennung Personengruppen und mögliche Schäden festhalten; keine Gesundheitsdaten einzelner Personen erfassen."},
+      {"key": "risk", "label": "Einschätzung und Begründung", "type": "textarea", "required": true, "help": "Wahrscheinlichkeit und Schwere je Gefährdung begründen. Es wird kein automatischer Risikowert berechnet."},
+      {"key": "control", "label": "Bereits wirksame Schutzmaßnahmen", "type": "textarea", "required": true, "help": "Pro Kennung vorhandene Maßnahmen und bekannte Lücken beschreiben."},
+      {"key": "action", "label": "Zusätzliche Maßnahmen", "type": "textarea", "required": true, "help": "Konkrete nächste Schritte je Kennung; wenn keine nötig erscheinen, die Begründung dokumentieren."},
+      {"key": "owner", "label": "Verantwortung für Maßnahmen", "type": "textarea", "required": true, "help": "Je Gefährdungskennung die zuständige Person oder Rolle nennen."},
+      {"key": "deadline", "label": "Fristen der Maßnahmen", "type": "textarea", "required": true, "help": "Je Kennung einen Termin im Format JJJJ-MM-TT oder eine begründete Bedingung vor Tätigkeitsbeginn angeben."},
+      {"key": "review", "label": "Prüfung der Wirksamkeit und offene Punkte", "type": "textarea", "required": true, "help": "Wie und durch wen wird die Umsetzung überprüft? Eine geplante Prüfung ausdrücklich als geplant kennzeichnen."},
+      {"key": "review_date", "label": "Nächster Prüftermin", "type": "date", "required": true},
+      {"key": "review_triggers", "label": "Anlässe für eine frühere Überprüfung", "type": "textarea", "required": true, "help": "Relevante Änderungen, Hinweise aus dem Team oder Ereignisse festhalten."},
+      {"key": "limitations", "label": "Annahmen und noch fehlende Angaben", "type": "textarea", "required": true, "help": "Unbekannte Betriebsangaben sichtbar lassen. Keine tatsächliche Prüfung erfinden."}
+    ]
+  },
+  {
+    "key": "stop-think-act-own",
+    "title": "Stop Think Act – eigener Demo-Kurzcheck",
+    "description": "Eigenständiger Kurzcheck vor einer Tätigkeit oder bei Änderungen. Keine offizielle HSE-Vorlage und keine Kopie der WSPS-Kampagne. Für synthetische lokale Beispiele; ersetzt weder Gefährdungsbeurteilung noch betriebliche Freigabe.",
+    "provenance": {
+      "title": "Eigene Formularfassung; Herkunftsabgrenzung anhand UMASH: Farm Safety Check – STOP-THINK-ACT",
+      "url": "https://umash.umn.edu/farm-safety-check-stop-think-act/",
+      "licence": "Eigene Formulartexte. Keine Wiederverwendungslizenz für WSPS-/Imperial-Oil-Kampagnenmaterial beansprucht; dieses Material wird nicht übernommen.",
+      "licence_url": "https://www.wsps.ca/about-us/policies/website-terms-of-use",
+      "attribution": "Der verlinkte UMASH-Beitrag nennt WSPS und Imperial Oil für seine Kampagnenfassung. Diese lokale Formularfassung ist eigenständig; eine HSE-Urheberschaft für Stop Think Act wurde nicht belegt.",
+      "adaptation": "Nur der Methodenbegriff dient als Referenz. Eigene deutsche Fragen und Dokumentationsfelder; keine Übernahme oder Übersetzung von Postertexten, Bildern, Logos oder Gestaltung. Quellenprüfung und Abgrenzung: docs/local-workflows-hse-sources.md.",
+      "verified_at": "2026-10-07"
+    },
+    "fields": [
+      {"key": "activity", "label": "Geplante Tätigkeit", "type": "text", "required": true, "help": "Synthetisches Beispiel: Materialien für einen Demo-Workshop bereitstellen."},
+      {"key": "location", "label": "Ort", "type": "text", "required": true},
+      {"key": "check_date", "label": "Datum des Kurzchecks", "type": "date", "required": true},
+      {"key": "participants", "label": "Beteiligte Demo-Rollen", "type": "textarea", "required": true},
+      {"key": "stop_context", "label": "STOP – Anlass und aktuelle Situation", "type": "textarea", "required": true, "help": "Ausgangslage, Änderungen und Unklarheiten vor Ort beschreiben."},
+      {"key": "hazard", "label": "THINK – Beobachtete Gefährdungen", "type": "textarea", "required": true, "help": "Die konkrete Situation betrachten und Gefährdungen zur Zuordnung nummerieren."},
+      {"key": "affected_people", "label": "THINK – Mögliche Auswirkungen auf Beteiligte", "type": "textarea", "required": true},
+      {"key": "control", "label": "THINK – Bestehende Schutzmaßnahmen und Lücken", "type": "textarea", "required": true},
+      {"key": "action", "label": "ACT – Nächste sichere Schritte oder Klärung", "type": "textarea", "required": true, "help": "Maßnahmen und Rückfragen dokumentieren. Ungeklärte Gefahren nicht als erledigt markieren."},
+      {"key": "owner", "label": "Zuständige Person oder Rolle", "type": "text", "required": true},
+      {"key": "deadline", "label": "Termin für die Klärung", "type": "date", "required": true},
+      {"key": "decision", "label": "Dokumentierter Handlungsbedarf", "type": "select", "required": true, "options": ["Tätigkeit bleibt gestoppt – Klärung erforderlich", "Maßnahmen offen – erneute Prüfung erforderlich", "Zur zuständigen betrieblichen Prüfung weitergeben"], "help": "Keine Auswahl erteilt eine Arbeitsfreigabe."},
+      {"key": "escalation", "label": "An wen wird ein offener Punkt weitergegeben?", "type": "textarea", "required": true, "help": "Nur dokumentieren; dieses Formular versendet keine Nachricht."},
+      {"key": "review", "label": "Erneute Prüfung und Ergebnis", "type": "textarea", "required": true, "help": "Datum, zuständige Rolle, Nachweis oder noch ausstehende Prüfung benennen."},
+      {"key": "assessment_reference", "label": "Bezug zur Gefährdungsbeurteilung", "type": "text", "required": false, "help": "Lokale Dokumentnummer oder fehlenden Bezug vermerken; keine automatische Verknüpfung."}
+    ]
+  }
+]

@@ -1,0 +1,12 @@
+<?php declare(strict_types=1);
+require __DIR__.'/../src/Finance/Balance/BalanceTaxFiling.php';
+use Kulturhus\Verein\BalanceFilingRevision as R;
+$n=0;function check(bool $v,string $s):void{if(!$v)throw new RuntimeException($s);++$GLOBALS['n'];}
+$xml='<x:xbrl xmlns:x="http://www.xbrl.org/2003/instance" xmlns:g="urn:synthetic:gaap" xmlns:d="http://xbrl.org/2006/xbrldi"><x:context id="C"><x:entity><x:identifier scheme="urn:test">1</x:identifier></x:entity><x:period><x:instant>2025-12-31</x:instant></x:period><x:scenario><d:explicitMember dimension="g:area">g:shop</d:explicitMember></x:scenario></x:context><g:bs.ass contextRef="C" unitRef="EUR">10.00</g:bs.ass><g:is.netIncome contextRef="C" unitRef="EUR">1.00</g:is.netIncome><g:nt.ass.gross contextRef="C" unitRef="EUR">5.00</g:nt.ass.gross><g:DeterminationOfTaxableIncomeSpec.forProfitOrganisationsAndUtilities.balanceSheet.valueOfItem contextRef="C" unitRef="EUR">3.00</g:DeterminationOfTaxableIncomeSpec.forProfitOrganisationsAndUtilities.balanceSheet.valueOfItem><g:DeterminationOfTaxableIncomeSpec.forProfitOrganisationsAndUtilities.IncomeStatement.valueOfItem contextRef="C" unitRef="EUR">2.00</g:DeterminationOfTaxableIncomeSpec.forProfitOrganisationsAndUtilities.IncomeStatement.valueOfItem><g:DeterminationOfTaxableIncomeSpec.forProfitOrganization.taxableIncome contextRef="C" unitRef="EUR">0.50</g:DeterminationOfTaxableIncomeSpec.forProfitOrganization.taxableIncome></x:xbrl>';
+$facts=R::balanceFacts($xml);check(count($facts)===5,'whole, asset and SGEB B GuV facts present');
+foreach(['10.00','1.00','5.00','3.00','2.00'] as $v)check($facts!==R::balanceFacts(str_replace('>'.$v.'<','>9.99<',$xml)),'different amount detected '.$v);
+check($facts===R::balanceFacts(str_replace('>0.50<','>9.99<',$xml)),'outside B GuV subsidiary result not mistaken for changed balance');
+foreach(['2025-12-31'=>'2026-12-31','g:shop'=>'g:club','unitRef="EUR"'=>'unitRef="USD"'] as $old=>$new)check($facts!==R::balanceFacts(str_replace($old,$new,$xml)),'context or unit change detected '.$old);
+check($facts===R::balanceFacts(str_replace(['id="C"','contextRef="C"'],['id="D"','contextRef="D"'],$xml)),'generated context IDs ignored');
+foreach(['<bad/>','<!DOCTYPE x [<!ENTITY y "test">]>'.$xml,str_replace('contextRef="C"','contextRef="missing"',$xml)] as $bad){$denied=false;try{R::balanceFacts($bad);}catch(DomainException){$denied=true;}check($denied,'invalid or missing evidence refused');}
+echo "$n filing revision XML checks passed; no database or transport\n";

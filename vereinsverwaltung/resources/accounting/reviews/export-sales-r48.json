@@ -1,0 +1,216 @@
+{
+  "schema": 1,
+  "revision": 48,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "export-sales-r48-001@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.tan.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.tan.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "48440",
+              "semantic": {
+                "name": "Erlöse aus Verkäufen Sachanlagevermögen steuerfrei § 4 Nr. 1a UStG (bei Buchgewinn)",
+                "function": "AM",
+                "range_start": "48440",
+                "range_end": "48449",
+                "parent": null
+              },
+              "signature": "fa6aed4d9737c5735ce0d2558335dc9ef71d7e927fd3f43a6c5a2915cbadfbfa"
+            }
+          ]
+        },
+        {
+          "purpose": "export-sales-r48-002@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.tan.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.tan.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "48480",
+              "semantic": {
+                "name": "Erlöse aus Verkäufen Sachanlagevermögen steuerfrei § 4 Nr. 1b UStG (bei Buchgewinn)",
+                "function": "AM",
+                "range_start": "48480",
+                "range_end": "48489",
+                "parent": null
+              },
+              "signature": "e489edf31071a518f13a2806fb5bd80733eaa20b963c2ae99876c59761e7ec56"
+            }
+          ]
+        },
+        {
+          "purpose": "export-sales-r48-003@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.tan.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.tan.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "68840",
+              "semantic": {
+                "name": "Erlöse aus Verkäufen Sachanlagevermögen steuerfrei § 4 Nr. 1a UStG (bei Buchverlust)",
+                "function": "AM",
+                "range_start": "68840",
+                "range_end": "68849",
+                "parent": null
+              },
+              "signature": "7598d94b5cb86809a0cff470f7462dbffcb82c497bddb4610d1bc8ae3d75a1ad"
+            }
+          ]
+        },
+        {
+          "purpose": "export-sales-r48-004@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.tan.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.tan.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "68880",
+              "semantic": {
+                "name": "Erlöse aus Verkäufen Sachanlagevermögen steuerfrei § 4 Nr. 1b UStG (bei Buchverlust)",
+                "function": "AM",
+                "range_start": "68880",
+                "range_end": "68889",
+                "parent": null
+              },
+              "signature": "d28b29ca9ce2c5eb51f43883fd15645cc79ea8e26228e631bb741d0166552f68"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "export-sales-r48-001@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.tan.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.tan.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "48440",
+              "semantic": {
+                "name": "Erlöse aus Verkäufen Sachanlagevermögen steuerfrei § 4 Nr. 1a UStG (bei Buchgewinn)",
+                "function": "AM",
+                "range_start": "48440",
+                "range_end": "48449",
+                "parent": null
+              },
+              "signature": "fa6aed4d9737c5735ce0d2558335dc9ef71d7e927fd3f43a6c5a2915cbadfbfa"
+            }
+          ]
+        },
+        {
+          "purpose": "export-sales-r48-002@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.tan.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.tan.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "48480",
+              "semantic": {
+                "name": "Erlöse aus Verkäufen Sachanlagevermögen steuerfrei § 4 Nr. 1b UStG (bei Buchgewinn)",
+                "function": "AM",
+                "range_start": "48480",
+                "range_end": "48489",
+                "parent": null
+              },
+              "signature": "e489edf31071a518f13a2806fb5bd80733eaa20b963c2ae99876c59761e7ec56"
+            }
+          ]
+        },
+        {
+          "purpose": "export-sales-r48-003@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.tan.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.tan.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "68840",
+              "semantic": {
+                "name": "Erlöse aus Verkäufen Sachanlagevermögen steuerfrei § 4 Nr. 1a UStG (bei Buchverlust)",
+                "function": "AM",
+                "range_start": "68840",
+                "range_end": "68849",
+                "parent": null
+              },
+              "signature": "7598d94b5cb86809a0cff470f7462dbffcb82c497bddb4610d1bc8ae3d75a1ad"
+            }
+          ]
+        },
+        {
+          "purpose": "export-sales-r48-004@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.tan.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.tan.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "68880",
+              "semantic": {
+                "name": "Erlöse aus Verkäufen Sachanlagevermögen steuerfrei § 4 Nr. 1b UStG (bei Buchverlust)",
+                "function": "AM",
+                "range_start": "68880",
+                "range_end": "68889",
+                "parent": null
+              },
+              "signature": "d28b29ca9ce2c5eb51f43883fd15645cc79ea8e26228e631bb741d0166552f68"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

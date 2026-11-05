@@ -1,0 +1,5 @@
+"NSCameraUsageDescription" = "After you choose, the camera reads a ticket or voucher code.";
+"NSPhotoLibraryUsageDescription" = "You choose the photos you want to use in your club.";
+"NSBluetoothAlwaysUsageDescription" = "After you choose, connect a card reader to checkout.";
+"NSLocationWhenInUseUsageDescription" = "After you choose, SumUp checks card-payment availability at your location.";
+"NSMicrophoneUsageDescription" = "After you choose, a supported card reader can use the device connection.";

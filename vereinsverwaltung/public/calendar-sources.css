@@ -1,0 +1,148 @@
+/* Source is stated in text as well as colour. Keep every type readable in all views. */
+.calendar-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px 24px;
+}
+.calendar-heading p {
+  grid-column: 1;
+  margin: 0;
+}
+.calendar-heading .actions {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  justify-content: flex-end;
+  max-width: 400px;
+}
+.calendar-view-filter.card {
+  flex-direction: row;
+}
+.calendar-view-filter.card label {
+  flex: 0 1 400px;
+  min-width: 0;
+  margin: 0;
+}
+
+@media (max-width: 1100px) {
+  .calendar-heading {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .calendar-heading .actions {
+    grid-column: 1;
+    grid-row: auto;
+    justify-content: flex-start;
+    max-width: none;
+  }
+}
+
+.calendar-source {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 3px 7px;
+  border-radius: 5px;
+  background: #fff0e2;
+  color: #70431d;
+  font-size: 11px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+.calendar-source::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  flex: none;
+  border-radius: 50%;
+  background: currentColor;
+}
+.calendar-source.source-events,
+.calendar-source.source-external,
+.calendar-event.source-events,
+.calendar-event.source-external {
+  background: #eaf3e0;
+  color: #47622e;
+  border-color: #6b9149;
+}
+.calendar-source.source-social,
+.calendar-event.source-social {
+  background: #fae9f2;
+  color: #84375f;
+  border-color: #b65785;
+}
+.calendar-source.source-newsletter,
+.calendar-event.source-newsletter {
+  background: #e4f1fa;
+  color: #285e83;
+  border-color: #4d8fbf;
+}
+.calendar-source.source-birthdays,
+.calendar-event.source-birthdays {
+  background: #eee7fa;
+  color: #61448b;
+  border-color: #8a65b8;
+}
+.calendar-source.source-board,
+.calendar-event.source-board {
+  background: #e8eef9;
+  color: #415d87;
+  border-color: #6186bb;
+}
+.calendar-source.source-workflows,
+.calendar-event.source-workflows {
+  background: #e0f1ed;
+  color: #285e51;
+  border-color: #469281;
+}
+.calendar-source.source-deadlines,
+.calendar-event.source-deadlines {
+  background: #fae6e4;
+  color: #853d37;
+  border-color: #b26860;
+}
+.calendar-source.source-press,
+.calendar-event.source-press {
+  background: #f6e9df;
+  color: #774d30;
+  border-color: #aa7957;
+}
+.calendar-agenda .calendar-source {
+  margin-top: 8px;
+}
+.calendar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 16px 20px;
+}
+.calendar-legend > strong {
+  width: 100%;
+}
+.calendar-event > .calendar-source-name {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  opacity: 0.9;
+}
+.calendar-layout .event-list-item .calendar-source {
+  font-size: 10px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+@media (max-width: 700px) {
+  .calendar-view-filter.card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .calendar-view-filter.card label {
+    flex: none;
+    min-width: 0;
+    width: 100%;
+  }
+  .calendar-view-filter select {
+    max-width: 100%;
+  }
+}
+
+.calendar-source.source-inspections,.calendar-event.source-inspections{background:#fff0d4;color:#6f4713;border-color:#a56a20}

@@ -1,0 +1,96 @@
+<?php declare(strict_types=1);
+require dirname(__DIR__).'/native/bootstrap.php';require dirname(__DIR__).'/src/bootstrap.php';
+use Kulturhus\Native\TestSupport;
+use Kulturhus\Verein\{Database,ManagerDocumentWorkflows,InspectionPage,WorkspaceAccess};
+use Kulturhus\Verein\DocumentWorkflow\{WorkflowSchema,InspectionStore};
+$db=TestSupport::db();
+if(($argv[1]??'')==='--race'){
+    $input=json_decode(stream_get_contents(STDIN),true,32,JSON_THROW_ON_ERROR);
+    try{(new ManagerDocumentWorkflows($db,'reader'))->inspections->transition($input['id'],$input['version'],'submit',['implementation'=>$input['text'],'completed_on'=>'2026-10-13']);echo 'saved';}catch(DomainException){echo 'stale';}exit;
+}
+Database::migrate($db);WorkflowSchema::install($db);
+\Kulturhus\Native\Installer\SchemaRegistry::install($db);
+$db->exec("DROP TABLE dwf_inspection_versions; DROP TABLE dwf_inspections; DROP TABLE dwf_creation_requests; UPDATE native_schema_versions SET version=1 WHERE module='workflows'");
+$db->exec("INSERT INTO clubs VALUES('measure-a','Own inspection club'),('measure-b','Foreign inspection club');
+ INSERT INTO actors(id,club_id,role,is_superuser) VALUES('author','measure-a','member',1),('reader','measure-a','member',0),('member','measure-a','member',0),('outsider','measure-a','member',0),('foreign','measure-b','member',1);
+ INSERT INTO settings_roles(club_id,id,name,description,members_access,finance_access,settings_access,documents_access,version) VALUES('measure-a','measure-reader','Own reader','','none','none',0,'read',1);
+ INSERT INTO settings_role_assignments(actor_id,club_id,role_id,version) VALUES('reader','measure-a','measure-reader',1)");
+$module=new ManagerDocumentWorkflows($db,'author');$store=$module->store;$is=$module->inspections;
+$reader=(new ManagerDocumentWorkflows($db,'reader'))->inspections;$member=(new ManagerDocumentWorkflows($db,'member'))->inspections;$foreign=(new ManagerDocumentWorkflows($db,'foreign'))->inspections;$n=0;
+function inspectionCheck(bool $ok,string $label):void{global$n;if(!$ok)throw new RuntimeException($label);++$n;echo 'PASS '.$label."\n";}
+function inspectionReject(callable $f,string $label):void{try{$f();}catch(DomainException){inspectionCheck(true,$label);return;}throw new RuntimeException($label);}
+$risk=['category'=>'Aufbau','hazard'=>'Fluchtweg versperrt','impact'=>'Verzögerte Evakuierung','initial'=>['likelihood'=>3,'severity'=>3],'controls'=>'Fluchtweg freihalten','residual'=>['likelihood'=>1,'severity'=>2],'responsible'=>'Ursprüngliche Planung','effectiveness'=>'Vor der Veranstaltung kontrollieren','action_deadline'=>'2026-10-12'];
+$template=$store->saveTemplate('',0,['title'=>'Pinned assessment','fields'=>[['key'=>'notes','label'=>'Original assessment','type'=>'textarea','required'=>true],['key'=>'hazards','label'=>'Original assessment risk register','type'=>'risk_register','required'=>false]]]);$store->publishTemplate($template,1);
+$doc=$store->createDocument($template,'','Original approved assessment');$store->saveDocument($doc,1,['notes'=>'Exact assessment original ä🙂','hazards'=>[$risk]],'Original approved assessment','');$store->transition($doc,2,'submit');$store->transition($doc,3,'approve');
+$assessmentTables=['dwf_documents','dwf_document_versions','dwf_activities','dwf_attachments','dwf_signatures','dwf_signature_files','dwf_reminders'];
+$original=[];foreach($assessmentTables as$t)$original[$t]=$db->query('SELECT * FROM '.$t.' ORDER BY 1,2')->fetchAll();$historical=$store->document($doc,4);
+inspectionCheck(!(new WorkspaceAccess($db,'author'))->allows(['view'=>'documents','tab'=>'inspections']),'older module without operational tables keeps unavailable inspection navigation closed');
+\Kulturhus\Native\Installer\SchemaRegistry::install($db);\Kulturhus\Native\Installer\SchemaRegistry::assertCurrent($db);
+inspectionCheck(InspectionStore::installed($db)&&(int)$db->query("SELECT version FROM native_schema_versions WHERE module='workflows'")->fetchColumn()===\Kulturhus\Native\Installer\SchemaRegistry::VERSIONS['workflows'],'actual version-one module upgrade adds independent inspection tables to populated original assessments');
+$data=['title'=>'Human implementation instruction %_','instruction'=>'Check the escape route and remove the stored chairs. Report the actual work.','assignee_id'=>'member','deadline'=>'2026-10-12'];$key=bin2hex(random_bytes(16));
+$id=$is->create($data,$key,$doc,4);$task=$is->get($id);
+inspectionCheck($task['status']==='open'&&(int)$task['version']===1&&$task['source']['revision']===4,'own operational instruction binds exact original assessment without reopening it');
+inspectionCheck($is->create($data,$key,$doc,4)===$id&&$is->history($id)['total']===1,'lost accepted creation response can repeat without a second task or history event');
+inspectionReject(fn()=>$is->create(array_replace($data,['instruction'=>'Different']),$key,$doc,4),'accepted request key cannot conceal different human instruction');
+inspectionReject(fn()=>$reader->create($data,bin2hex(random_bytes(16))),'read-only account cannot issue an implementation instruction');
+inspectionReject(fn()=>$is->create(array_replace($data,['assignee_id'=>'foreign']),bin2hex(random_bytes(16))),'foreign account cannot receive own club task');
+inspectionReject(fn()=>$foreign->get($id),'foreign club cannot read own original task');
+inspectionCheck($member->get($id)['instruction']===$data['instruction']&&(new WorkspaceAccess($db,'member'))->allows(['view'=>'documents','tab'=>'inspections']),'member without HSE rights can open own assigned implementation instruction');
+inspectionCheck(!(new WorkspaceAccess($db,'member'))->allows(['view'=>'documents','tab'=>'workflows']),'operational assignment grants no access to full assessment documents');
+inspectionReject(fn()=>(new ManagerDocumentWorkflows($db,'outsider'))->inspections->get($id),'unassigned member cannot open another personal task');
+inspectionCheck($member->listing()['total']===1&&$reader->listing()['total']===1,'personal and document-reader lists have their own current scope');
+inspectionCheck($is->listing(['query'=>'%_','status'=>'all'])['total']===1,'original wildcard characters are literal search text');
+inspectionCheck($is->listing(['query'=>'HUMAN IMPLEMENTATION','status'=>'all'])['total']===1,'human search accepts different letter case without rewriting original instruction');
+inspectionCheck($is->listing(['status'=>'overdue'])['total']===1,'unresolved operational deadline has own overdue selection');
+inspectionReject(fn()=>$reader->transition($id,1,'submit',['implementation'=>'Wrong person','completed_on'=>'2026-10-13']),'only assigned person can report implementation');
+inspectionReject(fn()=>$member->transition($id,1,'verify'),'member cannot perform document-writer acceptance');
+$member->transition($id,1,'start');
+inspectionReject(fn()=>$member->transition($id,1,'submit',['implementation'=>'Stale','completed_on'=>'2026-10-13']),'stale task revision cannot overwrite current implementation');
+inspectionReject(fn()=>$member->transition($id,2,'submit',['implementation'=>'','completed_on'=>'2026-10-13']),'actual human implementation report is required');
+inspectionReject(fn()=>$member->transition($id,2,'submit',['implementation'=>'Work done','completed_on'=>'2026-02-30']),'invalid implementation calendar day rejected');
+inspectionReject(fn()=>$member->transition($id,2,'submit',['implementation'=>'Work done','completed_on'=>'2099-01-01']),'future work cannot be reported as completed');
+$member->transition($id,2,'submit',['implementation'=>'Chairs moved; full route checked.','completed_on'=>'2026-10-13']);
+inspectionCheck($is->get($id)['status']==='submitted','actual implementation report awaits separate acceptance');
+inspectionReject(fn()=>$is->update($id,3,$data),'submitted instruction cannot be silently replaced during acceptance');
+inspectionReject(fn()=>$is->transition($id,3,'return'),'return needs actual human rework instruction');
+$is->transition($id,3,'return',['comment'=>'Also remove the cabinet next to the door.']);
+inspectionCheck($is->history($id)['rows'][0]['comment']==='Also remove the cabinet next to the door.','concrete rework instruction remains in separate original history');
+$member->transition($id,4,'submit',['implementation'=>'Cabinet and chairs moved; doors open fully.','completed_on'=>'2026-10-13']);$is->transition($id,5,'verify',['comment'=>'Route checked in person.']);
+inspectionCheck($is->get($id)['status']==='verified'&&$is->listing(['status'=>'active'])['total']===0,'accepted task leaves operational active list');
+inspectionReject(fn()=>$is->update($id,6,$data),'accepted operational evidence cannot be overwritten as an open instruction');
+$is->transition($id,6,'reopen',['comment'=>'Inspect again after the event setup.']);
+inspectionCheck($is->history($id)['total']===7&&count($is->history($id)['rows'])===6&&$is->history($id,2)['rows'][0]['action']==='create','all original task events remain accessible in bounded six-state history');
+$is->update($id,7,array_replace($data,['assignee_id'=>'reader','deadline'=>'2026-10-20']));
+inspectionCheck($is->get($id)['implementation']===''&&$is->get($id)['status']==='open'&&$is->history($id)['total']===8,'reassignment needs fresh personal implementation while retaining earlier original evidence');
+inspectionReject(fn()=>$member->get($id),'old assignee loses personal access immediately after reassignment');
+$source=new \Kulturhus\Verein\Events\Calendar\InspectionSource($db,'reader');$dates=$source->rows('2026-10-01','2026-10-31');
+inspectionCheck(count($dates)===1&&$dates[0]['source_kind']==='inspections','actual calendar uses a separate operational inspection source');
+inspectionCheck($source->rows('2026-10-01','2026-10-20')===[]&&count($source->rows('2026-10-20','2026-10-21'))===1,'operational calendar includes first day and excludes following range boundary');
+$feed=new \Kulturhus\Verein\CalendarFeed($db,'author',new \Kulturhus\Verein\Registry($db,'author'));
+inspectionCheck($feed->between('2026-10-01','2026-10-20','inspections')===[]&&count($feed->between('2026-10-20','2026-10-21','inspections'))===1,'actual shared CalendarFeed preserves operational day boundaries and distinct source filter');
+inspectionReject(fn()=>$reader->deadlines('2026-10-20','2026-10-20'),'empty operational calendar interval rejected');
+inspectionReject(fn()=>$reader->deadlines('2026-10-01','2028-10-01'),'unbounded operational calendar interval rejected');
+foreach($assessmentTables as$t)inspectionCheck($db->query('SELECT * FROM '.$t.' ORDER BY 1,2')->fetchAll()===$original[$t],'operational lifecycle leaves every original assessment row exact: '.$t);
+inspectionCheck($store->document($doc)['status']==='approved'&&$store->document($doc,4)===$historical,'assessment approval and original pinned version remain unchanged');
+inspectionCheck(!isset($store->document($doc)['values']['hazards'][0]['action_completed_on'])&&$store->document($doc)['values']['hazards'][0]['action_deadline']==='2026-10-12','operational completion does not fill or change planned risk-register dates');
+$store->transition($doc,4,'reopen');$store->saveDocument($doc,5,['notes'=>'Later assessment original','hazards'=>[$risk]],'Later assessment','');
+inspectionCheck($is->get($id)['source']===$task['source']&&$store->document($doc,4)===$historical,'later assessment change never retargets the operational source version');
+$post=['action'=>'document-workflow-inspection-update','wf_id'=>$id,'wf_version'=>'8','inspection_query'=>'Human','inspection_status'=>'all','inspection_scope'=>'all','inspection_page'=>'1','inspection_title'=>$data['title'],'inspection_instruction'=>'Retained human actual edit','inspection_assignee'=>'reader','inspection_deadline'=>'2026-10-22'];
+$missing=$post;unset($missing['inspection_deadline']);$before=$is->get($id);inspectionReject(fn()=>InspectionPage::handle($is,$missing),'truncated actual form cannot silently clear deadline or another instruction field');inspectionCheck($is->get($id)===$before,'truncated original form leaves full operational task exact');
+$route=InspectionPage::handle($is,$post);inspectionCheck($route['tab']==='inspections'&&$route['inspection_query']==='Human'&&$is->get($id)['instruction']==='Retained human actual edit','actual form adapter keeps catalogue context and writes independent instruction');
+$children=[];foreach(['Actual first human report','Actual second human report']as$text){$p=proc_open([...TestSupport::phpCommand(),__FILE__,'--race'],[0=>['pipe','r'],1=>['pipe','w']],$pipes);if(!is_resource($p))throw new RuntimeException('Own race process unavailable.');fwrite($pipes[0],json_encode(['id'=>$id,'version'=>9,'text'=>$text],JSON_THROW_ON_ERROR));fclose($pipes[0]);$children[]=[$p,$pipes[1]];}
+$results=[];foreach($children as[$p,$out]){$results[]=stream_get_contents($out);fclose($out);if(proc_close($p)!==0)throw new RuntimeException('Own race failed.');}sort($results);
+inspectionCheck($results===['saved','stale']&&(int)$is->get($id)['version']===10,'two real simultaneous processes accept exactly one current implementation report');
+$is->transition($id,10,'verify');inspectionCheck($source->rows('2026-10-01','2026-10-31')===[],'separate calendar deadline disappears only after operational acceptance');
+for($i=0;$i<507;$i++)$is->create(array_replace($data,['title'=>'Own bounded instruction '.str_pad((string)$i,4,'0',STR_PAD_LEFT),'assignee_id'=>'reader']),bin2hex(random_bytes(16)));
+$last=$is->listing(['page'=>'99999']);inspectionCheck($last['total']===507&&$last['pages']===85&&count($last['rows'])===3,'complete operational catalogue reaches all originals beyond 500 without loading full reports');
+$unassigned=(new ManagerDocumentWorkflows($db,'outsider'))->inspections;inspectionCheck($unassigned->listing(['status'=>'all'])['total']===0&&!$unassigned->allows(),'unassigned member cannot enumerate the full HSE operational catalogue');
+$cancel=$is->create(array_replace($data,['title'=>'Own cancellation']),bin2hex(random_bytes(16)));$is->transition($cancel,1,'cancel',['comment'=>'Event cancelled.']);inspectionCheck($is->get($cancel)['status']==='cancelled'&&$is->history($cancel)['rows'][0]['comment']==='Event cancelled.','cancellation preserves concrete reason and original instruction');
+$db->exec("UPDATE actors SET active=0 WHERE id='reader'");inspectionReject(fn()=>$reader->get($id),'inactive account loses operational access immediately');$db->exec("UPDATE actors SET active=1 WHERE id='reader'");
+if(getenv('DVM_HSE_INSPECTIONS_BROWSER')==='1'){
+    require __DIR__.'/support/hse-inspections-browser-fixture.php';$browser=ownHseInspectionsBrowser($db,$store,$template);$originalBrowser=[];foreach($browser['input']['documents']as$mode=>$did)$originalBrowser[$mode]=$store->document($did,4);
+    try{$p=proc_open(['node',__DIR__.'/hse-inspections-browser.mjs'],[0=>['pipe','r'],1=>['pipe','w']],$pipes);if(!is_resource($p))throw new RuntimeException('Own browser unavailable.');fwrite($pipes[0],json_encode($browser['input'],JSON_THROW_ON_ERROR));fclose($pipes[0]);while(($line=fgets($pipes[1]))!==false)echo $line;fclose($pipes[1]);if(proc_close($p)!==0)throw new RuntimeException('Own inspection browser failed.');
+        foreach($originalBrowser as$mode=>$o)inspectionCheck($store->document($browser['input']['documents'][$mode],4)===$o&&$store->document($browser['input']['documents'][$mode])['status']==='approved','actual browser operational lifecycle preserves exact approved assessment: '.$mode);
+    }finally{proc_terminate($browser['process']);proc_close($browser['process']);fclose($browser['log']);}
+}
+echo json_encode(['checks'=>$n,'new_tables'=>3,'inspection_tables'=>2,'external_actions'=>0],JSON_THROW_ON_ERROR)."\n";

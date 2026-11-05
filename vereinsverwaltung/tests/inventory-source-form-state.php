@@ -1,0 +1,8 @@
+<?php declare(strict_types=1);
+require __DIR__.'/finance-form-state.php';
+require_once __DIR__.'/../src/Auth/WorkspaceAccess.php';
+$invoice=$finance->createEntry($bill,bin2hex(random_bytes(16)));$inventory=new Kulturhus\Verein\Inventory($db,'admin');$documents=new Kulturhus\Verein\Documents($db,'admin');$workspaceAccess=new Kulturhus\Verein\WorkspaceAccess($db,'admin');$view='inventory';$tab='items';$canFinance=true;$canRead=true;
+$_GET=['view'=>'inventory','tab'=>'items','new_item'=>'1','create_mode'=>'quantity','source'=>'expense:'.$invoice];$_POST=['action'=>'inventory-item','target'=>'','version'=>'0','request_key'=>'original','data'=>['name'=>'Synthetic retry','source'=>'none','category'=>'Technology','unit'=>'Stück','minimum'=>'0','kind'=>'reusable','active'=>'1','initial_quantity'=>'2','initial_location'=>'','notes'=>'Keep note']];
+ob_start();require __DIR__.'/../views/Inventory/inventory.php';$html=ob_get_clean();check((bool)preg_match('/value="none"\s+selected/',$html),'failed inventory form retains removed source despite GET invoice');check(str_contains($html,'Synthetic retry')&&str_contains($html,'Keep note'),'failed inventory draft name and notes remain');echo "$checks inventory source form checks passed\n";
+
+$dom=new DOMDocument();$previousXmlErrors=libxml_use_internal_errors(true);$dom->loadHTML($html);libxml_clear_errors();libxml_use_internal_errors($previousXmlErrors);$xpath=new DOMXPath($dom);foreach(['content_quantity'=>'1','minimum'=>'0'] as $name=>$minimum){$field=$xpath->query('//input[@name="data['.$name.']"]')->item(0);check($field&&$field->hasAttribute('required')&&$field->getAttribute('min')===$minimum,'inventory required numeric constraint '.$name);}

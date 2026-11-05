@@ -1,0 +1,32 @@
+<?php declare(strict_types=1);
+require_once __DIR__.'/../../processwire/site/src/SiteNavigation.php';
+require_once __DIR__.'/../../processwire/site/src/WebsiteAreaAccess.php';
+use Kulturhus\{SiteNavigation,WebsiteAreaAccess};
+$n=0;
+function checkMenu(bool $condition,string $name):void{global $n;if(!$condition)throw new RuntimeException($name);++$n;echo "PASS $name\n";}
+function badMenu(array $value,string $name):void{try{SiteNavigation::validate($value);}catch(InvalidArgumentException){checkMenu(true,$name);return;}throw new RuntimeException($name);}
+$default=SiteNavigation::defaults();$links=SiteNavigation::links($default,2026);
+checkMenu(array_column($links,'path')===['veranstaltungen/','galerie/','aktuelles/','verein/','mitglied-werden/','kontakt/'],'original targets and order preserved');
+checkMenu($links[0]['label']==='Programm 2026','automatic current program year');
+checkMenu(SiteNavigation::links($default,2027)[0]['label']==='Programm 2027','automatic next program year');
+$manual=$default;$manual['program_auto']='0';$manual['items']['program']['label']='Programm 2027';
+checkMenu(SiteNavigation::links($manual,2026)[0]['label']==='Programm 2027','manual label overrides automatic year');
+$manual['items']['contact']['position']='1';$manual['items']['program']['position']='6';
+checkMenu(SiteNavigation::links($manual,2026)[0]['key']==='contact','reorder without changing targets');
+$manual['items']['contact']['visible']='0';checkMenu(count(SiteNavigation::links($manual,2026))===5,'hide only removes navigation link');
+$manual['program_auto']='1';checkMenu(SiteNavigation::validate($manual)['items']['program']['label']==='Programm','automatic mode normalizes stale custom label');
+$bad=$default;$bad['items']['contact']['position']='1';badMenu($bad,'duplicate positions rejected');
+$bad=$default;$bad['items']['contact']['position']='7';badMenu($bad,'out of range rejected');
+$bad=$default;$bad['items']['contact']['position']='1x';badMenu($bad,'malformed position rejected');
+$bad=$default;unset($bad['items']['contact']);badMenu($bad,'missing menu item rejected');
+$bad=$default;$bad['items']['contact']['path']='https://example.org';badMenu($bad,'custom URL injection rejected');
+$bad=$default;$bad['items']['contact']['label']='<script>\n';$bad['items']['contact']['label'].="\n";badMenu($bad,'control characters rejected');
+$bad=$default;$bad['items']['contact']['label']=' ';badMenu($bad,'blank label rejected');
+$bad=$default;$bad['items']['contact']['label']=str_repeat('ä',61);badMenu($bad,'long label rejected');
+$bad=$default;foreach($bad['items'] as &$row)$row['visible']='0';unset($row);badMenu($bad,'empty navigation rejected');
+$bad=$default;$bad['program_auto']=true;badMenu($bad,'unexpected checkbox type rejected');
+checkMenu(WebsiteAreaAccess::level(['website_access'=>['texts'=>'read']],'navigation')==='read','menu inherits text read permission');
+checkMenu(WebsiteAreaAccess::level(['website_access'=>['texts'=>'write']],'navigation')==='write','menu inherits text write permission');
+checkMenu(WebsiteAreaAccess::level(['website_access'=>['press'=>'write']],'navigation')==='none','press rights do not grant menu rights');
+checkMenu(WebsiteAreaAccess::operation('navigation/save')==='texts','operation uses existing text permission');
+echo "$n menu checks passed\n";

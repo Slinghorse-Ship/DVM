@@ -1,0 +1,9 @@
+.invoice-payment-workspace{min-width:0;max-width:100%;overflow-wrap:anywhere}
+.invoice-payment-workspace h3,.invoice-payment-workspace h4,.invoice-payment-workspace h5{overflow-wrap:anywhere}
+.invoice-payment-workspace form{display:grid;gap:.75rem;min-width:0}
+.invoice-payment-workspace label{display:grid;gap:.35rem;min-width:0}
+.invoice-payment-workspace input,.invoice-payment-workspace textarea,.invoice-payment-workspace .btn{min-height:44px;max-width:100%;min-width:0}
+.invoice-payment-workspace .btn{white-space:normal;overflow-wrap:anywhere}
+.invoice-payment-workspace dd{margin-inline-start:0;min-width:0}
+.invoice-payment-workspace pre{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;max-width:100%}
+.invoice-payment-workspace .invoice-payment-original{min-width:0}

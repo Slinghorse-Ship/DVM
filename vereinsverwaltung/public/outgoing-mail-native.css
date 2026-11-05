@@ -1,0 +1,4 @@
+[data-outgoingmail-native] .outgoingmail-values{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;max-width:100%;font:inherit}
+[data-outgoingmail-native] .application-pdf{min-width:0;max-width:100%}
+[data-outgoingmail-native] .pdf-canvas-wrap{overflow:auto;max-width:100%;min-width:0;max-height:80dvh;padding:.75rem;background:#edf2f7;border:1px solid #ccd6da;border-radius:.4rem}
+[data-outgoingmail-native] .pdf-canvas-wrap canvas{display:block;max-width:none;margin-inline:auto}

@@ -1,0 +1,14 @@
+{
+  "pins": [
+    {
+      "identity": "sumup-ios-sdk",
+      "kind": "remoteSourceControl",
+      "location": "https://github.com/sumup/sumup-ios-sdk.git",
+      "state": {
+        "revision": "8224b6eb435dd8b06910dfb534c412a4700f98e2",
+        "version": "7.2.0"
+      }
+    }
+  ],
+  "version": 2
+}

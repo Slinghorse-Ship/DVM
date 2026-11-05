@@ -1,0 +1,60 @@
+<?php declare(strict_types=1);
+require __DIR__.'/native-document-interface.php';
+require_once dirname(__DIR__).'/src/Events/EventVoucherViewState.php';
+use Kulturhus\Verein\{Registry,EventVouchers,EventVoucherPdf,EventVoucherViewState};
+use Kulturhus\Native\{TestSupport,Shared\Db};
+
+$viRegistry=new Registry($db,'own-list-admin');
+$viPerson=$viRegistry->saveContact(null,0,'person','Own private voucher member','same-voucher@example.invalid','Own address 0');
+$viOther=$viRegistry->saveContact(null,0,'person','Own other same-email member','same-voucher@example.invalid','Own other address');
+$viRegistry->addMembership($viPerson,'0','aktiv','2020-01-01');$viRegistry->addMembership($viOther,'Own other','passiv','2020-01-01');
+Db::run($db,"UPDATE actors SET contact_id=? WHERE id IN ('own-list-admin','own-list-reader')",[$viPerson]);
+Db::run($db,"UPDATE settings_roles SET finance_access='none',members_access='none',documents_access='none' WHERE club_id='own-list-club' AND id='own-list-reader'");
+Db::run($db,"INSERT INTO actors(id,club_id,role) VALUES('own-voucher-helper','own-list-club','member')");
+$viAdmin=new EventVouchers($db,'own-list-admin');$viReader=new EventVouchers($db,'own-list-reader');
+$viSources=[];$viEvents=[];
+for($viIndex=0;$viIndex<28;$viIndex++){
+ $viDay=(new DateTimeImmutable('2040-01-01'))->modify('+'.$viIndex.' days')->format('Y-m-d');
+ $viSource=$viRegistry->saveAppointment(null,0,['title'=>$viIndex===0?'Gutscheine ansehen':'Own private voucher event '.sprintf('%02d',$viIndex).' <em data-own-event>0</em> ä🙂','start'=>$viDay.'T18:00','end'=>$viDay.'T20:00','location'=>'Own original venue 0','description'=>str_repeat('Own private body ',400),'category'=>'verein'],[]);
+ $viEvent=$viAdmin->open($viSource,$key());$viAdmin->grant($viEvent,[$viPerson],[['label'=>'0','kind'=>'other','unit'=>'piece','amount'=>$viIndex===0?'30':'1'],['label'=>'Own human EUR label ä🙂','kind'=>'other','unit'=>'eur','amount'=>'3.50']],$key());
+ $viSources[]=$viSource;$viEvents[]=$viEvent;
+}
+$viOtherGrant=$viAdmin->grant($viEvents[0],[$viOther],[['label'=>'Own other member private code','kind'=>'other','unit'=>'piece','amount'=>'2']],$key());
+$viBefore=ownOriginalDatabaseHash($db,$tables);
+$viPage=$viReader->eventsPage([],true);
+$check($viPage['total']===28&&count($viPage['rows'])===25&&count($viReader->eventsPage(['page'=>2],true)['rows'])===3,'native personal event pages count and reach all twenty-eight own originals');
+$viCards=$viReader->cardsPage($viEvents[0],[],true);
+$check($viCards['total']===31&&count($viCards['rows'])===25&&count($viReader->cardsPage($viEvents[0],['page'=>2],true)['rows'])===6,'native personal card pages reach each original piece and exact euro balance in twenty-five-card windows');
+$check(count(array_filter($viCards['rows'],static fn(array $card):bool=>array_key_exists('tickets',$card)))===0,'native individual cards never duplicate an embedded whole ticket list');
+$check($viAdmin->cardsPage($viEvents[0],[],true)===$viCards,'explicit personal administrator card page stays inside their own recipient rather than general redemption rights');
+$check($viAdmin->cardsPage($viEvents[0])['total']===33,'general current administration retains its explicitly authorized other-recipient view');
+$viExact=$viReader->cardsPage($viEvents[0],['query'=>\Kulturhus\Verein\EventVoucherQr::payload($viEvents[0],$viCards['rows'][0]['code'])],true);
+$check($viExact['total']===1&&$viExact['rows'][0]['code']===$viCards['rows'][0]['code'],'actual original QR payload selects only its exact original physical piece');
+$deny(fn()=>$viReader->cardsPage($viEvents[0],['query'=>\Kulturhus\Verein\EventVoucherQr::payload($viEvents[1],$viCards['rows'][0]['code'])],true),'a QR from another event cannot select unrelated native cards');
+foreach([0,'0','01',[],null,'1000000000']as$viBad)$deny(fn()=>$viReader->cardsPage($viEvents[0],['page'=>$viBad],true),'malformed native card page has no unrelated first-page replacement');
+$deny(fn()=>$viReader->cardsPage($viEvents[0],['query'=>str_repeat('🙂',241)],true),'whole overlong Unicode native card search is refused without clipping');
+$viSnapshot=$viReader->printSnapshot($viEvents[0],$viPerson,true);
+$check(count($viSnapshot['vouchers'])===31&&$viSnapshot['person']['name']==='Own private voucher member'&&!str_contains(json_encode($viSnapshot,JSON_THROW_ON_ERROR),'Own other member private code'),'current personal print snapshot has only its exact authorized original pieces and owner');
+$deny(fn()=>$viReader->printSnapshot($viEvents[0],$viOther,true),'personal print refuses another same-email recipient');
+$check(str_starts_with(EventVoucherPdf::file($db,'own-list-reader',$viEvents[0],$viPerson),'%PDF-'),'general private download adapter uses the new bounded current snapshot and produces a real PDF');
+$check(ownOriginalDatabaseHash($db,$tables)===$viBefore,'all native personal event card source search and print reads preserve every complete original business row');
+
+$viConfig=TestSupport::config();$viDsn='mysql:host='.$viConfig['host'].';port='.$viConfig['port'].';dbname='.$viConfig['database'].';charset=utf8mb4';
+$viOptions=[PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC,PDO::ATTR_EMULATE_PREPARES=>false];
+$viCaller=new PDO($viDsn,$viConfig['username'],$viConfig['password'],$viOptions);
+Db::run($db,'UPDATE contacts SET archived_at=? WHERE id=?',[gmdate('c'),$viPerson]);$viArchived=ownOriginalDatabaseHash($db,$tables);
+$deny(fn()=>$viReader->vouchers($viEvents[0]),'fresh archived own profile cannot expose original private codes through the existing voucher API');
+$deny(fn()=>$viReader->cardsPage($viEvents[0],[],true),'native own QR page refuses the archived personal profile');
+$check(ownOriginalDatabaseHash($db,$tables)===$viArchived,'archived private card refusal changes no accepted balance ticket history or business row');Db::run($db,'UPDATE contacts SET archived_at=NULL WHERE id=?',[$viPerson]);
+$viAdmin->configure($viEvents[0],1,true,['own-voucher-helper'],$key());$viLegitimate=new EventVouchers($db,'own-voucher-helper');$check($viLegitimate->canRedeem($viEvents[0])&&count($viLegitimate->vouchers($viEvents[0]))===3&&count($viLegitimate->events())===1,'current explicitly assigned helper retains authorized other-recipient originals without requiring a personal profile');$viCaller->beginTransaction();$viCaller->query('SELECT * FROM event_voucher_helpers')->fetchAll();$viAdmin->configure($viEvents[0],2,true,[],$key());$viCurrent=ownOriginalDatabaseHash($db,$tables);$viRevoked=new EventVouchers($viCaller,'own-voucher-helper');
+$check(!$viRevoked->canRedeem($viEvents[0]),'actual revoked helper permission is current through an earlier caller helper snapshot');
+$deny(fn()=>$viRevoked->vouchers($viEvents[0]),'actual revoked unlinked helper cannot retain another recipient original private code');
+$check($viCaller->inTransaction(),'current voucher read refusal preserves its caller transaction');$viCaller->rollBack();
+$check(ownOriginalDatabaseHash($db,$tables)===$viCurrent,'refused revoked helper read changes no complete accepted original row');
+
+$viPrepared=EventVoucherViewState::prepare($viReader,['voucher_event'=>$viEvents[0],'voucher_scope'=>'own','voucher_cards_page'=>'0']);
+$check($viPrepared['http_status']===422&&$viPrepared['cards']===null&&$viPrepared['history']['total']===2,'invalid personal card page exposes no substitute cards and retains independently authorized original history');
+require __DIR__.'/support/voucher-original-tests.php';
+require __DIR__.'/support/voucher-source-tests.php';
+if(getenv('DVM_VOUCHER_INTERFACE_BROWSER')==='1')require __DIR__.'/support/voucher-interface-browser-fixture.php';
+echo json_encode(['suite'=>'native-voucher-interface','checks'=>$n,'external_actions'=>0],JSON_THROW_ON_ERROR)."\n";

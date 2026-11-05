@@ -1,0 +1,20 @@
+<?php declare(strict_types=1);
+require __DIR__.'/../Auth/account-language-context.php';
+$boardSignature=new \Kulturhus\Verein\BoardSignature($db,(string)$_SESSION['actor']);
+if(!$boardSignature->canUse())return;
+$signatureState=$boardSignature->state();$signatureAsset=$boardSignature->asset();
+?>
+<section class="card board-signature" id="vorstands-unterschrift">
+<h2><?= e($accountText('Unterschrift des ersten Vorstands')) ?></h2>
+<p><?= e($accountText('Hier eine gut lesbare Unterschrift als Bild hinterlegen oder direkt zeichnen. Sie wird für die berechtigte Erstellung von Bestätigungen verwendet.')) ?></p>
+<?php if($signatureAsset): ?><p><strong><?= e($accountText('Bisher gespeichert')) ?></strong></p><img class="board-signature-image" src="data:<?= e($signatureAsset['mime']) ?>;base64,<?= base64_encode($signatureAsset['bytes']) ?>" alt="<?= e($accountText('Bisher hinterlegte Vorstands-Unterschrift')) ?>"><?php else: ?><p><?= e($accountText('Es ist noch keine Unterschrift gespeichert.')) ?></p><?php endif ?>
+<form method="post" action="?view=settings&amp;tab=account#vorstands-unterschrift" enctype="multipart/form-data" data-board-signature data-account-messages="<?= e(json_encode(\Kulturhus\Native\Language\AccountMessages::browser($accountLanguageMessages,['Zeichenfläche geleert. Eine schon übernommene Vorschau bleibt bis zu einer neuen Übernahme erhalten.','Bitte zuerst in das weiße Feld zeichnen.','Zeichnung konnte nicht übernommen werden. Bitte als Bild hochladen.','Zeichnung übernommen. Upload abwarten, die Vorschau prüfen und anschließend Unterschrift speichern.']),JSON_THROW_ON_ERROR)) ?>">
+<?= csrf().hidden('action','settings-signature').hidden('version',input($_POST,'action')==='settings-signature'?input($_POST,'version'):$signatureState['version']) ?>
+<label class="asset-upload"><?= e($accountText('Unterschriftenbild auswählen')) ?><input class="form-control" type="file" name="signature" accept="image/png,image/jpeg,.heic,.heif,.hif,.dng,.cr2,.cr3,.crw,.nef,.nrw,.arw,.sr2,.srf,.rw2,.rwl,.orf,.raf,.pef,.ptx,.raw,.iiq,.3fr,.fff,.kdc,.dcr,.mos,.mef,.mrw,.erf" required><small><?= e($accountText('PNG/JPG bis 2 MB · HEIC/RAW bis 256 MiB als JPEG · möglichst nur die Unterschrift mit wenig Rand')) ?></small></label>
+<details data-signature-draw hidden><summary><?= e($accountText('Stattdessen direkt zeichnen')) ?></summary><p><?= e($accountText('Mit Maus, Stift oder Finger im weißen Feld unterschreiben. Danach „Zeichnung übernehmen“ wählen.')) ?></p><canvas width="900" height="280" aria-label="<?= e($accountText('Zeichenfläche für die eigene Unterschrift')) ?>"><?= e($accountText('Bitte stattdessen ein PNG- oder JPG-Bild hochladen.')) ?></canvas><div class="doc-actions"><button type="button" class="btn btn-outline theme-secondary secondary" data-signature-clear><?= e($accountText('Zeichnung leeren')) ?></button><button type="button" class="btn btn-outline theme-secondary secondary" data-signature-use><?= e($accountText('Zeichnung übernehmen')) ?></button></div><p role="status" data-signature-status></p></details>
+<div data-signature-preview hidden><h3><?= e($accountText('Neue Unterschrift zur Prüfung')) ?></h3><img class="board-signature-image" alt="<?= e($accountText('Neue Unterschrift vor dem Speichern')) ?>"><p><?= e($accountText('Ist alles gut lesbar? Erst „Unterschrift speichern“ ersetzt die bisher gespeicherte Unterschrift.')) ?></p></div>
+<label class="setting-check"><input class="check" type="checkbox" name="reviewed" value="1" required><?= e($accountText('Ich habe die Unterschrift geprüft und bin berechtigt, sie für den ersten Vorstand zu hinterlegen.')) ?></label>
+<button class="btn btn-solid theme-primary" type="submit"><?= e($accountText('Unterschrift speichern')) ?></button>
+</form><p><a href="?view=portal&amp;tab=safety&amp;volunteer=1#ehrenamtsbestaetigung"><?= e($accountText('Zur Ehrenamtsbestätigung →')) ?></a></p>
+</section>
+<link rel="stylesheet" href="board-signature.css?v=1"><script defer src="board-signature.js?v=2"></script>

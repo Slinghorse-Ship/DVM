@@ -1,0 +1,195 @@
+{
+  "schema": 1,
+  "revision": 58,
+  "source_kind": "explicit_original_fund_valuation_nature_and_separately_posted_commercial_tax_provision_reconciliation",
+  "production_authorized": false,
+  "legal_basis": [
+    "https://www.gesetze-im-internet.de/estg/__5.html",
+    "https://www.gesetze-im-internet.de/hgb/__249.html",
+    "https://www.gesetze-im-internet.de/hgbeg/art_67.html"
+  ],
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "valuation-provisions-r58-30920@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.other.imminentLoss.other",
+          "choices": [
+            "bs.eqLiab.accruals.other.imminentLoss.other"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "30920",
+              "semantic": {
+                "name": "Rückstellungen für drohende Verluste aus schwebenden Geschäften",
+                "function": "",
+                "range_start": "30920",
+                "range_end": "30920",
+                "parent": null
+              },
+              "signature": "5654d05826d1b8eee9870af00d70a9b6cf904b652a585ce88314ec40aaf96479"
+            }
+          ]
+        },
+        {
+          "purpose": "valuation-provisions-r58-30980@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.other.expenditure",
+          "choices": [
+            "bs.eqLiab.accruals.other.expenditure"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "30980",
+              "semantic": {
+                "name": "Aufwandsrückstellungen nach § 249 Abs. 2 HGB a. F.12)",
+                "function": "",
+                "range_start": "30980",
+                "range_end": "30980",
+                "parent": null
+              },
+              "signature": "b857fe1317fd6291d11bfb552057036458bd407e98f0a6fb01654f2f6578c07f"
+            }
+          ]
+        },
+        {
+          "purpose": "valuation-provisions-r58-48430@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.currGains",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.currGains",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.miscellaneous"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "48430",
+              "semantic": {
+                "name": "Erträge aus Bewertung Finanzmittelfonds",
+                "function": "",
+                "range_start": "48430",
+                "range_end": "48430",
+                "parent": null
+              },
+              "signature": "69489d7369aba199dfff74f411dc5a9ee3eb49eedc4547c8614d53510c67baa0"
+            }
+          ]
+        },
+        {
+          "purpose": "valuation-provisions-r58-68830@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.currLoss",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.currLoss",
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "68830",
+              "semantic": {
+                "name": "Aufwendungen aus Bewertung Finanzmittelfonds",
+                "function": "",
+                "range_start": "68830",
+                "range_end": "68830",
+                "parent": null
+              },
+              "signature": "104d35050352b7956aab6602e8898d2febb599e92dfac8e39ecd6fe61f39a2ca"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "valuation-provisions-r58-30920@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.other.imminentLoss.other",
+          "choices": [
+            "bs.eqLiab.accruals.other.imminentLoss.other"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "30920",
+              "semantic": {
+                "name": "Rückstellungen für drohende Verluste aus schwebenden Geschäften",
+                "function": "",
+                "range_start": "30920",
+                "range_end": "30920",
+                "parent": null
+              },
+              "signature": "5654d05826d1b8eee9870af00d70a9b6cf904b652a585ce88314ec40aaf96479"
+            }
+          ]
+        },
+        {
+          "purpose": "valuation-provisions-r58-48430@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.currGains",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.currGains",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.miscellaneous"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "48430",
+              "semantic": {
+                "name": "Erträge aus Bewertung Finanzmittelfonds",
+                "function": "",
+                "range_start": "48430",
+                "range_end": "48430",
+                "parent": null
+              },
+              "signature": "69489d7369aba199dfff74f411dc5a9ee3eb49eedc4547c8614d53510c67baa0"
+            }
+          ]
+        },
+        {
+          "purpose": "valuation-provisions-r58-68830@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.currLoss",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.currLoss",
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "68830",
+              "semantic": {
+                "name": "Aufwendungen aus Bewertung Finanzmittelfonds",
+                "function": "",
+                "range_start": "68830",
+                "range_end": "68830",
+                "parent": null
+              },
+              "signature": "104d35050352b7956aab6602e8898d2febb599e92dfac8e39ecd6fe61f39a2ca"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

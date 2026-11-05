@@ -1,0 +1,22 @@
+{
+  "source": "Verwaltungsportal Hessen, amtliche Muster für steuerbegünstigte Körperschaften",
+  "downloaded": "2026-09-05",
+  "forms": [
+    {
+      "file": "money-original.pdf",
+      "url": "https://verwaltungsportal.hessen.de/sites/default/files/media_documents/0353_Vereine_Muster_Geldzuwendung_2014.pdf",
+      "sha256": "f2fac82b043466d138d5233937742b197aad92451cbda89c8f1256787f9d9701",
+      "form_version": "2013",
+      "pages": 1,
+      "interactive_fields": false
+    },
+    {
+      "file": "goods-original.pdf",
+      "url": "https://verwaltungsportal.hessen.de/sites/default/files/media_documents/0353_Vereine_Muster_Sachzuwendung_2014.pdf",
+      "sha256": "0138bb2840070b9cea8d3d4a152c2c0aa475ddecb16c063e47c29c0cd98594f8",
+      "form_version": "2013",
+      "pages": 1,
+      "interactive_fields": false
+    }
+  ]
+}

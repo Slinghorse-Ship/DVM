@@ -1,0 +1,25 @@
+<?php declare(strict_types=1);
+$vmOperations=['open'=>'Veranstaltung angelegt','grant'=>'Gutscheine zugeteilt','redeem'=>'Gutschein eingelöst','revoke'=>'Gutschein gesperrt','reverse'=>'Einlösung zurückgenommen','configure'=>'Helfer und Ausgabe gespeichert','mail-template'=>'Mailvorlage gespeichert','mail'=>'Persönliche Mail vorgemerkt','mail-all'=>'Sammelversand vorgemerkt','cancel-mail'=>'Versandvorgang beendet'];
+?>
+<?php if($vmState['receipt']!==null):$vmReceipt=$vmState['receipt'];$vmInput=$vmReceipt['payload'];$vmContext=$vmReceipt['context'];$vmOperation=$vmInput[0]??'';?>
+<section class="dwf-card" data-voucher-receipt><h2><?= e($vmI('Vorgang bestätigt')) ?></h2><p><?= e($vmDate($vmReceipt['created_at'])) ?> · <?= e($vmI($vmOperations[$vmOperation]??'Früherer bestätigter Vorgang')) ?></p>
+<p><?= e($vmI('Die folgenden Angaben gehören zur ursprünglichen Bestätigung. Spätere Namen, Guthaben und Einstellungen ersetzen sie nicht.')) ?></p>
+<?php if($vmContext['event']??null):$vmOriginalEvent=$vmContext['event'];?><h3><?= e($vmOriginalEvent['title']) ?></h3><p><?= e($vmDate($vmOriginalEvent['starts_at'])) ?> · <?= e($vmOriginalEvent['location']) ?></p><a class="btn btn-outline theme-secondary dwf-button" href="<?= e(url(['view'=>'portal','tab'=>'vouchers','voucher_scope'=>'manage','voucher_event'=>$vmOriginalEvent['id']])) ?>"><?= e($vmI('Aktuellen Veranstaltungsstand öffnen')) ?></a><?php endif ?>
+<?php if($vmContext!==null):?><h3><?= e($vmI('Bestätigte Personen')) ?></h3><?php foreach($vmContext['people']as$vmOriginalPerson):?><p data-voucher-original-person><?= e($vmOriginalPerson) ?></p><?php endforeach ?>
+<?php foreach($vmContext['helpers']as$vmOriginalHelper):?><p><?= e($vmOriginalHelper) ?></p><?php endforeach ?>
+<?php if($vmContext['vouchers']??[]):?><h3><?= e($vmI('Bestand nach diesem ursprünglichen Vorgang')) ?></h3><p><?= e($vmI('Diese ursprünglichen Guthaben sind keine aktuelle Einlöseanzeige.')) ?></p><?php foreach($vmContext['vouchers']as$vmOriginalVoucher):?><article data-voucher-original-result><h4><?= e($vmOriginalVoucher['label']) ?></h4><p><?= e($vmAmount((int)$vmOriginalVoucher['remaining'],$vmOriginalVoucher['unit'])) ?> · <?= e($vmI($vmOriginalVoucher['state']==='revoked'?'Gesperrt':'Ursprünglich zugeteilt')) ?></p><p><?= e($vmF('Fassung {version}',['version'=>$vmOriginalVoucher['version']])) ?></p></article><?php endforeach ?><?php endif ?>
+<?php else:?><p><?= e($vmI('Personennamen und Veranstaltungsangaben wurden für diese frühere Bestätigung nicht gespeichert.')) ?></p><?php endif ?>
+<?php if($vmReceipt['input_available']):?>
+<h3><?= e($vmI('Bestätigte Eingaben')) ?></h3>
+<?php if($vmOperation==='grant'):foreach($vmInput[3]as$vmOriginalBenefit):?><article data-voucher-original-benefit><h4><?= e($vmOriginalBenefit['label']) ?></h4><p><?= e($vmAmount((int)$vmOriginalBenefit['amount'],$vmOriginalBenefit['unit'])) ?></p></article><?php endforeach;elseif(in_array($vmOperation,['redeem','revoke'],true)):?><p><?= e($vmI('Ursprüngliche Menge oder Betrag')) ?>: <?= e($vmInput[4]) ?></p><?php if($vmInput[5]!==''):?><p class="voucher-manager-original"><?= e($vmInput[5]) ?></p><?php endif ?>
+<?php elseif($vmOperation==='reverse'):?><p class="voucher-manager-original"><?= e($vmInput[3]) ?></p>
+<?php elseif($vmOperation==='configure'):?><p><?= e($vmI($vmInput[3]?'Ausgabe geöffnet':'Ausgabe geschlossen')) ?></p>
+<?php elseif($vmOperation==='mail-template'):?><p class="voucher-manager-original"><?= e($vmInput[3]['subject']) ?></p><p class="voucher-manager-original"><?= e($vmInput[3]['message']) ?></p><?php endif ?>
+<?php if(in_array($vmOperation,['mail','mail-all','cancel-mail'],true))require __DIR__.'/native-voucher-mail-receipt.php'; ?>
+<p><a download class="btn btn-outline theme-secondary dwf-button" href="<?= e(url(['voucher_original'=>$vmReceipt['key']])) ?>"><?= e($vmI('Ursprüngliche Bestätigung als JSON herunterladen')) ?></a></p>
+<?php else:?><p><?= e($vmI('Für diesen früheren Vorgang wurden keine ursprünglichen Eingaben gespeichert. Das bestätigte Ergebnis bleibt erhalten.')) ?></p><?php endif ?>
+<details><summary><?= e($vmI('Vorgangskennung')) ?></summary><p class="voucher-manager-original"><?= e($vmReceipt['key']) ?></p></details></section>
+<?php endif ?>
+<section class="dwf-card" data-voucher-receipts><h2><?= e($vmI('Meine bestätigten Vorgänge')) ?></h2><?php $vmSearch('receipts','Bestätigte Vorgänge durchsuchen');$vmError('receipts');echo $vmPager('receipts'); ?>
+<?php foreach($vmState['receipts']['rows']??[]as$vmReceiptRow):?><article data-voucher-receipt-row><h3><a href="<?= e($vmUrl(['voucher_receipt'=>$vmReceiptRow['request_key']])) ?>"><?= e($vmI($vmOperations[$vmReceiptRow['operation']]??'Früherer bestätigter Vorgang')) ?></a></h3><p><?= e($vmDate($vmReceiptRow['created_at'])) ?></p><?php if(!$vmReceiptRow['input_available']):?><p><?= e($vmI('Ursprüngliche Eingaben nicht gespeichert.')) ?></p><?php endif ?></article><?php endforeach ?>
+<?php if($vmState['receipts']!==null&&!$vmState['receipts']['rows']):?><p><?= e($vmI('Keine passenden bestätigten Vorgänge.')) ?></p><?php endif ?><?= $vmPager('receipts') ?></section>

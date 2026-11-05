@@ -1,0 +1,45 @@
+<?php declare(strict_types=1);
+use Kulturhus\Native\Shared\{Access,Db};
+use Kulturhus\Native\Cms\DataModel;
+use Kulturhus\Native\Fieldtypes\Runtime as Types;
+$db=Kulturhus\Native\TestSupport::db();Kulturhus\Native\Installer\SchemaRegistry::install($db);Kulturhus\Native\TestSupport::seed($db);$admin=new Access($db,'admin');$model=new DataModel($db,$admin);
+Db::run($db,"INSERT INTO clubs(id,name) VALUES('synthetic-a','Own fieldtypes')");Db::run($db,"INSERT INTO actors(id,club_id,role,is_superuser) VALUES('fieldtype-owner','synthetic-a','member',1)");
+$private=dirname(getenv('KH_NATIVE_TEST_CONFIG')).'/own-reviewed-fieldtypes';mkdir($private,0700);file_put_contents($private.'/helper.php',"<?php return 'Own original helper';\n");chmod($private.'/helper.php',0600);
+$plugin= <<<'PHP'
+<?php declare(strict_types=1);
+final class OwnReviewedFieldtypes implements \Kulturhus\Native\Extensions\Plugin,\Kulturhus\Native\Extensions\SourceFiles {
+public function definition():\Kulturhus\Native\Extensions\Definition{return new \Kulturhus\Native\Extensions\Definition('own-fieldtypes','Own reviewed types','1.0.0');}
+public function sourceFiles():array{return [__DIR__.'/helper.php'];}
+public function install(\Kulturhus\Native\Extensions\Context $context):void{}
+public function upgrade(\Kulturhus\Native\Extensions\Context $context,string $previousVersion):void{}
+public function uninstall(\Kulturhus\Native\Extensions\Context $context):void{}
+public function initialize(\Kulturhus\Native\Extensions\HookScope $hooks,\Kulturhus\Native\Extensions\UrlScope $urls,\Kulturhus\Native\Extensions\Context $context):void{
+$context->fieldtypes()->register('append',new \Kulturhus\Native\Fieldtypes\Definition('Own non-idempotent text','text','1.0.0',static fn(mixed$value):mixed=>$value===null?null:$value.'!'));
+$context->fieldtypes()->register('append-next',new \Kulturhus\Native\Fieldtypes\Definition('Own next reviewed text','text','2.0.0',static fn(mixed$value,array$field,bool$search):mixed=>$value===null?null:$value.'?'));
+$context->fieldtypes()->register('missing-page',new \Kulturhus\Native\Fieldtypes\Definition('Own missing reference','page-reference','1.0.0',static fn(mixed$value):mixed=>str_repeat('f',32)));
+$context->fieldtypes()->control('plain',new \Kulturhus\Native\Fieldtypes\Control('Own plain input',['text'],'1.0.0',static fn(array$field,string$name,mixed$value,bool$readonly):string=>'<label>Own local input<input type="text" name="'.htmlspecialchars($name,ENT_QUOTES).'" value="'.htmlspecialchars((string)$value,ENT_QUOTES).'"'.($readonly?' disabled':'').'></label>',static fn(mixed$value):mixed=>is_string($value)?trim($value):$value));
+}}
+PHP;
+file_put_contents($private.'/plugin.php',$plugin);chmod($private.'/plugin.php',0600);file_put_contents($private.'/reviewed-plugins.php',"<?php require_once __DIR__.'/plugin.php';return [new OwnReviewedFieldtypes()];\n");chmod($private.'/reviewed-plugins.php',0600);$previousPrivate=getenv('VEREIN_PRIVATE_ROOT');putenv('VEREIN_PRIVATE_ROOT='.$private);
+try{
+    $host=Kulturhus\Native\Extensions\Runtime::catalog();$manager=new Kulturhus\Native\Extensions\Manager($db,new Kulturhus\Native\Extensions\Access($db,'fieldtype-owner'),$host);$manager->change('own-fieldtypes','install',0);$manager->change('own-fieldtypes','enable',1);$registry=Types::registry($db,$admin,[]);$type=$registry->binding('own-fieldtypes','append');$control=$registry->binding('own-fieldtypes','plain','inputfield');
+    check(count($registry->choices())===3&&count($registry->choices('inputfield'))===1,'real reviewed private host lifecycle registers both fieldtype and inputfield');
+    $base=$model->saveField(['key'=>'own_bound_type','label'=>'Own bound text','type'=>'text','max'=>80]);$field=array_replace($base,['fieldtype'=>$type,'inputfield'=>$control]);$defs=['own_bound_type'=>$field];
+    check(Types::assertDefinition($db,$admin,$field)===$field,'a fresh canonical definition requires its currently approved exact code binding');
+    check(Types::assertDefinition($db,$admin,$base,$field)===$field,'an older model form without optional provider keys preserves the exact original bindings');
+    check(Types::assertDefinition($db,$admin,array_replace($field,['fieldtype'=>null]),$field)['fieldtype']===null,'explicit null removes an optional binding while missing keys retain it');
+    $first=Types::prepare($db,$admin,$defs,['own_bound_type'=>'Own value']);check($first['values']['own_bound_type']==='Own value!','new editable original receives the actual non-idempotent custom normalizer once');$old=['field_definitions'=>$first['definitions'],'custom_fields'=>$first['values']];
+    $preserved=Types::prepare($db,$admin,$defs,$old['custom_fields'],$old,true);check($preserved['values']===$old['custom_fields'],'publication and original-copy validation never reapply a non-idempotent normalizer');
+    check(Types::prepare($db,$admin,$defs,$old['custom_fields'],$old)['values']===$old['custom_fields'],'an unrelated ordinary save never silently renormalizes an unchanged original');
+    check(Types::formValues($db,$admin,$defs,['own_bound_type'=>' Typed input '],$defs)['own_bound_type']==='Typed input','actual inputfield transport parses an allowed current bound control');
+    $restricted=$field;$restricted['access']=['read'=>'manage','edit'=>'manage'];$editor=new Access($db,'editor');$oldRestricted=['field_definitions'=>['own_bound_type'=>$restricted],'custom_fields'=>['own_bound_type'=>'Private original!']];$retained=Types::prepare($db,$editor,['own_bound_type'=>$restricted],$oldRestricted['custom_fields'],$oldRestricted);check($retained['values']===$oldRestricted['custom_fields'],'custom normalizer never runs on an unreadable or uneditable original');
+    require __DIR__.'/fieldtypes-canonical.php';
+    $manager->change('own-fieldtypes','disable',2);check($pages->count($query)===0,'live provider withdrawal returns no actual query matches and never executes withdrawn code');check(!Types::registry($db,$admin,$defs)->available($type),'current module disable closes freshly resolved provider handles');check(Types::assertDefinition($db,$admin,$base,$field)===$field,'unrelated model metadata edits preserve unavailable historical bindings');
+    $view=Types::editorDefinitions($db,$admin,$defs,$defs);check($view['own_bound_type']['display']==='readonly','unavailable custom code produces a usable native readonly original editor');check(Types::prepare($db,$admin,$defs,$old['custom_fields'],$old)['values']===$old['custom_fields'],'unavailable code preserves exact stored values while other page fields remain editable');
+    rejects(fn()=>Types::prepare($db,$admin,$defs,['own_bound_type'=>'Forged changed value'],$old),DomainException::class,'a missing provider cannot silently process a changed value');rejects(fn()=>Types::prepare($db,$admin,$defs,$old['custom_fields'],$old,true),DomainException::class,'publishing requires current exact provider approval without invoking its normalizer');
+    rejects(fn()=>Types::assertDefinition($db,$admin,array_replace($base,['fieldtype'=>$type])),DomainException::class,'a new field cannot assign an unavailable historical provider');
+    $manager->change('own-fieldtypes','enable',3);$before=Types::registry($db,$admin,$defs);check($before->available($type),'explicit re-enable restores the same unchanged reviewed source binding');
+    $mappedClub='own-manager-fieldtypes';$nativeClub=Kulturhus\Native\Integration\ManagerBridge::clubKey($mappedClub);$nativeActor=Kulturhus\Native\Integration\ManagerBridge::actorKey('own-mapped-browser',$mappedClub);Db::run($db,'INSERT INTO clubs(id,name) VALUES(?,?)',[$mappedClub,'Own mapped types']);Db::run($db,"INSERT INTO actors(id,club_id,role,is_superuser)VALUES('mapped-type-owner',?,'member',1)",[$mappedClub]);Db::run($db,'INSERT INTO native_users(id,club_id,name)VALUES(?,?,?)',[$nativeActor,$nativeClub,'Own mapped browser']);Db::run($db,'INSERT INTO native_manager_identities(native_id,manager_actor_id,manager_club_id)VALUES(?,?,?)',[$nativeActor,'own-mapped-browser',$mappedClub]);$mappedManager=new Kulturhus\Native\Extensions\Manager($db,new Kulturhus\Native\Extensions\Access($db,'mapped-type-owner'),$host);$mappedManager->change('own-fieldtypes','install',0);$mappedManager->change('own-fieldtypes','enable',1);$mappedTypes=Types::registry($db,new Access($db,$nativeActor),$defs);check($nativeClub!==$mappedClub&&$mappedTypes->available($type),'integrated native club resolves only its fixed mapped real manager module owner');
+    $mappedManager->change('own-fieldtypes','disable',2);check(!$mappedTypes->available($type)&&Types::registry($db,$admin,$defs)->available($type),'mapped owner revocation cannot borrow another club registration of identical reviewed code');
+    file_put_contents($private.'/helper.php',"<?php return 'Own changed helper';\n");check(!$before->available($type),'changing any declared helper immediately revokes an existing provider handle');
+}finally{if($previousPrivate===false)putenv('VEREIN_PRIVATE_ROOT');else putenv('VEREIN_PRIVATE_ROOT='.$previousPrivate);}

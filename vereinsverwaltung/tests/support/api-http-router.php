@@ -1,0 +1,13 @@
+<?php declare(strict_types=1);
+ini_set('zend.exception_ignore_args','1');require dirname(__DIR__,2).'/native/bootstrap.php';require dirname(__DIR__,2).'/src/bootstrap.php';
+use Kulturhus\Native\TestSupport;use Kulturhus\Native\Api\{Http,TokensController};use Kulturhus\Native\Integration\ManagerSession;
+$cfg=TestSupport::config();if(PHP_SAPI!=='cli-server'||getenv('KH_NATIVE_CI')!=='1'||($cfg['label']??'')!=='native-api-http'||($cfg['owner']??'')!=='isolated-native-ci'||($_SERVER['REMOTE_ADDR']??'')!=='127.0.0.1'){http_response_code(403);exit;}
+$f=json_decode(file_get_contents(getenv('DVM_API_HTTP_FIXTURE')),true,32,JSON_THROW_ON_ERROR);$origin='http://'.($_SERVER['HTTP_HOST']??'');if($origin!==$f['origin']){http_response_code(403);exit;}
+foreach(['VEREIN_PRIVATE_ROOT'=>$f['root'],'KH_NATIVE_AUTH_KEY_FILE'=>$f['root'].'/auth.key','KH_NATIVE_PRIVATE_KEY_FILE'=>$f['root'].'/private.key','KH_NATIVE_MANAGER_SESSION_ROOT'=>$f['root'].'/manager-sessions','KH_NATIVE_MANAGER_MEDIA_ROOT'=>$f['root'].'/media','KH_NATIVE_MANAGER'=>'1','VEREIN_AUTH'=>'native','VEREIN_MODE'=>'synthetic','KULTURHUS_DISABLE_MAIL'=>'1','KULTURHUS_DISABLE_WEBSITE'=>'1'] as $key=>$value)putenv($key.'='.$value);putenv('SMTP_DSN');
+$path=parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH);$method=$_SERVER['REQUEST_METHOD']??'GET';$db=TestSupport::db();
+if($path==='/own-test-enter'&&$method==='GET'){$role=$_GET['role']??'';if(!is_string($role)||!isset($f['accounts'][$role])){http_response_code(403);exit;}ManagerSession::start();$_SESSION['auth_token']=$f['accounts'][$role]['token'];$_SESSION['actor']=$f['accounts'][$role]['actor'];header('Location: /vereinsverwaltung/?view=settings&tab=api',true,303);exit;}
+if(str_starts_with($path,'/api/v1/')){if(!isset($_SERVER['HTTP_AUTHORIZATION']))ManagerSession::start();Http::serve($db,$f['club'],$f['origin'],$f['root'].'/media',$f['root'].'/documents',$_SESSION['auth_token']??null,$_SESSION['csrf']??null);exit;}
+if($path==='/vereinsverwaltung/native-api.css'||$path==='/vereinsverwaltung/native-api.js'){if(!in_array($method,['GET','HEAD'],true)){http_response_code(405);exit;}header('Content-Type: '.(str_ends_with($path,'.css')?'text/css':'text/javascript'));if($method!=='HEAD')readfile(dirname(__DIR__,2).'/native/Api/assets/'.(str_ends_with($path,'.css')?'api.css':'api.js'));exit;}
+if(str_starts_with($path,'/vereinsverwaltung/')&&Kulturhus\Native\Integration\Assets::serve(basename($path)))exit;
+if(rtrim($path,'/')==='/vereinsverwaltung'){ManagerSession::start();if(!isset($_SESSION['auth_token'])){http_response_code(401);exit;}TokensController::serve($db,$_SESSION['auth_token'],$_SESSION['csrf'],true,$_GET['view']??'',$_GET['tab']??'');exit;}
+http_response_code(404);

@@ -1,0 +1,26 @@
+<?php declare(strict_types=1);
+require dirname(__DIR__,2).'/native/bootstrap.php';
+use Kulturhus\Native\TestSupport;
+$cfg=TestSupport::config();if(PHP_SAPI!=='cli-server'||getenv('KH_NATIVE_CI')!=='1'||!in_array($cfg['label']??'',['native-social-human-sends','native-social-check-plan-requests','native-event-draft-requests','native-social-comment-state','native-comment-moderation','native-post-corrections'],true)||($cfg['owner']??'')!=='isolated-native-ci'||($_SERVER['REMOTE_ADDR']??'')!=='127.0.0.1'){http_response_code(403);exit;}
+$f=json_decode(file_get_contents(getenv('DVM_SOCIAL_HUMAN_BROWSER_FIXTURE')),true,32,JSON_THROW_ON_ERROR);if('http://'.($_SERVER['HTTP_HOST']??'')!==$f['origin']){http_response_code(403);exit;}
+require __DIR__.'/social-human-browser-json-http.php';$path=parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH);
+$traceRoot=getenv('DVM_BROWSER_ARTIFACT_DIR');if(is_string($traceRoot)&&$traceRoot!==''&&is_dir($traceRoot)){$started=microtime(true);$traceMethod=$_SERVER['REQUEST_METHOD']??'GET';$tracePath=$path;register_shutdown_function(static function()use($traceRoot,$started,$traceMethod,$tracePath):void{$file=$traceRoot.'/request-timings.jsonl';file_put_contents($file,json_encode(['method'=>$traceMethod,'path'=>$tracePath,'status'=>http_response_code(),'ms'=>round((microtime(true)-$started)*1000,1)],JSON_THROW_ON_ERROR)."\n",FILE_APPEND|LOCK_EX);chmod($file,0600);});}
+
+if(($cfg['label']??null)==='native-social-check-plan-requests'&&($_SERVER['REQUEST_METHOD']??'')==='POST'&&($_POST['operation']??null)==='social-check-plan'&&($_SERVER['HTTP_X_OWN_PLAN_SQL_FAILURE']??null)==='once'){
+    $faultDb=TestSupport::db();$faultDb->exec("CREATE TRIGGER own_plan_browser_refusal BEFORE INSERT ON native_settings_requests FOR EACH ROW SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT='Own plan receipt insert refused'");
+    register_shutdown_function(static function()use($faultDb):void{$faultDb->exec('DROP TRIGGER own_plan_browser_refusal');});
+}
+if(($cfg['label']??null)==='native-event-draft-requests'&&($_SERVER['REQUEST_METHOD']??'')==='POST'&&in_array($_POST['operation']??null,['social-event-draft','press-event-draft'],true)&&($_SERVER['HTTP_X_OWN_EVENT_SQL_FAILURE']??null)==='once'){
+    $faultDb=TestSupport::db();$faultDb->exec("CREATE TRIGGER own_event_browser_refusal BEFORE INSERT ON native_communication_save_requests FOR EACH ROW SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT='Own event receipt insert refused'");
+    register_shutdown_function(static function()use($faultDb):void{$faultDb->exec('DROP TRIGGER own_event_browser_refusal');});
+}
+putenv('KH_NATIVE_LOCAL_DEMO=synthetic');putenv('KH_NATIVE_DEMO_PORT='.parse_url($f['origin'],PHP_URL_PORT));putenv('KH_NATIVE_REQUIRE_LOGIN=1');putenv('KH_NATIVE_AUTH_KEY_FILE='.$f['root'].'/auth.key');putenv('KH_NATIVE_PRIVATE_KEY_FILE='.$f['root'].'/private.key');putenv('KH_NATIVE_MANAGER=1');putenv('VEREIN_AUTH=native');putenv('VEREIN_MODE=synthetic');putenv('KULTURHUS_LOCAL_DEMO=php');putenv('KULTURHUS_DISABLE_MAIL=1');putenv('KULTURHUS_DISABLE_WEBSITE=1');putenv('SMTP_DSN');putenv('KH_NATIVE_MANAGER_SESSION_ROOT='.$f['root'].'/manager-sessions');putenv('KH_NATIVE_MANAGER_MEDIA_ROOT='.$f['root'].'/media');putenv('KULTURHUS_DEMO_DATABASE=mysql:host=127.0.0.1;port=13371;dbname='.$cfg['database'].';charset=utf8mb4');putenv('VEREIN_DATABASE_USER='.$cfg['username']);putenv('VEREIN_DATABASE_PASSWORD='.$cfg['password']);
+if($path==='/own-test-enter'){
+    $locale=$_GET['locale']??'de';if(!is_string($locale)||!isset($f['accounts'][$locale])){http_response_code(400);exit;}$account=$f['accounts'][$locale];
+    if(($_GET['app']??'root')==='manager'){\Kulturhus\Native\Integration\ManagerSession::start();$_SESSION['auth_token']=$account['token'];$_SESSION['actor']=$account['actor'];$dest='/vereinsverwaltung/?view=social&section=inbox';}
+    else{session_save_path($f['runtime'].'/sessions');session_name('KHNATIVE'.substr(hash('sha256',$cfg['database']),0,12));session_start(['use_strict_mode'=>1,'cookie_httponly'=>1,'cookie_samesite'=>'Strict','cookie_path'=>'/']);$_SESSION['auth_token']=$account['token'];$_SESSION['native_actor']=$account['native'];$dest='/?view=social&section=inbox';}
+    header('Location: '.$dest,true,303);exit;
+}
+if($path==='/own-test-mode'){if(!in_array($_GET['mode']??null,['normal','wrong-owner','lost'],true)){http_response_code(400);exit;}\Kulturhus\Native\Shared\Db::run(TestSupport::db(),'UPDATE own_human_browser_mode SET mode=? WHERE id=1',[$_GET['mode']]);header('Content-Type: application/json');echo'{"ok":true}';exit;}
+if(str_starts_with($path,'/vereinsverwaltung/')){$relative=substr($path,strlen('/vereinsverwaltung/'));if($relative===''||$relative==='index.php'){require dirname(__DIR__,2).'/public/index.php';exit;}if(\Kulturhus\Native\Integration\Assets::serve($relative))exit;$public=realpath(dirname(__DIR__,2).'/public');$file=realpath($public.'/'.$relative);$types=['css'=>'text/css','js'=>'text/javascript','mjs'=>'text/javascript','svg'=>'image/svg+xml','png'=>'image/png','woff2'=>'font/woff2','woff'=>'font/woff'];$ext=strtolower(pathinfo($relative,PATHINFO_EXTENSION));if(!$file||!str_starts_with($file,$public.'/')||!isset($types[$ext])){http_response_code(404);exit;}header('Content-Type: '.$types[$ext]);readfile($file);exit;}
+require dirname(__DIR__,2).'/native/Web/router.php';

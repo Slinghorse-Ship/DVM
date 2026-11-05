@@ -1,0 +1,20 @@
+<?php declare(strict_types=1);
+require_once __DIR__.'/k-browser-fixture.php';
+if(PHP_SAPI!=='cli')exit(1);umask(0077);
+require dirname(__DIR__,2).'/native/bootstrap.php';require dirname(__DIR__,2).'/src/bootstrap.php';require __DIR__.'/original-database-hash.php';
+use Kulturhus\Native\TestSupport;
+use Kulturhus\Native\Shared\{Access,Db};
+use Kulturhus\Native\Integration\ManagerBridge;
+use Kulturhus\Native\Cms\MediaQuota;
+$k=ownKBrowserFixture();$c=TestSupport::config();$standalone=$k['standalone'];
+
+$db=TestSupport::db();$a=$standalone?new Access($db,'admin'):(new ManagerBridge($db,'manager-admin','native',static fn()=>null))->access();$club=$a->club();
+\Kulturhus\Native\Installer\SchemaRegistry::assertCurrent($db);
+$runtime=$k['runtime'];
+$pixels=static function()use($runtime):array{$hashes=[];foreach([$runtime.'/media',$runtime.'/communication-images']as$root){if(!is_dir($root))continue;foreach(new RecursiveIteratorIterator(new RecursiveDirectoryIterator($root,FilesystemIterator::SKIP_DOTS))as$file){if($file->isLink())throw new RuntimeException('Own regular pixel files required.');if($file->isFile())$hashes[$file->getPathname()]=hash_file('sha256',$file->getPathname());}}ksort($hashes);return $hashes;};
+$file=$k['directory'].'/media-quota-'.($standalone?'standalone':'integrated').'.json';$quota=new MediaQuota($db,$a);
+$tables=$db->query("SELECT t.TABLE_NAME FROM information_schema.TABLES t WHERE t.TABLE_SCHEMA=DATABASE() AND t.TABLE_TYPE='BASE TABLE' AND t.TABLE_NAME<>'khcms_state' AND EXISTS (SELECT 1 FROM information_schema.KEY_COLUMN_USAGE k WHERE k.TABLE_SCHEMA=t.TABLE_SCHEMA AND k.TABLE_NAME=t.TABLE_NAME AND k.CONSTRAINT_NAME='PRIMARY') ORDER BY t.TABLE_NAME")->fetchAll(PDO::FETCH_COLUMN);
+$outside=static function(array$f)use($db,$tables,$club):string{return ownOriginalDatabaseHash($db,$tables,static function($table)use($f,$club):array{if($table==='khcms_media_quota')return [' WHERE club_id<>?',[$club]];if($table==='khcms_media_quota_history')return [' WHERE club_id<>? OR version<=?',[$club,$f['version']]];return ['',[]];});};
+if(($argv[1]??'')==='restore'){$f=json_decode(file_get_contents($file),true,64,JSON_THROW_ON_ERROR);if($f['database']!==$c['database'])throw new RuntimeException('Own baseline required.');$current=$quota->get();if($current['limit_bytes']!==$f['limit_bytes'])$quota->save($f['original_mib'],$current['version']);echo "Own original limit restored through a new policy revision.\n";exit;}
+if(($argv[1]??'prepare')==='check'){$f=json_decode(file_get_contents($file),true,64,JSON_THROW_ON_ERROR);$current=$quota->get();if($f['database']!==$c['database']||$outside($f)!==$f['outside_originals']||$current['version']!==$f['version']+8||$current['limit_bytes']!==$f['limit_bytes']||$current['used_bytes']!==$f['used_bytes']||$current['image_count']!==$f['image_count']||(isset($f['pixels'])&&$pixels()!==$f['pixels']))throw new RuntimeException('Expected policy restoration and untouched originals required.');$rows=Db::run($db,'SELECT version,limit_bytes FROM khcms_media_quota_history WHERE club_id=? AND version>? ORDER BY version',[$club,$f['version']])->fetchAll();if(count($rows)!==8)throw new RuntimeException('All eight policy originals required.');foreach($rows as$i=>$row)if((int)$row['version']!==$f['version']+$i+1||(int)$row['limit_bytes']!==($i%2===0?$f['test_mib']*1048576:$f['limit_bytes']))throw new RuntimeException('Exact immutable browser policy history required.');echo "Eight expected policy originals remain; previous policies, source photos, metadata, pixels, accounts, frozen outputs and all other jobs are unchanged.\n";exit;}
+$f=['database'=>$c['database']]+$quota->get();$f['original_mib']=(int)($f['limit_bytes']/1048576);$f['test_mib']=max(20,(int)ceil($f['used_bytes']/1048576)+1,$f['original_mib']+1);if($f['test_mib']>MediaQuota::MAX_MIB)throw new RuntimeException('Own fixture needs available test quota.');$f['outside_originals']=$outside($f);$f['pixels']=$pixels();file_put_contents($file,json_encode($f,JSON_THROW_ON_ERROR));chmod($file,0600);echo "Own photo policy baseline retained; no original, account or external service changed.\n";

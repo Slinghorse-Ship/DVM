@@ -1,0 +1,55 @@
+[
+  {
+    "key": "general-letter", "title": "Brief – eigene Vereinsvorlage", "description": "Freier Brief mit Empfänger, Betreff und Text. Als Entwurf bearbeiten, intern prüfen und die gewünschte Fassung exportieren.",
+    "provenance": {"title": "Eigene Kulturhus-Vereinsvorlage", "licence": "Eigene Formulartexte; keine fremden Vorlagen oder Markenassets übernommen.", "adaptation": "Allgemeine Dokumentvorlage für lokale synthetische Beispiele.", "verified_at": "2026-10-07"},
+    "fields": [
+      {"key":"date","label":"Datum","type":"date","required":true},
+      {"key":"recipient","label":"Empfänger und Anschrift","type":"textarea","required":true},
+      {"key":"subject","label":"Betreff","type":"text","required":true},
+      {"key":"salutation","label":"Anrede","type":"text","required":false},
+      {"key":"body","label":"Brieftext","type":"textarea","required":true},
+      {"key":"closing","label":"Grußformel","type":"text","required":false},
+      {"key":"sender","label":"Absender / zuständige Person","type":"text","required":true}
+    ]
+  },
+  {
+    "key": "general-minutes", "title": "Protokoll – Besprechung oder Vereinssitzung", "description": "Ergebnisse, Beschlüsse und Aufgaben einer Besprechung festhalten. Diese frei gestaltete Vorlage ist unabhängig vom bestehenden Protokollmodul nutzbar.",
+    "provenance": {"title": "Eigene Kulturhus-Vereinsvorlage", "licence": "Eigene Formulartexte; keine fremden Vorlagen oder Markenassets übernommen.", "adaptation": "Allgemeine Dokumentvorlage für lokale synthetische Beispiele.", "verified_at": "2026-10-07"},
+    "fields": [
+      {"key":"occasion","label":"Anlass / Sitzung","type":"text","required":true},
+      {"key":"date","label":"Datum","type":"date","required":true},
+      {"key":"place","label":"Ort","type":"text","required":false},
+      {"key":"participants","label":"Teilnehmende","type":"textarea","required":true},
+      {"key":"topics","label":"Besprochene Themen","type":"textarea","required":true},
+      {"key":"decisions","label":"Ergebnisse und Beschlüsse","type":"textarea","required":true},
+      {"key":"tasks","label":"Aufgaben, Zuständigkeiten und Termine","type":"textarea","required":false},
+      {"key":"recorded_by","label":"Protokoll erstellt durch","type":"text","required":true}
+    ]
+  },
+  {
+    "key": "general-request", "title": "Antrag – interne Vereinsentscheidung", "description": "Ein Anliegen beschreiben, begründen und zur internen Prüfung vorlegen. Die Vorlage führt keine Zahlung, Bestellung oder externe Übermittlung aus.",
+    "provenance": {"title": "Eigene Kulturhus-Vereinsvorlage", "licence": "Eigene Formulartexte; keine fremden Vorlagen oder Markenassets übernommen.", "adaptation": "Allgemeine Dokumentvorlage für lokale synthetische Beispiele.", "verified_at": "2026-10-07"},
+    "fields": [
+      {"key":"applicant","label":"Antragstellende Person / Gruppe","type":"text","required":true},
+      {"key":"date","label":"Antragsdatum","type":"date","required":true},
+      {"key":"topic","label":"Anliegen","type":"text","required":true},
+      {"key":"description","label":"Beschreibung und Begründung","type":"textarea","required":true},
+      {"key":"amount","label":"Geplanter Betrag in Euro, falls zutreffend","type":"number","required":false},
+      {"key":"deadline","label":"Gewünschter Entscheidungstermin","type":"date","required":false},
+      {"key":"attachments","label":"Verweise auf Unterlagen","type":"textarea","required":false}
+    ]
+  },
+  {
+    "key": "general-checklist", "title": "Checkliste – Organisation und Übergabe", "description": "Eine einfache, frei bearbeitbare Liste für wiederkehrende Vereinsaufgaben. Zusätzliche Einzelpunkte lassen sich im Vorlageneditor ergänzen.",
+    "provenance": {"title": "Eigene Kulturhus-Vereinsvorlage", "licence": "Eigene Formulartexte; keine fremden Vorlagen oder Markenassets übernommen.", "adaptation": "Allgemeine Dokumentvorlage für lokale synthetische Beispiele.", "verified_at": "2026-10-07"},
+    "fields": [
+      {"key":"occasion","label":"Aufgabe / Übergabe","type":"text","required":true},
+      {"key":"date","label":"Datum","type":"date","required":true},
+      {"key":"responsible","label":"Zuständige Person","type":"text","required":true},
+      {"key":"items","label":"Prüfpunkte und Ergebnisse","type":"textarea","required":true},
+      {"key":"open_items","label":"Offene Punkte","type":"textarea","required":false},
+      {"key":"handover","label":"Übergabe dokumentiert","type":"checkbox","required":false},
+      {"key":"notes","label":"Ergänzende Hinweise","type":"textarea","required":false}
+    ]
+  }
+]

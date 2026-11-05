@@ -1,0 +1,170 @@
+{
+  "schema": 1,
+  "revision": 45,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "noncorporate-loans-r45-001@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.loansToAffil.partnerships.other",
+          "choices": [
+            "bs.ass.fixAss.fin.loansToAffil.partnerships.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "08130",
+              "semantic": {
+                "name": "Ausleihungen an verbundene Unternehmen, Personengesellschaften",
+                "function": "",
+                "range_start": "08130",
+                "range_end": "08130",
+                "parent": null
+              },
+              "signature": "8245cb3e274b764c2633d282d6ec7a9341ce1535495cb888acd0204b6680de85"
+            }
+          ]
+        },
+        {
+          "purpose": "noncorporate-loans-r45-002@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.loansToAffil.soleProprietor",
+          "choices": [
+            "bs.ass.fixAss.fin.loansToAffil.soleProprietor"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "08150",
+              "semantic": {
+                "name": "Ausleihungen an verbundene Unternehmen, Einzelunternehmen",
+                "function": "",
+                "range_start": "08150",
+                "range_end": "08150",
+                "parent": null
+              },
+              "signature": "367705683cb2e47a3eb3e7cbf40db3a9e8b50199d74c7837f97b209864d18cb6"
+            }
+          ]
+        },
+        {
+          "purpose": "noncorporate-loans-r45-003@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.loansToParticip.partnerships.other",
+          "choices": [
+            "bs.ass.fixAss.fin.loansToParticip.partnerships.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "08830",
+              "semantic": {
+                "name": "Ausleihungen an Unternehmen, mit denen ein Beteiligungsverhältnis besteht, Personengesellschaften",
+                "function": "",
+                "range_start": "08830",
+                "range_end": "08830",
+                "parent": null
+              },
+              "signature": "c75242cc5d5b1e020e152b2207c3c10d4f776ec6f701cab3900da8246bffd42f"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "noncorporate-loans-r45-001@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.loansToAffil.partnerships.other",
+          "choices": [
+            "bs.ass.fixAss.fin.loansToAffil.partnerships.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "08130",
+              "semantic": {
+                "name": "Ausleihungen an verbundene Unternehmen, Personengesellschaften",
+                "function": "",
+                "range_start": "08130",
+                "range_end": "08130",
+                "parent": null
+              },
+              "signature": "8245cb3e274b764c2633d282d6ec7a9341ce1535495cb888acd0204b6680de85"
+            }
+          ]
+        },
+        {
+          "purpose": "noncorporate-loans-r45-002@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.loansToAffil.soleProprietor",
+          "choices": [
+            "bs.ass.fixAss.fin.loansToAffil.soleProprietor"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "08150",
+              "semantic": {
+                "name": "Ausleihungen an verbundene Unternehmen, Einzelunternehmen",
+                "function": "",
+                "range_start": "08150",
+                "range_end": "08150",
+                "parent": null
+              },
+              "signature": "367705683cb2e47a3eb3e7cbf40db3a9e8b50199d74c7837f97b209864d18cb6"
+            }
+          ]
+        },
+        {
+          "purpose": "noncorporate-loans-r45-003@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.loansToParticip.partnerships.other",
+          "choices": [
+            "bs.ass.fixAss.fin.loansToParticip.partnerships.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "08830",
+              "semantic": {
+                "name": "Ausleihungen an Unternehmen, mit denen ein Beteiligungsverhältnis besteht, Personengesellschaften",
+                "function": "",
+                "range_start": "08830",
+                "range_end": "08830",
+                "parent": null
+              },
+              "signature": "c75242cc5d5b1e020e152b2207c3c10d4f776ec6f701cab3900da8246bffd42f"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

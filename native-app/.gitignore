@@ -1,0 +1,14 @@
+android/.gradle/
+android/**/build/
+android/local.properties
+ios/build/
+ios/DerivedData/
+ios/**/xcuserdata/
+*.xcuserstate
+*.keystore
+*.jks
+*.mobileprovision
+*.p12
+**/__pycache__/
+*.pyc
+.DS_Store

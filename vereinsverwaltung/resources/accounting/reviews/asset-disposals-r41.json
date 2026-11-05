@@ -1,0 +1,764 @@
+{
+  "schema": 1,
+  "revision": 41,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "asset-disposals-r41-001@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.intan",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.intan"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "48500",
+              "semantic": {
+                "name": "Erlöse aus Verkäufen immaterieller Vermögensgegenstände (bei Buchgewinn)",
+                "function": "",
+                "range_start": "48500",
+                "range_end": "48500",
+                "parent": null
+              },
+              "signature": "3d2d5d89eee6222db34b86b9f1926fe09c5b622e61f8646c622fe1ac85e8bb02"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-002@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.fin.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.fin.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.fin.foreignCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.fin.investmentShares",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.fin.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "48510",
+              "semantic": {
+                "name": "Erlöse aus Verkäufen Finanzanlagen (bei Buchgewinn)",
+                "function": "",
+                "range_start": "48510",
+                "range_end": "48510",
+                "parent": null
+              },
+              "signature": "4783b7533311f76e75f5acbda2919bb6e3790d6b574bec60e4dd750ccf47adeb"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-003@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.fin.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.fin.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.fin.foreignCorp"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "48520",
+              "semantic": {
+                "name": "Erlöse aus Verkäufen Finanzanlagen § 3 Nr. 40 EStG bzw. § 8b Abs. 2 KStG (bei Buchgewinn)",
+                "function": "",
+                "range_start": "48520",
+                "range_end": "48520",
+                "parent": null
+              },
+              "signature": "12da65b725711eff02217ce0402d017b67ab2bfa761030248b0247c63c10446f"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-004@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.bookValue.intan",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.bookValue.intan"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "48560",
+              "semantic": {
+                "name": "Anlagenabgänge immaterielle Vermögensgegenstände (Restbuchwert bei Buchgewinn)",
+                "function": "",
+                "range_start": "48560",
+                "range_end": "48560",
+                "parent": null
+              },
+              "signature": "d2fddca0536087d5c6cd5bbf3c88183016e8f8d44a41b41ad48ba08eb382f351"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-005@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.bookValue.fin.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.bookValue.fin.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.bookValue.fin.foreignCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.bookValue.fin.investmentShares",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.bookValue.fin.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "48570",
+              "semantic": {
+                "name": "Anlagenabgänge Finanzanlagen (Restbuchwert bei Buchgewinn)",
+                "function": "",
+                "range_start": "48570",
+                "range_end": "48570",
+                "parent": null
+              },
+              "signature": "2a9895f266ff921aac6301e9e02108996911541c53935e89a73dd14a351c0a37"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-006@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.bookValue.fin.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.bookValue.fin.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.bookValue.fin.foreignCorp"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "48580",
+              "semantic": {
+                "name": "Anlagenabgänge Finanzanlagen § 3 Nr. 40 EStG bzw. § 8b Abs. 2 KStG (Restbuchwert bei Buchgewinn)",
+                "function": "",
+                "range_start": "48580",
+                "range_end": "48580",
+                "parent": null
+              },
+              "signature": "966b6a87d2aef54f1377c09d47e503ab7bc12183e6b4ed67e798d98586ff7cd8"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-007@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.intan",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.intan"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "68900",
+              "semantic": {
+                "name": "Erlöse aus Verkäufen immaterieller Vermögensgegenstände (bei Buchverlust)",
+                "function": "",
+                "range_start": "68900",
+                "range_end": "68900",
+                "parent": null
+              },
+              "signature": "4a07bc7e5f1952356f71f9ced94ff7cdd192df0eda672bfd0443635a90c30cb0"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-008@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.fin.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.fin.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.fin.foreignCorp",
+            "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.fin.investmentShares",
+            "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.fin.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "68910",
+              "semantic": {
+                "name": "Erlöse aus Verkäufen Finanzanlagen (bei Buchverlust)",
+                "function": "",
+                "range_start": "68910",
+                "range_end": "68910",
+                "parent": null
+              },
+              "signature": "0d48779bf66fe52eb1f36548aef6bda98045de08c7e8e750077a74de129b1ba7"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-009@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.fin.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.fin.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.fin.foreignCorp"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "68920",
+              "semantic": {
+                "name": "Erlöse aus Verkäufen Finanzanlagen § 3 Nr. 40 EStG bzw. § 8b Abs. 2 KStG i. V. m. § 8b Abs. 3 S. 3 KStG (bei Buchverlust)8)",
+                "function": "",
+                "range_start": "68920",
+                "range_end": "68920",
+                "parent": null
+              },
+              "signature": "f65000a06c41f9f0ce6c26a2763b7c4779da52adf7272855d7fd8c50db016e80"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-010@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.disposFixAss.bookValue.fin.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.disposFixAss.bookValue.fin.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherCost.disposFixAss.bookValue.fin.foreignCorp"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "68980",
+              "semantic": {
+                "name": "Anlagenabgänge Finanzanlagen § 3 Nr. 40 EStG bzw. § 8b Abs. 2 KStG i. V. m. § 8b Abs. 3 S. 3 KStG (Restbuchwert bei Buchverlust)8)",
+                "function": "",
+                "range_start": "68980",
+                "range_end": "68980",
+                "parent": null
+              },
+              "signature": "633fdf5bc3580075325d4cddc68c54b7627ba31508f6a25937741060869e27a2"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-011@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.disposCurrAss.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposCurrAss.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposCurrAss.foreignCorp"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49040",
+              "semantic": {
+                "name": "Abgänge Wertpapiere des Umlaufvermögens § 8b Abs. 2 KStG (Buchwert bei Buchgewinn)",
+                "function": "",
+                "range_start": "49040",
+                "range_end": "49040",
+                "parent": null
+              },
+              "signature": "d85aa16a84b5a301835d4a7b76120cf666b55f276797f4fe048cb6c529400f39"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-012@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.disposCurrAss.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.disposCurrAss.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherCost.disposCurrAss.foreignCorp"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69040",
+              "semantic": {
+                "name": "Abgänge Wertpapiere des Umlaufvermögens § 8b Abs. 2 KStG i. V. m. § 8b Abs. 3 S. 3 KStG (Buchwert bei Buchverlust)8)",
+                "function": "",
+                "range_start": "69040",
+                "range_end": "69040",
+                "parent": null
+              },
+              "signature": "9dc8d7e35dfe56d4d17f6f2841ad00b4ec7d027e54081cbcbd3e29b9539902c8"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-013@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.intan",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.intan"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49110",
+              "semantic": {
+                "name": "Erträge aus Zuschreibungen des immateriellen Anlagevermögens",
+                "function": "",
+                "range_start": "49110",
+                "range_end": "49110",
+                "parent": null
+              },
+              "signature": "59d54bf7844aa80c42d9191be87e61fe1d86ea13e66efb5b913394838827904e"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-014@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.fin.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.fin.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.fin.foreignCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.fin.domesticLoan.relatedParty",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.fin.domesticLoan.unrelatedParty",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.fin.foreignLoan.relatedParty",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.fin.foreignLoan.unrelatedParty"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49130",
+              "semantic": {
+                "name": "Erträge aus Zuschreibungen des Finanzanlagevermögens § 3 Nr. 40 EStG bzw. § 8b Abs. 3 S. 9 KStG8)",
+                "function": "",
+                "range_start": "49130",
+                "range_end": "49130",
+                "parent": null
+              },
+              "signature": "0a010ed9832b27334790e0478acbb68a665a6c9f29e45e64f860cf984d8e2a88"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-015@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.fin.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.fin.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.fin.foreignCorp"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49140",
+              "semantic": {
+                "name": "Erträge aus Zuschreibungen § 3 Nr. 40 EStG bzw. § 8b Abs. 2 KStG",
+                "function": "",
+                "range_start": "49140",
+                "range_end": "49140",
+                "parent": null
+              },
+              "signature": "52a6fa52520a6c4c62785a507b94de5fb2d038ae4e5b9d15f7aac80a593b6b15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "asset-disposals-r41-001@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.intan",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.intan"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "48500",
+              "semantic": {
+                "name": "Erlöse aus Verkäufen immaterieller Vermögensgegenstände (bei Buchgewinn)",
+                "function": "",
+                "range_start": "48500",
+                "range_end": "48500",
+                "parent": null
+              },
+              "signature": "3d2d5d89eee6222db34b86b9f1926fe09c5b622e61f8646c622fe1ac85e8bb02"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-002@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.fin.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.fin.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.fin.foreignCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.fin.investmentShares",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.fin.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "48510",
+              "semantic": {
+                "name": "Erlöse aus Verkäufen Finanzanlagen (bei Buchgewinn)",
+                "function": "",
+                "range_start": "48510",
+                "range_end": "48510",
+                "parent": null
+              },
+              "signature": "4783b7533311f76e75f5acbda2919bb6e3790d6b574bec60e4dd750ccf47adeb"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-003@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.fin.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.fin.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.sale.fin.foreignCorp"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "48520",
+              "semantic": {
+                "name": "Erlöse aus Verkäufen Finanzanlagen § 3 Nr. 40 EStG bzw. § 8b Abs. 2 KStG (bei Buchgewinn)",
+                "function": "",
+                "range_start": "48520",
+                "range_end": "48520",
+                "parent": null
+              },
+              "signature": "12da65b725711eff02217ce0402d017b67ab2bfa761030248b0247c63c10446f"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-004@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.bookValue.intan",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.bookValue.intan"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "48560",
+              "semantic": {
+                "name": "Anlagenabgänge immaterielle Vermögensgegenstände (Restbuchwert bei Buchgewinn)",
+                "function": "",
+                "range_start": "48560",
+                "range_end": "48560",
+                "parent": null
+              },
+              "signature": "d2fddca0536087d5c6cd5bbf3c88183016e8f8d44a41b41ad48ba08eb382f351"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-005@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.bookValue.fin.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.bookValue.fin.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.bookValue.fin.foreignCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.bookValue.fin.investmentShares",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.bookValue.fin.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "48570",
+              "semantic": {
+                "name": "Anlagenabgänge Finanzanlagen (Restbuchwert bei Buchgewinn)",
+                "function": "",
+                "range_start": "48570",
+                "range_end": "48570",
+                "parent": null
+              },
+              "signature": "2a9895f266ff921aac6301e9e02108996911541c53935e89a73dd14a351c0a37"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-006@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.bookValue.fin.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.bookValue.fin.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposFixAss.bookValue.fin.foreignCorp"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "48580",
+              "semantic": {
+                "name": "Anlagenabgänge Finanzanlagen § 3 Nr. 40 EStG bzw. § 8b Abs. 2 KStG (Restbuchwert bei Buchgewinn)",
+                "function": "",
+                "range_start": "48580",
+                "range_end": "48580",
+                "parent": null
+              },
+              "signature": "966b6a87d2aef54f1377c09d47e503ab7bc12183e6b4ed67e798d98586ff7cd8"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-007@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.intan",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.intan"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "68900",
+              "semantic": {
+                "name": "Erlöse aus Verkäufen immaterieller Vermögensgegenstände (bei Buchverlust)",
+                "function": "",
+                "range_start": "68900",
+                "range_end": "68900",
+                "parent": null
+              },
+              "signature": "4a07bc7e5f1952356f71f9ced94ff7cdd192df0eda672bfd0443635a90c30cb0"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-008@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.fin.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.fin.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.fin.foreignCorp",
+            "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.fin.investmentShares",
+            "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.fin.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "68910",
+              "semantic": {
+                "name": "Erlöse aus Verkäufen Finanzanlagen (bei Buchverlust)",
+                "function": "",
+                "range_start": "68910",
+                "range_end": "68910",
+                "parent": null
+              },
+              "signature": "0d48779bf66fe52eb1f36548aef6bda98045de08c7e8e750077a74de129b1ba7"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-009@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.fin.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.fin.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherCost.disposFixAss.sale.fin.foreignCorp"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "68920",
+              "semantic": {
+                "name": "Erlöse aus Verkäufen Finanzanlagen § 3 Nr. 40 EStG bzw. § 8b Abs. 2 KStG i. V. m. § 8b Abs. 3 S. 3 KStG (bei Buchverlust)",
+                "function": "",
+                "range_start": "68920",
+                "range_end": "68920",
+                "parent": null
+              },
+              "signature": "f09e03de3d7078f75eb8de11a4b0461d66e9ddc707fee091d8d0dbfb5ba9f50b"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-010@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.disposFixAss.bookValue.fin.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.disposFixAss.bookValue.fin.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherCost.disposFixAss.bookValue.fin.foreignCorp"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "68980",
+              "semantic": {
+                "name": "Anlagenabgänge Finanzanlagen § 3 Nr. 40 EStG bzw. § 8b Abs. 2 KStG i. V. m. § 8b Abs. 3 S. 3 KStG (Restbuchwert bei Buchverlust)",
+                "function": "",
+                "range_start": "68980",
+                "range_end": "68980",
+                "parent": null
+              },
+              "signature": "36f93718fd44f4fb7a631f66aae9b3837c8b1317c42edbb063aee2daaf361e1a"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-011@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.disposCurrAss.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposCurrAss.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposCurrAss.foreignCorp"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49040",
+              "semantic": {
+                "name": "Abgänge Wertpapiere des Umlaufvermögens § 8b Abs. 2 KStG (Buchwert bei Buchgewinn)",
+                "function": "",
+                "range_start": "49040",
+                "range_end": "49040",
+                "parent": null
+              },
+              "signature": "d85aa16a84b5a301835d4a7b76120cf666b55f276797f4fe048cb6c529400f39"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-012@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.disposCurrAss.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.disposCurrAss.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherCost.disposCurrAss.foreignCorp"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69040",
+              "semantic": {
+                "name": "Abgänge Wertpapiere des Umlaufvermögens § 8b Abs. 2 KStG i. V. m. § 8b Abs. 3 S. 3 KStG (Buchwert bei Buchverlust)",
+                "function": "",
+                "range_start": "69040",
+                "range_end": "69040",
+                "parent": null
+              },
+              "signature": "ed56da77f06475e7775d78e837ee39e32e2e1f2b007c8e1c01c9b67e46a61648"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-013@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.intan",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.intan"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49110",
+              "semantic": {
+                "name": "Erträge aus Zuschreibungen des immateriellen Anlagevermögens",
+                "function": "",
+                "range_start": "49110",
+                "range_end": "49110",
+                "parent": null
+              },
+              "signature": "59d54bf7844aa80c42d9191be87e61fe1d86ea13e66efb5b913394838827904e"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-014@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.fin.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.fin.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.fin.foreignCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.fin.domesticLoan.relatedParty",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.fin.domesticLoan.unrelatedParty",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.fin.foreignLoan.relatedParty",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.fin.foreignLoan.unrelatedParty"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49130",
+              "semantic": {
+                "name": "Erträge aus Zuschreibungen des Finanzanlagevermögens § 3 Nr. 40 EStG bzw. § 8b Abs. 3 S. 9 KStG",
+                "function": "",
+                "range_start": "49130",
+                "range_end": "49130",
+                "parent": null
+              },
+              "signature": "5d64578f61d1889af094cebc3b044e88b4bcc55a427aaa5a92c30c500c502487"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-disposals-r41-015@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.fin.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.fin.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalFixAss.fin.foreignCorp"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49140",
+              "semantic": {
+                "name": "Erträge aus Zuschreibungen § 3 Nr. 40 EStG bzw. § 8b Abs. 2 KStG",
+                "function": "",
+                "range_start": "49140",
+                "range_end": "49140",
+                "parent": null
+              },
+              "signature": "52a6fa52520a6c4c62785a507b94de5fb2d038ae4e5b9d15f7aac80a593b6b15"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

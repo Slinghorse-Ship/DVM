@@ -1,0 +1,3144 @@
+{
+  "values": {
+    "year": 2025,
+    "journal_sha256": "a6c30c356286c89fa5ce318f2dbb00b0019b2ecce58d6aa90182b211ecedfb98",
+    "accounts": {
+      "c71440": {
+        "name": "Original synthetic c71440",
+        "group": "revenue",
+        "skr_code": "71440",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 300,
+        "tax_cents": 0,
+        "difference_cents": -300
+      },
+      "c71440t": {
+        "name": "Independent fiscal c71440t",
+        "group": "revenue",
+        "skr_code": "71400",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 0,
+        "tax_cents": 300,
+        "difference_cents": 300
+      },
+      "c71450": {
+        "name": "Original synthetic c71450",
+        "group": "revenue",
+        "skr_code": "71450",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 400,
+        "tax_cents": 0,
+        "difference_cents": -400
+      },
+      "c71450t": {
+        "name": "Independent fiscal c71450t",
+        "group": "revenue",
+        "skr_code": "71000",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 0,
+        "tax_cents": 400,
+        "difference_cents": 400
+      },
+      "c73640": {
+        "name": "Original synthetic c73640",
+        "group": "expense",
+        "skr_code": "73640",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 500,
+        "tax_cents": 0,
+        "difference_cents": -500
+      },
+      "c73640t": {
+        "name": "Independent fiscal c73640t",
+        "group": "expense",
+        "skr_code": "73600",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 0,
+        "tax_cents": 400,
+        "difference_cents": 400
+      },
+      "c73650": {
+        "name": "Original synthetic c73650",
+        "group": "expense",
+        "skr_code": "73650",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 200,
+        "tax_cents": 0,
+        "difference_cents": -200
+      },
+      "c73650t": {
+        "name": "Independent fiscal c73650t",
+        "group": "expense",
+        "skr_code": "73000",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 0,
+        "tax_cents": 100,
+        "difference_cents": 100
+      },
+      "ca": {
+        "name": "Original synthetic ca",
+        "group": "other_assets",
+        "skr_code": "13830",
+        "book_opening_cents": 13000,
+        "tax_opening_cents": 0,
+        "book_cents": 13000,
+        "tax_cents": 0,
+        "difference_cents": -13000
+      },
+      "cash": {
+        "name": "Original ordinary bank",
+        "group": "cash",
+        "skr_code": "18000",
+        "book_opening_cents": 100000,
+        "tax_opening_cents": 100000,
+        "book_cents": 100000,
+        "tax_cents": 100400,
+        "difference_cents": 400
+      },
+      "cp": {
+        "name": "Original synthetic cp",
+        "group": "provisions",
+        "skr_code": "30770",
+        "book_opening_cents": -10000,
+        "tax_opening_cents": 0,
+        "book_cents": 10000,
+        "tax_cents": 0,
+        "difference_cents": -10000
+      },
+      "cta": {
+        "name": "Original synthetic cta",
+        "group": "cash",
+        "skr_code": "18000",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 13200,
+        "book_cents": 0,
+        "tax_cents": 13200,
+        "difference_cents": 13200
+      },
+      "ctp": {
+        "name": "Original synthetic ctp",
+        "group": "provisions",
+        "skr_code": "30700",
+        "book_opening_cents": 0,
+        "tax_opening_cents": -9000,
+        "book_cents": 0,
+        "tax_cents": 9000,
+        "difference_cents": 9000
+      },
+      "equity": {
+        "name": "Original reviewed capital",
+        "group": "equity",
+        "skr_code": "29700",
+        "book_opening_cents": -101000,
+        "tax_opening_cents": -103400,
+        "book_cents": 101000,
+        "tax_cents": 103400,
+        "difference_cents": 2400
+      },
+      "p71440": {
+        "name": "Original synthetic p71440",
+        "group": "revenue",
+        "skr_code": "71440",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 300,
+        "tax_cents": 0,
+        "difference_cents": -300
+      },
+      "p71440t": {
+        "name": "Independent fiscal p71440t",
+        "group": "revenue",
+        "skr_code": "71400",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 0,
+        "tax_cents": 300,
+        "difference_cents": 300
+      },
+      "p71450": {
+        "name": "Original synthetic p71450",
+        "group": "revenue",
+        "skr_code": "71450",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 400,
+        "tax_cents": 0,
+        "difference_cents": -400
+      },
+      "p71450t": {
+        "name": "Independent fiscal p71450t",
+        "group": "revenue",
+        "skr_code": "71000",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 0,
+        "tax_cents": 400,
+        "difference_cents": 400
+      },
+      "p73640": {
+        "name": "Original synthetic p73640",
+        "group": "expense",
+        "skr_code": "73640",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 500,
+        "tax_cents": 0,
+        "difference_cents": -500
+      },
+      "p73640t": {
+        "name": "Independent fiscal p73640t",
+        "group": "expense",
+        "skr_code": "73600",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 0,
+        "tax_cents": 400,
+        "difference_cents": 400
+      },
+      "p73650": {
+        "name": "Original synthetic p73650",
+        "group": "expense",
+        "skr_code": "73650",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 200,
+        "tax_cents": 0,
+        "difference_cents": -200
+      },
+      "p73650t": {
+        "name": "Independent fiscal p73650t",
+        "group": "expense",
+        "skr_code": "73000",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 0,
+        "tax_cents": 100,
+        "difference_cents": 100
+      },
+      "pa": {
+        "name": "Original synthetic pa",
+        "group": "other_assets",
+        "skr_code": "13810",
+        "book_opening_cents": 8000,
+        "tax_opening_cents": 0,
+        "book_cents": 8000,
+        "tax_cents": 0,
+        "difference_cents": -8000
+      },
+      "pp": {
+        "name": "Original synthetic pp",
+        "group": "provisions",
+        "skr_code": "30090",
+        "book_opening_cents": -10000,
+        "tax_opening_cents": 0,
+        "book_cents": 10000,
+        "tax_cents": 0,
+        "difference_cents": -10000
+      },
+      "pta": {
+        "name": "Original synthetic pta",
+        "group": "cash",
+        "skr_code": "18000",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 8200,
+        "book_cents": 0,
+        "tax_cents": 8200,
+        "difference_cents": 8200
+      },
+      "ptp": {
+        "name": "Original synthetic ptp",
+        "group": "provisions",
+        "skr_code": "30000",
+        "book_opening_cents": 0,
+        "tax_opening_cents": -9000,
+        "book_cents": 0,
+        "tax_cents": 9000,
+        "difference_cents": 9000
+      }
+    },
+    "book": {
+      "year": 2025,
+      "accounts": {
+        "c71440": {
+          "name": "Original synthetic c71440",
+          "group": "revenue",
+          "skr_code": "71440",
+          "id": "c71440",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 300,
+          "closing_cents": -300,
+          "amount_cents": 300
+        },
+        "c71440t": {
+          "name": "Independent fiscal c71440t",
+          "group": "revenue",
+          "skr_code": "71400",
+          "id": "c71440t",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "c71450": {
+          "name": "Original synthetic c71450",
+          "group": "revenue",
+          "skr_code": "71450",
+          "id": "c71450",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 400,
+          "closing_cents": -400,
+          "amount_cents": 400
+        },
+        "c71450t": {
+          "name": "Independent fiscal c71450t",
+          "group": "revenue",
+          "skr_code": "71000",
+          "id": "c71450t",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "c73640": {
+          "name": "Original synthetic c73640",
+          "group": "expense",
+          "skr_code": "73640",
+          "id": "c73640",
+          "opening_cents": 0,
+          "debit_cents": 500,
+          "credit_cents": 0,
+          "closing_cents": 500,
+          "amount_cents": 500
+        },
+        "c73640t": {
+          "name": "Independent fiscal c73640t",
+          "group": "expense",
+          "skr_code": "73600",
+          "id": "c73640t",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "c73650": {
+          "name": "Original synthetic c73650",
+          "group": "expense",
+          "skr_code": "73650",
+          "id": "c73650",
+          "opening_cents": 0,
+          "debit_cents": 200,
+          "credit_cents": 0,
+          "closing_cents": 200,
+          "amount_cents": 200
+        },
+        "c73650t": {
+          "name": "Independent fiscal c73650t",
+          "group": "expense",
+          "skr_code": "73000",
+          "id": "c73650t",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "ca": {
+          "name": "Original synthetic ca",
+          "group": "other_assets",
+          "skr_code": "13830",
+          "id": "ca",
+          "opening_cents": 13000,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 13000,
+          "amount_cents": 13000
+        },
+        "cash": {
+          "name": "Original ordinary bank",
+          "group": "cash",
+          "skr_code": "18000",
+          "id": "cash",
+          "opening_cents": 100000,
+          "debit_cents": 1400,
+          "credit_cents": 1400,
+          "closing_cents": 100000,
+          "amount_cents": 100000
+        },
+        "cp": {
+          "name": "Original synthetic cp",
+          "group": "provisions",
+          "skr_code": "30770",
+          "id": "cp",
+          "opening_cents": -10000,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": -10000,
+          "amount_cents": 10000
+        },
+        "cta": {
+          "name": "Original synthetic cta",
+          "group": "cash",
+          "skr_code": "18000",
+          "id": "cta",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "ctp": {
+          "name": "Original synthetic ctp",
+          "group": "provisions",
+          "skr_code": "30700",
+          "id": "ctp",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "equity": {
+          "name": "Original reviewed capital",
+          "group": "equity",
+          "skr_code": "29700",
+          "id": "equity",
+          "opening_cents": -101000,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": -101000,
+          "amount_cents": 101000
+        },
+        "p71440": {
+          "name": "Original synthetic p71440",
+          "group": "revenue",
+          "skr_code": "71440",
+          "id": "p71440",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 300,
+          "closing_cents": -300,
+          "amount_cents": 300
+        },
+        "p71440t": {
+          "name": "Independent fiscal p71440t",
+          "group": "revenue",
+          "skr_code": "71400",
+          "id": "p71440t",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "p71450": {
+          "name": "Original synthetic p71450",
+          "group": "revenue",
+          "skr_code": "71450",
+          "id": "p71450",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 400,
+          "closing_cents": -400,
+          "amount_cents": 400
+        },
+        "p71450t": {
+          "name": "Independent fiscal p71450t",
+          "group": "revenue",
+          "skr_code": "71000",
+          "id": "p71450t",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "p73640": {
+          "name": "Original synthetic p73640",
+          "group": "expense",
+          "skr_code": "73640",
+          "id": "p73640",
+          "opening_cents": 0,
+          "debit_cents": 500,
+          "credit_cents": 0,
+          "closing_cents": 500,
+          "amount_cents": 500
+        },
+        "p73640t": {
+          "name": "Independent fiscal p73640t",
+          "group": "expense",
+          "skr_code": "73600",
+          "id": "p73640t",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "p73650": {
+          "name": "Original synthetic p73650",
+          "group": "expense",
+          "skr_code": "73650",
+          "id": "p73650",
+          "opening_cents": 0,
+          "debit_cents": 200,
+          "credit_cents": 0,
+          "closing_cents": 200,
+          "amount_cents": 200
+        },
+        "p73650t": {
+          "name": "Independent fiscal p73650t",
+          "group": "expense",
+          "skr_code": "73000",
+          "id": "p73650t",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "pa": {
+          "name": "Original synthetic pa",
+          "group": "other_assets",
+          "skr_code": "13810",
+          "id": "pa",
+          "opening_cents": 8000,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 8000,
+          "amount_cents": 8000
+        },
+        "pp": {
+          "name": "Original synthetic pp",
+          "group": "provisions",
+          "skr_code": "30090",
+          "id": "pp",
+          "opening_cents": -10000,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": -10000,
+          "amount_cents": 10000
+        },
+        "pta": {
+          "name": "Original synthetic pta",
+          "group": "cash",
+          "skr_code": "18000",
+          "id": "pta",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "ptp": {
+          "name": "Original synthetic ptp",
+          "group": "provisions",
+          "skr_code": "30000",
+          "id": "ptp",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        }
+      },
+      "assets": [
+        {
+          "name": "Original synthetic ca",
+          "group": "other_assets",
+          "skr_code": "13830",
+          "id": "ca",
+          "opening_cents": 13000,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 13000,
+          "amount_cents": 13000
+        },
+        {
+          "name": "Original ordinary bank",
+          "group": "cash",
+          "skr_code": "18000",
+          "id": "cash",
+          "opening_cents": 100000,
+          "debit_cents": 1400,
+          "credit_cents": 1400,
+          "closing_cents": 100000,
+          "amount_cents": 100000
+        },
+        {
+          "name": "Original synthetic cta",
+          "group": "cash",
+          "skr_code": "18000",
+          "id": "cta",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        {
+          "name": "Original synthetic pa",
+          "group": "other_assets",
+          "skr_code": "13810",
+          "id": "pa",
+          "opening_cents": 8000,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 8000,
+          "amount_cents": 8000
+        },
+        {
+          "name": "Original synthetic pta",
+          "group": "cash",
+          "skr_code": "18000",
+          "id": "pta",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        }
+      ],
+      "capital": [
+        {
+          "name": "Original reviewed capital",
+          "group": "equity",
+          "skr_code": "29700",
+          "id": "equity",
+          "opening_cents": -101000,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": -101000,
+          "amount_cents": 101000
+        }
+      ],
+      "liabilities": [
+        {
+          "name": "Original synthetic cp",
+          "group": "provisions",
+          "skr_code": "30770",
+          "id": "cp",
+          "opening_cents": -10000,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": -10000,
+          "amount_cents": 10000
+        },
+        {
+          "name": "Original synthetic ctp",
+          "group": "provisions",
+          "skr_code": "30700",
+          "id": "ctp",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        {
+          "name": "Original synthetic pp",
+          "group": "provisions",
+          "skr_code": "30090",
+          "id": "pp",
+          "opening_cents": -10000,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": -10000,
+          "amount_cents": 10000
+        },
+        {
+          "name": "Original synthetic ptp",
+          "group": "provisions",
+          "skr_code": "30000",
+          "id": "ptp",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        }
+      ],
+      "profit_and_loss": [
+        {
+          "name": "Original synthetic c71440",
+          "group": "revenue",
+          "skr_code": "71440",
+          "id": "c71440",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 300,
+          "closing_cents": -300,
+          "amount_cents": 300
+        },
+        {
+          "name": "Independent fiscal c71440t",
+          "group": "revenue",
+          "skr_code": "71400",
+          "id": "c71440t",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        {
+          "name": "Original synthetic c71450",
+          "group": "revenue",
+          "skr_code": "71450",
+          "id": "c71450",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 400,
+          "closing_cents": -400,
+          "amount_cents": 400
+        },
+        {
+          "name": "Independent fiscal c71450t",
+          "group": "revenue",
+          "skr_code": "71000",
+          "id": "c71450t",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        {
+          "name": "Original synthetic c73640",
+          "group": "expense",
+          "skr_code": "73640",
+          "id": "c73640",
+          "opening_cents": 0,
+          "debit_cents": 500,
+          "credit_cents": 0,
+          "closing_cents": 500,
+          "amount_cents": 500
+        },
+        {
+          "name": "Independent fiscal c73640t",
+          "group": "expense",
+          "skr_code": "73600",
+          "id": "c73640t",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        {
+          "name": "Original synthetic c73650",
+          "group": "expense",
+          "skr_code": "73650",
+          "id": "c73650",
+          "opening_cents": 0,
+          "debit_cents": 200,
+          "credit_cents": 0,
+          "closing_cents": 200,
+          "amount_cents": 200
+        },
+        {
+          "name": "Independent fiscal c73650t",
+          "group": "expense",
+          "skr_code": "73000",
+          "id": "c73650t",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        {
+          "name": "Original synthetic p71440",
+          "group": "revenue",
+          "skr_code": "71440",
+          "id": "p71440",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 300,
+          "closing_cents": -300,
+          "amount_cents": 300
+        },
+        {
+          "name": "Independent fiscal p71440t",
+          "group": "revenue",
+          "skr_code": "71400",
+          "id": "p71440t",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        {
+          "name": "Original synthetic p71450",
+          "group": "revenue",
+          "skr_code": "71450",
+          "id": "p71450",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 400,
+          "closing_cents": -400,
+          "amount_cents": 400
+        },
+        {
+          "name": "Independent fiscal p71450t",
+          "group": "revenue",
+          "skr_code": "71000",
+          "id": "p71450t",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        {
+          "name": "Original synthetic p73640",
+          "group": "expense",
+          "skr_code": "73640",
+          "id": "p73640",
+          "opening_cents": 0,
+          "debit_cents": 500,
+          "credit_cents": 0,
+          "closing_cents": 500,
+          "amount_cents": 500
+        },
+        {
+          "name": "Independent fiscal p73640t",
+          "group": "expense",
+          "skr_code": "73600",
+          "id": "p73640t",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        {
+          "name": "Original synthetic p73650",
+          "group": "expense",
+          "skr_code": "73650",
+          "id": "p73650",
+          "opening_cents": 0,
+          "debit_cents": 200,
+          "credit_cents": 0,
+          "closing_cents": 200,
+          "amount_cents": 200
+        },
+        {
+          "name": "Independent fiscal p73650t",
+          "group": "expense",
+          "skr_code": "73000",
+          "id": "p73650t",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        }
+      ],
+      "spheres": {
+        "1": {
+          "income_cents": 0,
+          "expense_cents": 0,
+          "result_cents": 0
+        },
+        "2": {
+          "income_cents": 0,
+          "expense_cents": 0,
+          "result_cents": 0
+        },
+        "3": {
+          "income_cents": 0,
+          "expense_cents": 0,
+          "result_cents": 0
+        },
+        "4": {
+          "income_cents": 1400,
+          "expense_cents": 1400,
+          "result_cents": 0
+        }
+      },
+      "asset_total_cents": 121000,
+      "capital_total_cents": 101000,
+      "liability_total_cents": 20000,
+      "income_cents": 1400,
+      "expense_cents": 1400,
+      "annual_result_cents": 0,
+      "passive_total_cents": 121000,
+      "debit_cents": 2800,
+      "credit_cents": 2800,
+      "difference_cents": 0,
+      "issues": [],
+      "entry_count": 8
+    },
+    "tax": {
+      "year": 2025,
+      "accounts": {
+        "c71440": {
+          "name": "Original synthetic c71440",
+          "group": "revenue",
+          "skr_code": "71440",
+          "id": "c71440",
+          "opening_cents": 0,
+          "debit_cents": 300,
+          "credit_cents": 300,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "c71440t": {
+          "name": "Independent fiscal c71440t",
+          "group": "revenue",
+          "skr_code": "71400",
+          "id": "c71440t",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 300,
+          "closing_cents": -300,
+          "amount_cents": 300
+        },
+        "c71450": {
+          "name": "Original synthetic c71450",
+          "group": "revenue",
+          "skr_code": "71450",
+          "id": "c71450",
+          "opening_cents": 0,
+          "debit_cents": 400,
+          "credit_cents": 400,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "c71450t": {
+          "name": "Independent fiscal c71450t",
+          "group": "revenue",
+          "skr_code": "71000",
+          "id": "c71450t",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 400,
+          "closing_cents": -400,
+          "amount_cents": 400
+        },
+        "c73640": {
+          "name": "Original synthetic c73640",
+          "group": "expense",
+          "skr_code": "73640",
+          "id": "c73640",
+          "opening_cents": 0,
+          "debit_cents": 500,
+          "credit_cents": 500,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "c73640t": {
+          "name": "Independent fiscal c73640t",
+          "group": "expense",
+          "skr_code": "73600",
+          "id": "c73640t",
+          "opening_cents": 0,
+          "debit_cents": 400,
+          "credit_cents": 0,
+          "closing_cents": 400,
+          "amount_cents": 400
+        },
+        "c73650": {
+          "name": "Original synthetic c73650",
+          "group": "expense",
+          "skr_code": "73650",
+          "id": "c73650",
+          "opening_cents": 0,
+          "debit_cents": 200,
+          "credit_cents": 200,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "c73650t": {
+          "name": "Independent fiscal c73650t",
+          "group": "expense",
+          "skr_code": "73000",
+          "id": "c73650t",
+          "opening_cents": 0,
+          "debit_cents": 100,
+          "credit_cents": 0,
+          "closing_cents": 100,
+          "amount_cents": 100
+        },
+        "ca": {
+          "name": "Original synthetic ca",
+          "group": "other_assets",
+          "skr_code": "13830",
+          "id": "ca",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "cash": {
+          "name": "Original ordinary bank",
+          "group": "cash",
+          "skr_code": "18000",
+          "id": "cash",
+          "opening_cents": 100000,
+          "debit_cents": 1800,
+          "credit_cents": 1400,
+          "closing_cents": 100400,
+          "amount_cents": 100400
+        },
+        "cp": {
+          "name": "Original synthetic cp",
+          "group": "provisions",
+          "skr_code": "30770",
+          "id": "cp",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "cta": {
+          "name": "Original synthetic cta",
+          "group": "cash",
+          "skr_code": "18000",
+          "id": "cta",
+          "opening_cents": 13200,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 13200,
+          "amount_cents": 13200
+        },
+        "ctp": {
+          "name": "Original synthetic ctp",
+          "group": "provisions",
+          "skr_code": "30700",
+          "id": "ctp",
+          "opening_cents": -9000,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": -9000,
+          "amount_cents": 9000
+        },
+        "equity": {
+          "name": "Original reviewed capital",
+          "group": "equity",
+          "skr_code": "29700",
+          "id": "equity",
+          "opening_cents": -103400,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": -103400,
+          "amount_cents": 103400
+        },
+        "p71440": {
+          "name": "Original synthetic p71440",
+          "group": "revenue",
+          "skr_code": "71440",
+          "id": "p71440",
+          "opening_cents": 0,
+          "debit_cents": 300,
+          "credit_cents": 300,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "p71440t": {
+          "name": "Independent fiscal p71440t",
+          "group": "revenue",
+          "skr_code": "71400",
+          "id": "p71440t",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 300,
+          "closing_cents": -300,
+          "amount_cents": 300
+        },
+        "p71450": {
+          "name": "Original synthetic p71450",
+          "group": "revenue",
+          "skr_code": "71450",
+          "id": "p71450",
+          "opening_cents": 0,
+          "debit_cents": 400,
+          "credit_cents": 400,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "p71450t": {
+          "name": "Independent fiscal p71450t",
+          "group": "revenue",
+          "skr_code": "71000",
+          "id": "p71450t",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 400,
+          "closing_cents": -400,
+          "amount_cents": 400
+        },
+        "p73640": {
+          "name": "Original synthetic p73640",
+          "group": "expense",
+          "skr_code": "73640",
+          "id": "p73640",
+          "opening_cents": 0,
+          "debit_cents": 500,
+          "credit_cents": 500,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "p73640t": {
+          "name": "Independent fiscal p73640t",
+          "group": "expense",
+          "skr_code": "73600",
+          "id": "p73640t",
+          "opening_cents": 0,
+          "debit_cents": 400,
+          "credit_cents": 0,
+          "closing_cents": 400,
+          "amount_cents": 400
+        },
+        "p73650": {
+          "name": "Original synthetic p73650",
+          "group": "expense",
+          "skr_code": "73650",
+          "id": "p73650",
+          "opening_cents": 0,
+          "debit_cents": 200,
+          "credit_cents": 200,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "p73650t": {
+          "name": "Independent fiscal p73650t",
+          "group": "expense",
+          "skr_code": "73000",
+          "id": "p73650t",
+          "opening_cents": 0,
+          "debit_cents": 100,
+          "credit_cents": 0,
+          "closing_cents": 100,
+          "amount_cents": 100
+        },
+        "pa": {
+          "name": "Original synthetic pa",
+          "group": "other_assets",
+          "skr_code": "13810",
+          "id": "pa",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "pp": {
+          "name": "Original synthetic pp",
+          "group": "provisions",
+          "skr_code": "30090",
+          "id": "pp",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "pta": {
+          "name": "Original synthetic pta",
+          "group": "cash",
+          "skr_code": "18000",
+          "id": "pta",
+          "opening_cents": 8200,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 8200,
+          "amount_cents": 8200
+        },
+        "ptp": {
+          "name": "Original synthetic ptp",
+          "group": "provisions",
+          "skr_code": "30000",
+          "id": "ptp",
+          "opening_cents": -9000,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": -9000,
+          "amount_cents": 9000
+        }
+      },
+      "assets": [
+        {
+          "name": "Original synthetic ca",
+          "group": "other_assets",
+          "skr_code": "13830",
+          "id": "ca",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        {
+          "name": "Original ordinary bank",
+          "group": "cash",
+          "skr_code": "18000",
+          "id": "cash",
+          "opening_cents": 100000,
+          "debit_cents": 1800,
+          "credit_cents": 1400,
+          "closing_cents": 100400,
+          "amount_cents": 100400
+        },
+        {
+          "name": "Original synthetic cta",
+          "group": "cash",
+          "skr_code": "18000",
+          "id": "cta",
+          "opening_cents": 13200,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 13200,
+          "amount_cents": 13200
+        },
+        {
+          "name": "Original synthetic pa",
+          "group": "other_assets",
+          "skr_code": "13810",
+          "id": "pa",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        {
+          "name": "Original synthetic pta",
+          "group": "cash",
+          "skr_code": "18000",
+          "id": "pta",
+          "opening_cents": 8200,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 8200,
+          "amount_cents": 8200
+        }
+      ],
+      "capital": [
+        {
+          "name": "Original reviewed capital",
+          "group": "equity",
+          "skr_code": "29700",
+          "id": "equity",
+          "opening_cents": -103400,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": -103400,
+          "amount_cents": 103400
+        }
+      ],
+      "liabilities": [
+        {
+          "name": "Original synthetic cp",
+          "group": "provisions",
+          "skr_code": "30770",
+          "id": "cp",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        {
+          "name": "Original synthetic ctp",
+          "group": "provisions",
+          "skr_code": "30700",
+          "id": "ctp",
+          "opening_cents": -9000,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": -9000,
+          "amount_cents": 9000
+        },
+        {
+          "name": "Original synthetic pp",
+          "group": "provisions",
+          "skr_code": "30090",
+          "id": "pp",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        {
+          "name": "Original synthetic ptp",
+          "group": "provisions",
+          "skr_code": "30000",
+          "id": "ptp",
+          "opening_cents": -9000,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": -9000,
+          "amount_cents": 9000
+        }
+      ],
+      "profit_and_loss": [
+        {
+          "name": "Original synthetic c71440",
+          "group": "revenue",
+          "skr_code": "71440",
+          "id": "c71440",
+          "opening_cents": 0,
+          "debit_cents": 300,
+          "credit_cents": 300,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        {
+          "name": "Independent fiscal c71440t",
+          "group": "revenue",
+          "skr_code": "71400",
+          "id": "c71440t",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 300,
+          "closing_cents": -300,
+          "amount_cents": 300
+        },
+        {
+          "name": "Original synthetic c71450",
+          "group": "revenue",
+          "skr_code": "71450",
+          "id": "c71450",
+          "opening_cents": 0,
+          "debit_cents": 400,
+          "credit_cents": 400,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        {
+          "name": "Independent fiscal c71450t",
+          "group": "revenue",
+          "skr_code": "71000",
+          "id": "c71450t",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 400,
+          "closing_cents": -400,
+          "amount_cents": 400
+        },
+        {
+          "name": "Original synthetic c73640",
+          "group": "expense",
+          "skr_code": "73640",
+          "id": "c73640",
+          "opening_cents": 0,
+          "debit_cents": 500,
+          "credit_cents": 500,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        {
+          "name": "Independent fiscal c73640t",
+          "group": "expense",
+          "skr_code": "73600",
+          "id": "c73640t",
+          "opening_cents": 0,
+          "debit_cents": 400,
+          "credit_cents": 0,
+          "closing_cents": 400,
+          "amount_cents": 400
+        },
+        {
+          "name": "Original synthetic c73650",
+          "group": "expense",
+          "skr_code": "73650",
+          "id": "c73650",
+          "opening_cents": 0,
+          "debit_cents": 200,
+          "credit_cents": 200,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        {
+          "name": "Independent fiscal c73650t",
+          "group": "expense",
+          "skr_code": "73000",
+          "id": "c73650t",
+          "opening_cents": 0,
+          "debit_cents": 100,
+          "credit_cents": 0,
+          "closing_cents": 100,
+          "amount_cents": 100
+        },
+        {
+          "name": "Original synthetic p71440",
+          "group": "revenue",
+          "skr_code": "71440",
+          "id": "p71440",
+          "opening_cents": 0,
+          "debit_cents": 300,
+          "credit_cents": 300,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        {
+          "name": "Independent fiscal p71440t",
+          "group": "revenue",
+          "skr_code": "71400",
+          "id": "p71440t",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 300,
+          "closing_cents": -300,
+          "amount_cents": 300
+        },
+        {
+          "name": "Original synthetic p71450",
+          "group": "revenue",
+          "skr_code": "71450",
+          "id": "p71450",
+          "opening_cents": 0,
+          "debit_cents": 400,
+          "credit_cents": 400,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        {
+          "name": "Independent fiscal p71450t",
+          "group": "revenue",
+          "skr_code": "71000",
+          "id": "p71450t",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 400,
+          "closing_cents": -400,
+          "amount_cents": 400
+        },
+        {
+          "name": "Original synthetic p73640",
+          "group": "expense",
+          "skr_code": "73640",
+          "id": "p73640",
+          "opening_cents": 0,
+          "debit_cents": 500,
+          "credit_cents": 500,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        {
+          "name": "Independent fiscal p73640t",
+          "group": "expense",
+          "skr_code": "73600",
+          "id": "p73640t",
+          "opening_cents": 0,
+          "debit_cents": 400,
+          "credit_cents": 0,
+          "closing_cents": 400,
+          "amount_cents": 400
+        },
+        {
+          "name": "Original synthetic p73650",
+          "group": "expense",
+          "skr_code": "73650",
+          "id": "p73650",
+          "opening_cents": 0,
+          "debit_cents": 200,
+          "credit_cents": 200,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        {
+          "name": "Independent fiscal p73650t",
+          "group": "expense",
+          "skr_code": "73000",
+          "id": "p73650t",
+          "opening_cents": 0,
+          "debit_cents": 100,
+          "credit_cents": 0,
+          "closing_cents": 100,
+          "amount_cents": 100
+        }
+      ],
+      "spheres": {
+        "1": {
+          "income_cents": 0,
+          "expense_cents": 0,
+          "result_cents": 0
+        },
+        "2": {
+          "income_cents": 0,
+          "expense_cents": 0,
+          "result_cents": 0
+        },
+        "3": {
+          "income_cents": 0,
+          "expense_cents": 0,
+          "result_cents": 0
+        },
+        "4": {
+          "income_cents": 1400,
+          "expense_cents": 1000,
+          "result_cents": 400
+        }
+      },
+      "asset_total_cents": 121800,
+      "capital_total_cents": 103400,
+      "liability_total_cents": 18000,
+      "income_cents": 1400,
+      "expense_cents": 1000,
+      "annual_result_cents": 400,
+      "passive_total_cents": 121800,
+      "debit_cents": 5600,
+      "credit_cents": 5600,
+      "difference_cents": 0,
+      "issues": [],
+      "entry_count": 16
+    },
+    "opening_adjustments": [
+      {
+        "id": "pension-pa",
+        "reason": "Original independently confirmed fiscal gross amount and eligibility; never inferred from HGB netting.",
+        "lines": [
+          {
+            "account": "pa",
+            "debit_cents": 0,
+            "credit_cents": 8000,
+            "sphere": ""
+          },
+          {
+            "account": "pta",
+            "debit_cents": 8200,
+            "credit_cents": 0,
+            "sphere": ""
+          },
+          {
+            "account": "equity",
+            "debit_cents": 0,
+            "credit_cents": 200,
+            "sphere": ""
+          }
+        ]
+      },
+      {
+        "id": "pension-pp",
+        "reason": "Original independently confirmed fiscal gross amount and eligibility; never inferred from HGB netting.",
+        "lines": [
+          {
+            "account": "pp",
+            "debit_cents": 10000,
+            "credit_cents": 0,
+            "sphere": ""
+          },
+          {
+            "account": "ptp",
+            "debit_cents": 0,
+            "credit_cents": 9000,
+            "sphere": ""
+          },
+          {
+            "account": "equity",
+            "debit_cents": 0,
+            "credit_cents": 1000,
+            "sphere": ""
+          }
+        ]
+      },
+      {
+        "id": "pension-ca",
+        "reason": "Original independently confirmed fiscal gross amount and eligibility; never inferred from HGB netting.",
+        "lines": [
+          {
+            "account": "ca",
+            "debit_cents": 0,
+            "credit_cents": 13000,
+            "sphere": ""
+          },
+          {
+            "account": "cta",
+            "debit_cents": 13200,
+            "credit_cents": 0,
+            "sphere": ""
+          },
+          {
+            "account": "equity",
+            "debit_cents": 0,
+            "credit_cents": 200,
+            "sphere": ""
+          }
+        ]
+      },
+      {
+        "id": "pension-cp",
+        "reason": "Original independently confirmed fiscal gross amount and eligibility; never inferred from HGB netting.",
+        "lines": [
+          {
+            "account": "cp",
+            "debit_cents": 10000,
+            "credit_cents": 0,
+            "sphere": ""
+          },
+          {
+            "account": "ctp",
+            "debit_cents": 0,
+            "credit_cents": 9000,
+            "sphere": ""
+          },
+          {
+            "account": "equity",
+            "debit_cents": 0,
+            "credit_cents": 1000,
+            "sphere": ""
+          }
+        ]
+      }
+    ],
+    "current_adjustments": [
+      {
+        "id": "pension-p71440",
+        "reason": "Original independently confirmed fiscal gross amount and eligibility; never inferred from HGB netting.",
+        "lines": [
+          {
+            "account": "p71440",
+            "debit_cents": 300,
+            "credit_cents": 0,
+            "sphere": "4"
+          },
+          {
+            "account": "p71440t",
+            "debit_cents": 0,
+            "credit_cents": 300,
+            "sphere": "4"
+          }
+        ]
+      },
+      {
+        "id": "pension-p71450",
+        "reason": "Original independently confirmed fiscal gross amount and eligibility; never inferred from HGB netting.",
+        "lines": [
+          {
+            "account": "p71450",
+            "debit_cents": 400,
+            "credit_cents": 0,
+            "sphere": "4"
+          },
+          {
+            "account": "p71450t",
+            "debit_cents": 0,
+            "credit_cents": 400,
+            "sphere": "4"
+          }
+        ]
+      },
+      {
+        "id": "pension-p73640",
+        "reason": "Original independently confirmed fiscal gross amount and eligibility; never inferred from HGB netting.",
+        "lines": [
+          {
+            "account": "p73640",
+            "debit_cents": 0,
+            "credit_cents": 500,
+            "sphere": "4"
+          },
+          {
+            "account": "p73640t",
+            "debit_cents": 400,
+            "credit_cents": 0,
+            "sphere": "4"
+          },
+          {
+            "account": "cash",
+            "debit_cents": 100,
+            "credit_cents": 0,
+            "sphere": ""
+          }
+        ]
+      },
+      {
+        "id": "pension-p73650",
+        "reason": "Original independently confirmed fiscal gross amount and eligibility; never inferred from HGB netting.",
+        "lines": [
+          {
+            "account": "p73650",
+            "debit_cents": 0,
+            "credit_cents": 200,
+            "sphere": "4"
+          },
+          {
+            "account": "p73650t",
+            "debit_cents": 100,
+            "credit_cents": 0,
+            "sphere": "4"
+          },
+          {
+            "account": "cash",
+            "debit_cents": 100,
+            "credit_cents": 0,
+            "sphere": ""
+          }
+        ]
+      },
+      {
+        "id": "pension-c71440",
+        "reason": "Original independently confirmed fiscal gross amount and eligibility; never inferred from HGB netting.",
+        "lines": [
+          {
+            "account": "c71440",
+            "debit_cents": 300,
+            "credit_cents": 0,
+            "sphere": "4"
+          },
+          {
+            "account": "c71440t",
+            "debit_cents": 0,
+            "credit_cents": 300,
+            "sphere": "4"
+          }
+        ]
+      },
+      {
+        "id": "pension-c71450",
+        "reason": "Original independently confirmed fiscal gross amount and eligibility; never inferred from HGB netting.",
+        "lines": [
+          {
+            "account": "c71450",
+            "debit_cents": 400,
+            "credit_cents": 0,
+            "sphere": "4"
+          },
+          {
+            "account": "c71450t",
+            "debit_cents": 0,
+            "credit_cents": 400,
+            "sphere": "4"
+          }
+        ]
+      },
+      {
+        "id": "pension-c73640",
+        "reason": "Original independently confirmed fiscal gross amount and eligibility; never inferred from HGB netting.",
+        "lines": [
+          {
+            "account": "c73640",
+            "debit_cents": 0,
+            "credit_cents": 500,
+            "sphere": "4"
+          },
+          {
+            "account": "c73640t",
+            "debit_cents": 400,
+            "credit_cents": 0,
+            "sphere": "4"
+          },
+          {
+            "account": "cash",
+            "debit_cents": 100,
+            "credit_cents": 0,
+            "sphere": ""
+          }
+        ]
+      },
+      {
+        "id": "pension-c73650",
+        "reason": "Original independently confirmed fiscal gross amount and eligibility; never inferred from HGB netting.",
+        "lines": [
+          {
+            "account": "c73650",
+            "debit_cents": 0,
+            "credit_cents": 200,
+            "sphere": "4"
+          },
+          {
+            "account": "c73650t",
+            "debit_cents": 100,
+            "credit_cents": 0,
+            "sphere": "4"
+          },
+          {
+            "account": "cash",
+            "debit_cents": 100,
+            "credit_cents": 0,
+            "sphere": ""
+          }
+        ]
+      }
+    ],
+    "result_difference_cents": 400,
+    "source_spheres": [
+      "4"
+    ],
+    "asset_schedule": {
+      "year": 2025,
+      "items": [],
+      "totals": {
+        "cost_opening_cents": 0,
+        "additions_cents": 0,
+        "cost_closing_cents": 0,
+        "accumulated_opening_cents": 0,
+        "depreciation_cents": 0,
+        "accumulated_closing_cents": 0,
+        "book_opening_cents": 0,
+        "book_closing_cents": 0
+      },
+      "issues": [],
+      "ready_for_xbrl": false
+    },
+    "whole_club_scope": {
+      "schema": 1,
+      "kind": "whole_taxable_club",
+      "source": {
+        "year": 2025,
+        "state": "closed",
+        "closed_sha256": "a6c30c356286c89fa5ce318f2dbb00b0019b2ecce58d6aa90182b211ecedfb98",
+        "previous_sha256": null,
+        "result_account": "equity",
+        "issues": [],
+        "accounts": {
+          "c71440": {
+            "name": "Original synthetic c71440",
+            "group": "revenue",
+            "skr_code": "71440"
+          },
+          "c71440t": {
+            "name": "Independent fiscal c71440t",
+            "group": "revenue",
+            "skr_code": "71400"
+          },
+          "c71450": {
+            "name": "Original synthetic c71450",
+            "group": "revenue",
+            "skr_code": "71450"
+          },
+          "c71450t": {
+            "name": "Independent fiscal c71450t",
+            "group": "revenue",
+            "skr_code": "71000"
+          },
+          "c73640": {
+            "name": "Original synthetic c73640",
+            "group": "expense",
+            "skr_code": "73640"
+          },
+          "c73640t": {
+            "name": "Independent fiscal c73640t",
+            "group": "expense",
+            "skr_code": "73600"
+          },
+          "c73650": {
+            "name": "Original synthetic c73650",
+            "group": "expense",
+            "skr_code": "73650"
+          },
+          "c73650t": {
+            "name": "Independent fiscal c73650t",
+            "group": "expense",
+            "skr_code": "73000"
+          },
+          "ca": {
+            "name": "Original synthetic ca",
+            "group": "other_assets",
+            "skr_code": "13830"
+          },
+          "cash": {
+            "name": "Original ordinary bank",
+            "group": "cash",
+            "skr_code": "18000"
+          },
+          "cp": {
+            "name": "Original synthetic cp",
+            "group": "provisions",
+            "skr_code": "30770"
+          },
+          "cta": {
+            "name": "Original synthetic cta",
+            "group": "cash",
+            "skr_code": "18000"
+          },
+          "ctp": {
+            "name": "Original synthetic ctp",
+            "group": "provisions",
+            "skr_code": "30700"
+          },
+          "equity": {
+            "name": "Original reviewed capital",
+            "group": "equity",
+            "skr_code": "29700"
+          },
+          "p71440": {
+            "name": "Original synthetic p71440",
+            "group": "revenue",
+            "skr_code": "71440"
+          },
+          "p71440t": {
+            "name": "Independent fiscal p71440t",
+            "group": "revenue",
+            "skr_code": "71400"
+          },
+          "p71450": {
+            "name": "Original synthetic p71450",
+            "group": "revenue",
+            "skr_code": "71450"
+          },
+          "p71450t": {
+            "name": "Independent fiscal p71450t",
+            "group": "revenue",
+            "skr_code": "71000"
+          },
+          "p73640": {
+            "name": "Original synthetic p73640",
+            "group": "expense",
+            "skr_code": "73640"
+          },
+          "p73640t": {
+            "name": "Independent fiscal p73640t",
+            "group": "expense",
+            "skr_code": "73600"
+          },
+          "p73650": {
+            "name": "Original synthetic p73650",
+            "group": "expense",
+            "skr_code": "73650"
+          },
+          "p73650t": {
+            "name": "Independent fiscal p73650t",
+            "group": "expense",
+            "skr_code": "73000"
+          },
+          "pa": {
+            "name": "Original synthetic pa",
+            "group": "other_assets",
+            "skr_code": "13810"
+          },
+          "pp": {
+            "name": "Original synthetic pp",
+            "group": "provisions",
+            "skr_code": "30090"
+          },
+          "pta": {
+            "name": "Original synthetic pta",
+            "group": "cash",
+            "skr_code": "18000"
+          },
+          "ptp": {
+            "name": "Original synthetic ptp",
+            "group": "provisions",
+            "skr_code": "30000"
+          }
+        },
+        "opening": [
+          {
+            "account": "cash",
+            "debit_cents": 100000,
+            "credit_cents": 0,
+            "sphere": ""
+          },
+          {
+            "account": "pa",
+            "debit_cents": 8000,
+            "credit_cents": 0,
+            "sphere": ""
+          },
+          {
+            "account": "pp",
+            "debit_cents": 0,
+            "credit_cents": 10000,
+            "sphere": ""
+          },
+          {
+            "account": "ca",
+            "debit_cents": 13000,
+            "credit_cents": 0,
+            "sphere": ""
+          },
+          {
+            "account": "cp",
+            "debit_cents": 0,
+            "credit_cents": 10000,
+            "sphere": ""
+          },
+          {
+            "account": "equity",
+            "debit_cents": 0,
+            "credit_cents": 101000,
+            "sphere": ""
+          }
+        ],
+        "entries": [
+          {
+            "club_id": "synthetic-pool-original-2025-EV",
+            "tax_year": 2025,
+            "id": "0dc9b2dcc27361c7f64b1dcfb44db14e",
+            "booked_on": "2025-03-01",
+            "description": "Original movement c71440",
+            "evidence": "Synthetic original protected arrangement",
+            "reversal_of": null,
+            "created_by": "reader",
+            "created_at": "2026-10-07T10:28:58+00:00",
+            "date": "2025-03-01",
+            "lines": [
+              {
+                "account": "c71440",
+                "debit_cents": 0,
+                "credit_cents": 300,
+                "sphere": "4"
+              },
+              {
+                "account": "cash",
+                "debit_cents": 300,
+                "credit_cents": 0,
+                "sphere": ""
+              }
+            ]
+          },
+          {
+            "club_id": "synthetic-pool-original-2025-EV",
+            "tax_year": 2025,
+            "id": "20f801ddf555f031a47057727f4568b7",
+            "booked_on": "2025-03-01",
+            "description": "Original movement c73640",
+            "evidence": "Synthetic original protected arrangement",
+            "reversal_of": null,
+            "created_by": "reader",
+            "created_at": "2026-10-07T10:28:58+00:00",
+            "date": "2025-03-01",
+            "lines": [
+              {
+                "account": "c73640",
+                "debit_cents": 500,
+                "credit_cents": 0,
+                "sphere": "4"
+              },
+              {
+                "account": "cash",
+                "debit_cents": 0,
+                "credit_cents": 500,
+                "sphere": ""
+              }
+            ]
+          },
+          {
+            "club_id": "synthetic-pool-original-2025-EV",
+            "tax_year": 2025,
+            "id": "848bdfd40f87973c9bd8c175454ca324",
+            "booked_on": "2025-03-01",
+            "description": "Original movement p71450",
+            "evidence": "Synthetic original protected arrangement",
+            "reversal_of": null,
+            "created_by": "reader",
+            "created_at": "2026-10-07T10:28:58+00:00",
+            "date": "2025-03-01",
+            "lines": [
+              {
+                "account": "p71450",
+                "debit_cents": 0,
+                "credit_cents": 400,
+                "sphere": "4"
+              },
+              {
+                "account": "cash",
+                "debit_cents": 400,
+                "credit_cents": 0,
+                "sphere": ""
+              }
+            ]
+          },
+          {
+            "club_id": "synthetic-pool-original-2025-EV",
+            "tax_year": 2025,
+            "id": "86de50c45cb60ce2c7f89f18d6b15285",
+            "booked_on": "2025-03-01",
+            "description": "Original movement c71450",
+            "evidence": "Synthetic original protected arrangement",
+            "reversal_of": null,
+            "created_by": "reader",
+            "created_at": "2026-10-07T10:28:58+00:00",
+            "date": "2025-03-01",
+            "lines": [
+              {
+                "account": "c71450",
+                "debit_cents": 0,
+                "credit_cents": 400,
+                "sphere": "4"
+              },
+              {
+                "account": "cash",
+                "debit_cents": 400,
+                "credit_cents": 0,
+                "sphere": ""
+              }
+            ]
+          },
+          {
+            "club_id": "synthetic-pool-original-2025-EV",
+            "tax_year": 2025,
+            "id": "b4493104580929678bf9ee70d5d7de5a",
+            "booked_on": "2025-03-01",
+            "description": "Original movement c73650",
+            "evidence": "Synthetic original protected arrangement",
+            "reversal_of": null,
+            "created_by": "reader",
+            "created_at": "2026-10-07T10:28:58+00:00",
+            "date": "2025-03-01",
+            "lines": [
+              {
+                "account": "c73650",
+                "debit_cents": 200,
+                "credit_cents": 0,
+                "sphere": "4"
+              },
+              {
+                "account": "cash",
+                "debit_cents": 0,
+                "credit_cents": 200,
+                "sphere": ""
+              }
+            ]
+          },
+          {
+            "club_id": "synthetic-pool-original-2025-EV",
+            "tax_year": 2025,
+            "id": "bd2b8e1a7050f0847f4294450a6d7d83",
+            "booked_on": "2025-03-01",
+            "description": "Original movement p71440",
+            "evidence": "Synthetic original protected arrangement",
+            "reversal_of": null,
+            "created_by": "reader",
+            "created_at": "2026-10-07T10:28:58+00:00",
+            "date": "2025-03-01",
+            "lines": [
+              {
+                "account": "p71440",
+                "debit_cents": 0,
+                "credit_cents": 300,
+                "sphere": "4"
+              },
+              {
+                "account": "cash",
+                "debit_cents": 300,
+                "credit_cents": 0,
+                "sphere": ""
+              }
+            ]
+          },
+          {
+            "club_id": "synthetic-pool-original-2025-EV",
+            "tax_year": 2025,
+            "id": "c1ad2a2cd5737f34a46a1353fef7bf5e",
+            "booked_on": "2025-03-01",
+            "description": "Original movement p73640",
+            "evidence": "Synthetic original protected arrangement",
+            "reversal_of": null,
+            "created_by": "reader",
+            "created_at": "2026-10-07T10:28:58+00:00",
+            "date": "2025-03-01",
+            "lines": [
+              {
+                "account": "p73640",
+                "debit_cents": 500,
+                "credit_cents": 0,
+                "sphere": "4"
+              },
+              {
+                "account": "cash",
+                "debit_cents": 0,
+                "credit_cents": 500,
+                "sphere": ""
+              }
+            ]
+          },
+          {
+            "club_id": "synthetic-pool-original-2025-EV",
+            "tax_year": 2025,
+            "id": "d2c276435553b74c4e925699836f0415",
+            "booked_on": "2025-03-01",
+            "description": "Original movement p73650",
+            "evidence": "Synthetic original protected arrangement",
+            "reversal_of": null,
+            "created_by": "reader",
+            "created_at": "2026-10-07T10:28:58+00:00",
+            "date": "2025-03-01",
+            "lines": [
+              {
+                "account": "p73650",
+                "debit_cents": 200,
+                "credit_cents": 0,
+                "sphere": "4"
+              },
+              {
+                "account": "cash",
+                "debit_cents": 0,
+                "credit_cents": 200,
+                "sphere": ""
+              }
+            ]
+          }
+        ],
+        "calculation": {
+          "year": 2025,
+          "accounts": {
+            "c71440": {
+              "name": "Original synthetic c71440",
+              "group": "revenue",
+              "skr_code": "71440",
+              "id": "c71440",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 300,
+              "closing_cents": -300,
+              "amount_cents": 300
+            },
+            "c71440t": {
+              "name": "Independent fiscal c71440t",
+              "group": "revenue",
+              "skr_code": "71400",
+              "id": "c71440t",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            "c71450": {
+              "name": "Original synthetic c71450",
+              "group": "revenue",
+              "skr_code": "71450",
+              "id": "c71450",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 400,
+              "closing_cents": -400,
+              "amount_cents": 400
+            },
+            "c71450t": {
+              "name": "Independent fiscal c71450t",
+              "group": "revenue",
+              "skr_code": "71000",
+              "id": "c71450t",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            "c73640": {
+              "name": "Original synthetic c73640",
+              "group": "expense",
+              "skr_code": "73640",
+              "id": "c73640",
+              "opening_cents": 0,
+              "debit_cents": 500,
+              "credit_cents": 0,
+              "closing_cents": 500,
+              "amount_cents": 500
+            },
+            "c73640t": {
+              "name": "Independent fiscal c73640t",
+              "group": "expense",
+              "skr_code": "73600",
+              "id": "c73640t",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            "c73650": {
+              "name": "Original synthetic c73650",
+              "group": "expense",
+              "skr_code": "73650",
+              "id": "c73650",
+              "opening_cents": 0,
+              "debit_cents": 200,
+              "credit_cents": 0,
+              "closing_cents": 200,
+              "amount_cents": 200
+            },
+            "c73650t": {
+              "name": "Independent fiscal c73650t",
+              "group": "expense",
+              "skr_code": "73000",
+              "id": "c73650t",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            "ca": {
+              "name": "Original synthetic ca",
+              "group": "other_assets",
+              "skr_code": "13830",
+              "id": "ca",
+              "opening_cents": 13000,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 13000,
+              "amount_cents": 13000
+            },
+            "cash": {
+              "name": "Original ordinary bank",
+              "group": "cash",
+              "skr_code": "18000",
+              "id": "cash",
+              "opening_cents": 100000,
+              "debit_cents": 1400,
+              "credit_cents": 1400,
+              "closing_cents": 100000,
+              "amount_cents": 100000
+            },
+            "cp": {
+              "name": "Original synthetic cp",
+              "group": "provisions",
+              "skr_code": "30770",
+              "id": "cp",
+              "opening_cents": -10000,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": -10000,
+              "amount_cents": 10000
+            },
+            "cta": {
+              "name": "Original synthetic cta",
+              "group": "cash",
+              "skr_code": "18000",
+              "id": "cta",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            "ctp": {
+              "name": "Original synthetic ctp",
+              "group": "provisions",
+              "skr_code": "30700",
+              "id": "ctp",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            "equity": {
+              "name": "Original reviewed capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": -101000,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": -101000,
+              "amount_cents": 101000
+            },
+            "p71440": {
+              "name": "Original synthetic p71440",
+              "group": "revenue",
+              "skr_code": "71440",
+              "id": "p71440",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 300,
+              "closing_cents": -300,
+              "amount_cents": 300
+            },
+            "p71440t": {
+              "name": "Independent fiscal p71440t",
+              "group": "revenue",
+              "skr_code": "71400",
+              "id": "p71440t",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            "p71450": {
+              "name": "Original synthetic p71450",
+              "group": "revenue",
+              "skr_code": "71450",
+              "id": "p71450",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 400,
+              "closing_cents": -400,
+              "amount_cents": 400
+            },
+            "p71450t": {
+              "name": "Independent fiscal p71450t",
+              "group": "revenue",
+              "skr_code": "71000",
+              "id": "p71450t",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            "p73640": {
+              "name": "Original synthetic p73640",
+              "group": "expense",
+              "skr_code": "73640",
+              "id": "p73640",
+              "opening_cents": 0,
+              "debit_cents": 500,
+              "credit_cents": 0,
+              "closing_cents": 500,
+              "amount_cents": 500
+            },
+            "p73640t": {
+              "name": "Independent fiscal p73640t",
+              "group": "expense",
+              "skr_code": "73600",
+              "id": "p73640t",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            "p73650": {
+              "name": "Original synthetic p73650",
+              "group": "expense",
+              "skr_code": "73650",
+              "id": "p73650",
+              "opening_cents": 0,
+              "debit_cents": 200,
+              "credit_cents": 0,
+              "closing_cents": 200,
+              "amount_cents": 200
+            },
+            "p73650t": {
+              "name": "Independent fiscal p73650t",
+              "group": "expense",
+              "skr_code": "73000",
+              "id": "p73650t",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            "pa": {
+              "name": "Original synthetic pa",
+              "group": "other_assets",
+              "skr_code": "13810",
+              "id": "pa",
+              "opening_cents": 8000,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 8000,
+              "amount_cents": 8000
+            },
+            "pp": {
+              "name": "Original synthetic pp",
+              "group": "provisions",
+              "skr_code": "30090",
+              "id": "pp",
+              "opening_cents": -10000,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": -10000,
+              "amount_cents": 10000
+            },
+            "pta": {
+              "name": "Original synthetic pta",
+              "group": "cash",
+              "skr_code": "18000",
+              "id": "pta",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            "ptp": {
+              "name": "Original synthetic ptp",
+              "group": "provisions",
+              "skr_code": "30000",
+              "id": "ptp",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            }
+          },
+          "assets": [
+            {
+              "name": "Original synthetic ca",
+              "group": "other_assets",
+              "skr_code": "13830",
+              "id": "ca",
+              "opening_cents": 13000,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 13000,
+              "amount_cents": 13000
+            },
+            {
+              "name": "Original ordinary bank",
+              "group": "cash",
+              "skr_code": "18000",
+              "id": "cash",
+              "opening_cents": 100000,
+              "debit_cents": 1400,
+              "credit_cents": 1400,
+              "closing_cents": 100000,
+              "amount_cents": 100000
+            },
+            {
+              "name": "Original synthetic cta",
+              "group": "cash",
+              "skr_code": "18000",
+              "id": "cta",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            {
+              "name": "Original synthetic pa",
+              "group": "other_assets",
+              "skr_code": "13810",
+              "id": "pa",
+              "opening_cents": 8000,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 8000,
+              "amount_cents": 8000
+            },
+            {
+              "name": "Original synthetic pta",
+              "group": "cash",
+              "skr_code": "18000",
+              "id": "pta",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            }
+          ],
+          "capital": [
+            {
+              "name": "Original reviewed capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": -101000,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": -101000,
+              "amount_cents": 101000
+            }
+          ],
+          "liabilities": [
+            {
+              "name": "Original synthetic cp",
+              "group": "provisions",
+              "skr_code": "30770",
+              "id": "cp",
+              "opening_cents": -10000,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": -10000,
+              "amount_cents": 10000
+            },
+            {
+              "name": "Original synthetic ctp",
+              "group": "provisions",
+              "skr_code": "30700",
+              "id": "ctp",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            {
+              "name": "Original synthetic pp",
+              "group": "provisions",
+              "skr_code": "30090",
+              "id": "pp",
+              "opening_cents": -10000,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": -10000,
+              "amount_cents": 10000
+            },
+            {
+              "name": "Original synthetic ptp",
+              "group": "provisions",
+              "skr_code": "30000",
+              "id": "ptp",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            }
+          ],
+          "profit_and_loss": [
+            {
+              "name": "Original synthetic c71440",
+              "group": "revenue",
+              "skr_code": "71440",
+              "id": "c71440",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 300,
+              "closing_cents": -300,
+              "amount_cents": 300
+            },
+            {
+              "name": "Independent fiscal c71440t",
+              "group": "revenue",
+              "skr_code": "71400",
+              "id": "c71440t",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            {
+              "name": "Original synthetic c71450",
+              "group": "revenue",
+              "skr_code": "71450",
+              "id": "c71450",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 400,
+              "closing_cents": -400,
+              "amount_cents": 400
+            },
+            {
+              "name": "Independent fiscal c71450t",
+              "group": "revenue",
+              "skr_code": "71000",
+              "id": "c71450t",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            {
+              "name": "Original synthetic c73640",
+              "group": "expense",
+              "skr_code": "73640",
+              "id": "c73640",
+              "opening_cents": 0,
+              "debit_cents": 500,
+              "credit_cents": 0,
+              "closing_cents": 500,
+              "amount_cents": 500
+            },
+            {
+              "name": "Independent fiscal c73640t",
+              "group": "expense",
+              "skr_code": "73600",
+              "id": "c73640t",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            {
+              "name": "Original synthetic c73650",
+              "group": "expense",
+              "skr_code": "73650",
+              "id": "c73650",
+              "opening_cents": 0,
+              "debit_cents": 200,
+              "credit_cents": 0,
+              "closing_cents": 200,
+              "amount_cents": 200
+            },
+            {
+              "name": "Independent fiscal c73650t",
+              "group": "expense",
+              "skr_code": "73000",
+              "id": "c73650t",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            {
+              "name": "Original synthetic p71440",
+              "group": "revenue",
+              "skr_code": "71440",
+              "id": "p71440",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 300,
+              "closing_cents": -300,
+              "amount_cents": 300
+            },
+            {
+              "name": "Independent fiscal p71440t",
+              "group": "revenue",
+              "skr_code": "71400",
+              "id": "p71440t",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            {
+              "name": "Original synthetic p71450",
+              "group": "revenue",
+              "skr_code": "71450",
+              "id": "p71450",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 400,
+              "closing_cents": -400,
+              "amount_cents": 400
+            },
+            {
+              "name": "Independent fiscal p71450t",
+              "group": "revenue",
+              "skr_code": "71000",
+              "id": "p71450t",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            {
+              "name": "Original synthetic p73640",
+              "group": "expense",
+              "skr_code": "73640",
+              "id": "p73640",
+              "opening_cents": 0,
+              "debit_cents": 500,
+              "credit_cents": 0,
+              "closing_cents": 500,
+              "amount_cents": 500
+            },
+            {
+              "name": "Independent fiscal p73640t",
+              "group": "expense",
+              "skr_code": "73600",
+              "id": "p73640t",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            {
+              "name": "Original synthetic p73650",
+              "group": "expense",
+              "skr_code": "73650",
+              "id": "p73650",
+              "opening_cents": 0,
+              "debit_cents": 200,
+              "credit_cents": 0,
+              "closing_cents": 200,
+              "amount_cents": 200
+            },
+            {
+              "name": "Independent fiscal p73650t",
+              "group": "expense",
+              "skr_code": "73000",
+              "id": "p73650t",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            }
+          ],
+          "spheres": {
+            "1": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "2": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "3": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "4": {
+              "income_cents": 1400,
+              "expense_cents": 1400,
+              "result_cents": 0
+            }
+          },
+          "asset_total_cents": 121000,
+          "capital_total_cents": 101000,
+          "liability_total_cents": 20000,
+          "income_cents": 1400,
+          "expense_cents": 1400,
+          "annual_result_cents": 0,
+          "passive_total_cents": 121000,
+          "debit_cents": 2800,
+          "credit_cents": 2800,
+          "difference_cents": 0,
+          "issues": [],
+          "entry_count": 8
+        },
+        "asset_schedule": {
+          "year": 2025,
+          "items": [],
+          "totals": {
+            "cost_opening_cents": 0,
+            "additions_cents": 0,
+            "cost_closing_cents": 0,
+            "accumulated_opening_cents": 0,
+            "depreciation_cents": 0,
+            "accumulated_closing_cents": 0,
+            "book_opening_cents": 0,
+            "book_closing_cents": 0
+          },
+          "issues": [],
+          "ready_for_xbrl": false
+        }
+      }
+    },
+    "capital_comparison": {
+      "year": 2025,
+      "book_opening_cents": 101000,
+      "opening_adjustment_cents": 2400,
+      "tax_opening_cents": 103400,
+      "tax_closing_cents": 103800,
+      "contributions_cents": 0,
+      "withdrawals_cents": 0,
+      "profit_cents": 400,
+      "sources": [],
+      "decisions": [],
+      "issues": [],
+      "complete": true
+    },
+    "pension_offsets": {
+      "schema": 1,
+      "fiscal": true,
+      "source": {
+        "schema": 1,
+        "year": 2025,
+        "journal_sha256": "a6c30c356286c89fa5ce318f2dbb00b0019b2ecce58d6aa90182b211ecedfb98",
+        "pairs": [
+          {
+            "asset": "pa",
+            "provision": "pp",
+            "movements": [
+              "p71440",
+              "p71450",
+              "p73640",
+              "p73650"
+            ],
+            "obligation_kind": "direct_pension",
+            "exclusive_bank_deposit": true,
+            "creditor_protected": true,
+            "sole_purpose": true,
+            "netting_reviewed": true
+          },
+          {
+            "asset": "ca",
+            "provision": "cp",
+            "movements": [
+              "c71440",
+              "c71450",
+              "c73640",
+              "c73650"
+            ],
+            "obligation_kind": "comparable_long_term",
+            "exclusive_bank_deposit": true,
+            "creditor_protected": true,
+            "sole_purpose": true,
+            "netting_reviewed": true
+          }
+        ],
+        "tax_positions": {
+          "pa": {
+            "account": "pta",
+            "opening_cents": 8200,
+            "closing_cents": 8200
+          },
+          "pp": {
+            "account": "ptp",
+            "opening_cents": -9000,
+            "closing_cents": -9000
+          },
+          "p71440": {
+            "account": "p71440t",
+            "opening_cents": 0,
+            "closing_cents": -300
+          },
+          "p71450": {
+            "account": "p71450t",
+            "opening_cents": 0,
+            "closing_cents": -400
+          },
+          "p73640": {
+            "account": "p73640t",
+            "opening_cents": 0,
+            "closing_cents": 400
+          },
+          "p73650": {
+            "account": "p73650t",
+            "opening_cents": 0,
+            "closing_cents": 100
+          },
+          "ca": {
+            "account": "cta",
+            "opening_cents": 13200,
+            "closing_cents": 13200
+          },
+          "cp": {
+            "account": "ctp",
+            "opening_cents": -9000,
+            "closing_cents": -9000
+          },
+          "c71440": {
+            "account": "c71440t",
+            "opening_cents": 0,
+            "closing_cents": -300
+          },
+          "c71450": {
+            "account": "c71450t",
+            "opening_cents": 0,
+            "closing_cents": -400
+          },
+          "c73640": {
+            "account": "c73640t",
+            "opening_cents": 0,
+            "closing_cents": 400
+          },
+          "c73650": {
+            "account": "c73650t",
+            "opening_cents": 0,
+            "closing_cents": 100
+          }
+        },
+        "book_document": {
+          "document_id": "a04c2afdc3b56fe62e4aa5ad10e8b77d",
+          "revision": 1,
+          "sha256": "e632b96773845b422ebd2e5fc9dfb24ad8d3aa168065b879db58506a0d7d8cf5"
+        },
+        "tax_document": {
+          "document_id": "883301657cc483c2cc85fe2b6d469d8a",
+          "revision": 1,
+          "sha256": "471a3c0ce7be6d673bd9df525f55073985440deb67dbffa06a1a92f7aaf408d1"
+        },
+        "book_reviewed": true,
+        "tax_reviewed": true
+      },
+      "original_accounts": {
+        "pa": {
+          "name": "Original synthetic pa",
+          "group": "other_assets",
+          "skr_code": "13810",
+          "id": "pa",
+          "opening_cents": 8000,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 8000,
+          "amount_cents": 8000
+        },
+        "pp": {
+          "name": "Original synthetic pp",
+          "group": "provisions",
+          "skr_code": "30090",
+          "id": "pp",
+          "opening_cents": -10000,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": -10000,
+          "amount_cents": 10000
+        },
+        "p71440": {
+          "name": "Original synthetic p71440",
+          "group": "revenue",
+          "skr_code": "71440",
+          "id": "p71440",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 300,
+          "closing_cents": -300,
+          "amount_cents": 300
+        },
+        "p71450": {
+          "name": "Original synthetic p71450",
+          "group": "revenue",
+          "skr_code": "71450",
+          "id": "p71450",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 400,
+          "closing_cents": -400,
+          "amount_cents": 400
+        },
+        "p73640": {
+          "name": "Original synthetic p73640",
+          "group": "expense",
+          "skr_code": "73640",
+          "id": "p73640",
+          "opening_cents": 0,
+          "debit_cents": 500,
+          "credit_cents": 0,
+          "closing_cents": 500,
+          "amount_cents": 500
+        },
+        "p73650": {
+          "name": "Original synthetic p73650",
+          "group": "expense",
+          "skr_code": "73650",
+          "id": "p73650",
+          "opening_cents": 0,
+          "debit_cents": 200,
+          "credit_cents": 0,
+          "closing_cents": 200,
+          "amount_cents": 200
+        },
+        "ca": {
+          "name": "Original synthetic ca",
+          "group": "other_assets",
+          "skr_code": "13830",
+          "id": "ca",
+          "opening_cents": 13000,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 13000,
+          "amount_cents": 13000
+        },
+        "cp": {
+          "name": "Original synthetic cp",
+          "group": "provisions",
+          "skr_code": "30770",
+          "id": "cp",
+          "opening_cents": -10000,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": -10000,
+          "amount_cents": 10000
+        },
+        "c71440": {
+          "name": "Original synthetic c71440",
+          "group": "revenue",
+          "skr_code": "71440",
+          "id": "c71440",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 300,
+          "closing_cents": -300,
+          "amount_cents": 300
+        },
+        "c71450": {
+          "name": "Original synthetic c71450",
+          "group": "revenue",
+          "skr_code": "71450",
+          "id": "c71450",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 400,
+          "closing_cents": -400,
+          "amount_cents": 400
+        },
+        "c73640": {
+          "name": "Original synthetic c73640",
+          "group": "expense",
+          "skr_code": "73640",
+          "id": "c73640",
+          "opening_cents": 0,
+          "debit_cents": 500,
+          "credit_cents": 0,
+          "closing_cents": 500,
+          "amount_cents": 500
+        },
+        "c73650": {
+          "name": "Original synthetic c73650",
+          "group": "expense",
+          "skr_code": "73650",
+          "id": "c73650",
+          "opening_cents": 0,
+          "debit_cents": 200,
+          "credit_cents": 0,
+          "closing_cents": 200,
+          "amount_cents": 200
+        }
+      },
+      "book_facts": {
+        "bs.ass.SurplusFromOffsetting": 3000,
+        "bs.eqLiab.accruals.pensions.direct": 2000,
+        "is.netIncome.regular.fin.netInterest.expenses.offsetting": 0,
+        "bs.eqLiab.accruals.other.other": 0
+      },
+      "book_offset_cents": 18000
+    },
+    "sha256": "913db4f9083c64ce8db1fb9cbbe05150b6af652c016ee749de073176c317e024",
+    "transmission": "unavailable"
+  },
+  "mapping": {
+    "c71440t": "is.netIncome.regular.fin.netInterest.income.valueDiscount.accruals",
+    "c73640t": "is.netIncome.regular.fin.netInterest.expenses.calcInterestOnPensProv",
+    "cash": "bs.ass.currAss.cashEquiv.bank",
+    "cta": "bs.ass.currAss.cashEquiv.bank",
+    "ctp": "bs.eqLiab.accruals.other.other",
+    "equity": "bs.eqLiab.equity.SurplusOfUnspentFunds",
+    "p71440t": "is.netIncome.regular.fin.netInterest.income.valueDiscount.accruals",
+    "p73640t": "is.netIncome.regular.fin.netInterest.expenses.calcInterestOnPensProv",
+    "pta": "bs.ass.currAss.cashEquiv.bank",
+    "c71440": "is.netIncome.regular.fin.netInterest.expenses.offsetting",
+    "c71450": "is.netIncome.regular.fin.netInterest.expenses.offsetting",
+    "c71450t": "is.netIncome.regular.fin.netInterest.income.deposits.banks",
+    "c73640": "is.netIncome.regular.fin.netInterest.expenses.offsetting",
+    "c73650": "is.netIncome.regular.fin.netInterest.expenses.offsetting",
+    "c73650t": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.other",
+    "ca": "bs.ass.SurplusFromOffsetting",
+    "cp": "bs.eqLiab.accruals.other.other",
+    "p71440": "is.netIncome.regular.fin.netInterest.expenses.offsetting",
+    "p71450": "is.netIncome.regular.fin.netInterest.expenses.offsetting",
+    "p71450t": "is.netIncome.regular.fin.netInterest.income.deposits.banks",
+    "p73640": "is.netIncome.regular.fin.netInterest.expenses.offsetting",
+    "p73650": "is.netIncome.regular.fin.netInterest.expenses.offsetting",
+    "p73650t": "is.netIncome.regular.fin.netInterest.expenses.regularInterest.other",
+    "pa": "bs.ass.SurplusFromOffsetting",
+    "pp": "bs.eqLiab.accruals.pensions.direct",
+    "ptp": "bs.eqLiab.accruals.pensions.direct"
+  },
+  "profile": {
+    "kind": "whole_taxable_club",
+    "source_scope": "complete_club_ledger",
+    "scope_confirmed": true,
+    "tax_privileged": false,
+    "asset_scope": "whole_club",
+    "asset_values_unchanged": true,
+    "asset_tax_values_reviewed": false,
+    "business_name": "Synthetischer Test-Geschäftsbetrieb",
+    "supplier": "Synthetischer Softwaretest",
+    "company": {
+      "tax_number": "5192050001276",
+      "name": "Synthetischer Testverein",
+      "street": "Testweg",
+      "house_number": "1",
+      "postal_code": "11111",
+      "city": "Teststadt",
+      "country": "Deutschland",
+      "legal_status": "EV"
+    },
+    "tax_values_sha256": "913db4f9083c64ce8db1fb9cbbe05150b6af652c016ee749de073176c317e024"
+  },
+  "xml_sha256": "e83da4dbb669516661afa8eb0d00174edf7a35195ba6396659d8728920644dc2"
+}

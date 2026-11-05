@@ -1,0 +1,15 @@
+<?php declare(strict_types=1);
+require __DIR__.'/../src/bootstrap.php';require_once __DIR__.'/../src/Finance/Invoices/InvoiceSupplierContacts.php';
+use Kulturhus\Verein\{Database,InvoiceSupplierContacts,Registry};
+$db=\Kulturhus\Verein\Tests\MySqlFixture::connect(':memory:');Database::migrate($db);
+$db->exec("INSERT INTO clubs VALUES('a','Synthetic'),('b','Other');INSERT INTO actors(id,club_id,role) VALUES('manager','a','members'),('inventory','a','members'),('cash','a','treasurer'),('member','a','member'),('other','b','members');INSERT INTO actor_capabilities VALUES('manager','local_finance'),('other','local_finance')");
+$n=0;function check($ok,$label){global $n;if(!$ok)throw new RuntimeException($label);++$n;echo "PASS $label\n";}function denied($fn,$label){try{$fn();}catch(DomainException){check(true,$label);return;}throw new RuntimeException($label);}
+$svc=new InvoiceSupplierContacts($db,'manager');$data=['name'=>'Synthetic supplier','email'=>'supplier@example.org','phone'=>'+49 000 123456','address'=>"Testweg 1\n12345 Beispielort"];$key=bin2hex(random_bytes(16));
+$c=$svc->create($data,$key);$r=(new Registry($db,'manager'))->contact($c['id']);check($r['kind']==='organisation'&&$r['email']===$data['email']&&$r['address']===$data['address'],'company and optional details saved');check($svc->create($data,$key)===$c,'same payload replay returns company');check((int)$db->query('SELECT COUNT(*) FROM contacts')->fetchColumn()===1,'no replay duplicate');
+denied(fn()=>$svc->create(['name'=>'Other'],$key),'changed replay denied');check((int)$db->query('SELECT COUNT(*) FROM memberships')->fetchColumn()===0,'never creates membership');check((int)$db->query('SELECT COUNT(*) FROM finance_entries')->fetchColumn()===0,'never creates expense');
+foreach(['inventory','cash','member'] as $actor)denied(fn()=>(new InvoiceSupplierContacts($db,$actor))->create($data,bin2hex(random_bytes(16))),'denied role '.$actor);
+denied(fn()=>$svc->create(['name'=>'Invalid','email'=>'bad'],bin2hex(random_bytes(16))),'invalid contact data rejected');check((int)$db->query('SELECT COUNT(*) FROM supplier_contact_requests')->fetchColumn()===1,'invalid create no request record');
+$other=(new InvoiceSupplierContacts($db,'other'))->create($data,$key);check($other['id']!==$c['id'],'same key isolated by tenant and actor');denied(fn()=>(new Registry($db,'manager'))->contact($other['id']),'foreign company hidden');
+check($r['phone']===$data['phone'],'supplier telephone saved');denied(fn()=>$svc->create(array_replace($data,['phone'=>'+49 000 999']),$key),'replay cannot silently change phone');denied(fn()=>$svc->create(array_replace($data,['phone'=>str_repeat('1',81)]),bin2hex(random_bytes(16))),'oversized phone rejected atomically');
+$db->exec("DELETE FROM actor_capabilities WHERE actor_id='manager' AND capability='local_finance'");denied(fn()=>$svc->create($data,$key),'replay rechecks finance permission');check(!(\Kulturhus\Verein\Tests\MySqlFixture::foreignKeyErrors($db)[0]??false),'foreign keys valid');
+echo "$n inline supplier checks passed; synthetic database, no mail/network\n";

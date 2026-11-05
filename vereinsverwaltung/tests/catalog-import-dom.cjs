@@ -1,0 +1,20 @@
+// Synthetic DOM only; no network, files, bank or ELSTER transport.
+const fs=require('node:fs'),assert=require('node:assert/strict');
+const {JSDOM}=require('../../.local/newsletter-dom-tests/node_modules/jsdom');
+const dom=new JSDOM(`<form data-catalog-import><select data-catalog-base><option>2025</option><option selected>2026</option></select><input data-catalog-year value="2027"><button>Prüfen</button><p data-catalog-progress hidden></p></form><form id="other"><button>Speichern</button></form>`,{runScripts:'outside-only'});
+const w=dom.window,form=w.document.querySelector('form'),progress=form.querySelector('p'),button=form.querySelector('button');
+let n=0;const check=(ok,label)=>{assert.ok(ok,label);n++;console.log('PASS '+label);};
+w.eval(fs.readFileSync('vereinsverwaltung/public/catalog-import.js','utf8'));
+const base=form.querySelector('select');base.value='2025';base.dispatchEvent(new w.Event('change'));
+check(form.querySelector('input').value==='2026','next year follows baseline selection');
+const canceled=new w.Event('submit',{cancelable:true});canceled.preventDefault();form.dispatchEvent(canceled);
+check(!button.disabled&&progress.hidden,'canceled submit never strands form');
+form.dispatchEvent(new w.Event('submit',{cancelable:true}));
+check(button.disabled&&!progress.hidden&&form.dataset.busy==='1','pending form shows progress and blocks duplicates');
+const duplicate=new w.Event('submit',{cancelable:true});form.dispatchEvent(duplicate);
+check(duplicate.defaultPrevented,'second submit is canceled');
+check(!w.document.querySelector('#other button').disabled,'other forms unaffected');
+w.dispatchEvent(new w.Event('pageshow'));
+check(!button.disabled&&progress.hidden&&!form.dataset.busy,'back/forward return restores usable form');
+form.dispatchEvent(new w.Event('submit',{cancelable:true}));check(button.disabled,'restored form can submit again');
+w.close();console.log(`${n} annual-import DOM checks passed`);

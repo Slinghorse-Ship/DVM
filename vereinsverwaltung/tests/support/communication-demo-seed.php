@@ -1,0 +1,18 @@
+<?php declare(strict_types=1);
+if(PHP_SAPI!=='cli')exit(1);
+require dirname(__DIR__,2).'/src/bootstrap.php';require dirname(__DIR__,2).'/native/bootstrap.php';
+use Kulturhus\Native\TestSupport;
+use Kulturhus\Native\Shared\{Db,Identity};
+use Kulturhus\Native\Integration\ManagerBridge;
+use Kulturhus\Native\Cms\Media;
+use Kulturhus\Native\Communication\{Schema,Workspace,Subscribers,Images};
+$config=TestSupport::config();if(($config['label']??'')!=='integrated-manager')throw new RuntimeException('Own synthetic fixture required.');$db=TestSupport::db();Schema::install($db);
+$runtime=dirname(getenv('KH_NATIVE_TEST_CONFIG')).'/integrated-manager-runtime';$access=(new ManagerBridge($db,'manager-admin','native',static function(){if(PHP_SAPI!=='cli')throw new DomainException('CLI only');}))->access();
+$im=imagecreatetruecolor(800,500);imagefill($im,0,0,imagecolorallocate($im,37,77,58));imagefilledellipse($im,400,250,300,300,imagecolorallocate($im,224,175,63));imagepng($im,$runtime.'/social-source.png');unset($im);
+$m=(new Media($db,$access,$runtime.'/media'))->upload($runtime.'/social-source.png','synthetic-social.png','Synthetisches Veranstaltungsbild');
+require __DIR__.'/native-club-profile.php';$clubVersion=prepareSyntheticClubProfile($db,$access);
+$club=new Identity($db,$access);$settings=$club->get();$club->save(['club_version'=>$clubVersion,'origin'=>'https://example.invalid','logo_id'=>$m['id']],$settings['version']);
+$w=new Workspace($db,$access,'social');$item=$w->save(['title'=>'Synthetischer Kulturabend','body'=>'Musik im Verein.','summary'=>'Kultur gemeinsam erleben','channels'=>['facebook','instagram'],'blocks'=>[['type'=>'image','media_ref'=>$m['id'],'alt'=>$m['alt']]],'destination_url'=>'https://example.invalid/veranstaltungen/']);(new Images($db,$access,$runtime.'/media'))->render($item['id']);
+$n=new Workspace($db,$access,'newsletter');$edition=$n->save(['title'=>'Synthetische Bildausgabe','body'=>'Termine und Musik','blocks'=>[['type'=>'image','media_ref'=>$m['id'],'alt'=>$m['alt']]]]);
+$sub=new Subscribers($db,$access);for($i=0;$i<30;$i++)$sub->recordWrittenConsent('browser-list-'.$i.'@example.invalid','Browser-Suchkontakt '.$i,['events','news'],'synthetic written consent fixture');
+file_put_contents($runtime.'/communication-browser.json',json_encode(['social'=>$item['id'],'newsletter'=>$edition['id']],JSON_THROW_ON_ERROR));chmod($runtime.'/communication-browser.json',0600);echo "Own populated communication fixture ready; no provider account or external action.\n";

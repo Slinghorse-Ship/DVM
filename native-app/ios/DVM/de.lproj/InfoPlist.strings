@@ -1,0 +1,5 @@
+"NSCameraUsageDescription" = "Die Kamera liest einen Ticket- oder Gutscheincode nach deiner Auswahl.";
+"NSPhotoLibraryUsageDescription" = "Du wählst selbst die Fotos aus, die du im Verein verwenden möchtest.";
+"NSBluetoothAlwaysUsageDescription" = "Verbinde nach deiner Auswahl einen Kartenleser mit der Kasse.";
+"NSLocationWhenInUseUsageDescription" = "SumUp prüft nach deiner Auswahl die Verfügbarkeit der Kartenzahlung an deinem Standort.";
+"NSMicrophoneUsageDescription" = "Ein unterstützter Kartenleser kann nach deiner Auswahl die Geräteverbindung verwenden.";

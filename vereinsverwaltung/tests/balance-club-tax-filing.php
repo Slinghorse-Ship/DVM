@@ -1,0 +1,57 @@
+<?php declare(strict_types=1);
+namespace Kulturhus\Verein {function date(string $format,?int $time=null):string{return \gmdate($format,$time??\strtotime('2027-01-15 UTC'));}}
+namespace {
+require __DIR__.'/balance-tax-filing.php';require __DIR__.'/fixtures/balance-club-tax.php';
+use Kulturhus\Verein\{BalanceLedger,BalanceSegments,BalanceTaxFiling,TaxFilings,SettingsSchema,BalanceTaxValues};
+use Kulturhus\Verein\Tests\MySqlFixture;
+set_error_handler(static function($s,$m,$f,$l){throw new ErrorException($m,0,$s,$f,$l);});
+$db->exec("INSERT INTO clubs VALUES('club','Synthetic Multi-business Club'); INSERT INTO actors(id,club_id,role,is_superuser) VALUES('club-board','club','treasurer',1),('club-finance','club','treasurer',0),('club-member','club','member',0)");
+$db->prepare("INSERT INTO club_settings(club_id,section,payload,version,updated_at) VALUES('club','tax',?,1,?)")->execute([json_encode(array_replace(SettingsSchema::defaults('tax'),['accounting_basis'=>'balance'])),gmdate('c')]);
+$fixture=clubTaxFixture();$whole=$fixture['journal'];$units=$fixture['allocation']['units'];$alloc=$fixture['allocation']['allocations'];
+$ledger=new BalanceLedger($db,'club-board');$segments=new BalanceSegments($db,'club-board');$service=new BalanceTaxFiling($db,'club-finance');$approver=new BalanceTaxFiling($db,'club-board');$filings=new TaxFilings($db,'club-finance');
+$ledger->create(2025);$ledger->setup(2025,1,$whole['accounts'],$whole['opening'],'equity','Synthetic complete opening',true);$version=2;
+foreach($whole['entries'] as $entry)$ledger->post(2025,$version++,$entry['id'],$entry['date'],$entry['description'],'Synthetic original',$entry['lines']);
+$ledger->close(2025,$version,['complete'=>true,'valuation'=>true,'cutoff'=>true,'tax'=>true],'Synthetic club review');
+$snapshot=MySqlFixture::rows($db,'balance_years');
+denied(fn()=>$service->create(2025,'approved_club_allocation'),'club projection needs approved full allocation');
+$segments->save(2025,0,$units,$alloc);denied(fn()=>$service->create(2025,'approved_club_allocation'),'draft allocation cannot create filing');
+$segments->confirm(2025,1,true,'Synthetic complete allocation review');
+$fid=$service->create(2025,'approved_club_allocation');$filing=$filings->get($fid);$source=$service->sourceReport($filing);
+check($source['calculation']['annual_result_cents']===1006&&$source['calculation']['capital_total_cents']===40000,'service includes every taxable business and opening capital');
+check($source['closed_sha256']!==$ledger->report(2025)['closed_sha256'],'filing bound to projection, not just unchanged whole ledger');
+check($filing['form_data']['balance_preparation']['source_binding'][0]['review_revision']===2,'exact retained allocation revision stored with draft');
+$bad=$filing;$bad['form_data']['balance_preparation']['source_binding'][0]['review_revision']=99;denied(fn()=>$service->sourceReport($bad),'forged retained revision rejected');
+check($filing['form_data']['balance_preparation']['profile']['company']['name']==='','multi-business draft remains synthetic, no copied real address');
+denied(fn()=>(new BalanceTaxFiling($db,'other'))->sourceReport($filing,true),'projection read checks club boundary');
+denied(fn()=>(new BalanceTaxFiling($db,'club-member'))->create(2025,'approved_club_allocation'),'member cannot create aggregate');
+$clubProfile=$profile;$clubProfile['business_name']='Synthetic all taxable businesses';
+$bad=$clubProfile;$bad['tax_privileged']=false;denied(fn()=>$service->save($fid,1,$bad,$mapping,$review),'non-privileged club cannot silently exclude other spheres');
+$service->save($fid,1,$clubProfile,$mapping,$review);$filing=$filings->get($fid);$values=$service->assertCurrent($filing);
+check(isset($values['club_scope'])&&$values['book']['annual_result_cents']===1006,'reviewed source lineage reaches tax values');
+check($filings->validate($fid,2)['valid'],'aggregate passes real Python generation and offline ERiC boundary');
+denied(fn()=>$service->approve($fid,3,true),'aggregate board approval cannot be replaced by treasurer');
+$approver->approve($fid,3,true);check($filings->ready($fid,4,'SEND-TEST',true,true)['id']===$fid,'exact approved aggregate ready only for synthetic test');
+$html=$render($fid,'club-finance');check(str_contains($html,'Gastronomie')&&str_contains($html,'Verkauf')&&str_contains($html,'Alle steuerpflichtigen Geschäftsbetriebe'),'UI shows all included businesses and correct scope confirmation');
+file_put_contents(__DIR__.'/balance-club-tax-ui.html',$html);
+$db->exec("UPDATE actors SET is_superuser=0 WHERE id='club-board'");denied(fn()=>$filings->ready($fid,4,'SEND-TEST',true,true),'revoked allocation/filing reviewer blocks send');$db->exec("UPDATE actors SET is_superuser=1 WHERE id='club-board'");
+$segments->save(2025,2,$units,$alloc);denied(fn()=>$service->assertCurrent($filings->get($fid)),'editing allocation invalidates validated filing without changing journal');
+$segments->confirm(2025,3,true,'Synthetic re-review');denied(fn()=>$service->assertCurrent($filings->get($fid)),'new approval revision cannot revive old filing');
+$fid=$service->create(2025,'approved_club_allocation');$service->save($fid,1,$clubProfile,$mapping,$review);$filings->validate($fid,2);$approver->approve($fid,3,true);
+check($filings->send($fid,4,'dummy','123456','SEND-TEST',true,true)['state']==='sent_test','offline transport fixture stores aggregate receipt, no external send');
+check($filings->attempts($fid)[0]['receipt_bound'],'aggregate receipt bound to exact XML');
+$ledger->create(2026);$ledger->close(2026,1,['complete'=>true,'valuation'=>true,'cutoff'=>true,'tax'=>true],'Synthetic next club year');$segments->carry(2026,0,true);$segments->confirm(2026,1,true,'Synthetic next-year allocation');
+$next=$service->create(2026,'approved_club_allocation');$service->save($next,1,$clubProfile,$mapping,$review);
+denied(fn()=>$service->assertCurrent($filings->get($next)),'aggregate following year needs confirmed prior tax values');
+denied(fn()=>$service->carryForward($next,2,$id,true),'separate-business filing cannot become whole-club carry');
+$service->carryForward($next,2,$fid,true);$r=$filings->get($next);$nr=$r['form_data']['balance_preparation']['review'];unset($nr['year'],$nr['journal_sha256']);$nr['complete']=true;
+$service->save($next,3,$clubProfile,$mapping,$nr);$nextValues=$service->assertCurrent($filings->get($next));
+check($nextValues['book']['capital_total_cents']===41006&&$nextValues['book']['annual_result_cents']===0,'aggregate prior result becomes capital exactly once');
+check($filings->validate($next,4)['valid'],'aggregate next year and nested source proof pass real generator');
+$segments->save(2025,4,$units,$alloc);denied(fn()=>$service->assertCurrent($filings->get($next)),'prior allocation revision invalidates downstream aggregate');
+check($filings->download($fid,'receipt')['mime']==='application/xml','historical receipt remains available after allocation changes');
+check(array_slice(MySqlFixture::rows($db,'balance_years'),0,1)===array_slice($snapshot,0,1),'existing closed ledger retained');
+if(getenv('VEREIN_TEST_SKIP_BACKUP_ROUNDTRIP')!=='1'){
+    $restored=MySqlFixture::restoreBackup($db);foreach(['tax_filings','balance_segment_reviews'] as $table)check(MySqlFixture::rows($restored,$table)===MySqlFixture::rows($db,$table),'encrypted restore preserves aggregate '.$table);
+}else echo "SKIP optional backup roundtrip: dedicated synthetic database\n";
+echo "$checks total balance and club-tax workflow checks passed; isolated MySQL, offline transport only\n";
+}

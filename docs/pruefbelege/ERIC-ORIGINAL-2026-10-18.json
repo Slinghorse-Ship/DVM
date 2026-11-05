@@ -1,0 +1,108 @@
+{
+  "date": "2026-10-18",
+  "timezone": "Europe/Berlin",
+  "scope": "Original SDK and local configured runtime only; no tax transport",
+  "package_version": "44.3.6.0",
+  "platform": "Linux x86_64",
+  "originals": [
+    {
+      "original_name": "ERiC-44.3.6.0-Linux-x86_64.version.txt",
+      "bytes": 20279,
+      "sha256": "45f0bb38536b46989f29c87ce836151cb33da1b2930af922a0b3e05b6391bdf3"
+    },
+    {
+      "original_name": "ERiC-44.3.6.0-Dokumentation.zip",
+      "bytes": 123217775,
+      "sha256": "bad21c27ecce56d04fc04bccfd2dfa17b9ff2455aa878758100fc73a28492ad5"
+    },
+    {
+      "original_name": "ERiC-44.3.6.0-Linux-x86_64.jar",
+      "bytes": 521062399,
+      "sha256": "e36df8b02045ff3449eb23e086a39f5455b709c967e708eae44f27099ce4de95"
+    },
+    {
+      "original_name": "ERiC-44.3.6.0-Schemadokumentation.zip",
+      "bytes": 35503440,
+      "sha256": "a77cca9e5a0ddb4eae9e2548f57fc3a064432c1b71c1ff1e53ca9085a8be779e"
+    }
+  ],
+  "parts": 23,
+  "original_bytes": 679803893,
+  "jar_signature": {
+    "strict_exit": 0,
+    "verified": true
+  },
+  "library_sha256": "4620823f5f4b883b08aba9918d801ea6d243c77ca5eb22b877cd05b838976423",
+  "native_core_version": "44.3.4.0",
+  "native_modules": 224,
+  "configured_profiles": 15,
+  "runtime_verified": true,
+  "runtime_sha256": "63a4cbe4fb982a2ac64a5a275e8af673ce0f2b0381ca38f640102a55671e29d7",
+  "version_sha256": "622d8a34a8189b40251acb8ac968843957069e3a2b21379a473450e82817caea",
+  "production_enabled": false,
+  "sent": false,
+  "transport_attempted": false,
+  "checks": {
+    "materializer_unit_groups": 6,
+    "actual_four_originals_restored": true,
+    "actual_repeat_preserved_all_four": true
+  },
+  "operator_ids_in_repository": false,
+  "certificates_in_repository": false,
+  "manager_registration_and_network_gate": {
+    "generation": 2026101561,
+    "verified_runtime_tree": "ac8b9fe5c88806c86ac728eda13924a6790c03ca",
+    "runtime_files": {
+      "vereinsverwaltung/src/Settings/IntegrationRegistrations.php": "bf0c2a28d3e00c59fc95faafdfbad37ea747c8cd7fcf80bed9d24f859d512c23",
+      "vereinsverwaltung/src/Finance/Tax/TaxEricAdapter.php": "6b0123ff9a92cdd95ea3e2751336c068206cdccdc73c26b38b8754da44fcd4da",
+      "vereinsverwaltung/src/Finance/Banking/FinTsDialog.php": "57abecf5aafcc7b69ad6e90f1c8271867ba714f72035e89dd78d6ec8ae804a64",
+      "vereinsverwaltung/src/Settings/SettingsActions.php": "51ab852ff44ff412f78e9d5e60e6732311bfc3f6299a080df5c13ab08c7b0bca",
+      "vereinsverwaltung/views/Settings/settings-registrations.php": "36a92ea16762b58807028babfead382cdd2572e6e7ac04d216b6b018f4ea346b",
+      "vereinsverwaltung/views/Settings/settings.php": "e7aba4225adb8b879d93e760b2135cc81fd43f652654595b48f4bf4e9b716235",
+      "vereinsverwaltung/tools/eric-bridge.py": "0a34a65ae421620972930e85ab161d5e8108061c5095f9da923c1825046f021a",
+      "vereinsverwaltung/tests/native-integration-registrations.php": "bc4329e8dc2d16e533cd0b57cc5f77ec7aacf1f94cec02a8fc77a2870d52b372",
+      "vereinsverwaltung/tests/native-integration-registrations-browser.mjs": "83e4659b1325fa05d62498e7f6414309995863668249a9026da70620b65821e4",
+      "vereinsverwaltung/tests/eric-no-transport-test.py": "0ae6c380dbf879cff3725dbd617c98218c6027d21c8445582464d2e0b46e7cf7",
+      "vereinsverwaltung/tests/native-eric-runtime.php": "d600b3b094f8e7ed97595de04e71b5f2a01c8a0c2299c625646c6f8c70f71246",
+      "tools/ci/local-native.sh": "8beb05a37a428ff17dc30f8897a07342c065390d54689068ec12afc0680c348d",
+      "vereinsverwaltung/tests/ci-native.php": "8550e3b3539b2e8e6e4fabd1499b2b81ab67448ab68e693d3560f4467f228eae"
+    },
+    "service_original_checks": 33,
+    "original_business_tables": 429,
+    "browser_states": 48,
+    "browser_checks": 225,
+    "browser_posts": 20,
+    "browser_external_requests": 0,
+    "browser_javascript_errors": [],
+    "javascript_and_no_javascript": true,
+    "viewports": [
+      320,
+      390,
+      768,
+      1024,
+      1280,
+      1536
+    ],
+    "font_sizes": [
+      16,
+      32
+    ],
+    "runtime_contract_checks": 56,
+    "actual_network_refusal_subprocesses": 12,
+    "php_forwards_forced_gate": true,
+    "official_local_version_still_works_with_forced_gate": true,
+    "manager_settings_checks": 19,
+    "actual_webspace_installer_checks": 55,
+    "existing_python_bridge_feedback_checks": 33,
+    "neighbor_suites": [
+      "fints-dialog.php",
+      "fints-scheduled-sync.php",
+      "fints-instant-vop.php",
+      "tax-filings.php",
+      "windows-eric-process.php"
+    ],
+    "all_suites_316_run": false,
+    "sent": false,
+    "transport_attempted": false
+  }
+}

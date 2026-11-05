@@ -1,0 +1,165 @@
+{
+  "dashboard": {
+    "file": "hilfe-dashboard.png",
+    "title": "Startseite: eine Aufgabe direkt öffnen",
+    "notes": [
+      "Hier beginnt die Auswahl häufiger Aufgaben.",
+      "Dieser Link öffnet die Dokumentablage. Er lädt noch keine Datei hoch.",
+      "Dieser Link öffnet die Website-Verwaltung."
+    ],
+    "source": "?view=dashboard",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 231
+  },
+  "menue": {
+    "file": "hilfe-menue.png",
+    "title": "Im Menü eine Funktion suchen",
+    "notes": [
+      "Hier den Suchbegriff eingeben; die Navigation wird auf passende Funktionen eingeschränkt."
+    ],
+    "source": "?view=dashboard",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 295,
+    "height": 136
+  },
+  "newsletter-betreff": {
+    "file": "hilfe-newsletter-betreff.png",
+    "title": "Newsletter: Betreff und Baukasten finden",
+    "notes": [
+      "Betreff anklicken und die Überschrift für das E-Mail-Postfach schreiben.",
+      "Hier beginnt der Baukasten. Die Vorschau-Schalter werden weiter unten in dieser Anleitung erklärt."
+    ],
+    "source": "?view=website&tab=newsletter&native_new=1",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 272
+  },
+  "newsletter-text": {
+    "file": "hilfe-newsletter-text.png",
+    "title": "Text bearbeiten: Inhalt und Formatierung",
+    "notes": [
+      "Direkt in diesen Text klicken und schreiben. Dies ist der Inhalt des ausgewählten Bausteins.",
+      "Hoch und Runter verschieben diesen Baustein. Kopie erstellt einen weiteren; Löschen entfernt genau diesen Abschnitt.",
+      "Hier Schriftgröße, Ausrichtung und Textfarbe des Bausteins ändern."
+    ],
+    "source": "?view=website&tab=newsletter&native_new=1",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 711,
+    "height": 256
+  },
+  "newsletter-bausteine": {
+    "file": "hilfe-newsletter-bausteine.png",
+    "title": "Einen Baustein oder eine Veranstaltung hinzufügen",
+    "notes": [
+      "Text, Überschrift, Bild, Schaltfläche oder Trennlinie anklicken. Das Element wird in die Mail eingefügt.",
+      "Eine kommende Veranstaltung anhand von Titel und Datum auswählen. Die Programmdaten werden als eigener Baustein eingefügt."
+    ],
+    "source": "?view=website&tab=newsletter&native_new=1",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 954,
+    "height": 395
+  },
+  "newsletter-vorschau": {
+    "file": "hilfe-newsletter-vorschau.png",
+    "title": "Die Mail in schmaler Ansicht und ohne Bearbeitungsknöpfe prüfen",
+    "notes": [
+      "Vollständige Mail-Vorschau öffnet ein separates Vorschaufenster.",
+      "Computer oder Handy ändert die Breite der Vorschau. Es wird dabei keine Mail verschickt."
+    ],
+    "source": "?view=website&tab=newsletter&native_new=1",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 465,
+    "height": 138
+  },
+  "newsletter-speichern": {
+    "file": "hilfe-newsletter-speichern.png",
+    "title": "Unter dem Baukasten: speichern, Zielgruppe und Testmail",
+    "notes": [
+      "Zielgruppe wählen. Nur bestätigte Empfänger des gewählten Themas werden berücksichtigt.",
+      "Nach jeder Text- oder Zielgruppenänderung zuerst speichern.",
+      "Erst nach erfolgreicher Kontrolle verwenden: Dies ist die tatsächliche Versandbeauftragung.",
+      "Für eine Probe die eigene Testadresse eintragen. Der Knopf darunter verschickt die gespeicherte Fassung. Lokal ist der Versand gesperrt."
+    ],
+    "source": "?view=website&tab=newsletter&item=9",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 508
+  },
+  "newsletter-einwilligung": {
+    "file": "hilfe-newsletter-einwilligung.png",
+    "title": "Eine vorhandene schriftliche Newsletter-Einwilligung erfassen",
+    "notes": [
+      "Die unterschriebene E-Mail-Adresse übernehmen.",
+      "Datum der Unterschrift eintragen, nicht das heutige Erfassungsdatum.",
+      "Hier steht, wo die unterschriebene Unterlage abgelegt ist.",
+      "Nur die tatsächlich gewählten Themen ankreuzen."
+    ],
+    "source": "?view=website&tab=recipients",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 754
+  },
+  "presse-entwurf": {
+    "file": "hilfe-presse-entwurf.png",
+    "title": "Pressemitteilung: eigener Text und ausgewählte Medien",
+    "notes": [
+      "Aussagekräftigen Betreff für diese Pressemitteilung eintragen.",
+      "Hier den vollständigen Pressetext schreiben und Veranstaltungshinweise kontrollieren."
+    ],
+    "source": "?view=website&tab=press&press_new=1&free=1",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 611
+  },
+  "website-text": {
+    "file": "hilfe-website-text.png",
+    "title": "Website-Text: Kurzbeschreibung und Inhalt",
+    "notes": [
+      "Kurze Zusammenfassung für den Überblick eingeben.",
+      "Den ausführlichen Inhalt im Editor bearbeiten. Speichern wirkt auf diesen Website-Eintrag."
+    ],
+    "source": "?view=website&tab=news&native_new=1",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 555
+  },
+  "website-veroeffentlichen": {
+    "file": "hilfe-website-veroeffentlichen.png",
+    "title": "Aktuelles: Veröffentlichung bewusst einstellen",
+    "notes": [
+      "Dieses Häkchen steuert die Veröffentlichung auf der Website.",
+      "Datum und Uhrzeit kontrollieren, wenn die Nachricht erst später erscheinen soll.",
+      "Der Redaktionsstatus beschreibt den Bearbeitungsstand. Zusätzlich Veröffentlichung und Kanäle prüfen.",
+      "Speichert die gewählten Einstellungen und Texte. Bei Veröffentlichung anschließend die öffentliche Seite kontrollieren."
+    ],
+    "source": "?view=website&tab=news&native_new=1",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 594
+  },
+  "programmarchiv": {
+    "file": "hilfe-programmarchiv.png",
+    "title": "Programmarchiv: Zeitraum, Jahr und Suche",
+    "notes": [
+      "Hier zwischen kommenden Veranstaltungen und Programmarchiv wechseln.",
+      "Suchwort, Jahr und Datumssortierung einstellen, anschließend Filtern anklicken."
+    ],
+    "source": "?view=website&tab=events&period=archive",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 203
+  }
+}

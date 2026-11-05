@@ -1,0 +1,14 @@
+#inventory-item-metadata{font-size:1rem;line-height:1.55;min-width:0;max-width:100%;overflow-wrap:anywhere;container-type:inline-size}
+#inventory-item-metadata *{font-size:inherit;min-width:0;max-width:100%}
+#inventory-item-metadata :is(label,small,summary,.muted,button,.button){font-size:.875rem}
+#inventory-item-metadata :is(input,select,textarea){font-size:1rem;min-height:46px}
+#inventory-item-metadata :is(h2,h3,legend){font-size:1.1875rem}
+#inventory-item-metadata :is(h4){font-size:1rem}
+#inventory-item-metadata :is(button,a,summary){min-height:44px;white-space:normal}
+#inventory-item-metadata a{display:inline-block;align-content:center;vertical-align:middle}
+#inventory-item-metadata input[type=checkbox]{width:44px;height:44px;min-height:44px;flex-basis:44px}
+.iv-item-original,.iv-item-current{font-size:1rem;overflow-wrap:anywhere;min-width:0}
+.iv-item-original pre{font:inherit;max-width:100%}.iv-item-original .button{font-size:.875rem;min-height:44px}
+@container(max-width:42em){#inventory-item-metadata .iv-form-grid{grid-template-columns:minmax(0,1fr)}#inventory-item-metadata .iv-financial-source-pages{flex-wrap:wrap}}
+
+.iv-item-original h2,.iv-item-current h2{font-size:1.1875rem}.iv-item-original :is(p,pre,dt,dd),.iv-item-current :is(p,dt,dd){font-size:1rem}

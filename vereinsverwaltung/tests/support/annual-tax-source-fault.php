@@ -1,0 +1,6 @@
+<?php declare(strict_types=1);
+function ownedAnnualTaxSourceFault(array$fixture,array$cfg):never{
+ if(($_SERVER['REQUEST_METHOD']??'')!=='POST'||($cfg['owner']??'')!=='isolated-native-ci'||($cfg['label']??'')!=='native-annual-tax-interface'||!is_string($_SERVER['HTTP_X_OWNED_ANNUAL_SOURCE']??null)||!hash_equals($fixture['data']['source_change_key'],$_SERVER['HTTP_X_OWNED_ANNUAL_SOURCE'])||!preg_match('/^kh_native_[a-f0-9]{24}$/D',$cfg['database']??'')){http_response_code(403);exit;}
+ $db=\Kulturhus\Native\TestSupport::db();if($db->query('SELECT DATABASE()')->fetchColumn()!==$cfg['database']){http_response_code(403);exit;}$f=new \Kulturhus\Verein\Finance($db,'own-list-admin');$account=$f->account($fixture['data']['annualBank']);if($account['club_id']!=='own-list-club'){http_response_code(403);exit;}
+ $id=$f->createTransaction(['account'=>$account['id'],'booked_on'=>'2026-10-28','direction'=>'income','amount'=>'1','counterparty'=>'0 Own explicit annual source change','description'=>'Own real source change after annual preview'],$fixture['data']['source_change_key']);header('Content-Type: application/json');echo json_encode(['owned_source_changed'=>true,'transaction'=>$id],JSON_THROW_ON_ERROR);exit;
+}

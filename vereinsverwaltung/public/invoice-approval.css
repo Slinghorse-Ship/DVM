@@ -1,0 +1,23 @@
+#invoice-approval .invoice-approval-status{display:inline-block;margin:0 0 14px;padding:8px 12px;border-radius:6px;background:#f1f4f8;color:#33485e}
+#invoice-approval~* .doc-inline-preview,
+.doc-inline-preview{margin:18px 0 4px;border:1px solid #d8e3ea;border-radius:9px;background:#f8fbfd;overflow:hidden}
+.doc-inline-preview>summary{cursor:pointer;padding:13px 16px;color:#33485e;font-weight:700;list-style-position:inside}
+.doc-inline-preview>p{padding:0 16px;font-size:12px;line-height:1.5}
+.doc-inline-preview iframe{display:block;width:100%;height:min(720px,75vh);border:0;border-top:1px solid #d8e3ea;background:#fff}
+#invoice-approval .invoice-approval-form{margin-top:22px}
+#invoice-approval .invoice-approval-decision{margin:0 0 14px;padding:16px;border:2px solid #c8d8e4;border-radius:9px;background:#f7fbfd}
+#invoice-approval .invoice-approval-decision legend{padding:0 6px;font-size:17px;font-weight:700;color:#263d53}
+#invoice-approval .invoice-approval-choice{display:flex;align-items:flex-start;gap:12px;margin-top:8px;padding:16px;border:2px solid #b9ccd9;border-radius:7px;background:#fff;cursor:pointer;line-height:1.45}
+#invoice-approval .invoice-approval-choice:hover{border-color:#7da398}
+#invoice-approval .invoice-approval-choice input{width:22px;height:22px;min-width:22px;margin:2px 0 0;accent-color:#277e60}
+#invoice-approval .invoice-approval-choice strong{display:block;font-size:16px;color:#233b50}
+#invoice-approval .invoice-approval-choice small{display:block;margin-top:5px;color:#586b7c;font-size:13px}
+#invoice-approval .invoice-approval-warning{margin:14px 0;padding:12px 14px;border-left:4px solid #d69a35;background:#fff8e9;color:#5e4b2d}
+#invoice-approval .invoice-approval-submit{min-height:50px;padding:13px 20px;font-size:15px}
+#invoice-approval .invoice-approval-next{margin-top:20px;padding:16px;border-left:4px solid #277e60;border-radius:0 7px 7px 0;background:#edf8f2}
+#invoice-approval .invoice-approval-next>strong{display:block;font-size:16px;color:#245c48}
+#invoice-approval .invoice-approval-next .actions{margin-top:12px}
+#invoice-approval .invoice-approval-clarify{margin-top:1rem;padding-top:.75rem;border-top:1px solid #d5dfe9}
+#invoice-approval .invoice-approval-clarify>summary{cursor:pointer;font-weight:700;color:#5e4b2d}
+#invoice-approval .invoice-approval-clarify .invoice-approval-form{margin-top:12px}
+@media(max-width:600px){#invoice-approval .invoice-approval-choice{padding:14px 12px}#invoice-approval .invoice-approval-choice strong{font-size:15px}#invoice-approval .invoice-approval-next .actions{display:grid;grid-template-columns:1fr}#invoice-approval .invoice-approval-next .actions .button{width:100%}#invoice-approval .invoice-approval-submit{width:100%}.doc-inline-preview iframe{height:65vh}}

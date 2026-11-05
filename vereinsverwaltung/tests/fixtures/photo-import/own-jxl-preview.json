@@ -1,0 +1,12 @@
+{
+  "raw_compression": 52546,
+  "sensor_width": 1024,
+  "sensor_height": 768,
+  "sensor_sha256": "0087f6b41571fe62b83e15339a90f5d9fb4e4b616ff01a354ba87e6d517dab2c",
+  "jxl_sha256": "498eb7d77cd70fe4ae8d85b7ca73d6c86f3152eb1e3afd706d644b1e141cae0e",
+  "lossless_independent_ffmpeg_decode": true,
+  "preview_width": 640,
+  "preview_height": 480,
+  "orientation": 6,
+  "dng_sha256": "d74f496aee36e15059ffe435d26818fa5bd290eb53a3be41554ef7bdf8d2bf56"
+}

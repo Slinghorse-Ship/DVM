@@ -1,0 +1,1080 @@
+{
+  "values": {
+    "year": 2025,
+    "journal_sha256": "6712b550e26720433a110438b8474026845b512c5412414e248142e4068ce6a3",
+    "accounts": {
+      "cash": {
+        "name": "Original cash",
+        "group": "cash",
+        "skr_code": "18000",
+        "book_opening_cents": 200000,
+        "tax_opening_cents": 200000,
+        "book_cents": 200000,
+        "tax_cents": 200000,
+        "difference_cents": 0
+      },
+      "equalization": {
+        "name": "Original unused fiscal result reclassification",
+        "group": "result_use",
+        "skr_code": "77690",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 0,
+        "tax_cents": -2000,
+        "difference_cents": -2000
+      },
+      "equity": {
+        "name": "Original capital",
+        "group": "equity",
+        "skr_code": "29700",
+        "book_opening_cents": -200000,
+        "tax_opening_cents": -200000,
+        "book_cents": 200000,
+        "tax_cents": 202000,
+        "difference_cents": 2000
+      },
+      "expense": {
+        "name": "Original professionally reviewed provision expense",
+        "group": "expense",
+        "skr_code": "68250",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 10000,
+        "tax_cents": 8000,
+        "difference_cents": -2000
+      },
+      "provision": {
+        "name": "Original independently valued provision",
+        "group": "provisions",
+        "skr_code": "30700",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 10000,
+        "tax_cents": 8000,
+        "difference_cents": -2000
+      }
+    },
+    "book": {
+      "year": 2025,
+      "accounts": {
+        "cash": {
+          "name": "Original cash",
+          "group": "cash",
+          "skr_code": "18000",
+          "id": "cash",
+          "opening_cents": 200000,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 200000,
+          "amount_cents": 200000
+        },
+        "equalization": {
+          "name": "Original unused fiscal result reclassification",
+          "group": "result_use",
+          "skr_code": "77690",
+          "id": "equalization",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "equity": {
+          "name": "Original capital",
+          "group": "equity",
+          "skr_code": "29700",
+          "id": "equity",
+          "opening_cents": -200000,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": -200000,
+          "amount_cents": 200000
+        },
+        "expense": {
+          "name": "Original professionally reviewed provision expense",
+          "group": "expense",
+          "skr_code": "68250",
+          "id": "expense",
+          "opening_cents": 0,
+          "debit_cents": 10000,
+          "credit_cents": 0,
+          "closing_cents": 10000,
+          "amount_cents": 10000
+        },
+        "provision": {
+          "name": "Original independently valued provision",
+          "group": "provisions",
+          "skr_code": "30700",
+          "id": "provision",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 10000,
+          "closing_cents": -10000,
+          "amount_cents": 10000
+        }
+      },
+      "assets": [
+        {
+          "name": "Original cash",
+          "group": "cash",
+          "skr_code": "18000",
+          "id": "cash",
+          "opening_cents": 200000,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 200000,
+          "amount_cents": 200000
+        }
+      ],
+      "capital": [
+        {
+          "name": "Original unused fiscal result reclassification",
+          "group": "result_use",
+          "skr_code": "77690",
+          "id": "equalization",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        {
+          "name": "Original capital",
+          "group": "equity",
+          "skr_code": "29700",
+          "id": "equity",
+          "opening_cents": -200000,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": -200000,
+          "amount_cents": 200000
+        }
+      ],
+      "liabilities": [
+        {
+          "name": "Original independently valued provision",
+          "group": "provisions",
+          "skr_code": "30700",
+          "id": "provision",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 10000,
+          "closing_cents": -10000,
+          "amount_cents": 10000
+        }
+      ],
+      "profit_and_loss": [
+        {
+          "name": "Original professionally reviewed provision expense",
+          "group": "expense",
+          "skr_code": "68250",
+          "id": "expense",
+          "opening_cents": 0,
+          "debit_cents": 10000,
+          "credit_cents": 0,
+          "closing_cents": 10000,
+          "amount_cents": 10000
+        }
+      ],
+      "spheres": {
+        "1": {
+          "income_cents": 0,
+          "expense_cents": 0,
+          "result_cents": 0
+        },
+        "2": {
+          "income_cents": 0,
+          "expense_cents": 0,
+          "result_cents": 0
+        },
+        "3": {
+          "income_cents": 0,
+          "expense_cents": 0,
+          "result_cents": 0
+        },
+        "4": {
+          "income_cents": 0,
+          "expense_cents": 10000,
+          "result_cents": -10000
+        }
+      },
+      "asset_total_cents": 200000,
+      "capital_total_cents": 200000,
+      "liability_total_cents": 10000,
+      "income_cents": 0,
+      "expense_cents": 10000,
+      "annual_result_cents": -10000,
+      "passive_total_cents": 200000,
+      "debit_cents": 10000,
+      "credit_cents": 10000,
+      "difference_cents": 0,
+      "issues": [],
+      "entry_count": 1
+    },
+    "tax": {
+      "year": 2025,
+      "accounts": {
+        "cash": {
+          "name": "Original cash",
+          "group": "cash",
+          "skr_code": "18000",
+          "id": "cash",
+          "opening_cents": 200000,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 200000,
+          "amount_cents": 200000
+        },
+        "equalization": {
+          "name": "Original unused fiscal result reclassification",
+          "group": "result_use",
+          "skr_code": "77690",
+          "id": "equalization",
+          "opening_cents": 0,
+          "debit_cents": 2000,
+          "credit_cents": 0,
+          "closing_cents": 2000,
+          "amount_cents": -2000
+        },
+        "equity": {
+          "name": "Original capital",
+          "group": "equity",
+          "skr_code": "29700",
+          "id": "equity",
+          "opening_cents": -200000,
+          "debit_cents": 0,
+          "credit_cents": 2000,
+          "closing_cents": -202000,
+          "amount_cents": 202000
+        },
+        "expense": {
+          "name": "Original professionally reviewed provision expense",
+          "group": "expense",
+          "skr_code": "68250",
+          "id": "expense",
+          "opening_cents": 0,
+          "debit_cents": 10000,
+          "credit_cents": 2000,
+          "closing_cents": 8000,
+          "amount_cents": 8000
+        },
+        "provision": {
+          "name": "Original independently valued provision",
+          "group": "provisions",
+          "skr_code": "30700",
+          "id": "provision",
+          "opening_cents": 0,
+          "debit_cents": 2000,
+          "credit_cents": 10000,
+          "closing_cents": -8000,
+          "amount_cents": 8000
+        }
+      },
+      "assets": [
+        {
+          "name": "Original cash",
+          "group": "cash",
+          "skr_code": "18000",
+          "id": "cash",
+          "opening_cents": 200000,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 200000,
+          "amount_cents": 200000
+        }
+      ],
+      "capital": [
+        {
+          "name": "Original unused fiscal result reclassification",
+          "group": "result_use",
+          "skr_code": "77690",
+          "id": "equalization",
+          "opening_cents": 0,
+          "debit_cents": 2000,
+          "credit_cents": 0,
+          "closing_cents": 2000,
+          "amount_cents": -2000
+        },
+        {
+          "name": "Original capital",
+          "group": "equity",
+          "skr_code": "29700",
+          "id": "equity",
+          "opening_cents": -200000,
+          "debit_cents": 0,
+          "credit_cents": 2000,
+          "closing_cents": -202000,
+          "amount_cents": 202000
+        }
+      ],
+      "liabilities": [
+        {
+          "name": "Original independently valued provision",
+          "group": "provisions",
+          "skr_code": "30700",
+          "id": "provision",
+          "opening_cents": 0,
+          "debit_cents": 2000,
+          "credit_cents": 10000,
+          "closing_cents": -8000,
+          "amount_cents": 8000
+        }
+      ],
+      "profit_and_loss": [
+        {
+          "name": "Original professionally reviewed provision expense",
+          "group": "expense",
+          "skr_code": "68250",
+          "id": "expense",
+          "opening_cents": 0,
+          "debit_cents": 10000,
+          "credit_cents": 2000,
+          "closing_cents": 8000,
+          "amount_cents": 8000
+        }
+      ],
+      "spheres": {
+        "1": {
+          "income_cents": 0,
+          "expense_cents": 0,
+          "result_cents": 0
+        },
+        "2": {
+          "income_cents": 0,
+          "expense_cents": 0,
+          "result_cents": 0
+        },
+        "3": {
+          "income_cents": 0,
+          "expense_cents": 0,
+          "result_cents": 0
+        },
+        "4": {
+          "income_cents": 0,
+          "expense_cents": 8000,
+          "result_cents": -8000
+        }
+      },
+      "asset_total_cents": 200000,
+      "capital_total_cents": 200000,
+      "liability_total_cents": 8000,
+      "income_cents": 0,
+      "expense_cents": 8000,
+      "annual_result_cents": -8000,
+      "passive_total_cents": 200000,
+      "debit_cents": 14000,
+      "credit_cents": 14000,
+      "difference_cents": 0,
+      "issues": [],
+      "entry_count": 3
+    },
+    "opening_adjustments": [],
+    "current_adjustments": [
+      {
+        "id": "original-fiscal-provision",
+        "reason": "Synthetic independently reviewed original fiscal provision value, not an inferred tax assessment.",
+        "lines": [
+          {
+            "account": "provision",
+            "debit_cents": 2000,
+            "credit_cents": 0,
+            "sphere": ""
+          },
+          {
+            "account": "expense",
+            "debit_cents": 0,
+            "credit_cents": 2000,
+            "sphere": "4"
+          }
+        ]
+      },
+      {
+        "id": "tax-equalization-77690",
+        "reason": "Belegte Ergebnisumbuchung 77690 zur unveränderten ursprünglichen Kapitaldarstellung.",
+        "lines": [
+          {
+            "account": "equalization",
+            "debit_cents": 2000,
+            "credit_cents": 0,
+            "sphere": ""
+          },
+          {
+            "account": "equity",
+            "debit_cents": 0,
+            "credit_cents": 2000,
+            "sphere": ""
+          }
+        ]
+      }
+    ],
+    "result_difference_cents": 2000,
+    "source_spheres": [
+      "4"
+    ],
+    "asset_schedule": {
+      "year": 2025,
+      "items": [],
+      "totals": {
+        "cost_opening_cents": 0,
+        "additions_cents": 0,
+        "cost_closing_cents": 0,
+        "accumulated_opening_cents": 0,
+        "depreciation_cents": 0,
+        "accumulated_closing_cents": 0,
+        "book_opening_cents": 0,
+        "book_closing_cents": 0
+      },
+      "issues": [],
+      "ready_for_xbrl": false
+    },
+    "income_use_source": {
+      "schema": 1,
+      "source": {
+        "year": 2025,
+        "state": "closed",
+        "closed_sha256": "6712b550e26720433a110438b8474026845b512c5412414e248142e4068ce6a3",
+        "previous_sha256": null,
+        "result_account": "equity",
+        "issues": [],
+        "accounts": {
+          "cash": {
+            "name": "Original cash",
+            "group": "cash",
+            "skr_code": "18000"
+          },
+          "equalization": {
+            "name": "Original unused fiscal result reclassification",
+            "group": "result_use",
+            "skr_code": "77690"
+          },
+          "equity": {
+            "name": "Original capital",
+            "group": "equity",
+            "skr_code": "29700"
+          },
+          "expense": {
+            "name": "Original professionally reviewed provision expense",
+            "group": "expense",
+            "skr_code": "68250"
+          },
+          "provision": {
+            "name": "Original independently valued provision",
+            "group": "provisions",
+            "skr_code": "30700"
+          }
+        },
+        "opening": [
+          {
+            "account": "cash",
+            "debit_cents": 200000,
+            "credit_cents": 0,
+            "sphere": ""
+          },
+          {
+            "account": "equity",
+            "debit_cents": 0,
+            "credit_cents": 200000,
+            "sphere": ""
+          }
+        ],
+        "entries": [
+          {
+            "club_id": "synthetic-pool-original-2025-EV",
+            "tax_year": 2025,
+            "id": "838dd4bede96f9dca7977dd620cef3b9",
+            "booked_on": "2025-12-01",
+            "description": "Original reviewed commercial provision",
+            "evidence": "Synthetic independent original assessment and annual expense.",
+            "reversal_of": null,
+            "created_by": "reader",
+            "created_at": "2026-10-07T15:16:30+00:00",
+            "date": "2025-12-01",
+            "lines": [
+              {
+                "account": "expense",
+                "debit_cents": 10000,
+                "credit_cents": 0,
+                "sphere": "4"
+              },
+              {
+                "account": "provision",
+                "debit_cents": 0,
+                "credit_cents": 10000,
+                "sphere": ""
+              }
+            ]
+          }
+        ],
+        "calculation": {
+          "year": 2025,
+          "accounts": {
+            "cash": {
+              "name": "Original cash",
+              "group": "cash",
+              "skr_code": "18000",
+              "id": "cash",
+              "opening_cents": 200000,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 200000,
+              "amount_cents": 200000
+            },
+            "equalization": {
+              "name": "Original unused fiscal result reclassification",
+              "group": "result_use",
+              "skr_code": "77690",
+              "id": "equalization",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            "equity": {
+              "name": "Original capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": -200000,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": -200000,
+              "amount_cents": 200000
+            },
+            "expense": {
+              "name": "Original professionally reviewed provision expense",
+              "group": "expense",
+              "skr_code": "68250",
+              "id": "expense",
+              "opening_cents": 0,
+              "debit_cents": 10000,
+              "credit_cents": 0,
+              "closing_cents": 10000,
+              "amount_cents": 10000
+            },
+            "provision": {
+              "name": "Original independently valued provision",
+              "group": "provisions",
+              "skr_code": "30700",
+              "id": "provision",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 10000,
+              "closing_cents": -10000,
+              "amount_cents": 10000
+            }
+          },
+          "assets": [
+            {
+              "name": "Original cash",
+              "group": "cash",
+              "skr_code": "18000",
+              "id": "cash",
+              "opening_cents": 200000,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 200000,
+              "amount_cents": 200000
+            }
+          ],
+          "capital": [
+            {
+              "name": "Original unused fiscal result reclassification",
+              "group": "result_use",
+              "skr_code": "77690",
+              "id": "equalization",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            {
+              "name": "Original capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": -200000,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": -200000,
+              "amount_cents": 200000
+            }
+          ],
+          "liabilities": [
+            {
+              "name": "Original independently valued provision",
+              "group": "provisions",
+              "skr_code": "30700",
+              "id": "provision",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 10000,
+              "closing_cents": -10000,
+              "amount_cents": 10000
+            }
+          ],
+          "profit_and_loss": [
+            {
+              "name": "Original professionally reviewed provision expense",
+              "group": "expense",
+              "skr_code": "68250",
+              "id": "expense",
+              "opening_cents": 0,
+              "debit_cents": 10000,
+              "credit_cents": 0,
+              "closing_cents": 10000,
+              "amount_cents": 10000
+            }
+          ],
+          "spheres": {
+            "1": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "2": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "3": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "4": {
+              "income_cents": 0,
+              "expense_cents": 10000,
+              "result_cents": -10000
+            }
+          },
+          "asset_total_cents": 200000,
+          "capital_total_cents": 200000,
+          "liability_total_cents": 10000,
+          "income_cents": 0,
+          "expense_cents": 10000,
+          "annual_result_cents": -10000,
+          "passive_total_cents": 200000,
+          "debit_cents": 10000,
+          "credit_cents": 10000,
+          "difference_cents": 0,
+          "issues": [],
+          "entry_count": 1
+        },
+        "asset_schedule": {
+          "year": 2025,
+          "items": [],
+          "totals": {
+            "cost_opening_cents": 0,
+            "additions_cents": 0,
+            "cost_closing_cents": 0,
+            "accumulated_opening_cents": 0,
+            "depreciation_cents": 0,
+            "accumulated_closing_cents": 0,
+            "book_opening_cents": 0,
+            "book_closing_cents": 0
+          },
+          "issues": [],
+          "ready_for_xbrl": false
+        }
+      }
+    },
+    "whole_club_scope": {
+      "schema": 1,
+      "kind": "whole_taxable_club",
+      "source": {
+        "year": 2025,
+        "state": "closed",
+        "closed_sha256": "6712b550e26720433a110438b8474026845b512c5412414e248142e4068ce6a3",
+        "previous_sha256": null,
+        "result_account": "equity",
+        "issues": [],
+        "accounts": {
+          "cash": {
+            "name": "Original cash",
+            "group": "cash",
+            "skr_code": "18000"
+          },
+          "equalization": {
+            "name": "Original unused fiscal result reclassification",
+            "group": "result_use",
+            "skr_code": "77690"
+          },
+          "equity": {
+            "name": "Original capital",
+            "group": "equity",
+            "skr_code": "29700"
+          },
+          "expense": {
+            "name": "Original professionally reviewed provision expense",
+            "group": "expense",
+            "skr_code": "68250"
+          },
+          "provision": {
+            "name": "Original independently valued provision",
+            "group": "provisions",
+            "skr_code": "30700"
+          }
+        },
+        "opening": [
+          {
+            "account": "cash",
+            "debit_cents": 200000,
+            "credit_cents": 0,
+            "sphere": ""
+          },
+          {
+            "account": "equity",
+            "debit_cents": 0,
+            "credit_cents": 200000,
+            "sphere": ""
+          }
+        ],
+        "entries": [
+          {
+            "club_id": "synthetic-pool-original-2025-EV",
+            "tax_year": 2025,
+            "id": "838dd4bede96f9dca7977dd620cef3b9",
+            "booked_on": "2025-12-01",
+            "description": "Original reviewed commercial provision",
+            "evidence": "Synthetic independent original assessment and annual expense.",
+            "reversal_of": null,
+            "created_by": "reader",
+            "created_at": "2026-10-07T15:16:30+00:00",
+            "date": "2025-12-01",
+            "lines": [
+              {
+                "account": "expense",
+                "debit_cents": 10000,
+                "credit_cents": 0,
+                "sphere": "4"
+              },
+              {
+                "account": "provision",
+                "debit_cents": 0,
+                "credit_cents": 10000,
+                "sphere": ""
+              }
+            ]
+          }
+        ],
+        "calculation": {
+          "year": 2025,
+          "accounts": {
+            "cash": {
+              "name": "Original cash",
+              "group": "cash",
+              "skr_code": "18000",
+              "id": "cash",
+              "opening_cents": 200000,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 200000,
+              "amount_cents": 200000
+            },
+            "equalization": {
+              "name": "Original unused fiscal result reclassification",
+              "group": "result_use",
+              "skr_code": "77690",
+              "id": "equalization",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            "equity": {
+              "name": "Original capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": -200000,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": -200000,
+              "amount_cents": 200000
+            },
+            "expense": {
+              "name": "Original professionally reviewed provision expense",
+              "group": "expense",
+              "skr_code": "68250",
+              "id": "expense",
+              "opening_cents": 0,
+              "debit_cents": 10000,
+              "credit_cents": 0,
+              "closing_cents": 10000,
+              "amount_cents": 10000
+            },
+            "provision": {
+              "name": "Original independently valued provision",
+              "group": "provisions",
+              "skr_code": "30700",
+              "id": "provision",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 10000,
+              "closing_cents": -10000,
+              "amount_cents": 10000
+            }
+          },
+          "assets": [
+            {
+              "name": "Original cash",
+              "group": "cash",
+              "skr_code": "18000",
+              "id": "cash",
+              "opening_cents": 200000,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 200000,
+              "amount_cents": 200000
+            }
+          ],
+          "capital": [
+            {
+              "name": "Original unused fiscal result reclassification",
+              "group": "result_use",
+              "skr_code": "77690",
+              "id": "equalization",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            {
+              "name": "Original capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": -200000,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": -200000,
+              "amount_cents": 200000
+            }
+          ],
+          "liabilities": [
+            {
+              "name": "Original independently valued provision",
+              "group": "provisions",
+              "skr_code": "30700",
+              "id": "provision",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 10000,
+              "closing_cents": -10000,
+              "amount_cents": 10000
+            }
+          ],
+          "profit_and_loss": [
+            {
+              "name": "Original professionally reviewed provision expense",
+              "group": "expense",
+              "skr_code": "68250",
+              "id": "expense",
+              "opening_cents": 0,
+              "debit_cents": 10000,
+              "credit_cents": 0,
+              "closing_cents": 10000,
+              "amount_cents": 10000
+            }
+          ],
+          "spheres": {
+            "1": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "2": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "3": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "4": {
+              "income_cents": 0,
+              "expense_cents": 10000,
+              "result_cents": -10000
+            }
+          },
+          "asset_total_cents": 200000,
+          "capital_total_cents": 200000,
+          "liability_total_cents": 10000,
+          "income_cents": 0,
+          "expense_cents": 10000,
+          "annual_result_cents": -10000,
+          "passive_total_cents": 200000,
+          "debit_cents": 10000,
+          "credit_cents": 10000,
+          "difference_cents": 0,
+          "issues": [],
+          "entry_count": 1
+        },
+        "asset_schedule": {
+          "year": 2025,
+          "items": [],
+          "totals": {
+            "cost_opening_cents": 0,
+            "additions_cents": 0,
+            "cost_closing_cents": 0,
+            "accumulated_opening_cents": 0,
+            "depreciation_cents": 0,
+            "accumulated_closing_cents": 0,
+            "book_opening_cents": 0,
+            "book_closing_cents": 0
+          },
+          "issues": [],
+          "ready_for_xbrl": false
+        }
+      }
+    },
+    "capital_comparison": {
+      "year": 2025,
+      "book_opening_cents": 200000,
+      "opening_adjustment_cents": 0,
+      "tax_opening_cents": 200000,
+      "tax_closing_cents": 192000,
+      "contributions_cents": 0,
+      "withdrawals_cents": 0,
+      "profit_cents": -8000,
+      "sources": {
+        "tax:tax-equalization-77690:0": {
+          "voucher": "tax:tax-equalization-77690",
+          "date": "2025-12-31",
+          "description": "Belegte Ergebnisumbuchung 77690 zur unveränderten ursprünglichen Kapitaldarstellung.",
+          "account": "equalization",
+          "debit_cents": 2000,
+          "credit_cents": 0
+        },
+        "tax:tax-equalization-77690:1": {
+          "voucher": "tax:tax-equalization-77690",
+          "date": "2025-12-31",
+          "description": "Belegte Ergebnisumbuchung 77690 zur unveränderten ursprünglichen Kapitaldarstellung.",
+          "account": "equity",
+          "debit_cents": 0,
+          "credit_cents": 2000
+        }
+      },
+      "decisions": {
+        "tax:tax-equalization-77690:0": {
+          "kind": "reclassification",
+          "reason": "Durch Originalbelege bestätigte interne Ergebnisumbuchung 77690."
+        },
+        "tax:tax-equalization-77690:1": {
+          "kind": "reclassification",
+          "reason": "Durch Originalbelege bestätigte interne Ergebnisumbuchung 77690."
+        }
+      },
+      "issues": [],
+      "complete": true
+    },
+    "tax_equalization": {
+      "schema": 1,
+      "source": {
+        "schema": 1,
+        "year": 2025,
+        "journal_sha256": "6712b550e26720433a110438b8474026845b512c5412414e248142e4068ce6a3",
+        "use_account": "equalization",
+        "capital_account": "equity",
+        "original_current_adjustments": [
+          {
+            "id": "original-fiscal-provision",
+            "reason": "Synthetic independently reviewed original fiscal provision value, not an inferred tax assessment.",
+            "lines": [
+              {
+                "account": "provision",
+                "debit_cents": 2000,
+                "credit_cents": 0,
+                "sphere": ""
+              },
+              {
+                "account": "expense",
+                "debit_cents": 0,
+                "credit_cents": 2000,
+                "sphere": "4"
+              }
+            ]
+          }
+        ],
+        "original_capital_presentation_reviewed": true,
+        "original_fiscal_values_reviewed": true,
+        "no_other_result_use_reviewed": true,
+        "capital_document": {
+          "document_id": "a04c2afdc3b56fe62e4aa5ad10e8b77d",
+          "revision": 1,
+          "sha256": "e632b96773845b422ebd2e5fc9dfb24ad8d3aa168065b879db58506a0d7d8cf5"
+        },
+        "fiscal_document": {
+          "document_id": "883301657cc483c2cc85fe2b6d469d8a",
+          "revision": 1,
+          "sha256": "471a3c0ce7be6d673bd9df525f55073985440deb67dbffa06a1a92f7aaf408d1"
+        },
+        "presentation_document": {
+          "document_id": "881067ab6e4480bb3cab46d916b8b536",
+          "revision": 1,
+          "sha256": "4ce680877a6b846016d477eeb835caf266bfb791d374c700e837634b34fe3a7a"
+        }
+      },
+      "commercial_result_cents": -10000,
+      "fiscal_result_cents": -8000,
+      "current_result_difference_cents": 2000,
+      "capital_book_amount_cents": 200000,
+      "presentation_entry": {
+        "id": "tax-equalization-77690",
+        "reason": "Belegte Ergebnisumbuchung 77690 zur unveränderten ursprünglichen Kapitaldarstellung.",
+        "lines": [
+          {
+            "account": "equalization",
+            "debit_cents": 2000,
+            "credit_cents": 0,
+            "sphere": ""
+          },
+          {
+            "account": "equity",
+            "debit_cents": 0,
+            "credit_cents": 2000,
+            "sphere": ""
+          }
+        ]
+      }
+    },
+    "sha256": "7aa3ea4281a582e4ce70e6d5e4a50edb07e37f8c0ebba12f1354c05f33f64a0f",
+    "transmission": "unavailable"
+  },
+  "mapping": {
+    "cash": "bs.ass.currAss.cashEquiv.bank",
+    "equity": "bs.eqLiab.equity.SurplusOfUnspentFunds",
+    "expense": "is.netIncome.regular.operatingTC.otherCost.legalConsulting",
+    "provision": "bs.eqLiab.accruals.other.other",
+    "equalization": "bs.eqLiab.equity.netIncome.taxBalanceGenerally.transferDiffTaxAccounts"
+  },
+  "profile": {
+    "kind": "whole_taxable_club",
+    "source_scope": "complete_club_ledger",
+    "scope_confirmed": true,
+    "tax_privileged": false,
+    "asset_scope": "whole_club",
+    "asset_values_unchanged": true,
+    "asset_tax_values_reviewed": false,
+    "business_name": "Synthetischer Test-Geschäftsbetrieb",
+    "supplier": "Synthetischer Softwaretest",
+    "company": {
+      "tax_number": "5192050001276",
+      "name": "Synthetischer Testverein",
+      "street": "Testweg",
+      "house_number": "1",
+      "postal_code": "11111",
+      "city": "Teststadt",
+      "country": "Deutschland",
+      "legal_status": "EV"
+    },
+    "tax_values_sha256": "7aa3ea4281a582e4ce70e6d5e4a50edb07e37f8c0ebba12f1354c05f33f64a0f"
+  },
+  "xml_sha256": "2e27066771ba32f815fc2d55ff66944af26d1326181724b9fd3da1ab1af8c38c"
+}

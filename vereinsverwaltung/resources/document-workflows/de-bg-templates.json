@@ -1,0 +1,664 @@
+[
+  {
+    "key": "de-office",
+    "title": "Gefährdungsbeurteilung – Deutschland/DGUV · Vereinsbüro (Demo)",
+    "description": "Eigene Arbeitshilfe für Vereinsbüro mit tabellarischem Gefährdungsregister. Jede Zeile verbindet eine Gefährdung mit Folgen, Ausgangs- und Restbewertung, Maßnahmen, Zuständigkeit und Wirksamkeitsprüfung. Fachlich und betrieblich konkretisieren; kein offizielles DGUV-Muster und keine Tätigkeitsfreigabe.",
+    "provenance": {
+      "title": "Eigene Kulturhus-Formularfassung; fachliche Referenz: DGUV Information 215-410: Bildschirm- und Büroarbeitsplätze",
+      "url": "https://publikationen.dguv.de/widgets/pdf/download/article/409",
+      "licence": "Eigene Formulartexte. Amtliche und berufsgenossenschaftliche Quellen dienen als fachliche Referenzen; keine Übernahmelizenz für deren Formulartexte, Tabellen, Logos oder Gestaltung beansprucht. Private nutzerautorisierte Bezüge: FS-RA-002 Working at Height Rev1.0 für das Tabellenlayout, FS-RA-030 Business Travel.pdf für das Matrixprofil; keine öffentliche Weiterverwendungslizenz behauptet.",
+      "licence_url": "https://www.dguv.de/de/wir-ueber-uns/impressum/index.jsp",
+      "attribution": "Fachlicher Bezug auf ArbSchG §§ 5 und 6, BAuA sowie DGUV; tätigkeitsbezogene BGN-Informationen begründen keine Mitgliedschaft. Keine amtliche oder berufsgenossenschaftliche Billigung.",
+      "adaptation": "Eigene Hinweise für Vereinsbüro; kompakter Formularkopf und Gefährdungsregister je Zeile. Fachliche Quellen: https://www.gesetze-im-internet.de/arbschg/__5.html ; https://www.gesetze-im-internet.de/arbschg/__6.html ; https://www.dguv.de/de/praevention/themen-a-z/gefaehrdungsbeurteilung/index.jsp ; https://www.baua.de/DE/Themen/Arbeitsgestaltung/Gefaehrdungsbeurteilung/Handbuch-Gefaehrdungsbeurteilung/Grundlagenwissen ; https://topeins.dguv.de/arbeitssicherheit/gefaehrdungsbeurteilung/ ; https://publikationen.dguv.de/widgets/pdf/download/article/409. Private Bezüge nach ausdrücklicher Nutzerangabe zur Verwendung berechtigt: FS-RA-002 Working at Height Rev1.0 als Tabellenlayoutbezug; FS-RA-030 Business Travel.pdf als maßgebliche Matrixreferenz für fluix_reference_v1 (LOW 1–4 grün, MEDIUM 5–9 gelb, HIGH 10–25 rot; Schwere A–E = 1–5, Wahrscheinlichkeit 1–5). Keine Personen, Logos oder Offshore-Maßnahmen daraus übernommen. Keine einheitliche DGUV-Matrix oder Akzeptanzgrenze behauptet. Herkunft, Rechte und Grenzen: docs/local-workflows-de-bg-sources.md.",
+      "verified_at": "2026-10-07"
+    },
+    "fields": [
+      {
+        "key": "organisation",
+        "label": "Verein / verantwortlicher Betrieb",
+        "type": "text",
+        "required": true,
+        "help": "Verein und verantwortliche Organisation für diese Tätigkeit benennen."
+      },
+      {
+        "key": "location",
+        "label": "Ort / Arbeitsbereich",
+        "type": "text",
+        "required": true,
+        "help": "Konkreten Ort angeben; in der lokalen Demo einen erfundenen Bereich verwenden."
+      },
+      {
+        "key": "activity",
+        "label": "Tätigkeit",
+        "type": "text",
+        "required": true,
+        "help": "Arbeitsablauf im Vereinsbüro abgrenzen: Bildschirmarbeit, Ablage, Telefonate, Besprechungen und Arbeitszeiten."
+      },
+      {
+        "key": "work_phase",
+        "label": "Arbeitsphase / Abgrenzung",
+        "type": "text",
+        "required": true,
+        "help": "Die betrachtete Phase und ihre Grenzen nennen, etwa Vorbereitung, Durchführung, Reinigung oder Auf-/Abbau."
+      },
+      {
+        "key": "assessment_date",
+        "label": "Bewertet am",
+        "type": "date",
+        "required": true
+      },
+      {
+        "key": "assessor",
+        "label": "Bewertung durch",
+        "type": "text",
+        "required": true,
+        "help": "Verfassende Person oder Rolle und gegebenenfalls fachkundige Mitwirkung nennen; eine Qualifikation nicht unterstellen."
+      },
+      {
+        "key": "review_date",
+        "label": "Nächster Prüftermin",
+        "type": "date",
+        "required": true
+      },
+      {
+        "key": "risk_register",
+        "label": "Gefährdungsregister",
+        "type": "risk_register",
+        "required": true,
+        "help": "Eine konkrete Gefährdung je Zeile, höchstens 30 Zeilen. Kategorie und Gefährdung abgrenzen; in den Folgen auch betroffene Gruppen und Exposition benennen. Ausgangs- und Restbewertung beziehen sich auf dieselbe Zeile; Wahrscheinlichkeit 1–5 und Schwere A–E (Zahlenwerte 1–5) nach dem privaten Referenzprofil bewerten. Produkt 1–4: LOW/grün, 5–9: MEDIUM/gelb, 10–25: HIGH/rot. Die Einordnung erteilt keine automatische Freigabe. Maßnahmen als vorhanden, geplant oder umgesetzt kennzeichnen und Frist beziehungsweise erforderliche Arbeitsphase ergänzen. Beseitigung/Ersatz vor technischen, organisatorischen und personenbezogenen Maßnahmen prüfen. Verantwortliche Rolle eintragen; bei Wirksamkeitsprüfung Methode, Datum, Ergebnis und offene Punkte festhalten. Eine Restbewertung vor Umsetzung ausdrücklich als Prognose kennzeichnen. Eigene Prüfanlässe: Bildschirm und Sitzhaltung, störende Beleuchtung, Stolperstellen, elektrische Geräte, Arbeitsunterbrechungen und Zeitdruck. Vor Ort ergänzen und kennzeichnen.",
+        "matrix_profile": "fluix_reference_v1"
+      },
+      {
+        "key": "operational_context",
+        "label": "Rahmenbedingungen und Unterlagen",
+        "type": "textarea",
+        "required": false,
+        "help": "Welche Räume, Arbeitsmittel, Sitz-/Stehzeiten und Arbeitsorganisation werden tatsächlich genutzt? Relevante Herstellerunterlagen, betriebliche Vorgaben, beteiligte Rollen und geprüfte Regelbezüge nennen. Den zuständigen Unfallversicherungsträger nur angeben, soweit bekannt; unbekannt bleibt zulässig. Keine automatische Zuordnung zu BGN oder VBG."
+      },
+      {
+        "key": "global_notes",
+        "label": "Übergreifende Hinweise und offene Angaben",
+        "type": "textarea",
+        "required": false,
+        "help": "Gemeinsame Bewertungsgrundlagen, Unterweisung, benötigte Befähigung, Anlass einer erneuten Prüfung und noch ungeklärte Betriebsangaben dokumentieren. Erreichbare Hilfe, Alarmierung, Fluchtmöglichkeiten und Unterstützung bei Alleinarbeit klären. Fehlende Informationen sichtbar lassen; geplante Unterweisung oder Notfallvorsorge nicht als erfolgt darstellen."
+      }
+    ]
+  },
+  {
+    "key": "de-events",
+    "title": "Gefährdungsbeurteilung – Deutschland/DGUV · Veranstaltungen (Demo)",
+    "description": "Eigene Arbeitshilfe für Veranstaltungen mit tabellarischem Gefährdungsregister. Jede Zeile verbindet eine Gefährdung mit Folgen, Ausgangs- und Restbewertung, Maßnahmen, Zuständigkeit und Wirksamkeitsprüfung. Fachlich und betrieblich konkretisieren; kein offizielles DGUV-Muster und keine Tätigkeitsfreigabe.",
+    "provenance": {
+      "title": "Eigene Kulturhus-Formularfassung; fachliche Referenz: DGUV Information 215-310: Sicherheit bei Veranstaltungen und Produktionen, Mai 2025",
+      "url": "https://publikationen.dguv.de/regelwerk/dguv-informationen/596/sicherheit-bei-veranstaltungen-und-produktion",
+      "licence": "Eigene Formulartexte. Amtliche und berufsgenossenschaftliche Quellen dienen als fachliche Referenzen; keine Übernahmelizenz für deren Formulartexte, Tabellen, Logos oder Gestaltung beansprucht. Private nutzerautorisierte Bezüge: FS-RA-002 Working at Height Rev1.0 für das Tabellenlayout, FS-RA-030 Business Travel.pdf für das Matrixprofil; keine öffentliche Weiterverwendungslizenz behauptet.",
+      "licence_url": "https://www.dguv.de/de/wir-ueber-uns/impressum/index.jsp",
+      "attribution": "Fachlicher Bezug auf ArbSchG §§ 5 und 6, BAuA sowie DGUV; tätigkeitsbezogene BGN-Informationen begründen keine Mitgliedschaft. Keine amtliche oder berufsgenossenschaftliche Billigung.",
+      "adaptation": "Eigene Hinweise für Veranstaltungen; kompakter Formularkopf und Gefährdungsregister je Zeile. Fachliche Quellen: https://www.gesetze-im-internet.de/arbschg/__5.html ; https://www.gesetze-im-internet.de/arbschg/__6.html ; https://www.dguv.de/de/praevention/themen-a-z/gefaehrdungsbeurteilung/index.jsp ; https://www.baua.de/DE/Themen/Arbeitsgestaltung/Gefaehrdungsbeurteilung/Handbuch-Gefaehrdungsbeurteilung/Grundlagenwissen ; https://topeins.dguv.de/arbeitssicherheit/gefaehrdungsbeurteilung/ ; https://publikationen.dguv.de/regelwerk/dguv-informationen/596/sicherheit-bei-veranstaltungen-und-produktion. Private Bezüge nach ausdrücklicher Nutzerangabe zur Verwendung berechtigt: FS-RA-002 Working at Height Rev1.0 als Tabellenlayoutbezug; FS-RA-030 Business Travel.pdf als maßgebliche Matrixreferenz für fluix_reference_v1 (LOW 1–4 grün, MEDIUM 5–9 gelb, HIGH 10–25 rot; Schwere A–E = 1–5, Wahrscheinlichkeit 1–5). Keine Personen, Logos oder Offshore-Maßnahmen daraus übernommen. Keine einheitliche DGUV-Matrix oder Akzeptanzgrenze behauptet. Herkunft, Rechte und Grenzen: docs/local-workflows-de-bg-sources.md.",
+      "verified_at": "2026-10-07"
+    },
+    "fields": [
+      {
+        "key": "organisation",
+        "label": "Verein / verantwortlicher Betrieb",
+        "type": "text",
+        "required": true,
+        "help": "Verein und verantwortliche Organisation für diese Tätigkeit benennen."
+      },
+      {
+        "key": "location",
+        "label": "Ort / Arbeitsbereich",
+        "type": "text",
+        "required": true,
+        "help": "Konkreten Ort angeben; in der lokalen Demo einen erfundenen Bereich verwenden."
+      },
+      {
+        "key": "activity",
+        "label": "Tätigkeit",
+        "type": "text",
+        "required": true,
+        "help": "Veranstaltung, Ort, Aufbau, Einlass, Durchführung und Abbau abgrenzen; Verantwortungen mit Betreibenden und Dienstleistenden abstimmen."
+      },
+      {
+        "key": "work_phase",
+        "label": "Arbeitsphase / Abgrenzung",
+        "type": "text",
+        "required": true,
+        "help": "Die betrachtete Phase und ihre Grenzen nennen, etwa Vorbereitung, Durchführung, Reinigung oder Auf-/Abbau."
+      },
+      {
+        "key": "assessment_date",
+        "label": "Bewertet am",
+        "type": "date",
+        "required": true
+      },
+      {
+        "key": "assessor",
+        "label": "Bewertung durch",
+        "type": "text",
+        "required": true,
+        "help": "Verfassende Person oder Rolle und gegebenenfalls fachkundige Mitwirkung nennen; eine Qualifikation nicht unterstellen."
+      },
+      {
+        "key": "review_date",
+        "label": "Nächster Prüftermin",
+        "type": "date",
+        "required": true
+      },
+      {
+        "key": "risk_register",
+        "label": "Gefährdungsregister",
+        "type": "risk_register",
+        "required": true,
+        "help": "Eine konkrete Gefährdung je Zeile, höchstens 30 Zeilen. Kategorie und Gefährdung abgrenzen; in den Folgen auch betroffene Gruppen und Exposition benennen. Ausgangs- und Restbewertung beziehen sich auf dieselbe Zeile; Wahrscheinlichkeit 1–5 und Schwere A–E (Zahlenwerte 1–5) nach dem privaten Referenzprofil bewerten. Produkt 1–4: LOW/grün, 5–9: MEDIUM/gelb, 10–25: HIGH/rot. Die Einordnung erteilt keine automatische Freigabe. Maßnahmen als vorhanden, geplant oder umgesetzt kennzeichnen und Frist beziehungsweise erforderliche Arbeitsphase ergänzen. Beseitigung/Ersatz vor technischen, organisatorischen und personenbezogenen Maßnahmen prüfen. Verantwortliche Rolle eintragen; bei Wirksamkeitsprüfung Methode, Datum, Ergebnis und offene Punkte festhalten. Eine Restbewertung vor Umsetzung ausdrücklich als Prognose kennzeichnen. Eigene Prüfanlässe: Besucherströme, Verkehrswege, Stolperstellen, Lärm, elektrische Versorgung, Wetter, Gewalt oder Überforderung. Besonderheiten der konkreten Veranstaltung ergänzen.",
+        "matrix_profile": "fluix_reference_v1"
+      },
+      {
+        "key": "operational_context",
+        "label": "Rahmenbedingungen und Unterlagen",
+        "type": "textarea",
+        "required": false,
+        "help": "Veranstaltungsart, erwartete Personenzahl, Innen-/Außenbereich, Raumnutzung und Schnittstellen zu weiteren Gewerken erfassen. Relevante Herstellerunterlagen, betriebliche Vorgaben, beteiligte Rollen und geprüfte Regelbezüge nennen. Den zuständigen Unfallversicherungsträger nur angeben, soweit bekannt; unbekannt bleibt zulässig. Keine automatische Zuordnung zu BGN oder VBG."
+      },
+      {
+        "key": "global_notes",
+        "label": "Übergreifende Hinweise und offene Angaben",
+        "type": "textarea",
+        "required": false,
+        "help": "Gemeinsame Bewertungsgrundlagen, Unterweisung, benötigte Befähigung, Anlass einer erneuten Prüfung und noch ungeklärte Betriebsangaben dokumentieren. Alarmierung, Erste Hilfe, Brandschutz, Räumung und Zuständigkeit bei Wetteränderung dokumentieren; vorhandene Pläne referenzieren. Fehlende Informationen sichtbar lassen; geplante Unterweisung oder Notfallvorsorge nicht als erfolgt darstellen."
+      }
+    ]
+  },
+  {
+    "key": "de-drinks",
+    "title": "Gefährdungsbeurteilung – Deutschland/DGUV · Getränkeausschank (Demo)",
+    "description": "Eigene Arbeitshilfe für Getränkeausschank mit tabellarischem Gefährdungsregister. Jede Zeile verbindet eine Gefährdung mit Folgen, Ausgangs- und Restbewertung, Maßnahmen, Zuständigkeit und Wirksamkeitsprüfung. Fachlich und betrieblich konkretisieren; kein offizielles DGUV-Muster und keine Tätigkeitsfreigabe.",
+    "provenance": {
+      "title": "Eigene Kulturhus-Formularfassung; fachliche Referenz: BGN: Getränkeschankanlagen – Praxishilfen und Informationen",
+      "url": "https://bgn-branchenwissen.de/praxishilfen-von-a-z/getraenkeschankanlagen/praxishilfen-und-fachinfos",
+      "licence": "Eigene Formulartexte. Amtliche und berufsgenossenschaftliche Quellen dienen als fachliche Referenzen; keine Übernahmelizenz für deren Formulartexte, Tabellen, Logos oder Gestaltung beansprucht. Private nutzerautorisierte Bezüge: FS-RA-002 Working at Height Rev1.0 für das Tabellenlayout, FS-RA-030 Business Travel.pdf für das Matrixprofil; keine öffentliche Weiterverwendungslizenz behauptet.",
+      "licence_url": "https://www.bgn.de/impressum",
+      "attribution": "Fachlicher Bezug auf ArbSchG §§ 5 und 6, BAuA sowie DGUV; tätigkeitsbezogene BGN-Informationen begründen keine Mitgliedschaft. Keine amtliche oder berufsgenossenschaftliche Billigung.",
+      "adaptation": "Eigene Hinweise für Getränkeausschank; kompakter Formularkopf und Gefährdungsregister je Zeile. Fachliche Quellen: https://www.gesetze-im-internet.de/arbschg/__5.html ; https://www.gesetze-im-internet.de/arbschg/__6.html ; https://www.dguv.de/de/praevention/themen-a-z/gefaehrdungsbeurteilung/index.jsp ; https://www.baua.de/DE/Themen/Arbeitsgestaltung/Gefaehrdungsbeurteilung/Handbuch-Gefaehrdungsbeurteilung/Grundlagenwissen ; https://topeins.dguv.de/arbeitssicherheit/gefaehrdungsbeurteilung/ ; https://bgn-branchenwissen.de/praxishilfen-von-a-z/getraenkeschankanlagen/praxishilfen-und-fachinfos. Private Bezüge nach ausdrücklicher Nutzerangabe zur Verwendung berechtigt: FS-RA-002 Working at Height Rev1.0 als Tabellenlayoutbezug; FS-RA-030 Business Travel.pdf als maßgebliche Matrixreferenz für fluix_reference_v1 (LOW 1–4 grün, MEDIUM 5–9 gelb, HIGH 10–25 rot; Schwere A–E = 1–5, Wahrscheinlichkeit 1–5). Keine Personen, Logos oder Offshore-Maßnahmen daraus übernommen. Keine einheitliche DGUV-Matrix oder Akzeptanzgrenze behauptet. Herkunft, Rechte und Grenzen: docs/local-workflows-de-bg-sources.md.",
+      "verified_at": "2026-10-07"
+    },
+    "fields": [
+      {
+        "key": "organisation",
+        "label": "Verein / verantwortlicher Betrieb",
+        "type": "text",
+        "required": true,
+        "help": "Verein und verantwortliche Organisation für diese Tätigkeit benennen."
+      },
+      {
+        "key": "location",
+        "label": "Ort / Arbeitsbereich",
+        "type": "text",
+        "required": true,
+        "help": "Konkreten Ort angeben; in der lokalen Demo einen erfundenen Bereich verwenden."
+      },
+      {
+        "key": "activity",
+        "label": "Tätigkeit",
+        "type": "text",
+        "required": true,
+        "help": "Ausschank einschließlich Transport, Lagerung, Reinigung und gegebenenfalls Schankanlage abgrenzen. Flaschen-/Dosenausschank und Druckgasanlage unterscheiden."
+      },
+      {
+        "key": "work_phase",
+        "label": "Arbeitsphase / Abgrenzung",
+        "type": "text",
+        "required": true,
+        "help": "Die betrachtete Phase und ihre Grenzen nennen, etwa Vorbereitung, Durchführung, Reinigung oder Auf-/Abbau."
+      },
+      {
+        "key": "assessment_date",
+        "label": "Bewertet am",
+        "type": "date",
+        "required": true
+      },
+      {
+        "key": "assessor",
+        "label": "Bewertung durch",
+        "type": "text",
+        "required": true,
+        "help": "Verfassende Person oder Rolle und gegebenenfalls fachkundige Mitwirkung nennen; eine Qualifikation nicht unterstellen."
+      },
+      {
+        "key": "review_date",
+        "label": "Nächster Prüftermin",
+        "type": "date",
+        "required": true
+      },
+      {
+        "key": "risk_register",
+        "label": "Gefährdungsregister",
+        "type": "risk_register",
+        "required": true,
+        "help": "Eine konkrete Gefährdung je Zeile, höchstens 30 Zeilen. Kategorie und Gefährdung abgrenzen; in den Folgen auch betroffene Gruppen und Exposition benennen. Ausgangs- und Restbewertung beziehen sich auf dieselbe Zeile; Wahrscheinlichkeit 1–5 und Schwere A–E (Zahlenwerte 1–5) nach dem privaten Referenzprofil bewerten. Produkt 1–4: LOW/grün, 5–9: MEDIUM/gelb, 10–25: HIGH/rot. Die Einordnung erteilt keine automatische Freigabe. Maßnahmen als vorhanden, geplant oder umgesetzt kennzeichnen und Frist beziehungsweise erforderliche Arbeitsphase ergänzen. Beseitigung/Ersatz vor technischen, organisatorischen und personenbezogenen Maßnahmen prüfen. Verantwortliche Rolle eintragen; bei Wirksamkeitsprüfung Methode, Datum, Ergebnis und offene Punkte festhalten. Eine Restbewertung vor Umsetzung ausdrücklich als Prognose kennzeichnen. Eigene Prüfanlässe: nasse Böden, Glasbruch, Lasten, Reinigungsmittel, Gedränge und gegebenenfalls Druckgas/CO2. Unbekannte Anlagendaten als offen festhalten.",
+        "matrix_profile": "fluix_reference_v1"
+      },
+      {
+        "key": "operational_context",
+        "label": "Rahmenbedingungen und Unterlagen",
+        "type": "textarea",
+        "required": false,
+        "help": "Getränke, Behälter, Geräte, Schankgas, Gasflaschenstandorte, Raumverhältnisse und verfügbare Unterlagen erfassen; keine Prüfung vorwegnehmen. Relevante Herstellerunterlagen, betriebliche Vorgaben, beteiligte Rollen und geprüfte Regelbezüge nennen. Den zuständigen Unfallversicherungsträger nur angeben, soweit bekannt; unbekannt bleibt zulässig. Keine automatische Zuordnung zu BGN oder VBG."
+      },
+      {
+        "key": "global_notes",
+        "label": "Übergreifende Hinweise und offene Angaben",
+        "type": "textarea",
+        "required": false,
+        "help": "Gemeinsame Bewertungsgrundlagen, Unterweisung, benötigte Befähigung, Anlass einer erneuten Prüfung und noch ungeklärte Betriebsangaben dokumentieren. Vorgehen bei Verletzung, Gasverdacht oder Anlagenstörung und erreichbare fachkundige Hilfe festlegen; keine improvisierte Störungsbeseitigung. Fehlende Informationen sichtbar lassen; geplante Unterweisung oder Notfallvorsorge nicht als erfolgt darstellen."
+      }
+    ]
+  },
+  {
+    "key": "de-cash",
+    "title": "Gefährdungsbeurteilung – Deutschland/DGUV · Kassieren (Demo)",
+    "description": "Eigene Arbeitshilfe für Kassieren mit tabellarischem Gefährdungsregister. Jede Zeile verbindet eine Gefährdung mit Folgen, Ausgangs- und Restbewertung, Maßnahmen, Zuständigkeit und Wirksamkeitsprüfung. Fachlich und betrieblich konkretisieren; kein offizielles DGUV-Muster und keine Tätigkeitsfreigabe.",
+    "provenance": {
+      "title": "Eigene Kulturhus-Formularfassung; fachliche Referenz: BGN: Gewalt am Arbeitsplatz vorbeugen",
+      "url": "https://www.bgn.de/praevention-arbeitshilfen/sicher-und-gesund/alle-themen-im-ueberblick/gewaltpraevention",
+      "licence": "Eigene Formulartexte. Amtliche und berufsgenossenschaftliche Quellen dienen als fachliche Referenzen; keine Übernahmelizenz für deren Formulartexte, Tabellen, Logos oder Gestaltung beansprucht. Private nutzerautorisierte Bezüge: FS-RA-002 Working at Height Rev1.0 für das Tabellenlayout, FS-RA-030 Business Travel.pdf für das Matrixprofil; keine öffentliche Weiterverwendungslizenz behauptet.",
+      "licence_url": "https://www.bgn.de/impressum",
+      "attribution": "Fachlicher Bezug auf ArbSchG §§ 5 und 6, BAuA sowie DGUV; tätigkeitsbezogene BGN-Informationen begründen keine Mitgliedschaft. Keine amtliche oder berufsgenossenschaftliche Billigung.",
+      "adaptation": "Eigene Hinweise für Kassieren; kompakter Formularkopf und Gefährdungsregister je Zeile. Fachliche Quellen: https://www.gesetze-im-internet.de/arbschg/__5.html ; https://www.gesetze-im-internet.de/arbschg/__6.html ; https://www.dguv.de/de/praevention/themen-a-z/gefaehrdungsbeurteilung/index.jsp ; https://www.baua.de/DE/Themen/Arbeitsgestaltung/Gefaehrdungsbeurteilung/Handbuch-Gefaehrdungsbeurteilung/Grundlagenwissen ; https://topeins.dguv.de/arbeitssicherheit/gefaehrdungsbeurteilung/ ; https://www.bgn.de/praevention-arbeitshilfen/sicher-und-gesund/alle-themen-im-ueberblick/gewaltpraevention. Private Bezüge nach ausdrücklicher Nutzerangabe zur Verwendung berechtigt: FS-RA-002 Working at Height Rev1.0 als Tabellenlayoutbezug; FS-RA-030 Business Travel.pdf als maßgebliche Matrixreferenz für fluix_reference_v1 (LOW 1–4 grün, MEDIUM 5–9 gelb, HIGH 10–25 rot; Schwere A–E = 1–5, Wahrscheinlichkeit 1–5). Keine Personen, Logos oder Offshore-Maßnahmen daraus übernommen. Keine einheitliche DGUV-Matrix oder Akzeptanzgrenze behauptet. Herkunft, Rechte und Grenzen: docs/local-workflows-de-bg-sources.md.",
+      "verified_at": "2026-10-07"
+    },
+    "fields": [
+      {
+        "key": "organisation",
+        "label": "Verein / verantwortlicher Betrieb",
+        "type": "text",
+        "required": true,
+        "help": "Verein und verantwortliche Organisation für diese Tätigkeit benennen."
+      },
+      {
+        "key": "location",
+        "label": "Ort / Arbeitsbereich",
+        "type": "text",
+        "required": true,
+        "help": "Konkreten Ort angeben; in der lokalen Demo einen erfundenen Bereich verwenden."
+      },
+      {
+        "key": "activity",
+        "label": "Tätigkeit",
+        "type": "text",
+        "required": true,
+        "help": "Kassentätigkeit bei Eintritt oder Verkauf sowie Übergabe und Transport von Geld getrennt beschreiben."
+      },
+      {
+        "key": "work_phase",
+        "label": "Arbeitsphase / Abgrenzung",
+        "type": "text",
+        "required": true,
+        "help": "Die betrachtete Phase und ihre Grenzen nennen, etwa Vorbereitung, Durchführung, Reinigung oder Auf-/Abbau."
+      },
+      {
+        "key": "assessment_date",
+        "label": "Bewertet am",
+        "type": "date",
+        "required": true
+      },
+      {
+        "key": "assessor",
+        "label": "Bewertung durch",
+        "type": "text",
+        "required": true,
+        "help": "Verfassende Person oder Rolle und gegebenenfalls fachkundige Mitwirkung nennen; eine Qualifikation nicht unterstellen."
+      },
+      {
+        "key": "review_date",
+        "label": "Nächster Prüftermin",
+        "type": "date",
+        "required": true
+      },
+      {
+        "key": "risk_register",
+        "label": "Gefährdungsregister",
+        "type": "risk_register",
+        "required": true,
+        "help": "Eine konkrete Gefährdung je Zeile, höchstens 30 Zeilen. Kategorie und Gefährdung abgrenzen; in den Folgen auch betroffene Gruppen und Exposition benennen. Ausgangs- und Restbewertung beziehen sich auf dieselbe Zeile; Wahrscheinlichkeit 1–5 und Schwere A–E (Zahlenwerte 1–5) nach dem privaten Referenzprofil bewerten. Produkt 1–4: LOW/grün, 5–9: MEDIUM/gelb, 10–25: HIGH/rot. Die Einordnung erteilt keine automatische Freigabe. Maßnahmen als vorhanden, geplant oder umgesetzt kennzeichnen und Frist beziehungsweise erforderliche Arbeitsphase ergänzen. Beseitigung/Ersatz vor technischen, organisatorischen und personenbezogenen Maßnahmen prüfen. Verantwortliche Rolle eintragen; bei Wirksamkeitsprüfung Methode, Datum, Ergebnis und offene Punkte festhalten. Eine Restbewertung vor Umsetzung ausdrücklich als Prognose kennzeichnen. Eigene Prüfanlässe: Konflikte mit Gästen, Überfallrisiken, Alleinarbeit, unübersichtliche Kassenplätze, langes Stehen und Belastung in Stoßzeiten.",
+        "matrix_profile": "fluix_reference_v1"
+      },
+      {
+        "key": "operational_context",
+        "label": "Rahmenbedingungen und Unterlagen",
+        "type": "textarea",
+        "required": false,
+        "help": "Position der Kasse, Teamstärke, Pausen, Übergaben und Kommunikationswege beschreiben. Keine echten Geldbestände, Zugangscodes oder vertraulichen Transportdetails eintragen. Relevante Herstellerunterlagen, betriebliche Vorgaben, beteiligte Rollen und geprüfte Regelbezüge nennen. Den zuständigen Unfallversicherungsträger nur angeben, soweit bekannt; unbekannt bleibt zulässig. Keine automatische Zuordnung zu BGN oder VBG."
+      },
+      {
+        "key": "global_notes",
+        "label": "Übergreifende Hinweise und offene Angaben",
+        "type": "textarea",
+        "required": false,
+        "help": "Gemeinsame Bewertungsgrundlagen, Unterweisung, benötigte Befähigung, Anlass einer erneuten Prüfung und noch ungeklärte Betriebsangaben dokumentieren. Hilferuf, Rückzug, Betreuung nach einem Vorfall und Ansprechperson vereinbaren. Personenschutz und Eskalationsweg dokumentieren. Fehlende Informationen sichtbar lassen; geplante Unterweisung oder Notfallvorsorge nicht als erfolgt darstellen."
+      }
+    ]
+  },
+  {
+    "key": "de-grill",
+    "title": "Gefährdungsbeurteilung – Deutschland/DGUV · Grillen (Demo)",
+    "description": "Eigene Arbeitshilfe für Grillen mit tabellarischem Gefährdungsregister. Jede Zeile verbindet eine Gefährdung mit Folgen, Ausgangs- und Restbewertung, Maßnahmen, Zuständigkeit und Wirksamkeitsprüfung. Fachlich und betrieblich konkretisieren; kein offizielles DGUV-Muster und keine Tätigkeitsfreigabe.",
+    "provenance": {
+      "title": "Eigene Kulturhus-Formularfassung; fachliche Referenz: BGN: Grill mit offenem Feuer – Gefährdungen und Maßnahmen",
+      "url": "https://bgn-branchenwissen.de/gastgewerbe/arbeitsmittel-in-kuechen/grill-mit-offenem-feuer",
+      "licence": "Eigene Formulartexte. Amtliche und berufsgenossenschaftliche Quellen dienen als fachliche Referenzen; keine Übernahmelizenz für deren Formulartexte, Tabellen, Logos oder Gestaltung beansprucht. Private nutzerautorisierte Bezüge: FS-RA-002 Working at Height Rev1.0 für das Tabellenlayout, FS-RA-030 Business Travel.pdf für das Matrixprofil; keine öffentliche Weiterverwendungslizenz behauptet.",
+      "licence_url": "https://www.bgn.de/impressum",
+      "attribution": "Fachlicher Bezug auf ArbSchG §§ 5 und 6, BAuA sowie DGUV; tätigkeitsbezogene BGN-Informationen begründen keine Mitgliedschaft. Keine amtliche oder berufsgenossenschaftliche Billigung.",
+      "adaptation": "Eigene Hinweise für Grillen; kompakter Formularkopf und Gefährdungsregister je Zeile. Fachliche Quellen: https://www.gesetze-im-internet.de/arbschg/__5.html ; https://www.gesetze-im-internet.de/arbschg/__6.html ; https://www.dguv.de/de/praevention/themen-a-z/gefaehrdungsbeurteilung/index.jsp ; https://www.baua.de/DE/Themen/Arbeitsgestaltung/Gefaehrdungsbeurteilung/Handbuch-Gefaehrdungsbeurteilung/Grundlagenwissen ; https://topeins.dguv.de/arbeitssicherheit/gefaehrdungsbeurteilung/ ; https://bgn-branchenwissen.de/gastgewerbe/arbeitsmittel-in-kuechen/grill-mit-offenem-feuer. Private Bezüge nach ausdrücklicher Nutzerangabe zur Verwendung berechtigt: FS-RA-002 Working at Height Rev1.0 als Tabellenlayoutbezug; FS-RA-030 Business Travel.pdf als maßgebliche Matrixreferenz für fluix_reference_v1 (LOW 1–4 grün, MEDIUM 5–9 gelb, HIGH 10–25 rot; Schwere A–E = 1–5, Wahrscheinlichkeit 1–5). Keine Personen, Logos oder Offshore-Maßnahmen daraus übernommen. Keine einheitliche DGUV-Matrix oder Akzeptanzgrenze behauptet. Herkunft, Rechte und Grenzen: docs/local-workflows-de-bg-sources.md.",
+      "verified_at": "2026-10-07"
+    },
+    "fields": [
+      {
+        "key": "organisation",
+        "label": "Verein / verantwortlicher Betrieb",
+        "type": "text",
+        "required": true,
+        "help": "Verein und verantwortliche Organisation für diese Tätigkeit benennen."
+      },
+      {
+        "key": "location",
+        "label": "Ort / Arbeitsbereich",
+        "type": "text",
+        "required": true,
+        "help": "Konkreten Ort angeben; in der lokalen Demo einen erfundenen Bereich verwenden."
+      },
+      {
+        "key": "activity",
+        "label": "Tätigkeit",
+        "type": "text",
+        "required": true,
+        "help": "Aufstellen, Betreiben, Beschicken, Reinigen und Abkühlen des konkreten Grills getrennt betrachten."
+      },
+      {
+        "key": "work_phase",
+        "label": "Arbeitsphase / Abgrenzung",
+        "type": "text",
+        "required": true,
+        "help": "Die betrachtete Phase und ihre Grenzen nennen, etwa Vorbereitung, Durchführung, Reinigung oder Auf-/Abbau."
+      },
+      {
+        "key": "assessment_date",
+        "label": "Bewertet am",
+        "type": "date",
+        "required": true
+      },
+      {
+        "key": "assessor",
+        "label": "Bewertung durch",
+        "type": "text",
+        "required": true,
+        "help": "Verfassende Person oder Rolle und gegebenenfalls fachkundige Mitwirkung nennen; eine Qualifikation nicht unterstellen."
+      },
+      {
+        "key": "review_date",
+        "label": "Nächster Prüftermin",
+        "type": "date",
+        "required": true
+      },
+      {
+        "key": "risk_register",
+        "label": "Gefährdungsregister",
+        "type": "risk_register",
+        "required": true,
+        "help": "Eine konkrete Gefährdung je Zeile, höchstens 30 Zeilen. Kategorie und Gefährdung abgrenzen; in den Folgen auch betroffene Gruppen und Exposition benennen. Ausgangs- und Restbewertung beziehen sich auf dieselbe Zeile; Wahrscheinlichkeit 1–5 und Schwere A–E (Zahlenwerte 1–5) nach dem privaten Referenzprofil bewerten. Produkt 1–4: LOW/grün, 5–9: MEDIUM/gelb, 10–25: HIGH/rot. Die Einordnung erteilt keine automatische Freigabe. Maßnahmen als vorhanden, geplant oder umgesetzt kennzeichnen und Frist beziehungsweise erforderliche Arbeitsphase ergänzen. Beseitigung/Ersatz vor technischen, organisatorischen und personenbezogenen Maßnahmen prüfen. Verantwortliche Rolle eintragen; bei Wirksamkeitsprüfung Methode, Datum, Ergebnis und offene Punkte festhalten. Eine Restbewertung vor Umsetzung ausdrücklich als Prognose kennzeichnen. Eigene Prüfanlässe: Verbrennung, offenes Feuer, Verbrennungsabgase einschließlich CO, Fett, Werkzeuge, Transport und gegebenenfalls Flüssiggas. Sicherheitsfragen der Speisenzubereitung gesondert klären.",
+        "matrix_profile": "fluix_reference_v1"
+      },
+      {
+        "key": "operational_context",
+        "label": "Rahmenbedingungen und Unterlagen",
+        "type": "textarea",
+        "required": false,
+        "help": "Grillbauart, Energiequelle, Standort, Herstellerangaben, Abstände und Zugänglichkeit erfassen. Betrieb in Räumen, Zelten oder anderen umschlossenen Bereichen ist durch diese Demo nicht bewertet. Relevante Herstellerunterlagen, betriebliche Vorgaben, beteiligte Rollen und geprüfte Regelbezüge nennen. Den zuständigen Unfallversicherungsträger nur angeben, soweit bekannt; unbekannt bleibt zulässig. Keine automatische Zuordnung zu BGN oder VBG."
+      },
+      {
+        "key": "global_notes",
+        "label": "Übergreifende Hinweise und offene Angaben",
+        "type": "textarea",
+        "required": false,
+        "help": "Gemeinsame Bewertungsgrundlagen, Unterweisung, benötigte Befähigung, Anlass einer erneuten Prüfung und noch ungeklärte Betriebsangaben dokumentieren. Alarmierung und Reaktion bei Brand, Verletzung oder Gas-/Abgasverdacht fachkundig festlegen. Keine Löschmethode oder Rettungsmaßnahme ohne konkrete Beurteilung vorgeben. Fehlende Informationen sichtbar lassen; geplante Unterweisung oder Notfallvorsorge nicht als erfolgt darstellen."
+      }
+    ]
+  },
+  {
+    "key": "de-stage",
+    "title": "Gefährdungsbeurteilung – Deutschland/DGUV · Bühnenaufbau und Bühnenabbau (Demo)",
+    "description": "Eigene Arbeitshilfe für Bühnenaufbau und Bühnenabbau mit tabellarischem Gefährdungsregister. Jede Zeile verbindet eine Gefährdung mit Folgen, Ausgangs- und Restbewertung, Maßnahmen, Zuständigkeit und Wirksamkeitsprüfung. Fachlich und betrieblich konkretisieren; kein offizielles DGUV-Muster und keine Tätigkeitsfreigabe.",
+    "provenance": {
+      "title": "Eigene Kulturhus-Formularfassung; fachliche Referenz: DGUV Regel 115-002; DGUV Informationen 215-310 und bei besonderen Darstellungen 215-315",
+      "url": "https://publikationen.dguv.de/regelwerk/dguv-regeln/2957/veranstaltungs-und-produktionsstaetten-fuer-szenische-darstellung",
+      "licence": "Eigene Formulartexte. Amtliche und berufsgenossenschaftliche Quellen dienen als fachliche Referenzen; keine Übernahmelizenz für deren Formulartexte, Tabellen, Logos oder Gestaltung beansprucht. Private nutzerautorisierte Bezüge: FS-RA-002 Working at Height Rev1.0 für das Tabellenlayout, FS-RA-030 Business Travel.pdf für das Matrixprofil; keine öffentliche Weiterverwendungslizenz behauptet.",
+      "licence_url": "https://www.dguv.de/de/wir-ueber-uns/impressum/index.jsp",
+      "attribution": "Fachlicher Bezug auf ArbSchG §§ 5 und 6, BAuA sowie DGUV; tätigkeitsbezogene BGN-Informationen begründen keine Mitgliedschaft. Keine amtliche oder berufsgenossenschaftliche Billigung.",
+      "adaptation": "Eigene Hinweise für Bühnenaufbau und Bühnenabbau; kompakter Formularkopf und Gefährdungsregister je Zeile. Fachliche Quellen: https://www.gesetze-im-internet.de/arbschg/__5.html ; https://www.gesetze-im-internet.de/arbschg/__6.html ; https://www.dguv.de/de/praevention/themen-a-z/gefaehrdungsbeurteilung/index.jsp ; https://www.baua.de/DE/Themen/Arbeitsgestaltung/Gefaehrdungsbeurteilung/Handbuch-Gefaehrdungsbeurteilung/Grundlagenwissen ; https://topeins.dguv.de/arbeitssicherheit/gefaehrdungsbeurteilung/ ; https://publikationen.dguv.de/regelwerk/dguv-regeln/2957/veranstaltungs-und-produktionsstaetten-fuer-szenische-darstellung ; https://publikationen.dguv.de/regelwerk/dguv-informationen/596/sicherheit-bei-veranstaltungen-und-produktion ; https://publikationen.dguv.de/regelwerk/dguv-informationen/599/sicherheit-bei-veranstaltungen-und-produktionen-besondere-szenische-darstellungen. Private Bezüge nach ausdrücklicher Nutzerangabe zur Verwendung berechtigt: FS-RA-002 Working at Height Rev1.0 als Tabellenlayoutbezug; FS-RA-030 Business Travel.pdf als maßgebliche Matrixreferenz für fluix_reference_v1 (LOW 1–4 grün, MEDIUM 5–9 gelb, HIGH 10–25 rot; Schwere A–E = 1–5, Wahrscheinlichkeit 1–5). Keine Personen, Logos oder Offshore-Maßnahmen daraus übernommen. Keine einheitliche DGUV-Matrix oder Akzeptanzgrenze behauptet. Herkunft, Rechte und Grenzen: docs/local-workflows-de-bg-sources.md.",
+      "verified_at": "2026-10-07"
+    },
+    "fields": [
+      {
+        "key": "organisation",
+        "label": "Verein / verantwortlicher Betrieb",
+        "type": "text",
+        "required": true,
+        "help": "Verein und verantwortliche Organisation für diese Tätigkeit benennen."
+      },
+      {
+        "key": "location",
+        "label": "Ort / Arbeitsbereich",
+        "type": "text",
+        "required": true,
+        "help": "Konkreten Ort angeben; in der lokalen Demo einen erfundenen Bereich verwenden."
+      },
+      {
+        "key": "activity",
+        "label": "Tätigkeit",
+        "type": "text",
+        "required": true,
+        "help": "Bühnensystem, Aufbau- und Abbauschritte, Transporte, eingesetzte Technik und Zuständigkeiten konkret abgrenzen."
+      },
+      {
+        "key": "work_phase",
+        "label": "Arbeitsphase / Abgrenzung",
+        "type": "text",
+        "required": true,
+        "help": "Die betrachtete Phase und ihre Grenzen nennen, etwa Vorbereitung, Durchführung, Reinigung oder Auf-/Abbau."
+      },
+      {
+        "key": "assessment_date",
+        "label": "Bewertet am",
+        "type": "date",
+        "required": true
+      },
+      {
+        "key": "assessor",
+        "label": "Bewertung durch",
+        "type": "text",
+        "required": true,
+        "help": "Verfassende Person oder Rolle und gegebenenfalls fachkundige Mitwirkung nennen; eine Qualifikation nicht unterstellen."
+      },
+      {
+        "key": "review_date",
+        "label": "Nächster Prüftermin",
+        "type": "date",
+        "required": true
+      },
+      {
+        "key": "risk_register",
+        "label": "Gefährdungsregister",
+        "type": "risk_register",
+        "required": true,
+        "help": "Eine konkrete Gefährdung je Zeile, höchstens 30 Zeilen. Kategorie und Gefährdung abgrenzen; in den Folgen auch betroffene Gruppen und Exposition benennen. Ausgangs- und Restbewertung beziehen sich auf dieselbe Zeile; Wahrscheinlichkeit 1–5 und Schwere A–E (Zahlenwerte 1–5) nach dem privaten Referenzprofil bewerten. Produkt 1–4: LOW/grün, 5–9: MEDIUM/gelb, 10–25: HIGH/rot. Die Einordnung erteilt keine automatische Freigabe. Maßnahmen als vorhanden, geplant oder umgesetzt kennzeichnen und Frist beziehungsweise erforderliche Arbeitsphase ergänzen. Beseitigung/Ersatz vor technischen, organisatorischen und personenbezogenen Maßnahmen prüfen. Verantwortliche Rolle eintragen; bei Wirksamkeitsprüfung Methode, Datum, Ergebnis und offene Punkte festhalten. Eine Restbewertung vor Umsetzung ausdrücklich als Prognose kennzeichnen. Eigene Prüfanlässe: Quetschen, Heben/Tragen, Absturz, herabfallende Gegenstände, instabile Bauteile, Elektrizität, gleichzeitig arbeitende Gewerke und Zeitdruck.",
+        "matrix_profile": "fluix_reference_v1"
+      },
+      {
+        "key": "operational_context",
+        "label": "Rahmenbedingungen und Unterlagen",
+        "type": "textarea",
+        "required": false,
+        "help": "Hersteller-/Montageunterlagen, Qualifikation und Aufsicht, Prüfungen, Tragfähigkeit, Absturzschutz und abgesperrte Bereiche als Nachweise oder offene Punkte erfassen. Keine Traglasten oder Montagefreigaben aus dieser Vorlage ableiten. Relevante Herstellerunterlagen, betriebliche Vorgaben, beteiligte Rollen und geprüfte Regelbezüge nennen. Den zuständigen Unfallversicherungsträger nur angeben, soweit bekannt; unbekannt bleibt zulässig. Keine automatische Zuordnung zu BGN oder VBG."
+      },
+      {
+        "key": "global_notes",
+        "label": "Übergreifende Hinweise und offene Angaben",
+        "type": "textarea",
+        "required": false,
+        "help": "Gemeinsame Bewertungsgrundlagen, Unterweisung, benötigte Befähigung, Anlass einer erneuten Prüfung und noch ungeklärte Betriebsangaben dokumentieren. Stoppsignale, Kommunikation, Rettungskonzept und zuständige Fachpersonen dokumentieren. Besondere szenische Darstellungen, Effekte oder Lasten über Personen brauchen gesonderte Betrachtung. Fehlende Informationen sichtbar lassen; geplante Unterweisung oder Notfallvorsorge nicht als erfolgt darstellen."
+      }
+    ]
+  },
+  {
+    "key": "de-stop-think-act",
+    "title": "STOP–DENKEN–HANDELN – Deutschland/DGUV (Demo)",
+    "description": "Eigener tätigkeitsübergreifender Kurzcheck für Vereinsbüro, Veranstaltungen, Ausschank, Kasse, Grillen und Bühnenarbeiten. Kein offizielles DGUV-Muster, keine vollständige Gefährdungsbeurteilung und keine Arbeitsfreigabe. Bei ungeklärten Gefahren bleibt die Tätigkeit zur Klärung unterbrochen.",
+    "provenance": {
+      "title": "Eigener Kulturhus-Kurzcheck; fachliche Referenz: DGUV Gefährdungsbeurteilung",
+      "url": "https://www.dguv.de/de/praevention/themen-a-z/gefaehrdungsbeurteilung/index.jsp",
+      "licence": "Eigene Formulartexte; kein fremdes Formular, Poster oder Logo übernommen. Verlinkte Quellen sind fachliche Referenzen, keine beanspruchte Wiederverwendungslizenz.",
+      "licence_url": "https://www.dguv.de/de/wir-ueber-uns/impressum/index.jsp",
+      "attribution": "Eigener deutscher Kurzcheck mit fachlicher Orientierung an ArbSchG, BAuA und DGUV. Weder HSE- noch DGUV-Urheberschaft für diesen Kurzcheck wird behauptet.",
+      "adaptation": "Eigenständige Fragen zu Lage, Gefährdung, Maßnahmen, Unterweisung und erneuter Prüfung. STOP–DENKEN–HANDELN ist hier ein Ablaufname; die Maßnahmenhierarchie S–T–O–P ist davon zu unterscheiden. Quellen: https://www.gesetze-im-internet.de/arbschg/__5.html ; https://www.gesetze-im-internet.de/arbschg/__6.html ; https://www.dguv.de/de/praevention/themen-a-z/gefaehrdungsbeurteilung/index.jsp ; https://topeins.dguv.de/arbeitssicherheit/gefaehrdungsbeurteilung/. Rechteprüfung: docs/local-workflows-de-bg-sources.md.",
+      "verified_at": "2026-10-07"
+    },
+    "fields": [
+      {
+        "key": "organisation",
+        "label": "Verein / verantwortlicher Betrieb",
+        "type": "text",
+        "required": true
+      },
+      {
+        "key": "activity",
+        "label": "Tätigkeit und nächste Arbeitsphase",
+        "type": "textarea",
+        "required": true,
+        "help": "Büro, Veranstaltung, Ausschank, Kasse, Grillen oder Bühnenarbeit konkret abgrenzen."
+      },
+      {
+        "key": "location",
+        "label": "Ort",
+        "type": "text",
+        "required": true
+      },
+      {
+        "key": "check_date",
+        "label": "Datum des Kurzchecks",
+        "type": "date",
+        "required": true
+      },
+      {
+        "key": "responsible",
+        "label": "Verantwortliche Person und beteiligte Rollen",
+        "type": "textarea",
+        "required": true
+      },
+      {
+        "key": "insurance_body",
+        "label": "Unfallversicherungsträger, soweit bekannt",
+        "type": "text",
+        "required": false,
+        "help": "Unbekannt darf sichtbar bleiben; keine automatische Zuordnung zu einer BG."
+      },
+      {
+        "key": "stop_context",
+        "label": "STOP – Lageänderung oder Anlass",
+        "type": "textarea",
+        "required": true,
+        "help": "Unterbrechung, Unklarheit oder Änderung vor Ort beschreiben. Unbekannte Bedingungen nicht als geprüft darstellen."
+      },
+      {
+        "key": "hazard",
+        "label": "DENKEN – Gefährdungen und Kennungen",
+        "type": "textarea",
+        "required": true,
+        "help": "Gefährdungen der konkreten nächsten Schritte nummerieren; auch Wechselwirkungen mit Gästen oder anderen Teams betrachten."
+      },
+      {
+        "key": "affected_people",
+        "label": "DENKEN – Betroffene und mögliche Folgen",
+        "type": "textarea",
+        "required": true
+      },
+      {
+        "key": "control",
+        "label": "DENKEN – Vorhandene Maßnahmen und offene Lücken",
+        "type": "textarea",
+        "required": true
+      },
+      {
+        "key": "action",
+        "label": "HANDELN – Maßnahmen oder fachkundige Klärung",
+        "type": "textarea",
+        "required": true,
+        "help": "Konkrete Schritte festhalten. Die Dokumentation bestätigt noch nicht deren sichere Umsetzung."
+      },
+      {
+        "key": "measure_hierarchy",
+        "label": "Auswahl nach S–T–O–P",
+        "type": "textarea",
+        "required": true,
+        "help": "Beseitigung/Ersatz der Gefahrenquelle vor technischen, organisatorischen und personenbezogenen Maßnahmen prüfen. Nicht mit dem Namen dieses Kurzchecks verwechseln."
+      },
+      {
+        "key": "owner",
+        "label": "Zuständigkeit",
+        "type": "text",
+        "required": true
+      },
+      {
+        "key": "deadline",
+        "label": "Frist / Bedingung vor Wiederaufnahme",
+        "type": "textarea",
+        "required": true
+      },
+      {
+        "key": "instruction",
+        "label": "Benötigte Unterweisung, Befähigung und Unterlagen",
+        "type": "textarea",
+        "required": true,
+        "help": "Noch fehlende Anleitung oder Fachkunde sichtbar festhalten."
+      },
+      {
+        "key": "decision",
+        "label": "Dokumentierter weiterer Handlungsbedarf",
+        "type": "select",
+        "required": true,
+        "help": "Keine Auswahl gibt die Arbeit frei.",
+        "options": [
+          "Tätigkeit bleibt unterbrochen – Klärung erforderlich",
+          "Maßnahmen offen – erneute Prüfung erforderlich",
+          "An zuständige fachkundige Person zur betrieblichen Entscheidung weitergeben"
+        ]
+      },
+      {
+        "key": "escalation",
+        "label": "Ansprechperson und Weitergabe offener Punkte",
+        "type": "textarea",
+        "required": true,
+        "help": "Nur dokumentieren; dieses Formular versendet keine Nachricht."
+      },
+      {
+        "key": "review",
+        "label": "Erneute Prüfung, Nachweise und Ergebnis",
+        "type": "textarea",
+        "required": true,
+        "help": "Geplante und durchgeführte Kontrollen unterscheiden; verantwortliche Rolle und Zeitpunkt nennen."
+      },
+      {
+        "key": "assessment_reference",
+        "label": "Bezug zur betrieblichen Gefährdungsbeurteilung",
+        "type": "text",
+        "required": false,
+        "help": "Dokumentnummer oder fehlenden Bezug notieren; noch keine automatische Verknüpfung."
+      },
+      {
+        "key": "limitations",
+        "label": "Unbekannte Angaben und noch offene Entscheidung",
+        "type": "textarea",
+        "required": true
+      }
+    ]
+  }
+]

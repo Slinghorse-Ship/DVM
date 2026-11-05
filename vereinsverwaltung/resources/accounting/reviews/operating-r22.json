@@ -1,0 +1,936 @@
+{
+  "schema": 1,
+  "revision": 22,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "operating-r22-001@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.generalRateVAT",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.generalRateVAT",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.reducedRateVAT",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.taxExemptUStG19_1",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.taxExemptOther",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.untaxable",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.UStG13b",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.otherRateVAT",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.unknownVAT"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "42201",
+              "semantic": {
+                "name": "Erlöse aus der Verwertung von Altpapier § 64 Abs. 5 AO1)",
+                "function": "",
+                "range_start": "42201",
+                "range_end": "42201",
+                "parent": null
+              },
+              "signature": "23616bc86d13c3e3502e148a4bc2d307f99663c7ae48d91e44f2967f6d5344df"
+            },
+            {
+              "code": "42202",
+              "semantic": {
+                "name": "Erlöse aus der Verwertung von Altmaterial § 64 Abs. 5 AO1)",
+                "function": "",
+                "range_start": "42202",
+                "range_end": "42202",
+                "parent": null
+              },
+              "signature": "57397c7dda045bde0b6ec6d844c6cdde8b973a5eb2736de892d9b4128875337a"
+            },
+            {
+              "code": "42203",
+              "semantic": {
+                "name": "Erlöse aus Werbung § 64 Abs. 6 AO1)",
+                "function": "",
+                "range_start": "42203",
+                "range_end": "42203",
+                "parent": null
+              },
+              "signature": "b78cdd6a4593c580cfd0f779d0f3e75e757c8caf29eeb9fdf48900905af1cf64"
+            },
+            {
+              "code": "42204",
+              "semantic": {
+                "name": "Erlöse aus Totalisation § 64 Abs. 6 AO1)",
+                "function": "",
+                "range_start": "42204",
+                "range_end": "42204",
+                "parent": null
+              },
+              "signature": "47e75e80b24991a0f6b5754bd53914b9119f838d8d87af1a121e1fd553c89391"
+            },
+            {
+              "code": "42205",
+              "semantic": {
+                "name": "Erlöse aus der zweiten Fraktionierungsstufe der Blutspendedienste § 64 Abs. 6 AO1)",
+                "function": "",
+                "range_start": "42205",
+                "range_end": "42205",
+                "parent": null
+              },
+              "signature": "3d573b979e7a6ce2e1e8a674b4e3b96c9bb9f474fea799f5734e25de2591c49b"
+            },
+            {
+              "code": "44990",
+              "semantic": {
+                "name": "Nebenerlöse (Bezug zu Materialaufwand)",
+                "function": "",
+                "range_start": "44990",
+                "range_end": "44990",
+                "parent": null
+              },
+              "signature": "d1d163a2681d295f589bf7b842e59f49bf5d5995f1d26a0cfeccae039fe3d183"
+            },
+            {
+              "code": "45700",
+              "semantic": {
+                "name": "Sonstige Erträge aus Provisionen, Lizenzen und Patenten",
+                "function": "",
+                "range_start": "45700",
+                "range_end": "45700",
+                "parent": null
+              },
+              "signature": "28921387c308a99147c1555ac1e428d9a073546d9822dfa413ebe8a26f1be336"
+            },
+            {
+              "code": "48330",
+              "semantic": {
+                "name": "Andere Nebenerlöse",
+                "function": "",
+                "range_start": "48330",
+                "range_end": "48330",
+                "parent": null
+              },
+              "signature": "9408e062c596488cf1eb68a92fd23ae5ad7c05db8702b574dba0f6b04206c7aa"
+            },
+            {
+              "code": "48600",
+              "semantic": {
+                "name": "Grundstückserträge",
+                "function": "",
+                "range_start": "48600",
+                "range_end": "48600",
+                "parent": null
+              },
+              "signature": "82b41ed5bb4bf309e7dc1b338b4391438d671eefa8bb689cecb15bba2a6238be"
+            },
+            {
+              "code": "49920",
+              "semantic": {
+                "name": "Erträge aus Verwaltungskostenumlagen",
+                "function": "",
+                "range_start": "49920",
+                "range_end": "49920",
+                "parent": null
+              },
+              "signature": "7d26e6170c2e36fcbd2c0690cfe04a2f37acb244c249eef20d967608007ad01d"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r22-002@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.reductionsFromGrossSales.untaxed",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.reductionsFromGrossSales.untaxed"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "47380",
+              "semantic": {
+                "name": "Gewährte Skonti a. Lieferungen v. Mobilfunkgeräten etc., für die der Leistungsempfänger die Umsatzst. nach § 13b Abs. 2 Nr. 10 UStG schuldet",
+                "function": "S/AM",
+                "range_start": "47380",
+                "range_end": "47389",
+                "parent": null
+              },
+              "signature": "ffbe665e2ea88f5fd70808497ce5da80256d6c42b926bd981b056bbad7501430"
+            },
+            {
+              "code": "47410",
+              "semantic": {
+                "name": "Gewährte Skonti aus Leistungen, für die der Leistungsempfänger die Umsatzsteuer nach § 13b UStG schuldet",
+                "function": "S/AM",
+                "range_start": "47410",
+                "range_end": "47419",
+                "parent": null
+              },
+              "signature": "9dbfe538c6b800e56dbc26059b71709372bdde18b2dcc40bc0cf7965ce053b9f"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r22-003@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.ownConsumption.otherWithdrawals",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.ownConsumption.otherWithdrawals",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.ownConsumption.nonCashBenefitsOther"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "46700",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren 7 % USt",
+                "function": "AM",
+                "range_start": "46700",
+                "range_end": "46759",
+                "parent": null
+              },
+              "signature": "597ffdd5695bc706a4652637a01b1085d926b2d922e60e22c15f7ba5e6d8dbc4"
+            },
+            {
+              "code": "46710",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren 7 % USt",
+                "function": "AM",
+                "range_start": "46700",
+                "range_end": "46759",
+                "parent": null
+              },
+              "signature": "597ffdd5695bc706a4652637a01b1085d926b2d922e60e22c15f7ba5e6d8dbc4"
+            },
+            {
+              "code": "46720",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren 7 % USt",
+                "function": "AM",
+                "range_start": "46700",
+                "range_end": "46759",
+                "parent": null
+              },
+              "signature": "597ffdd5695bc706a4652637a01b1085d926b2d922e60e22c15f7ba5e6d8dbc4"
+            },
+            {
+              "code": "46730",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren 7 % USt",
+                "function": "AM",
+                "range_start": "46700",
+                "range_end": "46759",
+                "parent": null
+              },
+              "signature": "597ffdd5695bc706a4652637a01b1085d926b2d922e60e22c15f7ba5e6d8dbc4"
+            },
+            {
+              "code": "46740",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren 7 % USt",
+                "function": "AM",
+                "range_start": "46700",
+                "range_end": "46759",
+                "parent": null
+              },
+              "signature": "597ffdd5695bc706a4652637a01b1085d926b2d922e60e22c15f7ba5e6d8dbc4"
+            },
+            {
+              "code": "46750",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren 7 % USt",
+                "function": "AM",
+                "range_start": "46700",
+                "range_end": "46759",
+                "parent": null
+              },
+              "signature": "597ffdd5695bc706a4652637a01b1085d926b2d922e60e22c15f7ba5e6d8dbc4"
+            },
+            {
+              "code": "46760",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren 7 % USt",
+                "function": "AM",
+                "range_start": "46760",
+                "range_end": "46769",
+                "parent": null
+              },
+              "signature": "8fc23ad76c25a75fc47843bd50f6ea745dbf8640239b7c406b7df13e13004e77"
+            },
+            {
+              "code": "46790",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren ohne USt",
+                "function": "",
+                "range_start": "46790",
+                "range_end": "46790",
+                "parent": null
+              },
+              "signature": "8063942960e58066f4e7dbd07362d0c5bf1c62e962a0e1aecef651920ecb99a8"
+            },
+            {
+              "code": "46800",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren 19 % USt",
+                "function": "AM",
+                "range_start": "46800",
+                "range_end": "46849",
+                "parent": null
+              },
+              "signature": "1028e6c282fb675e8189d19c77f5a82bb60f28c0f675796a795ba40058d620ed"
+            },
+            {
+              "code": "46810",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren 19 % USt",
+                "function": "AM",
+                "range_start": "46800",
+                "range_end": "46849",
+                "parent": null
+              },
+              "signature": "1028e6c282fb675e8189d19c77f5a82bb60f28c0f675796a795ba40058d620ed"
+            },
+            {
+              "code": "46820",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren 19 % USt",
+                "function": "AM",
+                "range_start": "46800",
+                "range_end": "46849",
+                "parent": null
+              },
+              "signature": "1028e6c282fb675e8189d19c77f5a82bb60f28c0f675796a795ba40058d620ed"
+            },
+            {
+              "code": "46830",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren 19 % USt",
+                "function": "AM",
+                "range_start": "46800",
+                "range_end": "46849",
+                "parent": null
+              },
+              "signature": "1028e6c282fb675e8189d19c77f5a82bb60f28c0f675796a795ba40058d620ed"
+            },
+            {
+              "code": "46840",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren 19 % USt",
+                "function": "AM",
+                "range_start": "46800",
+                "range_end": "46849",
+                "parent": null
+              },
+              "signature": "1028e6c282fb675e8189d19c77f5a82bb60f28c0f675796a795ba40058d620ed"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r22-004@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.materialServices.services.OtherDedInputTax",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.materialServices.services.OtherDedInputTax",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.materialServices.services.OtherNonDedInputTax",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.materialServices.services.UStG13bDedInputTax",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.materialServices.services.UStG13bNonDedInputTax",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.materialServices.services.unknownVAT"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "59700",
+              "semantic": {
+                "name": "Fremdleistungen (Miet- und Pachtzinsen bewegliche Wirtschaftsgüter)",
+                "function": "",
+                "range_start": "59700",
+                "range_end": "59700",
+                "parent": null
+              },
+              "signature": "0840b1c1b01dfd6cedc5bb0d616f8d8a90a4950d8f5509140f14dde67b9d286e"
+            },
+            {
+              "code": "59750",
+              "semantic": {
+                "name": "Fremdleistungen (Miet- und Pachtzinsen unbewegliche Wirtschaftsgüter)",
+                "function": "",
+                "range_start": "59750",
+                "range_end": "59750",
+                "parent": null
+              },
+              "signature": "948d04425add3a24670cb5f403906d40998175ba5d6bb21f7561ae3c437d5603"
+            },
+            {
+              "code": "59800",
+              "semantic": {
+                "name": "Fremdleistungen (Entgelte für Rechte und Lizenzen)",
+                "function": "",
+                "range_start": "59800",
+                "range_end": "59800",
+                "parent": null
+              },
+              "signature": "b02e2943e3abab8dd0896cd5c19b71333416d3ec45410bfb75909679032b38a3"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r22-005@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.staff.social.socExp.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.staff.social.socExp.other",
+            "is.netIncome.regular.operatingTC.staff.social.pensions.shareholderManager",
+            "is.netIncome.regular.operatingTC.staff.social.pensions.other",
+            "is.netIncome.regular.operatingTC.staff.social.pensions.misc",
+            "is.netIncome.regular.operatingTC.staff.social.welfare"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "61000",
+              "semantic": {
+                "name": "Soziale Abgaben und Aufwendungen für Altersversorgung und für Unterstützung",
+                "function": "",
+                "range_start": "61000",
+                "range_end": "61000",
+                "parent": null
+              },
+              "signature": "82d236e72e6eec1c5a4fcc8f9bfde4dd6b9b76eaaf6fd87fb145ce66b80d419f"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r22-006@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "63070",
+              "semantic": {
+                "name": "Fremdleistungen/Fremdarbeiten",
+                "function": "",
+                "range_start": "63070",
+                "range_end": "63070",
+                "parent": null
+              },
+              "signature": "c233d6bed0eaf31b66a27031b619ee683c1d2104ac0a4cefc7ba28f2d6b271b9"
+            },
+            {
+              "code": "75530",
+              "semantic": {
+                "name": "Aufwendungen für Restrukturierungs- und Sanierungsmaßnahmen",
+                "function": "",
+                "range_start": "75530",
+                "range_end": "75530",
+                "parent": null
+              },
+              "signature": "b5fcc4badc606b49734f123d6a53bf67e910b3228c9edb69493ebe262f6b8941"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r22-007@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.insurance",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.insurance"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "64100",
+              "semantic": {
+                "name": "Netto-Prämie für Rückdeckung künftiger Versorgungsleistungen",
+                "function": "",
+                "range_start": "64100",
+                "range_end": "64100",
+                "parent": null
+              },
+              "signature": "d5da5a83b3a51770c7dde5935b5aa8085ac8616516b3c34d4270e373c5cb1da8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "operating-r22-001@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.generalRateVAT",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.generalRateVAT",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.reducedRateVAT",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.taxExemptUStG19_1",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.taxExemptOther",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.untaxable",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.UStG13b",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.otherRateVAT",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.unknownVAT"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "42201",
+              "semantic": {
+                "name": "Erlöse aus der Verwertung von Altpapier § 64 Abs. 5 AO",
+                "function": "",
+                "range_start": "42201",
+                "range_end": "42201",
+                "parent": null
+              },
+              "signature": "77de0cb03174a5e480ab122b54d7bd5c0d009ab4f9045555c79b83833d42c81a"
+            },
+            {
+              "code": "42202",
+              "semantic": {
+                "name": "Erlöse aus der Verwertung von Altmaterial § 64 Abs. 5 AO",
+                "function": "",
+                "range_start": "42202",
+                "range_end": "42202",
+                "parent": null
+              },
+              "signature": "c3ad71ef2a751b98bf18aeaa2c00494f78e52f4a2e56c44e3fb213e864564619"
+            },
+            {
+              "code": "42203",
+              "semantic": {
+                "name": "Erlöse aus Werbung § 64 Abs. 6 AO",
+                "function": "",
+                "range_start": "42203",
+                "range_end": "42203",
+                "parent": null
+              },
+              "signature": "2a5a481744e999396f92e7b824d3efb859715ce03afd3420a65727beb74f6a2e"
+            },
+            {
+              "code": "42204",
+              "semantic": {
+                "name": "Erlöse aus Totalisation § 64 Abs. 6 AO",
+                "function": "",
+                "range_start": "42204",
+                "range_end": "42204",
+                "parent": null
+              },
+              "signature": "f0641f24fac775c3282095f2f721b5f48c2be1b13faddc519ab9b215f7352a04"
+            },
+            {
+              "code": "42205",
+              "semantic": {
+                "name": "Erlöse aus der zweiten Fraktionierungsstufe der Blutspendedienste § 64 Abs. 6 AO",
+                "function": "",
+                "range_start": "42205",
+                "range_end": "42205",
+                "parent": null
+              },
+              "signature": "9195f56874e769ba57cd2d1358fd1107e37bdc680c52018373c5a3558367b471"
+            },
+            {
+              "code": "44990",
+              "semantic": {
+                "name": "Nebenerlöse (Bezug zu Materialaufwand)",
+                "function": "",
+                "range_start": "44990",
+                "range_end": "44990",
+                "parent": null
+              },
+              "signature": "d1d163a2681d295f589bf7b842e59f49bf5d5995f1d26a0cfeccae039fe3d183"
+            },
+            {
+              "code": "45700",
+              "semantic": {
+                "name": "Sonstige Erträge aus Provisionen, Lizenzen und Patenten",
+                "function": "",
+                "range_start": "45700",
+                "range_end": "45700",
+                "parent": null
+              },
+              "signature": "28921387c308a99147c1555ac1e428d9a073546d9822dfa413ebe8a26f1be336"
+            },
+            {
+              "code": "48330",
+              "semantic": {
+                "name": "Andere Nebenerlöse",
+                "function": "",
+                "range_start": "48330",
+                "range_end": "48330",
+                "parent": null
+              },
+              "signature": "9408e062c596488cf1eb68a92fd23ae5ad7c05db8702b574dba0f6b04206c7aa"
+            },
+            {
+              "code": "48600",
+              "semantic": {
+                "name": "Grundstückserträge",
+                "function": "",
+                "range_start": "48600",
+                "range_end": "48600",
+                "parent": null
+              },
+              "signature": "82b41ed5bb4bf309e7dc1b338b4391438d671eefa8bb689cecb15bba2a6238be"
+            },
+            {
+              "code": "49920",
+              "semantic": {
+                "name": "Erträge aus Verwaltungskostenumlagen",
+                "function": "",
+                "range_start": "49920",
+                "range_end": "49920",
+                "parent": null
+              },
+              "signature": "7d26e6170c2e36fcbd2c0690cfe04a2f37acb244c249eef20d967608007ad01d"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r22-002@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.reductionsFromGrossSales.untaxed",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.reductionsFromGrossSales.untaxed"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "47380",
+              "semantic": {
+                "name": "Gewährte Skonti a. Lieferungen v. Mobilfunkgeräten etc., für die der Leistungsempfänger die Umsatzst. nach § 13b Abs. 2 Nr. 10 UStG schuldet",
+                "function": "S/AM",
+                "range_start": "47380",
+                "range_end": "47389",
+                "parent": null
+              },
+              "signature": "ffbe665e2ea88f5fd70808497ce5da80256d6c42b926bd981b056bbad7501430"
+            },
+            {
+              "code": "47410",
+              "semantic": {
+                "name": "Gewährte Skonti aus Leistungen, für die der Leistungsempfänger die Umsatzsteuer nach § 13b UStG schuldet",
+                "function": "S/AM",
+                "range_start": "47410",
+                "range_end": "47419",
+                "parent": null
+              },
+              "signature": "9dbfe538c6b800e56dbc26059b71709372bdde18b2dcc40bc0cf7965ce053b9f"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r22-003@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.ownConsumption.otherWithdrawals",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.ownConsumption.otherWithdrawals",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.ownConsumption.nonCashBenefitsOther"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "46700",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren 7 % USt",
+                "function": "AM",
+                "range_start": "46700",
+                "range_end": "46759",
+                "parent": null
+              },
+              "signature": "597ffdd5695bc706a4652637a01b1085d926b2d922e60e22c15f7ba5e6d8dbc4"
+            },
+            {
+              "code": "46710",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren 7 % USt",
+                "function": "AM",
+                "range_start": "46700",
+                "range_end": "46759",
+                "parent": null
+              },
+              "signature": "597ffdd5695bc706a4652637a01b1085d926b2d922e60e22c15f7ba5e6d8dbc4"
+            },
+            {
+              "code": "46720",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren 7 % USt",
+                "function": "AM",
+                "range_start": "46700",
+                "range_end": "46759",
+                "parent": null
+              },
+              "signature": "597ffdd5695bc706a4652637a01b1085d926b2d922e60e22c15f7ba5e6d8dbc4"
+            },
+            {
+              "code": "46730",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren 7 % USt",
+                "function": "AM",
+                "range_start": "46700",
+                "range_end": "46759",
+                "parent": null
+              },
+              "signature": "597ffdd5695bc706a4652637a01b1085d926b2d922e60e22c15f7ba5e6d8dbc4"
+            },
+            {
+              "code": "46740",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren 7 % USt",
+                "function": "AM",
+                "range_start": "46700",
+                "range_end": "46759",
+                "parent": null
+              },
+              "signature": "597ffdd5695bc706a4652637a01b1085d926b2d922e60e22c15f7ba5e6d8dbc4"
+            },
+            {
+              "code": "46750",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren 7 % USt",
+                "function": "AM",
+                "range_start": "46700",
+                "range_end": "46759",
+                "parent": null
+              },
+              "signature": "597ffdd5695bc706a4652637a01b1085d926b2d922e60e22c15f7ba5e6d8dbc4"
+            },
+            {
+              "code": "46760",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren 7 % USt",
+                "function": "AM",
+                "range_start": "46760",
+                "range_end": "46769",
+                "parent": null
+              },
+              "signature": "8fc23ad76c25a75fc47843bd50f6ea745dbf8640239b7c406b7df13e13004e77"
+            },
+            {
+              "code": "46790",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren ohne USt",
+                "function": "",
+                "range_start": "46790",
+                "range_end": "46790",
+                "parent": null
+              },
+              "signature": "8063942960e58066f4e7dbd07362d0c5bf1c62e962a0e1aecef651920ecb99a8"
+            },
+            {
+              "code": "46800",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren 19 % USt",
+                "function": "AM",
+                "range_start": "46800",
+                "range_end": "46849",
+                "parent": null
+              },
+              "signature": "1028e6c282fb675e8189d19c77f5a82bb60f28c0f675796a795ba40058d620ed"
+            },
+            {
+              "code": "46810",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren 19 % USt",
+                "function": "AM",
+                "range_start": "46800",
+                "range_end": "46849",
+                "parent": null
+              },
+              "signature": "1028e6c282fb675e8189d19c77f5a82bb60f28c0f675796a795ba40058d620ed"
+            },
+            {
+              "code": "46820",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren 19 % USt",
+                "function": "AM",
+                "range_start": "46800",
+                "range_end": "46849",
+                "parent": null
+              },
+              "signature": "1028e6c282fb675e8189d19c77f5a82bb60f28c0f675796a795ba40058d620ed"
+            },
+            {
+              "code": "46830",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren 19 % USt",
+                "function": "AM",
+                "range_start": "46800",
+                "range_end": "46849",
+                "parent": null
+              },
+              "signature": "1028e6c282fb675e8189d19c77f5a82bb60f28c0f675796a795ba40058d620ed"
+            },
+            {
+              "code": "46840",
+              "semantic": {
+                "name": "Unentgeltliche Zuwendung von Waren 19 % USt",
+                "function": "AM",
+                "range_start": "46800",
+                "range_end": "46849",
+                "parent": null
+              },
+              "signature": "1028e6c282fb675e8189d19c77f5a82bb60f28c0f675796a795ba40058d620ed"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r22-004@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.materialServices.services.OtherDedInputTax",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.materialServices.services.OtherDedInputTax",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.materialServices.services.OtherNonDedInputTax",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.materialServices.services.UStG13bDedInputTax",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.materialServices.services.UStG13bNonDedInputTax",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.materialServices.services.unknownVAT"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "59700",
+              "semantic": {
+                "name": "Fremdleistungen (Miet- und Pachtzinsen bewegliche Wirtschaftsgüter)",
+                "function": "",
+                "range_start": "59700",
+                "range_end": "59700",
+                "parent": null
+              },
+              "signature": "0840b1c1b01dfd6cedc5bb0d616f8d8a90a4950d8f5509140f14dde67b9d286e"
+            },
+            {
+              "code": "59750",
+              "semantic": {
+                "name": "Fremdleistungen (Miet- und Pachtzinsen unbewegliche Wirtschaftsgüter)",
+                "function": "",
+                "range_start": "59750",
+                "range_end": "59750",
+                "parent": null
+              },
+              "signature": "948d04425add3a24670cb5f403906d40998175ba5d6bb21f7561ae3c437d5603"
+            },
+            {
+              "code": "59800",
+              "semantic": {
+                "name": "Fremdleistungen (Entgelte für Rechte und Lizenzen)",
+                "function": "",
+                "range_start": "59800",
+                "range_end": "59800",
+                "parent": null
+              },
+              "signature": "b02e2943e3abab8dd0896cd5c19b71333416d3ec45410bfb75909679032b38a3"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r22-005@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.staff.social.socExp.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.staff.social.socExp.other",
+            "is.netIncome.regular.operatingTC.staff.social.pensions.shareholderManager",
+            "is.netIncome.regular.operatingTC.staff.social.pensions.other",
+            "is.netIncome.regular.operatingTC.staff.social.pensions.misc",
+            "is.netIncome.regular.operatingTC.staff.social.welfare"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "61000",
+              "semantic": {
+                "name": "Soziale Abgaben und Aufwendungen für Altersversorgung und für Unterstützung",
+                "function": "",
+                "range_start": "61000",
+                "range_end": "61000",
+                "parent": null
+              },
+              "signature": "82d236e72e6eec1c5a4fcc8f9bfde4dd6b9b76eaaf6fd87fb145ce66b80d419f"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r22-006@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "63070",
+              "semantic": {
+                "name": "Fremdleistungen/Fremdarbeiten",
+                "function": "",
+                "range_start": "63070",
+                "range_end": "63070",
+                "parent": null
+              },
+              "signature": "c233d6bed0eaf31b66a27031b619ee683c1d2104ac0a4cefc7ba28f2d6b271b9"
+            },
+            {
+              "code": "75530",
+              "semantic": {
+                "name": "Aufwendungen für Restrukturierungs- und Sanierungsmaßnahmen",
+                "function": "",
+                "range_start": "75530",
+                "range_end": "75530",
+                "parent": null
+              },
+              "signature": "b5fcc4badc606b49734f123d6a53bf67e910b3228c9edb69493ebe262f6b8941"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r22-007@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.insurance",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.insurance"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "64100",
+              "semantic": {
+                "name": "Netto-Prämie für Rückdeckung künftiger Versorgungsleistungen",
+                "function": "",
+                "range_start": "64100",
+                "range_end": "64100",
+                "parent": null
+              },
+              "signature": "d5da5a83b3a51770c7dde5935b5aa8085ac8616516b3c34d4270e373c5cb1da8"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

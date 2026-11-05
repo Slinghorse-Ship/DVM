@@ -1,0 +1,1432 @@
+{
+  "schema": 1,
+  "revision": 49,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "income-use-r49-001@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.retainedEarningsPrevYear",
+          "choices": [
+            "incomeUse.gainLoss.retainedEarningsPrevYear",
+            "incomeUse.resultFoundations.prevYear"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77000",
+              "semantic": {
+                "name": "Gewinnvortrag / Ergebnisvortrag nach Verwendung",
+                "function": "",
+                "range_start": "77000",
+                "range_end": "77000",
+                "parent": null
+              },
+              "signature": "bda2ea4aec2261612d1053ca4d9ff83f5629bc12bb44830af045138b8bcb4e24"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-002@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.accumLossPrevYear",
+          "choices": [
+            "incomeUse.gainLoss.accumLossPrevYear",
+            "incomeUse.resultFoundations.prevYear"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77200",
+              "semantic": {
+                "name": "Verlustvortrag / Ergebnisvortrag nach Verwendung",
+                "function": "",
+                "range_start": "77200",
+                "range_end": "77200",
+                "parent": null
+              },
+              "signature": "c0c9d88f39d899219b2aae93cef27d395b47641a0a0e7f9f96dddfe46228aff9"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-003@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.releaseCapReserves",
+          "choices": [
+            "incomeUse.gainLoss.releaseCapReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77300",
+              "semantic": {
+                "name": "Entnahmen aus der Kapitalrücklage",
+                "function": "",
+                "range_start": "77300",
+                "range_end": "77300",
+                "parent": null
+              },
+              "signature": "a68694162525f7d7df895cac6680b2fdd6a7e6c9c36cf89a7f968f686ca898f2"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-004@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.releaseRevenReserves.legalRes",
+          "choices": [
+            "incomeUse.gainLoss.releaseRevenReserves.legalRes",
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77320",
+              "semantic": {
+                "name": "Entnahmen aus der gesetzlichen Rücklage",
+                "function": "",
+                "range_start": "77320",
+                "range_end": "77320",
+                "parent": null
+              },
+              "signature": "d2053702dfd390677512790b85afa3049e20919f0d7d1b20ddedd7ec1058a0b9"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-005@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.releaseRevenReserves.sharesParentCompRes",
+          "choices": [
+            "incomeUse.gainLoss.releaseRevenReserves.sharesParentCompRes",
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77340",
+              "semantic": {
+                "name": "Entnahmen aus der Rücklage für Anteile an einem herrschenden oder mehrheitlich beteiligten Unternehmen",
+                "function": "",
+                "range_start": "77340",
+                "range_end": "77340",
+                "parent": null
+              },
+              "signature": "8a394534471a3e86c5138014b931170ce6d3e22f82534e4d864b3f03e3a42ec3"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-006@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.releaseRevenReserves.statRes",
+          "choices": [
+            "incomeUse.gainLoss.releaseRevenReserves.statRes",
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77360",
+              "semantic": {
+                "name": "Entnahmen aus satzungsmäßigen Rücklagen",
+                "function": "",
+                "range_start": "77360",
+                "range_end": "77360",
+                "parent": null
+              },
+              "signature": "2ecbd629aeca639f20a18be9f16d6a9ebc1219c9493cd52af310402fc3765400"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-007@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.releaseOtherRes",
+          "choices": [
+            "incomeUse.gainLoss.releaseOtherRes",
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77380",
+              "semantic": {
+                "name": "Entnahmen aus anderen Gewinnrücklagen / aus sonstigen Ergebnisrücklagen",
+                "function": "",
+                "range_start": "77380",
+                "range_end": "77380",
+                "parent": null
+              },
+              "signature": "f7b727fd09cb9fc8f808864d46f9e1230cee576466e0c413028f24c5e6d7ddc7"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-008@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.releaseCapital",
+          "choices": [
+            "incomeUse.gainLoss.releaseCapital"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77400",
+              "semantic": {
+                "name": "Erträge aus Kapitalherabsetzung",
+                "function": "",
+                "range_start": "77400",
+                "range_end": "77400",
+                "parent": null
+              },
+              "signature": "fa80cb3145dd0f491cbe3bf56594e4f58e1205b743652c53f37d46defb8189b2"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-009@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.transferWithdrawalReallocation",
+          "choices": [
+            "incomeUse.resultFoundations.transferWithdrawalReallocation"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77450",
+              "semantic": {
+                "name": "Verminderung des Kapitals aus realisierten Vermögensumschichtungen",
+                "function": "",
+                "range_start": "77450",
+                "range_end": "77450",
+                "parent": null
+              },
+              "signature": "df17b0021e6be2c134705a43d04279424b0f410ad8517c35527b575358759379"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-010@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.capWithdrawals",
+          "choices": [
+            "incomeUse.resultFoundations.capWithdrawals"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77470",
+              "semantic": {
+                "name": "Entnahmen aus den sonstigen nicht zeitnah zu verwendenden Mitteln / dem Vereinskapital",
+                "function": "",
+                "range_start": "77470",
+                "range_end": "77470",
+                "parent": null
+              },
+              "signature": "6b1a75f465bea72aabe9045e0078e49d2967bfeb7ed2e2a569e6d596314837f8"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-011@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.transferWithdrawalRevenueReserves",
+          "choices": [
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77490",
+              "semantic": {
+                "name": "Entnahmen aus gebundenen Rücklagen nach § 62 Abs. 1 Nr. 1 u. 2 AO",
+                "function": "",
+                "range_start": "77490",
+                "range_end": "77490",
+                "parent": null
+              },
+              "signature": "86d43d972c163f21d393127faea1de3f6788221f2ce5571b778e85a26ca08b00"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-012@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.transferWithdrawalRevenueReserves",
+          "choices": [
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77510",
+              "semantic": {
+                "name": "Entnahmen aus freien Rücklagen nach § 62 Abs. 1 Nr. 3 AO",
+                "function": "",
+                "range_start": "77510",
+                "range_end": "77510",
+                "parent": null
+              },
+              "signature": "be58bbb594a296543660170ec97f2b5a0016c2feb67d74d6c5817a41d5bdc66b"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-013@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.transferWithdrawalRevenueReserves",
+          "choices": [
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77530",
+              "semantic": {
+                "name": "Entnahmen aus Rücklagen zum Erwerb von Gesellschaftsrechten nach § 62 Abs. 1 Nr. 4 AO",
+                "function": "",
+                "range_start": "77530",
+                "range_end": "77530",
+                "parent": null
+              },
+              "signature": "d7ae515e32a1719a7a50881190050de66184e8f87341719c5bd62b43479c35bd"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-014@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.increaseDecreaseStatutoryBoundCapital",
+          "choices": [
+            "incomeUse.resultFoundations.increaseDecreaseStatutoryBoundCapital"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77550",
+              "semantic": {
+                "name": "Verminderung des nutzungsgebundenen Kapitals",
+                "function": "",
+                "range_start": "77550",
+                "range_end": "77550",
+                "parent": null
+              },
+              "signature": "d05e128a854eedfd331d8f025f00045b4454fcc484e00d83514c2e60d5c49a0d"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-015@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.transferWithdrawalRevenueReserves",
+          "choices": [
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77570",
+              "semantic": {
+                "name": "Entnahmen aus der Kapitalerhaltungsrücklage",
+                "function": "",
+                "range_start": "77570",
+                "range_end": "77570",
+                "parent": null
+              },
+              "signature": "42af7450bf0f5cd532cf3ba8b62e88581a38743c5010a05e533af991ea405435"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-016@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.transferWithdrawalRevenueReserves",
+          "choices": [
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77590",
+              "semantic": {
+                "name": "Entnahmen aus der Ansparrücklage nach § 62 Abs. 4 AO",
+                "function": "",
+                "range_start": "77590",
+                "range_end": "77590",
+                "parent": null
+              },
+              "signature": "26828e5ca974b79771b427d4fe9a941287d6462aefb34522468e569c7c1a9d29"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-017@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.releaseCapitalReserve",
+          "choices": [
+            "incomeUse.gainLoss.releaseCapitalReserve"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77600",
+              "semantic": {
+                "name": "Einstellungen in die Kapitalrücklage nach den Vorschriften über die vereinfachte Kapitalherabsetzung",
+                "function": "",
+                "range_start": "77600",
+                "range_end": "77600",
+                "parent": null
+              },
+              "signature": "38589812960fdad0446641bf937eec777de8dcb848d5a37780835686313c07ee"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-018@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.additionRevenReserves.legalRes",
+          "choices": [
+            "incomeUse.gainLoss.additionRevenReserves.legalRes",
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77620",
+              "semantic": {
+                "name": "Einstellungen in die gesetzliche Rücklage",
+                "function": "",
+                "range_start": "77620",
+                "range_end": "77620",
+                "parent": null
+              },
+              "signature": "ff9606d307cbf9bd1c90bde2cc0b3d801cdb06dd8d9cca03aaa50ad0571a695d"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-019@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.additionRevenReserves.sharesParentCompRes",
+          "choices": [
+            "incomeUse.gainLoss.additionRevenReserves.sharesParentCompRes",
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77640",
+              "semantic": {
+                "name": "Einstellungen in die Rücklage für Anteile an einem herrschenden oder mehrheitlich beteiligten Unternehmen",
+                "function": "",
+                "range_start": "77640",
+                "range_end": "77640",
+                "parent": null
+              },
+              "signature": "8e831ebe9e514fb93c2b648d3994039630b0b2f3f170f3d0fe470bc228de8d9f"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-020@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.additionRevenReserves.statRes",
+          "choices": [
+            "incomeUse.gainLoss.additionRevenReserves.statRes",
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77660",
+              "semantic": {
+                "name": "Einstellungen in satzungsmäßige Rücklagen",
+                "function": "",
+                "range_start": "77660",
+                "range_end": "77660",
+                "parent": null
+              },
+              "signature": "6999864ae69cf2d101bf65e1a0f147f4cc0bb2a51a6a3338af54489c54ec31d7"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-021@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.additionOtherRes",
+          "choices": [
+            "incomeUse.gainLoss.additionOtherRes",
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77680",
+              "semantic": {
+                "name": "Einstellungen in andere Gewinnrücklagen / sonstige Ergebnisrücklagen",
+                "function": "",
+                "range_start": "77680",
+                "range_end": "77680",
+                "parent": null
+              },
+              "signature": "0760760aefbed8408153a09e585c27aa2966f0a5341381091a0f7b1eeb568d36"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-022@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.transferWithdrawalReallocation",
+          "choices": [
+            "incomeUse.resultFoundations.transferWithdrawalReallocation"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77750",
+              "semantic": {
+                "name": "Erhöhung des Kapitals aus Vermögensumschichtungen",
+                "function": "",
+                "range_start": "77750",
+                "range_end": "77750",
+                "parent": null
+              },
+              "signature": "2cea48c3680b1743a5e81e92c2b5a3a2e13888177e0e2eea060b86eb29ded631"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-023@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.capTransfers",
+          "choices": [
+            "incomeUse.resultFoundations.capTransfers"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77770",
+              "semantic": {
+                "name": "Einstellungen in die sonstigen nicht zeitnah zu verwendenden Mittel / das Vereinskapital",
+                "function": "",
+                "range_start": "77770",
+                "range_end": "77770",
+                "parent": null
+              },
+              "signature": "7821a90b85c259fd07a720a935924a139cfb50db09ed299c75923cbfaba104df"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-024@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.transferWithdrawalRevenueReserves",
+          "choices": [
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77790",
+              "semantic": {
+                "name": "Einstellungen in gebundene Rücklagen nach § 62 Abs. 1 Nr. 1 u. 2 AO",
+                "function": "",
+                "range_start": "77790",
+                "range_end": "77790",
+                "parent": null
+              },
+              "signature": "edf9df77cbd0518f6b0a5e58886b156b8da256d1a016326b2b2af8b4fe56f315"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-025@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.transferWithdrawalRevenueReserves",
+          "choices": [
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77810",
+              "semantic": {
+                "name": "Einstellungen in freie Rücklagen nach § 62 Abs. 1 Nr. 3 AO",
+                "function": "",
+                "range_start": "77810",
+                "range_end": "77810",
+                "parent": null
+              },
+              "signature": "1d0983afa843fa7f6dc43b4dfcf4ccf41b33dd13ed167461435599b5c1c45f7f"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-026@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.transferWithdrawalRevenueReserves",
+          "choices": [
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77830",
+              "semantic": {
+                "name": "Einstellungen in Rücklagen zum Erwerb von Gesellschaftsrechten nach § 62 Abs. 1 Nr. 4 AO",
+                "function": "",
+                "range_start": "77830",
+                "range_end": "77830",
+                "parent": null
+              },
+              "signature": "37001b7d1b7e55107a41ccfebef290c1bb4d0e5287f99e49b52cdecf5ac9d545"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-027@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.increaseDecreaseStatutoryBoundCapital",
+          "choices": [
+            "incomeUse.resultFoundations.increaseDecreaseStatutoryBoundCapital"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77850",
+              "semantic": {
+                "name": "Erhöhung des nutzungsgebundenen Kapitals",
+                "function": "",
+                "range_start": "77850",
+                "range_end": "77850",
+                "parent": null
+              },
+              "signature": "634e3edbad0a865bf84d604eace83f6782dda59270d98d84bbfa78e671623ba7"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-028@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.transferWithdrawalRevenueReserves",
+          "choices": [
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77870",
+              "semantic": {
+                "name": "Einstellungen in die Kapitalerhaltungsrücklage",
+                "function": "",
+                "range_start": "77870",
+                "range_end": "77870",
+                "parent": null
+              },
+              "signature": "b350f660a3059bf6d584182a4ac9f79d3d7a3685c69c3f3a86a2760b8f96fe3d"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-029@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.transferWithdrawalRevenueReserves",
+          "choices": [
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77890",
+              "semantic": {
+                "name": "Einstellungen in die Ansparrücklage nach § 62 Abs. 4 AO",
+                "function": "",
+                "range_start": "77890",
+                "range_end": "77890",
+                "parent": null
+              },
+              "signature": "fb1f56fb3d6c3a610935f015e39cccf2950e2a398ae8031d472aa1fe09d3f518"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-030@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.dividensPlanned",
+          "choices": [
+            "incomeUse.gainLoss.dividensPlanned"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77900",
+              "semantic": {
+                "name": "Vorabausschüttung 8",
+                "function": "",
+                "range_start": "77900",
+                "range_end": "77900",
+                "parent": null
+              },
+              "signature": "64c190248c0dadee2185e63df08f7a1dd1c64436c4a851e06352d59141281ef7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "income-use-r49-001@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.retainedEarningsPrevYear",
+          "choices": [
+            "incomeUse.gainLoss.retainedEarningsPrevYear",
+            "incomeUse.resultFoundations.prevYear"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77000",
+              "semantic": {
+                "name": "Gewinnvortrag / Ergebnisvortrag nach Verwendung",
+                "function": "",
+                "range_start": "77000",
+                "range_end": "77000",
+                "parent": null
+              },
+              "signature": "bda2ea4aec2261612d1053ca4d9ff83f5629bc12bb44830af045138b8bcb4e24"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-002@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.accumLossPrevYear",
+          "choices": [
+            "incomeUse.gainLoss.accumLossPrevYear",
+            "incomeUse.resultFoundations.prevYear"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77200",
+              "semantic": {
+                "name": "Verlustvortrag / Ergebnisvortrag nach Verwendung",
+                "function": "",
+                "range_start": "77200",
+                "range_end": "77200",
+                "parent": null
+              },
+              "signature": "c0c9d88f39d899219b2aae93cef27d395b47641a0a0e7f9f96dddfe46228aff9"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-003@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.releaseCapReserves",
+          "choices": [
+            "incomeUse.gainLoss.releaseCapReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77300",
+              "semantic": {
+                "name": "Entnahmen aus der Kapitalrücklage",
+                "function": "",
+                "range_start": "77300",
+                "range_end": "77300",
+                "parent": null
+              },
+              "signature": "a68694162525f7d7df895cac6680b2fdd6a7e6c9c36cf89a7f968f686ca898f2"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-004@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.releaseRevenReserves.legalRes",
+          "choices": [
+            "incomeUse.gainLoss.releaseRevenReserves.legalRes",
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77320",
+              "semantic": {
+                "name": "Entnahmen aus der gesetzlichen Rücklage",
+                "function": "",
+                "range_start": "77320",
+                "range_end": "77320",
+                "parent": null
+              },
+              "signature": "d2053702dfd390677512790b85afa3049e20919f0d7d1b20ddedd7ec1058a0b9"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-005@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.releaseRevenReserves.sharesParentCompRes",
+          "choices": [
+            "incomeUse.gainLoss.releaseRevenReserves.sharesParentCompRes",
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77340",
+              "semantic": {
+                "name": "Entnahmen aus der Rücklage für Anteile an einem herrschenden oder mehrheitlich beteiligten Unternehmen",
+                "function": "",
+                "range_start": "77340",
+                "range_end": "77340",
+                "parent": null
+              },
+              "signature": "8a394534471a3e86c5138014b931170ce6d3e22f82534e4d864b3f03e3a42ec3"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-006@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.releaseRevenReserves.statRes",
+          "choices": [
+            "incomeUse.gainLoss.releaseRevenReserves.statRes",
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77360",
+              "semantic": {
+                "name": "Entnahmen aus satzungsmäßigen Rücklagen",
+                "function": "",
+                "range_start": "77360",
+                "range_end": "77360",
+                "parent": null
+              },
+              "signature": "2ecbd629aeca639f20a18be9f16d6a9ebc1219c9493cd52af310402fc3765400"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-007@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.releaseOtherRes",
+          "choices": [
+            "incomeUse.gainLoss.releaseOtherRes",
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77380",
+              "semantic": {
+                "name": "Entnahmen aus anderen Gewinnrücklagen / aus sonstigen Ergebnisrücklagen",
+                "function": "",
+                "range_start": "77380",
+                "range_end": "77380",
+                "parent": null
+              },
+              "signature": "f7b727fd09cb9fc8f808864d46f9e1230cee576466e0c413028f24c5e6d7ddc7"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-008@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.releaseCapital",
+          "choices": [
+            "incomeUse.gainLoss.releaseCapital"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77400",
+              "semantic": {
+                "name": "Ertrag aus der Kapitalherabsetzung8)",
+                "function": "",
+                "range_start": "77400",
+                "range_end": "77400",
+                "parent": null
+              },
+              "signature": "a113ce234471ecb4654afe8913e1f05d1d16d31acfa700176c0c27f69dd1e041"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-009@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.transferWithdrawalReallocation",
+          "choices": [
+            "incomeUse.resultFoundations.transferWithdrawalReallocation"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77450",
+              "semantic": {
+                "name": "Verminderung des Kapitals aus realisierten Vermögensumschichtungen",
+                "function": "",
+                "range_start": "77450",
+                "range_end": "77450",
+                "parent": null
+              },
+              "signature": "df17b0021e6be2c134705a43d04279424b0f410ad8517c35527b575358759379"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-010@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.capWithdrawals",
+          "choices": [
+            "incomeUse.resultFoundations.capWithdrawals"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77470",
+              "semantic": {
+                "name": "Entnahmen aus den sonstigen nicht zeitnah zu verwendenden Mitteln / dem Vereinskapital",
+                "function": "",
+                "range_start": "77470",
+                "range_end": "77470",
+                "parent": null
+              },
+              "signature": "6b1a75f465bea72aabe9045e0078e49d2967bfeb7ed2e2a569e6d596314837f8"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-011@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.transferWithdrawalRevenueReserves",
+          "choices": [
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77490",
+              "semantic": {
+                "name": "Entnahmen aus gebundenen Rücklagen nach § 62 Abs. 1 Nr. 1 u. 2 AO",
+                "function": "",
+                "range_start": "77490",
+                "range_end": "77490",
+                "parent": null
+              },
+              "signature": "86d43d972c163f21d393127faea1de3f6788221f2ce5571b778e85a26ca08b00"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-012@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.transferWithdrawalRevenueReserves",
+          "choices": [
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77510",
+              "semantic": {
+                "name": "Entnahmen aus freien Rücklagen nach § 62 Abs. 1 Nr. 3 AO",
+                "function": "",
+                "range_start": "77510",
+                "range_end": "77510",
+                "parent": null
+              },
+              "signature": "be58bbb594a296543660170ec97f2b5a0016c2feb67d74d6c5817a41d5bdc66b"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-013@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.transferWithdrawalRevenueReserves",
+          "choices": [
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77530",
+              "semantic": {
+                "name": "Entnahmen aus Rücklagen zum Erwerb von Gesellschaftsrechten nach § 62 Abs. 1 Nr. 4 AO",
+                "function": "",
+                "range_start": "77530",
+                "range_end": "77530",
+                "parent": null
+              },
+              "signature": "d7ae515e32a1719a7a50881190050de66184e8f87341719c5bd62b43479c35bd"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-014@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.increaseDecreaseStatutoryBoundCapital",
+          "choices": [
+            "incomeUse.resultFoundations.increaseDecreaseStatutoryBoundCapital"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77550",
+              "semantic": {
+                "name": "Verminderung des nutzungsgebundenen Kapitals",
+                "function": "",
+                "range_start": "77550",
+                "range_end": "77550",
+                "parent": null
+              },
+              "signature": "d05e128a854eedfd331d8f025f00045b4454fcc484e00d83514c2e60d5c49a0d"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-015@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.transferWithdrawalRevenueReserves",
+          "choices": [
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77570",
+              "semantic": {
+                "name": "Entnahmen aus der Kapitalerhaltungsrücklage",
+                "function": "",
+                "range_start": "77570",
+                "range_end": "77570",
+                "parent": null
+              },
+              "signature": "42af7450bf0f5cd532cf3ba8b62e88581a38743c5010a05e533af991ea405435"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-016@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.transferWithdrawalRevenueReserves",
+          "choices": [
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77590",
+              "semantic": {
+                "name": "Entnahmen aus der Ansparrücklage nach § 62 Abs. 4 AO",
+                "function": "",
+                "range_start": "77590",
+                "range_end": "77590",
+                "parent": null
+              },
+              "signature": "26828e5ca974b79771b427d4fe9a941287d6462aefb34522468e569c7c1a9d29"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-017@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.releaseCapitalReserve",
+          "choices": [
+            "incomeUse.gainLoss.releaseCapitalReserve"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77600",
+              "semantic": {
+                "name": "Einstellungen in die Kapitalrücklage nach den Vorschriften über die vereinfachte Kapitalherabsetzung",
+                "function": "",
+                "range_start": "77600",
+                "range_end": "77600",
+                "parent": null
+              },
+              "signature": "38589812960fdad0446641bf937eec777de8dcb848d5a37780835686313c07ee"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-018@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.additionRevenReserves.legalRes",
+          "choices": [
+            "incomeUse.gainLoss.additionRevenReserves.legalRes",
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77620",
+              "semantic": {
+                "name": "Einstellungen in die gesetzliche Rücklage",
+                "function": "",
+                "range_start": "77620",
+                "range_end": "77620",
+                "parent": null
+              },
+              "signature": "ff9606d307cbf9bd1c90bde2cc0b3d801cdb06dd8d9cca03aaa50ad0571a695d"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-019@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.additionRevenReserves.sharesParentCompRes",
+          "choices": [
+            "incomeUse.gainLoss.additionRevenReserves.sharesParentCompRes",
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77640",
+              "semantic": {
+                "name": "Einstellungen in die Rücklage für Anteile an einem herrschenden oder mehrheitlich beteiligten Unternehmen",
+                "function": "",
+                "range_start": "77640",
+                "range_end": "77640",
+                "parent": null
+              },
+              "signature": "8e831ebe9e514fb93c2b648d3994039630b0b2f3f170f3d0fe470bc228de8d9f"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-020@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.additionRevenReserves.statRes",
+          "choices": [
+            "incomeUse.gainLoss.additionRevenReserves.statRes",
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77660",
+              "semantic": {
+                "name": "Einstellungen in satzungsmäßige Rücklagen",
+                "function": "",
+                "range_start": "77660",
+                "range_end": "77660",
+                "parent": null
+              },
+              "signature": "6999864ae69cf2d101bf65e1a0f147f4cc0bb2a51a6a3338af54489c54ec31d7"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-021@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.additionOtherRes",
+          "choices": [
+            "incomeUse.gainLoss.additionOtherRes",
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77680",
+              "semantic": {
+                "name": "Einstellungen in andere Gewinnrücklagen / Sonstige Ergebnisrücklagen",
+                "function": "",
+                "range_start": "77680",
+                "range_end": "77680",
+                "parent": null
+              },
+              "signature": "0760760aefbed8408153a09e585c27aa2966f0a5341381091a0f7b1eeb568d36"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-022@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.transferWithdrawalReallocation",
+          "choices": [
+            "incomeUse.resultFoundations.transferWithdrawalReallocation"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77750",
+              "semantic": {
+                "name": "Erhöhung des Kapitals aus Vermögensumschichtungen",
+                "function": "",
+                "range_start": "77750",
+                "range_end": "77750",
+                "parent": null
+              },
+              "signature": "2cea48c3680b1743a5e81e92c2b5a3a2e13888177e0e2eea060b86eb29ded631"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-023@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.capTransfers",
+          "choices": [
+            "incomeUse.resultFoundations.capTransfers"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77770",
+              "semantic": {
+                "name": "Einstellungen in die sonstigen nicht zeitnah zu verwendenden Mittel / das Vereinskapital",
+                "function": "",
+                "range_start": "77770",
+                "range_end": "77770",
+                "parent": null
+              },
+              "signature": "7821a90b85c259fd07a720a935924a139cfb50db09ed299c75923cbfaba104df"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-024@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.transferWithdrawalRevenueReserves",
+          "choices": [
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77790",
+              "semantic": {
+                "name": "Einstellungen in gebundene Rücklagen nach § 62 Abs. 1 Nr. 1 u. 2 AO",
+                "function": "",
+                "range_start": "77790",
+                "range_end": "77790",
+                "parent": null
+              },
+              "signature": "edf9df77cbd0518f6b0a5e58886b156b8da256d1a016326b2b2af8b4fe56f315"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-025@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.transferWithdrawalRevenueReserves",
+          "choices": [
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77810",
+              "semantic": {
+                "name": "Einstellungen in freie Rücklagen nach § 62 Abs. 1 Nr. 3 AO",
+                "function": "",
+                "range_start": "77810",
+                "range_end": "77810",
+                "parent": null
+              },
+              "signature": "1d0983afa843fa7f6dc43b4dfcf4ccf41b33dd13ed167461435599b5c1c45f7f"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-026@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.transferWithdrawalRevenueReserves",
+          "choices": [
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77830",
+              "semantic": {
+                "name": "Einstellungen in Rücklagen zum Erwerb von Gesellschaftsrechten nach § 62 Abs. 1 Nr. 4 AO",
+                "function": "",
+                "range_start": "77830",
+                "range_end": "77830",
+                "parent": null
+              },
+              "signature": "37001b7d1b7e55107a41ccfebef290c1bb4d0e5287f99e49b52cdecf5ac9d545"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-027@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.increaseDecreaseStatutoryBoundCapital",
+          "choices": [
+            "incomeUse.resultFoundations.increaseDecreaseStatutoryBoundCapital"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77850",
+              "semantic": {
+                "name": "Erhöhung des nutzungsgebundenen Kapitals",
+                "function": "",
+                "range_start": "77850",
+                "range_end": "77850",
+                "parent": null
+              },
+              "signature": "634e3edbad0a865bf84d604eace83f6782dda59270d98d84bbfa78e671623ba7"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-028@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.transferWithdrawalRevenueReserves",
+          "choices": [
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77870",
+              "semantic": {
+                "name": "Einstellungen in die Kapitalerhaltungsrücklage",
+                "function": "",
+                "range_start": "77870",
+                "range_end": "77870",
+                "parent": null
+              },
+              "signature": "b350f660a3059bf6d584182a4ac9f79d3d7a3685c69c3f3a86a2760b8f96fe3d"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-029@1",
+          "group": "result_use",
+          "target": "incomeUse.resultFoundations.transferWithdrawalRevenueReserves",
+          "choices": [
+            "incomeUse.resultFoundations.transferWithdrawalRevenueReserves"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77890",
+              "semantic": {
+                "name": "Einstellungen in die Ansparrücklage nach § 62 Abs. 4 AO",
+                "function": "",
+                "range_start": "77890",
+                "range_end": "77890",
+                "parent": null
+              },
+              "signature": "fb1f56fb3d6c3a610935f015e39cccf2950e2a398ae8031d472aa1fe09d3f518"
+            }
+          ]
+        },
+        {
+          "purpose": "income-use-r49-030@1",
+          "group": "result_use",
+          "target": "incomeUse.gainLoss.dividensPlanned",
+          "choices": [
+            "incomeUse.gainLoss.dividensPlanned"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "77900",
+              "semantic": {
+                "name": "Vorabausschüttung",
+                "function": "",
+                "range_start": "77900",
+                "range_end": "77900",
+                "parent": null
+              },
+              "signature": "a71162e029b21e00b86ed8fd69a632a372538a8f00bdeffb33f8c43cffcc6e88"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

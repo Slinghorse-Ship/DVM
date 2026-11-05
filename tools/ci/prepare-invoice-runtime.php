@@ -1,0 +1,12 @@
+<?php declare(strict_types=1);
+// GitHub-only test tools. No installation target, database, credentials or provider jobs.
+ini_set('zend.exception_ignore_args','1');
+if(PHP_SAPI!=='cli'||getenv('GITHUB_ACTIONS')!=='true')throw new RuntimeException('Owned GitHub runner context required.');
+$repository=realpath(__DIR__.'/../..');$temporary=realpath((string)getenv('RUNNER_TEMP'));$environmentFile=getenv('GITHUB_ENV');
+if(!$repository||!$temporary||$temporary==='/'||is_link((string)getenv('RUNNER_TEMP'))||str_starts_with($temporary,$repository.'/')||!is_string($environmentFile)||$environmentFile==='')throw new RuntimeException('Owned runner paths required.');
+require $repository.'/distribution/src/PackageStore.php';require $repository.'/distribution/src/RuntimeInstaller.php';
+$store=new PackageStore($repository.'/distribution');$verified=$store->verify();$target=$temporary.'/dvm-ci-invoice-runtime';
+if(file_exists($target)||is_link($target))throw new RuntimeException('Fresh isolated invoice runtime target required.');PackageStore::directory($target);$runtime=$target.'/runtime';$private=$target.'/private';$archives=$target.'/archives';PackageStore::directory($runtime);PackageStore::directory($private);PackageStore::directory($archives);
+foreach($verified['linux']['components']as$component){$archive=$store->materialize($component,$archives);$install=$component['install'];PackageStore::extract($archive,$runtime.'/'.PackageStore::relative($install['target']),$install['type'],(int)($install['strip_components']??0));unlink($archive);}rmdir($archives);
+$exports=RuntimeInstaller::configure($runtime,$repository,$private,'docker','debian@sha256:7c7b2c966bc9ee8cedfeef67e0e279108992c77681fa595db4a9d65c06ccc587','/usr/bin/python3');
+$required=['VEREIN_PYTHON','VEREIN_OCR_RUNTIME','VEREIN_KOSIT_RUNTIME','VEREIN_HYBRID_RUNTIME'];if(array_diff($required,array_keys($exports)))throw new RuntimeException('Complete genuine invoice test tools required.');$lines='';foreach($exports as$name=>$value){if(!preg_match('/\AVEREIN_[A-Z0-9_]+\z/D',$name)||!is_string($value)||preg_match('/[\r\n\0]/',$value))throw new RuntimeException('Exact safe runtime export required.');$lines.=$name.'='.$value.PHP_EOL;}if(file_put_contents($environmentFile,$lines,FILE_APPEND|LOCK_EX)!==strlen($lines))throw new RuntimeException('Runner runtime exports unavailable.');echo json_encode(['genuine_runtime'=>'ready','verified_components'=>count($verified['linux']['components']),'validators'=>['kosit','mustang','veraPDF'],'provider_transport'=>false],JSON_THROW_ON_ERROR).PHP_EOL;

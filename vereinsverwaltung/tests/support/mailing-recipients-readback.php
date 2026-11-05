@@ -1,0 +1,11 @@
+<?php declare(strict_types=1);
+require __DIR__.'/member-profile-environment.php';
+use Kulturhus\Verein\{Database,DocumentCatalog};
+$file=realpath($argv[1]??'');$prefix=realpath($memberTestOutput);
+if(!$file||!$prefix||!str_starts_with(str_replace('\\','/',$file),rtrim(str_replace('\\','/',$prefix),'/').'/'))throw new RuntimeException('Generated local fixture required.');
+$fixture=json_decode(file_get_contents($file),true,16,JSON_THROW_ON_ERROR);if(!str_starts_with($fixture['club'],'member-profile-'))throw new RuntimeException('Synthetic tenant required.');
+$db=\Kulturhus\Verein\Tests\MySqlFixture::existing($memberTestDatabase);$db->exec('START TRANSACTION READ ONLY');
+$rows=DocumentCatalog::query($db,'SELECT id,state,subject,body,recipients FROM club_mailings WHERE club_id=?',[$fixture['club']])->fetchAll();
+foreach($rows as &$row){$row['people']=json_decode($row['recipients'],true,16,JSON_THROW_ON_ERROR);unset($row['recipients']);}unset($row);
+$queued=(int)DocumentCatalog::query($db,'SELECT COUNT(*) FROM club_outbox o JOIN club_mailings m ON m.id=o.mailing_id WHERE m.club_id=?',[$fixture['club']])->fetchColumn();
+echo json_encode(['mailings'=>$rows,'outbox'=>$queued],JSON_THROW_ON_ERROR);

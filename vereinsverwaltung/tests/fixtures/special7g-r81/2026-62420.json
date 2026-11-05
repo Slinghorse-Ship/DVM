@@ -1,0 +1,811 @@
+{
+  "values": {
+    "year": 2026,
+    "journal_sha256": "34f88d22b06768be8e516d267615ffb855bce8d598e189c16065a1607b9e2bf9",
+    "accounts": {
+      "equity": {
+        "name": "Original capital",
+        "group": "equity",
+        "skr_code": "29700",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 0,
+        "tax_cents": 0,
+        "difference_cents": 0
+      },
+      "special": {
+        "name": "Original unused fiscal election account",
+        "group": "expense",
+        "skr_code": "62420",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 0,
+        "tax_cents": 4000,
+        "difference_cents": 4000
+      },
+      "src_code_05200": {
+        "name": "SKR42 05200 · Pkw",
+        "group": "fixed_assets",
+        "skr_code": "05200",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 9800,
+        "tax_cents": 5800,
+        "difference_cents": -4000
+      },
+      "src_depreciation_62200": {
+        "name": "Abschreibung Ausstattung",
+        "group": "expense",
+        "skr_code": "62200",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 2200,
+        "tax_cents": 2200,
+        "difference_cents": 0
+      },
+      "src_pay_56c2a813e52955d01b96": {
+        "name": "Verbindlichkeit ORIGINAL7G",
+        "group": "liabilities",
+        "skr_code": "",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 12000,
+        "tax_cents": 12000,
+        "difference_cents": 0
+      }
+    },
+    "book": {
+      "year": 2026,
+      "accounts": {
+        "equity": {
+          "name": "Original capital",
+          "group": "equity",
+          "skr_code": "29700",
+          "id": "equity",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "special": {
+          "name": "Original unused fiscal election account",
+          "group": "expense",
+          "skr_code": "62420",
+          "id": "special",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "src_code_05200": {
+          "name": "SKR42 05200 · Pkw",
+          "group": "fixed_assets",
+          "skr_code": "05200",
+          "id": "src_code_05200",
+          "opening_cents": 0,
+          "debit_cents": 12000,
+          "credit_cents": 2200,
+          "closing_cents": 9800,
+          "amount_cents": 9800
+        },
+        "src_depreciation_62200": {
+          "name": "Abschreibung Ausstattung",
+          "group": "expense",
+          "skr_code": "62200",
+          "id": "src_depreciation_62200",
+          "opening_cents": 0,
+          "debit_cents": 2200,
+          "credit_cents": 0,
+          "closing_cents": 2200,
+          "amount_cents": 2200
+        },
+        "src_pay_56c2a813e52955d01b96": {
+          "name": "Verbindlichkeit ORIGINAL7G",
+          "group": "liabilities",
+          "skr_code": "",
+          "id": "src_pay_56c2a813e52955d01b96",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 12000,
+          "closing_cents": -12000,
+          "amount_cents": 12000
+        }
+      },
+      "assets": [
+        {
+          "name": "SKR42 05200 · Pkw",
+          "group": "fixed_assets",
+          "skr_code": "05200",
+          "id": "src_code_05200",
+          "opening_cents": 0,
+          "debit_cents": 12000,
+          "credit_cents": 2200,
+          "closing_cents": 9800,
+          "amount_cents": 9800
+        }
+      ],
+      "capital": [
+        {
+          "name": "Original capital",
+          "group": "equity",
+          "skr_code": "29700",
+          "id": "equity",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        }
+      ],
+      "liabilities": [
+        {
+          "name": "Verbindlichkeit ORIGINAL7G",
+          "group": "liabilities",
+          "skr_code": "",
+          "id": "src_pay_56c2a813e52955d01b96",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 12000,
+          "closing_cents": -12000,
+          "amount_cents": 12000
+        }
+      ],
+      "profit_and_loss": [
+        {
+          "name": "Original unused fiscal election account",
+          "group": "expense",
+          "skr_code": "62420",
+          "id": "special",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        {
+          "name": "Abschreibung Ausstattung",
+          "group": "expense",
+          "skr_code": "62200",
+          "id": "src_depreciation_62200",
+          "opening_cents": 0,
+          "debit_cents": 2200,
+          "credit_cents": 0,
+          "closing_cents": 2200,
+          "amount_cents": 2200
+        }
+      ],
+      "spheres": {
+        "1": {
+          "income_cents": 0,
+          "expense_cents": 0,
+          "result_cents": 0
+        },
+        "2": {
+          "income_cents": 0,
+          "expense_cents": 0,
+          "result_cents": 0
+        },
+        "3": {
+          "income_cents": 0,
+          "expense_cents": 0,
+          "result_cents": 0
+        },
+        "4": {
+          "income_cents": 0,
+          "expense_cents": 2200,
+          "result_cents": -2200
+        }
+      },
+      "asset_total_cents": 9800,
+      "capital_total_cents": 0,
+      "liability_total_cents": 12000,
+      "income_cents": 0,
+      "expense_cents": 2200,
+      "annual_result_cents": -2200,
+      "passive_total_cents": 9800,
+      "debit_cents": 14200,
+      "credit_cents": 14200,
+      "difference_cents": 0,
+      "issues": [],
+      "entry_count": 2
+    },
+    "tax": {
+      "year": 2026,
+      "accounts": {
+        "equity": {
+          "name": "Original capital",
+          "group": "equity",
+          "skr_code": "29700",
+          "id": "equity",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "special": {
+          "name": "Original unused fiscal election account",
+          "group": "expense",
+          "skr_code": "62420",
+          "id": "special",
+          "opening_cents": 0,
+          "debit_cents": 4000,
+          "credit_cents": 0,
+          "closing_cents": 4000,
+          "amount_cents": 4000
+        },
+        "src_code_05200": {
+          "name": "SKR42 05200 · Pkw",
+          "group": "fixed_assets",
+          "skr_code": "05200",
+          "id": "src_code_05200",
+          "opening_cents": 0,
+          "debit_cents": 12000,
+          "credit_cents": 6200,
+          "closing_cents": 5800,
+          "amount_cents": 5800
+        },
+        "src_depreciation_62200": {
+          "name": "Abschreibung Ausstattung",
+          "group": "expense",
+          "skr_code": "62200",
+          "id": "src_depreciation_62200",
+          "opening_cents": 0,
+          "debit_cents": 2200,
+          "credit_cents": 0,
+          "closing_cents": 2200,
+          "amount_cents": 2200
+        },
+        "src_pay_56c2a813e52955d01b96": {
+          "name": "Verbindlichkeit ORIGINAL7G",
+          "group": "liabilities",
+          "skr_code": "",
+          "id": "src_pay_56c2a813e52955d01b96",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 12000,
+          "closing_cents": -12000,
+          "amount_cents": 12000
+        }
+      },
+      "assets": [
+        {
+          "name": "SKR42 05200 · Pkw",
+          "group": "fixed_assets",
+          "skr_code": "05200",
+          "id": "src_code_05200",
+          "opening_cents": 0,
+          "debit_cents": 12000,
+          "credit_cents": 6200,
+          "closing_cents": 5800,
+          "amount_cents": 5800
+        }
+      ],
+      "capital": [
+        {
+          "name": "Original capital",
+          "group": "equity",
+          "skr_code": "29700",
+          "id": "equity",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        }
+      ],
+      "liabilities": [
+        {
+          "name": "Verbindlichkeit ORIGINAL7G",
+          "group": "liabilities",
+          "skr_code": "",
+          "id": "src_pay_56c2a813e52955d01b96",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 12000,
+          "closing_cents": -12000,
+          "amount_cents": 12000
+        }
+      ],
+      "profit_and_loss": [
+        {
+          "name": "Original unused fiscal election account",
+          "group": "expense",
+          "skr_code": "62420",
+          "id": "special",
+          "opening_cents": 0,
+          "debit_cents": 4000,
+          "credit_cents": 0,
+          "closing_cents": 4000,
+          "amount_cents": 4000
+        },
+        {
+          "name": "Abschreibung Ausstattung",
+          "group": "expense",
+          "skr_code": "62200",
+          "id": "src_depreciation_62200",
+          "opening_cents": 0,
+          "debit_cents": 2200,
+          "credit_cents": 0,
+          "closing_cents": 2200,
+          "amount_cents": 2200
+        }
+      ],
+      "spheres": {
+        "1": {
+          "income_cents": 0,
+          "expense_cents": 0,
+          "result_cents": 0
+        },
+        "2": {
+          "income_cents": 0,
+          "expense_cents": 0,
+          "result_cents": 0
+        },
+        "3": {
+          "income_cents": 0,
+          "expense_cents": 0,
+          "result_cents": 0
+        },
+        "4": {
+          "income_cents": 0,
+          "expense_cents": 6200,
+          "result_cents": -6200
+        }
+      },
+      "asset_total_cents": 5800,
+      "capital_total_cents": 0,
+      "liability_total_cents": 12000,
+      "income_cents": 0,
+      "expense_cents": 6200,
+      "annual_result_cents": -6200,
+      "passive_total_cents": 5800,
+      "debit_cents": 18200,
+      "credit_cents": 18200,
+      "difference_cents": 0,
+      "issues": [],
+      "entry_count": 3
+    },
+    "opening_adjustments": [],
+    "current_adjustments": [
+      {
+        "id": "original-7g-tax",
+        "reason": "Original separately confirmed eligible section7g(5) tax election; original book plan unchanged.",
+        "lines": [
+          {
+            "account": "src_code_05200",
+            "debit_cents": 0,
+            "credit_cents": 4000,
+            "sphere": ""
+          },
+          {
+            "account": "special",
+            "debit_cents": 4000,
+            "credit_cents": 0,
+            "sphere": "4"
+          }
+        ]
+      }
+    ],
+    "result_difference_cents": -4000,
+    "source_spheres": [
+      "4"
+    ],
+    "asset_schedule": {
+      "year": 2026,
+      "items": {
+        "b593c7266126066960c8b4a8295f0cc3": {
+          "item_id": "b593c7266126066960c8b4a8295f0cc3",
+          "invoice_id": "17eda1a0a6ae538eaec768d8acbb4c5e",
+          "receipt_number": "ORIGINAL7G",
+          "account": "src_code_05200",
+          "skr_code": "05200",
+          "sphere": "4",
+          "acquired_on": "2026-02-15",
+          "months": 60,
+          "residual_cents": 0,
+          "cost_opening_cents": 0,
+          "additions_cents": 12000,
+          "cost_closing_cents": 12000,
+          "accumulated_opening_cents": 0,
+          "depreciation_cents": 2200,
+          "accumulated_closing_cents": 2200,
+          "book_opening_cents": 0,
+          "book_closing_cents": 9800,
+          "expected_depreciation_cents": 2200,
+          "acquisition_hash": "baa447f89883a45d1a2f9eea3408c0eefb1bc9306343ada84847053de668d2a0",
+          "depreciation_hash": "0d955fe9051febbf61b0a223b2b22314759efde15a51ebd36f9849babd6d9360",
+          "name": "ORIGINAL7G · Original individually documented movable asset"
+        }
+      },
+      "totals": {
+        "cost_opening_cents": 0,
+        "additions_cents": 12000,
+        "cost_closing_cents": 12000,
+        "accumulated_opening_cents": 0,
+        "depreciation_cents": 2200,
+        "accumulated_closing_cents": 2200,
+        "book_opening_cents": 0,
+        "book_closing_cents": 9800
+      },
+      "issues": [],
+      "ready_for_xbrl": false
+    },
+    "whole_club_scope": {
+      "schema": 1,
+      "kind": "whole_taxable_club",
+      "source": {
+        "year": 2026,
+        "state": "closed",
+        "closed_sha256": "34f88d22b06768be8e516d267615ffb855bce8d598e189c16065a1607b9e2bf9",
+        "previous_sha256": null,
+        "result_account": "equity",
+        "issues": [],
+        "accounts": {
+          "equity": {
+            "name": "Original capital",
+            "group": "equity",
+            "skr_code": "29700"
+          },
+          "special": {
+            "name": "Original unused fiscal election account",
+            "group": "expense",
+            "skr_code": "62420"
+          },
+          "src_code_05200": {
+            "name": "SKR42 05200 · Pkw",
+            "group": "fixed_assets",
+            "skr_code": "05200"
+          },
+          "src_depreciation_62200": {
+            "name": "Abschreibung Ausstattung",
+            "group": "expense",
+            "skr_code": "62200"
+          },
+          "src_pay_56c2a813e52955d01b96": {
+            "name": "Verbindlichkeit ORIGINAL7G",
+            "group": "liabilities",
+            "skr_code": ""
+          }
+        },
+        "opening": [],
+        "entries": [
+          {
+            "club_id": "synthetic-pool-original-2026-EV",
+            "tax_year": 2026,
+            "id": "87c6ab182c4eaf1c96f8aec43eac6b58",
+            "booked_on": "2026-02-15",
+            "description": "Rechnung ORIGINAL7G · Original acquisition with contractual liability",
+            "evidence": "invoice: 17eda1a0a6ae538eaec768d8acbb4c5e",
+            "reversal_of": null,
+            "created_by": "reader",
+            "created_at": "2026-10-07T11:08:02+00:00",
+            "date": "2026-02-15",
+            "lines": [
+              {
+                "account": "src_code_05200",
+                "debit_cents": 12000,
+                "credit_cents": 0,
+                "sphere": ""
+              },
+              {
+                "account": "src_pay_56c2a813e52955d01b96",
+                "debit_cents": 0,
+                "credit_cents": 12000,
+                "sphere": ""
+              }
+            ]
+          },
+          {
+            "club_id": "synthetic-pool-original-2026-EV",
+            "tax_year": 2026,
+            "id": "35db2836a35cda8a32e014c48c2d4bb1",
+            "booked_on": "2026-12-31",
+            "description": "Abschreibung b593c7266126066960c8b4a8295f0cc3:2026",
+            "evidence": "depreciation: b593c7266126066960c8b4a8295f0cc3:2026",
+            "reversal_of": null,
+            "created_by": "reader",
+            "created_at": "2026-10-07T11:08:02+00:00",
+            "date": "2026-12-31",
+            "lines": [
+              {
+                "account": "src_depreciation_62200",
+                "debit_cents": 2200,
+                "credit_cents": 0,
+                "sphere": "4"
+              },
+              {
+                "account": "src_code_05200",
+                "debit_cents": 0,
+                "credit_cents": 2200,
+                "sphere": ""
+              }
+            ]
+          }
+        ],
+        "calculation": {
+          "year": 2026,
+          "accounts": {
+            "equity": {
+              "name": "Original capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            "special": {
+              "name": "Original unused fiscal election account",
+              "group": "expense",
+              "skr_code": "62420",
+              "id": "special",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            "src_code_05200": {
+              "name": "SKR42 05200 · Pkw",
+              "group": "fixed_assets",
+              "skr_code": "05200",
+              "id": "src_code_05200",
+              "opening_cents": 0,
+              "debit_cents": 12000,
+              "credit_cents": 2200,
+              "closing_cents": 9800,
+              "amount_cents": 9800
+            },
+            "src_depreciation_62200": {
+              "name": "Abschreibung Ausstattung",
+              "group": "expense",
+              "skr_code": "62200",
+              "id": "src_depreciation_62200",
+              "opening_cents": 0,
+              "debit_cents": 2200,
+              "credit_cents": 0,
+              "closing_cents": 2200,
+              "amount_cents": 2200
+            },
+            "src_pay_56c2a813e52955d01b96": {
+              "name": "Verbindlichkeit ORIGINAL7G",
+              "group": "liabilities",
+              "skr_code": "",
+              "id": "src_pay_56c2a813e52955d01b96",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 12000,
+              "closing_cents": -12000,
+              "amount_cents": 12000
+            }
+          },
+          "assets": [
+            {
+              "name": "SKR42 05200 · Pkw",
+              "group": "fixed_assets",
+              "skr_code": "05200",
+              "id": "src_code_05200",
+              "opening_cents": 0,
+              "debit_cents": 12000,
+              "credit_cents": 2200,
+              "closing_cents": 9800,
+              "amount_cents": 9800
+            }
+          ],
+          "capital": [
+            {
+              "name": "Original capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            }
+          ],
+          "liabilities": [
+            {
+              "name": "Verbindlichkeit ORIGINAL7G",
+              "group": "liabilities",
+              "skr_code": "",
+              "id": "src_pay_56c2a813e52955d01b96",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 12000,
+              "closing_cents": -12000,
+              "amount_cents": 12000
+            }
+          ],
+          "profit_and_loss": [
+            {
+              "name": "Original unused fiscal election account",
+              "group": "expense",
+              "skr_code": "62420",
+              "id": "special",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            {
+              "name": "Abschreibung Ausstattung",
+              "group": "expense",
+              "skr_code": "62200",
+              "id": "src_depreciation_62200",
+              "opening_cents": 0,
+              "debit_cents": 2200,
+              "credit_cents": 0,
+              "closing_cents": 2200,
+              "amount_cents": 2200
+            }
+          ],
+          "spheres": {
+            "1": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "2": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "3": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "4": {
+              "income_cents": 0,
+              "expense_cents": 2200,
+              "result_cents": -2200
+            }
+          },
+          "asset_total_cents": 9800,
+          "capital_total_cents": 0,
+          "liability_total_cents": 12000,
+          "income_cents": 0,
+          "expense_cents": 2200,
+          "annual_result_cents": -2200,
+          "passive_total_cents": 9800,
+          "debit_cents": 14200,
+          "credit_cents": 14200,
+          "difference_cents": 0,
+          "issues": [],
+          "entry_count": 2
+        },
+        "asset_schedule": {
+          "year": 2026,
+          "items": {
+            "b593c7266126066960c8b4a8295f0cc3": {
+              "item_id": "b593c7266126066960c8b4a8295f0cc3",
+              "invoice_id": "17eda1a0a6ae538eaec768d8acbb4c5e",
+              "receipt_number": "ORIGINAL7G",
+              "account": "src_code_05200",
+              "skr_code": "05200",
+              "sphere": "4",
+              "acquired_on": "2026-02-15",
+              "months": 60,
+              "residual_cents": 0,
+              "cost_opening_cents": 0,
+              "additions_cents": 12000,
+              "cost_closing_cents": 12000,
+              "accumulated_opening_cents": 0,
+              "depreciation_cents": 2200,
+              "accumulated_closing_cents": 2200,
+              "book_opening_cents": 0,
+              "book_closing_cents": 9800,
+              "expected_depreciation_cents": 2200,
+              "acquisition_hash": "baa447f89883a45d1a2f9eea3408c0eefb1bc9306343ada84847053de668d2a0",
+              "depreciation_hash": "0d955fe9051febbf61b0a223b2b22314759efde15a51ebd36f9849babd6d9360",
+              "name": "ORIGINAL7G · Original individually documented movable asset"
+            }
+          },
+          "totals": {
+            "cost_opening_cents": 0,
+            "additions_cents": 12000,
+            "cost_closing_cents": 12000,
+            "accumulated_opening_cents": 0,
+            "depreciation_cents": 2200,
+            "accumulated_closing_cents": 2200,
+            "book_opening_cents": 0,
+            "book_closing_cents": 9800
+          },
+          "issues": [],
+          "ready_for_xbrl": false
+        }
+      }
+    },
+    "capital_comparison": {
+      "year": 2026,
+      "book_opening_cents": 0,
+      "opening_adjustment_cents": 0,
+      "tax_opening_cents": 0,
+      "tax_closing_cents": -6200,
+      "contributions_cents": 0,
+      "withdrawals_cents": 0,
+      "profit_cents": -6200,
+      "sources": [],
+      "decisions": [],
+      "issues": [],
+      "complete": true
+    },
+    "special_tax_7g": {
+      "schema": 1,
+      "source": {
+        "schema": 1,
+        "year": 2026,
+        "journal_sha256": "34f88d22b06768be8e516d267615ffb855bce8d598e189c16065a1607b9e2bf9",
+        "item_id": "b593c7266126066960c8b4a8295f0cc3",
+        "special_account": "special",
+        "regular_account": "src_depreciation_62200",
+        "special_cents": 4000,
+        "previous_profit_cents": 5000000,
+        "domestic_business_use_confirmed": true,
+        "use_through_next_year_confirmed": true,
+        "no_other_elections_confirmed": true,
+        "amount_reviewed": true,
+        "profit_document": {
+          "document_id": "92448e2b64a8a8a333acedbe8140126a",
+          "revision": 1,
+          "sha256": "f93694500460a00b1c3c41c9f481dccc0f0eb50f0df78c4b828a24fd07b834d7"
+        },
+        "eligibility_document": {
+          "document_id": "13a36f4445dd7d1acc3b727947e6bb96",
+          "revision": 1,
+          "sha256": "e6ea69527168c055522ea0aff95ea4f8316b813e3098bf799a580cbdc5299fca"
+        },
+        "election_document": {
+          "document_id": "9d038461edbefa2ef4ac0371ecf55ed3",
+          "revision": 1,
+          "sha256": "468ce9780289dd6081f0ee05a717a2806464a6e7546dce5fa610854a07180c5b"
+        }
+      },
+      "book_item_sha256": "bf912b038f89892fe84b6dc82fbbacfa7255478510a637adcd203478c8d13ad1",
+      "asset_account": "src_code_05200",
+      "regular_depreciation_cents": 2200,
+      "tax_special_cents": 4000,
+      "tax_closing_cents": 5800
+    },
+    "sha256": "0454378b213182cca31fc1b42178b8c67e0345244851bc492fc8a7b3f743a93c",
+    "transmission": "unavailable"
+  },
+  "mapping": {
+    "equity": "bs.eqLiab.equity.SurplusOfUnspentFunds",
+    "src_code_05200": "bs.ass.fixAss.tan.otherEquipm.passengerCars",
+    "src_depreciation_62200": "is.netIncome.regular.operatingTC.deprAmort.fixAss.tan.other",
+    "special": "is.netIncome.regular.operatingTC.deprAmort.fixAss.specific.impairment",
+    "src_pay_56c2a813e52955d01b96": "bs.eqLiab.liab.other.other"
+  },
+  "profile": {
+    "kind": "whole_taxable_club",
+    "source_scope": "complete_club_ledger",
+    "scope_confirmed": true,
+    "tax_privileged": false,
+    "asset_scope": "whole_club",
+    "asset_values_unchanged": false,
+    "asset_tax_values_reviewed": true,
+    "business_name": "Synthetischer Test-Geschäftsbetrieb",
+    "supplier": "Synthetischer Softwaretest",
+    "company": {
+      "tax_number": "5192050001276",
+      "name": "Synthetischer Testverein",
+      "street": "Testweg",
+      "house_number": "1",
+      "postal_code": "11111",
+      "city": "Teststadt",
+      "country": "Deutschland",
+      "legal_status": "EV"
+    },
+    "tax_values_sha256": "0454378b213182cca31fc1b42178b8c67e0345244851bc492fc8a7b3f743a93c"
+  },
+  "xml_sha256": "93e5338ea468ac15bd8be9145fab19bbc1d32835de934a5326117b72d9b5142a"
+}

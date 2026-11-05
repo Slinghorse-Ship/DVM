@@ -1,0 +1,4 @@
+<?php declare(strict_types=1);
+$membershipState=\Kulturhus\Verein\PublicMembershipForm::handle($intake,$_POST,$_SESSION['csrf'],$_SERVER['REQUEST_METHOD']==='POST',true);
+?>
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mitgliedsantrag · Kulturhus Jaderberg</title><link rel="stylesheet" href="style.css?v=4"><link rel="stylesheet" href="application-form.css"><script defer src="application-form.js"></script></head><body class="application-public"><aside class="application-brand"><div class="club-round">K</div><h1>Kulturhus<br>Jaderberg e. V.</h1><p>Kultur gemeinsam gestalten.</p><span class="test-badge">Lokale Testvorschau</span></aside><main class="application-main"><h2>Mitglied werden</h2><?php require __DIR__.'/application-fields.php'; ?></main></body></html>

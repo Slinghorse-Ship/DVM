@@ -1,0 +1,9 @@
+{
+  "superuser": ["*"],
+  "administrator": ["user-admin", "config-admin", "content-*", "approve-*", "publish-*"],
+  "chief_editor": ["content-*", "approve-*", "publish-*", "press-generate"],
+  "editor": ["content-view", "content-edit", "content-submit"],
+  "event_manager": ["event-view", "event-edit-local", "event-sync", "content-submit"],
+  "newsletter_manager": ["newsletter-*", "recipient-export"],
+  "press_manager": ["press-view", "press-edit", "press-generate"]
+}

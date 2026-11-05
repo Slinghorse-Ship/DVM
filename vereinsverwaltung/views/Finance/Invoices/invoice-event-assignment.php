@@ -1,0 +1,5 @@
+<?php declare(strict_types=1);
+if(!isset($invoiceOriginalText)){$invoiceOriginalMessages=isset($nativeAccess)?(new \Kulturhus\Native\Language\Catalog($db,$nativeAccess))->messages():[];$invoiceOriginalText=static fn(string$s,array$v=[]):string=>\Kulturhus\Native\Language\InvoiceOriginalMessages::text($s,$invoiceOriginalMessages,$v);}
+$invoiceEvent=(new \Kulturhus\Verein\InvoiceInbox($db,(string)$_SESSION['actor']))->eventAssignment($supplierEntryId);
+if($invoiceEvent):$invoiceEventLabel=['appointment'=>'Veranstaltungsausgabe','artist'=>'Künstler / Band','gema'=>'GEMA / Musikrechte'][$invoiceEvent['purpose']];?>
+<p data-invoice-original-event><strong><?=e($invoiceOriginalText($invoiceEventLabel))?>:</strong> <?=e($invoiceEvent['event_title'].' · '.dateDe(substr($invoiceEvent['starts_at'],0,10)))?><?php if((new \Kulturhus\Verein\Documents($db,(string)$_SESSION['actor']))->canSource('appointment',$invoiceEvent['event_id'])):?><a class="invoice-original-action" href="<?=e(url(['view'=>'documents','source_type'=>'appointment','source_id'=>$invoiceEvent['event_id']]))?>"><?=e($invoiceOriginalText('Original im Terminordner'))?></a><?php endif?></p><?php endif?>

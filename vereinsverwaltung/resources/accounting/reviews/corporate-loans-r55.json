@@ -1,0 +1,262 @@
+{
+  "schema": 1,
+  "revision": 55,
+  "source_kind": "explicit_original_loan_profile",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "corporate-loans-r55-08100@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.loansToAffil.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.loansToAffil.corporations",
+            "bs.ass.fixAss.fin.loansToAffil.partnerships.other",
+            "bs.ass.fixAss.fin.loansToAffil.soleProprietor"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "08100",
+              "semantic": {
+                "name": "Ausleihungen an verbundene Unternehmen",
+                "function": "",
+                "range_start": "08100",
+                "range_end": "08100",
+                "parent": null
+              },
+              "signature": "29449e80e8fb42397795fcd5c58eb4a5e1997445c0d07f961fdaac16dd1976ae"
+            }
+          ]
+        },
+        {
+          "purpose": "corporate-loans-r55-001@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.loansToAffil.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.loansToAffil.corporations"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "08140",
+              "semantic": {
+                "name": "Ausleihungen an verbundene Unternehmen, Kapitalgesellschaften",
+                "function": "",
+                "range_start": "08140",
+                "range_end": "08140",
+                "parent": null
+              },
+              "signature": "c8244fe611a938e731093e94db588f68ca99dc4cc6bba46e76ce4e6b3c3d2a52"
+            }
+          ]
+        },
+        {
+          "purpose": "corporate-loans-r55-08800@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.loansToParticip.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.loansToParticip.corporations",
+            "bs.ass.fixAss.fin.loansToParticip.partnerships.other",
+            "bs.ass.fixAss.fin.loansToParticip.soleProprietor"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "08800",
+              "semantic": {
+                "name": "Ausleihungen an Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                "function": "",
+                "range_start": "08800",
+                "range_end": "08800",
+                "parent": null
+              },
+              "signature": "b24a1dfa9538d62f7c2458381b28de8f5fe00ee6fcbb65e20fe24137fdb78c8b"
+            }
+          ]
+        },
+        {
+          "purpose": "corporate-loans-r55-002@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.loansToParticip.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.loansToParticip.corporations"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "08850",
+              "semantic": {
+                "name": "Ausleihungen an Unternehmen, mit denen ein Beteiligungsverhältnis besteht, Kapitalgesellschaften",
+                "function": "",
+                "range_start": "08850",
+                "range_end": "08850",
+                "parent": null
+              },
+              "signature": "ef96a666575f9c8cf22d51e391c8ce538a759dbf7d2f930ed0694ecf9d0c4232"
+            }
+          ]
+        }
+      ],
+      "corrections": {
+        "49120": {
+          "previous_purpose": "cost-register-r26-49120@2",
+          "new_purpose": "cost-register-r26-49120@3",
+          "source_signature": "45e9c0f204560d9e94d5615b186b8a0883244265ce2c54dbcd9fc4dfde08f89b",
+          "previous_definition_sha256": "19ffd8f31bf26e48d39484f87b9d78a8d4bd0b22257dddbae3b67af692a281dc",
+          "new_definition_sha256": "1ff9440ae43050bedc045c7592f4638e25a0897c4b9337aedb26f88ff695e722"
+        },
+        "72040": {
+          "previous_purpose": "operating-r32-027@1",
+          "new_purpose": "operating-r32-027@2",
+          "source_signature": "af13658c597a667c187d2d65787053345af6e17c86e3bc9ee9ca96c969138469",
+          "previous_definition_sha256": "296c2d8631886d02a8246c503b9a31112e7f552e5479e96ddf0a83b096d57f73",
+          "new_definition_sha256": "451186e5ef286c730171185b2f8b68286eccd477f784f91ed2090e45c6283928"
+        },
+        "72010": {
+          "previous_purpose": "cost-register-r26-72010@2",
+          "new_purpose": "cost-register-r26-72010@3",
+          "source_signature": "3a5043af9b82917f414d89b4422971b1dbb852355490ef05d6df352d9a924642",
+          "previous_definition_sha256": "a7a0cd9d67fc6bb5070f042ea47631c8d931179b57571715440ee06890ac0f73",
+          "new_definition_sha256": "6072982db9ff9c0b296a067ae2394a1adbcf0c33217b53813085544dc2e5be8c"
+        }
+      }
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "corporate-loans-r55-08100@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.loansToAffil.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.loansToAffil.corporations",
+            "bs.ass.fixAss.fin.loansToAffil.partnerships.other",
+            "bs.ass.fixAss.fin.loansToAffil.soleProprietor"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "08100",
+              "semantic": {
+                "name": "Ausleihungen an verbundene Unternehmen",
+                "function": "",
+                "range_start": "08100",
+                "range_end": "08100",
+                "parent": null
+              },
+              "signature": "29449e80e8fb42397795fcd5c58eb4a5e1997445c0d07f961fdaac16dd1976ae"
+            }
+          ]
+        },
+        {
+          "purpose": "corporate-loans-r55-001@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.loansToAffil.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.loansToAffil.corporations"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "08140",
+              "semantic": {
+                "name": "Ausleihungen an verbundene Unternehmen, Kapitalgesellschaften",
+                "function": "",
+                "range_start": "08140",
+                "range_end": "08140",
+                "parent": null
+              },
+              "signature": "c8244fe611a938e731093e94db588f68ca99dc4cc6bba46e76ce4e6b3c3d2a52"
+            }
+          ]
+        },
+        {
+          "purpose": "corporate-loans-r55-08800@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.loansToParticip.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.loansToParticip.corporations",
+            "bs.ass.fixAss.fin.loansToParticip.partnerships.other",
+            "bs.ass.fixAss.fin.loansToParticip.soleProprietor"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "08800",
+              "semantic": {
+                "name": "Ausleihungen an Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+                "function": "",
+                "range_start": "08800",
+                "range_end": "08800",
+                "parent": null
+              },
+              "signature": "b24a1dfa9538d62f7c2458381b28de8f5fe00ee6fcbb65e20fe24137fdb78c8b"
+            }
+          ]
+        },
+        {
+          "purpose": "corporate-loans-r55-002@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.loansToParticip.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.loansToParticip.corporations"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "08850",
+              "semantic": {
+                "name": "Ausleihungen an Unternehmen, mit denen ein Beteiligungsverhältnis besteht, Kapitalgesellschaften",
+                "function": "",
+                "range_start": "08850",
+                "range_end": "08850",
+                "parent": null
+              },
+              "signature": "ef96a666575f9c8cf22d51e391c8ce538a759dbf7d2f930ed0694ecf9d0c4232"
+            }
+          ]
+        }
+      ],
+      "corrections": {
+        "49120": {
+          "previous_purpose": "cost-register-r26-49120@2",
+          "new_purpose": "cost-register-r26-49120@3",
+          "source_signature": "45e9c0f204560d9e94d5615b186b8a0883244265ce2c54dbcd9fc4dfde08f89b",
+          "previous_definition_sha256": "19ffd8f31bf26e48d39484f87b9d78a8d4bd0b22257dddbae3b67af692a281dc",
+          "new_definition_sha256": "1ff9440ae43050bedc045c7592f4638e25a0897c4b9337aedb26f88ff695e722"
+        },
+        "72040": {
+          "previous_purpose": "operating-r32-027@1",
+          "new_purpose": "operating-r32-027@2",
+          "source_signature": "af13658c597a667c187d2d65787053345af6e17c86e3bc9ee9ca96c969138469",
+          "previous_definition_sha256": "296c2d8631886d02a8246c503b9a31112e7f552e5479e96ddf0a83b096d57f73",
+          "new_definition_sha256": "451186e5ef286c730171185b2f8b68286eccd477f784f91ed2090e45c6283928"
+        },
+        "72010": {
+          "previous_purpose": "cost-register-r26-72010@2",
+          "new_purpose": "cost-register-r26-72010@3",
+          "source_signature": "3a5043af9b82917f414d89b4422971b1dbb852355490ef05d6df352d9a924642",
+          "previous_definition_sha256": "a7a0cd9d67fc6bb5070f042ea47631c8d931179b57571715440ee06890ac0f73",
+          "new_definition_sha256": "6072982db9ff9c0b296a067ae2394a1adbcf0c33217b53813085544dc2e5be8c"
+        }
+      }
+    }
+  ],
+  "production_authorized": false
+}

@@ -1,0 +1,17 @@
+<?php declare(strict_types=1);
+require dirname(__DIR__,2).'/vendor/autoload.php';
+require __DIR__.'/native-document-interface.php';
+require __DIR__.'/support/outgoing-invoice-contracts.php';
+$outgoingInvoiceFixture=ownOutgoingInvoiceContracts($db,$check);
+require __DIR__.'/support/outgoing-invoice-correction-current.php';
+ownOutgoingInvoiceCurrentCorrections($db,$check,$outgoingInvoiceFixture,\Kulturhus\Native\TestSupport::config());
+require __DIR__.'/support/outgoing-invoice-failures.php';
+ownOutgoingInvoiceFailures($db,$check,$outgoingInvoiceFixture,\Kulturhus\Native\TestSupport::config());
+require __DIR__.'/support/outgoing-invoice-history.php';
+$outgoingInvoiceHistory=ownOutgoingInvoiceHistory($db,$check,$outgoingInvoiceFixture);
+require __DIR__.'/support/outgoing-invoice-sources.php';
+$outgoingInvoiceSources=ownOutgoingInvoiceSources($db,$check,$outgoingInvoiceFixture,\Kulturhus\Native\TestSupport::config());
+require __DIR__.'/support/outgoing-invoice-processes.php';
+ownOutgoingInvoiceProcesses($db,$check,$outgoingInvoiceFixture,\Kulturhus\Native\TestSupport::config());
+if(getenv('DVM_OUTGOING_INVOICE_INTERFACE_BROWSER')==='1')require __DIR__.'/support/outgoing-invoice-browser-fixture.php';
+echo json_encode(['suite'=>'native-outgoing-invoice-interface','checks'=>$n,'external_actions'=>0],JSON_THROW_ON_ERROR)."\n";

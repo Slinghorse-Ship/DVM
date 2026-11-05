@@ -1,0 +1,11 @@
+<?php declare(strict_types=1);
+ini_set('zend.exception_ignore_args','1');
+require dirname(__DIR__,2).'/native/bootstrap.php';require dirname(__DIR__,2).'/src/autoload.php';
+$db=\Kulturhus\Native\TestSupport::db();$config=\Kulturhus\Native\TestSupport::config();
+if(($config['owner']??'')!=='isolated-native-ci'||($config['label']??'')!=='native-member-archive-interface')throw new RuntimeException('Exact owned archive fixture required.');
+$archive=new \Kulturhus\Verein\ContactArchive($db,'own-list-admin',\Kulturhus\Verein\ContactArchive::serverKey());$page=$archive->page();
+if($page['total']!==1005||count($page['rows'])!==6)throw new RuntimeException('Complete bounded encrypted original page required.');
+foreach($page['rows']as$row)if(isset($row['profile'])||isset($row['ciphertext'])||isset($row['notes']))throw new RuntimeException('Unrelated private payload leaked into archive metadata.');
+$bytes=strlen(json_encode($page,JSON_THROW_ON_ERROR));if($bytes>16000)throw new RuntimeException('Compact original archive metadata required.');
+$match=$archive->page(['q'=>'%_']);if($match['total']!==1||count($match['rows'])!==1)throw new RuntimeException('Bounded scan of all encrypted originals required.');
+echo json_encode(['suite'=>'cold-bounded-original-archive','total'=>$page['total'],'rows'=>count($page['rows']),'metadata_bytes'=>$bytes,'peak_memory_bytes'=>memory_get_peak_usage(true)],JSON_THROW_ON_ERROR)."\n";

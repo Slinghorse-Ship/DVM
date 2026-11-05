@@ -1,0 +1,25 @@
+<?php declare(strict_types=1);
+require dirname(__DIR__,2).'/src/bootstrap.php';require dirname(__DIR__,2).'/native/bootstrap.php';
+require dirname(__DIR__,2).'/src/Documents/DocumentLibrary.php';
+use Kulturhus\Verein\{ManagerDocumentWorkflows,DocumentWorkflow\WorkflowSchema};
+use Kulturhus\Native\Integration\ManagerBridge;
+use Kulturhus\Native\Shared\Db;
+if(PHP_SAPI!=='cli'||basename((string)getenv('KH_NATIVE_TEST_CONFIG'))!=='integrated-manager.json')throw new RuntimeException('Only isolated integrated browser fixture.');
+$runtime=dirname(getenv('KH_NATIVE_TEST_CONFIG')).'/integrated-manager-runtime';$manifest=$runtime.'/shared-hse-browser.json';
+if(is_file($manifest)){echo "Existing isolated shared HSE fixture.\n";exit;}
+$db=\Kulturhus\Native\TestSupport::db();WorkflowSchema::install($db);
+$admin=$db->query("SELECT id,club_id FROM actors WHERE id='manager-admin' AND active=1 AND is_superuser=1")->fetch();if(!$admin)throw new RuntimeException('Synthetic manager admin missing.');
+$work=new ManagerDocumentWorkflows($db,$admin['id']);$store=$work->store;
+$template=$store->saveTemplate('',0,['title'=>'Gemeinsame HSE-Vorlage','fields'=>[['key'=>'hazards','label'=>'Gefährdungen','type'=>'risk_register','required'=>true,'matrix_profile'=>'rwe_reference_de_v1']],'provenance'=>[]]);$store->publishTemplate($template,1);
+$ids=[];for($i=0;$i<26;$i++)$ids[]=$store->createDocument($template,'','Gemeinsame HSE-Beurteilung '.sprintf('%02d',$i));
+$first=$ids[0];$store->saveDocument($first,1,['hazards'=>[['category'=>'Aufbau','hazard'=>'Kabel','impact'=>'Sturz','initial'=>['likelihood'=>3,'severity'=>3],'controls'=>'Kabelbrücken','residual'=>['likelihood'=>1,'severity'=>2],'responsible'=>'Synthetische Verantwortung','effectiveness'=>'Sichtprüfung']]],'Gemeinsame HSE-Beurteilung 00','');
+$pdf=$store->export($first,2,'pdf');$attachment=$store->addAttachment($first,2,'Gemeinsame HSE-Anlage.pdf',$pdf['bytes']);$store->transition($first,3,'submit');$store->transition($first,4,'approve');
+$actor='manager-hse-reader';Db::run($db,"INSERT INTO actors(id,club_id,role) VALUES(?,?,'member')",[$actor,$admin['club_id']]);
+Db::run($db,"INSERT INTO settings_roles(club_id,id,name,description,members_access,finance_access,settings_access,documents_access,version) VALUES(?,?,'HSE lesen','','none','none',0,'read',1)",[$admin['club_id'],'hse-browser-reader']);
+Db::run($db,'INSERT INTO settings_role_assignments(actor_id,club_id,role_id,version) VALUES(?,?,?,1)',[$actor,$admin['club_id'],'hse-browser-reader']);
+$access=(new ManagerBridge($db,$admin['id'],'native',static function(){if(PHP_SAPI!=='cli')throw new DomainException('CLI only synthetic preparation.');}))->access();
+$auth=\Kulturhus\Native\Auth\Runtime::service($db,$runtime.'/auth.key');$email='hse-reader@example.invalid';$password='Synthetic HSE '.bin2hex(random_bytes(12)).'!';
+$invite=$auth->createInvitation($access,ManagerBridge::actorKey($actor,$admin['club_id']),$email);$auth->acceptInvitation($invite['token'],$password);
+$credentialsPath=$runtime.'/browser-credentials.json';$credentials=json_decode(file_get_contents($credentialsPath),true,16,JSON_THROW_ON_ERROR);$credentials['hseReader']=compact('email','password');file_put_contents($credentialsPath,json_encode($credentials,JSON_THROW_ON_ERROR));chmod($credentialsPath,0600);
+file_put_contents($manifest,json_encode(['document'=>$first,'attachment'=>$attachment,'revision'=>5,'attachment_sha256'=>hash('sha256',$pdf['bytes']),'documents'=>$ids],JSON_THROW_ON_ERROR));chmod($manifest,0600);
+echo "Isolated shared HSE browser fixture created; real PDF attachment and authenticated reader.\n";

@@ -1,0 +1,29 @@
+<?php declare(strict_types=1);
+require dirname(__DIR__).'/native/bootstrap.php';
+use Kulturhus\Native\TestSupport;
+use Kulturhus\Native\Shared\Access;
+use Kulturhus\Native\Cms\{Schema,Pages,Media,ContentSections,PageSections,PageCopies,VersionChanges};
+use Kulturhus\Native\Web\Website\{ContentSectionCrop,ContentSectionsView,ContentSectionsPanel,VersionValues};
+$db=TestSupport::db();TestSupport::seed($db);Schema::install($db);$access=new Access($db,'admin');$pages=new Pages($db,$access);$service=new PageSections($db,$access);$checks=0;
+function check(bool $ok,string $label):void{global $checks;if(!$ok)throw new RuntimeException($label);++$checks;echo "PASS $label\n";}
+function rejects(callable $fn,string $label):void{try{$fn();}catch(InvalidArgumentException){check(true,$label);return;}throw new RuntimeException($label);}
+$root=dirname(getenv('KH_NATIVE_TEST_CONFIG')).'/crop-media';$media=new Media($db,$access,$root);$image=imagecreatetruecolor(200,100);imagefilledrectangle($image,0,0,99,99,imagecolorallocate($image,240,20,20));imagefilledrectangle($image,100,0,199,99,imagecolorallocate($image,20,20,240));imagepng($image,$root.'/source.png');unset($image);$photo=$media->upload($root.'/source.png','source.png','Original left red right blue');$bytes=hash_file('sha256',$media->variant($photo['id'],'original')['path']);
+$old=ContentSections::normalize([['id'=>bin2hex(random_bytes(16)),'heading'=>'Original crop section','body_html'=>'<p>Exact original</p>','media_id'=>$photo['id'],'alt'=>'Original authored alt','caption'=>'Exact caption','credit'=>'Exact author','layout'=>'image-before']]);
+check(!array_key_exists('aspect',$old[0]),'old approved section keeps exact shape without new default metadata');
+check(ContentSections::normalize([array_replace($old[0],['aspect'=>'original','focal_x'=>'50','focal_y'=>'50'])])===$old,'default crop form preserves old canonical original values');
+foreach(['landscape','square','portrait']as $aspect){$crop=ContentSections::normalize([array_replace($old[0],['aspect'=>$aspect,'focal_x'=>'0','focal_y'=>'100'])]);check($crop[0]['focal_x']===0&&$crop[0]['focal_y']===100&&str_contains(ContentSectionCrop::style($crop[0]),'object-position:0% 100%'),'fixed crop and boundary focus validated: '.$aspect);}
+foreach([['aspect'=>'forged','focal_x'=>50,'focal_y'=>50],['aspect'=>'square'],['aspect'=>'square','focal_x'=>-1,'focal_y'=>50],['aspect'=>'square','focal_x'=>101,'focal_y'=>50],['aspect'=>'square','focal_x'=>1.5,'focal_y'=>50],['aspect'=>'square','focal_x'=>'1.5','focal_y'=>50],['aspect'=>'square','focal_x'=>[],'focal_y'=>50],['aspect'=>'square','focal_x'=>'50;position:fixed','focal_y'=>50]]as $crop)rejects(fn()=>ContentSections::normalize([array_replace($old[0],$crop)]),'unsupported or forged crop/focus rejected');
+$without=$old[0];$without['media_id']=null;$without['layout']='text';rejects(fn()=>ContentSections::normalize([array_replace($without,['aspect'=>'square','focal_x'=>50,'focal_y'=>50])]),'crop cannot be applied without its original image');
+$p=$pages->save(['title'=>'Original crop page','slug'=>'crop-original','body_html'=>'<p>Original parent body</p>','nav_visible'=>false,'content_sections'=>$old]);$p=$pages->publish($p['id'],$p['version']);$public=$pages->publicPage($p['slug']);$generation=$pages->generation();
+$cropped=ContentSections::normalize([array_replace($old[0],['aspect'=>'square','focal_x'=>100,'focal_y'=>50])]);$draft=$service->save($p['id'],$p['version'],$cropped);
+check($pages->publicPage($p['slug'])===$public&&$pages->generation()===$generation,'private image crop preserves exact publication and cache generation');
+$unchanged=$draft['content_sections'][0];unset($unchanged['aspect'],$unchanged['focal_x'],$unchanged['focal_y']);check($unchanged===$old[0]&&$draft['body_html']===$p['body_html'],'crop preserves original content, identity, source, alt and credit');
+$view=new ContentSectionsView($media);check(!str_contains($view->render($public),'object-fit:cover')&&str_contains($view->render($draft,true),'aspect-ratio:1 / 1;object-fit:cover;object-position:100% 50%'),'public and private renderer use their own exact crop originals');
+$copy=(new PageCopies($db,$access))->create($draft['id'],$draft['version'],['title'=>'Crop copy','slug'=>'crop-copy']);check($copy['content_sections']===$cropped,'private copy retains original crop geometry');
+$diff=array_values(array_filter(VersionChanges::between($p,$draft),fn($c)=>$c['key']==='content_sections'))[0];check(str_contains((new VersionValues($db,$access))->render($diff['after']),'Fokus 100% / 50%'),'original comparison displays recorded crop and focus');
+$restored=$pages->restore($draft['id'],$p['version'],$draft['version']);check($restored['content_sections']===$old,'historical restore removes later crop fields without rewriting earlier original');
+$published=$pages->publish($restored['id'],$restored['version']);check($published['content_sections']===$old&&$pages->publicPage($p['slug'])['content_sections']===$old,'explicit publication of earlier shape introduces no focus defaults');
+$whole=ContentSections::normalize([array_replace($old[0],['aspect'=>'original','focal_x'=>25,'focal_y'=>75])]);check(ContentSectionCrop::style($whole[0])===''&&$whole[0]['focal_x']===25,'whole-photo selection retains prepared focus without clipping');
+$post=$cropped[0];$post['focal_x']='100';$post['focal_y']='50';$post['position']='10';check(ContentSectionsPanel::fromPost(['section_rows'=>[$post],'section_row_count'=>'1'])===$cropped,'normal JavaScript-free form preserves original crop geometry');
+check(hash_file('sha256',$media->variant($photo['id'],'original')['path'])===$bytes,'focus, private copy, restoration and publication never alter stored photo bytes');
+echo json_encode(['checks'=>$checks,'live_transport'=>false],JSON_THROW_ON_ERROR)."\n";

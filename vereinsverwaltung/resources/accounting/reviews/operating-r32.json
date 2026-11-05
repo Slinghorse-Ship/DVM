@@ -1,0 +1,1309 @@
+{
+  "schema": 1,
+  "revision": 32,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "operating-r32-001@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.generalRateVAT",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.generalRateVAT"
+          ],
+          "conditional": false,
+          "condition": null,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "44480",
+              "semantic": {
+                "name": "Erlöse aus Geldspielautomaten 19 % USt12)",
+                "function": "AM",
+                "range_start": "44480",
+                "range_end": "44489",
+                "parent": null
+              },
+              "signature": "628db8f577fcef16322a8c936bce9ea859f84c247d2c1abf6006c0fe362d4be0"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-002@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.taxExemptUStG4_8.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.taxExemptUStG4_8.other"
+          ],
+          "conditional": false,
+          "condition": null,
+          "contra": false,
+          "disclosures": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.licenses"
+          ],
+          "sources": [
+            {
+              "code": "45740",
+              "semantic": {
+                "name": "Sonstige Erträge aus Provisionen, Lizenzen und Patenten, steuerfrei § 4 Nr. 8 ff. UStG12)",
+                "function": "AM",
+                "range_start": "45740",
+                "range_end": "45749",
+                "parent": null
+              },
+              "signature": "6dd405e3c6083dd2cf671b26351bae6e13b8cdac069b3c3443102957aae006ab"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-003@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.taxExemptUStG4_2til7",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.taxExemptUStG4_2til7"
+          ],
+          "conditional": false,
+          "condition": null,
+          "contra": false,
+          "disclosures": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.licenses"
+          ],
+          "sources": [
+            {
+              "code": "45750",
+              "semantic": {
+                "name": "Sonstige Erträge aus Provisionen, Lizenzen und Patenten, steuerfrei § 4 Nr. 5 UStG12)",
+                "function": "AM",
+                "range_start": "45750",
+                "range_end": "45759",
+                "parent": null
+              },
+              "signature": "86e68fa27bfb0878d4bf59761185fee08e950c5dc82108bb2cba66ed4a18be50"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-004@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.reducedRateVAT",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.reducedRateVAT"
+          ],
+          "conditional": false,
+          "condition": null,
+          "contra": false,
+          "disclosures": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.licenses"
+          ],
+          "sources": [
+            {
+              "code": "45760",
+              "semantic": {
+                "name": "Sonstige Erträge aus Provisionen, Lizenzen und Patenten 7 % USt12)",
+                "function": "AM",
+                "range_start": "45760",
+                "range_end": "45769",
+                "parent": null
+              },
+              "signature": "87a246214f7e0cb6722d6aa10f9d780029afcd530797cb4502a6f942d6bf20f0"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-005@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.generalRateVAT",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.generalRateVAT"
+          ],
+          "conditional": false,
+          "condition": null,
+          "contra": false,
+          "disclosures": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.licenses"
+          ],
+          "sources": [
+            {
+              "code": "45790",
+              "semantic": {
+                "name": "Sonstige Erträge aus Provisionen, Lizenzen und Patenten 19 % USt12)",
+                "function": "AM",
+                "range_start": "45790",
+                "range_end": "45799",
+                "parent": null
+              },
+              "signature": "7befbaa16cbde61a0f911ad3b92b28dd578493afa06416cf7de14814df3eeb87"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-006@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.untaxable",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.untaxable"
+          ],
+          "conditional": false,
+          "condition": null,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "46900",
+              "semantic": {
+                "name": "Nicht steuerbare Umsätze (Innenumsätze)",
+                "function": "",
+                "range_start": "46900",
+                "range_end": "46900",
+                "parent": null
+              },
+              "signature": "0da2b9ae96d26bbdf1dae9bf5ba4b1c3e2cc9424aed518c44be59c09f0d949d0"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-007@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.miscellaneous",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.miscellaneous"
+          ],
+          "conditional": false,
+          "condition": null,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "46950",
+              "semantic": {
+                "name": "Umsatzsteuervergütungen, z. B. nach § 24 UStG",
+                "function": "",
+                "range_start": "46950",
+                "range_end": "46950",
+                "parent": null
+              },
+              "signature": "d899258090c3a9cebf87b37c22be22fff4a11af8d076e76b7352f3b06ad0f078"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-008@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.taxFromGrossSales",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.taxFromGrossSales"
+          ],
+          "conditional": false,
+          "condition": null,
+          "contra": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "46990",
+              "semantic": {
+                "name": "Direkt mit dem Umsatz verbundene Steuern",
+                "function": "",
+                "range_start": "46990",
+                "range_end": "46990",
+                "parent": null
+              },
+              "signature": "79cd380eeb715cde31b62c586a8edd9e09a89fe4e762a540e846dc736c543915"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-009@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.ownWork.plants",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.ownWork.plants",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.ownWork.fixing"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "48200",
+              "semantic": {
+                "name": "Andere aktivierte Eigenleistungen",
+                "function": "",
+                "range_start": "48200",
+                "range_end": "48200",
+                "parent": null
+              },
+              "signature": "1fefbecea1f5ca525c5e6a75c804ffe1bb41c61239a622bd674f2733009f4b9c"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-010@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.ownWork.plants",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.ownWork.plants",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.ownWork.fixing"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "48240",
+              "semantic": {
+                "name": "Aktivierte Eigenleistungen (den Herstellungskosten zurechenbare Fremdkapitalzinsen)",
+                "function": "",
+                "range_start": "48240",
+                "range_end": "48240",
+                "parent": null
+              },
+              "signature": "4910b2aa5afaffa687b1db8ecaaa7e1c62c91f8c6a5a92f3b84c7038ca63081b"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-011@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.miscellaneous",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.miscellaneous"
+          ],
+          "conditional": false,
+          "condition": null,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "48370",
+              "semantic": {
+                "name": "Sonstige Erträge betriebsfremd und regelmäßig12)",
+                "function": "",
+                "range_start": "48370",
+                "range_end": "48370",
+                "parent": null
+              },
+              "signature": "fc5504aa9d4b2b7fc6b3ae75eb0f7f18bb07df24571b651e7128ececa85ec73d"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-012@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.disposCurrAss.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposCurrAss.other"
+          ],
+          "conditional": false,
+          "condition": null,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49050",
+              "semantic": {
+                "name": "Erträge aus dem Abgang von Gegenständen des Umlaufvermögens (außer Vorräte)",
+                "function": "",
+                "range_start": "49050",
+                "range_end": "49050",
+                "parent": null
+              },
+              "signature": "675fac8e723c4997681d404fefca5ff46602076b5226478a41a9678bbd646a30"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-013@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.disposCurrAss.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposCurrAss.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposCurrAss.foreignCorp"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49060",
+              "semantic": {
+                "name": "Erträge aus dem Abgang von Gegenständen des Umlaufvermögens (außer Vorräte) § 3 Nr. 40 EStG bzw. § 8b Abs. 2 KStG",
+                "function": "",
+                "range_start": "49060",
+                "range_end": "49060",
+                "parent": null
+              },
+              "signature": "991a7f7dd793dcc3c2bfece4fb03ef125fcd3f620e5f7cb5ed0de68f769c7a58"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-014@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.revalCurrAss.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalCurrAss.other"
+          ],
+          "conditional": false,
+          "condition": null,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49150",
+              "semantic": {
+                "name": "Erträge aus Zuschreibungen des Umlaufvermögens (außer Vorräte)",
+                "function": "",
+                "range_start": "49150",
+                "range_end": "49150",
+                "parent": null
+              },
+              "signature": "28992bd705961c6ad11b4af960a121ec011dff5dfb1df15f6830d059042d83df"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-015@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.revalCurrAss.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalCurrAss.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalCurrAss.foreignCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalCurrAss.domesticLoan.relatedParty",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalCurrAss.domesticLoan.unrelatedParty"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49160",
+              "semantic": {
+                "name": "Erträge aus Zuschreibungen des Umlaufvermögens § 3 Nr. 40 EStG bzw. § 8b Abs. 3 S. 9 KStG8)",
+                "function": "",
+                "range_start": "49160",
+                "range_end": "49160",
+                "parent": null
+              },
+              "signature": "d6b353bed4b75395e87a7a396c654c92904d7c64a699739d26589943598b5f35"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-016@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "63001",
+              "semantic": {
+                "name": "Tatsächliche Kosten im Zusammenhang mit den Einnahmen nach § 64 Abs. 5 AO1)",
+                "function": "",
+                "range_start": "63001",
+                "range_end": "63001",
+                "parent": null
+              },
+              "signature": "03568ce417c7f876f02dba348fcb5a33b19a912cd8c2c9602bc0025cac7cf548"
+            },
+            {
+              "code": "63002",
+              "semantic": {
+                "name": "Tatsächliche Kosten im Zusammenhang mit den Einnahmen nach § 64 Abs. 6 AO1)",
+                "function": "",
+                "range_start": "63002",
+                "range_end": "63002",
+                "parent": null
+              },
+              "signature": "219c1439bc30af7435bebf2faaac5d7fe9867ff64d6549bff6d187fe111d33f5"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-017@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": false,
+          "condition": null,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "63080",
+              "semantic": {
+                "name": "Sonstige Aufwendungen betrieblich und regelmäßig12)",
+                "function": "",
+                "range_start": "63080",
+                "range_end": "63080",
+                "parent": null
+              },
+              "signature": "633ffee53c957350e091fb74072432bc785ca2d859c6ca1ecd2d241988bac432"
+            },
+            {
+              "code": "69670",
+              "semantic": {
+                "name": "Sonstige Aufwendungen betriebsfremd und regelmäßig12)",
+                "function": "",
+                "range_start": "69670",
+                "range_end": "69670",
+                "parent": null
+              },
+              "signature": "dd6efc42167a166ed8827b4718eaf0c3746414b4a3d2f981bc49eecc4afb25c3"
+            },
+            {
+              "code": "69690",
+              "semantic": {
+                "name": "Sonstige Aufwendungen unregelmäßig12)",
+                "function": "",
+                "range_start": "69690",
+                "range_end": "69690",
+                "parent": null
+              },
+              "signature": "144a8cd6feaab78ec27dc05e1441240ae9549b56bc14ade69efafd1977e3d87f"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-018@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "68560",
+              "semantic": {
+                "name": "Aufwendungen aus Anteilen an Kapitalgesellschaften §§ 3 Nr. 40 und 3c EStG bzw. § 8b Abs. 1 und 4 KStG,",
+                "function": "",
+                "range_start": "68560",
+                "range_end": "68560",
+                "parent": null
+              },
+              "signature": "f3660e3c7ada3fafc5496fcf5237314038443b3f3c73f5d73b6afd23f6a613ab"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-019@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.disposalCorp.domestic",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.disposalCorp.domestic",
+            "is.netIncome.regular.operatingTC.otherCost.disposalCorp.foreign",
+            "is.netIncome.regular.operatingTC.otherCost.disposalCorp.misc"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "68570",
+              "semantic": {
+                "name": "Veräußerungskosten § 3 Nr. 40 EStG bzw. § 8b Abs. 2 KStG (bei Buchgewinn)8)",
+                "function": "",
+                "range_start": "68570",
+                "range_end": "68570",
+                "parent": null
+              },
+              "signature": "68683e997c0c44a203c2f1a219499555e83e42d19e10a4f3f9358d6d103c8eeb"
+            },
+            {
+              "code": "68580",
+              "semantic": {
+                "name": "Veräußerungskosten § 3 Nr. 40 EStG bzw. § 8b Abs. 2 i. V. m. § 8b Abs. 3 S. 3 KStG (bei Buchverlust)8)",
+                "function": "",
+                "range_start": "68580",
+                "range_end": "68580",
+                "parent": null
+              },
+              "signature": "b9d7255591df6b10a64d42efc7d7ca54085a42669986049ceaedd52eb9f36604"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-020@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.disposCurrAss.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.disposCurrAss.other"
+          ],
+          "conditional": false,
+          "condition": null,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69050",
+              "semantic": {
+                "name": "Verluste aus dem Abgang von Gegenständen des Umlaufvermögens (außer Vorräte)",
+                "function": "",
+                "range_start": "69050",
+                "range_end": "69050",
+                "parent": null
+              },
+              "signature": "dc9c021f904bffe7356bc9d49d45639d55a5b8d60ac2d823818398411f654c83"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-021@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.disposCurrAss.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.disposCurrAss.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherCost.disposCurrAss.foreignCorp"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69060",
+              "semantic": {
+                "name": "Verluste aus dem Abgang von Gegenständen des Umlaufvermögens außer Vorräte) § 3 Nr. 40 EStG bzw. § 8b Abs. 2 KStG i. V. m. § 8b Abs. 3 S. 3 KStG8)",
+                "function": "",
+                "range_start": "69060",
+                "range_end": "69060",
+                "parent": null
+              },
+              "signature": "4f965b26bc16ef32488ddf9d2be2a9bdb8193b37a521d517362b543bbc02761f"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-022@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.deprAmort.currAss.inventory",
+          "choices": [
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.inventory",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.other",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.misc"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69100",
+              "semantic": {
+                "name": "Abschreibungen auf Umlaufvermögen außer Vorräte und Wertpapiere des Umlaufvermögens (übliche Höhe)",
+                "function": "",
+                "range_start": "69100",
+                "range_end": "69100",
+                "parent": null
+              },
+              "signature": "35f0151686b0c792c322dd0b9c40527accb69c9bbec829701887e5cdee9df1b2"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-023@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.deprAmort.currAss.inventory",
+          "choices": [
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.inventory",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.other",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.misc"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69120",
+              "semantic": {
+                "name": "Abschreibungen auf Umlaufvermögen außer Vorräte und Wertpapiere des Umlaufvermögens, steuerrechtlich bedingt (übliche Höhe)",
+                "function": "",
+                "range_start": "69120",
+                "range_end": "69120",
+                "parent": null
+              },
+              "signature": "89e001492084f1824e891cbb1371dae4ea0e7171bdab89b7a70faaed0398d37f"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-024@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69180",
+              "semantic": {
+                "name": "Aufwendungen aus dem Erwerb eigener Anteile",
+                "function": "",
+                "range_start": "69180",
+                "range_end": "69180",
+                "parent": null
+              },
+              "signature": "6f3de38c770eab222b593f9b27a1ff0825d230d79432214b1b80713fbd1340f8"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-025@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netInterest.income.valueDiscount.accruals",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.income.valueDiscount.accruals"
+          ],
+          "conditional": false,
+          "condition": null,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "71410",
+              "semantic": {
+                "name": "Zinserträge aus der Abzinsung von Verbindlichkeiten",
+                "function": "",
+                "range_start": "71410",
+                "range_end": "71410",
+                "parent": null
+              },
+              "signature": "49556d4bb5562988618e25b3a1df619063c71dc08e3619ad5c4c67c922a91e25"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-026@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.valueDiscount.liabilities",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.valueDiscount.liabilities"
+          ],
+          "conditional": false,
+          "condition": null,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "73610",
+              "semantic": {
+                "name": "Zinsaufwendungen aus der Abzinsung von Verbindlichkeiten",
+                "function": "",
+                "range_start": "73610",
+                "range_end": "73610",
+                "parent": null
+              },
+              "signature": "d44c69390967b35d6c7a6c7e1a4b2bee6e480537a8b81c4b1989cbb5b1fb47c1"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-027@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netParticipation.amortFinanc.financialsExcept.participCorp.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.amortFinanc.financialsExcept.participCorp.domesticCorp",
+            "is.netIncome.regular.fin.netParticipation.amortFinanc.financialsExcept.participCorp.foreignCorp"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "72040",
+              "semantic": {
+                "name": "Abschreibungen auf Finanzanlagen § 3 Nr. 40 EStG bzw. § 8b Abs. 3 KStG (dauerhaft)",
+                "function": "",
+                "range_start": "72040",
+                "range_end": "72040",
+                "parent": null
+              },
+              "signature": "af13658c597a667c187d2d65787053345af6e17c86e3bc9ee9ca96c969138469"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "operating-r32-006@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.untaxable",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.untaxable"
+          ],
+          "conditional": false,
+          "condition": null,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "46900",
+              "semantic": {
+                "name": "Nicht steuerbare Umsätze (Innenumsätze)",
+                "function": "",
+                "range_start": "46900",
+                "range_end": "46900",
+                "parent": null
+              },
+              "signature": "0da2b9ae96d26bbdf1dae9bf5ba4b1c3e2cc9424aed518c44be59c09f0d949d0"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-007@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.miscellaneous",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.miscellaneous"
+          ],
+          "conditional": false,
+          "condition": null,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "46950",
+              "semantic": {
+                "name": "Umsatzsteuervergütungen nach § 24 UStG8)",
+                "function": "",
+                "range_start": "46950",
+                "range_end": "46950",
+                "parent": null
+              },
+              "signature": "9bd7d24bfeedf58fcf311e2576eb9f607e6164a1141b898a1b248ca8ee49251f"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-008@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.taxFromGrossSales",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.taxFromGrossSales"
+          ],
+          "conditional": false,
+          "condition": null,
+          "contra": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "46990",
+              "semantic": {
+                "name": "Direkt mit dem Umsatz verbundene Steuern",
+                "function": "",
+                "range_start": "46990",
+                "range_end": "46990",
+                "parent": null
+              },
+              "signature": "79cd380eeb715cde31b62c586a8edd9e09a89fe4e762a540e846dc736c543915"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-009@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.ownWork.plants",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.ownWork.plants",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.ownWork.fixing"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "48200",
+              "semantic": {
+                "name": "Andere aktivierte Eigenleistungen",
+                "function": "",
+                "range_start": "48200",
+                "range_end": "48200",
+                "parent": null
+              },
+              "signature": "1fefbecea1f5ca525c5e6a75c804ffe1bb41c61239a622bd674f2733009f4b9c"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-010@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.ownWork.plants",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.ownWork.plants",
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.ownWork.fixing"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "48240",
+              "semantic": {
+                "name": "Aktivierte Eigenleistungen (den Herstellungskosten zurechenbare Fremdkapitalzinsen)",
+                "function": "",
+                "range_start": "48240",
+                "range_end": "48240",
+                "parent": null
+              },
+              "signature": "4910b2aa5afaffa687b1db8ecaaa7e1c62c91f8c6a5a92f3b84c7038ca63081b"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-012@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.disposCurrAss.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposCurrAss.other"
+          ],
+          "conditional": false,
+          "condition": null,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49050",
+              "semantic": {
+                "name": "Erträge aus dem Abgang von Gegenständen des Umlaufvermögens (außer Vorräte)",
+                "function": "",
+                "range_start": "49050",
+                "range_end": "49050",
+                "parent": null
+              },
+              "signature": "675fac8e723c4997681d404fefca5ff46602076b5226478a41a9678bbd646a30"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-013@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.disposCurrAss.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposCurrAss.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.disposCurrAss.foreignCorp"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49060",
+              "semantic": {
+                "name": "Erträge aus dem Abgang von Gegenständen des Umlaufvermögens (außer Vorräte) § 3 Nr. 40 EStG bzw. § 8b Abs. 2 KStG",
+                "function": "",
+                "range_start": "49060",
+                "range_end": "49060",
+                "parent": null
+              },
+              "signature": "991a7f7dd793dcc3c2bfece4fb03ef125fcd3f620e5f7cb5ed0de68f769c7a58"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-014@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.revalCurrAss.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalCurrAss.other"
+          ],
+          "conditional": false,
+          "condition": null,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49150",
+              "semantic": {
+                "name": "Erträge aus Zuschreibungen des Umlaufvermögens (außer Vorräte)",
+                "function": "",
+                "range_start": "49150",
+                "range_end": "49150",
+                "parent": null
+              },
+              "signature": "28992bd705961c6ad11b4af960a121ec011dff5dfb1df15f6830d059042d83df"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-015@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.otherOpRevenue.revalCurrAss.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalCurrAss.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalCurrAss.foreignCorp",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalCurrAss.domesticLoan.relatedParty",
+            "is.netIncome.regular.operatingTC.otherOpRevenue.revalCurrAss.domesticLoan.unrelatedParty"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "49160",
+              "semantic": {
+                "name": "Erträge aus Zuschreibungen des Umlaufvermögens § 3 Nr. 40 EStG bzw. § 8b Abs. 3 S. 9 KStG",
+                "function": "",
+                "range_start": "49160",
+                "range_end": "49160",
+                "parent": null
+              },
+              "signature": "9017999754ee3c53e9a8d0502fb5ed903406b0c418227a3aaa53326d6b49cbb7"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-016@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "63001",
+              "semantic": {
+                "name": "Tatsächliche Kosten im Zusammenhang mit den Einnahmen nach § 64 Abs. 5 AO",
+                "function": "",
+                "range_start": "63001",
+                "range_end": "63001",
+                "parent": null
+              },
+              "signature": "eda829062eff9d56afa1817ac4f32d2a57335413943defdd87b3719462a1f9a0"
+            },
+            {
+              "code": "63002",
+              "semantic": {
+                "name": "Tatsächliche Kosten im Zusammenhang mit den Einnahmen nach § 64 Abs. 6 AO",
+                "function": "",
+                "range_start": "63002",
+                "range_end": "63002",
+                "parent": null
+              },
+              "signature": "eb7b64b2615d652927341fb0f5346231e0d512213c19ab178fef25f2a8d1d42f"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-018@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "68560",
+              "semantic": {
+                "name": "Aufwendungen aus Anteilen an Kapitalgesellschaften §§ 3 Nr. 40 und 3c EStG bzw. § 8b Abs. 1 und 4 KStG",
+                "function": "",
+                "range_start": "68560",
+                "range_end": "68560",
+                "parent": null
+              },
+              "signature": "bcd4408e81f57e7ad8084d3809e9c9e902b66a030cb820d050029c14c3fbe1f1"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-019@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.disposalCorp.domestic",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.disposalCorp.domestic",
+            "is.netIncome.regular.operatingTC.otherCost.disposalCorp.foreign",
+            "is.netIncome.regular.operatingTC.otherCost.disposalCorp.misc"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "68570",
+              "semantic": {
+                "name": "Veräußerungskosten § 3 Nr. 40 EStG bzw. § 8b Abs. 2 KStG (bei Buchgewinn)",
+                "function": "",
+                "range_start": "68570",
+                "range_end": "68570",
+                "parent": null
+              },
+              "signature": "9eb917ec2b55401ef061ccd0a7493ace2391901da11bcdbbef9ed69184b7f03d"
+            },
+            {
+              "code": "68580",
+              "semantic": {
+                "name": "Veräußerungskosten § 3 Nr. 40 EStG bzw. § 8b Abs. 2 i. V. m. § 8b Abs. 3 S. 3 KStG (bei Buchverlust)",
+                "function": "",
+                "range_start": "68580",
+                "range_end": "68580",
+                "parent": null
+              },
+              "signature": "5296bfd52ba60155059d3edf89ac630856520d23d09f72c9ef6757c94a01cdda"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-020@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.disposCurrAss.other",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.disposCurrAss.other"
+          ],
+          "conditional": false,
+          "condition": null,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69050",
+              "semantic": {
+                "name": "Verluste aus dem Abgang von Gegenständen des Umlaufvermögens (außer Vorräte)",
+                "function": "",
+                "range_start": "69050",
+                "range_end": "69050",
+                "parent": null
+              },
+              "signature": "dc9c021f904bffe7356bc9d49d45639d55a5b8d60ac2d823818398411f654c83"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-021@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.disposCurrAss.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.disposCurrAss.domesticCorp",
+            "is.netIncome.regular.operatingTC.otherCost.disposCurrAss.foreignCorp"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69060",
+              "semantic": {
+                "name": "Verluste aus dem Abgang von Gegenständen des Umlaufvermögens außer Vorräte) § 3 Nr. 40 EStG bzw. § 8b Abs. 2 KStG i. V. m. § 8b Abs. 3 S. 3 KStG",
+                "function": "",
+                "range_start": "69060",
+                "range_end": "69060",
+                "parent": null
+              },
+              "signature": "2f9763156e92002fcb3fbbaf0dd7bd91503138ee8170f9415d8a456a063e3299"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-022@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.deprAmort.currAss.inventory",
+          "choices": [
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.inventory",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.other",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.misc"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69100",
+              "semantic": {
+                "name": "Abschreibungen auf Umlaufvermögen außer Vorräte und Wertpapiere des Umlaufvermögens (übliche Höhe)",
+                "function": "",
+                "range_start": "69100",
+                "range_end": "69100",
+                "parent": null
+              },
+              "signature": "35f0151686b0c792c322dd0b9c40527accb69c9bbec829701887e5cdee9df1b2"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-023@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.deprAmort.currAss.inventory",
+          "choices": [
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.inventory",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.receiv.other",
+            "is.netIncome.regular.operatingTC.deprAmort.currAss.misc"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69120",
+              "semantic": {
+                "name": "Abschreibungen auf Umlaufvermögen außer Vorräte und Wertpapiere des Umlaufvermögens, steuerrechtlich bedingt (übliche Höhe)",
+                "function": "",
+                "range_start": "69120",
+                "range_end": "69120",
+                "parent": null
+              },
+              "signature": "89e001492084f1824e891cbb1371dae4ea0e7171bdab89b7a70faaed0398d37f"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-024@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.operatingTC.otherCost.otherOrdinary",
+          "choices": [
+            "is.netIncome.regular.operatingTC.otherCost.otherOrdinary"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "69180",
+              "semantic": {
+                "name": "Aufwendungen aus dem Erwerb eigener Anteile",
+                "function": "",
+                "range_start": "69180",
+                "range_end": "69180",
+                "parent": null
+              },
+              "signature": "6f3de38c770eab222b593f9b27a1ff0825d230d79432214b1b80713fbd1340f8"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-025@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.fin.netInterest.income.valueDiscount.accruals",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.income.valueDiscount.accruals"
+          ],
+          "conditional": false,
+          "condition": null,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "71410",
+              "semantic": {
+                "name": "Zinserträge aus der Abzinsung von auf Rentenverpflichtungen beruhenden Verbindlichkeiten, für die eine Gegenleistung nicht mehr zu erwarten ist8)",
+                "function": "",
+                "range_start": "71410",
+                "range_end": "71410",
+                "parent": null
+              },
+              "signature": "b7b1b704b731b3a060d7abb1261491d57e25d752e502c3cceb4eafe334cd9f63"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-026@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netInterest.expenses.valueDiscount.liabilities",
+          "choices": [
+            "is.netIncome.regular.fin.netInterest.expenses.valueDiscount.liabilities"
+          ],
+          "conditional": false,
+          "condition": null,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "73610",
+              "semantic": {
+                "name": "Zinsaufwendungen aus der Abzinsung von auf Rentenverpflichtungen beruhenden Verbindlichkeiten, für die eine Gegenleistung nicht mehr zu erwarten ist8)",
+                "function": "",
+                "range_start": "73610",
+                "range_end": "73610",
+                "parent": null
+              },
+              "signature": "643626fb5cf8572f12dd14d0750210788af52bb6e235e6ddd31f3b102a26c73b"
+            }
+          ]
+        },
+        {
+          "purpose": "operating-r32-027@1",
+          "group": "expense",
+          "target": "is.netIncome.regular.fin.netParticipation.amortFinanc.financialsExcept.participCorp.domesticCorp",
+          "choices": [
+            "is.netIncome.regular.fin.netParticipation.amortFinanc.financialsExcept.participCorp.domesticCorp",
+            "is.netIncome.regular.fin.netParticipation.amortFinanc.financialsExcept.participCorp.foreignCorp"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "72040",
+              "semantic": {
+                "name": "Abschreibungen auf Finanzanlagen § 3 Nr. 40 EStG bzw. § 8b Abs. 3 KStG (dauerhaft)",
+                "function": "",
+                "range_start": "72040",
+                "range_end": "72040",
+                "parent": null
+              },
+              "signature": "af13658c597a667c187d2d65787053345af6e17c86e3bc9ee9ca96c969138469"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

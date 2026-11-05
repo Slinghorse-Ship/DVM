@@ -1,0 +1,33 @@
+<?php declare(strict_types=1);
+require __DIR__.'/../src/bootstrap.php';
+use Kulturhus\Verein\{Database,Documents,Settings,SettingsSchema};
+$db=\Kulturhus\Verein\Tests\MySqlFixture::connect(':memory:');Database::migrate($db);
+$db->exec("INSERT INTO clubs VALUES('a','Synthetic A'),('b','Synthetic B'); INSERT INTO actors(id,club_id,role,is_superuser) VALUES('manager','a','members',1),('foreign','b','members',1),('finance','a','treasurer',0),('orga','a','members',0)");
+$d=new Documents($db,'manager');$s=new Settings($db,'manager');$count=0;
+function check(bool $ok,string $label):void{global $count;if(!$ok)throw new RuntimeException($label);$count++;echo "PASS $label\n";}
+function denied(callable $f,string $label):void{try{$f();}catch(DomainException){check(true,$label);return;}throw new RuntimeException('Not rejected: '.$label);}
+$key=fn()=>bin2hex(random_bytes(16));$pdf="%PDF-1.4\n1 0 obj<</Type/Catalog>>endobj\n%%EOF";
+$make=fn($title,$scope='finance')=>$d->upload($title.'.pdf',$pdf,['title'=>$title,'kind'=>'other','scope'=>$scope,'document_date'=>'2025-09-01','links'=>[]],$key());
+$a=$make('Bescheid A');$b=$make('Bescheid B');$tax=SettingsSchema::defaults('tax');
+check($d->document($a)['references']===[],'legacy missing tax settings has no automatic use');
+$tax['notice_document_id']=$a;$s->save('tax',$tax,0);
+check(count($d->document($a)['references'])===1&&$d->document($a)['links']===[],'derived use without editable link');
+check(!in_array($a,array_column($d->listing(['unassigned'=>'1']),'id')),'used notice excluded from unassigned');
+check(count((new Documents($db,'finance'))->document($a)['references'])===1,'finance reader sees use with document access');
+denied(fn()=>(new Documents($db,'orga'))->document($a),'no finance rights cannot read notice or use');
+$tax['notice_document_id']=$b;$s->save('tax',$tax,1);
+check($d->document($a)['references']===[]&&count($d->document($b)['references'])===1,'replacement moves derived use immediately');
+check(in_array($a,array_column($d->listing(['unassigned'=>'1']),'id')),'previous notice becomes unassigned');
+denied(fn()=>$s->save('tax',$tax,1),'stale settings rejected');
+$other=(new Documents($db,'foreign'))->upload('foreign.pdf',$pdf,['title'=>'Foreign','kind'=>'other','scope'=>'finance','document_date'=>'2025-09-01','links'=>[]],$key());
+foreach(['foreign'=>$other,'unknown'=>'missing','nonfinance'=>$make('Orga','orga')] as $label=>$id)denied(fn()=>$s->save('tax',array_replace($tax,['notice_document_id'=>$id]),2),$label.' notice rejected');
+$db->prepare("UPDATE documents SET state='archived' WHERE id=?")->execute([$a]);denied(fn()=>$s->save('tax',array_replace($tax,['notice_document_id'=>$a]),2),'archived notice rejected');
+$db->prepare("UPDATE documents SET scopes=? WHERE id=?")->execute([json_encode(['finance','members']),$a]);$db->prepare("UPDATE documents SET state='active' WHERE id=?")->execute([$a]);
+denied(fn()=>(new Settings($db,'finance'))->save('tax',array_replace($tax,['notice_document_id'=>$a]),2),'extra document scope prevents finance-only assignment');
+$text=$d->upload('notice.txt','Synthetic text',['title'=>'Text notice','kind'=>'other','scope'=>'finance','document_date'=>'2025-09-01','links'=>[]],$key());
+$generated=$d->generated('generated.pdf',$pdf,['title'=>'Generated notice','kind'=>'record','scope'=>'finance','document_date'=>'2025-09-01','links'=>[]],$key(),[]);
+foreach(['text'=>$text,'generated'=>$generated] as $label=>$id)denied(fn()=>$s->save('tax',array_replace($tax,['notice_document_id'=>$id]),2),$label.' cannot replace uploaded original');
+$tax['notice_document_id']='';$s->save('tax',$tax,2);check($d->document($b)['references']===[],'clearing setting clears automatic use');
+$db->prepare("UPDATE club_settings SET payload=? WHERE club_id='a' AND section='tax'")->execute([json_encode(['office'=>'Legacy office'])]);check($d->document($b)['references']===[],'legacy payload without notice id supported');
+$db->prepare("UPDATE club_settings SET payload=? WHERE club_id='a' AND section='tax'")->execute([json_encode(['notice_document_id'=>'missing'])]);check($d->document($b)['references']===[],'dangling legacy setting does not break document listing');
+echo "PASS $count tax notice reference checks\n";

@@ -1,0 +1,371 @@
+{
+  "schema": 1,
+  "revision": 34,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "balance-positions-r34-001@1",
+          "group": "cash",
+          "target": "bs.ass.currAss.cashEquiv.cheques",
+          "choices": [
+            "bs.ass.currAss.cashEquiv.cheques"
+          ],
+          "conditional": false,
+          "condition": null,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "15500",
+              "semantic": {
+                "name": "Schecks12)",
+                "function": "F",
+                "range_start": "15500",
+                "range_end": "15500",
+                "parent": null
+              },
+              "signature": "8e8c8c495860751ca0453ebfa270b0e389b14bcdd79c5431189c47d90f73d1db"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r34-002@1",
+          "group": "prepaid",
+          "target": "bs.ass.prepaidExp.customTaxDuty",
+          "choices": [
+            "bs.ass.prepaidExp.customTaxDuty"
+          ],
+          "conditional": false,
+          "condition": null,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "19200",
+              "semantic": {
+                "name": "Als Aufwand berücksichtigte Zölle und Verbrauchsteuern auf Vorräte",
+                "function": "",
+                "range_start": "19200",
+                "range_end": "19200",
+                "parent": null
+              },
+              "signature": "138190b90249204d88108e38d4e1c0e6ad08503bc17514d061117a81d60cd39c"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r34-003@1",
+          "group": "prepaid",
+          "target": "bs.ass.prepaidExp.vat",
+          "choices": [
+            "bs.ass.prepaidExp.vat"
+          ],
+          "conditional": false,
+          "condition": null,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "19300",
+              "semantic": {
+                "name": "Als Aufwand berücksichtigte Umsatzsteuer auf Anzahlungen",
+                "function": "",
+                "range_start": "19300",
+                "range_end": "19300",
+                "parent": null
+              },
+              "signature": "2e3ca9d3e6812cfee2bcbb6488671162e6ad0e751f72db651a5ab17d5bed6aae"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r34-004@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.other",
+          "choices": [
+            "bs.eqLiab.liab.other.other"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "36200",
+              "semantic": {
+                "name": "Gewinnverfügungskonto stille Gesellschafter - sonstige Verbindlichkeiten",
+                "function": "",
+                "range_start": "36200",
+                "range_end": "36200",
+                "parent": null
+              },
+              "signature": "50e189341b02a928faccc051952a3a284cedef0cd703d773916a2c47f59760e3"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r34-005@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.theroffTax.vat",
+          "choices": [
+            "bs.eqLiab.liab.other.theroffTax.vat"
+          ],
+          "conditional": false,
+          "condition": null,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "38200",
+              "semantic": {
+                "name": "Umsatzsteuer nicht fällig",
+                "function": "S",
+                "range_start": "38200",
+                "range_end": "38200",
+                "parent": null
+              },
+              "signature": "dae77d80ca93b3c0323ef89dd06cecfc718a62694cb9a436f272f8cfeaa1df64"
+            },
+            {
+              "code": "38210",
+              "semantic": {
+                "name": "Umsatzsteuer nicht fällig 7 %",
+                "function": "S",
+                "range_start": "38210",
+                "range_end": "38210",
+                "parent": null
+              },
+              "signature": "6850c039717581bc3119ae1f5fe075bd2ae81789bf439a46a113a366554c8658"
+            },
+            {
+              "code": "38260",
+              "semantic": {
+                "name": "Umsatzsteuer nicht fällig 19 %",
+                "function": "S",
+                "range_start": "38260",
+                "range_end": "38260",
+                "parent": null
+              },
+              "signature": "7a6d79f60c9d8a94d005ae4fa3f06f2f49463111d3244c48d8bd1a5be957a606"
+            },
+            {
+              "code": "38300",
+              "semantic": {
+                "name": "Umsatzsteuer nicht fällig aus im Inland steuerpflichtigen EU- Lieferungen",
+                "function": "S",
+                "range_start": "38300",
+                "range_end": "38300",
+                "parent": null
+              },
+              "signature": "70747b3bb73c6e83535d67c3e405bbe7c4c87962a98a375d336131e9b6ac5236"
+            },
+            {
+              "code": "38360",
+              "semantic": {
+                "name": "Umsatzsteuer nicht fällig aus im Inland steuerpflichtigen EU- Lieferungen 19 %",
+                "function": "S",
+                "range_start": "38360",
+                "range_end": "38360",
+                "parent": null
+              },
+              "signature": "69c4c536664481af2df485bf75675814667ff4450fabfa919909d5d58baa07a2"
+            },
+            {
+              "code": "38710",
+              "semantic": {
+                "name": "Einfuhrumsatzsteuer aufgeschoben bis...12)",
+                "function": "",
+                "range_start": "38710",
+                "range_end": "38710",
+                "parent": null
+              },
+              "signature": "dd893643d3afb0fd15bba332c6dfbc0d8d47ad7c3126b6bee95d1da9cbe20bae"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r34-006@1",
+          "group": "revenue",
+          "target": "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.taxExemptUStG19_1",
+          "choices": [
+            "is.netIncome.regular.operatingTC.grossTradingProfit.totalOutput.netSales.grossSales.taxExemptUStG19_1"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "41850",
+              "semantic": {
+                "name": "Erlöse als Kleinunternehmer nach § 19 Abs. 1 UStG a. F.8)11)",
+                "function": "",
+                "range_start": "41850",
+                "range_end": "41850",
+                "parent": null
+              },
+              "signature": "90ca6f53f80c992990569adccb988a4e17f09ab8e2f523f2ee9a07a30c53a889"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "balance-positions-r34-002@1",
+          "group": "prepaid",
+          "target": "bs.ass.prepaidExp.customTaxDuty",
+          "choices": [
+            "bs.ass.prepaidExp.customTaxDuty"
+          ],
+          "conditional": false,
+          "condition": null,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "19200",
+              "semantic": {
+                "name": "Als Aufwand berücksichtigte Zölle und Verbrauchsteuern auf Vorräte",
+                "function": "",
+                "range_start": "19200",
+                "range_end": "19200",
+                "parent": null
+              },
+              "signature": "138190b90249204d88108e38d4e1c0e6ad08503bc17514d061117a81d60cd39c"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r34-003@1",
+          "group": "prepaid",
+          "target": "bs.ass.prepaidExp.vat",
+          "choices": [
+            "bs.ass.prepaidExp.vat"
+          ],
+          "conditional": false,
+          "condition": null,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "19300",
+              "semantic": {
+                "name": "Als Aufwand berücksichtigte Umsatzsteuer auf Anzahlungen",
+                "function": "",
+                "range_start": "19300",
+                "range_end": "19300",
+                "parent": null
+              },
+              "signature": "2e3ca9d3e6812cfee2bcbb6488671162e6ad0e751f72db651a5ab17d5bed6aae"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r34-004@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.other",
+          "choices": [
+            "bs.eqLiab.liab.other.other"
+          ],
+          "conditional": true,
+          "condition": "detail_choice",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "36200",
+              "semantic": {
+                "name": "Gewinnverfügungskonto stille Gesellschafter - sonstige Verbindlichkeiten",
+                "function": "",
+                "range_start": "36200",
+                "range_end": "36200",
+                "parent": null
+              },
+              "signature": "50e189341b02a928faccc051952a3a284cedef0cd703d773916a2c47f59760e3"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r34-005@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.theroffTax.vat",
+          "choices": [
+            "bs.eqLiab.liab.other.theroffTax.vat"
+          ],
+          "conditional": false,
+          "condition": null,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "38200",
+              "semantic": {
+                "name": "Umsatzsteuer nicht fällig",
+                "function": "S",
+                "range_start": "38200",
+                "range_end": "38200",
+                "parent": null
+              },
+              "signature": "dae77d80ca93b3c0323ef89dd06cecfc718a62694cb9a436f272f8cfeaa1df64"
+            },
+            {
+              "code": "38210",
+              "semantic": {
+                "name": "Umsatzsteuer nicht fällig 7 %",
+                "function": "S",
+                "range_start": "38210",
+                "range_end": "38210",
+                "parent": null
+              },
+              "signature": "6850c039717581bc3119ae1f5fe075bd2ae81789bf439a46a113a366554c8658"
+            },
+            {
+              "code": "38260",
+              "semantic": {
+                "name": "Umsatzsteuer nicht fällig 19 %",
+                "function": "S",
+                "range_start": "38260",
+                "range_end": "38260",
+                "parent": null
+              },
+              "signature": "7a6d79f60c9d8a94d005ae4fa3f06f2f49463111d3244c48d8bd1a5be957a606"
+            },
+            {
+              "code": "38300",
+              "semantic": {
+                "name": "Umsatzsteuer nicht fällig aus im Inland steuerpflichtigen EU- Lieferungen",
+                "function": "S",
+                "range_start": "38300",
+                "range_end": "38300",
+                "parent": null
+              },
+              "signature": "70747b3bb73c6e83535d67c3e405bbe7c4c87962a98a375d336131e9b6ac5236"
+            },
+            {
+              "code": "38360",
+              "semantic": {
+                "name": "Umsatzsteuer nicht fällig aus im Inland steuerpflichtigen EU- Lieferungen 19 %",
+                "function": "S",
+                "range_start": "38360",
+                "range_end": "38360",
+                "parent": null
+              },
+              "signature": "69c4c536664481af2df485bf75675814667ff4450fabfa919909d5d58baa07a2"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

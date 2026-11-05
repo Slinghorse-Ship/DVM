@@ -1,0 +1,469 @@
+{
+  "schema": 1,
+  "revision": 54,
+  "source_kind": "explicit_reviewed_semantic_correction",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "corporate-investments-r50-001@2",
+          "previous_purpose": "corporate-investments-r50-001@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.sharesInAffil.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.sharesInAffil.corporations"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "08040",
+              "semantic": {
+                "name": "Anteile an verbundenen Unternehmen, Kapitalgesellschaften",
+                "function": "",
+                "range_start": "08040",
+                "range_end": "08040",
+                "parent": null
+              },
+              "signature": "985a456bb7bb6f1891571ccd5d23ffee963db85af418c88d4565fab71a61a16d"
+            }
+          ]
+        },
+        {
+          "purpose": "corporate-investments-r50-002@2",
+          "previous_purpose": "corporate-investments-r50-002@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.sharesInAffil.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.sharesInAffil.corporations"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "08080",
+              "semantic": {
+                "name": "Anteile an herrschender oder mehrheitlich beteiligter Gesellschaft, Kapitalgesellschaften",
+                "function": "",
+                "range_start": "08080",
+                "range_end": "08080",
+                "parent": null
+              },
+              "signature": "4ef4fe165d9688daad3e71d7167aa0bef0059285e1903b14314e45f19fc038f9"
+            }
+          ]
+        },
+        {
+          "purpose": "corporate-investments-r50-003@2",
+          "previous_purpose": "corporate-investments-r50-003@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.particip.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.particip.corporations"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "08500",
+              "semantic": {
+                "name": "Beteiligungen an Kapitalgesellschaften",
+                "function": "",
+                "range_start": "08500",
+                "range_end": "08500",
+                "parent": null
+              },
+              "signature": "4fa4951534ab1e7df7047f6ad2210ad54a6036713943c3a71c2a717803effaed"
+            }
+          ]
+        },
+        {
+          "purpose": "securities-r53-001@2",
+          "previous_purpose": "securities-r53-001@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.securities",
+          "choices": [
+            "bs.ass.fixAss.fin.securities",
+            "bs.ass.fixAss.fin.securities.shares",
+            "bs.ass.fixAss.fin.securities.partCertificate",
+            "bs.ass.fixAss.fin.securities.bonds",
+            "bs.ass.fixAss.fin.securities.convertBond",
+            "bs.ass.fixAss.fin.securities.mutInvestm",
+            "bs.ass.fixAss.fin.securities.warrants",
+            "bs.ass.fixAss.fin.securities.other"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "09000",
+              "semantic": {
+                "name": "Wertpapiere des Anlagevermögens",
+                "function": "",
+                "range_start": "09000",
+                "range_end": "09000",
+                "parent": null
+              },
+              "signature": "28423ebd708797cb820d06a51149a0694499e8b089fcd4068e81a46ff14e837b"
+            }
+          ]
+        },
+        {
+          "purpose": "securities-r53-002@2",
+          "previous_purpose": "securities-r53-002@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.securities.partCertificate",
+          "choices": [
+            "bs.ass.fixAss.fin.securities.partCertificate",
+            "bs.ass.fixAss.fin.securities.shares"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "09100",
+              "semantic": {
+                "name": "Wertpapiere mit Gewinnbeteiligungsansprüchen, die dem Teileinkünfteverfahren unterliegen",
+                "function": "",
+                "range_start": "09100",
+                "range_end": "09100",
+                "parent": null
+              },
+              "signature": "c82ac5aa23089d178f437fdf8e805a005ce11754c8f963a458fc56560869efd5"
+            }
+          ]
+        },
+        {
+          "purpose": "corporate-investments-r50-004@2",
+          "previous_purpose": "corporate-investments-r50-004@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.particip.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.particip.corporations"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "09800",
+              "semantic": {
+                "name": "Genossenschaftsanteile zum langfristigen Verbleib",
+                "function": "",
+                "range_start": "09800",
+                "range_end": "09800",
+                "parent": null
+              },
+              "signature": "3369f2f1b504365f9ca671927b8119a74cd86bf3a9f9dad5cb6f792ff267e5a4"
+            }
+          ]
+        }
+      ],
+      "corrections": {
+        "08500": {
+          "previous_purpose": "corporate-investments-r50-003@1",
+          "new_purpose": "corporate-investments-r50-003@2",
+          "source_signature": "4fa4951534ab1e7df7047f6ad2210ad54a6036713943c3a71c2a717803effaed",
+          "previous_definition_sha256": "ea1e8d6bbaccd40d96cc231bda47181e4ba9f57658d92ed7269fd5286529a6db",
+          "new_definition_sha256": "47d92729d09e3c4b52c4bb9163d5b36e8a677ff7246be119755f22c4a38b751c"
+        },
+        "09800": {
+          "previous_purpose": "corporate-investments-r50-004@1",
+          "new_purpose": "corporate-investments-r50-004@2",
+          "source_signature": "3369f2f1b504365f9ca671927b8119a74cd86bf3a9f9dad5cb6f792ff267e5a4",
+          "previous_definition_sha256": "1a2307061e6cfee524d86ec002ed57435a646943ee934e6c38eb4422979d3c49",
+          "new_definition_sha256": "fc7e57c48184093d096d25de892965f0a88d502ecb435ee6c58d5aaef2a3ff22"
+        },
+        "68970": {
+          "previous_purpose": "cost-register-r26-68970@1",
+          "new_purpose": "cost-register-r26-68970@2",
+          "source_signature": "58a4b81a91da9b8d9df86e0a992942ec32fd394434edeed90e379c69652736ea",
+          "previous_definition_sha256": "73aac98e45f18f7b40b1adeadce4f46f3121bbad82b4d8a26c961ab0ff07888e",
+          "new_definition_sha256": "1fe67e1ea0970681d522ebeef38ecf7f9c0152a81f283675f5a67f786be79340"
+        },
+        "09100": {
+          "previous_purpose": "securities-r53-002@1",
+          "new_purpose": "securities-r53-002@2",
+          "source_signature": "c82ac5aa23089d178f437fdf8e805a005ce11754c8f963a458fc56560869efd5",
+          "previous_definition_sha256": "3708a0fd155991c1e5b03ab186f5760cb738e5363062b1c567d271c6e1632116",
+          "new_definition_sha256": "50f7166119b9f4304b5136898b37c01d9c9ed64a9ff74bdb0a6cd687af6780d3"
+        },
+        "08080": {
+          "previous_purpose": "corporate-investments-r50-002@1",
+          "new_purpose": "corporate-investments-r50-002@2",
+          "source_signature": "4ef4fe165d9688daad3e71d7167aa0bef0059285e1903b14314e45f19fc038f9",
+          "previous_definition_sha256": "b02d7988ec6997f39b185e6acdcd23311bc21d5de16c2e85ec0857733130f2a9",
+          "new_definition_sha256": "16eb1d09308a33d27223015a1a6c62245c192fcf8c865f0d8da2e378ee4a3e20"
+        },
+        "49120": {
+          "previous_purpose": "cost-register-r26-49120@1",
+          "new_purpose": "cost-register-r26-49120@2",
+          "source_signature": "45e9c0f204560d9e94d5615b186b8a0883244265ce2c54dbcd9fc4dfde08f89b",
+          "previous_definition_sha256": "660a14b7a141bc5c5e96f16475c1fed2407d3de4dd9b2f08b8c2796341f9cf40",
+          "new_definition_sha256": "19ffd8f31bf26e48d39484f87b9d78a8d4bd0b22257dddbae3b67af692a281dc"
+        },
+        "72000": {
+          "previous_purpose": "cost-register-r26-72000@1",
+          "new_purpose": "cost-register-r26-72000@2",
+          "source_signature": "249a2f3e5447cfba47991759d042acba20f7c849d8446067408deb1da2c25270",
+          "previous_definition_sha256": "e822fabd78e94c8d5b4f5e51b0ab4e74708a58faa732c3f7be6733c165cdfc98",
+          "new_definition_sha256": "a7a0cd9d67fc6bb5070f042ea47631c8d931179b57571715440ee06890ac0f73"
+        },
+        "09000": {
+          "previous_purpose": "securities-r53-001@1",
+          "new_purpose": "securities-r53-001@2",
+          "source_signature": "28423ebd708797cb820d06a51149a0694499e8b089fcd4068e81a46ff14e837b",
+          "previous_definition_sha256": "158f838a1222e9998efb6b204a44842e0ab9722b4783eb3f7d0a0c5b76a19c6d",
+          "new_definition_sha256": "b1f86b181983cbe05e55ab98128c26d8fff0a4ef5ac4f989d525b33d798d2b01"
+        },
+        "08040": {
+          "previous_purpose": "corporate-investments-r50-001@1",
+          "new_purpose": "corporate-investments-r50-001@2",
+          "source_signature": "985a456bb7bb6f1891571ccd5d23ffee963db85af418c88d4565fab71a61a16d",
+          "previous_definition_sha256": "3c56e870db2679c5e16c99b2047320c41e44c8b5339fb7b9155fc8a7a385ebbd",
+          "new_definition_sha256": "a940a3222eb3ca92e5b3a5eabc829d131e7f937228a9c345a1835db3cb2f0e87"
+        },
+        "72010": {
+          "previous_purpose": "cost-register-r26-72010@1",
+          "new_purpose": "cost-register-r26-72010@2",
+          "source_signature": "3a5043af9b82917f414d89b4422971b1dbb852355490ef05d6df352d9a924642",
+          "previous_definition_sha256": "e822fabd78e94c8d5b4f5e51b0ab4e74708a58faa732c3f7be6733c165cdfc98",
+          "new_definition_sha256": "a7a0cd9d67fc6bb5070f042ea47631c8d931179b57571715440ee06890ac0f73"
+        }
+      }
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "corporate-investments-r50-001@2",
+          "previous_purpose": "corporate-investments-r50-001@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.sharesInAffil.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.sharesInAffil.corporations"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "08040",
+              "semantic": {
+                "name": "Anteile an verbundenen Unternehmen, Kapitalgesellschaften",
+                "function": "",
+                "range_start": "08040",
+                "range_end": "08040",
+                "parent": null
+              },
+              "signature": "985a456bb7bb6f1891571ccd5d23ffee963db85af418c88d4565fab71a61a16d"
+            }
+          ]
+        },
+        {
+          "purpose": "corporate-investments-r50-002@2",
+          "previous_purpose": "corporate-investments-r50-002@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.sharesInAffil.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.sharesInAffil.corporations"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "08080",
+              "semantic": {
+                "name": "Anteile an herrschender oder mehrheitlich beteiligter Gesellschaft, Kapitalgesellschaften",
+                "function": "",
+                "range_start": "08080",
+                "range_end": "08080",
+                "parent": null
+              },
+              "signature": "4ef4fe165d9688daad3e71d7167aa0bef0059285e1903b14314e45f19fc038f9"
+            }
+          ]
+        },
+        {
+          "purpose": "corporate-investments-r50-003@2",
+          "previous_purpose": "corporate-investments-r50-003@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.particip.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.particip.corporations"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "08500",
+              "semantic": {
+                "name": "Beteiligungen an Kapitalgesellschaften",
+                "function": "",
+                "range_start": "08500",
+                "range_end": "08500",
+                "parent": null
+              },
+              "signature": "4fa4951534ab1e7df7047f6ad2210ad54a6036713943c3a71c2a717803effaed"
+            }
+          ]
+        },
+        {
+          "purpose": "securities-r53-001@2",
+          "previous_purpose": "securities-r53-001@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.securities",
+          "choices": [
+            "bs.ass.fixAss.fin.securities",
+            "bs.ass.fixAss.fin.securities.shares",
+            "bs.ass.fixAss.fin.securities.partCertificate",
+            "bs.ass.fixAss.fin.securities.bonds",
+            "bs.ass.fixAss.fin.securities.convertBond",
+            "bs.ass.fixAss.fin.securities.mutInvestm",
+            "bs.ass.fixAss.fin.securities.warrants",
+            "bs.ass.fixAss.fin.securities.other"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "09000",
+              "semantic": {
+                "name": "Wertpapiere des Anlagevermögens",
+                "function": "",
+                "range_start": "09000",
+                "range_end": "09000",
+                "parent": null
+              },
+              "signature": "28423ebd708797cb820d06a51149a0694499e8b089fcd4068e81a46ff14e837b"
+            }
+          ]
+        },
+        {
+          "purpose": "securities-r53-002@2",
+          "previous_purpose": "securities-r53-002@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.securities.partCertificate",
+          "choices": [
+            "bs.ass.fixAss.fin.securities.partCertificate",
+            "bs.ass.fixAss.fin.securities.shares"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "09100",
+              "semantic": {
+                "name": "Wertpapiere mit Gewinnbeteiligungsansprüchen, die dem Teileinkünfteverfahren unterliegen",
+                "function": "",
+                "range_start": "09100",
+                "range_end": "09100",
+                "parent": null
+              },
+              "signature": "c82ac5aa23089d178f437fdf8e805a005ce11754c8f963a458fc56560869efd5"
+            }
+          ]
+        },
+        {
+          "purpose": "corporate-investments-r50-004@2",
+          "previous_purpose": "corporate-investments-r50-004@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.particip.corporations",
+          "choices": [
+            "bs.ass.fixAss.fin.particip.corporations"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "09800",
+              "semantic": {
+                "name": "Genossenschaftsanteile zum langfristigen Verbleib",
+                "function": "",
+                "range_start": "09800",
+                "range_end": "09800",
+                "parent": null
+              },
+              "signature": "3369f2f1b504365f9ca671927b8119a74cd86bf3a9f9dad5cb6f792ff267e5a4"
+            }
+          ]
+        }
+      ],
+      "corrections": {
+        "08500": {
+          "previous_purpose": "corporate-investments-r50-003@1",
+          "new_purpose": "corporate-investments-r50-003@2",
+          "source_signature": "4fa4951534ab1e7df7047f6ad2210ad54a6036713943c3a71c2a717803effaed",
+          "previous_definition_sha256": "ea1e8d6bbaccd40d96cc231bda47181e4ba9f57658d92ed7269fd5286529a6db",
+          "new_definition_sha256": "47d92729d09e3c4b52c4bb9163d5b36e8a677ff7246be119755f22c4a38b751c"
+        },
+        "09800": {
+          "previous_purpose": "corporate-investments-r50-004@1",
+          "new_purpose": "corporate-investments-r50-004@2",
+          "source_signature": "3369f2f1b504365f9ca671927b8119a74cd86bf3a9f9dad5cb6f792ff267e5a4",
+          "previous_definition_sha256": "1a2307061e6cfee524d86ec002ed57435a646943ee934e6c38eb4422979d3c49",
+          "new_definition_sha256": "fc7e57c48184093d096d25de892965f0a88d502ecb435ee6c58d5aaef2a3ff22"
+        },
+        "68970": {
+          "previous_purpose": "cost-register-r26-68970@1",
+          "new_purpose": "cost-register-r26-68970@2",
+          "source_signature": "58a4b81a91da9b8d9df86e0a992942ec32fd394434edeed90e379c69652736ea",
+          "previous_definition_sha256": "73aac98e45f18f7b40b1adeadce4f46f3121bbad82b4d8a26c961ab0ff07888e",
+          "new_definition_sha256": "1fe67e1ea0970681d522ebeef38ecf7f9c0152a81f283675f5a67f786be79340"
+        },
+        "09100": {
+          "previous_purpose": "securities-r53-002@1",
+          "new_purpose": "securities-r53-002@2",
+          "source_signature": "c82ac5aa23089d178f437fdf8e805a005ce11754c8f963a458fc56560869efd5",
+          "previous_definition_sha256": "3708a0fd155991c1e5b03ab186f5760cb738e5363062b1c567d271c6e1632116",
+          "new_definition_sha256": "50f7166119b9f4304b5136898b37c01d9c9ed64a9ff74bdb0a6cd687af6780d3"
+        },
+        "08080": {
+          "previous_purpose": "corporate-investments-r50-002@1",
+          "new_purpose": "corporate-investments-r50-002@2",
+          "source_signature": "4ef4fe165d9688daad3e71d7167aa0bef0059285e1903b14314e45f19fc038f9",
+          "previous_definition_sha256": "b02d7988ec6997f39b185e6acdcd23311bc21d5de16c2e85ec0857733130f2a9",
+          "new_definition_sha256": "16eb1d09308a33d27223015a1a6c62245c192fcf8c865f0d8da2e378ee4a3e20"
+        },
+        "49120": {
+          "previous_purpose": "cost-register-r26-49120@1",
+          "new_purpose": "cost-register-r26-49120@2",
+          "source_signature": "45e9c0f204560d9e94d5615b186b8a0883244265ce2c54dbcd9fc4dfde08f89b",
+          "previous_definition_sha256": "660a14b7a141bc5c5e96f16475c1fed2407d3de4dd9b2f08b8c2796341f9cf40",
+          "new_definition_sha256": "19ffd8f31bf26e48d39484f87b9d78a8d4bd0b22257dddbae3b67af692a281dc"
+        },
+        "72000": {
+          "previous_purpose": "cost-register-r26-72000@1",
+          "new_purpose": "cost-register-r26-72000@2",
+          "source_signature": "249a2f3e5447cfba47991759d042acba20f7c849d8446067408deb1da2c25270",
+          "previous_definition_sha256": "e822fabd78e94c8d5b4f5e51b0ab4e74708a58faa732c3f7be6733c165cdfc98",
+          "new_definition_sha256": "a7a0cd9d67fc6bb5070f042ea47631c8d931179b57571715440ee06890ac0f73"
+        },
+        "09000": {
+          "previous_purpose": "securities-r53-001@1",
+          "new_purpose": "securities-r53-001@2",
+          "source_signature": "28423ebd708797cb820d06a51149a0694499e8b089fcd4068e81a46ff14e837b",
+          "previous_definition_sha256": "158f838a1222e9998efb6b204a44842e0ab9722b4783eb3f7d0a0c5b76a19c6d",
+          "new_definition_sha256": "b1f86b181983cbe05e55ab98128c26d8fff0a4ef5ac4f989d525b33d798d2b01"
+        },
+        "08040": {
+          "previous_purpose": "corporate-investments-r50-001@1",
+          "new_purpose": "corporate-investments-r50-001@2",
+          "source_signature": "985a456bb7bb6f1891571ccd5d23ffee963db85af418c88d4565fab71a61a16d",
+          "previous_definition_sha256": "3c56e870db2679c5e16c99b2047320c41e44c8b5339fb7b9155fc8a7a385ebbd",
+          "new_definition_sha256": "a940a3222eb3ca92e5b3a5eabc829d131e7f937228a9c345a1835db3cb2f0e87"
+        },
+        "72010": {
+          "previous_purpose": "cost-register-r26-72010@1",
+          "new_purpose": "cost-register-r26-72010@2",
+          "source_signature": "3a5043af9b82917f414d89b4422971b1dbb852355490ef05d6df352d9a924642",
+          "previous_definition_sha256": "e822fabd78e94c8d5b4f5e51b0ab4e74708a58faa732c3f7be6733c165cdfc98",
+          "new_definition_sha256": "a7a0cd9d67fc6bb5070f042ea47631c8d931179b57571715440ee06890ac0f73"
+        }
+      }
+    }
+  ],
+  "official_label_source_sha256": "d2dfb132d6981bef8562f7f5caba0a62734c8ece16a14213c832d6cc8db318d7",
+  "production_authorized": false
+}

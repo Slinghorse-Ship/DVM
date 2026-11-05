@@ -1,0 +1,400 @@
+{
+  "book_proof": {
+    "schema": 1,
+    "source_proof": {
+      "schema": 1,
+      "source": {
+        "schema": 1,
+        "club_id": "own-ownintangible-source",
+        "item_id": "e1117e0a9e50493d4fb1c073857e65a2",
+        "project_id": "e1117e0a9e50493d4fb1c073857e65a2",
+        "account": "01480",
+        "period": {
+          "start": "2025-01-01",
+          "end": "2025-12-31"
+        },
+        "product_kind": "software",
+        "own_creation": true,
+        "separated_research_development": true,
+        "capitalise": true,
+        "stage": "development",
+        "ready_on": null,
+        "life_months": null,
+        "costs": [
+          {
+            "id": "89c2558d337c2138789f4be3cc4a8be7",
+            "on": "2025-01-15",
+            "phase": "development",
+            "category": "material",
+            "booked_cents": 10000,
+            "attributable_cents": 10000,
+            "journal_id": "d8baff0f70ba9a2aa96d604d7cad5a1a",
+            "line_ordinal": 0,
+            "document": {
+              "document_id": "3312fb160ba660c92ef7aa028356ddd0",
+              "revision": 1,
+              "sha256": "16adac037680f1b97551307017a66711b0b8f93053f37a2932dbdbcd7c8161f3"
+            },
+            "reason": "Own actual original material cost fully allocated",
+            "confirmed": true
+          }
+        ],
+        "book_document": {
+          "document_id": "b3e119cbde478a20301c3f14d15804de",
+          "revision": 1,
+          "sha256": "302eb477274c6dd8640531e4154aaa182f55d22588bf63a37405d7914e704b4d"
+        },
+        "book_reason": "0 Own original HGB capitalisation election Übernahme <&> 🙂",
+        "book_confirmed": true
+      },
+      "previous": null,
+      "original_eligible_current_cost_cents": 10000,
+      "original_excluded_current_cost_cents": 0,
+      "hgb_original_cost_addition_cents": 10000,
+      "hgb_cumulative_original_cost_cents": 10000,
+      "cost_rows": {
+        "89c2558d337c2138789f4be3cc4a8be7": {
+          "eligible": true,
+          "original_attributed_cents": 10000
+        }
+      },
+      "depreciation_cents": null,
+      "journal_verified": false,
+      "export_authorized": false,
+      "sha256": "1691ea9ae34f2c5a3a18c2cd024723a36c66882784cd5f628acf6ae4f816cc42"
+    },
+    "book_source": {
+      "schema": 1,
+      "club_id": "own-ownintangible-source",
+      "item_id": "e1117e0a9e50493d4fb1c073857e65a2",
+      "period": {
+        "start": "2025-01-01",
+        "end": "2025-12-31"
+      },
+      "opening_cost_cents": 0,
+      "opening_amort_cents": 0,
+      "opening_impairment_cents": 0,
+      "closing_book_cents": 10000,
+      "events": [
+        {
+          "id": "ede68215ac5c17349932b74f7202d3ab",
+          "on": "2025-12-31",
+          "kind": "capitalisation",
+          "amount_cents": 10000,
+          "counter_code": "48250",
+          "document": {
+            "document_id": "fdeba706a36efeb0a0ff8cbb6992a38a",
+            "revision": 1,
+            "sha256": "c8b16d74f93e5fde1bfab736e781c36aea8397a2877bb22a6ec39db223636ffb"
+          },
+          "reason": "0 Own original HGB capitalisation Übernahme <&> 🙂",
+          "confirmed": true
+        }
+      ],
+      "document": {
+        "document_id": "e908e1391416e04489391ef22045cd4a",
+        "revision": 1,
+        "sha256": "aec498886661a9e960a1bda1d912a6973edc3e308532603dfd8956cac4d9a758"
+      },
+      "reason": "Own independent original HGB annual book values",
+      "confirmed": true
+    },
+    "previous": null,
+    "hgb": {
+      "cost_opening_cents": 0,
+      "amort_opening_cents": 0,
+      "impairment_opening_cents": 0,
+      "book_opening_cents": 0,
+      "cost_closing_cents": 10000,
+      "amort_closing_cents": 0,
+      "impairment_closing_cents": 0,
+      "book_closing_cents": 10000,
+      "additions_cents": 10000,
+      "amortisation_cents": 0,
+      "impairment_cents": 0,
+      "writeup_cents": 0,
+      "disposed_cost_cents": 0,
+      "disposed_amort_cents": 0,
+      "disposed_impairment_cents": 0,
+      "disposed_book_cents": 0
+    },
+    "events": [
+      {
+        "original": {
+          "id": "ede68215ac5c17349932b74f7202d3ab",
+          "on": "2025-12-31",
+          "kind": "capitalisation",
+          "amount_cents": 10000,
+          "counter_code": "48250",
+          "document": {
+            "document_id": "fdeba706a36efeb0a0ff8cbb6992a38a",
+            "revision": 1,
+            "sha256": "c8b16d74f93e5fde1bfab736e781c36aea8397a2877bb22a6ec39db223636ffb"
+          },
+          "reason": "0 Own original HGB capitalisation Übernahme <&> 🙂",
+          "confirmed": true
+        },
+        "cost_after_cents": 10000,
+        "amort_after_cents": 0,
+        "impairment_after_cents": 0,
+        "book_after_cents": 10000
+      }
+    ],
+    "journal_verified": false,
+    "export_authorized": false,
+    "sha256": "9dd9215c215fe871a0b3bed63422b83c251e449dac452839680e38d1c2388e22"
+  },
+  "journal": {
+    "schema": 1,
+    "club_id": "own-ownintangible-source",
+    "item_id": "e1117e0a9e50493d4fb1c073857e65a2",
+    "year": 2025,
+    "period": {
+      "start": "2025-01-01",
+      "end": "2025-12-31"
+    },
+    "account_key": "src_own_hgb_01480",
+    "result_account": "equity",
+    "chart": {
+      "cash": {
+        "name": "Own cash",
+        "group": "cash",
+        "skr_code": "18000"
+      },
+      "cost": {
+        "name": "0 Own development costs Übernahme <&> 🙂",
+        "group": "expense",
+        "skr_code": "63000"
+      },
+      "equity": {
+        "name": "Own original equity",
+        "group": "equity",
+        "skr_code": "29700"
+      },
+      "src_own_hgb_01480": {
+        "name": "Immaterielle Vermögensgegenstände in Entwicklung",
+        "group": "fixed_assets",
+        "skr_code": "01480"
+      },
+      "src_own_hgb_48250": {
+        "name": "Aktivierte Eigenleistungen zur Erstellung von selbst geschaffenen immateriellen Vermögensgegenständen",
+        "group": "revenue",
+        "skr_code": "48250"
+      }
+    },
+    "book_opening": [
+      {
+        "account": "cash",
+        "debit_cents": 20000,
+        "credit_cents": 0,
+        "sphere": ""
+      },
+      {
+        "account": "equity",
+        "debit_cents": 0,
+        "credit_cents": 20000,
+        "sphere": ""
+      }
+    ],
+    "book_entries": [
+      {
+        "club_id": "own-ownintangible-source",
+        "tax_year": 2025,
+        "id": "d8baff0f70ba9a2aa96d604d7cad5a1a",
+        "booked_on": "2025-01-15",
+        "description": "0 Own actual development costs Übernahme <&> 🙂",
+        "evidence": "Own independent actual development material cost",
+        "reversal_of": null,
+        "created_by": "ownintangible-board",
+        "created_at": "2026-10-28T23:53:20+00:00",
+        "date": "2025-01-15",
+        "lines": [
+          {
+            "account": "cost",
+            "debit_cents": 10000,
+            "credit_cents": 0,
+            "sphere": "4"
+          },
+          {
+            "account": "cash",
+            "debit_cents": 0,
+            "credit_cents": 10000,
+            "sphere": ""
+          }
+        ],
+        "document": {
+          "document_id": "3312fb160ba660c92ef7aa028356ddd0",
+          "revision": 1,
+          "sha256": "16adac037680f1b97551307017a66711b0b8f93053f37a2932dbdbcd7c8161f3"
+        }
+      },
+      {
+        "club_id": "own-ownintangible-source",
+        "tax_year": 2025,
+        "id": "ed7961e78f83b741a4057614a1e400c9",
+        "booked_on": "2025-12-31",
+        "description": "HGB-Entwicklungsprojekt · 0 Own original HGB capitalisation Übernahme <&> 🙂",
+        "evidence": "Originales HGB-Entwicklungsregister e1117e0a9e50493d4fb1c073857e65a2 · 2025",
+        "reversal_of": null,
+        "created_by": "ownintangible-board",
+        "created_at": "2026-10-28T23:53:21+00:00",
+        "date": "2025-12-31",
+        "lines": [
+          {
+            "account": "src_own_hgb_01480",
+            "debit_cents": 10000,
+            "credit_cents": 0,
+            "sphere": ""
+          },
+          {
+            "account": "src_own_hgb_48250",
+            "debit_cents": 0,
+            "credit_cents": 10000,
+            "sphere": "4"
+          }
+        ],
+        "document": {
+          "document_id": "fdeba706a36efeb0a0ff8cbb6992a38a",
+          "revision": 1,
+          "sha256": "c8b16d74f93e5fde1bfab736e781c36aea8397a2877bb22a6ec39db223636ffb"
+        }
+      }
+    ],
+    "book_links": {
+      "ed7961e78f83b741a4057614a1e400c9": "ede68215ac5c17349932b74f7202d3ab"
+    },
+    "tax_opening": [
+      {
+        "account": "cash",
+        "debit_cents": 20000,
+        "credit_cents": 0,
+        "sphere": ""
+      },
+      {
+        "account": "equity",
+        "debit_cents": 0,
+        "credit_cents": 20000,
+        "sphere": ""
+      }
+    ],
+    "tax_entries": [
+      {
+        "club_id": "own-ownintangible-source",
+        "tax_year": 2025,
+        "id": "d8baff0f70ba9a2aa96d604d7cad5a1a",
+        "booked_on": "2025-01-15",
+        "description": "0 Own actual development costs Übernahme <&> 🙂",
+        "evidence": "Own independent actual development material cost",
+        "reversal_of": null,
+        "created_by": "ownintangible-board",
+        "created_at": "2026-10-28T23:53:20+00:00",
+        "date": "2025-01-15",
+        "lines": [
+          {
+            "account": "cost",
+            "debit_cents": 10000,
+            "credit_cents": 0,
+            "sphere": "4"
+          },
+          {
+            "account": "cash",
+            "debit_cents": 0,
+            "credit_cents": 10000,
+            "sphere": ""
+          }
+        ],
+        "document": {
+          "document_id": "3312fb160ba660c92ef7aa028356ddd0",
+          "revision": 1,
+          "sha256": "16adac037680f1b97551307017a66711b0b8f93053f37a2932dbdbcd7c8161f3"
+        }
+      },
+      {
+        "club_id": "own-ownintangible-source",
+        "tax_year": 2025,
+        "id": "ed7961e78f83b741a4057614a1e400c9",
+        "booked_on": "2025-12-31",
+        "description": "HGB-Entwicklungsprojekt · 0 Own original HGB capitalisation Übernahme <&> 🙂",
+        "evidence": "Originales HGB-Entwicklungsregister e1117e0a9e50493d4fb1c073857e65a2 · 2025",
+        "reversal_of": null,
+        "created_by": "ownintangible-board",
+        "created_at": "2026-10-28T23:53:21+00:00",
+        "date": "2025-12-31",
+        "lines": [
+          {
+            "account": "src_own_hgb_01480",
+            "debit_cents": 10000,
+            "credit_cents": 0,
+            "sphere": ""
+          },
+          {
+            "account": "src_own_hgb_48250",
+            "debit_cents": 0,
+            "credit_cents": 10000,
+            "sphere": "4"
+          }
+        ],
+        "document": {
+          "document_id": "fdeba706a36efeb0a0ff8cbb6992a38a",
+          "revision": 1,
+          "sha256": "c8b16d74f93e5fde1bfab736e781c36aea8397a2877bb22a6ec39db223636ffb"
+        }
+      },
+      {
+        "id": "tax-adjustment-a9400e3d8b7af9518421622fcfbe6854",
+        "date": "2025-12-31",
+        "lines": [
+          {
+            "account": "src_own_hgb_48250",
+            "debit_cents": 10000,
+            "credit_cents": 0,
+            "sphere": "4"
+          },
+          {
+            "account": "src_own_hgb_01480",
+            "debit_cents": 0,
+            "credit_cents": 10000,
+            "sphere": ""
+          }
+        ],
+        "document": {
+          "document_id": "849824035e68e7397a627e1cacf74e97",
+          "revision": 1,
+          "sha256": "548a703d7ccc8992557d7695cfa355646c4200eebf8c9fa1fe68d08e61e8ba6f"
+        }
+      }
+    ],
+    "tax_links": {
+      "tax-adjustment-a9400e3d8b7af9518421622fcfbe6854": "ede68215ac5c17349932b74f7202d3ab"
+    },
+    "fiscal_source": {
+      "schema": 1,
+      "club_id": "own-ownintangible-source",
+      "item_id": "e1117e0a9e50493d4fb1c073857e65a2",
+      "period": {
+        "start": "2025-01-01",
+        "end": "2025-12-31"
+      },
+      "book_proof_sha256": "9dd9215c215fe871a0b3bed63422b83c251e449dac452839680e38d1c2388e22",
+      "basis": "EStG_5_2_not_acquired",
+      "opening_cents": 0,
+      "closing_cents": 0,
+      "document": {
+        "document_id": "849824035e68e7397a627e1cacf74e97",
+        "revision": 1,
+        "sha256": "548a703d7ccc8992557d7695cfa355646c4200eebf8c9fa1fe68d08e61e8ba6f"
+      },
+      "reason": "0 Own independent original tax nonrecognition Übernahme <&> 🙂",
+      "confirmed": true
+    },
+    "document": {
+      "document_id": "4c8e0cd7f0c5bff28cdc193ee4d91060",
+      "revision": 1,
+      "sha256": "107ae715ff723d502a44dac8e88c0d10388732a54063b156e398a8f61c1d6eed"
+    },
+    "reason": "0 Own complete original HGB and tax journal reconciliation Übernahme <&> 🙂",
+    "confirmed": true
+  },
+  "actual_debit_first_sha256": "2e21d1818c00fc9cdae1a8d18685cf83fbce0faa7c243da812c9bcec1f55c960",
+  "original_order_sha256": "6bc4b924de95ebfab1eea437a15b00753edc9f67f6f4b1ce59ad1551a266c156"
+}

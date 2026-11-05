@@ -1,0 +1,769 @@
+{
+  "values": {
+    "year": 2025,
+    "journal_sha256": "4572fb3ad6bf9e1ce1b351dad41ce49a0c1029fbfc5215029dca19eab20fba8e",
+    "accounts": {
+      "equity": {
+        "name": "Original capital",
+        "group": "equity",
+        "skr_code": "29700",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 0,
+        "tax_cents": 0,
+        "difference_cents": 0
+      },
+      "src_code_02250": {
+        "name": "SKR42 02250 · Grundstücke mit Substanzverzehr",
+        "group": "fixed_assets",
+        "skr_code": "02250",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 2000,
+        "tax_cents": 2000,
+        "difference_cents": 0
+      },
+      "src_pay_04571e090c4ca35989e1": {
+        "name": "Verbindlichkeit SUBSTANCE",
+        "group": "liabilities",
+        "skr_code": "",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 12000,
+        "tax_cents": 12000,
+        "difference_cents": 0
+      },
+      "src_substance_62200": {
+        "name": "Abschreibungen auf Sachanlagen (ohne AfA auf Fahrzeuge und Gebäude)",
+        "group": "expense",
+        "skr_code": "62200",
+        "book_opening_cents": 0,
+        "tax_opening_cents": 0,
+        "book_cents": 10000,
+        "tax_cents": 10000,
+        "difference_cents": 0
+      }
+    },
+    "book": {
+      "year": 2025,
+      "accounts": {
+        "equity": {
+          "name": "Original capital",
+          "group": "equity",
+          "skr_code": "29700",
+          "id": "equity",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "src_code_02250": {
+          "name": "SKR42 02250 · Grundstücke mit Substanzverzehr",
+          "group": "fixed_assets",
+          "skr_code": "02250",
+          "id": "src_code_02250",
+          "opening_cents": 0,
+          "debit_cents": 12000,
+          "credit_cents": 10000,
+          "closing_cents": 2000,
+          "amount_cents": 2000
+        },
+        "src_pay_04571e090c4ca35989e1": {
+          "name": "Verbindlichkeit SUBSTANCE",
+          "group": "liabilities",
+          "skr_code": "",
+          "id": "src_pay_04571e090c4ca35989e1",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 12000,
+          "closing_cents": -12000,
+          "amount_cents": 12000
+        },
+        "src_substance_62200": {
+          "name": "Abschreibungen auf Sachanlagen (ohne AfA auf Fahrzeuge und Gebäude)",
+          "group": "expense",
+          "skr_code": "62200",
+          "id": "src_substance_62200",
+          "opening_cents": 0,
+          "debit_cents": 10000,
+          "credit_cents": 0,
+          "closing_cents": 10000,
+          "amount_cents": 10000
+        }
+      },
+      "assets": [
+        {
+          "name": "SKR42 02250 · Grundstücke mit Substanzverzehr",
+          "group": "fixed_assets",
+          "skr_code": "02250",
+          "id": "src_code_02250",
+          "opening_cents": 0,
+          "debit_cents": 12000,
+          "credit_cents": 10000,
+          "closing_cents": 2000,
+          "amount_cents": 2000
+        }
+      ],
+      "capital": [
+        {
+          "name": "Original capital",
+          "group": "equity",
+          "skr_code": "29700",
+          "id": "equity",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        }
+      ],
+      "liabilities": [
+        {
+          "name": "Verbindlichkeit SUBSTANCE",
+          "group": "liabilities",
+          "skr_code": "",
+          "id": "src_pay_04571e090c4ca35989e1",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 12000,
+          "closing_cents": -12000,
+          "amount_cents": 12000
+        }
+      ],
+      "profit_and_loss": [
+        {
+          "name": "Abschreibungen auf Sachanlagen (ohne AfA auf Fahrzeuge und Gebäude)",
+          "group": "expense",
+          "skr_code": "62200",
+          "id": "src_substance_62200",
+          "opening_cents": 0,
+          "debit_cents": 10000,
+          "credit_cents": 0,
+          "closing_cents": 10000,
+          "amount_cents": 10000
+        }
+      ],
+      "spheres": {
+        "1": {
+          "income_cents": 0,
+          "expense_cents": 0,
+          "result_cents": 0
+        },
+        "2": {
+          "income_cents": 0,
+          "expense_cents": 0,
+          "result_cents": 0
+        },
+        "3": {
+          "income_cents": 0,
+          "expense_cents": 0,
+          "result_cents": 0
+        },
+        "4": {
+          "income_cents": 0,
+          "expense_cents": 10000,
+          "result_cents": -10000
+        }
+      },
+      "asset_total_cents": 2000,
+      "capital_total_cents": 0,
+      "liability_total_cents": 12000,
+      "income_cents": 0,
+      "expense_cents": 10000,
+      "annual_result_cents": -10000,
+      "passive_total_cents": 2000,
+      "debit_cents": 22000,
+      "credit_cents": 22000,
+      "difference_cents": 0,
+      "issues": [],
+      "entry_count": 2
+    },
+    "tax": {
+      "year": 2025,
+      "accounts": {
+        "equity": {
+          "name": "Original capital",
+          "group": "equity",
+          "skr_code": "29700",
+          "id": "equity",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        },
+        "src_code_02250": {
+          "name": "SKR42 02250 · Grundstücke mit Substanzverzehr",
+          "group": "fixed_assets",
+          "skr_code": "02250",
+          "id": "src_code_02250",
+          "opening_cents": 0,
+          "debit_cents": 12000,
+          "credit_cents": 10000,
+          "closing_cents": 2000,
+          "amount_cents": 2000
+        },
+        "src_pay_04571e090c4ca35989e1": {
+          "name": "Verbindlichkeit SUBSTANCE",
+          "group": "liabilities",
+          "skr_code": "",
+          "id": "src_pay_04571e090c4ca35989e1",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 12000,
+          "closing_cents": -12000,
+          "amount_cents": 12000
+        },
+        "src_substance_62200": {
+          "name": "Abschreibungen auf Sachanlagen (ohne AfA auf Fahrzeuge und Gebäude)",
+          "group": "expense",
+          "skr_code": "62200",
+          "id": "src_substance_62200",
+          "opening_cents": 0,
+          "debit_cents": 10000,
+          "credit_cents": 0,
+          "closing_cents": 10000,
+          "amount_cents": 10000
+        }
+      },
+      "assets": [
+        {
+          "name": "SKR42 02250 · Grundstücke mit Substanzverzehr",
+          "group": "fixed_assets",
+          "skr_code": "02250",
+          "id": "src_code_02250",
+          "opening_cents": 0,
+          "debit_cents": 12000,
+          "credit_cents": 10000,
+          "closing_cents": 2000,
+          "amount_cents": 2000
+        }
+      ],
+      "capital": [
+        {
+          "name": "Original capital",
+          "group": "equity",
+          "skr_code": "29700",
+          "id": "equity",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 0,
+          "closing_cents": 0,
+          "amount_cents": 0
+        }
+      ],
+      "liabilities": [
+        {
+          "name": "Verbindlichkeit SUBSTANCE",
+          "group": "liabilities",
+          "skr_code": "",
+          "id": "src_pay_04571e090c4ca35989e1",
+          "opening_cents": 0,
+          "debit_cents": 0,
+          "credit_cents": 12000,
+          "closing_cents": -12000,
+          "amount_cents": 12000
+        }
+      ],
+      "profit_and_loss": [
+        {
+          "name": "Abschreibungen auf Sachanlagen (ohne AfA auf Fahrzeuge und Gebäude)",
+          "group": "expense",
+          "skr_code": "62200",
+          "id": "src_substance_62200",
+          "opening_cents": 0,
+          "debit_cents": 10000,
+          "credit_cents": 0,
+          "closing_cents": 10000,
+          "amount_cents": 10000
+        }
+      ],
+      "spheres": {
+        "1": {
+          "income_cents": 0,
+          "expense_cents": 0,
+          "result_cents": 0
+        },
+        "2": {
+          "income_cents": 0,
+          "expense_cents": 0,
+          "result_cents": 0
+        },
+        "3": {
+          "income_cents": 0,
+          "expense_cents": 0,
+          "result_cents": 0
+        },
+        "4": {
+          "income_cents": 0,
+          "expense_cents": 10000,
+          "result_cents": -10000
+        }
+      },
+      "asset_total_cents": 2000,
+      "capital_total_cents": 0,
+      "liability_total_cents": 12000,
+      "income_cents": 0,
+      "expense_cents": 10000,
+      "annual_result_cents": -10000,
+      "passive_total_cents": 2000,
+      "debit_cents": 22000,
+      "credit_cents": 22000,
+      "difference_cents": 0,
+      "issues": [],
+      "entry_count": 2
+    },
+    "opening_adjustments": [],
+    "current_adjustments": [],
+    "result_difference_cents": 0,
+    "source_spheres": [
+      "4"
+    ],
+    "asset_schedule": {
+      "year": 2025,
+      "items": {
+        "abd40af095d61775912f3a7dce470c5d": {
+          "item_id": "abd40af095d61775912f3a7dce470c5d",
+          "invoice_id": "12d33ffc43aa0a9d2853007bd35a2c6a",
+          "receipt_number": "SUBSTANCE",
+          "account": "src_code_02250",
+          "skr_code": "02250",
+          "sphere": "4",
+          "acquired_on": "2025-02-15",
+          "months": 0,
+          "residual_cents": 2000,
+          "method": "substance_original",
+          "substance": {
+            "schema": 1,
+            "source": {
+              "plan": {
+                "basis_cents": 12000,
+                "residual_cents": 2000,
+                "acquired_on": "2025-02-15",
+                "months": 0,
+                "sphere": "4",
+                "account": "02250",
+                "reason": "Synthetic original acquired unbuilt exhaustible land; original capitalized cost and independent residual ground value, total resource quantity and measured depletion confirmed.",
+                "method": "substance_original",
+                "total_units": 1000,
+                "unit": "kg",
+                "acquired_reviewed": true,
+                "estimate_reviewed": true,
+                "acquisition_document": {
+                  "document_id": "9cef8cbe2ec5cad2b981aef90a1ff507",
+                  "revision": 1,
+                  "sha256": "8b17739b7eb7b0a9098d3d0f3c607428fce4d220e17e286090bdc2b1c9121d2a"
+                },
+                "estimate_document": {
+                  "document_id": "192078e45d5f6bbd5da4d839831f446f",
+                  "revision": 1,
+                  "sha256": "15dca59c14134aff62c21a01071e12863323520168f951c3a24215602e294f85"
+                }
+              },
+              "proof": {
+                "schema": 1,
+                "year": 2025,
+                "used_units": 1000,
+                "book_reviewed": true,
+                "tax_reviewed": true,
+                "document": {
+                  "document_id": "a04c2afdc3b56fe62e4aa5ad10e8b77d",
+                  "revision": 1,
+                  "sha256": "e632b96773845b422ebd2e5fc9dfb24ad8d3aa168065b879db58506a0d7d8cf5"
+                }
+              }
+            },
+            "year": 2025,
+            "opening_cents": 12000,
+            "depreciation_cents": 10000,
+            "closing_cents": 2000,
+            "sha256": "7c08a01dd869455c731db2b42b1f36e22c4e63af3b04f5ee022558af9d960847"
+          },
+          "substance_account": "src_substance_62200",
+          "acquisition_hash": "f581cf5552cad2ab36a56cfcff4bd3c3145ceaa08a44ed548e098bd98e1bd454",
+          "depreciation_hash": "ebae9a23c1c99b2481027f8c3deb585876f7e1d9d6b043ec253b9118a6e74770",
+          "cost_opening_cents": 0,
+          "additions_cents": 12000,
+          "cost_closing_cents": 12000,
+          "accumulated_opening_cents": 0,
+          "depreciation_cents": 10000,
+          "accumulated_closing_cents": 10000,
+          "book_opening_cents": 0,
+          "book_closing_cents": 2000,
+          "expected_depreciation_cents": 10000,
+          "name": "SUBSTANCE · Original individually acquired unbuilt exhaustible land"
+        }
+      },
+      "totals": {
+        "cost_opening_cents": 0,
+        "additions_cents": 12000,
+        "cost_closing_cents": 12000,
+        "accumulated_opening_cents": 0,
+        "depreciation_cents": 10000,
+        "accumulated_closing_cents": 10000,
+        "book_opening_cents": 0,
+        "book_closing_cents": 2000
+      },
+      "issues": [],
+      "ready_for_xbrl": false
+    },
+    "whole_club_scope": {
+      "schema": 1,
+      "kind": "whole_taxable_club",
+      "source": {
+        "year": 2025,
+        "state": "closed",
+        "closed_sha256": "4572fb3ad6bf9e1ce1b351dad41ce49a0c1029fbfc5215029dca19eab20fba8e",
+        "previous_sha256": null,
+        "result_account": "equity",
+        "issues": [],
+        "accounts": {
+          "equity": {
+            "name": "Original capital",
+            "group": "equity",
+            "skr_code": "29700"
+          },
+          "src_code_02250": {
+            "name": "SKR42 02250 · Grundstücke mit Substanzverzehr",
+            "group": "fixed_assets",
+            "skr_code": "02250"
+          },
+          "src_pay_04571e090c4ca35989e1": {
+            "name": "Verbindlichkeit SUBSTANCE",
+            "group": "liabilities",
+            "skr_code": ""
+          },
+          "src_substance_62200": {
+            "name": "Abschreibungen auf Sachanlagen (ohne AfA auf Fahrzeuge und Gebäude)",
+            "group": "expense",
+            "skr_code": "62200"
+          }
+        },
+        "opening": [],
+        "entries": [
+          {
+            "club_id": "synthetic-pool-original-2025-EV",
+            "tax_year": 2025,
+            "id": "eedac98e887af62776db62acc423c25f",
+            "booked_on": "2025-02-15",
+            "description": "Rechnung SUBSTANCE · Original exhaustible land acquisition with contractual liability",
+            "evidence": "invoice: 12d33ffc43aa0a9d2853007bd35a2c6a",
+            "reversal_of": null,
+            "created_by": "reader",
+            "created_at": "2026-10-07T12:21:47+00:00",
+            "date": "2025-02-15",
+            "lines": [
+              {
+                "account": "src_code_02250",
+                "debit_cents": 12000,
+                "credit_cents": 0,
+                "sphere": ""
+              },
+              {
+                "account": "src_pay_04571e090c4ca35989e1",
+                "debit_cents": 0,
+                "credit_cents": 12000,
+                "sphere": ""
+              }
+            ]
+          },
+          {
+            "club_id": "synthetic-pool-original-2025-EV",
+            "tax_year": 2025,
+            "id": "f2ede81610ceb958b2d3755c8734caf2",
+            "booked_on": "2025-12-31",
+            "description": "Ursprünglicher Substanzverzehr · abd40af095d61775912f3a7dce470c5d",
+            "evidence": "Ursprünglicher belegter Mengenverbrauch abd40af095d61775912f3a7dce470c5d",
+            "reversal_of": null,
+            "created_by": "reader",
+            "created_at": "2026-10-07T12:21:48+00:00",
+            "date": "2025-12-31",
+            "lines": [
+              {
+                "account": "src_substance_62200",
+                "debit_cents": 10000,
+                "credit_cents": 0,
+                "sphere": "4"
+              },
+              {
+                "account": "src_code_02250",
+                "debit_cents": 0,
+                "credit_cents": 10000,
+                "sphere": ""
+              }
+            ]
+          }
+        ],
+        "calculation": {
+          "year": 2025,
+          "accounts": {
+            "equity": {
+              "name": "Original capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            },
+            "src_code_02250": {
+              "name": "SKR42 02250 · Grundstücke mit Substanzverzehr",
+              "group": "fixed_assets",
+              "skr_code": "02250",
+              "id": "src_code_02250",
+              "opening_cents": 0,
+              "debit_cents": 12000,
+              "credit_cents": 10000,
+              "closing_cents": 2000,
+              "amount_cents": 2000
+            },
+            "src_pay_04571e090c4ca35989e1": {
+              "name": "Verbindlichkeit SUBSTANCE",
+              "group": "liabilities",
+              "skr_code": "",
+              "id": "src_pay_04571e090c4ca35989e1",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 12000,
+              "closing_cents": -12000,
+              "amount_cents": 12000
+            },
+            "src_substance_62200": {
+              "name": "Abschreibungen auf Sachanlagen (ohne AfA auf Fahrzeuge und Gebäude)",
+              "group": "expense",
+              "skr_code": "62200",
+              "id": "src_substance_62200",
+              "opening_cents": 0,
+              "debit_cents": 10000,
+              "credit_cents": 0,
+              "closing_cents": 10000,
+              "amount_cents": 10000
+            }
+          },
+          "assets": [
+            {
+              "name": "SKR42 02250 · Grundstücke mit Substanzverzehr",
+              "group": "fixed_assets",
+              "skr_code": "02250",
+              "id": "src_code_02250",
+              "opening_cents": 0,
+              "debit_cents": 12000,
+              "credit_cents": 10000,
+              "closing_cents": 2000,
+              "amount_cents": 2000
+            }
+          ],
+          "capital": [
+            {
+              "name": "Original capital",
+              "group": "equity",
+              "skr_code": "29700",
+              "id": "equity",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 0,
+              "closing_cents": 0,
+              "amount_cents": 0
+            }
+          ],
+          "liabilities": [
+            {
+              "name": "Verbindlichkeit SUBSTANCE",
+              "group": "liabilities",
+              "skr_code": "",
+              "id": "src_pay_04571e090c4ca35989e1",
+              "opening_cents": 0,
+              "debit_cents": 0,
+              "credit_cents": 12000,
+              "closing_cents": -12000,
+              "amount_cents": 12000
+            }
+          ],
+          "profit_and_loss": [
+            {
+              "name": "Abschreibungen auf Sachanlagen (ohne AfA auf Fahrzeuge und Gebäude)",
+              "group": "expense",
+              "skr_code": "62200",
+              "id": "src_substance_62200",
+              "opening_cents": 0,
+              "debit_cents": 10000,
+              "credit_cents": 0,
+              "closing_cents": 10000,
+              "amount_cents": 10000
+            }
+          ],
+          "spheres": {
+            "1": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "2": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "3": {
+              "income_cents": 0,
+              "expense_cents": 0,
+              "result_cents": 0
+            },
+            "4": {
+              "income_cents": 0,
+              "expense_cents": 10000,
+              "result_cents": -10000
+            }
+          },
+          "asset_total_cents": 2000,
+          "capital_total_cents": 0,
+          "liability_total_cents": 12000,
+          "income_cents": 0,
+          "expense_cents": 10000,
+          "annual_result_cents": -10000,
+          "passive_total_cents": 2000,
+          "debit_cents": 22000,
+          "credit_cents": 22000,
+          "difference_cents": 0,
+          "issues": [],
+          "entry_count": 2
+        },
+        "asset_schedule": {
+          "year": 2025,
+          "items": {
+            "abd40af095d61775912f3a7dce470c5d": {
+              "item_id": "abd40af095d61775912f3a7dce470c5d",
+              "invoice_id": "12d33ffc43aa0a9d2853007bd35a2c6a",
+              "receipt_number": "SUBSTANCE",
+              "account": "src_code_02250",
+              "skr_code": "02250",
+              "sphere": "4",
+              "acquired_on": "2025-02-15",
+              "months": 0,
+              "residual_cents": 2000,
+              "method": "substance_original",
+              "substance": {
+                "schema": 1,
+                "source": {
+                  "plan": {
+                    "basis_cents": 12000,
+                    "residual_cents": 2000,
+                    "acquired_on": "2025-02-15",
+                    "months": 0,
+                    "sphere": "4",
+                    "account": "02250",
+                    "reason": "Synthetic original acquired unbuilt exhaustible land; original capitalized cost and independent residual ground value, total resource quantity and measured depletion confirmed.",
+                    "method": "substance_original",
+                    "total_units": 1000,
+                    "unit": "kg",
+                    "acquired_reviewed": true,
+                    "estimate_reviewed": true,
+                    "acquisition_document": {
+                      "document_id": "9cef8cbe2ec5cad2b981aef90a1ff507",
+                      "revision": 1,
+                      "sha256": "8b17739b7eb7b0a9098d3d0f3c607428fce4d220e17e286090bdc2b1c9121d2a"
+                    },
+                    "estimate_document": {
+                      "document_id": "192078e45d5f6bbd5da4d839831f446f",
+                      "revision": 1,
+                      "sha256": "15dca59c14134aff62c21a01071e12863323520168f951c3a24215602e294f85"
+                    }
+                  },
+                  "proof": {
+                    "schema": 1,
+                    "year": 2025,
+                    "used_units": 1000,
+                    "book_reviewed": true,
+                    "tax_reviewed": true,
+                    "document": {
+                      "document_id": "a04c2afdc3b56fe62e4aa5ad10e8b77d",
+                      "revision": 1,
+                      "sha256": "e632b96773845b422ebd2e5fc9dfb24ad8d3aa168065b879db58506a0d7d8cf5"
+                    }
+                  }
+                },
+                "year": 2025,
+                "opening_cents": 12000,
+                "depreciation_cents": 10000,
+                "closing_cents": 2000,
+                "sha256": "7c08a01dd869455c731db2b42b1f36e22c4e63af3b04f5ee022558af9d960847"
+              },
+              "substance_account": "src_substance_62200",
+              "acquisition_hash": "f581cf5552cad2ab36a56cfcff4bd3c3145ceaa08a44ed548e098bd98e1bd454",
+              "depreciation_hash": "ebae9a23c1c99b2481027f8c3deb585876f7e1d9d6b043ec253b9118a6e74770",
+              "cost_opening_cents": 0,
+              "additions_cents": 12000,
+              "cost_closing_cents": 12000,
+              "accumulated_opening_cents": 0,
+              "depreciation_cents": 10000,
+              "accumulated_closing_cents": 10000,
+              "book_opening_cents": 0,
+              "book_closing_cents": 2000,
+              "expected_depreciation_cents": 10000,
+              "name": "SUBSTANCE · Original individually acquired unbuilt exhaustible land"
+            }
+          },
+          "totals": {
+            "cost_opening_cents": 0,
+            "additions_cents": 12000,
+            "cost_closing_cents": 12000,
+            "accumulated_opening_cents": 0,
+            "depreciation_cents": 10000,
+            "accumulated_closing_cents": 10000,
+            "book_opening_cents": 0,
+            "book_closing_cents": 2000
+          },
+          "issues": [],
+          "ready_for_xbrl": false
+        }
+      }
+    },
+    "capital_comparison": {
+      "year": 2025,
+      "book_opening_cents": 0,
+      "opening_adjustment_cents": 0,
+      "tax_opening_cents": 0,
+      "tax_closing_cents": -10000,
+      "contributions_cents": 0,
+      "withdrawals_cents": 0,
+      "profit_cents": -10000,
+      "sources": [],
+      "decisions": [],
+      "issues": [],
+      "complete": true
+    },
+    "sha256": "21e6e06f96d157199b53182aa89cbb51e9bcc45d4124d3c49278ceeb454e5408",
+    "transmission": "unavailable"
+  },
+  "mapping": {
+    "equity": "bs.eqLiab.equity.SurplusOfUnspentFunds",
+    "src_code_02250": "bs.ass.fixAss.tan.landBuildings.landWithoutBuildings",
+    "src_pay_04571e090c4ca35989e1": "bs.eqLiab.liab.other.other",
+    "src_substance_62200": "is.netIncome.regular.operatingTC.deprAmort.fixAss.tan.other"
+  },
+  "profile": {
+    "kind": "whole_taxable_club",
+    "source_scope": "complete_club_ledger",
+    "scope_confirmed": true,
+    "tax_privileged": false,
+    "asset_scope": "whole_club",
+    "asset_values_unchanged": true,
+    "asset_tax_values_reviewed": false,
+    "business_name": "Synthetischer Test-Geschäftsbetrieb",
+    "supplier": "Synthetischer Softwaretest",
+    "company": {
+      "tax_number": "5192050001276",
+      "name": "Synthetischer Testverein",
+      "street": "Testweg",
+      "house_number": "1",
+      "postal_code": "11111",
+      "city": "Teststadt",
+      "country": "Deutschland",
+      "legal_status": "EV"
+    },
+    "tax_values_sha256": "21e6e06f96d157199b53182aa89cbb51e9bcc45d4124d3c49278ceeb454e5408"
+  },
+  "xml_sha256": "ddb013abde2259cb75f8ef9a7e83c456c7c8782eea74898e4e5249905b8291cd"
+}

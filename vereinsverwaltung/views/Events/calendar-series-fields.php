@@ -1,0 +1,17 @@
+<?php declare(strict_types=1);
+$seriesEditing=$seriesEditing??false;
+$seriesRule=$seriesRule??['frequency'=>input($_POST,'series_frequency','once'),'every'=>input($_POST,'series_every','1'),'until'=>input($_POST,'series_until'),'skip'=>input($_POST,'series_skip')];
+$seriesFrequencyLabels=['once'=>'Einmaliger Termin','daily'=>'Täglich','weekly'=>'Wöchentlich','monthly'=>'Monatlich'];
+?>
+<details class="card record-more" data-series-rule <?= $seriesEditing||$seriesRule['frequency']!=='once'||input($_POST,'action')==='series-preview'?'open':'' ?>>
+ <summary><?= e($calendarText('Wiederholung und Ausnahmedaten')) ?></summary>
+ <div class="record-more-body"><div class="form-grid">
+  <label><?= e($calendarText('Wiederholung')) ?><?php if($seriesEditing): ?><?= hidden('series_frequency',$seriesRule['frequency']) ?><input class="form-control" value="<?= e($calendarText($seriesFrequencyLabels[$seriesRule['frequency']]??'Stand prüfen')) ?>" readonly><?php else: ?><select class="form-control" name="series_frequency"><?php foreach($seriesFrequencyLabels as$value=>$label): ?><option value="<?= $value ?>"<?= $seriesRule['frequency']===$value?' selected':'' ?>><?= e($calendarText($label)) ?></option><?php endforeach ?></select><?php endif ?></label>
+  <label><?= e($calendarText('Abstand (Tage, Wochen oder Monate)')) ?><input class="form-control" type="number" name="series_every" min="1" max="52" value="<?= e((string)$seriesRule['every']) ?>"<?= $seriesEditing?' readonly':'' ?>></label>
+  <label><?= e($calendarText('Letztes Seriendatum')) ?><input class="form-control" type="date" name="series_until" value="<?= e($seriesRule['until']) ?>"></label>
+  <label class="wide"><?= e($calendarText('Ausnahmedaten')) ?><textarea class="form-control" name="series_skip" rows="3" maxlength="4096" placeholder="2028-12-24&#10;2028-12-31"><?= e(is_array($seriesRule['skip'])?implode("\n",$seriesRule['skip']):$seriesRule['skip']) ?></textarea><small><?= e($calendarText('Ein zum Rhythmus passendes Datum je Zeile: JJJJ-MM-TT. Monatliche Termine verwenden bei fehlendem Tag den letzten Monatstag und behalten danach ihren ursprünglichen Ankertag.')) ?></small></label>
+ </div><p><?= e($calendarText('Höchstens 366 mögliche Termine und 10.000 Teilnehmerzuordnungen. Eindeutige deutsche Ortszeiten werden je Termin geprüft. Für einen anderen Takt oder ein anderes Ankerdatum eine neue Serie anlegen und bisherige künftige Standardtermine bewusst absagen.')) ?></p>
+ <button class="btn btn-outline theme-secondary" name="action" value="series-preview" type="submit" formnovalidate><?= e($calendarText('Serientermine prüfen')) ?></button>
+ <?php if(isset($seriesPreview)): ?><div class="notice" role="status" data-series-preview><strong><?= e($calendarFormat('{count} Termine im gewählten Serienmuster',['count'=>$seriesPreview['count']])) ?></strong><p><?= e($calendarText('Lesende Vorschau. Erst bewusstes Speichern prüft und erzeugt die Termine. Bestehende Rückmeldungen und Ausnahmen werden bei Änderungen geschützt.')) ?></p><ol><?php foreach(array_slice($seriesPreview['slots'],0,6)as$slot): ?><li><?= e(str_replace('T',' ',$slot['start'])) ?> – <?= e(str_replace('T',' ',$slot['end'])) ?><?= $slot['excluded']?' · '.e($calendarText('Ausgenommen')):'' ?></li><?php endforeach ?></ol><?php if(count($seriesPreview['slots'])>6): ?><small><?= e($calendarText('Die ersten sechs möglichen Termine sind gezeigt. Alle gespeicherten Termine sind anschließend über die Serienseiten erreichbar.')) ?></small><?php endif ?></div><?php endif ?>
+ </div>
+</details>

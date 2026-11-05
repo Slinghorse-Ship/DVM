@@ -1,0 +1,390 @@
+{
+  "schema": 1,
+  "revision": 28,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "construction-r28-001@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.tan.inConstrAdvPaym.advPaym",
+          "choices": [
+            "bs.ass.fixAss.tan.inConstrAdvPaym.advPaym"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "07050",
+              "semantic": {
+                "name": "Anzahlungen auf Grund und Boden",
+                "function": "",
+                "range_start": "07050",
+                "range_end": "07050",
+                "parent": null
+              },
+              "signature": "a39e09783acba8a3cb272dfd5dfbc36020ce1dc20797de1c8ec6efe1438095f7"
+            },
+            {
+              "code": "07200",
+              "semantic": {
+                "name": "Anzahlungen auf Geschäfts-, Fabrik- und andere Bauten auf eigenen Grundstücken",
+                "function": "",
+                "range_start": "07200",
+                "range_end": "07200",
+                "parent": null
+              },
+              "signature": "decafae3504750bbc6359146439b5b2d58bb9bda814f6f436cfaea8d079c352d"
+            },
+            {
+              "code": "07350",
+              "semantic": {
+                "name": "Anzahlungen auf Wohnbauten auf eigenen Grundstücken",
+                "function": "",
+                "range_start": "07350",
+                "range_end": "07350",
+                "parent": null
+              },
+              "signature": "1c0cd79bde0b44ff82200eda906cf30f7d2699b6c4531dbb8a203eca23bfcbde"
+            },
+            {
+              "code": "07500",
+              "semantic": {
+                "name": "Anzahlungen auf Geschäfts-, Fabrik- und andere Bauten auf fremden Grundstücken",
+                "function": "",
+                "range_start": "07500",
+                "range_end": "07500",
+                "parent": null
+              },
+              "signature": "c78e353bfbc41d892d7db5f956ac4570da90b5d7a747a639efd2767a2732035a"
+            },
+            {
+              "code": "07650",
+              "semantic": {
+                "name": "Anzahlungen auf Wohnbauten auf fremden Grundstücken",
+                "function": "",
+                "range_start": "07650",
+                "range_end": "07650",
+                "parent": null
+              },
+              "signature": "92b4b7c66eb9d8a25c9811b813539cb1da1ad5139d1eba53a71b5405897c699e"
+            },
+            {
+              "code": "07800",
+              "semantic": {
+                "name": "Anzahlungen auf technische Anlagen und Maschinen",
+                "function": "",
+                "range_start": "07800",
+                "range_end": "07800",
+                "parent": null
+              },
+              "signature": "857d2f640b815f2fdb4290efc0896e745643b976f4bf5aeae3875176f6f23e4e"
+            },
+            {
+              "code": "07950",
+              "semantic": {
+                "name": "Anzahlungen auf andere Anlagen, Betriebs- und Geschäftsausstattung",
+                "function": "",
+                "range_start": "07950",
+                "range_end": "07950",
+                "parent": null
+              },
+              "signature": "20ce40d63d1d154a93324f7e8f87f572ae7399941418a0e6276afcecc43d85a2"
+            }
+          ]
+        },
+        {
+          "purpose": "construction-r28-002@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.tan.inConstrAdvPaym.buildingUnderConstr",
+          "choices": [
+            "bs.ass.fixAss.tan.inConstrAdvPaym.buildingUnderConstr"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "07100",
+              "semantic": {
+                "name": "Geschäfts-, Fabrik- und andere Bauten im Bau auf eigenen Grundstücken",
+                "function": "",
+                "range_start": "07100",
+                "range_end": "07100",
+                "parent": null
+              },
+              "signature": "e8478b55cae80b07c94ce12fec535f0137a519359fddfe3030073bc479088a70"
+            },
+            {
+              "code": "07250",
+              "semantic": {
+                "name": "Wohnbauten im Bau auf eigenen Grundstücken",
+                "function": "",
+                "range_start": "07250",
+                "range_end": "07250",
+                "parent": null
+              },
+              "signature": "683a9e4a8691705991a7fc937c829d4f276e46b20ccc3722908593c9eb5ff278"
+            },
+            {
+              "code": "07400",
+              "semantic": {
+                "name": "Geschäfts-, Fabrik- und andere Bauten im Bau auf fremden Grundstücken",
+                "function": "",
+                "range_start": "07400",
+                "range_end": "07400",
+                "parent": null
+              },
+              "signature": "7ab95586dcc459b26f571b88d0895ed04d872c3da7f05b85579fb9463a0da26b"
+            },
+            {
+              "code": "07550",
+              "semantic": {
+                "name": "Wohnbauten im Bau auf fremden Grundstücken",
+                "function": "",
+                "range_start": "07550",
+                "range_end": "07550",
+                "parent": null
+              },
+              "signature": "338b683d4010f294261b5563bde7e6be3586169499a15bfd3210b977e02ff140"
+            }
+          ]
+        },
+        {
+          "purpose": "construction-r28-003@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.tan.inConstrAdvPaym.equipmUnderConstr",
+          "choices": [
+            "bs.ass.fixAss.tan.inConstrAdvPaym.equipmUnderConstr"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "07700",
+              "semantic": {
+                "name": "Technische Anlagen und Maschinen im Bau",
+                "function": "",
+                "range_start": "07700",
+                "range_end": "07700",
+                "parent": null
+              },
+              "signature": "2802af7fd88b2b6c01207002fec146b5668c616edc802b1378f59614178744a0"
+            },
+            {
+              "code": "07850",
+              "semantic": {
+                "name": "Andere Anlagen, Betriebs- und Geschäftsausstattung im Bau",
+                "function": "",
+                "range_start": "07850",
+                "range_end": "07850",
+                "parent": null
+              },
+              "signature": "867e4aeeebacc22b8f0f300a30d917d50097794534df1095f0093b8531ede7cf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "construction-r28-001@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.tan.inConstrAdvPaym.advPaym",
+          "choices": [
+            "bs.ass.fixAss.tan.inConstrAdvPaym.advPaym"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "07050",
+              "semantic": {
+                "name": "Anzahlungen auf Grund und Boden",
+                "function": "",
+                "range_start": "07050",
+                "range_end": "07050",
+                "parent": null
+              },
+              "signature": "a39e09783acba8a3cb272dfd5dfbc36020ce1dc20797de1c8ec6efe1438095f7"
+            },
+            {
+              "code": "07200",
+              "semantic": {
+                "name": "Anzahlungen auf Geschäfts-, Fabrik- und andere Bauten auf eigenen Grundstücken",
+                "function": "",
+                "range_start": "07200",
+                "range_end": "07200",
+                "parent": null
+              },
+              "signature": "decafae3504750bbc6359146439b5b2d58bb9bda814f6f436cfaea8d079c352d"
+            },
+            {
+              "code": "07350",
+              "semantic": {
+                "name": "Anzahlungen auf Wohnbauten auf eigenen Grundstücken",
+                "function": "",
+                "range_start": "07350",
+                "range_end": "07350",
+                "parent": null
+              },
+              "signature": "1c0cd79bde0b44ff82200eda906cf30f7d2699b6c4531dbb8a203eca23bfcbde"
+            },
+            {
+              "code": "07500",
+              "semantic": {
+                "name": "Anzahlungen auf Geschäfts-, Fabrik- und andere Bauten auf fremden Grundstücken",
+                "function": "",
+                "range_start": "07500",
+                "range_end": "07500",
+                "parent": null
+              },
+              "signature": "c78e353bfbc41d892d7db5f956ac4570da90b5d7a747a639efd2767a2732035a"
+            },
+            {
+              "code": "07650",
+              "semantic": {
+                "name": "Anzahlungen auf Wohnbauten auf fremden Grundstücken",
+                "function": "",
+                "range_start": "07650",
+                "range_end": "07650",
+                "parent": null
+              },
+              "signature": "92b4b7c66eb9d8a25c9811b813539cb1da1ad5139d1eba53a71b5405897c699e"
+            },
+            {
+              "code": "07800",
+              "semantic": {
+                "name": "Anzahlungen auf technische Anlagen und Maschinen",
+                "function": "",
+                "range_start": "07800",
+                "range_end": "07800",
+                "parent": null
+              },
+              "signature": "857d2f640b815f2fdb4290efc0896e745643b976f4bf5aeae3875176f6f23e4e"
+            },
+            {
+              "code": "07950",
+              "semantic": {
+                "name": "Anzahlungen auf andere Anlagen, Betriebs- und Geschäftsausstattung",
+                "function": "",
+                "range_start": "07950",
+                "range_end": "07950",
+                "parent": null
+              },
+              "signature": "20ce40d63d1d154a93324f7e8f87f572ae7399941418a0e6276afcecc43d85a2"
+            }
+          ]
+        },
+        {
+          "purpose": "construction-r28-002@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.tan.inConstrAdvPaym.buildingUnderConstr",
+          "choices": [
+            "bs.ass.fixAss.tan.inConstrAdvPaym.buildingUnderConstr"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "07100",
+              "semantic": {
+                "name": "Geschäfts-, Fabrik- und andere Bauten im Bau auf eigenen Grundstücken",
+                "function": "",
+                "range_start": "07100",
+                "range_end": "07100",
+                "parent": null
+              },
+              "signature": "e8478b55cae80b07c94ce12fec535f0137a519359fddfe3030073bc479088a70"
+            },
+            {
+              "code": "07250",
+              "semantic": {
+                "name": "Wohnbauten im Bau auf eigenen Grundstücken",
+                "function": "",
+                "range_start": "07250",
+                "range_end": "07250",
+                "parent": null
+              },
+              "signature": "683a9e4a8691705991a7fc937c829d4f276e46b20ccc3722908593c9eb5ff278"
+            },
+            {
+              "code": "07400",
+              "semantic": {
+                "name": "Geschäfts-, Fabrik- und andere Bauten im Bau auf fremden Grundstücken",
+                "function": "",
+                "range_start": "07400",
+                "range_end": "07400",
+                "parent": null
+              },
+              "signature": "7ab95586dcc459b26f571b88d0895ed04d872c3da7f05b85579fb9463a0da26b"
+            },
+            {
+              "code": "07550",
+              "semantic": {
+                "name": "Wohnbauten im Bau auf fremden Grundstücken",
+                "function": "",
+                "range_start": "07550",
+                "range_end": "07550",
+                "parent": null
+              },
+              "signature": "338b683d4010f294261b5563bde7e6be3586169499a15bfd3210b977e02ff140"
+            }
+          ]
+        },
+        {
+          "purpose": "construction-r28-003@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.tan.inConstrAdvPaym.equipmUnderConstr",
+          "choices": [
+            "bs.ass.fixAss.tan.inConstrAdvPaym.equipmUnderConstr"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "07700",
+              "semantic": {
+                "name": "Technische Anlagen und Maschinen im Bau",
+                "function": "",
+                "range_start": "07700",
+                "range_end": "07700",
+                "parent": null
+              },
+              "signature": "2802af7fd88b2b6c01207002fec146b5668c616edc802b1378f59614178744a0"
+            },
+            {
+              "code": "07850",
+              "semantic": {
+                "name": "Andere Anlagen, Betriebs- und Geschäftsausstattung im Bau",
+                "function": "",
+                "range_start": "07850",
+                "range_end": "07850",
+                "parent": null
+              },
+              "signature": "867e4aeeebacc22b8f0f300a30d917d50097794534df1095f0093b8531ede7cf"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

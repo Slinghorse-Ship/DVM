@@ -1,0 +1,18 @@
+.tax-preparation{font:17px/1.55 system-ui,sans-serif;color:#18313b;max-width:1200px;margin:auto;overflow-wrap:anywhere}
+.tax-preparation h2,.tax-preparation h3,.tax-preparation h4{line-height:1.25;margin:1.4em 0 .6em}
+.tax-preparation h4{font-size:1.1rem}.tax-preparation h5{font-size:1rem}
+.tax-preparation section,.tax-preparation .tax-year-report{margin:1.25rem 0;padding:1rem;border:1px solid #bacbd0;border-radius:.6rem;background:#fff}
+.tax-preparation .tax-warning{background:#fff4d6;border-left:5px solid #947015;padding:1rem;border-radius:.3rem}
+.tax-preparation summary{cursor:pointer;min-height:44px;padding:.6rem;font-weight:650}
+.tax-preparation table{border-collapse:collapse;width:100%;font-size:1rem}.tax-preparation th,.tax-preparation td{padding:.7rem;text-align:left;border-bottom:1px solid #d7e0e3}
+.tax-preparation thead,.tax-preparation tfoot{background:#edf3f5}.tax-preparation .table-scroll{max-width:100%;overflow:auto}
+.tax-preparation .tax-preserve-lines{white-space:pre-wrap}.tax-preparation .tax-reserve{border-left:3px solid #bacbd0;padding-left:1rem;margin:1rem 0}
+.tax-preparation .tax-reserve dl{display:grid;grid-template-columns:minmax(120px,1fr) 1fr;gap:.5rem}.tax-preparation dd{margin:0}
+.tax-preparation input,.tax-preparation select,.tax-preparation button{min-height:44px;font-size:1rem}.tax-preparation pre{white-space:pre-wrap;overflow-wrap:anywhere}
+.tax-preparation .tax-steps{display:flex;flex-wrap:wrap;gap:.75rem;padding:0;list-style:none}.tax-preparation .tax-steps li{background:#edf3f5;padding:.75rem 1rem;border-radius:.4rem}
+.tax-preparation .tax-attachment-list{max-height:22rem;overflow:auto}.tax-preparation .tax-attachment-list label{padding:.5rem}
+.tax-preparation .tax-review-actions{padding:1rem;border:2px solid #356071;border-radius:.5rem;background:#eef6f8;margin:1rem 0}
+.tax-preparation .tax-eric-status{border-left:5px solid #947015;background:#fffaf0}.tax-preparation .tax-eric-status .section-heading{align-items:baseline}.tax-preparation .tax-eric-status strong{color:#6a4b00}.tax-preparation .tax-eric-status ul{margin-bottom:0}
+@media(max-width:600px){.tax-preparation{font-size:16px}.tax-preparation section{padding:.6rem}.tax-preparation th,.tax-preparation td{padding:.5rem}.tax-preparation .actions{display:grid}.tax-preparation .tax-steps{display:grid}}
+@media(max-width:600px){.tax-preparation .table-scroll::before{content:"↔ Tabelle seitlich verschieben, um alle Beträge zu sehen";display:block;position:sticky;left:0;max-width:100%;box-sizing:border-box;background:#edf3f5;color:#284956;padding:.6rem;font-size:.9rem}.tax-preparation .table-scroll:focus-visible{outline:3px solid #356071;outline-offset:3px}}
+@media print{.tax-preparation{max-width:none;font-size:11pt}.tax-preparation section{border:0;padding:0}.tax-preparation .table-scroll{overflow:visible}.tax-preparation summary{display:none}.tax-preparation details>*{display:block}button,nav,.tax-review-actions{display:none!important}}

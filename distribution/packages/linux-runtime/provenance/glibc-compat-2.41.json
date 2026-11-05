@@ -1,0 +1,10 @@
+{
+  "package": "https://deb.debian.org/debian/pool/main/g/glibc/libc6_2.41-12+deb13u3_amd64.deb",
+  "sha256": "8ffd13165b9ee3f067e2ee670df718e48c1bdaa18676ac93d1de761dbbb3913c",
+  "host_glibc": "2.41-12+deb13u3",
+  "files": {
+    "libdl.so.2": "295fa521a03cd2faa99974f378c9e23dd622021ec7d32bcad4f8ea61aec8a872",
+    "libpthread.so.0": "85e21f7dba0394411d00959176fd18b470e575b0b05f1f4f41e5636802ce0500",
+    "libutil.so.1": "e3981d10efd152a53f083e38f5f9ddde7a049c85d0ab388a5eec91b52fc98a11"
+  }
+}

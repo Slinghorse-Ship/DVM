@@ -1,0 +1,282 @@
+{
+  "schema": 1,
+  "revision": 40,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "commercial-r40-001@1",
+          "group": "other_assets",
+          "target": "bs.ass.defTax",
+          "choices": [
+            "bs.ass.defTax"
+          ],
+          "conditional": true,
+          "book_only": true,
+          "commercial_contract": "deferred-active@1",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "19500",
+              "semantic": {
+                "name": "Aktive latente Steuern",
+                "function": "",
+                "range_start": "19500",
+                "range_end": "19500",
+                "parent": null
+              },
+              "signature": "debdf0a33a1c598637025c00fde690e53512490e92939ee6ef333287437bdb91"
+            }
+          ]
+        },
+        {
+          "purpose": "commercial-r40-002@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.tax.defTax",
+          "choices": [
+            "bs.eqLiab.accruals.tax.defTax"
+          ],
+          "conditional": true,
+          "book_only": true,
+          "commercial_contract": "deferred-provision@1",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30600",
+              "semantic": {
+                "name": "Rückstellungen für latente Steuern",
+                "function": "",
+                "range_start": "30600",
+                "range_end": "30600",
+                "parent": null
+              },
+              "signature": "3e82ebf33154e649e9a99279dfce26847bea0f74006956d68eda198382956421"
+            }
+          ]
+        },
+        {
+          "purpose": "commercial-r40-003@1",
+          "group": "deferred",
+          "target": "bs.eqLiab.defTax",
+          "choices": [
+            "bs.eqLiab.defTax"
+          ],
+          "conditional": true,
+          "book_only": true,
+          "commercial_contract": "deferred-passive@1",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30650",
+              "semantic": {
+                "name": "Passive latente Steuern",
+                "function": "",
+                "range_start": "30650",
+                "range_end": "30650",
+                "parent": null
+              },
+              "signature": "9cb1cdaed3d4e2f8fbd35e66e2d1d1a66466b905ae78c03d9057e0b2fa500b7e"
+            }
+          ]
+        },
+        {
+          "purpose": "commercial-r40-004@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.deferred.release",
+          "choices": [
+            "is.netIncome.tax.deferred.release"
+          ],
+          "conditional": true,
+          "book_only": true,
+          "commercial_contract": "deferred-expense@1",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "76450",
+              "semantic": {
+                "name": "Aufwendungen aus der Zuführung und Auflösung von latenten Steuern",
+                "function": "",
+                "range_start": "76450",
+                "range_end": "76450",
+                "parent": null
+              },
+              "signature": "4d03aa9f14e79e6107881d7e374bdea7f7777896137b451ad70d0a14e43a38d4"
+            }
+          ]
+        },
+        {
+          "purpose": "commercial-r40-005@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.deferred.addition",
+          "choices": [
+            "is.netIncome.tax.deferred.addition"
+          ],
+          "conditional": true,
+          "book_only": true,
+          "commercial_contract": "deferred-income@1",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "76490",
+              "semantic": {
+                "name": "Erträge aus der Zuführung und Auflösung von latenten Steuern",
+                "function": "",
+                "range_start": "76490",
+                "range_end": "76490",
+                "parent": null
+              },
+              "signature": "7f83484f63b33c215ced1f619c41477b5274e36a21c3864f212a98334b0ef57c"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "commercial-r40-001@1",
+          "group": "other_assets",
+          "target": "bs.ass.defTax",
+          "choices": [
+            "bs.ass.defTax"
+          ],
+          "conditional": true,
+          "book_only": true,
+          "commercial_contract": "deferred-active@1",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "19500",
+              "semantic": {
+                "name": "Aktive latente Steuern",
+                "function": "",
+                "range_start": "19500",
+                "range_end": "19500",
+                "parent": null
+              },
+              "signature": "debdf0a33a1c598637025c00fde690e53512490e92939ee6ef333287437bdb91"
+            }
+          ]
+        },
+        {
+          "purpose": "commercial-r40-002@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.tax.defTax",
+          "choices": [
+            "bs.eqLiab.accruals.tax.defTax"
+          ],
+          "conditional": true,
+          "book_only": true,
+          "commercial_contract": "deferred-provision@1",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30600",
+              "semantic": {
+                "name": "Rückstellungen für latente Steuern",
+                "function": "",
+                "range_start": "30600",
+                "range_end": "30600",
+                "parent": null
+              },
+              "signature": "3e82ebf33154e649e9a99279dfce26847bea0f74006956d68eda198382956421"
+            }
+          ]
+        },
+        {
+          "purpose": "commercial-r40-003@1",
+          "group": "deferred",
+          "target": "bs.eqLiab.defTax",
+          "choices": [
+            "bs.eqLiab.defTax"
+          ],
+          "conditional": true,
+          "book_only": true,
+          "commercial_contract": "deferred-passive@1",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30650",
+              "semantic": {
+                "name": "Passive latente Steuern",
+                "function": "",
+                "range_start": "30650",
+                "range_end": "30650",
+                "parent": null
+              },
+              "signature": "9cb1cdaed3d4e2f8fbd35e66e2d1d1a66466b905ae78c03d9057e0b2fa500b7e"
+            }
+          ]
+        },
+        {
+          "purpose": "commercial-r40-004@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.deferred.release",
+          "choices": [
+            "is.netIncome.tax.deferred.release"
+          ],
+          "conditional": true,
+          "book_only": true,
+          "commercial_contract": "deferred-expense@1",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "76450",
+              "semantic": {
+                "name": "Aufwendungen aus der Zuführung und Auflösung von latenten Steuern",
+                "function": "",
+                "range_start": "76450",
+                "range_end": "76450",
+                "parent": null
+              },
+              "signature": "4d03aa9f14e79e6107881d7e374bdea7f7777896137b451ad70d0a14e43a38d4"
+            }
+          ]
+        },
+        {
+          "purpose": "commercial-r40-005@1",
+          "group": "expense",
+          "target": "is.netIncome.tax.deferred.addition",
+          "choices": [
+            "is.netIncome.tax.deferred.addition"
+          ],
+          "conditional": true,
+          "book_only": true,
+          "commercial_contract": "deferred-income@1",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "76490",
+              "semantic": {
+                "name": "Erträge aus der Zuführung und Auflösung von latenten Steuern",
+                "function": "",
+                "range_start": "76490",
+                "range_end": "76490",
+                "parent": null
+              },
+              "signature": "7f83484f63b33c215ced1f619c41477b5274e36a21c3864f212a98334b0ef57c"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

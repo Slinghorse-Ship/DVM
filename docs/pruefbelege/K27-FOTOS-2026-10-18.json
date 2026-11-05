@@ -1,0 +1,121 @@
+{
+  "format": 1,
+  "date": "2026-10-18",
+  "feature": "K-27 server photo fallback",
+  "generation": 2026101552,
+  "frozen_candidates": {
+    "1": {
+      "git_tree": "46eef266dce8872e8f38a711615578ee9754c867",
+      "source_files": 6890,
+      "runtime_files": 4344,
+      "runtime_sha256": "ab7f756629d92119f774ca3ea264742e7cf259849e5bd4ef48c87654a5203887"
+    },
+    "2": {
+      "git_tree": "7ef2da41495f32dafa555a629a699dbfbc131c67",
+      "source_files": 6890,
+      "runtime_files": 4344,
+      "runtime_sha256": "ab7f756629d92119f774ca3ea264742e7cf259849e5bd4ef48c87654a5203887"
+    },
+    "3": {
+      "git_tree": "456d3a0f910d88bd25b3130811cd3e0e16223cdc",
+      "source_files": 6890,
+      "runtime_files": 4344,
+      "runtime_sha256": "ab7f756629d92119f774ca3ea264742e7cf259849e5bd4ef48c87654a5203887"
+    }
+  },
+  "runtime_equivalence": "All runtime sources are byte-identical across the three candidates. Candidate 3 changes only test memory reporting and whitespace compared with candidate 2.",
+  "full_functional_and_http": {
+    "suite": "native-raster-photo-fallback",
+    "checks": 251,
+    "source_originals": 17,
+    "original_tables": 429,
+    "external_actions": 0,
+    "pure_skipped": false
+  },
+  "browser": {
+    "suite": "raster-photo-fallback-browser",
+    "checks": 78,
+    "actual_posts": 20,
+    "views": 16,
+    "external_actions": 0,
+    "php_request_limit": "64M",
+    "php_native_resident_peak_kib": 261120,
+    "errors": []
+  },
+  "installed_webspace": {
+    "suite": "raster-photo-webspace",
+    "actual_webbundle": true,
+    "actual_prepared_install": true,
+    "actual_production_site": true,
+    "javascript": false,
+    "http_requests": 31,
+    "uploads": 1,
+    "external_actions": 0,
+    "zend_peak_bytes": 30412800,
+    "native_http_rss_kib": 247940,
+    "original_tables": 429,
+    "app_files_sha256": "438f557858eff6f71c64986d50a11194e1e45f43bcc9ba1f36d9db029c9792be"
+  },
+  "cold_memory": [
+    {
+      "probe": "cold-raster-memory",
+      "format": "jpg",
+      "php_zend_peak_bytes": 2097152,
+      "php_native_rss_kib": 39544,
+      "decoder_child_rss_kib": 275992
+    },
+    {
+      "probe": "cold-raster-memory",
+      "format": "png",
+      "php_zend_peak_bytes": 2097152,
+      "php_native_rss_kib": 39544,
+      "decoder_child_rss_kib": 305308
+    },
+    {
+      "probe": "cold-raster-memory",
+      "format": "webp",
+      "php_zend_peak_bytes": 2097152,
+      "php_native_rss_kib": 42776,
+      "decoder_child_rss_kib": 418560
+    },
+    {
+      "probe": "cold-raster-memory",
+      "format": "192MB-rgba",
+      "php_zend_peak_bytes": 2097152,
+      "php_native_rss_kib": 39544,
+      "decoder_child_rss_kib": 868212
+    }
+  ],
+  "neighbors": [
+    "native-photo-import",
+    "native-image-orientation",
+    "native-album-upload",
+    "native-page-photo-upload",
+    "native-editor-upload",
+    "native-press-upload-rights",
+    "native-press-save-requests",
+    "native-large-camera-originals",
+    "native-file-versions",
+    "native-installer-integrations",
+    "native-service-status"
+  ],
+  "installer_checks": 256,
+  "shell_disabled_webspace_checks": 55,
+  "log_sha256": {
+    "k27-release-candidate2.log": "da7fd914baaccf199efc3628dcd2c7a2ffc7afb00611c484d8319caf8253dd31",
+    "k27-core-candidate3.log": "a173f4f8c45fb7560a9ac3ce31be3bdbef2a1f0efd663ce17285c5e708513e85",
+    "k27-installers-candidate2.log": "abab080f988c6dc8eb59b122c9d1df2d872d0862a5b1e573fc0582745d7f781e",
+    "k27-neighbors-candidate1.log": "b7d42d5452709ae64f822a171c2f358ac9513b65877393501f12d3df6688d71f"
+  },
+  "earlier_attempt": "Candidate 1 failed a new browser selector and two obsolete installer test expectations. Its unchanged source and original failure logs were retained. The two installer suites pass in candidates 2 and 3; the remaining eleven groups retain identical runtime and test sources.",
+  "external_actions": 0,
+  "not_a_total_completion": true,
+  "remaining": [
+    "K-35 common current acceptance",
+    "P-12 complete UI language and usability",
+    "P-25 final operations/package acceptance",
+    "partial-month accounting and qualified SKR42 reserves",
+    "licensed original ERiC runtime acceptance",
+    "iPhone/iPad and Android phone/tablet device acceptance"
+  ]
+}

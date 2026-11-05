@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS bank_import_corrections (
+ club_id VARCHAR(128) NOT NULL,
+ id CHAR(32) NOT NULL,
+ record_id VARCHAR(128) NOT NULL,
+ record_version INT NOT NULL,
+ actor_id VARCHAR(128) NOT NULL,
+ kind VARCHAR(24) NOT NULL,
+ reason VARCHAR(500) NOT NULL,
+ request_key CHAR(32) NOT NULL,
+ input_hash CHAR(64) NOT NULL,
+ original_json MEDIUMTEXT NOT NULL,
+ original_sha256 CHAR(64) NOT NULL,
+ created_at VARCHAR(40) NOT NULL,
+ PRIMARY KEY(club_id,id),
+ UNIQUE KEY bank_correction_request(club_id,request_key),
+ UNIQUE KEY bank_correction_version(club_id,record_id,record_version),
+ KEY bank_correction_history(club_id,record_id,created_at,id),
+ FOREIGN KEY(club_id,record_id) REFERENCES bank_import_records(club_id,id),
+ CHECK(record_version>0 AND kind IN ('reopen','unlink','duplicate'))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

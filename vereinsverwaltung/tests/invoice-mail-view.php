@@ -1,0 +1,16 @@
+<?php declare(strict_types=1);
+require __DIR__.'/invoice-inbox.php';
+use Kulturhus\Verein\InvoiceMailView;
+$raw="From: invoice@example.invalid\r\nTo: club@example.invalid\r\nSubject: =?UTF-8?Q?Synthetische_Rechnung?=\r\nDate: Mon, 07 Sep 2026 12:00:00 +0200\r\nContent-Type: multipart/mixed; boundary=\"test\"\r\n\r\n--test\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\nBitte Rechnung pr=C3=BCfen.\r\n--test\r\nContent-Type: application/pdf\r\nContent-Disposition: attachment; filename=test.pdf\r\n\r\nSECRET ATTACHMENT\r\n--test--\r\n";
+$parsed=InvoiceMailView::text($raw);check(str_contains($parsed['body'],'prüfen')&&!str_contains($parsed['body'],'SECRET'),'MIME plain body decoded, attachment excluded');check($parsed['subject']==='Synthetische Rechnung','encoded subject decoded');
+$html=InvoiceMailView::text("Content-Type: text/html\r\n\r\n<script>attack()</script><p>Hello<img src=\"https://example.invalid/track\"></p>&lt;img onerror=attack()&gt;");check(!str_contains($html['body'],'https://')&&!str_contains($html['body'],'attack()</script>'),'HTML tags and active script discarded');check(!str_contains(htmlspecialchars($html['body'],ENT_QUOTES,'UTF-8'),'<img'),'entity-derived markup is escaped by view');
+check(InvoiceMailView::text($raw.str_repeat('x',2100000))['truncated'],'large mail preview explicitly marked limited');
+$db->prepare('INSERT INTO invoice_mail_originals VALUES(?,?,?,?,?,?)')->execute(['a','synthetic-mail','1:1',hash('sha256',$raw),$raw,gmdate('c')]);$db->prepare('INSERT INTO invoice_mail_original_links VALUES(?,?,?,?)')->execute(['a',$one,'synthetic-mail','1:1']);
+$mailView=new InvoiceMailView($db,'cash');check($mailView->original($one,'synthetic-mail','1:1')===$raw,'original EML exact after expense association');check($mailView->listing($one)[0]['available'],'associated invoice mail visible');
+denied(fn()=>(new InvoiceMailView($db,'member'))->original($one,'synthetic-mail','1:1'),'member direct original download denied');denied(fn()=>(new InvoiceMailView($db,'foreign'))->original($one,'synthetic-mail','1:1'),'foreign original download denied');
+$db->prepare('INSERT INTO invoice_mail_original_links VALUES(?,?,?,?)')->execute(['a',$three,'synthetic-mail','1:1']);$summary=$mailView->listing($one)[0]['workflow'];check($summary['total']===2&&$summary['counts']['open']===1&&!$summary['complete'],'mail with assigned and open invoice remains incomplete');
+$db->prepare('UPDATE documents SET state=? WHERE id=?')->execute(['archived',$three]);$summary=$mailView->listing($one)[0]['workflow'];check($summary['complete']&&$summary['counts']['archived']===1,'mail complete only after last invoice handled');
+$db->prepare('UPDATE documents SET state=? WHERE id=?')->execute(['active',$three]);check(!$mailView->listing($one)[0]['workflow']['complete'],'restored invoice reopens mail status');
+$db->prepare('UPDATE documents SET scopes=? WHERE id=?')->execute(['["finance","members"]',$three]);
+check(!$mailView->listing($one)[0]['available'],'protected sibling blocks preview entirely');denied(fn()=>$mailView->original($one,'synthetic-mail','1:1'),'protected sibling blocks EML download');
+echo "$n combined inbox/mail view checks passed\n";

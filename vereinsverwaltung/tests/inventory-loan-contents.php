@@ -1,0 +1,13 @@
+<?php declare(strict_types=1);
+require __DIR__.'/inventory.php';
+use Kulturhus\Verein\Inventory;
+$sets=$i->saveItem('',0,['code'=>'SET-TEST','name'=>'Fußsatz Testdaten','unit'=>'Satz','content_quantity'=>'4','content_unit'=>'Füße','home_location'=>$loc],$key());$move($sets,'receive',4);
+check(Inventory::contentSummary($i->item($sets),4)==='4 Sätze (je 4 Füße) = 16 Füße','four sets describe sixteen feet without stock multiplication');
+check(Inventory::contentSummary(['unit'=>'Stück','content_quantity'=>4,'content_unit'=>'Stück'],4)==='4 Einheiten (je 4 Stück) = 16 Stück','equal unit names distinguish inventory units from contained pieces');
+check(Inventory::contentSummary(['unit'=>'Stück','content_quantity'=>8,'content_unit'=>'Stück'],3)==='3 Einheiten (je 8 Stück) = 24 Stück','arbitrary stock and pack content are multiplied rather than hardcoded');
+$l=$i->reserve(['contact'=>$p,'purpose'=>'Satzprobe','starts_on'=>'2026-09-07','due_on'=>'2026-09-08','lines'=>[['item'=>$sets,'location'=>$loc,'quantity'=>'2','stock_version'=>(string)$i->item($sets)['stock_version']]]],$key());$line=$i->loan($l)['lines'][0];check((int)$line['content_quantity']===4&&$line['content_unit']==='Füße','reservation snapshots contents');
+$db->prepare('UPDATE inventory_items SET content_quantity=5 WHERE id=?')->execute([$sets]);check((int)$i->loan($l)['lines'][0]['content_quantity']===4,'later metadata change does not alter historical set contents');
+$i->transition($l,1,'issue',['date'=>'2026-09-07','reason'=>'2 vollständige Sätze','current_place'=>'Testsaal'],$key());check((int)$i->stock($sets,$loc)[0]['lent']===2,'issue uses two sets not eight feet');
+denied(fn()=>$i->returnLoan($l,2,['date'=>'2026-09-07','reason'=>'Ein Fuß','lines'=>[['line'=>$line['id'],'good'=>'0.25','location'=>$loc]]],$key()),'single foot cannot become fractional set return');
+$i->returnLoan($l,2,['date'=>'2026-09-07','reason'=>'1 Satz vollständig, bei anderem fehlt 1 Fuß','lines'=>[['line'=>$line['id'],'good'=>'1','damaged'=>'1','location'=>$loc]]],$key());$stock=$i->stock($sets,$loc)[0];check((int)$stock['shelf']===3&&(int)$stock['blocked']===1&&(int)$stock['lent']===0,'incomplete set blocked without automatic loss');check((int)$i->loan($l)['lines'][0]['lost']===0,'no automatic loss posted for missing component');
+echo "Set content snapshot and return checks passed\n";

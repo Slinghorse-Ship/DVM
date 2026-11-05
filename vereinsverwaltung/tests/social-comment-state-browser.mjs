@@ -1,0 +1,13 @@
+import fs from'node:fs';const f=JSON.parse(fs.readFileSync(0,'utf8'));const{chromium}=await import(process.env.PLAYWRIGHT_MODULE);const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE,headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});let checks=0,posts=0,states=0;const check=(ok,label)=>{if(!ok)throw new Error(label);checks++;};
+try{
+ for(const app of['root','manager'])for(const js of[true,false]){
+  const c=await browser.newContext({viewport:{width:390,height:1000},hasTouch:true,javaScriptEnabled:js});await c.route('**/*',r=>new URL(r.request().url()).origin===f.origin?r.continue():r.abort('blockedbyclient'));const p=await c.newPage();p.setDefaultTimeout(15000);const errors=[];p.on('pageerror',e=>errors.push(e.message));p.on('request',r=>{if(r.method()==='POST')posts++;});await p.goto(f.origin+'/own-test-enter?app='+app);
+  for(const channel of['facebook','instagram']){
+   const url=f.origin+(app==='manager'?'/vereinsverwaltung/':'/')+'?'+new URLSearchParams({view:'social',section:'review',attention:f.items[channel].comment}).toString();await p.goto(url);await p.waitForLoadState('load');await p.locator('[data-comment-hidden]').waitFor();check((await p.locator('[data-comment-hidden]').innerText())==='Kommentar ausgeblendet','actual '+channel+' provider visibility is explicit '+app+'/'+js);check((await p.locator('[data-social-chat]').innerText()).includes('Own original browser comment '+channel),'exact original comment remains visible with provider evidence');
+   const send=p.locator('[data-human-send]');check(channel==='instagram'?await send.count()===0:await send.count()===1,'actual current provider reply capability is reflected for '+channel);if(channel==='instagram')check(await p.locator('[name=reply_text]').count()===0,'hidden Instagram original does not open an unusable empty reply composer');
+   for(const width of[320,390,820])for(const scale of[1,2]){states++;await p.setViewportSize({width,height:1000});await p.evaluate(s=>document.documentElement.style.fontSize=s===2?'200%':'100%',scale);await p.waitForTimeout(100);check(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'actual provider visibility fits '+app+'/'+js+'/'+channel+'/'+width+'/'+scale);}
+  }
+  check(errors.length===0,'provider visibility has no browser script errors');await c.close();
+ }
+ check(posts===0,'reading provider visibility creates no fake or real answer');console.log(JSON.stringify({browser_checks:checks,actual_posts:posts,viewport_states:states,external_actions:0}));
+}finally{await browser.close();}

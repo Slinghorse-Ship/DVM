@@ -1,0 +1,2 @@
+<?php declare(strict_types=1); $lease=$data['original_leasing']; Kulturhus\Verein\OriginalLeasing::check($data); ?>
+<section class="tax-source"><h3>Bestätigte Vertragszurechnung · Kaufleasing 62500</h3><p>Wirtschaftliches Eigentum im ursprünglichen Einzelplan: HGB · Verein; Steuer · Verein. Das Konto 62500 enthält ausschließlich regelmäßige lineare Abschreibung. Raten, Leasingverbindlichkeit und Zinsen sind getrennt zu prüfen.</p><p><a href="<?= e(url(['view'=>'documents','doc'=>$lease['document']['document_id']])) ?>">Ursprünglichen Vertragsbeleg ansehen</a></p></section>

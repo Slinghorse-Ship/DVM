@@ -1,0 +1,5 @@
+<?php
+$memberProfileViewMessages=$managerLanguageMessages??[];
+$memberProfileText=static fn(string $source,array $values=[]):string=>\Kulturhus\Native\Language\MemberProfileMessages::text($source,$memberProfileViewMessages,$values);
+ $accessMailSource=$accessMailInput??(in_array(input($_POST,'action'),['manual-application','manual-account'],true)?$_POST:[]); ?>
+<label><?= e($memberProfileText('Zugangsmail')) ?><select class="form-control" name="access_mail"><option value="0" <?= input($accessMailSource,'access_mail','0')==='0'?'selected':'' ?>><?= e($memberProfileText('Konto anlegen, keine Mail senden')) ?></option><option value="1" <?= input($accessMailSource,'access_mail')==='1'?'selected':'' ?>><?= e($memberProfileText('Konto anlegen und Zugangsmail senden')) ?></option></select></label><p class="muted"><?= e($memberProfileText('Eine gültige E-Mail-Adresse wird benötigt. Neue Konten erhalten ein zufälliges, nicht mitgeteiltes Passwort. Die Zugangsmail enthält den Benutzernamen und den Weg zum Festlegen eines eigenen Passworts. Bestehende Konten werden nach Prüfung zugeordnet.')) ?></p>

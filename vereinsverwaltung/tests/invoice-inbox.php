@@ -1,0 +1,21 @@
+<?php declare(strict_types=1);
+require __DIR__.'/../src/bootstrap.php';
+use Kulturhus\Verein\{Database,Documents,Finance,InvoiceInbox};
+$db=\Kulturhus\Verein\Tests\MySqlFixture::connect(':memory:');Database::migrate($db);$db->exec("INSERT INTO clubs VALUES('a','A'),('b','B');INSERT INTO actors(id,club_id,role) VALUES('cash','a','treasurer'),('member','a','member'),('foreign','b','treasurer')");
+$n=0;function check($ok,$label){global $n;if(!$ok)throw new RuntimeException($label);++$n;echo "PASS $label\n";}function denied(callable $f,$label){try{$f();}catch(DomainException){check(true,$label);return;}throw new RuntimeException($label);}
+$docs=new Documents($db,'cash');$finance=new Finance($db,'cash');$inbox=new InvoiceInbox($db,'cash');$key=fn()=>bin2hex(random_bytes(16));$upload=fn()=>$docs->upload('test.xml','<Invoice xmlns="urn:synthetic:test"/>',['title'=>'Synthetic incoming invoice','kind'=>'receipt','scope'=>'finance','links'=>[]],$key());
+$one=$upload();check(count($inbox->listing())===1&&$inbox->document($one)['inbox_status']==='open','upload appears in finance inbox');check(count($finance->entries([]))===0,'incoming file never creates expense');
+denied(fn()=>(new InvoiceInbox($db,'member'))->listing(),'member denied');check((new InvoiceInbox($db,'foreign'))->listing()===[],'foreign club excluded');
+$bill=['kind'=>'expense','description'=>'Synthetic expense','amount'=>'25.00','category'=>'culture','document_date'=>'2026-09-07','due_date'=>'2026-09-30'];
+$entry=$finance->createEntry($bill,$key(),fn($created)=>$docs->linkExpense($one,1,$created));
+check($inbox->document($one)['inbox_status']==='assigned','create expense atomically links original');check($docs->file($one)['bytes']==='<Invoice xmlns="urn:synthetic:test"/>','original remains unchanged');
+denied(fn()=>$inbox->archive($one,2,true,'Test'),'assigned original cannot be hidden');
+$two=$upload();$version=$docs->document($two)['version'];$inbox->archive($two,$version,true,'Synthetic unwanted invoice');check($inbox->document($two)['inbox_status']==='archived','hide persists on reload');
+denied(fn()=>$docs->linkExpense($two,2,$entry),'archived original cannot be linked');$inbox->archive($two,2,false,'Synthetic restore');check($inbox->document($two)['inbox_status']==='open','restore persists on reload');
+$before=count($finance->entries([]));denied(fn()=>$finance->createEntry($bill,$key(),fn($created)=>$docs->linkExpense($two,1,$created)),'stale original blocks new expense');check(count($finance->entries([]))===$before,'failed association rolls back newly created expense');
+$e=$finance->entry($entry);$docs->linkExpense($two,3,$entry,(int)$e['version']);check($inbox->document($two)['inbox_status']==='assigned','existing expense association persists');$docs->linkExpense($two,3,$entry,(int)$e['version']);check(count($docs->document($two)['links'])===1,'double assignment is idempotent');
+$other=$finance->createEntry($bill,$key());denied(fn()=>$docs->linkExpense($two,4,$other),'second expense cannot silently take original');
+$three=$upload();denied(fn()=>$docs->linkExpense($three,1,$entry,999),'stale expense rejected');denied(fn()=>(new Documents($db,'member'))->linkExpense($three,1,$entry),'direct link requires write rights');
+$income=$finance->createEntry(array_replace($bill,['kind'=>'income']),$key());denied(fn()=>$docs->linkExpense($three,1,$income),'cannot turn incoming invoice into income');
+$guarded=$upload();denied(fn()=>$docs->update($guarded,1,['title'=>'Changed','kind'=>'receipt','document_date'=>'2026-09-07','scope'=>'finance','links'=>[],'state'=>'archived','reason'=>'Synthetic guard'],function()use($db){check($db->inTransaction(),'document guard holds write transaction');throw new DomainException('Synthetic concurrent link guard');}),'guard rejection aborts archive');check($docs->document($guarded)['state']==='active'&&$docs->document($guarded)['version']===1,'guard rejection retains original state/version');
+check(\Kulturhus\Verein\Tests\MySqlFixture::integrity($db)==='ok'&&!(\Kulturhus\Verein\Tests\MySqlFixture::foreignKeyErrors($db)[0]??false),'inbox preserves integrity');echo "$n inbox checks passed; no network/mail/payment\n";

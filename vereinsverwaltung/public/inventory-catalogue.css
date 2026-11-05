@@ -1,0 +1,14 @@
+.iv-catalogue-cards{display:grid;gap:.75rem;margin:1rem 0}.iv-catalogue-card{padding:.75rem;border:1px solid #bdcbd5;border-radius:.75rem;min-width:0;overflow-wrap:anywhere}.iv-catalogue-card a{display:flex;align-items:center;min-height:44px;white-space:normal;text-align:left}.iv-catalogue-card p{margin:.5rem 0}.iv-catalogue-card dl{display:grid;gap:.5rem}.iv-catalogue-card dl div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:.75rem}.iv-catalogue-card dd{margin:0}.iv-catalogue-pages{display:flex;align-items:end;flex-wrap:wrap;gap:.5rem;margin:.75rem 0}.iv-catalogue-pages input{max-width:8rem}#inventory-item-catalogue button,.iv-catalogue-pages a{min-height:44px;white-space:normal}#inventory-item-catalogue .iv-filter>*{min-width:0}#inventory-item-catalogue h2{overflow-wrap:anywhere}
+.iv-catalogue,.iv-catalogue-stats{font-size:1rem;line-height:1.55;min-width:0;max-width:100%;overflow-wrap:anywhere}
+.iv-catalogue{container-type:inline-size}.iv-catalogue h2{font-size:1.1875rem}.iv-catalogue label,.iv-catalogue .muted,.iv-catalogue dt{font-size:.875rem}
+.iv-catalogue input,.iv-catalogue select{font-size:1rem;min-width:0;max-width:100%;min-height:46px}
+.iv-catalogue button,.iv-catalogue .btn{font-size:.875rem;min-height:44px;white-space:normal}.iv-catalogue .iv-filter>*{min-width:0}
+.iv-catalogue .iv-catalogue-card p,.iv-catalogue .iv-catalogue-card dd{font-size:1rem}.iv-catalogue .iv-catalogue-pages label{display:flex;flex-direction:column;gap:.35rem}
+.iv-catalogue-stats a{min-width:0;min-height:44px}.iv-catalogue-stats span{font-size:.875rem}.iv-catalogue-stats strong{font-size:1.5rem}
+.iv-catalogue-original pre{font:inherit;white-space:pre-wrap;overflow-wrap:anywhere;max-height:32rem;overflow:auto}
+.inventory-navigation a{font-size:.875rem;min-height:44px}
+@container(max-width:42em){.iv-catalogue .iv-catalogue-card dl div{grid-template-columns:minmax(0,1fr)}.iv-catalogue .section-heading{flex-wrap:wrap}.iv-catalogue .iv-filter{grid-template-columns:minmax(0,1fr)}}
+
+.iv-catalogue .iv-value-total{font-size:1.5625rem}.iv-catalogue .iv-select-search{font-size:.875rem;min-height:44px}
+
+.iv-material .iv-filter{display:grid;grid-template-columns:minmax(0,1fr);justify-items:start;gap:.75rem}.iv-material .iv-filter label,.iv-material .iv-filter input{width:100%}.iv-material .iv-catalogue-card h2{font-size:1rem}.iv-material .iv-catalogue-card small{font-size:.875rem}

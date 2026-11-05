@@ -1,0 +1,11 @@
+<?php declare(strict_types=1);
+require __DIR__.'/einvoice-line-items.php';
+$extra='<cac:AccountingSupplierParty><cac:Party><cac:PartyName><cbc:Name>Synthetic supplier</cbc:Name></cac:PartyName><cac:PostalAddress><cbc:StreetName>Testweg</cbc:StreetName><cbc:BuildingNumber>4</cbc:BuildingNumber><cbc:PostalZone>12345</cbc:PostalZone><cbc:CityName>Teststadt</cbc:CityName></cac:PostalAddress><cac:Contact><cbc:ElectronicMail>synthetic@example.invalid</cbc:ElectronicMail><cbc:Telephone>000000</cbc:Telephone></cac:Contact></cac:Party></cac:AccountingSupplierParty><cac:PaymentMeans><cac:PayeeFinancialAccount><cbc:ID>DE89370400440532013000</cbc:ID><cac:FinancialInstitutionBranch><cbc:ID>TESTDE00</cbc:ID></cac:FinancialInstitutionBranch></cac:PayeeFinancialAccount></cac:PaymentMeans><cac:TaxTotal><cbc:TaxAmount>4.00</cbc:TaxAmount></cac:TaxTotal>';
+$fixture=str_replace('</Invoice>',$extra.'</Invoice>',$sample);$details=Kulturhus\Verein\EInvoiceFields::details($fixture);
+check($details['fields']['Rechnungssteller']==='Synthetic supplier','party name fallback');
+check($details['fields']['Anschrift Rechnungssteller']==='Testweg, 4, 12345, Teststadt','supplier address assembled only from supplier');
+check($details['fields']['E-Mail Rechnungssteller']==='synthetic@example.invalid'&&$details['fields']['Telefon Rechnungssteller']==='000000','supplier email telephone');
+check($details['fields']['Umsatzsteuerbetrag']==='4.00','header tax amount');
+check(count($details['bank_accounts'])===1&&$details['bank_accounts'][0]['iban']==='DE89370400440532013000','IBAN paired with its payment means');
+check(Kulturhus\Verein\EInvoiceFields::details('<!DOCTYPE a SYSTEM "file:///never"><a/>')['fields']===[],'extended parser never sees unsafe XML');
+echo "$checks combined supplier XML checks passed\n";

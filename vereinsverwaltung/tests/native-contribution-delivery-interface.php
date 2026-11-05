@@ -1,0 +1,17 @@
+<?php declare(strict_types=1);
+require dirname(__DIR__,2).'/vendor/autoload.php';
+require __DIR__.'/native-document-interface.php';
+require __DIR__.'/support/contribution-run-contracts.php';
+$contributionDeliveryFixture=ownContributionRunContracts($db,$check);
+require __DIR__.'/support/contribution-delivery-contracts.php';
+$contributionDeliveryOriginals=ownContributionDeliveryContracts($db,$check,$contributionDeliveryFixture);
+require __DIR__.'/support/contribution-delivery-history.php';
+$contributionDeliveryHistory=ownContributionDeliveryHistory($db,$check,$contributionDeliveryFixture,$contributionDeliveryOriginals);
+require __DIR__.'/support/contribution-delivery-failures.php';
+$contributionDeliveryFailures=ownContributionDeliveryFailures($db,$check,$contributionDeliveryFixture,$contributionDeliveryOriginals,\Kulturhus\Native\TestSupport::config());
+require __DIR__.'/support/contribution-delivery-interruptions.php';
+$contributionDeliveryInterruptions=ownContributionDeliveryInterruptions($db,$check,$contributionDeliveryFixture,$contributionDeliveryFailures,\Kulturhus\Native\TestSupport::config());
+require __DIR__.'/support/contribution-delivery-payment-snapshot.php';
+$contributionDeliverySnapshots=ownContributionDeliveryPaymentSnapshot($db,$check,$contributionDeliveryFixture,\Kulturhus\Native\TestSupport::config());
+if(getenv('DVM_CONTRIBUTION_DELIVERY_INTERFACE_BROWSER')==='1')require __DIR__.'/support/contribution-delivery-browser-fixture.php';
+echo json_encode(['suite'=>'native-contribution-delivery-interface','checks'=>$n,'external_actions'=>0],JSON_THROW_ON_ERROR)."\n";

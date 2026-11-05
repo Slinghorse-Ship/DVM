@@ -1,0 +1,3 @@
+<?php declare(strict_types=1); ?>
+<link rel="stylesheet" href="inventory-catalogue.css?v=2">
+<section class="card iv-catalogue iv-catalogue-original" data-inventory-catalogue-original><h2><?= e($ivCatalogueText('Inventarauswahl')) ?></h2><p><?= e($ivCatalogueText('Die vollständigen Filter- und Seitenangaben bleiben zur Prüfung erhalten. Öffne die Auswahl neu, bevor du erneut filterst.')) ?></p><pre><?= e(json_encode($inventoryCatalogueState['original'],JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE|JSON_INVALID_UTF8_SUBSTITUTE|JSON_THROW_ON_ERROR)) ?></pre><a class="btn btn-outline theme-secondary button secondary" href="<?= e(url($inventoryCatalogueState['route'])) ?>"><?= e($ivCatalogueText('Inventarauswahl neu öffnen')) ?></a></section>

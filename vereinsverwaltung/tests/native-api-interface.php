@@ -1,0 +1,14 @@
+<?php declare(strict_types=1);
+ini_set('zend.exception_ignore_args','1');
+require dirname(__DIR__).'/native/bootstrap.php';require dirname(__DIR__).'/src/bootstrap.php';require __DIR__.'/support/api-fixture.php';require __DIR__.'/support/original-database-hash.php';
+use Kulturhus\Native\{TestSupport};use Kulturhus\Native\Api\{TokensView,Scopes};
+$db=TestSupport::db();$cfg=TestSupport::config();
+if(($cfg['owner']??'')!=='isolated-native-ci'||($cfg['label']??'')!=='native-api-interface'||($cfg['host']??'')!=='127.0.0.1'||($cfg['port']??0)!==13371||!preg_match('/\Akh_native_[a-f0-9]{24}\z/D',$cfg['database']??'')||$db->query('SELECT DATABASE()')->fetchColumn()!==$cfg['database']||$db->query('SHOW TABLES')->fetchAll(PDO::FETCH_COLUMN)!==[])throw new RuntimeException('Exact fresh owned API interface database required.');
+$f=ownApiFixture($db);$n=0;$check=static function(bool $ok,string $why)use(&$n):void{if(!$ok)throw new RuntimeException($why);++$n;echo 'PASS '.$why.PHP_EOL;};
+$originalRequest='0123456789abcdef0123456789abcdef';$html=TokensView::render($db,$f['accounts']['admin']['token'],'owned-csrf',[],null,null,'Original input rejected.',['request_id'=>$originalRequest,'label'=>'0 Own original <&> ä🙂','days'=>'7','scopes'=>['permissions.read']]);
+$dom=new DOMDocument();@$dom->loadHTML('<?xml encoding="UTF-8">'.$html);$xp=new DOMXPath($dom);$requests=$xp->query('//form[.//input[@name="action" and @value="api-token-create"]]//input[@name="request_id"]');$shown=$requests->length===1?$requests->item(0)->getAttribute('value'):null;
+echo json_encode(['suite'=>'api-interface-request-identity','original_request_retained'=>$shown===$originalRequest,'replacement_request_created'=>$shown!==null&&$shown!==$originalRequest],JSON_THROW_ON_ERROR).PHP_EOL;
+$check($shown===$originalRequest,'rejected creation retains the original request identity instead of generating a new operation');
+require __DIR__.'/support/api-interface-models.php';
+if(getenv('DVM_API_INTERFACE_BROWSER')==='1')require __DIR__.'/support/api-interface-browser-fixture.php';
+echo json_encode(['suite'=>'native-api-interface','checks'=>$n,'external_actions'=>0],JSON_THROW_ON_ERROR).PHP_EOL;

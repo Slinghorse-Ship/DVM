@@ -1,0 +1,420 @@
+[
+  {
+    "route": {
+      "view": "dashboard"
+    },
+    "chapter": 1
+  },
+  {
+    "route": {
+      "view": "members",
+      "tab": "archive"
+    },
+    "chapter": 5
+  },
+  {
+    "route": {
+      "view": "members",
+      "list": "contacts"
+    },
+    "chapter": 2
+  },
+  {
+    "route": {
+      "view": "members",
+      "list": "birthdays"
+    },
+    "chapter": 2
+  },
+  {
+    "route": {
+      "view": "members",
+      "list": "contacts",
+      "show_lists": "1"
+    },
+    "chapter": 2
+  },
+  {
+    "route": {
+      "view": "contacts-extra",
+      "tab": "favourites"
+    },
+    "chapter": 2
+  },
+  {
+    "route": {
+      "view": "portal",
+      "tab": "application"
+    },
+    "chapter": 6
+  },
+  {
+    "route": {
+      "view": "members",
+      "list": "current"
+    },
+    "chapter": 2
+  },
+  {
+    "route": {
+      "view": "members",
+      "list": "members"
+    },
+    "chapter": 2
+  },
+  {
+    "route": {
+      "view": "members",
+      "list": "members",
+      "status": "ehemalig"
+    },
+    "chapter": 2
+  },
+  {
+    "route": {
+      "view": "members-extra",
+      "tab": "anniversaries"
+    },
+    "chapter": 2
+  },
+  {
+    "route": {
+      "view": "members",
+      "list": "members",
+      "show_lists": "1"
+    },
+    "chapter": 2
+  },
+  {
+    "route": {
+      "view": "finance",
+      "tab": "contribution-mails"
+    },
+    "chapter": 7
+  },
+  {
+    "route": {
+      "view": "inventory",
+      "tab": "assets"
+    },
+    "chapter": 15
+  },
+  {
+    "route": {
+      "view": "finance",
+      "tab": "bank"
+    },
+    "chapter": 8
+  },
+  {
+    "route": {
+      "view": "finance",
+      "tab": "contributions"
+    },
+    "chapter": 7
+  },
+  {
+    "route": {
+      "view": "finance",
+      "tab": "receipts"
+    },
+    "chapter": 7
+  },
+  {
+    "route": {
+      "view": "finance",
+      "tab": "debit"
+    },
+    "chapter": 7
+  },
+  {
+    "route": {
+      "view": "finance",
+      "tab": "export"
+    },
+    "chapter": 9
+  },
+  {
+    "route": {
+      "view": "finance",
+      "tab": "tax"
+    },
+    "chapter": 19
+  },
+  {
+    "route": {
+      "view": "finance",
+      "tab": "reports"
+    },
+    "chapter": 9
+  },
+  {
+    "route": {
+      "view": "donations",
+      "tab": "money"
+    },
+    "chapter": 10
+  },
+  {
+    "route": {
+      "view": "donations",
+      "tab": "goods"
+    },
+    "chapter": 10
+  },
+  {
+    "route": {
+      "view": "calendar",
+      "new_event": "1",
+      "meeting": "1"
+    },
+    "chapter": 13
+  },
+  {
+    "route": {
+      "view": "material"
+    },
+    "chapter": 15
+  },
+  {
+    "route": {
+      "view": "gema"
+    },
+    "chapter": 14
+  },
+  {
+    "route": {
+      "view": "inventory",
+      "tab": "where"
+    },
+    "chapter": 15
+  },
+  {
+    "route": {
+      "view": "inventory",
+      "tab": "locations"
+    },
+    "chapter": 15
+  },
+  {
+    "route": {
+      "view": "inventory",
+      "tab": "loans"
+    },
+    "chapter": 15
+  },
+  {
+    "route": {
+      "view": "documents",
+      "tab": "checks"
+    },
+    "chapter": 12
+  },
+  {
+    "route": {
+      "view": "documents"
+    },
+    "chapter": 11
+  },
+  {
+    "route": {
+      "view": "messages"
+    },
+    "chapter": 16
+  },
+  {
+    "route": {
+      "view": "free"
+    },
+    "chapter": 20
+  },
+  {
+    "route": {
+      "view": "calendar"
+    },
+    "chapter": 13
+  },
+  {
+    "route": {
+      "view": "minutes"
+    },
+    "chapter": 13
+  },
+  {
+    "route": {
+      "view": "chat"
+    },
+    "chapter": 16
+  },
+  {
+    "route": {
+      "view": "portal",
+      "tab": "safety"
+    },
+    "chapter": 12
+  },
+  {
+    "route": {
+      "view": "portal",
+      "tab": "documents"
+    },
+    "chapter": 7
+  },
+  {
+    "route": {
+      "view": "portal",
+      "tab": "own"
+    },
+    "chapter": 2
+  },
+  {
+    "route": {
+      "view": "portal",
+      "tab": "card"
+    },
+    "chapter": 3
+  },
+  {
+    "route": {
+      "view": "website"
+    },
+    "chapter": 17
+  },
+  {
+    "route": {
+      "view": "website",
+      "tab": "pages"
+    },
+    "chapter": 17
+  },
+  {
+    "route": {
+      "view": "website",
+      "tab": "news"
+    },
+    "chapter": 17
+  },
+  {
+    "route": {
+      "view": "website",
+      "tab": "gallery"
+    },
+    "chapter": 17
+  },
+  {
+    "route": {
+      "view": "website",
+      "tab": "events"
+    },
+    "chapter": 17
+  },
+  {
+    "route": {
+      "view": "website",
+      "tab": "newsletter"
+    },
+    "chapter": 18
+  },
+  {
+    "route": {
+      "view": "website",
+      "tab": "recipients"
+    },
+    "chapter": 18
+  },
+  {
+    "route": {
+      "view": "website",
+      "tab": "social"
+    },
+    "chapter": 18
+  },
+  {
+    "route": {
+      "view": "website",
+      "tab": "press"
+    },
+    "chapter": 18
+  },
+  {
+    "route": {
+      "view": "website",
+      "tab": "technical"
+    },
+    "chapter": 17
+  },
+  {
+    "route": {
+      "view": "settings"
+    },
+    "chapter": 19
+  },
+  {
+    "route": {
+      "view": "settings",
+      "tab": "account"
+    },
+    "chapter": 19
+  },
+  {
+    "route": {
+      "view": "settings",
+      "tab": "roles"
+    },
+    "chapter": 19
+  },
+  {
+    "route": {
+      "view": "settings",
+      "tab": "numbers"
+    },
+    "chapter": 19
+  },
+  {
+    "route": {
+      "view": "settings",
+      "tab": "rates"
+    },
+    "chapter": 19
+  },
+  {
+    "route": {
+      "view": "settings",
+      "tab": "services"
+    },
+    "chapter": 19
+  },
+  {
+    "route": {
+      "view": "settings",
+      "tab": "texts"
+    },
+    "chapter": 19
+  },
+  {
+    "route": {
+      "view": "settings",
+      "tab": "paper"
+    },
+    "chapter": 19
+  },
+  {
+    "route": {
+      "view": "settings",
+      "tab": "member-cards"
+    },
+    "chapter": 3
+  },
+  {
+    "route": {
+      "view": "social"
+    },
+    "chapter": 18
+  },
+  {
+    "route": {
+      "view": "newsletter"
+    },
+    "chapter": 18
+  }
+]

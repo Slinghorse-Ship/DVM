@@ -1,0 +1,6 @@
+<?php declare(strict_types=1);
+require_once __DIR__.'/original-database-hash.php';
+function ownLoanCreateProof():void
+{
+ $cfg=\Kulturhus\Native\TestSupport::config();$db=\Kulturhus\Native\TestSupport::db();if(($cfg['owner']??'')!=='isolated-native-ci'||($cfg['label']??'')!=='native-inventory-loan-create-interface'||!preg_match('/\Akh_native_[a-f0-9]{24}\z/D',$cfg['database']??'')||$db->query('SELECT DATABASE()')->fetchColumn()!==$cfg['database'])throw new RuntimeException('Owned disposable loan proof required.');$tables=array_values(array_diff($db->query('SHOW TABLES')->fetchAll(PDO::FETCH_COLUMN),['native_auth_sessions','native_auth_limits','native_language_preferences']));$whole=ownOriginalDatabaseHash($db,$tables);$rows=static fn(string$t):array=>$db->query("SELECT * FROM `$t` WHERE club_id='own-list-club' ORDER BY ".($t==='inventory_stock'?'item_id,location_id':'id'))->fetchAll(PDO::FETCH_ASSOC);$items=$rows('inventory_items');$stocks=$rows('inventory_stock');$loans=$rows('inventory_loans');$lines=$rows('inventory_loan_lines');$balances=array_column((new \Kulturhus\Verein\Finance($db,'own-list-admin'))->accounts(),'balance_cents','id');header('Content-Type: application/json');header('Cache-Control: private, no-store');echo json_encode(compact('whole','items','stocks','loans','lines','balances'),JSON_THROW_ON_ERROR);
+}

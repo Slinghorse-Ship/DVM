@@ -1,0 +1,28 @@
+-- Immutable local tax commands and their original local XML results. Never a send retry journal.
+CREATE TABLE IF NOT EXISTS balance_filing_commands (
+ club_id VARCHAR(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+ request_key CHAR(32) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+ actor_id VARCHAR(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+ operation VARCHAR(32) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+ tax_year INT NOT NULL,
+ filing_id VARCHAR(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+ filing_version INT NOT NULL,
+ input_sha256 CHAR(64) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+ input_json MEDIUMTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+ original_sha256 CHAR(64) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+ original_json MEDIUMTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+ created_at DATETIME(6) NOT NULL,
+ PRIMARY KEY(club_id,request_key),
+ INDEX kh134_balance_filing_history(club_id,tax_year,created_at,request_key),
+ CONSTRAINT kh134_balance_filing_club FOREIGN KEY(club_id) REFERENCES clubs(id),
+ CONSTRAINT kh134_balance_filing_actor FOREIGN KEY(actor_id) REFERENCES actors(id),
+ CONSTRAINT kh134_balance_filing_target FOREIGN KEY(club_id,filing_id) REFERENCES tax_filings(club_id,id),
+ CONSTRAINT kh134_balance_filing_operation CHECK(CAST(operation AS BINARY) IN ('create','generate','save','partnership','equalization','financial-reserve','financial-reserve-withdraw','basis-6b','basis-7g','special-7b','special-7g','pension-offsets','pool-original','own-intangible','approve','revision','capital','adjust','carry','asset','validate')),
+ CONSTRAINT kh134_balance_filing_year CHECK(tax_year BETWEEN 2000 AND 9999),
+ CONSTRAINT kh134_balance_filing_version CHECK(filing_version>=1),
+ CONSTRAINT kh134_balance_filing_key CHECK(REGEXP_LIKE(request_key,'^[a-f0-9]{32}$','c')),
+ CONSTRAINT kh134_balance_filing_input_hash CHECK(REGEXP_LIKE(input_sha256,'^[a-f0-9]{64}$','c')),
+ CONSTRAINT kh134_balance_filing_original_hash CHECK(REGEXP_LIKE(original_sha256,'^[a-f0-9]{64}$','c')),
+ CONSTRAINT kh134_balance_filing_input_json CHECK(JSON_VALID(input_json)),
+ CONSTRAINT kh134_balance_filing_original_json CHECK(JSON_VALID(original_json))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;

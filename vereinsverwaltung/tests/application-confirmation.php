@@ -1,0 +1,28 @@
+<?php declare(strict_types=1);
+require __DIR__.'/../src/bootstrap.php';
+use Kulturhus\Verein\{Database,MembershipApplications,ApplicationConfirmation,PublicMembershipForm,ApplicationMail};
+$db=\Kulturhus\Verein\Tests\MySqlFixture::connect(':memory:');Database::migrate($db);$db->exec("INSERT INTO clubs VALUES('a','Test');INSERT INTO actors(id,club_id,role,is_superuser) VALUES('s','a','members',1)");
+$intake=new MembershipApplications($db,'a','s');$cfg=$intake->settings()['config'];$cfg['enabled']=true;$intake->saveSettings($cfg,0);
+$n=0;function ok(bool $v,string $s):void{global $n;if(!$v)throw new RuntimeException($s);$n++;echo "PASS $s\n";}
+$post=['first_name'=>'Test','last_name'=>'Antrag','birthday'=>'1990-01-02','email'=>'test@example.invalid','address'=>'Testweg','csrf'=>'test','consent'=>'1','newsletter'=>'1','request_key'=>bin2hex(random_bytes(16)),'configuration_version'=>'1'];
+$invalid=$post;unset($invalid['birthday']);ok(!PublicMembershipForm::handle($intake,$invalid,'test',true)['success'],'birthday required by server');
+ok($intake->settings()['config']['fields']['communication_channel']==='hidden','communication channel hidden');
+$state=PublicMembershipForm::handle($intake,$post,'test',true);ok($state['success'],'valid application staged');
+ok((int)$db->query('SELECT COUNT(*) FROM membership_applications')->fetchColumn()===0,'unconfirmed application withheld from board');
+ok((int)$db->query('SELECT COUNT(*) FROM application_notifications')->fetchColumn()===0,'no board notification before confirmation');
+$r=$db->query('SELECT * FROM application_confirmations')->fetch();ok($r['newsletter_status']==='waiting','newsletter waits for application confirmation');
+PublicMembershipForm::handle($intake,$post,'test',true);ok((int)$db->query('SELECT COUNT(*) FROM application_confirmations')->fetchColumn()===1,'repeat submission deduplicated');
+$sent=0;putenv('VEREIN_MODE=synthetic');ApplicationConfirmation::dispatch($db,'a','https://example.invalid/mitglied-werden',function()use(&$sent){$sent++;});ok($sent===0,'local transport blocked');
+$bad=PublicMembershipForm::handle($intake,['action'=>'confirm-application','confirmation_token'=>$r['mail_token'],'csrf'=>'bad'],'test',true);ok(!$bad['success'],'confirmation requires CSRF');
+$confirmation=['action'=>'confirm-application','confirmation_token'=>$r['mail_token'],'csrf'=>'test'];$done=PublicMembershipForm::handle($intake,$confirmation,'test',true);ok($done['success']&&!empty($done['confirmed']),'email confirmation creates application');
+ok((int)$db->query('SELECT COUNT(*) FROM membership_applications')->fetchColumn()===1,'confirmed application available');
+ok($db->query('SELECT newsletter_status FROM application_confirmations')->fetchColumn()==='pending','newsletter released only after confirmation');
+PublicMembershipForm::handle($intake,$confirmation,'test',true);ok((int)$db->query('SELECT COUNT(*) FROM membership_applications')->fetchColumn()===1,'confirmation idempotent');
+$url='https://example.invalid/mitglied-werden/?confirm_application='.str_repeat('a',64);$html=ApplicationMail::html('Bitte bestätigen: '.$url,'https://example.invalid');ok(str_contains($html,'Mitgliedsantrag bestätigen</a>')&&str_contains($html,'Datenschutz'),'branded mail has confirmation button and footer');
+$family=$post;$family['request_key']=bin2hex(random_bytes(16));$family['membership_type']='family_member';$family['newsletter']='';
+ok(!PublicMembershipForm::handle($intake,$family,'test',true)['success'],'family member requires payer name');
+$family['family_reference']='Test Beitragszahler';ok(PublicMembershipForm::handle($intake,$family,'test',true)['success'],'family member request accepted with payer');
+$fr=\Kulturhus\Verein\DocumentCatalog::query($db,'SELECT * FROM application_confirmations WHERE request_key=?',[$family['request_key']])->fetch();$familyId=$intake->confirmEmail($fr['mail_token']);
+$fa=json_decode($intake->application($familyId)['answers'],true);ok($fa['membership_type']==='family_member'&&$fa['family_reference']==='Test Beitragszahler','family type and payer preserved');
+ok(\Kulturhus\Verein\DocumentCatalog::query($db,'SELECT newsletter_status FROM application_confirmations WHERE request_key=?',[$family['request_key']])->fetchColumn()==='skipped','no newsletter without opt-in');
+echo "$n confirmation checks passed; no actual mail sent\n";

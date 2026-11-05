@@ -1,0 +1,548 @@
+{
+  "schema": 1,
+  "revision": 17,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "asset-r17-001@1",
+          "target": "bs.ass.fixAss.tan.machinery.technEquipm",
+          "sources": [
+            {
+              "code": "04200",
+              "semantic": {
+                "name": "Technische Anlagen",
+                "function": "",
+                "range_start": "04200",
+                "range_end": "04200",
+                "parent": null
+              },
+              "signature": "567e549bbf567994209df83e639b9ae2ed9b48035158223df79b822896fc5c54"
+            },
+            {
+              "code": "04500",
+              "semantic": {
+                "name": "Transportanlagen und Ähnliches",
+                "function": "",
+                "range_start": "04500",
+                "range_end": "04500",
+                "parent": null
+              },
+              "signature": "5569cd6cd742f822ed161fd57be77cf83e2faa2b3d13111d27b92df362eaaf4e"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-r17-002@1",
+          "target": "bs.ass.fixAss.tan.machinery.machinery",
+          "sources": [
+            {
+              "code": "04400",
+              "semantic": {
+                "name": "Maschinen",
+                "function": "",
+                "range_start": "04400",
+                "range_end": "04400",
+                "parent": null
+              },
+              "signature": "cd86297d544184e504415d1332ef8dd266e0ff915a9ee692177dce8b36066519"
+            },
+            {
+              "code": "04600",
+              "semantic": {
+                "name": "Maschinengebundene Werkzeuge",
+                "function": "",
+                "range_start": "04600",
+                "range_end": "04600",
+                "parent": null
+              },
+              "signature": "3d2a0ff1f51c73cec6c2e132d08f8a50a0f3f88720e7663757b56214bce0b3f3"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-r17-003@1",
+          "target": "bs.ass.fixAss.tan.machinery.installations",
+          "sources": [
+            {
+              "code": "04700",
+              "semantic": {
+                "name": "Betriebsvorrichtungen",
+                "function": "",
+                "range_start": "04700",
+                "range_end": "04700",
+                "parent": null
+              },
+              "signature": "d44b97a6cf00973d18f5e1014d206d1c757f61b81805eb1c91a1334368f89a8b"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-r17-004@1",
+          "target": "bs.ass.fixAss.tan.otherEquipm.other",
+          "sources": [
+            {
+              "code": "05100",
+              "semantic": {
+                "name": "Andere Anlagen",
+                "function": "",
+                "range_start": "05100",
+                "range_end": "05100",
+                "parent": null
+              },
+              "signature": "645d7316ab9ae279ba890af80f8a4e3fe2e7c01f3c9ebe83deecd430b61d989d"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-r17-005@1",
+          "target": "bs.ass.fixAss.tan.otherEquipm.passengerCars",
+          "sources": [
+            {
+              "code": "05200",
+              "semantic": {
+                "name": "Pkw",
+                "function": "",
+                "range_start": "05200",
+                "range_end": "05200",
+                "parent": null
+              },
+              "signature": "1aa3581e92d5ecc9e8f9f386dead399aaa09713cf13016578f71299d0ac04c0a"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-r17-006@1",
+          "target": "bs.ass.fixAss.tan.otherEquipm.comVehicle",
+          "sources": [
+            {
+              "code": "05400",
+              "semantic": {
+                "name": "Lkw",
+                "function": "",
+                "range_start": "05400",
+                "range_end": "05400",
+                "parent": null
+              },
+              "signature": "aa073bcfdf598c20dff6a4358a7a66915ca8e5dfc5811a149b44d7763c5010ef"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-r17-007@1",
+          "target": "bs.ass.fixAss.tan.otherEquipm.otherTransportMeans",
+          "sources": [
+            {
+              "code": "05250",
+              "semantic": {
+                "name": "Kraftfahrzeug-Anhänger",
+                "function": "",
+                "range_start": "05250",
+                "range_end": "05250",
+                "parent": null
+              },
+              "signature": "c0fa33aca6fa1f06e452fbbde1010a0f6d428a2873b89f5faa6ab6d26d1dd367"
+            },
+            {
+              "code": "05600",
+              "semantic": {
+                "name": "Sonstige Transportmittel",
+                "function": "",
+                "range_start": "05600",
+                "range_end": "05600",
+                "parent": null
+              },
+              "signature": "90cccff2bffc5bc3fcec4a5b971fdabc817cacc6c250c61a2cc8110845243814"
+            }
+          ]
+        },
+        {
+          "purpose": "purpose-0002@1",
+          "target": "bs.ass.fixAss.tan.otherEquipm.factory",
+          "sources": [
+            {
+              "code": "05700",
+              "semantic": {
+                "name": "Pflegemaschinen",
+                "function": "",
+                "range_start": "05700",
+                "range_end": "05700",
+                "parent": null
+              },
+              "signature": "ac10be5f352f4a51013d4673137b60805a6e928240999acc66959069b22f0a26"
+            },
+            {
+              "code": "06200",
+              "semantic": {
+                "name": "Werkzeuge",
+                "function": "",
+                "range_start": "06200",
+                "range_end": "06200",
+                "parent": null
+              },
+              "signature": "001cd4bcbfd0aba237d703d5324ade999dddf38dd3ba16cb1c17cbfa8e039ff9"
+            },
+            {
+              "code": "06310",
+              "semantic": {
+                "name": "Kleidung",
+                "function": "",
+                "range_start": "06310",
+                "range_end": "06310",
+                "parent": null
+              },
+              "signature": "dca397050feaa252bbb7f901c1073dfdfade57c4c7dec8935b73fe438423e470"
+            },
+            {
+              "code": "06320",
+              "semantic": {
+                "name": "Geräte",
+                "function": "",
+                "range_start": "06320",
+                "range_end": "06320",
+                "parent": null
+              },
+              "signature": "22b75067428c185e8dc14f8a94898fe6a896056df073638164bef71bb2e0d206"
+            },
+            {
+              "code": "06600",
+              "semantic": {
+                "name": "Gerüst- und Schalungsmaterial",
+                "function": "",
+                "range_start": "06600",
+                "range_end": "06600",
+                "parent": null
+              },
+              "signature": "7dee9242038502a09ad4260fe51ef793250750ef5bebf703bd4f193122cf4c4a"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-r17-009@1",
+          "target": "bs.ass.fixAss.tan.otherEquipm.office",
+          "sources": [
+            {
+              "code": "06350",
+              "semantic": {
+                "name": "Geschäftsausstattung",
+                "function": "",
+                "range_start": "06350",
+                "range_end": "06350",
+                "parent": null
+              },
+              "signature": "f1912f47e829605d0b110a4b48329c8a4c16cd25a5cb33c794e52fee0288f68a"
+            },
+            {
+              "code": "06400",
+              "semantic": {
+                "name": "Ladeneinrichtung",
+                "function": "",
+                "range_start": "06400",
+                "range_end": "06400",
+                "parent": null
+              },
+              "signature": "63cd8f01a0b9a1920cb6e7e8adecf0a1094ae02013797c69f050262dbde2a408"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-r17-010@1",
+          "target": "bs.ass.fixAss.tan.otherEquipm.otherbga",
+          "sources": [
+            {
+              "code": "06900",
+              "semantic": {
+                "name": "Sonstige Betriebs- und Geschäftsausstattung",
+                "function": "",
+                "range_start": "06900",
+                "range_end": "06900",
+                "parent": null
+              },
+              "signature": "e2e4208720a0c38584ecf0fcf885f13123f9536b146891daf2cc47508fb0124d"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "asset-r17-001@1",
+          "target": "bs.ass.fixAss.tan.machinery.technEquipm",
+          "sources": [
+            {
+              "code": "04200",
+              "semantic": {
+                "name": "Technische Anlagen",
+                "function": "",
+                "range_start": "04200",
+                "range_end": "04200",
+                "parent": null
+              },
+              "signature": "567e549bbf567994209df83e639b9ae2ed9b48035158223df79b822896fc5c54"
+            },
+            {
+              "code": "04500",
+              "semantic": {
+                "name": "Transportanlagen und Ähnliches",
+                "function": "",
+                "range_start": "04500",
+                "range_end": "04500",
+                "parent": null
+              },
+              "signature": "5569cd6cd742f822ed161fd57be77cf83e2faa2b3d13111d27b92df362eaaf4e"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-r17-002@1",
+          "target": "bs.ass.fixAss.tan.machinery.machinery",
+          "sources": [
+            {
+              "code": "04400",
+              "semantic": {
+                "name": "Maschinen",
+                "function": "",
+                "range_start": "04400",
+                "range_end": "04400",
+                "parent": null
+              },
+              "signature": "cd86297d544184e504415d1332ef8dd266e0ff915a9ee692177dce8b36066519"
+            },
+            {
+              "code": "04600",
+              "semantic": {
+                "name": "Maschinengebundene Werkzeuge",
+                "function": "",
+                "range_start": "04600",
+                "range_end": "04600",
+                "parent": null
+              },
+              "signature": "3d2a0ff1f51c73cec6c2e132d08f8a50a0f3f88720e7663757b56214bce0b3f3"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-r17-003@1",
+          "target": "bs.ass.fixAss.tan.machinery.installations",
+          "sources": [
+            {
+              "code": "04700",
+              "semantic": {
+                "name": "Betriebsvorrichtungen",
+                "function": "",
+                "range_start": "04700",
+                "range_end": "04700",
+                "parent": null
+              },
+              "signature": "d44b97a6cf00973d18f5e1014d206d1c757f61b81805eb1c91a1334368f89a8b"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-r17-004@1",
+          "target": "bs.ass.fixAss.tan.otherEquipm.other",
+          "sources": [
+            {
+              "code": "05100",
+              "semantic": {
+                "name": "Andere Anlagen",
+                "function": "",
+                "range_start": "05100",
+                "range_end": "05100",
+                "parent": null
+              },
+              "signature": "645d7316ab9ae279ba890af80f8a4e3fe2e7c01f3c9ebe83deecd430b61d989d"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-r17-005@1",
+          "target": "bs.ass.fixAss.tan.otherEquipm.passengerCars",
+          "sources": [
+            {
+              "code": "05200",
+              "semantic": {
+                "name": "Pkw",
+                "function": "",
+                "range_start": "05200",
+                "range_end": "05200",
+                "parent": null
+              },
+              "signature": "1aa3581e92d5ecc9e8f9f386dead399aaa09713cf13016578f71299d0ac04c0a"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-r17-006@1",
+          "target": "bs.ass.fixAss.tan.otherEquipm.comVehicle",
+          "sources": [
+            {
+              "code": "05400",
+              "semantic": {
+                "name": "Lkw",
+                "function": "",
+                "range_start": "05400",
+                "range_end": "05400",
+                "parent": null
+              },
+              "signature": "aa073bcfdf598c20dff6a4358a7a66915ca8e5dfc5811a149b44d7763c5010ef"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-r17-007@1",
+          "target": "bs.ass.fixAss.tan.otherEquipm.otherTransportMeans",
+          "sources": [
+            {
+              "code": "05250",
+              "semantic": {
+                "name": "Kraftfahrzeug-Anhänger",
+                "function": "",
+                "range_start": "05250",
+                "range_end": "05250",
+                "parent": null
+              },
+              "signature": "c0fa33aca6fa1f06e452fbbde1010a0f6d428a2873b89f5faa6ab6d26d1dd367"
+            },
+            {
+              "code": "05600",
+              "semantic": {
+                "name": "Sonstige Transportmittel",
+                "function": "",
+                "range_start": "05600",
+                "range_end": "05600",
+                "parent": null
+              },
+              "signature": "90cccff2bffc5bc3fcec4a5b971fdabc817cacc6c250c61a2cc8110845243814"
+            }
+          ]
+        },
+        {
+          "purpose": "purpose-0002@1",
+          "target": "bs.ass.fixAss.tan.otherEquipm.factory",
+          "sources": [
+            {
+              "code": "05700",
+              "semantic": {
+                "name": "Pflegemaschinen",
+                "function": "",
+                "range_start": "05700",
+                "range_end": "05700",
+                "parent": null
+              },
+              "signature": "ac10be5f352f4a51013d4673137b60805a6e928240999acc66959069b22f0a26"
+            },
+            {
+              "code": "06200",
+              "semantic": {
+                "name": "Werkzeuge",
+                "function": "",
+                "range_start": "06200",
+                "range_end": "06200",
+                "parent": null
+              },
+              "signature": "001cd4bcbfd0aba237d703d5324ade999dddf38dd3ba16cb1c17cbfa8e039ff9"
+            },
+            {
+              "code": "06310",
+              "semantic": {
+                "name": "Kleidung",
+                "function": "",
+                "range_start": "06310",
+                "range_end": "06310",
+                "parent": null
+              },
+              "signature": "dca397050feaa252bbb7f901c1073dfdfade57c4c7dec8935b73fe438423e470"
+            },
+            {
+              "code": "06320",
+              "semantic": {
+                "name": "Geräte",
+                "function": "",
+                "range_start": "06320",
+                "range_end": "06320",
+                "parent": null
+              },
+              "signature": "22b75067428c185e8dc14f8a94898fe6a896056df073638164bef71bb2e0d206"
+            },
+            {
+              "code": "06600",
+              "semantic": {
+                "name": "Gerüst- und Schalungsmaterial",
+                "function": "",
+                "range_start": "06600",
+                "range_end": "06600",
+                "parent": null
+              },
+              "signature": "7dee9242038502a09ad4260fe51ef793250750ef5bebf703bd4f193122cf4c4a"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-r17-009@1",
+          "target": "bs.ass.fixAss.tan.otherEquipm.office",
+          "sources": [
+            {
+              "code": "06350",
+              "semantic": {
+                "name": "Geschäftsausstattung",
+                "function": "",
+                "range_start": "06350",
+                "range_end": "06350",
+                "parent": null
+              },
+              "signature": "f1912f47e829605d0b110a4b48329c8a4c16cd25a5cb33c794e52fee0288f68a"
+            },
+            {
+              "code": "06400",
+              "semantic": {
+                "name": "Ladeneinrichtung",
+                "function": "",
+                "range_start": "06400",
+                "range_end": "06400",
+                "parent": null
+              },
+              "signature": "63cd8f01a0b9a1920cb6e7e8adecf0a1094ae02013797c69f050262dbde2a408"
+            }
+          ]
+        },
+        {
+          "purpose": "asset-r17-010@1",
+          "target": "bs.ass.fixAss.tan.otherEquipm.otherbga",
+          "sources": [
+            {
+              "code": "06900",
+              "semantic": {
+                "name": "Sonstige Betriebs- und Geschäftsausstattung",
+                "function": "",
+                "range_start": "06900",
+                "range_end": "06900",
+                "parent": null
+              },
+              "signature": "e2e4208720a0c38584ecf0fcf885f13123f9536b146891daf2cc47508fb0124d"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

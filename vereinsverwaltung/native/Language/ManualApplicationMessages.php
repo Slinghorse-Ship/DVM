@@ -1,0 +1,65 @@
+<?php declare(strict_types=1);
+namespace Kulturhus\Native\Language;
+/** Fixed manual-entry controls; paper originals and consent stay literal. */
+final class ManualApplicationMessages
+{
+ public const ENGLISH=[
+ 'Ja'=>'Yes','Nein'=>'No','Neue Familie'=>'New family',
+ 'Deine bisherige Zuordnung bleibt für die erneute Prüfung erhalten.'=>'Your previous selection is retained for another review.',
+ 'Eingaben'=>'Your original details',
+ 'Der Speicherstand ist noch nicht bestätigt. Deine ursprünglichen Eingaben bleiben für die erneute Prüfung erhalten.'=>'The saved outcome is not yet confirmed. Your original input is retained for another review.',
+ 'Eingaben erneut prüfen'=>'Review input again',
+ 'Erfassung erneut prüfen.'=>'Review the manual entry again.',
+ 'Zugangsmail'=>'Access email',
+ 'Vorhandenen Antrag erfassen. Anschließend das Original als PDF oder Scan über die Dokumentenablage am Antrag hochladen.'=>'Record an existing application. Then attach the original PDF or scan in its document area.',
+ 'Anschrift'=>'Address',
+ 'Mitgliedschaft'=>'Membership',
+ 'Einzelmitglied'=>'Individual member',
+ 'Familie'=>'Family',
+ 'Weitere Familienangehörige'=>'Additional family members',
+ 'Zustimmung zu den Hinweisen liegt in den Originalunterlagen vor'=>'Consent to the notices is documented in the original papers',
+ 'Liegt bereits ein Vorstandsbeschluss vor?'=>'Has the board already reached a decision?',
+ 'Der Vorstand hat bereits mündlich / außerhalb der Online-Abstimmung entschieden'=>'The board has already decided orally or outside online voting',
+ 'Aufnahme'=>'Admission',
+ 'Beschlussvermerk und bei Ablehnung Begründung'=>'Decision note and reason for rejection',
+ 'Bei dokumentiertem Beschluss wird keine Abstimmungsbenachrichtigung versendet. Offene manuelle Anträge werden erst nach ausdrücklicher Freigabe zur Abstimmung gemeldet.'=>'A documented decision sends no voting notification. Pending manual applications are submitted to voting only after an explicit action.',
+ 'Der Zugang wird erst nach bestätigter Aufnahme angelegt.'=>'The account is created only after confirmed admission.',
+ 'Anlegen und Original anhängen'=>'Save and attach original',
+ 'Bedingungen zum Antrag'=>'Original application conditions',
+ 'Angezeigte Fassung: {version}'=>'Displayed version: {version}',
+ 'Die Originalhinweise und die angezeigten Beiträge gehören zu dieser Erfassung. Bestätige die Zustimmung nur anhand der tatsächlich vorliegenden Unterlagen.'=>'The original notices and displayed contributions belong to this application. Confirm consent only on the basis of the actual papers.',
+ 'Die Bedingungen oder Beiträge haben sich geändert. Deine Eingaben bleiben erhalten. Öffne die aktuelle Fassung und prüfe sie vor einer neuen Erfassung.'=>'The conditions or contributions have changed. Your input is retained. Open the current version and review it before recording a new application.',
+ 'Aktuelle Erfassung bewusst öffnen'=>'Open current application form for review',
+ 'Dieser Vorgang ist bereits gespeichert. Erneut gesendete Angaben wurden nicht übernommen. Öffne den zugehörigen Originalantrag.'=>'This operation is already saved. Resubmitted details were not applied. Open the corresponding original application.',
+ 'Gespeicherten Originalantrag öffnen'=>'Open saved original application',
+ 'Neue Erfassung bewusst beginnen'=>'Start a new application deliberately',
+ 'Fehlerhafte Angaben lesen'=>'Read the original invalid details',
+ 'Antragserfassung nicht verfügbar.'=>'Manual application entry unavailable.',
+ 'Manuellen Antrag im ursprünglich geöffneten Bereich prüfen.'=>'Review the manual application in the originally opened area.',
+ 'Ursprüngliche Antragsbedingungen und Vorgangskennung prüfen.'=>'Review the original application conditions and operation reference.',
+ 'Ursprüngliche Bestätigungen zur Antragserfassung prüfen.'=>'Review the original confirmations for this application.',
+ 'Beschluss und ursprüngliche Antragsangaben prüfen.'=>'Check the decision and original application details.',
+ 'Ursprüngliche Antragsangaben prüfen.'=>'Review the original application details.',
+ 'Ursprüngliche Antragsbedingungen gemeinsam prüfen.'=>'Review the original application conditions together.',
+ 'Antragsbedingungen oder Beiträge wurden inzwischen geändert. Prüfe die aktuelle Fassung vor einer neuen Erfassung.'=>'The application conditions or contributions have changed. Review the current version before recording a new application.',
+ 'Antragserfassung wird gerade bearbeitet. Bitte erneut prüfen.'=>'Application entry is currently being edited. Review it again.',
+ 'Antrag konnte nicht gespeichert werden. Deine Eingaben bleiben erhalten. Bitte erneut versuchen.'=>'The application could not be saved. Your input is retained. Please try again.',
+ 'Zugangsmail auswählen.'=>'Select the account email option.',
+ 'Manueller Antrag gespeichert. Das Original kann jetzt als PDF oder Scan angehängt werden.'=>'Manual application saved. The original can now be attached as a PDF or scan.',
+ 'Bitte {field} prüfen.'=>'Check {field}.',
+ 'Unbekannte Antragsangaben.'=>'Unknown application details.',
+ 'Antragsangaben prüfen.'=>'Check the application details.',
+ 'Nicht abgefragte Angaben werden nicht gespeichert.'=>'Details that were not requested are not saved.',
+ 'E-Mail-Adresse prüfen.'=>'Check the email address.',
+ 'Geburtstag prüfen.'=>'Check the date of birth.',
+ 'Familienangehörige prüfen.'=>'Check the family members.',
+ 'Mitgliedschaft auswählen.'=>'Select the membership type.',
+ 'Für Familienangehörige bitte Familienmitgliedschaft auswählen.'=>'Select family membership for additional family members.',
+ 'Bitte den Namen des Familienmitglieds oder Beitragszahlers angeben.'=>'Enter the name of the family member or contribution payer.',
+ 'Mitgliedsbeiträge sind noch nicht eingerichtet.'=>'Membership contributions have not been configured yet.',
+ ];
+ public static function key(string $source):string{return'manual_application_'.substr(hash('sha256',$source),0,24);}
+ public static function messages(string $locale):array{$english=explode('-',$locale,2)[0]==='en';$out=[];foreach(self::ENGLISH as$source=>$translation)$out[self::key($source)]=$english?$translation:$source;return$out;}
+ public static function text(string $source,array $messages,array $values=[]):string{$text=$messages[self::key($source)]??ApplicationReviewMessages::text($source,$messages);foreach($values as$key=>$value)$text=str_replace('{'.$key.'}',(string)$value,$text);return$text;}
+ public static function failure(string $source,array $messages):string{if(preg_match('/\ABitte (.+) prüfen\.\z/D',$source,$m)&&in_array($m[1],\Kulturhus\Verein\MembershipApplications::FIELDS,true))return self::text('Bitte {field} prüfen.',$messages,['field'=>self::text($m[1],$messages)]);return self::text($source,$messages);}
+}

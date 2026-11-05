@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "chart": "SKR42",
+  "edition": "balance",
+  "year": 2025,
+  "classification": "prior_year_comparison_only",
+  "codes": [
+    "41850",
+    "74600",
+    "74640",
+    "75600",
+    "75610",
+    "75630"
+  ],
+  "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+  "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+  "source": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf",
+  "footnote": "11",
+  "footnote_page": 31,
+  "account_pages": {
+    "41850": 12,
+    "74600": 25,
+    "74640": 25,
+    "75600": 25,
+    "75610": 25,
+    "75630": 25
+  },
+  "reason": "Original DATEV footnote11 limits these accounts to prior-year comparisons; they are not current-year posting accounts. Historical source catalogues and sealed mappings remain unchanged.",
+  "production_authorized": false
+}

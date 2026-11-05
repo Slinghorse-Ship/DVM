@@ -1,0 +1,30 @@
+{
+  "package": "bootstrap",
+  "version": "6.0.0-alpha.1",
+  "source": "https://registry.npmjs.org/bootstrap/-/bootstrap-6.0.0-alpha.1.tgz",
+  "integrity": "sha512-snAWSjKDVdQAyPOtR69Upy247tZq13gw86SMDMZS4wNfBXGNdzbHdIP6GAyaAVJwTX4LjWowY8YYaJkSDv2wGQ==",
+  "license": "MIT",
+  "files": {
+    "bootstrap-6.0.0-alpha.1.min.css": "678508b198d9b1b8877e338f419fdada00024be2bcc638a539dd724856095112",
+    "bootstrap-6.0.0-alpha.1.bundle.min.js": "47ea447f46e288dd9d3e83147b7ba539c6df5192c047b8f91739cd56a5721148",
+    "LICENSE": "bc0cd18d94c028f1c0b62ec9fdaddcb9921c1e07c29cf52dc7df8cca9daf2488",
+    "FLOATING-UI-LICENSE": "0e4c9a9b6c71019cbbea3bdc20b01223110a9035700f9c960c8fcbf78c2325ce",
+    "VANILLA-CALENDAR-LICENSE": "b95f659670e7f7af29dedc3e69c1deaeee1267757729ad391318aba94108774d"
+  },
+  "bundled_peer_licenses": {
+    "@floating-ui/dom": {
+      "version": "1.7.6",
+      "source": "https://registry.npmjs.org/@floating-ui/dom/-/dom-1.7.6.tgz",
+      "integrity": "sha512-9gZSAI5XM36880PPMm//9dfiEngYoC6Am2izES1FF406YFsjvyBMmeJ2g4SAju3xWwtuynNRFL2s9hgxpLI5SQ==",
+      "license": "MIT",
+      "file": "FLOATING-UI-LICENSE"
+    },
+    "vanilla-calendar-pro": {
+      "version": "3.4.0",
+      "source": "https://registry.npmjs.org/vanilla-calendar-pro/-/vanilla-calendar-pro-3.4.0.tgz",
+      "integrity": "sha512-HLWjzHOWvMIrjI77tXK5bYzp0s5TeBSrZC247STjcTAdWI7kqEwWT6Xvu20vqdwzF498H1Da8l4WpdgVIGtc1Q==",
+      "license": "MIT",
+      "file": "VANILLA-CALENDAR-LICENSE"
+    }
+  }
+}

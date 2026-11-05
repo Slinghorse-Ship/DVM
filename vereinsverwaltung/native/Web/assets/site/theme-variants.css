@@ -1,0 +1,105 @@
+/* Public website themes bundled with the offline installer.
+ * The Vereinsmanager deliberately does not load this file. */
+body.theme-kultur {
+  --ink: #17221c;
+  --muted: #526057;
+  --paper: #f3eddf;
+  --cream: #fffaf0;
+  --leaf: #245640;
+  --leaf-dark: #153d2b;
+  --sun: #e9a23b;
+  --line: #c7bdab;
+  --coral: #d85a3f;
+}
+body.theme-sport {
+  --ink: #08172f;
+  --muted: #4c607b;
+  --paper: #eef4fb;
+  --cream: #fff;
+  --leaf: #124fd1;
+  --leaf-dark: #0b318b;
+  --sun: #30a8ff;
+  --line: #c8d8ed;
+  --coral: #e65b63;
+  --yellow: #ffca4a;
+}
+body.theme-reit {
+  --ink: #35251c;
+  --muted: #6b6254;
+  --paper: #eee8da;
+  --cream: #fffdf8;
+  --leaf: #6a543a;
+  --leaf-dark: #473622;
+  --sun: #b7a96b;
+  --line: #d5c9b6;
+  --coral: #b36a4c;
+}
+body.theme-hund {
+  --ink: #143a3b;
+  --muted: #557173;
+  --paper: #e9f3f0;
+  --cream: #fffefd;
+  --leaf: #167b78;
+  --leaf-dark: #0d5553;
+  --sun: #ed7864;
+  --line: #b9d8d2;
+  --coral: #ed7864;
+}
+body.theme-musik {
+  --ink: #201a36;
+  --muted: #655d78;
+  --paper: #f1edf8;
+  --cream: #fffdfd;
+  --leaf: #5a3da0;
+  --leaf-dark: #3c2871;
+  --sun: #e3ae48;
+  --line: #d3c9e6;
+  --coral: #b75a9f;
+}
+body.theme-feuerwehr {
+  --ink: #2a1717;
+  --muted: #705b5b;
+  --paper: #f8eeee;
+  --cream: #fff;
+  --leaf: #bd3030;
+  --leaf-dark: #7d1d1d;
+  --sun: #f0b64b;
+  --line: #e4c8c8;
+  --coral: #d75b45;
+}
+body.theme-natur {
+  --ink: #20332a;
+  --muted: #5d7062;
+  --paper: #eaf2e8;
+  --cream: #fcfffb;
+  --leaf: #34734f;
+  --leaf-dark: #205036;
+  --sun: #d7a24b;
+  --line: #c7dac5;
+  --coral: #bf7650;
+}
+body.theme-bildung {
+  --ink: #1b2b43;
+  --muted: #5e6d82;
+  --paper: #edf4fb;
+  --cream: #fff;
+  --leaf: #286da6;
+  --leaf-dark: #194b75;
+  --sun: #e79555;
+  --line: #c6d9ea;
+  --coral: #d86b65;
+}
+
+body.theme-sport .hero__poster { background: linear-gradient(145deg, #0b318b, #30a8ff); }
+body.theme-reit .hero__poster { background: linear-gradient(145deg, #473622, #b7a96b); }
+body.theme-hund .hero__poster { background: linear-gradient(145deg, #0d5553, #42aaa4); }
+body.theme-musik .hero__poster { background: linear-gradient(145deg, #3c2871, #8463c5); }
+body.theme-feuerwehr .hero__poster { background: linear-gradient(145deg, #7d1d1d, #dc5353); }
+body.theme-natur .hero__poster { background: linear-gradient(145deg, #205036, #5d9c6f); }
+body.theme-bildung .hero__poster { background: linear-gradient(145deg, #194b75, #4c9bce); }
+
+body.theme-sport .brand__mark,
+body.theme-bildung .brand__mark { border-radius: .45rem; transform: none; }
+body.theme-feuerwehr .brand__mark { border-radius: .25rem; transform: none; box-shadow: 3px 3px 0 var(--ink); }
+body.theme-musik .brand__mark { border-radius: 50%; transform: rotate(5deg); }
+body.theme-natur .brand__mark { border-radius: 50% 35% 50% 35%; transform: rotate(-8deg); }

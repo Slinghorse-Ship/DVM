@@ -1,0 +1,10 @@
+<?php declare(strict_types=1);
+require __DIR__.'/invoice-historical-accounting.php';
+// Native MySQL supports incomplete sphere assignments without fabricating accounts.
+$before=$db->query('SELECT * FROM accounting_positions ORDER BY id')->fetchAll();\Kulturhus\Verein\Database::migrate($db);
+check($before===$db->query('SELECT * FROM accounting_positions ORDER BY id')->fetchAll(),'066 retains exact rowids and every existing value');
+require_once __DIR__.'/../src/Finance/Tax/TaxReviewQueue.php';
+foreach(['2019','2025'] as $year){$data=$bill+['document_date'=>$year.'-04-04','due_date'=>$year.'-04-04'];foreach($data['invoice_positions'] as &$position)$position['sphere']='3';unset($position);$doc=$upload($year.'-04-04');$request=$key();$id=$inbox->create($doc,1,$data,$request,'new_item','SYN-SPHERE-'.$year);$positions=$f->positions('entry',$id);check(array_column($positions,'sphere')===['3','3']&&array_column($positions,'account_code')===['','']&&array_column($positions,'catalog_year')===[null,null],'known sphere persists without fictional annual account '.$year);check($inbox->create($doc,1,$data,$request,'new_item','SYN-SPHERE-'.$year)===$id,'sphere-only replay preserves original '.$year);$queue=(new Kulturhus\Verein\TaxReviewQueue($db,'admin'))->build((int)$year);check(str_contains(json_encode($queue),$id),'missing account remains in review queue '.$year);
+foreach([['sphere'=>'','account'=>'06300'],['sphere'=>'5','account'=>''],['sphere'=>'3','account'=>'','booking_key'=>'9']] as $invalid){$bad=$data;$bad['invoice_positions'][0]=array_replace($bad['invoice_positions'][0],$invalid);denied(fn()=>$inbox->create($upload($year.'-04-04'),1,$bad,$key(),'new_item','BAD'),'invalid partial mapping rejected '.$year);}
+if($year==='2025'){$f->recordPayment($id,1,$bank,'2025-09-01');check((bool)$datev->preview($options)['errors'],'missing account continues blocking DATEV export');}}
+check(\Kulturhus\Verein\Tests\MySqlFixture::integrity($db)==='ok'&&!(\Kulturhus\Verein\Tests\MySqlFixture::foreignKeyErrors($db)[0]??false),'066 integrity and foreign keys');echo "$n sphere-only checks passed\n";

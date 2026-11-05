@@ -1,0 +1,2 @@
+.finance-reports :is([data-report-filter-toggle],[data-report-print],[data-report-search-toggle],[data-report-columns-open],.report-table-search,.report-tag-search){display:none!important}
+.finance-reports .report-filter{display:block!important}

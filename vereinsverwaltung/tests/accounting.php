@@ -1,0 +1,58 @@
+<?php declare(strict_types=1);
+require __DIR__.'/../src/bootstrap.php';
+use Kulturhus\Verein\Database;
+use Kulturhus\Verein\Finance;
+use Kulturhus\Verein\TaxCatalog;
+$tests=0;
+function check(bool $ok,string $label):void{global $tests;++$tests;if(!$ok)throw new RuntimeException($label);echo "PASS $label\n";}
+function denied(callable $fn,string $label):void{try{$fn();}catch(DomainException){check(true,$label);return;}throw new RuntimeException('Not denied: '.$label);}
+$db=\Kulturhus\Verein\Tests\MySqlFixture::connect(':memory:');Database::migrate($db);$db->exec("INSERT INTO clubs VALUES('a','Test A'),('b','Test B');INSERT INTO actors(id,club_id,role) VALUES('f','a','treasurer'),('g','b','treasurer'),('m','a','member'),('ed','a','editor')");
+$f=new Finance($db,'f');$g=new Finance($db,'g');$key=fn()=>bin2hex(random_bytes(16));
+$p=fn($amount='10,00',$code='40400',$sphere='1',$rate='0')=>['description'=>'Testposition','amount'=>$amount,'sphere'=>$sphere,'account'=>$code,'tax_rate'=>$rate];
+$data=['kind'=>'donation','description'=>'Synthetische Spende','counterparty'=>'Testspender','category'=>'donations','document_date'=>'2026-08-01','due_date'=>'2026-08-01'];
+foreach(['m','ed','missing'] as $actor){$unprivileged=new Finance($db,$actor);denied(fn()=>$unprivileged->taxAccounts(),'catalog protected '.$actor);denied(fn()=>$unprivileged->saveTaxAccount('40401','Test',true,0),'catalog mutation protected '.$actor);}
+check(count(TaxCatalog::SPHERES)===5&&TaxCatalog::SPHERES['9']==='Sammelposten','five explicit spheres');
+check($f->taxAccounts()['01350']['category']==='fixed','leading zero account retained');
+$token=$key();$id=$f->createEntry($data+['positions'=>[$p('0,10'),$p('0,20')]],$token);
+check($f->entry($id)['amount_cents']===30&&count($f->positions('entry',$id))===2,'document total derives from exact position cents');
+check($f->createEntry($data+['positions'=>[$p()]],$token)===$id&&count($f->positions('entry',$id))===2,'idempotency preserves original positions');
+denied(fn()=>$g->positions('entry',$id),'positions tenant boundary');
+denied(fn()=>$g->updatePositions('entry',$id,1,[$p('0,30')],'test'),'edit tenant boundary');
+foreach([[],[$p('0')],[$p('1','40400','')],[$p('1','40400','5')],[$p('1','88888')],[$p('1','40400','1','7')],array_fill(0,51,$p())] as $bad)denied(fn()=>$f->createEntry($data+['positions'=>$bad],$key()),'invalid donation positions rejected');
+$prior=$f->createEntry(array_replace($data,['document_date'=>'2025-08-01','due_date'=>'2025-08-01'])+['positions'=>[$p()]],$key());check($f->entry($prior)['document_date']==='2025-08-01'&&(int)$f->positions('entry',$prior)[0]['catalog_year']===2025,'prior-year document retains date and verified same-year catalog');
+$legacy=$f->createEntry(array_replace($data,['document_date'=>'2025-08-01','due_date'=>'2025-08-01'])+['amount'=>'12'], $key());check($f->positions('entry',$legacy)[0]['account_code']==='','unclassified prior-year entry supported');
+$expense=$f->createEntry(array_replace($data,['kind'=>'expense'])+['positions'=>[$p('119','68150','4','19'),$p('107','68150','3','7')]],$key());$rows=$f->positions('entry',$expense);
+check($rows[0]['tax_cents']===1900&&$rows[1]['tax_cents']===700&&$f->entry($expense)['amount_cents']===22600,'gross/net calculation exact for 7 and 19 percent');
+$rounding=$f->createEntry(array_replace($data,['kind'=>'expense'])+['positions'=>[$p('0,03','68150','4','19')]],$key());check($f->positions('entry',$rounding)[0]['tax_cents']===0,'sub-cent tax rounds per line');
+denied(fn()=>$f->createEntry($data+['positions'=>[$p('1000000000'),$p('0,01')]],$key()),'sum overflow rejected');
+$raw=['position_description'=>['Test'],'position_amount'=>['10'],'position_sphere'=>['1'],'position_account'=>['40400'],'position_tax'=>['0']];check(count(Finance::positionsFromForm($raw))===1,'aligned form accepted');
+foreach([array_replace($raw,['position_account'=>[]]),array_replace($raw,['position_tax'=>[['0']]]),array_replace($raw,['position_amount'=>[1=>'10']])] as $bad)denied(fn()=>Finance::positionsFromForm($bad),'malformed arrays rejected without shifting fields');
+$bank=$f->createAccount('Bank','offline','0','2026-01-01');$f->recordPayment($id,1,$bank,'2026-08-02');$before=$f->accounts();$cashflow=$f->overview('2026-01-01','2026-09-05');
+$f->updatePositions('entry',$id,2,[$p('0,15','40450'),$p('0,15','40500')],'Kontierung präzisiert');
+check($f->accounts()===$before&&$f->overview('2026-01-01','2026-09-05')===$cashflow,'editing paid positions leaves cashflow and balances identical');
+check($f->entry($id)['payment_state']==='paid'&&$f->entry($id)['allocated_cents']===30,'existing payment allocation unchanged');
+check(count($f->positionHistory('entry',$id))===1&&count(json_decode($f->positionHistory('entry',$id)[0]['previous_positions'],true))===2,'prior and new positions retained');
+denied(fn()=>$f->updatePositions('entry',$id,2,[$p('0,30')],'stale'),'stale version rejected');
+denied(fn()=>$f->updatePositions('entry',$id,3,[$p('0,31')],'wrong sum'),'paid document total cannot change');
+denied(fn()=>$f->updatePositions('entry',$id,3,[$p('0,30')],''),'reason required');
+$snapshot=$f->positions('entry',$id);$f->saveTaxAccount('40450','Anderer Anzeigename',false,0);check($f->positions('entry',$id)===$snapshot,'rename and deactivate do not rewrite old documents');
+denied(fn()=>$f->createEntry($data+['positions'=>[$p('1','40450')]],$key()),'inactive account blocked on new position');
+$f->updatePositions('entry',$id,3,[$p('0,15','40450'),$p('0,15','40500')],'Textprüfung');check($f->positions('entry',$id)[0]['account_name']===$snapshot[0]['account_name'],'unchanged historical inactive account keeps snapshot');
+denied(fn()=>$f->updatePositions('entry',$id,4,[$p('0,10','40450'),$p('0,20','40500')],'more'),'inactive account cannot receive changed amount');
+denied(fn()=>$f->saveTaxAccount('40450','stale',true,0),'account optimistic version');
+$f->saveTaxAccount('40401','Eigene Spendenaktion',true,0);check($f->taxAccounts()['40401']['custom']===1&&$f->taxAccounts()['40401']['category']==='revenue','five-digit custom subaccount');
+check(!isset($g->taxAccounts()['40401']),'custom accounts tenant scoped');
+foreach(['1234','123456','40,01','80000','<img>'] as $bad)denied(fn()=>$f->saveTaxAccount($bad,'bad',true,0),'malformed account number rejected');
+$cash=$f->createAccount('Cash','cash','0','2026-01-01');$cashEntry=$f->createEntry($data+['positions'=>[$p()]],$key());$f->recordPayment($cashEntry,1,$cash,'2026-08-01');$f->closeCashbook($cash,'2026-08-01','10');
+denied(fn()=>$f->updatePositions('entry',$cashEntry,2,[$p()],'closed'),'cash closure freezes assigned document classification');
+$cancel=$f->createEntry($data+['positions'=>[$p()]],$key());$f->cancel($cancel,1);denied(fn()=>$f->updatePositions('entry',$cancel,2,[$p()],'cancelled'),'cancelled positions immutable');
+$rev=$f->createEntry($data+['positions'=>[$p()]],$key());$f->recordPayment($rev,1,$bank,'2026-08-01');$f->reverse($rev,2,'2026-08-03','reverse');denied(fn()=>$f->updatePositions('entry',$rev,3,[$p()],'reverse'),'reversed positions immutable');
+$goodsData=['donor'=>'Testspender','description'=>'Testgegenstände','designation'=>'Sachspende','valuation'=>'Testgutachten','received_on'=>'2026-08-01'];$before=$f->accounts();
+$goods=$f->createGoods($goodsData+['positions'=>[$p('100','11600'),$p('20','06300')]],$key());check($f->goodsEntry($goods)['value_cents']===12000&&count($f->positions('goods',$goods))===2,'goods position values persisted');check($f->accounts()===$before,'goods positions never add money');
+$f->updatePositions('goods',$goods,1,[$p('120','11600')],'Positionen zusammengefasst');check(count($f->positions('goods',$goods))===1&&count($f->positionHistory('goods',$goods))===1,'goods reclassification and history');
+denied(fn()=>$f->createGoods($goodsData+['positions'=>[$p('119','11600','1','19')]],$key()),'goods value is not taxed again');
+denied(fn()=>$g->positionHistory('goods',$goods),'goods history protected');
+$before=$f->positions('entry',$id);$version=$f->entry($id)['version'];$count=count($f->positionHistory('entry',$id));$db->exec("CREATE TRIGGER fail_position_audit BEFORE INSERT ON audit_events FOR EACH ROW BEGIN SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT='test failure'; END");
+try{$f->updatePositions('entry',$id,(int)$version,[$p('0,30')],'audit fails');throw new RuntimeException('expected failure');}catch(PDOException){}
+check($f->positions('entry',$id)===$before&&$f->entry($id)['version']===$version&&count($f->positionHistory('entry',$id))===$count,'audit failure rolls back positions history and version atomically');
+echo "$tests accounting checks passed\n";

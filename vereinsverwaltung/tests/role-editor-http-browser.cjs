@@ -1,0 +1,30 @@
+'use strict';
+// Real loopback HTTP/DB roundtrips; requires a fresh isolated member-profile fixture.
+const {chromium}=require('playwright'),fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),{spawnSync}=require('node:child_process');
+(async()=>{
+ const file=process.env.KULTURHUS_MEMBER_PROFILE_FIXTURE,php=process.env.KULTURHUS_TEST_PHP;assert(file&&php);
+ const fixture=JSON.parse(fs.readFileSync(file,'utf8').replace(/^\uFEFF/,'')),base=new URL(fixture.base);
+ assert(['127.0.0.1','localhost'].includes(base.hostname)&&base.port==='8091'&&fixture.club.startsWith('member-profile-'));
+ const read=()=>{const r=spawnSync(php,[path.join(__dirname,'support/role-editor-readback.php'),file],{encoding:'utf8',env:process.env});assert.equal(r.status,0,r.stderr);return JSON.parse(r.stdout);};
+ const browser=await chromium.launch({headless:true,channel:process.env.KULTURHUS_BROWSER_CHANNEL||'msedge'});let checks=0;const errors=[];
+ const ck=(v,m)=>{assert(v,m);console.log('PASS '+m);checks++;};
+ try{
+  const context=await browser.newContext({viewport:{width:1280,height:960}});await context.addCookies([{name:'KH_VEREIN_DEMO',value:fixture.sessions.admin,url:base.origin+'/'}]);await context.route('**/*',r=>new URL(r.request().url()).origin===base.origin?r.continue():r.abort());
+  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
+  const form=action=>page.locator('form').filter({has:page.locator('[name=action][value="'+action+'"]')});
+  const field=k=>form('settings-role').locator('[name="data['+k+']"]'),area=k=>field('website_levels]['+k),custom=()=>form('settings-role').locator('[name="data[website_custom]"][type=checkbox]');
+  const open=async(extra='')=>{const r=await page.goto(base.origin+'/?view=settings&tab=roles'+extra);assert.equal(r.headers()['x-kulturhus-local-project'],fixture.project_hash);};
+  const save=async()=>{await Promise.all([page.waitForNavigation({waitUntil:'domcontentloaded'}),form('settings-role').getByRole('button',{name:'Rolle speichern',exact:true}).click()]);};
+  await open('&new_role=1');await field('name').fill('Synthetic website permissions');await field('description').fill('Synthetic role persistence regression');ck(!await custom().isChecked(),'New role inherits defaults');
+  await area('gallery').selectOption('read');await area('events').selectOption('write');ck(await custom().isChecked(),'Dropdown changes activate their own permission matrix');await save();ck(!await page.locator('.error[role=alert]').count(),'New role saved');
+  let role=read().settings_roles[0],matrix=JSON.parse(role.website_access);ck(matrix.gallery==='read'&&matrix.events==='write','DB stores selected read and write levels');await open('&edit='+role.id);ck(await area('gallery').inputValue()==='read'&&await area('events').inputValue()==='write','Reloaded form retains selections');
+  const row=page.locator('tr').filter({has:page.locator('th').filter({hasText:/^Website: Galerie$/})});ck((await row.innerText()).includes('lesen'),'Comparison table matches saved gallery level');
+  const assignment=form('settings-role-assign').filter({has:page.locator('[name=user_id][value="'+fixture.club+'-reader"]')});await assignment.locator('select[name=role_id]').selectOption(role.id);await Promise.all([page.waitForNavigation({waitUntil:'domcontentloaded'}),assignment.getByRole('button',{name:'Zuweisen',exact:true}).click()]);ck(read().effective['Website: Galerie']==='read'&&read().effective['Website: Veranstaltungen']==='write','Assigned account has matching effective rights');
+  await open('&edit='+role.id);await area('gallery').selectOption('none');await save();ck(read().effective['Website: Galerie']==='none'&&read().effective['Website: Veranstaltungen']==='write','Revocation takes effect on next read');
+  await open('&edit='+role.id);await custom().uncheck();ck(await area('gallery').inputValue()==='none'&&await area('events').inputValue()==='none','Disabling custom permissions restores visible defaults');await save();ck(read().settings_roles[0].website_access===null&&read().effective['Website: Veranstaltungen']==='none','Defaults persist and update effective rights');
+  await open('&edit='+role.id);await field('name').fill('Synthetic pending draft');await area('gallery').selectOption('write');await form('settings-role').locator('[name=version]').evaluate(e=>e.value='0');const before=read();await save();ck((await page.locator('.error').innerText()).includes('inzwischen geändert'),'Stale POST is rejected');ck(await field('name').inputValue()==='Synthetic pending draft'&&await area('gallery').inputValue()==='write','Rejected POST retains user draft');assert.deepEqual(read(),before);
+  const nojs=await browser.newContext({javaScriptEnabled:false});await nojs.addCookies([{name:'KH_VEREIN_DEMO',value:fixture.sessions.admin,url:base.origin+'/'}]);await nojs.route('**/*',r=>new URL(r.request().url()).origin===base.origin?r.continue():r.abort());const np=await nojs.newPage();await np.goto(base.origin+'/?view=settings&tab=roles&edit='+role.id);const nf=np.locator('form').filter({has:np.locator('[name=action][value=settings-role]')});await nf.locator('[name="data[website_levels][gallery]"]').selectOption('write');const old=read();await Promise.all([np.waitForNavigation({waitUntil:'domcontentloaded'}),nf.getByRole('button',{name:'Rolle speichern',exact:true}).click()]);ck(await np.locator('.error[role=alert]').count()===1,'No-JS conflicting choices fail visibly instead of being ignored');assert.deepEqual(read(),old);await nojs.close();
+  await page.setViewportSize({width:390,height:844});await open('&edit='+role.id);ck(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'390px role page has no page overflow');assert.deepEqual(errors,[]);
+  console.log(JSON.stringify({checks,jsErrors:errors,scope:'Synthetic local only; no live role changes, mail or external requests'}));
+ }finally{await browser.close();}
+})().catch(e=>{console.error(e);process.exitCode=1;});

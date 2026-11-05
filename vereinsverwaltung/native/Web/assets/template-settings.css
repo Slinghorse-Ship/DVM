@@ -1,0 +1,59 @@
+/* Native controls remain usable with long labels and enlarged system text. */
+.app-header :is(.brand,.brand span) {
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+[data-model-form], [data-model-form] > *,
+.template-settings, .template-field-contexts, .page-policy-panel, .template-url-settings, .template-renderer-settings {
+  min-inline-size: 0;
+  max-inline-size: 100%;
+}
+[data-model-form] :is(label,summary,legend,p),
+:is(.template-settings,.template-field-contexts,.page-policy-panel,.template-url-settings,.template-renderer-settings) :is(label,summary,p) {
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  overflow-wrap: anywhere;
+}
+[data-model-form] :is(input:not([type=checkbox]):not([type=hidden]),select,textarea),
+:is(.template-settings,.template-field-contexts,.page-policy-panel,.template-url-settings,.template-renderer-settings) :is(input:not([type=checkbox]):not([type=hidden]),select,textarea) {
+  inline-size: 100%;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  min-block-size: 44px;
+}
+:is(.template-settings,.template-field-contexts,.page-policy-panel,.template-url-settings,.template-renderer-settings) summary {
+  min-block-size: 44px;
+  padding-block: .5rem;
+  cursor: pointer;
+}
+:is(.template-settings,.template-field-contexts,.page-policy-panel,.template-url-settings,.template-renderer-settings) label.check {
+  min-block-size: 44px;
+  align-items: center;
+  gap: .5rem;
+}
+:is(.template-settings,.template-field-contexts,.page-policy-panel,.template-url-settings,.template-renderer-settings) input[type=checkbox] {
+  flex: 0 0 24px;
+  inline-size: 24px;
+  block-size: 24px;
+}
+[data-model-form] button {
+  max-inline-size: 100%;
+  min-block-size: 44px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.field-access-settings { min-inline-size: 0; max-inline-size: 100%; margin-block: .75rem; }
+.field-access-settings :is(summary,label) { overflow-wrap: anywhere; }
+.field-access-settings summary { min-block-size: 44px; padding-block: .5rem; cursor: pointer; }
+.field-access-settings select { inline-size: 100%; min-inline-size: 0; min-block-size: 44px; max-inline-size: 100%; }
+.model-catalogue{min-width:0;max-width:100%}.model-catalogue-tabs,.model-catalogue-heading,.model-catalogue-search{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem}.model-catalogue-heading{justify-content:space-between;margin-block:1rem}.model-catalogue-heading h2{margin:0;overflow-wrap:anywhere}.model-catalogue-search{align-items:flex-end;margin-block:1rem}.model-catalogue-search label{flex:1 1 14rem;min-width:0}.model-catalogue-items{display:grid;gap:.5rem}.model-catalogue-item{display:flex;flex-direction:column;justify-content:center;min-height:44px;min-width:0;padding:.75rem;border:1px solid var(--border-color,#cbd5e1);border-radius:.5rem;color:inherit;text-decoration:none;overflow-wrap:anywhere}.model-catalogue-item span{font-size:.875em;opacity:.8}.model-catalogue-item[aria-current]{outline:2px solid currentColor;outline-offset:1px}.model-catalogue-editor{margin-block:1.5rem;min-width:0}.model-catalogue-editor input,.model-catalogue-editor select,.model-catalogue-editor textarea{max-width:100%;min-width:0}.model-catalogue :is(a.btn,button,input:not([type=checkbox],[type=radio],[type=hidden]),select,summary){min-height:44px}.model-catalogue :is(a,button,summary):focus-visible{outline:3px solid currentColor;outline-offset:3px}@media(max-width:35rem){.model-catalogue-search button{flex:1 1 100%}.model-catalogue-editor .fields{grid-template-columns:minmax(0,1fr)}.model-catalogue-heading .btn{max-width:100%;white-space:normal}}
+
+.fieldtype-review-panel,.fieldtype-review-row{min-inline-size:0;max-inline-size:100%;overflow-wrap:anywhere}.fieldtype-review-panel summary,.fieldtype-review-panel button,.fieldtype-review-panel a{min-block-size:44px}.fieldtype-review-panel summary{padding-block:.65rem;cursor:pointer}.fieldtype-review-row{padding-block:.75rem;border-block-end:1px solid var(--border-color,#cbd5e1)}.fieldtype-review-row dl{display:grid;grid-template-columns:minmax(0,7rem) minmax(0,1fr);gap:.35rem;margin-block:.5rem}.fieldtype-review-row dd{margin:0}.fieldtype-review-panel label.check{display:flex;align-items:center;gap:.6rem;min-block-size:44px}.fieldtype-review-panel input[type=checkbox]{flex:0 0 24px;inline-size:24px;block-size:24px}.fieldtype-review-panel button,.fieldtype-review-panel a.btn{max-inline-size:100%;white-space:normal;margin-block:.5rem}.field-provider-controls summary{min-block-size:44px;padding-block:.5rem}@media(max-width:35rem){.fieldtype-review-row dl{grid-template-columns:minmax(0,1fr)}.fieldtype-review-row dt{font-weight:600}}
+
+.registered-field-control{min-inline-size:0;max-inline-size:100%;overflow-wrap:anywhere}.registered-field-control :is(input:not([type=checkbox],[type=radio]),select,textarea,button,summary){min-block-size:44px;max-inline-size:100%;min-inline-size:0}.registered-field-control label{display:block}.registered-field-control input[type=checkbox],.registered-field-control input[type=radio]{inline-size:24px;block-size:24px}
+
+/* Keep the catalogue readable at 320px with doubled text; complete originals still wrap. */
+.native-manager-embedded .panel.model-catalogue{padding:clamp(.5rem,2vw,1.5rem)}
+.model-catalogue-item{padding:.4rem}

@@ -1,0 +1,16 @@
+<?php declare(strict_types=1);
+require __DIR__.'/inventory-fields-environment.php';
+use Kulturhus\Verein\{Database,Inventory,Registry};
+$db=\Kulturhus\Verein\Tests\MySqlFixture::existing($inventoryTestDatabase);Database::migrate($db);$club='inventory-flows-'.bin2hex(random_bytes(5));$actor=$club.'-admin';
+$db->prepare('INSERT INTO clubs VALUES(?,?)')->execute([$club,'Inventarprüfung mit Beispieldaten']);$db->prepare("INSERT INTO actors(id,club_id,role,is_superuser) VALUES(?,?,'member',1)")->execute([$actor,$club]);
+$r=new Registry($db,$actor);$person=$r->saveContact(null,0,'person','Erika Beispiel','','');$operator=$r->saveContact(null,0,'person','Anton Muster','','');$db->prepare('UPDATE actors SET contact_id=? WHERE id=?')->execute([$operator,$actor]);
+$i=new Inventory($db,$actor);$key=fn()=>bin2hex(random_bytes(16));$locations=[];foreach(['Beispiellager Nord','Beispiellager Süd'] as $name)$locations[]=$i->saveLocation('',0,['name'=>$name],$key());
+$set=$i->saveItem('',0,['name'=>'Beispielfüße 40 cm','category'=>'Beispiel Bühnentechnik','unit'=>'Satz','content_quantity'=>'4','content_unit'=>'Stück','initial_quantity'=>'12','home_location'=>$locations[0],'unit_value'=>'20,00','value_note'=>'Fiktiver Beispielbeleg'],$key());
+$other=$i->saveItem('',0,['name'=>'Beispielleuchte','category'=>'Beispiel Beleuchtung','unit'=>'Stück','initial_quantity'=>'6','home_location'=>$locations[0],'unit_value'=>'25,00','value_note'=>'Fiktiver Beispielbeleg'],$key());
+$today=Inventory::today();$due=(new DateTimeImmutable($today))->modify('+7 days')->format('Y-m-d');
+$reserve=function(string $purpose,int $quantity=1)use($i,$set,$locations,$person,$today,$due,$key):string{return $i->reserve(['contact'=>$person,'purpose'=>$purpose,'starts_on'=>$today,'due_on'=>$due,'lines'=>[['item'=>$set,'location'=>$locations[0],'stock_version'=>$i->item($set)['stock_version'],'quantity'=>$quantity]]],$key());};
+$reserved=$reserve('Beispiel Stornierung');$issued=$reserve('Beispiel laufende Ausleihe');$i->transition($issued,1,'issue',['date'=>$today,'current_place'=>'Beispielsaal','reason'=>'Beispiel ordnungsgemäß übergeben'],$key());
+if(!is_dir($inventoryTestSessions)&&!mkdir($inventoryTestSessions,0700,true)&&!is_dir($inventoryTestSessions))throw new RuntimeException('Cannot create local test sessions.');
+session_name('KH_VEREIN_DEMO');session_save_path($inventoryTestSessions);session_id(bin2hex(random_bytes(20)));session_start();$_SESSION=['actor'=>$actor,'csrf'=>bin2hex(random_bytes(32))];$session=session_id();session_write_close();
+$output=$inventoryTestRoot.'/.local/inventory-flow-fixtures';$run=$output.'/'.$club;if(!mkdir($run,0700,true))throw new RuntimeException('Cannot create private fixture directory.');$path=$run.'/fixture.json';
+file_put_contents($path,json_encode(['base'=>$inventoryTestBase,'club'=>$club,'actor'=>$actor,'session'=>$session,'locations'=>$locations,'person'=>$person,'set'=>$set,'other'=>$other,'reserved'=>$reserved,'issued'=>$issued,'today'=>$today,'due'=>$due,'readback'=>__DIR__.'/inventory-flows-readback.php','project_hash'=>hash('sha256',strtolower(str_replace('\\','/',$inventoryTestRoot)))],JSON_THROW_ON_ERROR|JSON_PRETTY_PRINT));echo $path,"\n";

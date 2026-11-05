@@ -1,0 +1,1538 @@
+{
+  "schema": 1,
+  "revision": 25,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "capital-r25-001@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.foundation.estab",
+          "choices": [
+            "bs.eqLiab.equity.foundation.estab"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "26000",
+              "semantic": {
+                "name": "Errichtungskapital",
+                "function": "",
+                "range_start": "26000",
+                "range_end": "26000",
+                "parent": null
+              },
+              "signature": "a641a3adee93027dd8aad08603ac55d61a79d6b12c7d50d31112a5ef88864aa4"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-002@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.foundation.donation",
+          "choices": [
+            "bs.eqLiab.equity.foundation.donation"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "26500",
+              "semantic": {
+                "name": "Zustiftungskapital",
+                "function": "",
+                "range_start": "26500",
+                "range_end": "26500",
+                "parent": null
+              },
+              "signature": "fd91e4316ebea2a543b5fe0f9f0a9bccd0b6ea26336bd4dccabe164ce693257c"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-003@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.foundation.injectionRevRes",
+          "choices": [
+            "bs.eqLiab.equity.foundation.injectionRevRes"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "27000",
+              "semantic": {
+                "name": "Zuführung aus Ergebnisrücklagen",
+                "function": "",
+                "range_start": "27000",
+                "range_end": "27000",
+                "parent": null
+              },
+              "signature": "e4af03ab3a35f9338a85b468b679d13d28cd9113dd09ab2b7203751e2b00cb55"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-004@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.foundation.consumable",
+          "choices": [
+            "bs.eqLiab.equity.foundation.consumable"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "27100",
+              "semantic": {
+                "name": "Verbrauchskapital1)",
+                "function": "",
+                "range_start": "27100",
+                "range_end": "27100",
+                "parent": null
+              },
+              "signature": "3257916266166fbe62cdd3fe0dfd4331c16b65d662abfe8a59e7bbb453f5b28d"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-006@1",
+          "group": "reserves",
+          "target": "bs.eqLiab.equity.revenueRes.capMaintenance",
+          "choices": [
+            "bs.eqLiab.equity.revenueRes.capMaintenance"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "27500",
+              "semantic": {
+                "name": "Kapitalerhaltungsrücklage",
+                "function": "",
+                "range_start": "27500",
+                "range_end": "27500",
+                "parent": null
+              },
+              "signature": "ad911dc031bc8fd35285838fc45558dacfce4c4bdbae79380cb9e3ee590f7eca"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-007@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.subscribed.corp",
+          "choices": [
+            "bs.eqLiab.equity.subscribed.corp"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29000",
+              "semantic": {
+                "name": "Gezeichnetes Kapital",
+                "function": "",
+                "range_start": "29000",
+                "range_end": "29000",
+                "parent": null
+              },
+              "signature": "8041375385e628ab64c5c197a66ac36bf0b127861dd122037e58ba78bd134cc6"
+            },
+            {
+              "code": "29080",
+              "semantic": {
+                "name": "Kapitalerhöhung aus Gesellschaftsmitteln",
+                "function": "",
+                "range_start": "29080",
+                "range_end": "29080",
+                "parent": null
+              },
+              "signature": "e848cd5a3790313da0810566e9a283d11e4841059fda214a13092ac7aa09df7c"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-008@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.subscribed.ownSharesdeducted",
+          "choices": [
+            "bs.eqLiab.equity.subscribed.ownSharesdeducted"
+          ],
+          "conditional": false,
+          "contra": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29090",
+              "semantic": {
+                "name": "Erworbene eigene Anteile",
+                "function": "",
+                "range_start": "29090",
+                "range_end": "29090",
+                "parent": null
+              },
+              "signature": "c6b67242ce27e1508371320b0cc0c094820e2f4267318a67cafd7c1557dddf34"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-009@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.subscribed.unpaidCap",
+          "choices": [
+            "bs.eqLiab.equity.subscribed.unpaidCap"
+          ],
+          "conditional": false,
+          "contra": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29100",
+              "semantic": {
+                "name": "Ausstehende Einlagen auf das gezeichnete Kapital, nicht eingefordert (Passivausweis, vom gezeichneten Kapital offen abgesetzt; eingeforderte ausstehende Einlagen s. Konto 1298 0)",
+                "function": "",
+                "range_start": "29100",
+                "range_end": "29100",
+                "parent": null
+              },
+              "signature": "d480b7f39e8b1fdafeafcc524417a96c718fa4ed708c08a1a478526ed74a05e8"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-010@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.capRes",
+          "choices": [
+            "bs.eqLiab.equity.capRes"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29200",
+              "semantic": {
+                "name": "Kapitalrücklage",
+                "function": "",
+                "range_start": "29200",
+                "range_end": "29200",
+                "parent": null
+              },
+              "signature": "893b5bd12949bcc01d61780abc825af9192ec8d4e46cc9fb0632937f6b6e3973"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-011@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.capRes",
+          "choices": [
+            "bs.eqLiab.equity.capRes"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [
+            "bs.eqLiab.equity.capRes.sharePremium"
+          ],
+          "sources": [
+            {
+              "code": "29250",
+              "semantic": {
+                "name": "Kapitalrücklage durch Ausgabe von Anteilen über Nennbetrag",
+                "function": "",
+                "range_start": "29250",
+                "range_end": "29250",
+                "parent": null
+              },
+              "signature": "5627dde16dd05cffa620cbd37e73d8fc8757599820a1535243018816a7a46599"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-012@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.capRes",
+          "choices": [
+            "bs.eqLiab.equity.capRes"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [
+            "bs.eqLiab.equity.capRes.warrantPremium"
+          ],
+          "sources": [
+            {
+              "code": "29260",
+              "semantic": {
+                "name": "Kapitalrücklage durch Ausgabe von Schuldverschreibungen für Wandlungsrechte und Optionsrechte zum Erwerb von Anteilen",
+                "function": "",
+                "range_start": "29260",
+                "range_end": "29260",
+                "parent": null
+              },
+              "signature": "2cac886c14f1fc11d65d3b9d1c95a8ea1a8ea71bd90919375a00590490ddf3c3"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-013@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.capRes",
+          "choices": [
+            "bs.eqLiab.equity.capRes"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [
+            "bs.eqLiab.equity.capRes.contrPremShares"
+          ],
+          "sources": [
+            {
+              "code": "29270",
+              "semantic": {
+                "name": "Kapitalrücklage durch Zuzahlungen gegen Gewährung eines Vorzugs für Anteile",
+                "function": "",
+                "range_start": "29270",
+                "range_end": "29270",
+                "parent": null
+              },
+              "signature": "2edb95c3493d45bd8b267622c2c03091a2586e5dbfe4458b30e1a5f2c2498166"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-014@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.capRes",
+          "choices": [
+            "bs.eqLiab.equity.capRes"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [
+            "bs.eqLiab.equity.capRes.other"
+          ],
+          "sources": [
+            {
+              "code": "29280",
+              "semantic": {
+                "name": "Kapitalrücklage durch Zuzahlungen in das Eigenkapital",
+                "function": "",
+                "range_start": "29280",
+                "range_end": "29280",
+                "parent": null
+              },
+              "signature": "3aba3366573c4c680af89bcbc34480801e3009c54672669e63f3bf813b0426eb"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-015@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.capRes",
+          "choices": [
+            "bs.eqLiab.equity.capRes"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [
+            "bs.eqLiab.equity.capRes.cashRequGmbh"
+          ],
+          "sources": [
+            {
+              "code": "29290",
+              "semantic": {
+                "name": "Nachschusskapital (Gegenkonto 1299 0)",
+                "function": "",
+                "range_start": "29290",
+                "range_end": "29290",
+                "parent": null
+              },
+              "signature": "dab08739780cb856adad454185e869f79ae3e739bb5a78cb376a7ee4deb99a53"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-016@1",
+          "group": "reserves",
+          "target": "bs.eqLiab.equity.revenueRes.legal",
+          "choices": [
+            "bs.eqLiab.equity.revenueRes.legal"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29300",
+              "semantic": {
+                "name": "Gesetzliche Rücklage",
+                "function": "",
+                "range_start": "29300",
+                "range_end": "29300",
+                "parent": null
+              },
+              "signature": "5177c5c3a5f097e6fd95b839e3262121c8b50ebaa56515188725d26b1ad33074"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-017@1",
+          "group": "reserves",
+          "target": "bs.eqLiab.equity.revenueRes.sharesParentComp",
+          "choices": [
+            "bs.eqLiab.equity.revenueRes.sharesParentComp"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29350",
+              "semantic": {
+                "name": "Rücklage für Anteile an einem herrschenden oder mehrheitlich beteiligten Unternehmen",
+                "function": "",
+                "range_start": "29350",
+                "range_end": "29350",
+                "parent": null
+              },
+              "signature": "fedfd20998cbb3ab33131a26bca68f4d9748160e261ae182aea5968105c7284f"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-018@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.statutoryBoundCapital",
+          "choices": [
+            "bs.eqLiab.equity.statutoryBoundCapital"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29950",
+              "semantic": {
+                "name": "Nutzungsgebundenes Kapital",
+                "function": "",
+                "range_start": "29950",
+                "range_end": "29950",
+                "parent": null
+              },
+              "signature": "0f46d874e9c206189315fb76a720bc146e27c021f7d3ef9b8eceaa6e110692a1"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-019@1",
+          "group": "deferred",
+          "target": "bs.eqLiab.otherSpecRes.other.other",
+          "choices": [
+            "bs.eqLiab.otherSpecRes.other.other"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29800",
+              "semantic": {
+                "name": "Übrige andere Sonderposten",
+                "function": "",
+                "range_start": "29800",
+                "range_end": "29800",
+                "parent": null
+              },
+              "signature": "9bac03527850c00b4a142f29c272f3f176e8a43b5cd33eb8675667b56a59cc86"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-020@1",
+          "group": "deferred",
+          "target": "bs.eqLiab.otherSpecRes.other.EStG6b",
+          "choices": [
+            "bs.eqLiab.otherSpecRes.other.EStG6b"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29810",
+              "semantic": {
+                "name": "Steuerfreie Rücklagen nach § 6b EStG",
+                "function": "",
+                "range_start": "29810",
+                "range_end": "29810",
+                "parent": null
+              },
+              "signature": "060d8b1feae2f6d5e18963df31675bf856507cd0d3478ad419bf519900c56791"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-021@1",
+          "group": "deferred",
+          "target": "bs.eqLiab.otherSpecRes.other.replacement",
+          "choices": [
+            "bs.eqLiab.otherSpecRes.other.replacement"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29820",
+              "semantic": {
+                "name": "Rücklage für Ersatzbeschaffung",
+                "function": "",
+                "range_start": "29820",
+                "range_end": "29820",
+                "parent": null
+              },
+              "signature": "1d0f174f8bb9ce84d69a08d37f0ef0588cb0b959a5a443d656d6deda7f14dc2b"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-022@1",
+          "group": "deferred",
+          "target": "bs.eqLiab.otherSpecRes.other.subsidies",
+          "choices": [
+            "bs.eqLiab.otherSpecRes.other.subsidies"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29830",
+              "semantic": {
+                "name": "Rücklage für Zuschüsse",
+                "function": "",
+                "range_start": "29830",
+                "range_end": "29830",
+                "parent": null
+              },
+              "signature": "05ed4a100516f5ee60ef9fdf8cc22dec20233d00122e8420036a0343acef56d7"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-023@1",
+          "group": "deferred",
+          "target": "bs.eqLiab.otherSpecRes.other.releaseWithdrawalEStG4g",
+          "choices": [
+            "bs.eqLiab.otherSpecRes.other.releaseWithdrawalEStG4g"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29850",
+              "semantic": {
+                "name": "Ausgleichsposten bei Entnahmen § 4g EStG",
+                "function": "",
+                "range_start": "29850",
+                "range_end": "29850",
+                "parent": null
+              },
+              "signature": "78ae518442911f9e72e41e77bfe7e39a60508a7e968ca842ff7dd720c6b140b8"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-024@1",
+          "group": "deferred",
+          "target": "bs.eqLiab.otherSpecRes.subsidies",
+          "choices": [
+            "bs.eqLiab.otherSpecRes.subsidies"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29880",
+              "semantic": {
+                "name": "Sonderposten für Zuschüsse Dritter",
+                "function": "",
+                "range_start": "29880",
+                "range_end": "29880",
+                "parent": null
+              },
+              "signature": "1317a12fdfda1680f722fa03ec5ec5caeced9b0b376e668f9355b8c8f07972ba"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-025@1",
+          "group": "deferred",
+          "target": "bs.eqLiab.otherSpecRes.unspentDonationFunds.bound",
+          "choices": [
+            "bs.eqLiab.otherSpecRes.unspentDonationFunds.bound"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29960",
+              "semantic": {
+                "name": "Längerfristig gebundene Spenden",
+                "function": "",
+                "range_start": "29960",
+                "range_end": "29960",
+                "parent": null
+              },
+              "signature": "5e77f1dbfb7b318da571cdf7d843739655a00a229788062b953e9072a5751c82"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-026@1",
+          "group": "deferred",
+          "target": "bs.eqLiab.otherSpecRes.unspentDonationFunds.statutoryUse",
+          "choices": [
+            "bs.eqLiab.otherSpecRes.unspentDonationFunds.statutoryUse"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29970",
+              "semantic": {
+                "name": "Noch nicht satzungsgemäß verwendete Spenden",
+                "function": "",
+                "range_start": "29970",
+                "range_end": "29970",
+                "parent": null
+              },
+              "signature": "ebc00794607fba6e2cdb359536ab944136a789be3425943f59617b019e5567d8"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-027@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.receiv.other.unpaidCapital",
+          "choices": [
+            "bs.ass.currAss.receiv.other.unpaidCapital"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "12980",
+              "semantic": {
+                "name": "Ausstehende Einlagen auf das gezeichnete Kapital, eingefordert (Forderungen, nicht eingeforderte ausstehende Einlagen s. Konto 2910 0)",
+                "function": "",
+                "range_start": "12980",
+                "range_end": "12980",
+                "parent": null
+              },
+              "signature": "6d4cbc9b2e7979c570ca2bd1ab1ca1d1432a2e3b7e5370c92f5f7730041d597c"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-028@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.receiv.other.unpaidSupplementaryCalls",
+          "choices": [
+            "bs.ass.currAss.receiv.other.unpaidSupplementaryCalls"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "12990",
+              "semantic": {
+                "name": "Nachschüsse (Forderungen, Gegenkonto 2929 0)",
+                "function": "",
+                "range_start": "12990",
+                "range_end": "12990",
+                "parent": null
+              },
+              "signature": "74c881c2af1de1e18a1a9fcaf29066e48546b2d994d9387a7cd7500e2b09e46b"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-029@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.receiv.other.reInsurClaim",
+          "choices": [
+            "bs.ass.currAss.receiv.other.reInsurClaim"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "13780",
+              "semantic": {
+                "name": "Ansprüche aus Rückdeckungsversicherungen",
+                "function": "",
+                "range_start": "13780",
+                "range_end": "13780",
+                "parent": null
+              },
+              "signature": "7764637e13edbb59c948ba9e33192d8bee2421c4e9139cd514a9123d6ed5a1df"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-030@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.tax.other",
+          "choices": [
+            "bs.eqLiab.accruals.tax.other"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30500",
+              "semantic": {
+                "name": "Steuerrückstellung für Steuerstundung (BStBK)",
+                "function": "",
+                "range_start": "30500",
+                "range_end": "30500",
+                "parent": null
+              },
+              "signature": "0479207ead63049afa5d4ad64d169635fd96ea8c413b0cd23f15f61d047f81fc"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-031@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.statutoryBenefits.other",
+          "choices": [
+            "bs.eqLiab.liab.statutoryBenefits.other"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "31420",
+              "semantic": {
+                "name": "Rückgängig gemachte Bewilligungen",
+                "function": "",
+                "range_start": "31420",
+                "range_end": "31420",
+                "parent": null
+              },
+              "signature": "f2039c41bda8430c9cffcb779cc08d5bbd6941215f0fadcd567ad09c0a8933f1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "capital-r25-001@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.foundation.estab",
+          "choices": [
+            "bs.eqLiab.equity.foundation.estab"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "26000",
+              "semantic": {
+                "name": "Errichtungskapital",
+                "function": "",
+                "range_start": "26000",
+                "range_end": "26000",
+                "parent": null
+              },
+              "signature": "a641a3adee93027dd8aad08603ac55d61a79d6b12c7d50d31112a5ef88864aa4"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-002@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.foundation.donation",
+          "choices": [
+            "bs.eqLiab.equity.foundation.donation"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "26500",
+              "semantic": {
+                "name": "Zustiftungskapital",
+                "function": "",
+                "range_start": "26500",
+                "range_end": "26500",
+                "parent": null
+              },
+              "signature": "fd91e4316ebea2a543b5fe0f9f0a9bccd0b6ea26336bd4dccabe164ce693257c"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-003@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.foundation.injectionRevRes",
+          "choices": [
+            "bs.eqLiab.equity.foundation.injectionRevRes"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "27000",
+              "semantic": {
+                "name": "Zuführungskapital8)",
+                "function": "",
+                "range_start": "27000",
+                "range_end": "27000",
+                "parent": null
+              },
+              "signature": "2370d346d40c2f3788f304ccb4ea70c16ee4d38d8e797ef0e35b589e5b4d2c72"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-004@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.foundation.consumable",
+          "choices": [
+            "bs.eqLiab.equity.foundation.consumable"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "27100",
+              "semantic": {
+                "name": "Verbrauchskapital",
+                "function": "",
+                "range_start": "27100",
+                "range_end": "27100",
+                "parent": null
+              },
+              "signature": "a055907583382ea60f381674945e79bf60e91c18845f9c9a4ee42f0e1f693e18"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-005@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.foundation.endowCap.notContributed",
+          "choices": [
+            "bs.eqLiab.equity.foundation.endowCap.notContributed"
+          ],
+          "conditional": false,
+          "contra": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "27400",
+              "semantic": {
+                "name": "Noch nicht eingebrachtes Vermögen1)",
+                "function": "",
+                "range_start": "27400",
+                "range_end": "27400",
+                "parent": null
+              },
+              "signature": "8019e09ef96517f1110333565e16c28a4071c5b4cb1333560a5e6de224c8a8da"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-006@1",
+          "group": "reserves",
+          "target": "bs.eqLiab.equity.revenueRes.capMaintenance",
+          "choices": [
+            "bs.eqLiab.equity.revenueRes.capMaintenance"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "27500",
+              "semantic": {
+                "name": "Kapitalerhaltungsrücklage",
+                "function": "",
+                "range_start": "27500",
+                "range_end": "27500",
+                "parent": null
+              },
+              "signature": "ad911dc031bc8fd35285838fc45558dacfce4c4bdbae79380cb9e3ee590f7eca"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-007@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.subscribed.corp",
+          "choices": [
+            "bs.eqLiab.equity.subscribed.corp"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29000",
+              "semantic": {
+                "name": "Gezeichnetes Kapital",
+                "function": "",
+                "range_start": "29000",
+                "range_end": "29000",
+                "parent": null
+              },
+              "signature": "8041375385e628ab64c5c197a66ac36bf0b127861dd122037e58ba78bd134cc6"
+            },
+            {
+              "code": "29080",
+              "semantic": {
+                "name": "Kapitalerhöhung aus Gesellschaftsmitteln",
+                "function": "",
+                "range_start": "29080",
+                "range_end": "29080",
+                "parent": null
+              },
+              "signature": "e848cd5a3790313da0810566e9a283d11e4841059fda214a13092ac7aa09df7c"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-008@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.subscribed.ownSharesdeducted",
+          "choices": [
+            "bs.eqLiab.equity.subscribed.ownSharesdeducted"
+          ],
+          "conditional": false,
+          "contra": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29090",
+              "semantic": {
+                "name": "Erworbene eigene Anteile",
+                "function": "",
+                "range_start": "29090",
+                "range_end": "29090",
+                "parent": null
+              },
+              "signature": "c6b67242ce27e1508371320b0cc0c094820e2f4267318a67cafd7c1557dddf34"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-009@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.subscribed.unpaidCap",
+          "choices": [
+            "bs.eqLiab.equity.subscribed.unpaidCap"
+          ],
+          "conditional": false,
+          "contra": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29100",
+              "semantic": {
+                "name": "Ausstehende Einlagen auf das gezeichnete Kapital, nicht eingefordert (Passivausweis, vom gezeichneten Kapital offen abgesetzt; eingeforderte ausstehende Einlagen s. Konto 1298 0)",
+                "function": "",
+                "range_start": "29100",
+                "range_end": "29100",
+                "parent": null
+              },
+              "signature": "d480b7f39e8b1fdafeafcc524417a96c718fa4ed708c08a1a478526ed74a05e8"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-010@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.capRes",
+          "choices": [
+            "bs.eqLiab.equity.capRes"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29200",
+              "semantic": {
+                "name": "Kapitalrücklage",
+                "function": "",
+                "range_start": "29200",
+                "range_end": "29200",
+                "parent": null
+              },
+              "signature": "893b5bd12949bcc01d61780abc825af9192ec8d4e46cc9fb0632937f6b6e3973"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-011@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.capRes",
+          "choices": [
+            "bs.eqLiab.equity.capRes"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [
+            "bs.eqLiab.equity.capRes.sharePremium"
+          ],
+          "sources": [
+            {
+              "code": "29250",
+              "semantic": {
+                "name": "Kapitalrücklage durch Ausgabe von Anteilen über Nennbetrag",
+                "function": "",
+                "range_start": "29250",
+                "range_end": "29250",
+                "parent": null
+              },
+              "signature": "5627dde16dd05cffa620cbd37e73d8fc8757599820a1535243018816a7a46599"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-012@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.capRes",
+          "choices": [
+            "bs.eqLiab.equity.capRes"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [
+            "bs.eqLiab.equity.capRes.warrantPremium"
+          ],
+          "sources": [
+            {
+              "code": "29260",
+              "semantic": {
+                "name": "Kapitalrücklage durch Ausgabe von Schuldverschreibungen für Wandlungsrechte und Optionsrechte zum Erwerb von Anteilen",
+                "function": "",
+                "range_start": "29260",
+                "range_end": "29260",
+                "parent": null
+              },
+              "signature": "2cac886c14f1fc11d65d3b9d1c95a8ea1a8ea71bd90919375a00590490ddf3c3"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-013@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.capRes",
+          "choices": [
+            "bs.eqLiab.equity.capRes"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [
+            "bs.eqLiab.equity.capRes.contrPremShares"
+          ],
+          "sources": [
+            {
+              "code": "29270",
+              "semantic": {
+                "name": "Kapitalrücklage durch Zuzahlungen gegen Gewährung eines Vorzugs für Anteile",
+                "function": "",
+                "range_start": "29270",
+                "range_end": "29270",
+                "parent": null
+              },
+              "signature": "2edb95c3493d45bd8b267622c2c03091a2586e5dbfe4458b30e1a5f2c2498166"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-014@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.capRes",
+          "choices": [
+            "bs.eqLiab.equity.capRes"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [
+            "bs.eqLiab.equity.capRes.other"
+          ],
+          "sources": [
+            {
+              "code": "29280",
+              "semantic": {
+                "name": "Kapitalrücklage durch Zuzahlungen in das Eigenkapital",
+                "function": "",
+                "range_start": "29280",
+                "range_end": "29280",
+                "parent": null
+              },
+              "signature": "3aba3366573c4c680af89bcbc34480801e3009c54672669e63f3bf813b0426eb"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-015@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.capRes",
+          "choices": [
+            "bs.eqLiab.equity.capRes"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [
+            "bs.eqLiab.equity.capRes.cashRequGmbh"
+          ],
+          "sources": [
+            {
+              "code": "29290",
+              "semantic": {
+                "name": "Nachschusskapital (Gegenkonto 1299 0)",
+                "function": "",
+                "range_start": "29290",
+                "range_end": "29290",
+                "parent": null
+              },
+              "signature": "dab08739780cb856adad454185e869f79ae3e739bb5a78cb376a7ee4deb99a53"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-016@1",
+          "group": "reserves",
+          "target": "bs.eqLiab.equity.revenueRes.legal",
+          "choices": [
+            "bs.eqLiab.equity.revenueRes.legal"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29300",
+              "semantic": {
+                "name": "Gesetzliche Rücklage",
+                "function": "",
+                "range_start": "29300",
+                "range_end": "29300",
+                "parent": null
+              },
+              "signature": "5177c5c3a5f097e6fd95b839e3262121c8b50ebaa56515188725d26b1ad33074"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-017@1",
+          "group": "reserves",
+          "target": "bs.eqLiab.equity.revenueRes.sharesParentComp",
+          "choices": [
+            "bs.eqLiab.equity.revenueRes.sharesParentComp"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29350",
+              "semantic": {
+                "name": "Rücklage für Anteile an einem herrschenden oder mehrheitlich beteiligten Unternehmen",
+                "function": "",
+                "range_start": "29350",
+                "range_end": "29350",
+                "parent": null
+              },
+              "signature": "fedfd20998cbb3ab33131a26bca68f4d9748160e261ae182aea5968105c7284f"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-018@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.statutoryBoundCapital",
+          "choices": [
+            "bs.eqLiab.equity.statutoryBoundCapital"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29950",
+              "semantic": {
+                "name": "Nutzungsgebundenes Kapital",
+                "function": "",
+                "range_start": "29950",
+                "range_end": "29950",
+                "parent": null
+              },
+              "signature": "0f46d874e9c206189315fb76a720bc146e27c021f7d3ef9b8eceaa6e110692a1"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-019@1",
+          "group": "deferred",
+          "target": "bs.eqLiab.otherSpecRes.other.other",
+          "choices": [
+            "bs.eqLiab.otherSpecRes.other.other"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29800",
+              "semantic": {
+                "name": "Übrige andere Sonderposten",
+                "function": "",
+                "range_start": "29800",
+                "range_end": "29800",
+                "parent": null
+              },
+              "signature": "9bac03527850c00b4a142f29c272f3f176e8a43b5cd33eb8675667b56a59cc86"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-020@1",
+          "group": "deferred",
+          "target": "bs.eqLiab.otherSpecRes.other.EStG6b",
+          "choices": [
+            "bs.eqLiab.otherSpecRes.other.EStG6b"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29810",
+              "semantic": {
+                "name": "Steuerfreie Rücklagen nach § 6b EStG",
+                "function": "",
+                "range_start": "29810",
+                "range_end": "29810",
+                "parent": null
+              },
+              "signature": "060d8b1feae2f6d5e18963df31675bf856507cd0d3478ad419bf519900c56791"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-021@1",
+          "group": "deferred",
+          "target": "bs.eqLiab.otherSpecRes.other.replacement",
+          "choices": [
+            "bs.eqLiab.otherSpecRes.other.replacement"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29820",
+              "semantic": {
+                "name": "Rücklage für Ersatzbeschaffung",
+                "function": "",
+                "range_start": "29820",
+                "range_end": "29820",
+                "parent": null
+              },
+              "signature": "1d0f174f8bb9ce84d69a08d37f0ef0588cb0b959a5a443d656d6deda7f14dc2b"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-022@1",
+          "group": "deferred",
+          "target": "bs.eqLiab.otherSpecRes.other.subsidies",
+          "choices": [
+            "bs.eqLiab.otherSpecRes.other.subsidies"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29830",
+              "semantic": {
+                "name": "Rücklage für Zuschüsse",
+                "function": "",
+                "range_start": "29830",
+                "range_end": "29830",
+                "parent": null
+              },
+              "signature": "05ed4a100516f5ee60ef9fdf8cc22dec20233d00122e8420036a0343acef56d7"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-023@1",
+          "group": "deferred",
+          "target": "bs.eqLiab.otherSpecRes.other.releaseWithdrawalEStG4g",
+          "choices": [
+            "bs.eqLiab.otherSpecRes.other.releaseWithdrawalEStG4g"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29850",
+              "semantic": {
+                "name": "Ausgleichsposten bei Entnahmen § 4g EStG",
+                "function": "",
+                "range_start": "29850",
+                "range_end": "29850",
+                "parent": null
+              },
+              "signature": "78ae518442911f9e72e41e77bfe7e39a60508a7e968ca842ff7dd720c6b140b8"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-024@1",
+          "group": "deferred",
+          "target": "bs.eqLiab.otherSpecRes.subsidies",
+          "choices": [
+            "bs.eqLiab.otherSpecRes.subsidies"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29880",
+              "semantic": {
+                "name": "Sonderposten für Zuschüsse Dritter",
+                "function": "",
+                "range_start": "29880",
+                "range_end": "29880",
+                "parent": null
+              },
+              "signature": "1317a12fdfda1680f722fa03ec5ec5caeced9b0b376e668f9355b8c8f07972ba"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-025@1",
+          "group": "deferred",
+          "target": "bs.eqLiab.otherSpecRes.unspentDonationFunds.bound",
+          "choices": [
+            "bs.eqLiab.otherSpecRes.unspentDonationFunds.bound"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29960",
+              "semantic": {
+                "name": "Längerfristig gebundene Spenden",
+                "function": "",
+                "range_start": "29960",
+                "range_end": "29960",
+                "parent": null
+              },
+              "signature": "5e77f1dbfb7b318da571cdf7d843739655a00a229788062b953e9072a5751c82"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-026@1",
+          "group": "deferred",
+          "target": "bs.eqLiab.otherSpecRes.unspentDonationFunds.statutoryUse",
+          "choices": [
+            "bs.eqLiab.otherSpecRes.unspentDonationFunds.statutoryUse"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29970",
+              "semantic": {
+                "name": "Noch nicht satzungsgemäß verwendete Spenden",
+                "function": "",
+                "range_start": "29970",
+                "range_end": "29970",
+                "parent": null
+              },
+              "signature": "ebc00794607fba6e2cdb359536ab944136a789be3425943f59617b019e5567d8"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-027@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.receiv.other.unpaidCapital",
+          "choices": [
+            "bs.ass.currAss.receiv.other.unpaidCapital"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "12980",
+              "semantic": {
+                "name": "Ausstehende Einlagen auf das gezeichnete Kapital, eingefordert (Forderungen, nicht eingeforderte ausstehende Einlagen s. Konto 2910 0)",
+                "function": "",
+                "range_start": "12980",
+                "range_end": "12980",
+                "parent": null
+              },
+              "signature": "6d4cbc9b2e7979c570ca2bd1ab1ca1d1432a2e3b7e5370c92f5f7730041d597c"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-028@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.receiv.other.unpaidSupplementaryCalls",
+          "choices": [
+            "bs.ass.currAss.receiv.other.unpaidSupplementaryCalls"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "12990",
+              "semantic": {
+                "name": "Nachschüsse (Forderungen, Gegenkonto 2929 0)",
+                "function": "",
+                "range_start": "12990",
+                "range_end": "12990",
+                "parent": null
+              },
+              "signature": "74c881c2af1de1e18a1a9fcaf29066e48546b2d994d9387a7cd7500e2b09e46b"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-029@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.receiv.other.reInsurClaim",
+          "choices": [
+            "bs.ass.currAss.receiv.other.reInsurClaim"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "13780",
+              "semantic": {
+                "name": "Ansprüche aus Rückdeckungsversicherungen",
+                "function": "",
+                "range_start": "13780",
+                "range_end": "13780",
+                "parent": null
+              },
+              "signature": "7764637e13edbb59c948ba9e33192d8bee2421c4e9139cd514a9123d6ed5a1df"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-030@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.tax.other",
+          "choices": [
+            "bs.eqLiab.accruals.tax.other"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30500",
+              "semantic": {
+                "name": "Steuerrückstellung für Steuerstundung (BStBK)",
+                "function": "",
+                "range_start": "30500",
+                "range_end": "30500",
+                "parent": null
+              },
+              "signature": "0479207ead63049afa5d4ad64d169635fd96ea8c413b0cd23f15f61d047f81fc"
+            }
+          ]
+        },
+        {
+          "purpose": "capital-r25-031@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.statutoryBenefits.other",
+          "choices": [
+            "bs.eqLiab.liab.statutoryBenefits.other"
+          ],
+          "conditional": false,
+          "contra": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "31420",
+              "semantic": {
+                "name": "Rückgängig gemachte Bewilligungen",
+                "function": "",
+                "range_start": "31420",
+                "range_end": "31420",
+                "parent": null
+              },
+              "signature": "f2039c41bda8430c9cffcb779cc08d5bbd6941215f0fadcd567ad09c0a8933f1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

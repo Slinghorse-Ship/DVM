@@ -1,0 +1,62 @@
+[data-transfer-native] {
+  font-size: 1rem;
+}
+
+[data-transfer-native] :is(label, button, input, select, textarea, p, dt, dd, a, span, small, pre) {
+  font-size: inherit !important;
+}
+
+[data-transfer-native] h2 {
+  font-size: 1.25em !important;
+}
+
+[data-transfer-native] h3 {
+  font-size: 1.125em !important;
+}
+
+[data-transfer-native] h4 {
+  font-size: 1em !important;
+}
+
+.invoice-transfer-modes {
+  border: 0;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: grid;
+  gap: .5rem;
+  min-width: 0;
+}
+
+.invoice-transfer-modes label {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  min-height: 44px;
+  padding: .75rem;
+  border: 1px solid var(--border, #91a69c);
+  border-radius: .6rem;
+  cursor: pointer;
+}
+
+.invoice-transfer-modes input {
+  flex: 0 0 auto;
+}
+
+.invoice-transfer-modes :is(legend, span) {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.invoice-transfer-payment :is(dd, a, button, span) {
+  overflow-wrap: anywhere;
+}
+
+.invoice-transfer-payment :is(form, fieldset, .data-list, dd) {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.invoice-transfer-payment .data-list {
+  grid-template-columns: minmax(0, 1fr);
+}

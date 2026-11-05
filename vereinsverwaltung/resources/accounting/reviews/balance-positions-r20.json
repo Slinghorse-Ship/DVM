@@ -1,0 +1,824 @@
+{
+  "schema": 1,
+  "revision": 20,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "balance-positions-r20-001@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.securities.affil",
+          "choices": [
+            "bs.ass.currAss.securities.affil",
+            "bs.ass.currAss.securities.affil.parentComp",
+            "bs.ass.currAss.securities.affil.subsidiaries"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "15000",
+              "semantic": {
+                "name": "Anteile an verbundenen Unternehmen (Umlaufvermögen)",
+                "function": "",
+                "range_start": "15000",
+                "range_end": "15000",
+                "parent": null
+              },
+              "signature": "530c33f12be375fa8b53e79fd9881d8f05724effe278678deede09636745356f"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-002@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.securities.affil.parentComp",
+          "choices": [
+            "bs.ass.currAss.securities.affil.parentComp"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "15040",
+              "semantic": {
+                "name": "Anteile an herrschender oder mit Mehrheit beteiligter Gesellschaft",
+                "function": "",
+                "range_start": "15040",
+                "range_end": "15040",
+                "parent": null
+              },
+              "signature": "8fbe4c6d8502ba2cca70c5cac4fc03e24abf4f3dfcaebf4772c48c26ca838cdd"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-003@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.securities.other.other",
+          "choices": [
+            "bs.ass.currAss.securities.other.bonds",
+            "bs.ass.currAss.securities.other.convertBond",
+            "bs.ass.currAss.securities.other.mutInvestm",
+            "bs.ass.currAss.securities.other.partCertificate",
+            "bs.ass.currAss.securities.other.securities",
+            "bs.ass.currAss.securities.other.shares",
+            "bs.ass.currAss.securities.other.warrants",
+            "bs.ass.currAss.securities.other.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "15100",
+              "semantic": {
+                "name": "Sonstige Wertpapiere",
+                "function": "",
+                "range_start": "15100",
+                "range_end": "15100",
+                "parent": null
+              },
+              "signature": "2c435714218b5da11064ebdf97ac5920ba5b81115fb6f41da401ecb8dcee225d"
+            },
+            {
+              "code": "15250",
+              "semantic": {
+                "name": "Andere Wertpapiere mit unwesentlichen Wertschwankungen",
+                "function": "",
+                "range_start": "15250",
+                "range_end": "15250",
+                "parent": null
+              },
+              "signature": "d4d3a014bdbddf9b9ac27753116ffbd4ac27f4349fe552000cecd0ff13d7b44e"
+            },
+            {
+              "code": "15300",
+              "semantic": {
+                "name": "Wertpapieranlagen im Rahmen der kurzfristigen Finanzdisposition",
+                "function": "",
+                "range_start": "15300",
+                "range_end": "15300",
+                "parent": null
+              },
+              "signature": "c375398a651ec8603574866a066fcb8500fd03a88188c2e3b40021ca1430e644"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-004@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.pensions.other",
+          "choices": [
+            "bs.eqLiab.accruals.pensions.direct",
+            "bs.eqLiab.accruals.pensions.externalFunds",
+            "bs.eqLiab.accruals.pensions.shareholder",
+            "bs.eqLiab.accruals.pensions.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30000",
+              "semantic": {
+                "name": "Rückstellungen für Pensionen und ähnliche Verpflichtungen",
+                "function": "",
+                "range_start": "30000",
+                "range_end": "30000",
+                "parent": null
+              },
+              "signature": "c1828b8f58950f4909d22a69079325e6cfd3776ac3621fc820eaeed8c51c6f4a"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-005@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.pensions.shareholder",
+          "choices": [
+            "bs.eqLiab.accruals.pensions.shareholder"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30050",
+              "semantic": {
+                "name": "Rückstellungen für Pensionen und ähnliche Verpflichtungen gegenüber Gesellschaftern oder nahe stehenden Personen8)",
+                "function": "",
+                "range_start": "30050",
+                "range_end": "30050",
+                "parent": null
+              },
+              "signature": "f6652419881fefe13c78425f2bf5a28faaaee92a4e30c472f11786fe28a2d795"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-006@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.pensions.direct",
+          "choices": [
+            "bs.eqLiab.accruals.pensions.direct"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30100",
+              "semantic": {
+                "name": "Rückstellungen für Direktzusagen",
+                "function": "",
+                "range_start": "30100",
+                "range_end": "30100",
+                "parent": null
+              },
+              "signature": "ffe4388b9c6225a99e7b447279cfc4198918c37d9ef583006512a27cc49af18b"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-007@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.pensions.externalFunds",
+          "choices": [
+            "bs.eqLiab.accruals.pensions.externalFunds"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30110",
+              "semantic": {
+                "name": "Rückstellungen für Zuschussverpflichtungen für Pensionskassen und Lebensversicherungen",
+                "function": "",
+                "range_start": "30110",
+                "range_end": "30110",
+                "parent": null
+              },
+              "signature": "9cfcb812b66e21940794feb9d9eb42422d0d6bcf7251d86c117419374761782a"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-008@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.pensions.other",
+          "choices": [
+            "bs.eqLiab.accruals.pensions.other"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30150",
+              "semantic": {
+                "name": "Rückstellungen für pensionsähnliche Verpflichtungen",
+                "function": "",
+                "range_start": "30150",
+                "range_end": "30150",
+                "parent": null
+              },
+              "signature": "1cb3572122a537f83fd0f0081d83a5445c3599634f30883c98a3ed857eb222d0"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-009@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.tax.other",
+          "choices": [
+            "bs.eqLiab.accruals.tax.kst",
+            "bs.eqLiab.accruals.tax.gewst",
+            "bs.eqLiab.accruals.tax.additionalTax",
+            "bs.eqLiab.accruals.tax.AO233aOnAdditionalTax",
+            "bs.eqLiab.accruals.tax.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30200",
+              "semantic": {
+                "name": "Steuerrückstellungen",
+                "function": "",
+                "range_start": "30200",
+                "range_end": "30200",
+                "parent": null
+              },
+              "signature": "b783d50ac60c75d83e7c4aef00c4b174d14c76433da4afd589257272b48fe31a"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-010@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.other.uncertainLiab.other",
+          "choices": [
+            "bs.eqLiab.accruals.other.uncertainLiab.other"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30740",
+              "semantic": {
+                "name": "Rückstellungen für Personalkosten",
+                "function": "",
+                "range_start": "30740",
+                "range_end": "30740",
+                "parent": null
+              },
+              "signature": "160499534411e9fad4ac2fc7a7b11956203ac0f9f492c4214a1c662234dab8b5"
+            },
+            {
+              "code": "30760",
+              "semantic": {
+                "name": "Rückstellungen für mit der Altersversorgung vergleichbare langfristige Verpflichtungen zum langfristigen Verbleib",
+                "function": "",
+                "range_start": "30760",
+                "range_end": "30760",
+                "parent": null
+              },
+              "signature": "8fc0274d3c2f908c5fae1a419382a5cd6a571c23ec273bcee10416dd6bb30ccf"
+            },
+            {
+              "code": "30790",
+              "semantic": {
+                "name": "Urlaubsrückstellungen",
+                "function": "",
+                "range_start": "30790",
+                "range_end": "30790",
+                "parent": null
+              },
+              "signature": "5d698681d8b757af50734ca0e6df0b95ffab43c977d8aa974f7a01fc84f192a9"
+            },
+            {
+              "code": "30950",
+              "semantic": {
+                "name": "Rückstellungen für Abschluss- und Prüfungskosten",
+                "function": "",
+                "range_start": "30950",
+                "range_end": "30950",
+                "parent": null
+              },
+              "signature": "fb4a6a57a69c51fd69615daa0c692c396ba53ede8f60b44d344e0538455fad38"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-011@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.other.uncertainLiab.maintenance",
+          "choices": [
+            "bs.eqLiab.accruals.other.uncertainLiab.maintenance"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30750",
+              "semantic": {
+                "name": "Rückstellungen für unterlassene Aufwendungen für Instandhaltung, Nachholung in den ersten drei Monaten",
+                "function": "",
+                "range_start": "30750",
+                "range_end": "30750",
+                "parent": null
+              },
+              "signature": "d4124a1ac6290f4e7938bdf99dceb62832e4b4858fb65a0597e0f1f8ae0e8091"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-012@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.other.uncertainLiab.landReclaim",
+          "choices": [
+            "bs.eqLiab.accruals.other.uncertainLiab.landReclaim",
+            "bs.eqLiab.accruals.other.uncertainLiab.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30850",
+              "semantic": {
+                "name": "Rückstellungen für Abraum- und Abfallbeseitigung",
+                "function": "",
+                "range_start": "30850",
+                "range_end": "30850",
+                "parent": null
+              },
+              "signature": "9a68beb56d71a337ed6bdbe8db1cd6bf4768c4e974da9bbf60ad7f10ef5c4430"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-013@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.other.uncertainLiab.other",
+          "choices": [
+            "bs.eqLiab.accruals.other.uncertainLiab.landReclaim",
+            "bs.eqLiab.accruals.other.statutoryLiab",
+            "bs.eqLiab.accruals.other.uncertainLiab.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30990",
+              "semantic": {
+                "name": "Rückstellungen für Umweltschutz",
+                "function": "",
+                "range_start": "30990",
+                "range_end": "30990",
+                "parent": null
+              },
+              "signature": "d68cee94502df7d9d953d23e6f41c45a03d6a74525c2df0003f9074f0e1fc1f2"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-014@1",
+          "group": "prepaid",
+          "target": "bs.ass.prepaidExp",
+          "choices": [
+            "bs.ass.prepaidExp"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "19400",
+              "semantic": {
+                "name": "Damnum / Disagio",
+                "function": "",
+                "range_start": "19400",
+                "range_end": "19400",
+                "parent": null
+              },
+              "signature": "05f6e7f71db22a153a52d0696e511826234e5a097c6c8a834c63abd004ab14c7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "balance-positions-r20-001@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.securities.affil",
+          "choices": [
+            "bs.ass.currAss.securities.affil",
+            "bs.ass.currAss.securities.affil.parentComp",
+            "bs.ass.currAss.securities.affil.subsidiaries"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "15000",
+              "semantic": {
+                "name": "Anteile an verbundenen Unternehmen (Umlaufvermögen)",
+                "function": "",
+                "range_start": "15000",
+                "range_end": "15000",
+                "parent": null
+              },
+              "signature": "530c33f12be375fa8b53e79fd9881d8f05724effe278678deede09636745356f"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-002@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.securities.affil.parentComp",
+          "choices": [
+            "bs.ass.currAss.securities.affil.parentComp"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "15040",
+              "semantic": {
+                "name": "Anteile an herrschender oder mit Mehrheit beteiligter Gesellschaft",
+                "function": "",
+                "range_start": "15040",
+                "range_end": "15040",
+                "parent": null
+              },
+              "signature": "8fbe4c6d8502ba2cca70c5cac4fc03e24abf4f3dfcaebf4772c48c26ca838cdd"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-003@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.securities.other.other",
+          "choices": [
+            "bs.ass.currAss.securities.other.bonds",
+            "bs.ass.currAss.securities.other.convertBond",
+            "bs.ass.currAss.securities.other.mutInvestm",
+            "bs.ass.currAss.securities.other.partCertificate",
+            "bs.ass.currAss.securities.other.securities",
+            "bs.ass.currAss.securities.other.shares",
+            "bs.ass.currAss.securities.other.warrants",
+            "bs.ass.currAss.securities.other.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "15100",
+              "semantic": {
+                "name": "Sonstige Wertpapiere",
+                "function": "",
+                "range_start": "15100",
+                "range_end": "15100",
+                "parent": null
+              },
+              "signature": "2c435714218b5da11064ebdf97ac5920ba5b81115fb6f41da401ecb8dcee225d"
+            },
+            {
+              "code": "15250",
+              "semantic": {
+                "name": "Andere Wertpapiere mit unwesentlichen Wertschwankungen",
+                "function": "",
+                "range_start": "15250",
+                "range_end": "15250",
+                "parent": null
+              },
+              "signature": "d4d3a014bdbddf9b9ac27753116ffbd4ac27f4349fe552000cecd0ff13d7b44e"
+            },
+            {
+              "code": "15300",
+              "semantic": {
+                "name": "Wertpapieranlagen im Rahmen der kurzfristigen Finanzdisposition",
+                "function": "",
+                "range_start": "15300",
+                "range_end": "15300",
+                "parent": null
+              },
+              "signature": "c375398a651ec8603574866a066fcb8500fd03a88188c2e3b40021ca1430e644"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-004@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.pensions.other",
+          "choices": [
+            "bs.eqLiab.accruals.pensions.direct",
+            "bs.eqLiab.accruals.pensions.externalFunds",
+            "bs.eqLiab.accruals.pensions.shareholder",
+            "bs.eqLiab.accruals.pensions.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30000",
+              "semantic": {
+                "name": "Rückstellungen für Pensionen und ähnliche Verpflichtungen",
+                "function": "",
+                "range_start": "30000",
+                "range_end": "30000",
+                "parent": null
+              },
+              "signature": "c1828b8f58950f4909d22a69079325e6cfd3776ac3621fc820eaeed8c51c6f4a"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-005@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.pensions.shareholder",
+          "choices": [
+            "bs.eqLiab.accruals.pensions.shareholder"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30050",
+              "semantic": {
+                "name": "Rückstellungen für Pensionen und ähnliche Verpflichtungen gegenüber Gesellschaftern oder nahe stehenden Personen",
+                "function": "",
+                "range_start": "30050",
+                "range_end": "30050",
+                "parent": null
+              },
+              "signature": "ab446d2be3b2fd6e2e12906f5a8fc48b69e9a0d45fd08588b9099a0952c5081b"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-006@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.pensions.direct",
+          "choices": [
+            "bs.eqLiab.accruals.pensions.direct"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30100",
+              "semantic": {
+                "name": "Rückstellungen für Direktzusagen",
+                "function": "",
+                "range_start": "30100",
+                "range_end": "30100",
+                "parent": null
+              },
+              "signature": "ffe4388b9c6225a99e7b447279cfc4198918c37d9ef583006512a27cc49af18b"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-007@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.pensions.externalFunds",
+          "choices": [
+            "bs.eqLiab.accruals.pensions.externalFunds"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30110",
+              "semantic": {
+                "name": "Rückstellungen für Zuschussverpflichtungen für Pensionskassen und Lebensversicherungen",
+                "function": "",
+                "range_start": "30110",
+                "range_end": "30110",
+                "parent": null
+              },
+              "signature": "9cfcb812b66e21940794feb9d9eb42422d0d6bcf7251d86c117419374761782a"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-008@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.pensions.other",
+          "choices": [
+            "bs.eqLiab.accruals.pensions.other"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30150",
+              "semantic": {
+                "name": "Rückstellungen für pensionsähnliche Verpflichtungen",
+                "function": "",
+                "range_start": "30150",
+                "range_end": "30150",
+                "parent": null
+              },
+              "signature": "1cb3572122a537f83fd0f0081d83a5445c3599634f30883c98a3ed857eb222d0"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-009@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.tax.other",
+          "choices": [
+            "bs.eqLiab.accruals.tax.kst",
+            "bs.eqLiab.accruals.tax.gewst",
+            "bs.eqLiab.accruals.tax.additionalTax",
+            "bs.eqLiab.accruals.tax.AO233aOnAdditionalTax",
+            "bs.eqLiab.accruals.tax.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30200",
+              "semantic": {
+                "name": "Steuerrückstellungen",
+                "function": "",
+                "range_start": "30200",
+                "range_end": "30200",
+                "parent": null
+              },
+              "signature": "b783d50ac60c75d83e7c4aef00c4b174d14c76433da4afd589257272b48fe31a"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-010@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.other.uncertainLiab.other",
+          "choices": [
+            "bs.eqLiab.accruals.other.uncertainLiab.other"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30740",
+              "semantic": {
+                "name": "Rückstellungen für Personalkosten",
+                "function": "",
+                "range_start": "30740",
+                "range_end": "30740",
+                "parent": null
+              },
+              "signature": "160499534411e9fad4ac2fc7a7b11956203ac0f9f492c4214a1c662234dab8b5"
+            },
+            {
+              "code": "30760",
+              "semantic": {
+                "name": "Rückstellungen für mit der Altersversorgung vergleichbare langfristige Verpflichtungen zum langfristigen Verbleib",
+                "function": "",
+                "range_start": "30760",
+                "range_end": "30760",
+                "parent": null
+              },
+              "signature": "8fc0274d3c2f908c5fae1a419382a5cd6a571c23ec273bcee10416dd6bb30ccf"
+            },
+            {
+              "code": "30790",
+              "semantic": {
+                "name": "Urlaubsrückstellungen",
+                "function": "",
+                "range_start": "30790",
+                "range_end": "30790",
+                "parent": null
+              },
+              "signature": "5d698681d8b757af50734ca0e6df0b95ffab43c977d8aa974f7a01fc84f192a9"
+            },
+            {
+              "code": "30950",
+              "semantic": {
+                "name": "Rückstellungen für Abschluss- und Prüfungskosten",
+                "function": "",
+                "range_start": "30950",
+                "range_end": "30950",
+                "parent": null
+              },
+              "signature": "fb4a6a57a69c51fd69615daa0c692c396ba53ede8f60b44d344e0538455fad38"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-011@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.other.uncertainLiab.maintenance",
+          "choices": [
+            "bs.eqLiab.accruals.other.uncertainLiab.maintenance"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30750",
+              "semantic": {
+                "name": "Rückstellungen für unterlassene Aufwendungen für Instandhaltung, Nachholung in den ersten drei Monaten",
+                "function": "",
+                "range_start": "30750",
+                "range_end": "30750",
+                "parent": null
+              },
+              "signature": "d4124a1ac6290f4e7938bdf99dceb62832e4b4858fb65a0597e0f1f8ae0e8091"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-012@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.other.uncertainLiab.landReclaim",
+          "choices": [
+            "bs.eqLiab.accruals.other.uncertainLiab.landReclaim",
+            "bs.eqLiab.accruals.other.uncertainLiab.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30850",
+              "semantic": {
+                "name": "Rückstellungen für Abraum- und Abfallbeseitigung",
+                "function": "",
+                "range_start": "30850",
+                "range_end": "30850",
+                "parent": null
+              },
+              "signature": "9a68beb56d71a337ed6bdbe8db1cd6bf4768c4e974da9bbf60ad7f10ef5c4430"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-013@1",
+          "group": "provisions",
+          "target": "bs.eqLiab.accruals.other.uncertainLiab.other",
+          "choices": [
+            "bs.eqLiab.accruals.other.uncertainLiab.landReclaim",
+            "bs.eqLiab.accruals.other.statutoryLiab",
+            "bs.eqLiab.accruals.other.uncertainLiab.other"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "30990",
+              "semantic": {
+                "name": "Rückstellungen für Umweltschutz",
+                "function": "",
+                "range_start": "30990",
+                "range_end": "30990",
+                "parent": null
+              },
+              "signature": "d68cee94502df7d9d953d23e6f41c45a03d6a74525c2df0003f9074f0e1fc1f2"
+            }
+          ]
+        },
+        {
+          "purpose": "balance-positions-r20-014@1",
+          "group": "prepaid",
+          "target": "bs.ass.prepaidExp",
+          "choices": [
+            "bs.ass.prepaidExp"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "19400",
+              "semantic": {
+                "name": "Damnum / Disagio",
+                "function": "",
+                "range_start": "19400",
+                "range_end": "19400",
+                "parent": null
+              },
+              "signature": "05f6e7f71db22a153a52d0696e511826234e5a097c6c8a834c63abd004ab14c7"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

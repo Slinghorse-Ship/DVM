@@ -1,0 +1,968 @@
+{
+  "schema": 1,
+  "revision": 23,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "vat-r23-input@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.receiv.other.vat",
+          "choices": [
+            "bs.ass.currAss.receiv.other.vat"
+          ],
+          "conditional": true,
+          "condition": "vat_clearing_zero",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "14100",
+              "semantic": {
+                "name": "Abziehbare Vorsteuer nach § 13b UStG",
+                "function": "S",
+                "range_start": "14100",
+                "range_end": "14100",
+                "parent": null
+              },
+              "signature": "ff962874e2e767fca1af43a06daf4549ee925572ab9b96cf518fa9cebdd1218d"
+            },
+            {
+              "code": "14160",
+              "semantic": {
+                "name": "Abziehbare Vorsteuer nach § 13b UStG 19 %",
+                "function": "S",
+                "range_start": "14160",
+                "range_end": "14160",
+                "parent": null
+              },
+              "signature": "05ca1b7d19611a85a4b3d845db793cccd1b3030c79864294c0c00fcb7c0e41cf"
+            },
+            {
+              "code": "14200",
+              "semantic": {
+                "name": "Abziehbare Vorsteuer aus innergemeinschaftlichem Erwerb",
+                "function": "S",
+                "range_start": "14200",
+                "range_end": "14200",
+                "parent": null
+              },
+              "signature": "351d59089220eae723e9c16b2f06442f31a15dba22ee39b78086ade109252f15"
+            },
+            {
+              "code": "14260",
+              "semantic": {
+                "name": "Abziehbare Vorsteuer aus innergemeinschaftlichem Erwerb 19 %",
+                "function": "S",
+                "range_start": "14260",
+                "range_end": "14260",
+                "parent": null
+              },
+              "signature": "6135c5b909a944b5c388f0b27753fae81f4b953d099d93a9ce0a2bfe742cd1cb"
+            },
+            {
+              "code": "14290",
+              "semantic": {
+                "name": "Abziehbare Vorsteuer aus innergemeinschaftlichem Erwerb von Neufahrzeugen von Lieferanten ohne Umsatzsteuer-Identifikationsnummer",
+                "function": "S",
+                "range_start": "14290",
+                "range_end": "14290",
+                "parent": null
+              },
+              "signature": "215495d794e08d54b226fe8886abc1983ec47796bccd17e1b0c2ffbf97cdd389"
+            },
+            {
+              "code": "14300",
+              "semantic": {
+                "name": "Aufzuteilende Vorsteuer",
+                "function": "S",
+                "range_start": "14300",
+                "range_end": "14300",
+                "parent": null
+              },
+              "signature": "5a8354e5ff6f2328a382737c4f9acb473448866cd4af6abc841d5c6301930f7e"
+            },
+            {
+              "code": "14310",
+              "semantic": {
+                "name": "Aufzuteilende Vorsteuer 7 %",
+                "function": "S",
+                "range_start": "14310",
+                "range_end": "14310",
+                "parent": null
+              },
+              "signature": "c3fae62b7c17eb2dc4b5a0f92dbbfbe4f6e24ae8b487866ff27539e4bee4ad94"
+            },
+            {
+              "code": "14360",
+              "semantic": {
+                "name": "Aufzuteilende Vorsteuer 19 %",
+                "function": "S",
+                "range_start": "14360",
+                "range_end": "14360",
+                "parent": null
+              },
+              "signature": "f86507e2bda33a394aeeff048c441f4ee0d974118a8b1a2422195e9cd4fa4828"
+            },
+            {
+              "code": "14400",
+              "semantic": {
+                "name": "Aufzuteilende Vorsteuer nach §§ 13a und 13b UStG",
+                "function": "S",
+                "range_start": "14400",
+                "range_end": "14400",
+                "parent": null
+              },
+              "signature": "54c5f7833d2001550df9d25b53f5694ebd4c00fac43b20dbc5e97094f32b6ea3"
+            },
+            {
+              "code": "14460",
+              "semantic": {
+                "name": "Aufzuteilende Vorsteuer nach §§ 13a und 13b UStG 19 %",
+                "function": "S",
+                "range_start": "14460",
+                "range_end": "14460",
+                "parent": null
+              },
+              "signature": "f1f94302670840001640306a864a0a26e735a7e17708e834b4ac6320e61db852"
+            },
+            {
+              "code": "14500",
+              "semantic": {
+                "name": "Aufzuteilende Vorsteuer aus innergemeinschaftlichem Erwerb",
+                "function": "S",
+                "range_start": "14500",
+                "range_end": "14500",
+                "parent": null
+              },
+              "signature": "c9e369b595adff108c2c2b2e84e6356f652feb6a6ac94fda50ce8ef780a5f5cf"
+            },
+            {
+              "code": "14560",
+              "semantic": {
+                "name": "Aufzuteilende Vorsteuer aus innergemeinschaftlichem Erwerb 19 %",
+                "function": "S",
+                "range_start": "14560",
+                "range_end": "14560",
+                "parent": null
+              },
+              "signature": "3e7acbcbbac6f0f07fcdd497b953492c0e06b033e46d0d34c49604549de614ed"
+            },
+            {
+              "code": "14590",
+              "semantic": {
+                "name": "Vorsteuer aus Erwerb als letzter Abnehmer innerhalb eines Dreiecksgeschäfts",
+                "function": "S",
+                "range_start": "14590",
+                "range_end": "14590",
+                "parent": null
+              },
+              "signature": "b25f269b15dcbb6c622c0c38ac8bd8e22c2632587ba2bd50815cdabe5192d1a0"
+            },
+            {
+              "code": "14640",
+              "semantic": {
+                "name": "Nachträglich abziehbare Vorsteuer nach § 15a Abs. 2 UStG",
+                "function": "F",
+                "range_start": "14640",
+                "range_end": "14640",
+                "parent": null
+              },
+              "signature": "9f7ee9b0c7a9c10552bbdbe36e688fc0efc9661e3f0ca40e0c76888d104a25c5"
+            },
+            {
+              "code": "14700",
+              "semantic": {
+                "name": "Nachträglich abziehbare Vorsteuer nach § 15a Abs. 1 UStG, bewegliche Wirtschaftsgüter",
+                "function": "F",
+                "range_start": "14700",
+                "range_end": "14700",
+                "parent": null
+              },
+              "signature": "eb40593ef71c429a34226505535dca6c9ce84b91a829be624484bb24b10fe3df"
+            },
+            {
+              "code": "14710",
+              "semantic": {
+                "name": "Nachträglich abziehbare Vorsteuer nach § 15a Abs. 1 UStG, unbewegliche Wirtschaftsgüter",
+                "function": "F",
+                "range_start": "14710",
+                "range_end": "14710",
+                "parent": null
+              },
+              "signature": "34523e845d44ea2292b554e3e0c92e38743321dd151e0abccd60a6d85213497e"
+            },
+            {
+              "code": "14720",
+              "semantic": {
+                "name": "Zurückzuzahlende Vorsteuer nach § 15a Abs. 1 UStG, bewegliche Wirtschaftsgüter",
+                "function": "F",
+                "range_start": "14720",
+                "range_end": "14720",
+                "parent": null
+              },
+              "signature": "9d5c4da7f9cf8e2c86a4a0d90b5fe84cc9880fb88a66a754261a60f39fb37ed4"
+            },
+            {
+              "code": "14730",
+              "semantic": {
+                "name": "Zurückzuzahlende Vorsteuer nach § 15a Abs. 1 UStG, unbewegliche Wirtschaftsgüter",
+                "function": "F",
+                "range_start": "14730",
+                "range_end": "14730",
+                "parent": null
+              },
+              "signature": "8494aad2628845b0da861bfabe52987d823d4438c457c75ba65c2820e173fe9b"
+            },
+            {
+              "code": "14740",
+              "semantic": {
+                "name": "Zurückzuzahlende Vorsteuer nach § 15a Abs. 2 UStG",
+                "function": "F",
+                "range_start": "14740",
+                "range_end": "14740",
+                "parent": null
+              },
+              "signature": "8eccb5c03f64c7b212ac44c4b26f230b3210c24e50d7d31709691c290198a0c2"
+            },
+            {
+              "code": "14800",
+              "semantic": {
+                "name": "Abziehbare Vorsteuer aus der Auslagerung von Gegenständen aus einem Umsatzsteuerlager",
+                "function": "S",
+                "range_start": "14800",
+                "range_end": "14800",
+                "parent": null
+              },
+              "signature": "fd266e404458e16cb6d47447aeb1cf7a0a4ca8beb48e75409d0bc7eaa9605c3b"
+            },
+            {
+              "code": "14810",
+              "semantic": {
+                "name": "Entstandene Einfuhrumsatzsteuer",
+                "function": "F",
+                "range_start": "14810",
+                "range_end": "14810",
+                "parent": null
+              },
+              "signature": "351754b9f4e3b42342962436ad09a71ae9436b05dadd4522e0245214d837921b"
+            },
+            {
+              "code": "14870",
+              "semantic": {
+                "name": "Vorsteuer nach allgemeinen Durchschnittssätzen",
+                "function": "F",
+                "range_start": "14870",
+                "range_end": "14870",
+                "parent": null
+              },
+              "signature": "13f313a2af7dfb4c24c6d81288b7b16db24d44f92b5a08e002b35f19c63ca2e4"
+            }
+          ]
+        },
+        {
+          "purpose": "vat-r23-output@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.theroffTax.vat",
+          "choices": [
+            "bs.eqLiab.liab.other.theroffTax.vat"
+          ],
+          "conditional": true,
+          "condition": "vat_clearing_zero",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "38100",
+              "semantic": {
+                "name": "Umsatzsteuer nach § 13b UStG",
+                "function": "S",
+                "range_start": "38100",
+                "range_end": "38100",
+                "parent": null
+              },
+              "signature": "e053de5e38409108e30357a5428efe96e33d31761d4c640e500785822023f461"
+            },
+            {
+              "code": "38160",
+              "semantic": {
+                "name": "Umsatzsteuer nach § 13b UStG 19 %",
+                "function": "S",
+                "range_start": "38160",
+                "range_end": "38160",
+                "parent": null
+              },
+              "signature": "03a536e36137e704ecd47bda17dda816e7218d0a2c8e85feae0ab1d00847c31a"
+            },
+            {
+              "code": "38400",
+              "semantic": {
+                "name": "Umsatzsteuer-Vorauszahlungen",
+                "function": "F",
+                "range_start": "38400",
+                "range_end": "38400",
+                "parent": null
+              },
+              "signature": "1a54871270aff0f445c4650f1d077467ae948542b5d5cb512a92237db8d3030c"
+            },
+            {
+              "code": "38410",
+              "semantic": {
+                "name": "Umsatzsteuer-Vorauszahlungen 1/11",
+                "function": "F",
+                "range_start": "38410",
+                "range_end": "38410",
+                "parent": null
+              },
+              "signature": "a9bbf337959b7b8903cc399c494714a9489b75056ec74daf9b29e6704e0995fc"
+            },
+            {
+              "code": "38420",
+              "semantic": {
+                "name": "Umsatzsteuer laufendes Jahr",
+                "function": "",
+                "range_start": "38420",
+                "range_end": "38420",
+                "parent": null
+              },
+              "signature": "4d0ce238fb1eaca4910e9fd1de3bd8982d74ecb9956abed4c8cde026be46ad36"
+            },
+            {
+              "code": "38450",
+              "semantic": {
+                "name": "Umsatzsteuer in Folgeperiode fällig (§§ 13 Abs. 1 Nr. 6 und 13b Abs. 2 UStG)",
+                "function": "S",
+                "range_start": "38450",
+                "range_end": "38450",
+                "parent": null
+              },
+              "signature": "9960940503704dac406ef22c5ad6b80190477af48c06dc96c6f447778b61efcf"
+            },
+            {
+              "code": "38500",
+              "semantic": {
+                "name": "Umsatzsteuer aus innergemeinschaftlichem Erwerb",
+                "function": "S",
+                "range_start": "38500",
+                "range_end": "38500",
+                "parent": null
+              },
+              "signature": "49e2bf9aaa6bb7267688f25a94ebd3bc5959d286a3b91ff697c0e3144e835fbe"
+            },
+            {
+              "code": "38510",
+              "semantic": {
+                "name": "Umsatzsteuer aus innergemeinschaftlichem Erwerb ohne Vorsteuerabzug",
+                "function": "S",
+                "range_start": "38510",
+                "range_end": "38510",
+                "parent": null
+              },
+              "signature": "d412e457f9018e76d381815fa2a3f2f1187dfda7431f184648d9628669812c06"
+            },
+            {
+              "code": "38560",
+              "semantic": {
+                "name": "Umsatzsteuer aus innergemeinschaftlichem Erwerb 19 %",
+                "function": "S",
+                "range_start": "38560",
+                "range_end": "38560",
+                "parent": null
+              },
+              "signature": "b5874989d3f68417930f7ac961003f9ab4b056e4a47ee4f04f45120182ff9c41"
+            },
+            {
+              "code": "38570",
+              "semantic": {
+                "name": "Umsatzsteuer aus Erwerb als letzter Abnehmer innerhalb eines Dreiecksgeschäfts",
+                "function": "S",
+                "range_start": "38570",
+                "range_end": "38570",
+                "parent": null
+              },
+              "signature": "d0a6ad84a13d88c3957ec00b49d339220d1e6bec4fe3200d061636e7c0760234"
+            },
+            {
+              "code": "38580",
+              "semantic": {
+                "name": "Umsatzsteuer aus innergemeinschaftlichem Erwerb von Neufahrzeugen von Lieferanten ohne Umsatzsteuer-Identifikationsnummer",
+                "function": "S",
+                "range_start": "38580",
+                "range_end": "38580",
+                "parent": null
+              },
+              "signature": "644c5921377007e03136fd72e6544da9e25f635b2e9a051e16c74c8cfb236d00"
+            },
+            {
+              "code": "38600",
+              "semantic": {
+                "name": "Umsatzsteuer aus der Auslagerung von Gegenständen aus einem Umsatzsteuerlager",
+                "function": "S",
+                "range_start": "38600",
+                "range_end": "38600",
+                "parent": null
+              },
+              "signature": "5c1a1e2a83b10c71f60fbe12ca3326632be6d58b52118a1990ef7695f51e9824"
+            },
+            {
+              "code": "38610",
+              "semantic": {
+                "name": "Umsatzsteuer aus im Inland steuerpflichtigen EU-Lieferungen",
+                "function": "S",
+                "range_start": "38610",
+                "range_end": "38610",
+                "parent": null
+              },
+              "signature": "3c0bcfac8ee53cab026589b0288cd6502ec55e2ed787c578d73c8c22fe626f8f"
+            },
+            {
+              "code": "38660",
+              "semantic": {
+                "name": "Umsatzsteuer aus im Inland steuerpflichtigen EU-Lieferungen 19 %",
+                "function": "S",
+                "range_start": "38660",
+                "range_end": "38660",
+                "parent": null
+              },
+              "signature": "1e0eacc3ebf4e83ea05d41c13100cf8a2cec928c6d582e91188ffbac3b569412"
+            },
+            {
+              "code": "38700",
+              "semantic": {
+                "name": "Nachsteuer, UStVA Kz. 65",
+                "function": "F",
+                "range_start": "38700",
+                "range_end": "38700",
+                "parent": null
+              },
+              "signature": "43b6b3d0fc855bacc69223f64158814505cc53b0d195b7a101d19e12f2a5d083"
+            },
+            {
+              "code": "38720",
+              "semantic": {
+                "name": "In Rechnung unrichtig oder unberechtigt ausgewiesene Steuerbeträge, UStVA Kz. 69",
+                "function": "F",
+                "range_start": "38720",
+                "range_end": "38720",
+                "parent": null
+              },
+              "signature": "0766765217ed426e608529b1cb9cc462504dd42c4b73334b2acaf8c04ca758a5"
+            }
+          ]
+        },
+        {
+          "purpose": "vat-r23-future-input@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.receiv.other.vat",
+          "choices": [
+            "bs.ass.currAss.receiv.other.vat"
+          ],
+          "conditional": false,
+          "condition": null,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "14820",
+              "semantic": {
+                "name": "Vorsteuer in Folgeperiode / im Folgejahr abziehbar",
+                "function": "S",
+                "range_start": "14820",
+                "range_end": "14820",
+                "parent": null
+              },
+              "signature": "2372276b09fad4fae7a20ddf911206392108ad0db1a845be1d6817036350d05b"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "vat-r23-input@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.receiv.other.vat",
+          "choices": [
+            "bs.ass.currAss.receiv.other.vat"
+          ],
+          "conditional": true,
+          "condition": "vat_clearing_zero",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "14100",
+              "semantic": {
+                "name": "Abziehbare Vorsteuer nach § 13b UStG",
+                "function": "S",
+                "range_start": "14100",
+                "range_end": "14100",
+                "parent": null
+              },
+              "signature": "ff962874e2e767fca1af43a06daf4549ee925572ab9b96cf518fa9cebdd1218d"
+            },
+            {
+              "code": "14160",
+              "semantic": {
+                "name": "Abziehbare Vorsteuer nach § 13b UStG 19 %",
+                "function": "S",
+                "range_start": "14160",
+                "range_end": "14160",
+                "parent": null
+              },
+              "signature": "05ca1b7d19611a85a4b3d845db793cccd1b3030c79864294c0c00fcb7c0e41cf"
+            },
+            {
+              "code": "14200",
+              "semantic": {
+                "name": "Abziehbare Vorsteuer aus innergemeinschaftlichem Erwerb",
+                "function": "S",
+                "range_start": "14200",
+                "range_end": "14200",
+                "parent": null
+              },
+              "signature": "351d59089220eae723e9c16b2f06442f31a15dba22ee39b78086ade109252f15"
+            },
+            {
+              "code": "14260",
+              "semantic": {
+                "name": "Abziehbare Vorsteuer aus innergemeinschaftlichem Erwerb 19 %",
+                "function": "S",
+                "range_start": "14260",
+                "range_end": "14260",
+                "parent": null
+              },
+              "signature": "6135c5b909a944b5c388f0b27753fae81f4b953d099d93a9ce0a2bfe742cd1cb"
+            },
+            {
+              "code": "14290",
+              "semantic": {
+                "name": "Abziehbare Vorsteuer aus innergemeinschaftlichem Erwerb von Neufahrzeugen von Lieferanten ohne Umsatzsteuer-Identifikationsnummer",
+                "function": "S",
+                "range_start": "14290",
+                "range_end": "14290",
+                "parent": null
+              },
+              "signature": "215495d794e08d54b226fe8886abc1983ec47796bccd17e1b0c2ffbf97cdd389"
+            },
+            {
+              "code": "14300",
+              "semantic": {
+                "name": "Aufzuteilende Vorsteuer",
+                "function": "S",
+                "range_start": "14300",
+                "range_end": "14300",
+                "parent": null
+              },
+              "signature": "5a8354e5ff6f2328a382737c4f9acb473448866cd4af6abc841d5c6301930f7e"
+            },
+            {
+              "code": "14310",
+              "semantic": {
+                "name": "Aufzuteilende Vorsteuer 7 %",
+                "function": "S",
+                "range_start": "14310",
+                "range_end": "14310",
+                "parent": null
+              },
+              "signature": "c3fae62b7c17eb2dc4b5a0f92dbbfbe4f6e24ae8b487866ff27539e4bee4ad94"
+            },
+            {
+              "code": "14360",
+              "semantic": {
+                "name": "Aufzuteilende Vorsteuer 19 %",
+                "function": "S",
+                "range_start": "14360",
+                "range_end": "14360",
+                "parent": null
+              },
+              "signature": "f86507e2bda33a394aeeff048c441f4ee0d974118a8b1a2422195e9cd4fa4828"
+            },
+            {
+              "code": "14400",
+              "semantic": {
+                "name": "Aufzuteilende Vorsteuer nach §§ 13a und 13b UStG",
+                "function": "S",
+                "range_start": "14400",
+                "range_end": "14400",
+                "parent": null
+              },
+              "signature": "54c5f7833d2001550df9d25b53f5694ebd4c00fac43b20dbc5e97094f32b6ea3"
+            },
+            {
+              "code": "14460",
+              "semantic": {
+                "name": "Aufzuteilende Vorsteuer nach §§ 13a und 13b UStG 19 %",
+                "function": "S",
+                "range_start": "14460",
+                "range_end": "14460",
+                "parent": null
+              },
+              "signature": "f1f94302670840001640306a864a0a26e735a7e17708e834b4ac6320e61db852"
+            },
+            {
+              "code": "14500",
+              "semantic": {
+                "name": "Aufzuteilende Vorsteuer aus innergemeinschaftlichem Erwerb",
+                "function": "S",
+                "range_start": "14500",
+                "range_end": "14500",
+                "parent": null
+              },
+              "signature": "c9e369b595adff108c2c2b2e84e6356f652feb6a6ac94fda50ce8ef780a5f5cf"
+            },
+            {
+              "code": "14560",
+              "semantic": {
+                "name": "Aufzuteilende Vorsteuer aus innergemeinschaftlichem Erwerb 19 %",
+                "function": "S",
+                "range_start": "14560",
+                "range_end": "14560",
+                "parent": null
+              },
+              "signature": "3e7acbcbbac6f0f07fcdd497b953492c0e06b033e46d0d34c49604549de614ed"
+            },
+            {
+              "code": "14590",
+              "semantic": {
+                "name": "Vorsteuer aus Erwerb als letzter Abnehmer innerhalb eines Dreiecksgeschäfts",
+                "function": "S",
+                "range_start": "14590",
+                "range_end": "14590",
+                "parent": null
+              },
+              "signature": "b25f269b15dcbb6c622c0c38ac8bd8e22c2632587ba2bd50815cdabe5192d1a0"
+            },
+            {
+              "code": "14640",
+              "semantic": {
+                "name": "Nachträglich abziehbare Vorsteuer nach § 15a Abs. 2 UStG",
+                "function": "F",
+                "range_start": "14640",
+                "range_end": "14640",
+                "parent": null
+              },
+              "signature": "9f7ee9b0c7a9c10552bbdbe36e688fc0efc9661e3f0ca40e0c76888d104a25c5"
+            },
+            {
+              "code": "14700",
+              "semantic": {
+                "name": "Nachträglich abziehbare Vorsteuer nach § 15a Abs. 1 UStG, bewegliche Wirtschaftsgüter",
+                "function": "F",
+                "range_start": "14700",
+                "range_end": "14700",
+                "parent": null
+              },
+              "signature": "eb40593ef71c429a34226505535dca6c9ce84b91a829be624484bb24b10fe3df"
+            },
+            {
+              "code": "14710",
+              "semantic": {
+                "name": "Nachträglich abziehbare Vorsteuer nach § 15a Abs. 1 UStG, unbewegliche Wirtschaftsgüter",
+                "function": "F",
+                "range_start": "14710",
+                "range_end": "14710",
+                "parent": null
+              },
+              "signature": "34523e845d44ea2292b554e3e0c92e38743321dd151e0abccd60a6d85213497e"
+            },
+            {
+              "code": "14720",
+              "semantic": {
+                "name": "Zurückzuzahlende Vorsteuer nach § 15a Abs. 1 UStG, bewegliche Wirtschaftsgüter",
+                "function": "F",
+                "range_start": "14720",
+                "range_end": "14720",
+                "parent": null
+              },
+              "signature": "9d5c4da7f9cf8e2c86a4a0d90b5fe84cc9880fb88a66a754261a60f39fb37ed4"
+            },
+            {
+              "code": "14730",
+              "semantic": {
+                "name": "Zurückzuzahlende Vorsteuer nach § 15a Abs. 1 UStG, unbewegliche Wirtschaftsgüter",
+                "function": "F",
+                "range_start": "14730",
+                "range_end": "14730",
+                "parent": null
+              },
+              "signature": "8494aad2628845b0da861bfabe52987d823d4438c457c75ba65c2820e173fe9b"
+            },
+            {
+              "code": "14740",
+              "semantic": {
+                "name": "Zurückzuzahlende Vorsteuer nach § 15a Abs. 2 UStG",
+                "function": "F",
+                "range_start": "14740",
+                "range_end": "14740",
+                "parent": null
+              },
+              "signature": "8eccb5c03f64c7b212ac44c4b26f230b3210c24e50d7d31709691c290198a0c2"
+            },
+            {
+              "code": "14800",
+              "semantic": {
+                "name": "Abziehbare Vorsteuer aus der Auslagerung von Gegenständen aus einem Umsatzsteuerlager",
+                "function": "S",
+                "range_start": "14800",
+                "range_end": "14800",
+                "parent": null
+              },
+              "signature": "fd266e404458e16cb6d47447aeb1cf7a0a4ca8beb48e75409d0bc7eaa9605c3b"
+            },
+            {
+              "code": "14810",
+              "semantic": {
+                "name": "Entstandene Einfuhrumsatzsteuer",
+                "function": "F",
+                "range_start": "14810",
+                "range_end": "14810",
+                "parent": null
+              },
+              "signature": "351754b9f4e3b42342962436ad09a71ae9436b05dadd4522e0245214d837921b"
+            },
+            {
+              "code": "14870",
+              "semantic": {
+                "name": "Vorsteuer nach allgemeinen Durchschnittssätzen",
+                "function": "F",
+                "range_start": "14870",
+                "range_end": "14870",
+                "parent": null
+              },
+              "signature": "13f313a2af7dfb4c24c6d81288b7b16db24d44f92b5a08e002b35f19c63ca2e4"
+            }
+          ]
+        },
+        {
+          "purpose": "vat-r23-output@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.theroffTax.vat",
+          "choices": [
+            "bs.eqLiab.liab.other.theroffTax.vat"
+          ],
+          "conditional": true,
+          "condition": "vat_clearing_zero",
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "38100",
+              "semantic": {
+                "name": "Umsatzsteuer nach § 13b UStG",
+                "function": "S",
+                "range_start": "38100",
+                "range_end": "38100",
+                "parent": null
+              },
+              "signature": "e053de5e38409108e30357a5428efe96e33d31761d4c640e500785822023f461"
+            },
+            {
+              "code": "38160",
+              "semantic": {
+                "name": "Umsatzsteuer nach § 13b UStG 19 %",
+                "function": "S",
+                "range_start": "38160",
+                "range_end": "38160",
+                "parent": null
+              },
+              "signature": "03a536e36137e704ecd47bda17dda816e7218d0a2c8e85feae0ab1d00847c31a"
+            },
+            {
+              "code": "38400",
+              "semantic": {
+                "name": "Umsatzsteuer-Vorauszahlungen",
+                "function": "F",
+                "range_start": "38400",
+                "range_end": "38400",
+                "parent": null
+              },
+              "signature": "1a54871270aff0f445c4650f1d077467ae948542b5d5cb512a92237db8d3030c"
+            },
+            {
+              "code": "38410",
+              "semantic": {
+                "name": "Umsatzsteuer-Vorauszahlungen 1/11",
+                "function": "F",
+                "range_start": "38410",
+                "range_end": "38410",
+                "parent": null
+              },
+              "signature": "a9bbf337959b7b8903cc399c494714a9489b75056ec74daf9b29e6704e0995fc"
+            },
+            {
+              "code": "38420",
+              "semantic": {
+                "name": "Umsatzsteuer laufendes Jahr",
+                "function": "",
+                "range_start": "38420",
+                "range_end": "38420",
+                "parent": null
+              },
+              "signature": "4d0ce238fb1eaca4910e9fd1de3bd8982d74ecb9956abed4c8cde026be46ad36"
+            },
+            {
+              "code": "38450",
+              "semantic": {
+                "name": "Umsatzsteuer in Folgeperiode fällig (§§ 13 Abs. 1 Nr. 6 und 13b Abs. 2 UStG)",
+                "function": "S",
+                "range_start": "38450",
+                "range_end": "38450",
+                "parent": null
+              },
+              "signature": "9960940503704dac406ef22c5ad6b80190477af48c06dc96c6f447778b61efcf"
+            },
+            {
+              "code": "38500",
+              "semantic": {
+                "name": "Umsatzsteuer aus innergemeinschaftlichem Erwerb",
+                "function": "S",
+                "range_start": "38500",
+                "range_end": "38500",
+                "parent": null
+              },
+              "signature": "49e2bf9aaa6bb7267688f25a94ebd3bc5959d286a3b91ff697c0e3144e835fbe"
+            },
+            {
+              "code": "38510",
+              "semantic": {
+                "name": "Umsatzsteuer aus innergemeinschaftlichem Erwerb ohne Vorsteuerabzug",
+                "function": "S",
+                "range_start": "38510",
+                "range_end": "38510",
+                "parent": null
+              },
+              "signature": "d412e457f9018e76d381815fa2a3f2f1187dfda7431f184648d9628669812c06"
+            },
+            {
+              "code": "38560",
+              "semantic": {
+                "name": "Umsatzsteuer aus innergemeinschaftlichem Erwerb 19 %",
+                "function": "S",
+                "range_start": "38560",
+                "range_end": "38560",
+                "parent": null
+              },
+              "signature": "b5874989d3f68417930f7ac961003f9ab4b056e4a47ee4f04f45120182ff9c41"
+            },
+            {
+              "code": "38570",
+              "semantic": {
+                "name": "Umsatzsteuer aus Erwerb als letzter Abnehmer innerhalb eines Dreiecksgeschäfts",
+                "function": "S",
+                "range_start": "38570",
+                "range_end": "38570",
+                "parent": null
+              },
+              "signature": "d0a6ad84a13d88c3957ec00b49d339220d1e6bec4fe3200d061636e7c0760234"
+            },
+            {
+              "code": "38580",
+              "semantic": {
+                "name": "Umsatzsteuer aus innergemeinschaftlichem Erwerb von Neufahrzeugen von Lieferanten ohne Umsatzsteuer-Identifikationsnummer",
+                "function": "S",
+                "range_start": "38580",
+                "range_end": "38580",
+                "parent": null
+              },
+              "signature": "644c5921377007e03136fd72e6544da9e25f635b2e9a051e16c74c8cfb236d00"
+            },
+            {
+              "code": "38600",
+              "semantic": {
+                "name": "Umsatzsteuer aus der Auslagerung von Gegenständen aus einem Umsatzsteuerlager11)",
+                "function": "S",
+                "range_start": "38600",
+                "range_end": "38600",
+                "parent": null
+              },
+              "signature": "cb60746db8182c6a0e68c3bd96bc3c4a4a72e33c425f522d2542a3363da31926"
+            },
+            {
+              "code": "38610",
+              "semantic": {
+                "name": "Umsatzsteuer aus im Inland steuerpflichtigen EU-Lieferungen",
+                "function": "S",
+                "range_start": "38610",
+                "range_end": "38610",
+                "parent": null
+              },
+              "signature": "3c0bcfac8ee53cab026589b0288cd6502ec55e2ed787c578d73c8c22fe626f8f"
+            },
+            {
+              "code": "38660",
+              "semantic": {
+                "name": "Umsatzsteuer aus im Inland steuerpflichtigen EU-Lieferungen 19 %",
+                "function": "S",
+                "range_start": "38660",
+                "range_end": "38660",
+                "parent": null
+              },
+              "signature": "1e0eacc3ebf4e83ea05d41c13100cf8a2cec928c6d582e91188ffbac3b569412"
+            },
+            {
+              "code": "38700",
+              "semantic": {
+                "name": "Nachsteuer, UStVA Kz. 65",
+                "function": "F",
+                "range_start": "38700",
+                "range_end": "38700",
+                "parent": null
+              },
+              "signature": "43b6b3d0fc855bacc69223f64158814505cc53b0d195b7a101d19e12f2a5d083"
+            },
+            {
+              "code": "38720",
+              "semantic": {
+                "name": "In Rechnung unrichtig oder unberechtigt ausgewiesene Steuerbeträge, UStVA Kz. 69",
+                "function": "F",
+                "range_start": "38720",
+                "range_end": "38720",
+                "parent": null
+              },
+              "signature": "0766765217ed426e608529b1cb9cc462504dd42c4b73334b2acaf8c04ca758a5"
+            }
+          ]
+        },
+        {
+          "purpose": "vat-r23-future-input@1",
+          "group": "other_assets",
+          "target": "bs.ass.currAss.receiv.other.vat",
+          "choices": [
+            "bs.ass.currAss.receiv.other.vat"
+          ],
+          "conditional": false,
+          "condition": null,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "14820",
+              "semantic": {
+                "name": "Vorsteuer in Folgeperiode / im Folgejahr abziehbar",
+                "function": "S",
+                "range_start": "14820",
+                "range_end": "14820",
+                "parent": null
+              },
+              "signature": "2372276b09fad4fae7a20ddf911206392108ad0db1a845be1d6817036350d05b"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

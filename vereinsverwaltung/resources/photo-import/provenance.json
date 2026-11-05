@@ -1,0 +1,245 @@
+{
+  "schema": 1,
+  "components": [
+    "libraw-wasm-nothread 1.6.0-nothread.1 / LibRaw 0.22.1",
+    "Little CMS 2.19.1",
+    "Emscripten 6.0.10 ports: libjpeg 9f, libpng 1.6.58, zlib 1.3.2",
+    "libheif-js 1.23.5 / libheif 413e2a87e6a70b3eccc3a3adc5801179dd2d9e00 / libde265 1.0.15"
+  ],
+  "changes": "Only local worker/wasm asset names are adjusted in the LibRaw JavaScript; no decoder binary changes. Corresponding decoder sources, build wrapper, licence texts and pinned npm metadata are included.",
+  "npm_original_members": [
+    {
+      "file": "photo-libraw.mjs",
+      "npm_member": "package/dist/index.js",
+      "original_sha256": "3eb710aa5473c58c3b9dec74457b2ad2095d15b9a6df0056c96a3a011b720ca6"
+    },
+    {
+      "file": "photo-libraw-worker.js",
+      "npm_member": "package/dist/worker.js",
+      "original_sha256": "f0bd51a370b6a9bf2b1854bb993b96aaf2c31e0eaef01e6cac043c5b1e35cc57"
+    },
+    {
+      "file": "photo-libraw.wasm",
+      "npm_member": "package/dist/libraw.wasm",
+      "original_sha256": "952ad840b341a420d0433979820917bca3716c3d51eefd091c7a1011c84995f4"
+    },
+    {
+      "file": "photo-libheif.js",
+      "npm_member": "package/libheif-wasm/libheif-bundle.js",
+      "original_sha256": "074b2b55ef3de477ba9f794ca381f3f0324c1cba8c91b4af07395f39c22d54cc"
+    }
+  ],
+  "files": [
+    {
+      "file": "LICENSE-lcms.txt",
+      "sha256": "6dbd60437f8ef91d8de1f08ad75882547fd4931bfcc3566a0735f28db1484d31",
+      "bytes": 1080
+    },
+    {
+      "file": "LICENSE-libheif-bundle.txt",
+      "sha256": "fa81ce652315b013359d6e8e4744335f31a50c7c192907176d3632f78a3b4596",
+      "bytes": 44366
+    },
+    {
+      "file": "LICENSE-libheif-js.txt",
+      "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118",
+      "bytes": 7652
+    },
+    {
+      "file": "LICENSE-libjpeg.txt",
+      "sha256": "7c25493a9f64fed34d01445467341bda77bc1cdbeccbe33558659ef173fb9ff2",
+      "bytes": 18719
+    },
+    {
+      "file": "LICENSE-libpng.txt",
+      "sha256": "bdb0a645ea18c60507d0368379b1ac5474b92255fcc2d115e07486a7672ba526",
+      "bytes": 5345
+    },
+    {
+      "file": "LICENSE-libraw-wrapper.txt",
+      "sha256": "89ed72df6b5aadc6a6db4a0e45dd4e06602c4b56173d299f36064b3d9b2abff2",
+      "bytes": 1271
+    },
+    {
+      "file": "LICENSE-zlib.txt",
+      "sha256": "e32ff4e00d9d94930537635291da39e7e612703334bf6fde8c7f1686fe8a45a2",
+      "bytes": 1002
+    },
+    {
+      "file": "README.md",
+      "sha256": "c6c5df2d9dedb7c7ce56c38b8fec8cb6bcf1e965d21a078dea7f45eb7304700d",
+      "bytes": 3624
+    },
+    {
+      "file": "lcms-source.tar.gz",
+      "sha256": "267705e278e2f7c2fb886c259dadcbaeb2be52748bcbc71c79f08aacacb7a709",
+      "bytes": 5731108,
+      "url": "https://codeload.github.com/mm2/Little-CMS/tar.gz/refs/tags/lcms2.19.1"
+    },
+    {
+      "file": "libde265-source.tar.gz",
+      "sha256": "d4e55706dfc5b2c5c9702940b675ce2d3e7511025c6894eaddcdbaf0b15fd3f3",
+      "bytes": 438453,
+      "url": "https://codeload.github.com/strukturag/libde265/tar.gz/refs/tags/v1.0.15"
+    },
+    {
+      "file": "libheif-build-source.tar.gz",
+      "sha256": "5e524ec5746bb0676c5865c9ce76d40cee871def4a9d437d0a96595830cd235a",
+      "bytes": 3122,
+      "url": "https://codeload.github.com/catdad-experiments/libheif-emscripten/tar.gz/5c8968a44e9c68ae677e24790d77d001ed7fe7cc"
+    },
+    {
+      "file": "libheif-decoder-source.tar.gz",
+      "sha256": "ef8e86a4e5670b7338a58b17553e306b8be88e506587b265dfdfe44495896999",
+      "bytes": 2220554,
+      "url": "https://codeload.github.com/strukturag/libheif/tar.gz/413e2a87e6a70b3eccc3a3adc5801179dd2d9e00"
+    },
+    {
+      "file": "libheif-npm-package.json",
+      "sha256": "77031d14897722f09e53141305b0206af7953cbbbca1341c3d5a4728b944a713",
+      "bytes": 3010
+    },
+    {
+      "file": "libheif-source.tar.gz",
+      "sha256": "db9c0c25b15c5c351ac5b045b01009cc446f5712091300656902f9e40a2934db",
+      "bytes": 10267,
+      "url": "https://codeload.github.com/catdad-experiments/libheif-js/tar.gz/d8ec4bc3bc5bf8055975577bccbbc7e1d7313c2d"
+    },
+    {
+      "file": "libjpeg-source.tar.gz",
+      "sha256": "04705c110cb2469caa79fb71fba3d7bf834914706e9641a4589485c1f832565b",
+      "bytes": 1081470,
+      "url": "https://storage.googleapis.com/webassembly/emscripten-ports/jpegsrc.v9f.tar.gz"
+    },
+    {
+      "file": "libpng-source.tar.gz",
+      "sha256": "8c9b05b675ca7301a458df2c2e46f26e1d41ff36b8863f8c33530bc58c2e6225",
+      "bytes": 1582074,
+      "url": "https://storage.googleapis.com/webassembly/emscripten-ports/libpng-1.6.58.tar.gz"
+    },
+    {
+      "file": "libraw-COPYRIGHT.txt",
+      "sha256": "574c88f5dd59414cfc896293a63defbc2d525a418ed413d7ab7dcc43cf79c509",
+      "bytes": 1153
+    },
+    {
+      "file": "libraw-LICENSE.CDDL.txt",
+      "sha256": "0e3098d2d54a12434715f6679ea408d57da5e8d613c385c58ecc6fe5d30cc81f",
+      "bytes": 16906
+    },
+    {
+      "file": "libraw-LICENSE.LGPL.txt",
+      "sha256": "eea173a556abac0370461e57e12aab266894ea6be3874c2be05fd87871f75449",
+      "bytes": 24389
+    },
+    {
+      "file": "libraw-npm-package.json",
+      "sha256": "0fec085806fc025776d845c6bc40714787d74d9c2ca16de08f25fb71fee25193",
+      "bytes": 2477
+    },
+    {
+      "file": "libraw-source.tar.gz",
+      "sha256": "e676248284075605aa2697a66eeed7dc258820bd1d4988c724d29edffd726726",
+      "bytes": 604601,
+      "url": "https://codeload.github.com/LibRaw/LibRaw/tar.gz/refs/tags/0.22.1"
+    },
+    {
+      "file": "photo-libheif.js",
+      "sha256": "074b2b55ef3de477ba9f794ca381f3f0324c1cba8c91b4af07395f39c22d54cc",
+      "bytes": 2044206
+    },
+    {
+      "file": "photo-libraw-worker.js",
+      "sha256": "cd04fd885ac2b4a568f88d25939624250ac2494f0d2ad011bede93fdb46b8585",
+      "bytes": 63694
+    },
+    {
+      "file": "photo-libraw.mjs",
+      "sha256": "618abd8e5061253a30fed30f2d45d3a41c02142cde85253a1a395cb77912a66e",
+      "bytes": 1570
+    },
+    {
+      "file": "photo-libraw.wasm",
+      "sha256": "952ad840b341a420d0433979820917bca3716c3d51eefd091c7a1011c84995f4",
+      "bytes": 1385126
+    },
+    {
+      "file": "source-emscripten-libjpeg.py",
+      "sha256": "717c363a434da21b5eadae16550dc2a9e27343285e434ff711f2765a39cda05f",
+      "bytes": 1728,
+      "url": "https://raw.githubusercontent.com/emscripten-core/emscripten/6.0.10/tools/ports/libjpeg.py"
+    },
+    {
+      "file": "source-emscripten-libpng.py",
+      "sha256": "d467c233f7c242f0108e136481b2d4a54898efb344fe06da95c9d4bf75553707",
+      "bytes": 2480,
+      "url": "https://raw.githubusercontent.com/emscripten-core/emscripten/6.0.10/tools/ports/libpng.py"
+    },
+    {
+      "file": "source-emscripten-zlib.py",
+      "sha256": "2e744c843aecb320cbc005abb980d0cc264cf87791db25624d17dcd712a9c411",
+      "bytes": 1505,
+      "url": "https://raw.githubusercontent.com/emscripten-core/emscripten/6.0.10/tools/ports/zlib.py"
+    },
+    {
+      "file": "source-raw-.github-workflows-build-artifacts.yml",
+      "sha256": "e9148e351ba138f5bf008c5165963cce547d79a8de71d945e90931a0a9cf5c80",
+      "bytes": 2813,
+      "url": "https://raw.githubusercontent.com/garbarok/libraw-wasm-nothread/d03be9f0eb0efda42e807a87045b4ac18ad8ca98/.github/workflows/build-artifacts.yml"
+    },
+    {
+      "file": "source-raw-build.js",
+      "sha256": "e629673b3fbbfc9d2ed7a7e5568577ad98c6b19be8c88d35b647b4dfd70ed73e",
+      "bytes": 1020,
+      "url": "https://raw.githubusercontent.com/garbarok/libraw-wasm-nothread/d03be9f0eb0efda42e807a87045b4ac18ad8ca98/build.js"
+    },
+    {
+      "file": "source-raw-compileLibraw.sh",
+      "sha256": "22234ec646a08d4ed4c242017ff886946f2433022648b41933a910f488e6fb05",
+      "bytes": 7218,
+      "url": "https://raw.githubusercontent.com/garbarok/libraw-wasm-nothread/d03be9f0eb0efda42e807a87045b4ac18ad8ca98/compileLibraw.sh"
+    },
+    {
+      "file": "source-raw-index.js",
+      "sha256": "cdbbdddd953b89c41942cf42f4764c786a9b35a00c25d7500c5c2e2fc080b0c7",
+      "bytes": 3082,
+      "url": "https://raw.githubusercontent.com/garbarok/libraw-wasm-nothread/d03be9f0eb0efda42e807a87045b4ac18ad8ca98/index.js"
+    },
+    {
+      "file": "source-raw-libraw_wrapper.cpp",
+      "sha256": "695574c35214d13fa3d5f17aa8b7b7a51443e266899dbc8e4c7c4e64283117de",
+      "bytes": 54478,
+      "url": "https://raw.githubusercontent.com/garbarok/libraw-wasm-nothread/d03be9f0eb0efda42e807a87045b4ac18ad8ca98/libraw_wrapper.cpp"
+    },
+    {
+      "file": "source-raw-makefile",
+      "sha256": "ebdc5f83243c22b792971b7336139d54ebff625d66a86c3b80dbca07c0a35d73",
+      "bytes": 281,
+      "url": "https://raw.githubusercontent.com/garbarok/libraw-wasm-nothread/d03be9f0eb0efda42e807a87045b4ac18ad8ca98/makefile"
+    },
+    {
+      "file": "source-raw-package.json",
+      "sha256": "607395667789a4a64069bc364a923baf54f1bc9acd35fc18c017eccb11fbc093",
+      "bytes": 1152,
+      "url": "https://raw.githubusercontent.com/garbarok/libraw-wasm-nothread/d03be9f0eb0efda42e807a87045b4ac18ad8ca98/package.json"
+    },
+    {
+      "file": "source-raw-readme.md",
+      "sha256": "1804baafea1d078a8a186851a56ed95289f95836baea236d152a8ab94af23b47",
+      "bytes": 8694,
+      "url": "https://raw.githubusercontent.com/garbarok/libraw-wasm-nothread/d03be9f0eb0efda42e807a87045b4ac18ad8ca98/readme.md"
+    },
+    {
+      "file": "source-raw-worker.js",
+      "sha256": "f30239e3604a11a7bf7e415853e4a4a3688e99110e96974289667847b63f57f7",
+      "bytes": 739,
+      "url": "https://raw.githubusercontent.com/garbarok/libraw-wasm-nothread/d03be9f0eb0efda42e807a87045b4ac18ad8ca98/worker.js"
+    },
+    {
+      "file": "zlib-source.tar.gz",
+      "sha256": "b99a0b86c0ba9360ec7e78c4f1e43b1cbdf1e6936c8fa0f6835c0cd694a495a1",
+      "bytes": 1566911,
+      "url": "https://codeload.github.com/madler/zlib/tar.gz/refs/tags/v1.3.2"
+    }
+  ]
+}

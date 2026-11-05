@@ -1,0 +1,168 @@
+{
+  "schema": 1,
+  "revision": 57,
+  "production_authorized": false,
+  "source_kind": "explicit_original_loan_relationship_borrower_profile_and_reporter_legal_form",
+  "legal_basis": [
+    "https://www.gesetze-im-internet.de/gmbhg/__42.html",
+    "https://www.gesetze-im-internet.de/hgb/__266.html"
+  ],
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "shareholder-loans-r57-09600@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.loansToSharehold.misc",
+          "choices": [
+            "bs.ass.fixAss.fin.loansToSharehold.misc"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "09600",
+              "semantic": {
+                "name": "Ausleihungen an Gesellschafter",
+                "function": "",
+                "range_start": "09600",
+                "range_end": "09600",
+                "parent": null
+              },
+              "signature": "6f08417f5ca3cb6047184c4c0a91e0481887ac732840e285837f4b27a1dd1836"
+            }
+          ]
+        },
+        {
+          "purpose": "shareholder-loans-r57-09610@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.loansToSharehold.gmbh",
+          "choices": [
+            "bs.ass.fixAss.fin.loansToSharehold.gmbh"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "09610",
+              "semantic": {
+                "name": "Ausleihungen an GmbH-Gesellschafter",
+                "function": "",
+                "range_start": "09610",
+                "range_end": "09610",
+                "parent": null
+              },
+              "signature": "d4a77e32cd0a83937efd48e29ee6be7ca3fad92abfe3c1760715b099551a1175"
+            }
+          ]
+        },
+        {
+          "purpose": "shareholder-loans-r57-09700@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.otherLoans.other",
+          "choices": [
+            "bs.ass.fixAss.fin.otherLoans.other"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "09700",
+              "semantic": {
+                "name": "Ausleihungen an nahe stehende Personen",
+                "function": "",
+                "range_start": "09700",
+                "range_end": "09700",
+                "parent": null
+              },
+              "signature": "005f3128ad846e5c22c303b626f5075d4422889234a056904c8e8cd901261be5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "shareholder-loans-r57-09600@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.loansToSharehold.misc",
+          "choices": [
+            "bs.ass.fixAss.fin.loansToSharehold.misc"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "09600",
+              "semantic": {
+                "name": "Ausleihungen an Gesellschafter",
+                "function": "",
+                "range_start": "09600",
+                "range_end": "09600",
+                "parent": null
+              },
+              "signature": "6f08417f5ca3cb6047184c4c0a91e0481887ac732840e285837f4b27a1dd1836"
+            }
+          ]
+        },
+        {
+          "purpose": "shareholder-loans-r57-09610@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.loansToSharehold.gmbh",
+          "choices": [
+            "bs.ass.fixAss.fin.loansToSharehold.gmbh"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "09610",
+              "semantic": {
+                "name": "Ausleihungen an GmbH-Gesellschafter",
+                "function": "",
+                "range_start": "09610",
+                "range_end": "09610",
+                "parent": null
+              },
+              "signature": "d4a77e32cd0a83937efd48e29ee6be7ca3fad92abfe3c1760715b099551a1175"
+            }
+          ]
+        },
+        {
+          "purpose": "shareholder-loans-r57-09700@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.fin.otherLoans.other",
+          "choices": [
+            "bs.ass.fixAss.fin.otherLoans.other"
+          ],
+          "conditional": true,
+          "sources": [
+            {
+              "code": "09700",
+              "semantic": {
+                "name": "Ausleihungen an nahestehende Personen",
+                "function": "",
+                "range_start": "09700",
+                "range_end": "09700",
+                "parent": null
+              },
+              "signature": "005f3128ad846e5c22c303b626f5075d4422889234a056904c8e8cd901261be5"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

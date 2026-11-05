@@ -1,0 +1,17 @@
+/* Website design is the shared visual source for manager controls and dialogs. */
+body[data-brand]:not([data-brand=""]){--orange:var(--brand-primary);--nav:var(--brand-primary);--nav-deep:color-mix(in srgb,var(--brand-primary),black 35%)}
+body[data-brand=kultur]{--brand-primary:#245640}
+body[data-brand=sport]{--brand-primary:#124fd1}
+body[data-brand=reit]{--brand-primary:#6a543a}
+body[data-brand=hund]{--brand-primary:#167b78}
+body[data-brand=musik]{--brand-primary:#5a3da0}
+body[data-brand=feuerwehr]{--brand-primary:#bd3030}
+body[data-brand=natur]{--brand-primary:#34734f}
+body[data-brand=bildung]{--brand-primary:#286da6}
+body[data-brand]:not([data-brand=""]) button:not(.secondary):not(.danger):not(.text-button):not(.icon-button),body[data-brand]:not([data-brand=""]) .button:not(.secondary):not(.danger){color:white}
+body[data-brand]:not([data-brand=""]) .brand-mark{background:color-mix(in srgb,var(--brand-primary),white 15%);color:white}
+body[data-brand]:not([data-brand=""]) dialog.kh-dialog{border-top:5px solid var(--brand-primary)}
+body[data-brand]:not([data-brand=""]) dialog.kh-dialog :focus-visible{outline-color:var(--brand-primary)}
+body[data-brand]:not([data-brand=""]) .sidebar .subnav a:hover,body[data-brand]:not([data-brand=""]) .sidebar .subnav a[aria-current]{color:white;background:color-mix(in srgb,var(--brand-primary),black 35%)}
+body[data-brand]:not([data-brand=""]) .module-tabs a[aria-current]{color:var(--brand-primary)}
+body[data-brand]:not([data-brand=""]) .native-newsletter .kh-builder-sidebar button,body[data-brand]:not([data-brand=""]) .native-newsletter .kh-builder-toolbar button,body[data-brand]:not([data-brand=""]) .native-newsletter .kh-builder-block-controls button{color:#173b2e}

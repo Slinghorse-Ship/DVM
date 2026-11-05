@@ -1,0 +1,140 @@
+{
+  "schema": 1,
+  "revision": 66,
+  "production_authorized": false,
+  "primary_legacy_reference": "https://www.gesetze-im-internet.de/hgbeg/art_67.html",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "special-post-r66-29840@1",
+          "group": "deferred",
+          "target": "bs.eqLiab.otherSpecRes.other.other",
+          "sources": [
+            {
+              "code": "29840",
+              "semantic": {
+                "name": "Sonderposten mit Rücklageanteil, Sonderabschreibungen6)",
+                "function": "",
+                "range_start": "29840",
+                "range_end": "29840",
+                "parent": null
+              },
+              "signature": "fd1e09beaea345c9e33fb4178ed1219c471ece409024e00e110fcf0bd2ecdff6"
+            }
+          ]
+        },
+        {
+          "purpose": "special-post-r66-29860@1",
+          "group": "deferred",
+          "target": "bs.eqLiab.otherSpecRes.other.other",
+          "sources": [
+            {
+              "code": "29860",
+              "semantic": {
+                "name": "Sonderposten mit Rücklageanteil nach § 7g Abs. 5 EStG",
+                "function": "",
+                "range_start": "29860",
+                "range_end": "29860",
+                "parent": null
+              },
+              "signature": "3358161985e5766234d14b11193689793e1277665285e63b6676b3aaddacf147"
+            }
+          ]
+        },
+        {
+          "purpose": "special-post-r66-29870@1",
+          "group": "deferred",
+          "target": "bs.eqLiab.otherSpecRes.subsidies",
+          "sources": [
+            {
+              "code": "29870",
+              "semantic": {
+                "name": "Sonderposten für Investitionszulagen",
+                "function": "",
+                "range_start": "29870",
+                "range_end": "29870",
+                "parent": null
+              },
+              "signature": "fb275fb3fc74a2119a29e2558b5d80f4d262365525995f21551e8d9f99ea1ac5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "special-post-r66-29840@1",
+          "group": "deferred",
+          "target": "bs.eqLiab.otherSpecRes.other.other",
+          "sources": [
+            {
+              "code": "29840",
+              "semantic": {
+                "name": "Sonderposten mit Rücklageanteil, Sonderabschreibungen6)",
+                "function": "",
+                "range_start": "29840",
+                "range_end": "29840",
+                "parent": null
+              },
+              "signature": "fd1e09beaea345c9e33fb4178ed1219c471ece409024e00e110fcf0bd2ecdff6"
+            }
+          ]
+        },
+        {
+          "purpose": "special-post-r66-29860@1",
+          "group": "deferred",
+          "target": "bs.eqLiab.otherSpecRes.other.other",
+          "sources": [
+            {
+              "code": "29860",
+              "semantic": {
+                "name": "Sonderposten mit Rücklageanteil nach § 7g Abs. 5 EStG",
+                "function": "",
+                "range_start": "29860",
+                "range_end": "29860",
+                "parent": null
+              },
+              "signature": "3358161985e5766234d14b11193689793e1277665285e63b6676b3aaddacf147"
+            }
+          ]
+        },
+        {
+          "purpose": "special-post-r66-29870@1",
+          "group": "deferred",
+          "target": "bs.eqLiab.otherSpecRes.subsidies",
+          "sources": [
+            {
+              "code": "29870",
+              "semantic": {
+                "name": "Sonderposten für Investitionszulagen",
+                "function": "",
+                "range_start": "29870",
+                "range_end": "29870",
+                "parent": null
+              },
+              "signature": "fb275fb3fc74a2119a29e2558b5d80f4d262365525995f21551e8d9f99ea1ac5"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

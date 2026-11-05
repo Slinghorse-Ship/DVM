@@ -1,0 +1,19 @@
+[data-debit-notice-native] {
+  font-size: 1rem;
+}
+
+[data-debit-notice-native] :is(label, button, input, select, textarea, p, dt, dd, a, span, small) {
+  font-size: inherit !important;
+}
+
+[data-debit-notice-native] h2 {
+  font-size: 1.25em !important;
+}
+
+[data-debit-notice-native] h3 {
+  font-size: 1.125em !important;
+}
+
+[data-debit-notice-native] h4 {
+  font-size: 1em !important;
+}

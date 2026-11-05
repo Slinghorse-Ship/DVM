@@ -1,0 +1,12 @@
+<?php declare(strict_types=1);
+if(PHP_SAPI!=='cli'||getenv('KH_NATIVE_CI')!=='1')throw new RuntimeException('Only explicitly owned synthetic memory fixture.');
+require dirname(__DIR__,2).'/native/bootstrap.php';
+use Kulturhus\Native\TestSupport;
+use Kulturhus\Native\Shared\Access;
+use Kulturhus\Native\Cms\MediaRecoveryInventory;
+$config=TestSupport::config();
+if(($config['owner']??'')!=='isolated-native-ci'||($config['label']??'')!=='native-media-recovery-catalogue')throw new RuntimeException('Own catalogue fixture required.');
+$root=dirname(getenv('KH_NATIVE_TEST_CONFIG')).'/runtime-'.$config['database'];$db=TestSupport::db();
+$inventory=new MediaRecoveryInventory($db,new Access($db,'own-catalogue-admin'),$root.'/media');$after='';$seen=[];$pages=0;
+do{$list=$inventory->listing($after);if(count($list['rows'])>6||(++$pages)>10)throw new RuntimeException('Bounded catalogue metadata required.');foreach($list['rows']as$row){if(isset($seen[$row['target_id']]))throw new RuntimeException('Distinct original targets required.');$seen[$row['target_id']]=true;}$after=$list['next_after'];}while($list['has_more']);
+echo json_encode(['pending_photos'=>count($seen),'pages'=>$pages,'peak'=>memory_get_peak_usage(true),'catalogue_writes'=>0],JSON_THROW_ON_ERROR);

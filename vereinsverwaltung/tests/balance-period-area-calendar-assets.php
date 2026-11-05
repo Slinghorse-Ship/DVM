@@ -1,0 +1,16 @@
+<?php declare(strict_types=1);
+require __DIR__.'/balance-period-asset-carry.php';
+require_once __DIR__.'/../src/Finance/Balance/BalancePeriodAreas.php';
+require __DIR__.'/fixtures/period-area-asset-chain.php';
+use Kulturhus\Verein\{BalanceSegments as CalendarAreas,BalanceSegmentCalculation as CalendarAllocation,BalanceCalendarAreaSource as CalendarAreaBridge};
+$base=$n;$n=0;
+$legacy=new CalendarAreas($db,'carry-admin');$units=['club'=>['name'=>'Synthetic actual activity','sphere'=>'1']];$report=$calendar->report(2025);
+$allocation=[];foreach(CalendarAllocation::sources($report) as $key=>$row)$allocation[$key]=['parts'=>['club'=>$row['cents']],'reason'=>'Synthetic single activity original'];$legacy->save(2025,0,$units,$allocation);
+foreach($report['asset_schedule']['items'] as $item=>$source)$legacy->asset(2025,$legacy->get(2025)['version'],$item,['club'=>1],'uses','Synthetic original use',true);
+$state=$legacy->get(2025);check($state['allocation']['complete'],'calendar asset activity complete');$legacy->confirm(2025,$state['version'],true,'Synthetic original calendar review');
+$bridge=(new CalendarAreaBridge($db,'carry-admin'))->current(2025);
+check(count($bridge['proof']['assets']['items'])===6,'calendar bridge retains original six assets including historical disposals');
+$before=[];foreach(['balance_years','balance_entries','balance_segment_reviews','asset_book_plans','asset_book_years'] as $table)$before[$table]=\Kulturhus\Verein\Tests\MySqlFixture::rows($db,$table);
+verifyAssetAreaChain($db,'carry-admin',$l,[$pid,$pid2],'1');
+foreach($before as $table=>$rows)check($rows===\Kulturhus\Verein\Tests\MySqlFixture::rows($db,$table),'dated asset activity never rewrites '.$table);
+echo "$n calendar asset activity checks passed plus $base original asset carry checks; synthetic MySQL only\n";

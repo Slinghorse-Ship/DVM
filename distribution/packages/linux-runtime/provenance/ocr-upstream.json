@@ -1,0 +1,19 @@
+[
+  {
+    "name": "tesseract-5.5.3.tar.gz",
+    "url": "https://codeload.github.com/tesseract-ocr/tesseract/tar.gz/refs/tags/5.5.3",
+    "sha256": "9218e62793116d42a9f6d14cd9348518b27f382096eea3d0f2d1a24616bb5884",
+    "size": 1916037
+  },
+  {
+    "name": "tesseract-5.5.3-windows.exe",
+    "url": "https://github.com/tesseract-ocr/tesseract/releases/download/5.5.3/tesseract-ocr-w64-setup-5.5.3.20260724.exe",
+    "sha256": "bee9e3434bd94fd65387d9be28cd467a41f61b1275383b55b0f59a1331270ae4",
+    "size": 26573224
+  },
+  {
+    "name": "pypdfium2-5.13.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+    "sha256": "81df25c1ab4c13ff773102d3cbea1967511d079123b067fc077bd0c4d57d91d8",
+    "size": 3730077
+  }
+]

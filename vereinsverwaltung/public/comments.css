@@ -1,0 +1,59 @@
+/* Native website conversations: short thread viewport, explicit replies and ordinary forms. */
+/* Native focus and details must not compete with the theme's animated page scroll. */
+html:has(.native-comments){scroll-behavior:auto}
+.native-public:has(.native-comments) .site-header{position:relative}
+.native-comments,.native-comment-admin{--comment-line:var(--border,#dfe6e3);--comment-surface:var(--card,#fff);--comment-soft:#f1f5f3;--comment-ink:var(--ink,#202e28);box-sizing:border-box;min-width:0;max-width:56rem;margin-inline:auto;color:var(--comment-ink);overflow-wrap:anywhere}
+.native-comments{padding:clamp(.75rem,3vw,2rem)}
+.native-comments *,.native-comment-admin *{box-sizing:border-box;min-width:0}
+.native-comments .comment-heading,.native-comment-admin .comment-heading{display:grid;gap:.75rem;margin-bottom:1rem}
+.native-comments .comment-heading h1,.native-comment-admin .comment-heading h2{margin:0;font-size:clamp(1.4rem,4vw,2rem)}
+.native-comments .comment-heading nav,.native-comment-admin .comment-heading nav,.comment-actions{display:flex;flex-wrap:wrap;gap:.5rem}
+.native-comments .btn,.native-comment-admin .btn,.native-comments summary,.native-comment-admin summary{min-height:46px;min-width:46px;white-space:normal;overflow-wrap:anywhere}
+.native-comments .btn,.native-comment-admin .btn{display:inline-flex;align-items:center;justify-content:center;padding:.65rem .85rem;text-align:center;text-decoration:none;line-height:1.35}
+.native-comments :is(input,textarea,select),.native-comment-admin :is(input:not([type=checkbox]),textarea,select){display:block;width:100%;max-width:100%;min-height:46px;border:1px solid var(--comment-line);border-radius:.6rem;padding:.65rem .75rem;background:var(--comment-surface);color:inherit;font:inherit}
+.native-comments textarea,.native-comment-admin textarea{resize:vertical}
+.native-comments label,.native-comment-admin label{display:grid;gap:.35rem;font-weight:600;margin:0 0 .75rem}
+.native-comments label span{font-size:.85em;font-weight:400}
+.native-comments summary,.native-comment-admin summary{padding:.65rem .25rem;cursor:pointer;font-weight:600}
+.native-comments :focus-visible,.native-comment-admin :focus-visible{outline:3px solid #215b9c;outline-offset:3px}
+.comment-list-heading{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.comment-list-heading p{margin:.5rem 0}
+.native-comments .comment-messages{list-style:none;margin:0;padding:.75rem;display:grid;align-content:start;gap:.75rem;max-height: min(58vh,34rem);max-height:min(58dvh,34rem);overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;background:var(--comment-soft);border:1px solid var(--comment-line);border-radius:1rem}
+.comment-message{border:1px solid var(--comment-line);border-radius:.9rem;background:var(--comment-surface);padding:1rem;max-width:100%;box-shadow:0 1px 2px #203f2d08}
+.comment-message header{display:flex;align-items:baseline;flex-wrap:wrap;gap:.35rem .7rem;margin-bottom:.6rem}
+.comment-message header strong{font-size:1em}
+.comment-message header span,.comment-message time{font-size:.8em;color:var(--muted,#53635b)}
+.comment-message time{margin-inline-start:auto}
+.comment-body{line-height:1.6}
+.comment-body>*{max-width:100%;margin:.5rem 0}
+.comment-body :is(h1,h2,h3,h4,h5,h6){font-size:1.08em;line-height:1.4}
+.comment-body :is(table,pre){display:block;max-width:100%;overflow:auto}
+.comment-body pre{padding:.7rem;background:var(--comment-soft);white-space:pre-wrap;overflow-wrap:anywhere}
+.comment-body :is(ul,ol){padding-inline-start:1.35rem}
+.comment-body a{overflow-wrap:anywhere}
+.comment-reply-context{border:0;border-inline-start:3px solid #46785e;padding:.45rem .75rem;margin:.4rem 0 .75rem;background:var(--comment-soft);border-radius:.3rem}
+.comment-reply-context p{margin:.3rem 0;font-size:.92em}
+.comment-reply-link{margin-top:.35rem;font-size:.9em}
+.comment-list-end{height:0;list-style:none}
+.comment-compose{margin-top:1rem;padding:1rem;border:1px solid var(--comment-line);border-radius:1rem;background:var(--comment-surface);scroll-margin-top:1rem}
+.comment-send{display:flex;align-items:flex-end;justify-content:space-between;gap:.75rem;flex-wrap:wrap}
+.comment-send details{flex:1 1 12rem}
+.comment-send button{flex:0 1 auto;min-width:7rem}
+.comment-alias{margin-bottom:.6rem}
+.comment-alias input[type=email]{font-weight:400}
+.comment-notice{border:1px solid #b9d6c6;border-radius:.7rem;background:#edf7f0;color:#254c36;padding:.85rem 1rem;margin:.75rem 0}
+.comment-error{border-color:#e5b7b7;background:#fff0f0;color:#7c2222}
+.comment-own-receipt p{white-space:pre-wrap;margin:.5rem}
+.comment-empty{margin:1rem 0}
+.native-comments .native-pager,.native-comment-admin .native-pager{display:flex;align-items:center;flex-wrap:wrap;gap:.4rem;margin:.6rem 0}
+.native-comments .native-pager [aria-current],.native-comment-admin .native-pager [aria-current]{background:var(--comment-soft);border:1px solid var(--comment-line)}
+.comment-review-list{display:grid;gap:.75rem;margin-block:1rem;max-height:min(65vh,42rem);max-height:min(65dvh,42rem);overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding:.2rem}
+.comment-actions form{margin:0}
+.native-comment-admin .comment-correction,.native-comment-admin .comment-history{margin-top:.75rem;border-top:1px solid var(--comment-line)}
+.native-comment-admin .comment-history ol,.comment-page-picker{list-style:none;padding:0;display:grid;gap:.6rem}
+.native-comment-admin .comment-history li{display:flex;align-items:baseline;gap:.5rem;flex-wrap:wrap}
+.comment-page-picker a{width:100%;display:grid!important;justify-content:start!important;text-align:start!important;gap:.25rem}
+.comment-page-picker span{font-size:.85em;font-weight:400}
+.native-comment-admin .comment-check{display:flex;align-items:center;min-height:46px;gap:.65rem;font-weight:500}
+.native-comment-admin .comment-check input{flex:0 0 1.3rem;width:1.3rem;height:1.3rem;accent-color:#245640}
+@media(max-width:480px){.native-comments{padding:.75rem}.comment-message{padding:.75rem}.comment-compose{padding:.85rem}.native-comments .comment-messages{padding:.5rem;max-height:52vh;max-height:52dvh}.comment-send button{width:100%}.comment-actions>*{flex:1 1 7rem}.comment-actions button{width:100%}.comment-message time{margin-inline-start:0}.comment-heading>a{width:100%}}

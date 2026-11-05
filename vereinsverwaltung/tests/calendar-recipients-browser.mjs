@@ -1,0 +1,47 @@
+import fs from 'node:fs';
+const f=JSON.parse(fs.readFileSync(0,'utf8'));
+const {chromium}=await import(process.env.PLAYWRIGHT_MODULE);
+const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE,headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
+let checks=0,posts=0,views=0;
+const check=(yes,label)=>{if(!yes)throw Error(label);checks++;console.log('PASS '+label);};
+const form=(p,kind)=>p.locator('[data-calendar-recipient-form='+kind+']');
+const choices=(p,kind)=>form(p,kind).locator('[data-calendar-recipient]');
+async function submit(p,click){const [response]=await Promise.all([p.waitForResponse(r=>r.request().method()==='POST'),click()]);await response.finished();await p.waitForLoadState('load');}
+const browse=(p,kind,value)=>submit(p,()=>form(p,kind).locator('[name=recipient_browse][value='+value+']').click());
+async function opened(p,kind,js){await p.getByText(kind==='mail'?'Einladung vorbereiten: E-Mail und Push':'Einladungsbriefe / Sammeldruck',{exact:true}).click();if(kind==='mail'&&js)await form(p,kind).getByLabel('Einladung senden an',{exact:true}).selectOption('selected');else if(kind==='mail'){for(const box of await form(p,kind).locator('[name="groups[]"]').all())await box.uncheck();await form(p,kind).locator('[name="groups[]"][value=selected]').check();}else await form(p,kind).locator('select[name="groups[]"]').selectOption('selected');const inner=choices(p,kind).locator('..');if(!await choices(p,kind).isVisible())await inner.locator('summary').click();}
+try{
+ for(const js of [true,false])for(const kind of ['mail','print']){
+  const c=await browser.newContext({viewport:{width:390,height:950},javaScriptEnabled:js,serviceWorkers:'block'});await c.route('**/*',r=>new URL(r.request().url()).origin===f.origin?r.continue():r.abort());c.on('request',r=>{if(r.method()==='POST')posts++;});
+  const p=await c.newPage();await p.goto(f.origin+'/own-test-enter?role=admin');if(js){await p.goto(f.origin+'/vereinsverwaltung/?view=calendar&date=2027-10-15&mode=day');await p.evaluate(()=>window.ownRecipientNavigationDocument=true);const [r]=await Promise.all([p.waitForResponse(r=>r.request().method()==='GET'&&new URL(r.url()).searchParams.get('event')===f.data.event),p.locator('a[href*="event='+f.data.event+'"]').first().click()]);await r.finished();await form(p,kind).waitFor({state:'attached'});check(await p.evaluate(()=>window.ownRecipientNavigationDocument===true),'actual calendar link uses original in-page navigation '+kind);}else await p.goto(f.origin+'/vereinsverwaltung/?view=calendar&event='+f.data.event);await opened(p,kind,js);
+  check(await choices(p,kind).locator('[name="recipients[]"]').count()===6,'six actual recipient rows '+kind+' '+js);
+  const subject='Own '+kind+' human subject '+js,message='Own '+kind+' human message Σ ä🙂 '+js;
+  await form(p,kind).locator('[name=subject]').fill(subject);await form(p,kind).locator('[name=message]').fill(message);if(kind==='print')await form(p,kind).locator('[name=print_mode]').selectOption('all');
+  await choices(p,kind).locator('[name="recipients[]"]').first().check();if(js)check((await choices(p,kind).locator('[data-recipient-count]').innerText()).startsWith('1 ausgewählt'),'actual navigation loads live recipient counting module '+kind);await browse(p,kind,'next');
+  check(JSON.parse(await form(p,kind).locator('[name=recipient_selected]').inputValue()).includes(f.data.first),'off-page original recipient remains selected '+kind+' '+js);
+  check(await form(p,kind).locator('[name=subject]').inputValue()===subject&&await form(p,kind).locator('[name=message]').inputValue()===message,'human subject and message survive actual browse '+kind+' '+js);
+  const other=kind==='mail'?'print':'mail';check((await form(p,other).locator('[name=subject]').inputValue()).startsWith('Einladung: '),'other unsubmitted form never inherits this human draft '+kind+' '+js);
+  await form(p,kind).locator('[name=recipient_query]').fill('100%_! Σ Straße ä🙂');await browse(p,kind,'search');
+  check(await choices(p,kind).locator('[name="recipients[]"]').count()===1&&await choices(p,kind).locator('[name="recipients[]"]').inputValue()===f.data.last,'literal search reaches exact recipient beyond one thousand '+kind+' '+js);
+  if(kind==='mail')check((await choices(p,kind).innerText()).includes('own-0@example.invalid')&&(await choices(p,kind).innerText()).includes('Familienadresse'),'actual family fallback shown on selected last contact '+js);
+  await choices(p,kind).locator('[name="recipients[]"]').check();await form(p,kind).locator('[name=recipient_query]').fill('Own no matching person');await browse(p,kind,'search');
+  check(JSON.parse(await form(p,kind).locator('[name=recipient_selected]').inputValue()).length===2&&await choices(p,kind).locator('[name="recipients[]"]').count()===0,'empty results retain exact two earlier choices '+kind+' '+js);
+  await form(p,kind).locator('[name=recipient_query]').fill('');await form(p,kind).locator('[name=recipient_only_selected]').check();await browse(p,kind,'search');
+  check(await choices(p,kind).locator('[name="recipients[]"]').count()===2,'selected-only review exposes both originals '+kind+' '+js);
+  for(const width of [320,390,820])for(const font of [100,200]){await p.setViewportSize({width,height:950});await p.evaluate(v=>document.documentElement.style.fontSize=v+'%',font);if(!await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1))console.log(JSON.stringify(await p.evaluate(()=>[...document.querySelectorAll('main *')].map(e=>({tag:e.tagName,name:e.getAttribute('name'),class:e.className,text:e.textContent.slice(0,50),right:e.getBoundingClientRect().right,width:e.getBoundingClientRect().width})).filter(x=>x.right>innerWidth+1).sort((a,b)=>b.width-a.width).slice(0,8))));check(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'no horizontal overflow '+kind+' '+js+' '+width+' '+font);check(await choices(p,kind).evaluate(root=>[...root.querySelectorAll('button,label.check')].every(e=>e.getBoundingClientRect().height>=43.9)),'44px actual recipient touch targets '+kind+' '+js+' '+width+' '+font);views++;}
+  await p.evaluate(()=>document.documentElement.style.fontSize='100%');await p.setViewportSize({width:390,height:950});
+  await submit(p,()=>form(p,kind).getByRole('button',{name:kind==='mail'?'Empfänger und Nachricht prüfen':'Briefe prüfen',exact:true}).click());
+  const confirmation=p.locator('form').filter({has:p.locator('[name=action][value='+(kind==='mail'?'send-event-mail':'create-event-print')+']')});
+  check(await confirmation.count()===1,'actual original preview creates one explicit confirmation '+kind+' '+js);
+  const ids=JSON.parse(await confirmation.locator('[name=recipient_selected]').inputValue());check(ids.length===2&&ids.includes(f.data.first)&&ids.includes(f.data.last),'confirmation contains both exact selected original IDs '+kind+' '+js);
+  check(await confirmation.locator('[name="recipients[]"]').count()===0&&await confirmation.locator('[name=subject]').inputValue()===subject,'exact original human subject uses compact confirmed selection '+kind+' '+js);
+  if(kind==='mail')check(await confirmation.locator('button').isDisabled(),'synthetic mail stays explicitly disabled while original preview is usable '+js);
+  if(kind==='print')check(await form(p,kind).locator('[name=print_mode]').inputValue()==='all','exact print mode survives original preview '+js);
+  await browse(p,kind,'all');check(await confirmation.count()===0,'readonly choice change removes earlier confirmation until rechecked '+kind+' '+js);
+  check(JSON.parse(await form(p,kind).locator('[name=recipient_selected]').inputValue()).length===1003,'complete explicit group selection reaches all 1003 '+kind+' '+js);
+  await submit(p,()=>form(p,kind).getByRole('button',{name:kind==='mail'?'Empfänger und Nachricht prüfen':'Briefe prüfen',exact:true}).click());
+  if(kind==='mail'){const all=JSON.parse(await confirmation.locator('[name=recipient_selected]').inputValue());check(all.length===1003&&new Set(all).size===1003,'actual 1003-recipient preview reaches compact original confirmation without PHP truncation '+js);}else{check(await confirmation.count()===0&&JSON.parse(await form(p,kind).locator('[name=recipient_selected]').inputValue()).length===1003,'oversized print preview preserves all original choices and creates no PDF '+js);check((await p.getByRole('alert').allTextContents()).join(' ').includes('250'),'original explicit print limit remains clear '+js);}
+  await c.close();
+ }
+ for(const role of ['reader','finance-only']){const c=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:950}});await c.route('**/*',r=>new URL(r.request().url()).origin===f.origin?r.continue():r.abort());const p=await c.newPage();await p.goto(f.origin+'/own-test-enter?role='+role);await p.goto(f.origin+'/vereinsverwaltung/?view=calendar&event='+f.data.event);check(await p.locator('[data-calendar-recipient-form]').count()===0,'current '+role+' receives no invitation recipient chooser');await c.close();}
+ console.log(JSON.stringify({browser_checks:checks,actual_posts:posts,mobile_font_views:views,external_actions:0}));
+}catch(error){for(const ctx of browser.contexts())for(const page of ctx.pages())try{console.log('FAILED RECIPIENT STATE '+JSON.stringify({url:page.url(),body:(await page.locator('body').innerText()).slice(0,2000)}));}catch{}throw error;}finally{await browser.close();}

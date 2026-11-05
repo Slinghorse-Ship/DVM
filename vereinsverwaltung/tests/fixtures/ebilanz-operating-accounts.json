@@ -1,0 +1,42 @@
+{
+  "automatic": {
+    "grossTradingProfit.materialServices.material.rawMatConsSup.reducedRateVAT": ["51100", "51110", "51120", "51130", "51140", "51150", "51160", "51170", "51180", "51190", "51910"],
+    "grossTradingProfit.materialServices.material.rawMatConsSup.generalRateVAT": ["51300", "51310", "51320", "51330", "51340", "51350", "51360", "51370", "51380", "51390", "51920"],
+    "grossTradingProfit.materialServices.material.rawMatConsSup.noDeductVAT": ["51290"],
+    "grossTradingProfit.materialServices.material.rawMatConsSup.intraEU": ["51600", "51620", "51630", "51660", "51670"],
+    "grossTradingProfit.materialServices.material.purchased.reducedRateVAT": ["53000", "53010", "53020", "53030", "53040", "53050", "53060", "53070", "53080", "53090", "53470"],
+    "grossTradingProfit.materialServices.material.purchased.generalRateVAT": ["54000", "54010", "54020", "54030", "54040", "54050", "54060", "54070", "54080", "54090", "54180"],
+    "grossTradingProfit.materialServices.material.purchased.withoutVAT": ["53490"],
+    "grossTradingProfit.materialServices.material.purchased.intraEU": ["54200", "54210", "54220", "54230", "54240", "54250", "54260", "54270", "54280", "54290", "54300", "54350", "54400"],
+    "staff.salaries.misc": ["60100", "60200", "60270", "60290", "60300", "60390", "60400", "60450", "60700", "60760", "60800", "60900"],
+    "staff.salaries.managerPartner": ["60240", "60260", "60370", "60770"],
+    "staff.salaries.minijobs": ["60350", "60360", "60790"],
+    "staff.salaries.voluntayBenefits": ["60600", "60660", "60690"],
+    "staff.salaries.inKind": ["60710", "60720"],
+    "staff.social.socExp.other": ["61100", "61200", "61700", "61710"],
+    "staff.social.pensions.shareholderManager": ["61490"],
+    "staff.social.welfare": ["61600"],
+    "otherCost.leasingAll.moveable.other": ["64980", "65600", "65650", "68400"],
+    "otherCost.leasingAll.immovable.other": ["63160"],
+    "otherCost.leaseFix.shareholders": ["63130"],
+    "otherCost.leaseMoveable.shareholders": ["68330"],
+    "otherCost.otherOrdinary": ["63300", "63450", "64200", "64300", "64400", "67900", "68450", "68500", "68550", "68590"],
+    "otherCost.otherTaxes.nonDeductibleInputVAT": ["68600", "68650", "68710"],
+    "otherCost.transferValuatonPresentYear.global": ["69200"],
+    "otherCost.transferValuatonPresentYear.specific": ["69230"],
+    "otherCost.regAllowance": ["69300", "69310", "69320", "69330", "69360", "69380"],
+    "otherCost.leaseFix.other": ["65500"],
+    "otherCost.fixingLandBuildings": ["63350"],
+    "is.netIncome.otherTaxes.other": ["76500", "76750", "76780", "76800", "76850"]
+  },
+  "details": {
+    "51000": ["grossTradingProfit.materialServices.material.rawMatConsSup.reducedRateVAT", "grossTradingProfit.materialServices.material.rawMatConsSup.generalRateVAT", "grossTradingProfit.materialServices.material.rawMatConsSup.noDeductVAT", "grossTradingProfit.materialServices.material.rawMatConsSup.intraEU", "grossTradingProfit.materialServices.material.rawMatConsSup.unknownVAT"],
+    "51900": ["grossTradingProfit.materialServices.material.rawMatConsSup.reducedRateVAT", "grossTradingProfit.materialServices.material.rawMatConsSup.generalRateVAT", "grossTradingProfit.materialServices.material.rawMatConsSup.noDeductVAT", "grossTradingProfit.materialServices.material.rawMatConsSup.intraEU", "grossTradingProfit.materialServices.material.rawMatConsSup.unknownVAT"],
+    "52000": ["grossTradingProfit.materialServices.material.purchased.reducedRateVAT", "grossTradingProfit.materialServices.material.purchased.generalRateVAT", "grossTradingProfit.materialServices.material.purchased.withoutVAT", "grossTradingProfit.materialServices.material.purchased.intraEU", "grossTradingProfit.materialServices.material.purchased.unknownVAT"],
+    "60000": ["staff.salaries.misc", "staff.salaries.minijobs", "staff.salaries.managerPartner", "staff.salaries.inKind", "staff.salaries.voluntayBenefits", "staff.salaries.nonAllocable"],
+    "61400": ["staff.social.pensions.other", "staff.social.pensions.shareholderManager", "staff.social.pensions.misc"],
+    "61470": ["staff.social.pensions.other", "staff.social.pensions.shareholderManager", "staff.social.pensions.misc"],
+    "61500": ["staff.social.pensions.other", "staff.social.pensions.shareholderManager", "staff.social.pensions.misc"],
+    "68370": ["otherCost.concessLicenses.toresidentRecipients", "otherCost.concessLicenses.toNonresidentRecipients", "otherCost.concessLicenses.nonallocable"]
+  }
+}

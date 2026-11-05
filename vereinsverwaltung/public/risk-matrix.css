@@ -1,0 +1,36 @@
+/* Physical layout measured from the supplied FS-RA-030 reference PDF. */
+.dwf-rwe-legend{position:relative;display:block;width:367.42pt;min-width:367.42pt;max-width:none;height:96.103pt;padding:0;box-sizing:content-box;background:#fff;color:#000;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+.dwf-rwe-legend-main{position:absolute;left:0;top:0;width:273.414pt;height:96.103pt}
+.dwf-rwe-legend-main>strong{position:absolute;z-index:1;left:41.42pt;top:4.7pt;width:57.64pt;margin:0;text-align:center;font:bold 5.04pt/6pt Arial,sans-serif;color:#1d4477!important}
+.dwf-rwe-matrix{border-collapse:collapse;table-layout:fixed;width:273.414pt;height:96.103pt;margin:0;background:#fff;color:#000}
+.dwf-rwe-legend .dwf-rwe-matrix th,.dwf-rwe-legend .dwf-rwe-matrix td{box-sizing:border-box;padding:.36pt;overflow-wrap:normal;white-space:normal;vertical-align:middle;text-align:center;font:2.4pt/2.76pt Arial,sans-serif;color:#000!important}
+.dwf-rwe-legend .dwf-rwe-matrix thead th{height:24.929pt;vertical-align:bottom;background:#fff!important;font-weight:700}
+.dwf-rwe-legend .dwf-rwe-matrix thead th b,.dwf-rwe-legend .dwf-rwe-matrix thead th span{display:block;margin:0 0 .72pt;font:inherit;line-height:2.76pt}
+.dwf-rwe-legend .dwf-rwe-matrix thead th span{font-weight:400}
+.dwf-rwe-matrix tbody tr{height:12.2116pt}
+.dwf-rwe-legend .dwf-rwe-matrix tbody .dwf-rwe-score{height:12.2116pt;padding:.72pt;border:.2pt solid #abb5b1;text-align:right;vertical-align:bottom;font-weight:700;font-size:3.24pt}
+.dwf-rwe-matrix td:not(.dwf-rwe-score),.dwf-rwe-matrix tbody th{background:#fff!important}
+.dwf-rwe-legend .dwf-rwe-matrix tfoot td{height:10.116pt;vertical-align:top;font-size:2.16pt;font-weight:700}
+.dwf-rwe-bands{position:absolute;left:280.248pt;top:16.258pt;width:85.01pt;height:45.522pt;border-collapse:collapse;table-layout:fixed;margin:0;color:#000;background:#fff}
+.dwf-rwe-legend .dwf-rwe-bands th,.dwf-rwe-legend .dwf-rwe-bands td{padding:.36pt .72pt;border:.2pt solid #aaa;vertical-align:middle;overflow-wrap:normal;white-space:normal;text-align:center;font:2.16pt/2.5pt Arial,sans-serif;color:#000!important}
+.dwf-rwe-legend .dwf-rwe-bands thead th{height:8.671pt;border:0;font-size:2.16pt;font-weight:700;background:#fff!important}
+.dwf-rwe-bands tbody tr{height:12.284pt}.dwf-rwe-bands tbody td{background:#fff!important}
+.dwf-rwe-legend .dwf-rwe-bands th:nth-child(1){width:16.95%}.dwf-rwe-legend .dwf-rwe-bands th:nth-child(2){width:15.25%}.dwf-rwe-legend .dwf-rwe-bands th:nth-child(3){width:50.85%}.dwf-rwe-legend .dwf-rwe-bands th:nth-child(4){width:16.95%}
+.dwf-rwe-legend .dwf-risk-band-low{background:#5ab88f!important}.dwf-rwe-legend .dwf-risk-band-medium{background:#ffd744!important}.dwf-rwe-legend .dwf-risk-band-high{background:#e7343f!important}
+.dwf-risk-reference-cell,.dwf-rwe-score,.dwf-matrix-cell{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+.dwf-register-table [data-risk-band=low],.dwf-rwe-sheet .dwf-register-print-table .dwf-risk-band-low{background:#c6efce!important;color:#000!important}
+.dwf-register-table [data-risk-band=medium],.dwf-rwe-sheet .dwf-register-print-table .dwf-risk-band-medium{background:#ffeb9c!important;color:#000!important}
+.dwf-register-table [data-risk-band=high],.dwf-rwe-sheet .dwf-register-print-table .dwf-risk-band-high{background:#ffc7ce!important;color:#000!important}
+.dwf-preview-paper:has(>.dwf-rwe-sheet){box-sizing:content-box;width:799.8pt;min-width:799.8pt;padding:39.84pt 21.48pt 40.32pt 20.64pt}
+.dwf-rwe-sheet{width:799.8pt;min-width:799.8pt;color:#000;background:#fff}
+.dwf-rwe-sheet .dwf-risk-sheet-top{width:799.8pt;grid-template-columns:421.85pt 377.95pt;gap:0;outline:1.5pt solid #1d4477;border:0;margin-bottom:6.12pt}
+.dwf-rwe-sheet .dwf-register-legends{padding:1.807pt 2.73pt 1.95pt 7.8pt;box-shadow:inset 1.5pt 0 #1d4477;box-sizing:border-box}
+.dwf-rwe-metadata{height:99.86pt;font:4.8pt/6.24pt Arial,sans-serif;color:#1d4477;background:#fff}
+.dwf-rwe-metadata th,.dwf-rwe-metadata td{padding:.3pt 3pt;border:.45pt solid #1d4477;color:#1d4477!important}
+.dwf-rwe-metadata tbody th{font:bold 4.2pt/4.68pt Arial,sans-serif;background:#e8e8e4!important}
+.dwf-rwe-metadata thead th{height:18.12pt;padding:.3pt 3pt;font:bold 10.32pt/13.2pt Arial,sans-serif;background:#1d4477!important;color:#fff!important}
+.dwf-rwe-sheet .dwf-register-print-table th{background:#adafb1!important;color:#fff!important;font:bold 3.6pt/4.1pt Arial,sans-serif;padding:1pt}
+.dwf-rwe-sheet .dwf-register-print-table td{padding:1pt;height:auto;min-height:0;font:3.84pt/5.04pt Arial,sans-serif;color:#000!important;background:#fff}
+.dwf-rwe-sheet .dwf-register-print-table td:nth-child(2){font-weight:700;font-size:4.8pt;line-height:6.24pt}
+.dwf-rwe-sheet .dwf-register-print-table .dwf-register-print-risk{font-weight:700;font-size:4.8pt;line-height:6.24pt}
+.dwf-rwe-additional-fields{display:grid;grid-template-columns:140pt 1fr;gap:3pt;margin:6pt 0;font:4.8pt/6.24pt Arial,sans-serif;color:#1d4477}.dwf-rwe-additional-fields dt{font-weight:700}.dwf-rwe-additional-fields dd{margin:0;white-space:pre-wrap;overflow-wrap:anywhere}

@@ -1,0 +1,31 @@
+[data-outgoinginvoice-editor]{min-width:0;max-width:100%;overflow-wrap:anywhere}
+[data-outgoinginvoice-editor] :is(section,fieldset,form,label){min-width:0;max-width:100%}
+[data-outgoinginvoice-editor] textarea{min-height:6em;white-space:pre-wrap;overflow-wrap:anywhere}
+[data-outgoinginvoice-editor] [data-outgoinginvoice-row-actions]{align-items:stretch}
+[data-outgoinginvoice-editor] [data-outgoinginvoice-row-actions] button{flex:1 1 9em}
+[data-outgoinginvoice-heading],[data-outgoinginvoice-summary]{min-width:0;max-width:100%;overflow-wrap:anywhere}
+[data-outgoinginvoice-heading] .section-heading>div,[data-outgoinginvoice-summary] .actions form{min-width:0;max-width:100%}
+[data-outgoinginvoice-heading] a,[data-outgoinginvoice-summary] :is(a,button,summary){min-width:44px;min-height:44px;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+:is([data-outgoinginvoice-native],[data-outgoingcorrection-native]) .outgoinginvoice-values pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;font:inherit;margin:0}
+:is([data-outgoinginvoice-native],[data-outgoingcorrection-native]) .application-pdf,:is([data-outgoinginvoice-native],[data-outgoingcorrection-native]) [data-pdf-pages]{min-width:0;max-width:100%}
+:is([data-outgoinginvoice-native],[data-outgoingcorrection-native]) .pdf-canvas-wrap{min-width:0;max-width:100%;max-height:80dvh;overflow:auto;padding:.75rem}
+:is([data-outgoinginvoice-native],[data-outgoingcorrection-native]) .pdf-canvas-wrap canvas{display:block;max-width:none;margin-inline:auto}
+
+[data-outgoingcorrection-editor]{min-width:0;max-width:100%;overflow-wrap:anywhere}
+[data-outgoingcorrection-editor] textarea{min-height:6em;white-space:pre-wrap;overflow-wrap:anywhere}
+
+/* The current payment facts remain separate from the frozen document state. */
+.outgoing-invoice-payment{container:outgoing-payment / inline-size;min-width:0;max-width:100%}
+.outgoing-invoice-payment dl{margin:1rem 0}
+.outgoing-invoice-payment dl>div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:.75rem;margin:.5rem 0}
+.outgoing-invoice-payment :is(dt,dd,p){min-width:0;max-width:100%;margin:0;overflow-wrap:anywhere}
+.outgoing-invoice-payment dt{font-weight:650}
+@container outgoing-payment (max-width:30em){.outgoing-invoice-payment dl>div{grid-template-columns:minmax(0,1fr);gap:.2rem;margin:.75rem 0}.outgoing-invoice-payment dd{padding-bottom:.25rem}}
+
+[data-outgoing-invoice-source-page]{min-width:0;max-width:100%;overflow-wrap:anywhere;font-size:1rem}
+[data-outgoing-invoice-source-page] h1{font-size:1.25rem;line-height:1.4}
+[data-outgoing-invoice-unavailable]{min-width:0;max-width:100%;overflow-wrap:anywhere}
+[data-outgoing-invoice-unavailable] .data-list{grid-template-columns:minmax(0,1fr)}
+[data-outgoing-invoice-unavailable] :is(dt,dd,label,input){min-width:0;max-width:100%;overflow-wrap:anywhere}
+[data-outgoing-invoice-unavailable] .actions{flex-wrap:wrap}
+[data-outgoing-invoice-unavailable] :is(.btn,input){font-size:1rem;min-width:44px;min-height:44px;max-width:100%;white-space:normal;overflow-wrap:anywhere}

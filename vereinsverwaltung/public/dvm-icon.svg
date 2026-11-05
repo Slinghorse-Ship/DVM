@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">DVM – DeinVereinsManager</title>
+  <rect width="512" height="512" rx="112" fill="#102a4c"/>
+  <path d="M116 136h96c96 0 154 46 154 120s-58 120-154 120h-96V136zm64 58v124h32c58 0 90-22 90-62s-32-62-90-62h-32z" fill="#fff"/>
+  <circle cx="389" cy="377" r="43" fill="#e6bc35"/>
+</svg>

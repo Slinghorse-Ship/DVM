@@ -1,0 +1,5 @@
+<?php declare(strict_types=1);
+require __DIR__.'/inventory-fields-environment.php';use Kulturhus\Verein\{Database,Inventory};
+$fixturePath=realpath($argv[1]??'');$prefix=realpath($inventoryTestOutput);if(!$fixturePath||!$prefix||!str_starts_with(str_replace('\\','/',$fixturePath),rtrim(str_replace('\\','/',$prefix),'/').'/'))throw new RuntimeException('Use an explicitly generated local fixture path.');
+$fixture=json_decode(file_get_contents($fixturePath),true,16,JSON_THROW_ON_ERROR);if(!str_starts_with($fixture['club'],'inventory-fields-'))throw new RuntimeException('Synthetic fixture only');$db=\Kulturhus\Verein\Tests\MySqlFixture::existing($inventoryTestDatabase);$db->exec('START TRANSACTION READ ONLY');$inventory=new Inventory($db,$fixture['actor']);$out=[];
+foreach(['plain','pieces','individual'] as $key)$out[$key]=$inventory->item($fixture[$key]);foreach(['inventory_events','inventory_movements','finance_entries','finance_transactions','documents','document_links'] as $table){$out[$table]=mysqlFixtureTenantRows($db,$table,$fixture['club']);}echo json_encode($out,JSON_THROW_ON_ERROR|JSON_UNESCAPED_UNICODE);

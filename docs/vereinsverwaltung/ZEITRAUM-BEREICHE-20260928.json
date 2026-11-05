@@ -1,0 +1,46 @@
+{
+  "date": "2026-09-28",
+  "status": "implemented_and_component_tested_not_general_release",
+  "source_sha256": "0fe380dcf1ef63279ccf69b55bcae179cbb32066afb3d7a850c5c686c5fe576b",
+  "host_report": "audit/ebilanz-mysql-host-20260918-fee84e2e15f8adfe.json",
+  "host_suite_groups": 9,
+  "host_checks": {
+    "balance_period_areas": 56,
+    "balance_period_ledger": 75,
+    "balance_period_corrections": [51, 75],
+    "balance_segments": 61,
+    "balance_internal_clearing": 2536,
+    "balance_clearing_statement": 28502,
+    "balance_clearing_carry": 38,
+    "mysql_balance_schema_restore": 10,
+    "runtime_fingerprint": 132
+  },
+  "local_checks": {
+    "balance_club_income": 2705,
+    "balance_club_tax_reconciliation": 51,
+    "balance_period_sources_ui": 16,
+    "php_lint_files": 1134,
+    "php_lint_failures": 0,
+    "subsequently_changed_income_files_separately_linted": true,
+    "git_diff_check": "passed"
+  },
+  "ui": {
+    "input": "actual rendered synthetic PHP view, isolated static loopback server",
+    "mobile_viewport": [390, 844],
+    "mobile_client_and_scroll_width": [375, 375],
+    "desktop_viewport": [1265, 900],
+    "desktop_client_and_scroll_width": [1250, 1250],
+    "observed": ["three numbered sections", "localized exact start/end dates", "searchable voucher selection", "split and internal payment forms collapsed", "reviewed rebase form collapsed", "failed input retention tested in controller suite"],
+    "real_user_or_device_test": false,
+    "whole_manager_audit": false,
+    "temporary_tab_server_and_viewport_cleaned_up": true
+  },
+  "production": {
+    "files_unchanged": true,
+    "database_connected": false,
+    "emails_bank_orders_tax_submissions": false,
+    "deployed": false,
+    "kulturhus_accounting_basis_changed": false
+  },
+  "remaining": ["dated shared asset allocation and use/sphere changes", "calendar-area to dated-period carry", "period tax reconciliation and tax asset special cases", "complete verified account coverage", "official period/correction output and end-to-end acceptance including later processing feedback", "release and subsequent whole-manager usability audit"]
+}

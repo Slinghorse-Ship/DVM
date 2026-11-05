@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS finance_internal_movements (
+ club_id VARCHAR(128) NOT NULL,
+ id CHAR(32) NOT NULL,
+ outgoing_id VARCHAR(128) NOT NULL,
+ incoming_id VARCHAR(128) NOT NULL,
+ cents BIGINT NOT NULL,
+ reason VARCHAR(500) NOT NULL,
+ request_key CHAR(32) NOT NULL,
+ created_by VARCHAR(128) NOT NULL,
+ created_at VARCHAR(40) NOT NULL,
+ voided_at VARCHAR(40) NULL,
+ void_reason VARCHAR(500) NULL,
+ PRIMARY KEY(club_id,id),
+ UNIQUE KEY internal_request(club_id,request_key),
+ KEY internal_outgoing(club_id,outgoing_id),
+ KEY internal_incoming(club_id,incoming_id),
+ FOREIGN KEY(club_id,outgoing_id) REFERENCES finance_transactions(club_id,id),
+ FOREIGN KEY(club_id,incoming_id) REFERENCES finance_transactions(club_id,id),
+ CHECK(cents>0 AND outgoing_id<>incoming_id),
+ CHECK((voided_at IS NULL AND void_reason IS NULL) OR (voided_at IS NOT NULL AND void_reason IS NOT NULL))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

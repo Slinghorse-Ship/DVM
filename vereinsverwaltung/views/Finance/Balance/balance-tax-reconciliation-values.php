@@ -1,0 +1,9 @@
+<?php declare(strict_types=1); ?>
+<section class="card" data-tax-values><h2><?= e($taxText('Berechneter Stand')) ?></h2>
+<?php if(!($taxOriginalMode??false)&&!$s['current_approval']): ?><p><strong><?= e($taxText('Entwurf – noch nicht abschließend geprüft')) ?></strong></p><?php endif ?>
+<dl class="tax-balance-figures"><?php foreach(['book_cents'=>'Ergebnis aus der Buchführung','valuation_difference_cents'=>'Abweichende steuerliche Bewertung','tax_book_cents'=>'Ergebnis zu Steuerbuchwerten','additions_cents'=>'Hinzurechnungen','deductions_cents'=>'Kürzungen','taxable_income_cents'=>'Ergebnis nach den bestätigten Korrekturen']as$key=>$label): ?><div><dt><?= e($taxText($label)) ?></dt><dd data-tax-result="<?= e($key) ?>"><?= $money($values['result'][$key]) ?></dd></div><?php endforeach ?></dl>
+<p><?= e($taxText('Dies ist noch nicht die zu zahlende Steuer. Verlustabzüge und Freibeträge gehören in die Steuererklärung.')) ?></p>
+<?php $sphereTaxValues=$values;$sphereText=$taxText;require __DIR__.'/balance-tax-sphere-values.php';unset($sphereText); ?>
+<details><summary><?= e($taxText('Berechnung je Konto')) ?></summary><div class="table-scroll" role="region" tabindex="0" aria-label="<?= e($taxText('Steuerliche Kontenwerte')) ?>"><table class="table"><thead><tr><?php foreach(['Konto','Buchwert','Änderung','Steuerwert']as$label): ?><th><?= e($taxText($label)) ?></th><?php endforeach ?></tr></thead><tbody>
+<?php foreach($values['accounts']as$row): ?><tr><td data-label="<?= e($taxText('Konto')) ?>"><?= e(trim($row['skr_code'].' '.$row['name'])) ?></td><?php foreach(['book_cents'=>'Buchwert','valuation_difference_cents'=>'Änderung','tax_cents'=>'Steuerwert']as$key=>$label): ?><td data-label="<?= e($taxText($label)) ?>"><?= $money($row[$key]) ?></td><?php endforeach ?></tr><?php endforeach ?>
+</tbody></table></div></details></section>

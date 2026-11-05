@@ -1,0 +1,22 @@
+<?php declare(strict_types=1);
+ini_set('zend.exception_ignore_args','1');require dirname(__DIR__,2).'/native/bootstrap.php';require dirname(__DIR__,2).'/src/bootstrap.php';
+use Kulturhus\Native\TestSupport;
+$cfg=TestSupport::config();if(PHP_SAPI!=='cli-server'||getenv('KH_NATIVE_CI')!=='1'||($cfg['label']??'')!=='native-system'||($cfg['owner']??'')!=='isolated-native-ci'||($_SERVER['REMOTE_ADDR']??'')!=='127.0.0.1'){http_response_code(403);exit;}
+$file=getenv('DVM_SYSTEM_APPS_FIXTURE');if(!$file||is_link($file)||!is_file($file)||fileperms($file)&0077){http_response_code(403);exit;}$f=json_decode(file_get_contents($file),true,32,JSON_THROW_ON_ERROR);$origin='http://'.($_SERVER['HTTP_HOST']??'');$native=$origin===$f['native_origin'];if(!$native&&$origin!==$f['origin']){http_response_code(403);exit;}
+foreach(['VEREIN_PRIVATE_ROOT'=>$f['root'],'KH_NATIVE_AUTH_KEY_FILE'=>$f['root'].'/auth.key','KH_NATIVE_PRIVATE_KEY_FILE'=>$f['root'].'/private.key','KH_NATIVE_MANAGER_SESSION_ROOT'=>$f['root'].'/manager-sessions','KH_NATIVE_MANAGER_MEDIA_ROOT'=>$f['root'].'/media','KH_NATIVE_MANAGER'=>'1','VEREIN_AUTH'=>'native','VEREIN_MODE'=>'synthetic','KULTURHUS_DISABLE_MAIL'=>'1','KULTURHUS_DISABLE_WEBSITE'=>'1']as$key=>$value)putenv($key.'='.$value);putenv('SMTP_DSN');$path=parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH);$method=$_SERVER['REQUEST_METHOD']??'GET';
+if($method==='POST'&&isset($_SERVER['HTTP_ORIGIN'])&&$_SERVER['HTTP_ORIGIN']!==$origin&&!($_SERVER['HTTP_ORIGIN']==='null'&&($_SERVER['HTTP_SEC_FETCH_SITE']??'')==='same-origin')){http_response_code(403);exit;}
+$marker=$f['root'].'/own-system-sql-failure';if($method==='POST'&&is_file($marker)&&in_array($_POST['action']??null,\Kulturhus\Native\System\Controller::ACTIONS,true)){
+    unlink($marker);$db=TestSupport::db();$db->exec("CREATE TRIGGER own_system_ui_failure BEFORE INSERT ON native_system_events FOR EACH ROW BEGIN IF NEW.code='task_saved' THEN SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT='Own synthetic system UI journal interruption'; END IF; END");register_shutdown_function(static function()use($db):void{$db->exec('DROP TRIGGER IF EXISTS own_system_ui_failure');});
+}
+if($path==='/own-system-counts'){
+    $db=TestSupport::db();$counts=[];foreach(['native_system_tasks','native_system_runs','native_system_events','native_system_acknowledgements']as$table)$counts[$table]=(int)$db->query('SELECT COUNT(*) FROM '.$table)->fetchColumn();header('Content-Type: application/json');header('Cache-Control: no-store');echo json_encode($counts,JSON_THROW_ON_ERROR);exit;
+}
+if($native){putenv('KH_NATIVE_LOCAL_DEMO=synthetic');putenv('KH_NATIVE_DEMO_PORT='.(string)parse_url($origin,PHP_URL_PORT));putenv('KH_NATIVE_REQUIRE_LOGIN=1');putenv('KH_NATIVE_DEMO_MANAGER_CLUB='.$f['club']);
+    if($path==='/own-test-enter'&&$method==='GET'){$role=$_GET['role']??'admin';if(!is_string($role)||!isset($f['accounts'][$role])){http_response_code(403);exit;}session_save_path($f['native_runtime'].'/sessions');session_name('KHNATIVE'.substr(hash('sha256',$cfg['database']),0,12));session_start(['use_strict_mode'=>1,'cookie_httponly'=>1,'cookie_samesite'=>'Strict','cookie_path'=>'/']);$_SESSION['auth_token']=$f['accounts'][$role]['token'];$_SESSION['native_csrf']??=bin2hex(random_bytes(32));header('Location: /account',true,303);exit;}
+    require dirname(__DIR__,2).'/native/Web/router.php';exit;
+}
+// Only this guarded fixture supplies a fixed private HTTPS deployment context.
+// Account, CSRF, permissions, manager dispatch and errors remain the actual ProductionSite.
+foreach(['VEREIN_MODE'=>'production','VEREIN_ALLOWED_HOSTS'=>'own-system.example.invalid','VEREIN_CLUB'=>$f['club'],'VEREIN_DATABASE'=>'mysql:host=127.0.0.1;port=13371;dbname='.$cfg['database'].';charset=utf8mb4','VEREIN_DATABASE_USER'=>$cfg['username'],'VEREIN_DATABASE_PASSWORD'=>$cfg['password']]as$key=>$value)putenv($key.'='.$value);putenv('KULTURHUS_LOCAL_DEMO');$_SERVER['HTTP_HOST']='own-system.example.invalid';$_SERVER['HTTPS']='on';if(isset($_SERVER['HTTP_ORIGIN']))$_SERVER['HTTP_ORIGIN']='https://own-system.example.invalid';
+if($path==='/own-test-enter'&&$method==='GET'){$role=$_GET['role']??'admin';if(!is_string($role)||!isset($f['accounts'][$role])){http_response_code(403);exit;}\Kulturhus\Native\Integration\ManagerSession::start();$_SESSION['auth_token']=$f['accounts'][$role]['token'];$_SESSION['actor']=$f['accounts'][$role]['actor'];header('Location: /account',true,303);exit;}
+\Kulturhus\Native\Integration\ProductionSite::serve(TestSupport::db());

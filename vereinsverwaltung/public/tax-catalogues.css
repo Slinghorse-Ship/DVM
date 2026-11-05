@@ -1,0 +1,11 @@
+[data-tax-catalogue],[data-tax-catalogue-original],[data-tax-catalogue-rejected]{min-width:0;max-width:100%;overflow-wrap:anywhere}
+:is([data-tax-catalogue],[data-tax-catalogue-original],[data-tax-catalogue-rejected]) :is(form,fieldset,label,.card){min-width:0;max-width:100%}
+:is([data-tax-catalogue],[data-tax-catalogue-original],[data-tax-catalogue-rejected]) :is(button,.btn,summary,input:not([type=hidden]):not([type=checkbox]),select){min-height:44px;min-width:44px}
+:is([data-tax-catalogue],[data-tax-catalogue-original],[data-tax-catalogue-rejected]) :is(input:not([type=checkbox]),select){width:100%;max-width:100%;box-sizing:border-box}
+:is([data-tax-catalogue],[data-tax-catalogue-original],[data-tax-catalogue-rejected]) label.check{display:flex;align-items:center;gap:.75rem;min-height:44px;white-space:normal}
+:is([data-tax-catalogue-original],[data-tax-catalogue-rejected]) pre{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;max-width:100%}
+[data-tax-catalogue-original] fieldset{border:0;padding:0;margin:0;min-inline-size:0}
+[data-tax-catalogue] .table-scroll{max-width:100%;overflow:auto}
+[data-tax-catalogue] .filter-panel{display:flex;flex-wrap:wrap;align-items:end;gap:1rem}
+[data-tax-catalogue] .filter-panel label{flex:1 1 12rem}
+[data-tax-catalogue] summary{white-space:normal;padding:.5rem .25rem}

@@ -1,0 +1,12 @@
+<?php declare(strict_types=1);
+require __DIR__.'/support/mysql-schema-proof.php';
+use Kulturhus\Verein\Tests\MySqlSchemaProof;
+$columns=[['COLUMN_NAME'=>'history_sha256','CHARACTER_SET_NAME'=>'utf8mb4','COLLATION_NAME'=>'utf8mb4_unicode_ci']];
+$short="  `history_sha256` char(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,";
+$full="  `history_sha256` char(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,";
+$normalize=static fn($ddl)=>MySqlSchemaProof::explicitCharsets($ddl,$columns);
+$checks=[$normalize($short)===$full,$normalize($full)===$full];
+foreach(['char(64)'=>'char(32)','utf8mb4_unicode_ci'=>'utf8mb4_bin','DEFAULT NULL'=>'NOT NULL',','=>',\n  CHECK (1=0)'] as $old=>$new)$checks[]=$normalize(str_replace($old,$new,$short))!==$full;
+$checks[]=$normalize($short."\n  CONSTRAINT keep_fk FOREIGN KEY (`history_sha256`) REFERENCES originals (`sha256`)")===$full."\n  CONSTRAINT keep_fk FOREIGN KEY (`history_sha256`) REFERENCES originals (`sha256`)";
+foreach($checks as $ok)if(!$ok)throw new RuntimeException('Schema proof hid a material definition difference');
+echo count($checks)." schema-proof formatting checks passed; no database\n";

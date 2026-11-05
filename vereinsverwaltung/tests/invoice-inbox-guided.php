@@ -1,0 +1,24 @@
+<?php declare(strict_types=1);
+require __DIR__.'/../src/bootstrap.php';
+use Kulturhus\Verein\{Database,Documents,Finance,InvoiceInbox};
+$db=\Kulturhus\Verein\Tests\MySqlFixture::connect(':memory:');Database::migrate($db);$db->exec("INSERT INTO clubs VALUES('a','A');INSERT INTO actors(id,club_id,role) VALUES('cash','a','treasurer'),('member','a','member')");
+$n=0;function check($ok,$label){global $n;if(!$ok)throw new RuntimeException($label);++$n;echo "PASS $label\n";}function denied(callable $f,$label){try{$f();}catch(DomainException){check(true,$label);return;}throw new RuntimeException($label);}
+$docs=new Documents($db,'cash');$finance=new Finance($db,'cash');$inbox=new InvoiceInbox($db,'cash');$key=fn()=>bin2hex(random_bytes(16));$upload=fn()=>$docs->upload('test.xml','<Invoice xmlns="urn:synthetic:test"/>',['title'=>'Synthetic invoice','kind'=>'receipt','scope'=>'finance','links'=>[]],$key());
+$bill=['description'=>'Synthetic expense','counterparty'=>'Fantasie Firma','amount'=>'119,00','category'=>'general','document_date'=>'2026-09-07','due_date'=>'2026-09-30'];
+$doc=$upload();$request=$key();$entry=$inbox->create($doc,1,$bill,$request,'insurance','TEST-2026');$e=$finance->entry($entry);
+check($e['counterparty']==='Fantasie Firma'&&$e['amount_cents']===11900,'supplier without member and reviewed gross amount');
+check(str_contains($e['notes'],'TEST-2026')&&str_contains($e['notes'],'Versicherung'),'supplier reference and purpose retained');
+check($inbox->document($doc)['inbox_status']==='assigned','single save links original');
+check($inbox->create($doc,1,$bill,$request,'insurance','TEST-2026')===$entry&&count($finance->entries([]))===1,'retry does not duplicate financial entry');
+check($inbox->create($doc,1,$bill,$request,'gema|unavailable-event|0','CHANGED')===$entry&&$finance->entry($entry)['notes']===$e['notes'],'changed replay cannot add GEMA purpose or alter invoice');
+$next=$upload();$count=count($finance->entries([]));denied(fn()=>$inbox->create($next,99,$bill,$key(),'general',''),'stale document rejected');check(count($finance->entries([]))===$count,'stale original rolls back expense');
+denied(fn()=>$inbox->create($next,1,$bill,$key(),'item|not-existing',''),'unknown purpose target rejected');check(count($finance->entries([]))===$count,'purpose failure rolls back expense');
+denied(fn()=>(new InvoiceInbox($db,'member'))->create($next,1,$bill,$key(),'general',''),'member cannot create invoice');
+$fields=['Belegart'=>'Rechnung','Währung'=>'EUR','Rechnungsbetrag brutto'=>'119.00','Rechnungsnummer'=>'R-42','Rechnungssteller'=>'Fantasie AG','Rechnungsdatum'=>'2026-09-07'];
+$suggest=InvoiceInbox::suggestions($fields);check($suggest['amount']==='119,00'&&$suggest['supplier_reference']==='R-42','EUR header suggestions');
+foreach(['USD','','EUR / USD'] as $currency)check(!isset(InvoiceInbox::suggestions(array_replace($fields,['Währung'=>$currency]))['amount']),'foreign or ambiguous currency never euro suggestion');
+check(!isset(InvoiceInbox::suggestions(array_replace($fields,['Rechnungsbetrag brutto'=>'-19.00']))['amount']),'negative credit amount not expense suggestion');
+check(!isset(InvoiceInbox::suggestions(array_replace($fields,['Rechnungsdatum'=>'2026-02-31']))['document_date']),'invalid date not proposed');
+check(!isset(InvoiceInbox::suggestions(array_replace($fields,['Rechnungsnummer'=>'A / B']))['supplier_reference']),'ambiguous reference not proposed');
+foreach(['Gutschrift','Unbekannt',''] as $type)check(!isset(InvoiceInbox::suggestions(array_replace($fields,['Belegart'=>$type]))['amount']),'credit or unknown type not expense suggestion');
+check(\Kulturhus\Verein\Tests\MySqlFixture::integrity($db)==='ok','database integrity');echo "$n guided invoice checks passed; no network/mail/payment\n";

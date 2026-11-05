@@ -1,0 +1,15 @@
+.excess-returns{font-size:1rem;min-width:0}
+.excess-returns :is(h2,h3){font-size:1.25rem;overflow-wrap:anywhere}
+.excess-returns :is(p,label,small,summary,a,button,input,textarea,strong){font-size:1rem;overflow-wrap:anywhere}
+.excess-returns :is(form,fieldset,article,div,details,label){min-width:0;max-width:100%}
+.excess-returns :is(button,.btn,input:not([type=hidden]):not([type=checkbox]),summary){min-block-size:3rem}
+.excess-returns textarea{min-block-size:6rem;white-space:pre-wrap}
+.excess-returns :is(input,textarea){max-width:100%;box-sizing:border-box}
+.excess-control-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:.75rem}
+.excess-return-candidate{padding:1rem 0;border-block-start:1px solid #d4dee6}
+.excess-return-reason,.excess-return-description{white-space:pre-wrap;overflow-wrap:anywhere}
+.excess-returns :is(button,a,input,textarea,summary):focus-visible{outline:.1875rem solid #316d9e;outline-offset:.125rem}
+.excess-returns .excess-check{display:flex;align-items:flex-start;gap:.5rem;min-block-size:3rem;padding:.5rem 0}
+.excess-returns .excess-check input{flex:none;inline-size:1.5rem;block-size:1.5rem;margin:0}
+.excess-returns .actions{display:flex;flex-wrap:wrap;gap:.5rem}
+#excess-return-history,#excess-return-choice{scroll-margin-block-start:6rem}

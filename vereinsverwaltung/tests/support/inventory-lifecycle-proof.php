@@ -1,0 +1,6 @@
+<?php declare(strict_types=1);
+require_once __DIR__.'/original-database-hash.php';
+function ownInventoryLifecycleProof():void
+{
+ $cfg=\Kulturhus\Native\TestSupport::config();$db=\Kulturhus\Native\TestSupport::db();if(($cfg['owner']??'')!=='isolated-native-ci'||($cfg['label']??'')!=='native-inventory-lifecycle-interface'||!preg_match('/\Akh_native_[a-f0-9]{24}\z/D',$cfg['database']??'')||$db->query('SELECT DATABASE()')->fetchColumn()!==$cfg['database'])throw new RuntimeException('Owned lifecycle proof required.');$tables=array_values(array_diff($db->query('SHOW TABLES')->fetchAll(PDO::FETCH_COLUMN),['native_auth_sessions','native_auth_limits','native_language_preferences']));$whole=ownOriginalDatabaseHash($db,$tables);$read=static fn(string$t,string$order='id'):array=>$db->query("SELECT * FROM `$t` WHERE club_id='own-list-club' ORDER BY $order")->fetchAll(PDO::FETCH_ASSOC);$items=$read('inventory_items');$stocks=$read('inventory_stock','item_id,location_id');$pieces=$read('inventory_purchase_units','sequence');$events=$read('inventory_events','sequence');$balances=array_column((new \Kulturhus\Verein\Finance($db,'own-list-admin'))->accounts(),'balance_cents','id');header('Content-Type: application/json');header('Cache-Control: private, no-store');echo json_encode(compact('whole','items','stocks','pieces','events','balances'),JSON_THROW_ON_ERROR);
+}

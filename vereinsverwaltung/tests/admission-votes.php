@@ -1,0 +1,16 @@
+<?php declare(strict_types=1);
+require __DIR__.'/../src/bootstrap.php';
+use Kulturhus\Verein\{Database,AdmissionVotes,MembershipApplications};
+$db=\Kulturhus\Verein\Tests\MySqlFixture::connect(':memory:');Database::migrate($db);$db->exec("INSERT INTO clubs VALUES('a','Test');INSERT INTO actors(id,club_id,role) VALUES('s','a','members'),('v1','a','member'),('v2','a','member'),('e','a','editor')");
+$db->exec("UPDATE actors SET is_superuser=1 WHERE id IN ('s')");
+$n=0;function ok(bool $v,string $l):void{global $n;if(!$v)throw new RuntimeException($l);++$n;echo "PASS $l\n";}function denied(callable $f,string $l):void{try{$f();}catch(DomainException){ok(true,$l);return;}throw new RuntimeException($l);}
+$manager=new AdmissionVotes($db,'s');$one=new AdmissionVotes($db,'v1');$two=new AdmissionVotes($db,'v2');$intake=new MembershipApplications($db,'a','s');$config=$intake->settings()['config'];$config['enabled']=true;$intake->saveSettings($config,0);
+$make=fn()=>$intake->submit(['first_name'=>'Test','last_name'=>bin2hex(random_bytes(3)),'email'=>'test@example.invalid','birthday'=>'1990-01-02','address'=>'Testweg'],bin2hex(random_bytes(16)),1,true);
+denied(fn()=>$one->grant('v1',0,'1. Vorstand',true,true),'ordinary member cannot grant votes');denied(fn()=>$manager->grant('e',0,'Vorstand',true,true),'editor cannot become voter');
+$manager->grant('v1',0,'1. Vorstand',true,true);$manager->grant('v2',0,'2. Vorstand',true,true);$id=$make();$manager->open($id,true);$one->vote($id,'yes','',true);ok(AdmissionVotes::result($db,'a',$id)['result']==='pending','one vote is not whole board');denied(fn()=>$two->vote($id,'no','',true),'rejection needs reason');$two->vote($id,'no','Interner Testgrund',true);ok(AdmissionVotes::result($db,'a',$id)['result']==='discussion','mixed votes do not reject automatically');denied(fn()=>$one->vote($id,'no','Change',true),'votes cannot be silently changed');denied(fn()=>$intake->review($id,1,'accepted','Not enough','T1','2026-09-05'),'no online decision cannot be applied');
+$contact=$intake->review($id,1,'accepted','Vorstand hat in Sitzung zugestimmt; Beteiligte im Test dokumentiert.','T1','2026-09-05','',true,'2026-09-05','single');ok($contact!==null&&str_contains($intake->application($id)['review_note'],'außerhalb'),'external board decision recorded without inventing votes');
+$id=$make();$manager->open($id,true);$one->vote($id,'yes','',true);$two->vote($id,'yes','',true);$two->vote($id,'yes','',true);ok(AdmissionVotes::result($db,'a',$id)['result']==='accepted','all yes and replay produces one consent each');
+$id=$make();$manager->open($id,true);$one->vote($id,'no','Grund A',true);$two->vote($id,'no','Grund B',true);ok(AdmissionVotes::result($db,'a',$id)['result']==='rejected','all agree rejection resolution');
+$manager->grant('v2',1,'2. Vorstand',false,false);ok(AdmissionVotes::result($db,'a',$id)['result']==='discussion','changed board invalidates unapplied result');denied(fn()=>$two->detail($id),'revoked voter loses access');
+$manual=$intake->submit(['first_name'=>'Papier','last_name'=>'Test'],bin2hex(random_bytes(16)),1,false,true);ok(json_decode($intake->application($manual)['answers'],true)['source']==='manual','manual intake does not pretend online consent');
+echo "$n admission checks passed\n";

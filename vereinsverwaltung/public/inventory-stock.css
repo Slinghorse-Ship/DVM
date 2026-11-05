@@ -1,0 +1,11 @@
+#inventory-stock-change{font-size:1rem;line-height:1.55;min-width:0;max-width:100%;overflow-wrap:anywhere;container-type:inline-size}
+#inventory-stock-change *{font-size:inherit;min-width:0;max-width:100%}
+#inventory-stock-change :is(label,small,summary,.muted,button,.button){font-size:.875rem}
+#inventory-stock-change :is(input,select,textarea){font-size:1rem;min-height:46px}
+#inventory-stock-change :is(button,a,summary){min-height:44px;white-space:normal}
+#inventory-stock-change a{display:inline-block;align-content:center}
+#inventory-stock-change input[type=checkbox]{width:44px;height:44px;min-height:44px;flex-basis:44px}
+#inventory-stock-panel{font-size:1rem}#inventory-stock-panel>summary{font-size:1rem;min-height:44px}#inventory-stock-panel>summary strong{font-size:1.1875rem}#inventory-stock-panel>summary small{font-size:.875rem}
+:is(#inventory-stock-original,#inventory-stock-current){font-size:1rem;min-width:0;overflow-wrap:anywhere}:is(#inventory-stock-original,#inventory-stock-current) h2{font-size:1.1875rem}:is(#inventory-stock-original,#inventory-stock-current) p,:is(#inventory-stock-original,#inventory-stock-current) pre{font-size:1rem}:is(#inventory-stock-original,#inventory-stock-current) a{font-size:.875rem;min-height:44px}
+.iv-stock-cash{display:grid;gap:.5rem}
+@container(max-width:42em){#inventory-stock-change .iv-form-grid{grid-template-columns:minmax(0,1fr)}}

@@ -1,0 +1,13 @@
+/* Nested forms keep usable space at narrow widths and enlarged text. */
+.typed-collection{min-inline-size:0;max-inline-size:100%;overflow-wrap:anywhere;padding:12px!important}
+.typed-collection .typed-collection{padding:6px!important;margin-inline:0}
+.typed-collection .typed-collection-item{min-inline-size:0;max-inline-size:100%;padding:6px!important}
+.typed-collection :is(legend,summary,label,p){max-inline-size:100%;white-space:normal;overflow-wrap:anywhere}
+.typed-collection :is(input,select,textarea){min-inline-size:0;max-inline-size:100%}
+.typed-collection :is(button,summary){min-block-size:44px;white-space:normal;overflow-wrap:anywhere}
+.typed-collection button{min-inline-size:44px!important}
+.typed-collection :is(.reference-search-actions,.reference-pagination){display:flex;flex-wrap:wrap;gap:8px;min-inline-size:0}
+.typed-collection .reference-search-actions input{flex:1 1 120px;inline-size:100%;min-inline-size:0}
+.typed-collection :is(.reference-search-actions,.reference-pagination) button{max-inline-size:100%}
+.typed-collection :is(.kh-rte,.model-fields,.model-field,.fields,fieldset){min-inline-size:0;max-inline-size:100%}
+.typed-collection [type=checkbox]{flex:0 0 auto}

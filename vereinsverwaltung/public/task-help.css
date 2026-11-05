@@ -1,0 +1,9 @@
+.task-help,.task-help .card{min-width:0;overflow-wrap:anywhere}
+.task-help pre{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word}
+.task-help ol{padding-inline-start:1.5em}
+.task-help li{margin-block:.7em}
+.task-help-topics,.task-help-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-block:1rem}
+.task-help .btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;max-width:100%;font-size:1rem;white-space:normal;overflow-wrap:anywhere;text-align:center}
+.task-help-topics .btn{flex:1 1 16rem}
+[data-task-help-entry]{min-height:44px;max-width:100%;font-size:1rem;white-space:normal}
+.manager-panel{box-sizing:border-box;width:min(1100px,calc(100vw - 24px));max-width:calc(100vw - 24px);max-height:calc(100dvh - 24px);padding:0;border:1px solid var(--admin-line,#cad4ce);border-radius:18px;background:var(--admin-surface,#fff);color:var(--admin-text,#172c23)}.manager-panel::backdrop{background:#101b24b8}.manager-panel>header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px;position:sticky;top:0;background:var(--admin-surface,#fff);z-index:1;border-bottom:1px solid var(--admin-line,#cad4ce)}.manager-panel h2{margin:0;color:inherit}.manager-panel>header button{min-height:44px;font-size:16px;white-space:normal}.manager-panel [data-manager-panel-body]{padding:16px}.manager-panel .task-help{padding:0;max-width:none}.manager-panel iframe{display:block;width:100%;height:75dvh;border:0;background:#fff}.manager-panel[data-manager-panel=preview] [data-manager-panel-body]{padding:0}.manager-panel a{overflow-wrap:anywhere}@media(max-width:500px){.manager-panel>header{align-items:flex-start}.manager-panel h2{font-size:1.3rem}}

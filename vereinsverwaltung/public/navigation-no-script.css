@@ -1,0 +1,11 @@
+/* Native fragment links keep the existing role-bound menu usable without scripts. */
+.mobile-menu,.mobile-nav-close,.collapse-sidebar,.menu-search,[data-menu-search-status] { display:none!important; }
+.mobile-menu-no-script,.mobile-nav-close-no-script { display:none; }
+.sidebar { transition:none!important; }
+@media (max-width:1000px) {
+  .mobile-menu-no-script { display:inline-flex;min-width:44px;min-height:44px;align-items:center;justify-content:center; }
+  .mobile-nav-close-no-script { display:block;margin:8px 12px;min-height:44px;padding:12px; }
+  body>.sidebar:target { transform:translateX(0);max-width:85vw; }
+}
+
+#gegenstand-rechnungen [data-inventory-ocr-document]{display:none!important}

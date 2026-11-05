@@ -1,0 +1,11 @@
+<?php declare(strict_types=1); ?>
+<details class="card" data-free-formula-help><summary><?= e($freeText('Formeln und Zellverknüpfungen verwenden')) ?></summary>
+<p><?= e($freeText('Eine Spalte vom Typ „Formel“ rechnet mit Zahlen. Beispiel:')) ?> <code>=[A]*[B]</code> <?= e($freeText('verwendet Spalte A und B derselben Zeile. Eine „Zellverknüpfung“ übernimmt einen einzelnen Zellverweis, auch auf Text oder Datum. Textspalten bleiben Text.')) ?></p>
+<p><?= e($freeText('Erlaubt sind +, −, *, /, Klammern sowie SUMME, MITTELWERT, MIN, MAX und RUNDEN. Beispiel:')) ?> <code><?= e($freeText('=RUNDEN([A]*1,19;2)')) ?></code><?= e($freeText('. Funktionswerte mit Semikolon trennen. Ergebnisse haben höchstens zwölf Vorkomma- und sechs Nachkommastellen; die Rundung erfolgt kaufmännisch.')) ?></p>
+<p><?= e($freeText('Über „Zellverweise“ an einer gespeicherten Zeile erhältst du feste Verweise auf deren Zellen. Die Zuordnung bleibt beim Suchen, Sortieren und Umbenennen bestehen. Jede Quelle benötigt dein eigenes aktuelles Leserecht. Fehlende, archivierte oder gesperrte Quellen und Zirkelbezüge zeigen einen Fehler. Leere Zellen sind keine Zahl.')) ?></p>
+<p><?= e($freeText('Ergebnisse werden beim Öffnen und Speichern aus den aktuellen gespeicherten Werten berechnet. CSV enthält diese Ergebnisse; Formeln bleiben in der Liste erhalten. Ergebnisse sind keine Buchungsbelege. Beim CSV-Import berechneter Spalten werden ausdrücklich Formelausdrücke erwartet.')) ?></p></details>
+<?php if(input($_GET,'ref_row')!==''): ?>
+<section class="card" id="cell-references" data-free-references><h2><?= e($freeText('Feste Zellverweise')) ?></h2><p><?= e($freeText('Wähle und kopiere den gewünschten vollständigen Verweis in eine Formel- oder Verknüpfungszelle. Der Verweis identifiziert die gespeicherte Originalzelle.')) ?></p>
+<?php foreach($free->cellReferences($sheet,input($_GET,'ref_row'))as$reference): ?><label><?= e($reference['letter'].' · '.$reference['name']) ?><input class="form-control" readonly data-free-reference aria-label="<?= e($freeText('Zellverweis ').$reference['name']) ?>" value="<?= e($reference['reference']) ?>"></label><?php endforeach ?>
+<a class="btn btn-outline theme-secondary secondary" href="<?= e(url($queryFree+['page'=>$page])) ?>"><?= e($freeText('Zur Liste zurück')) ?></a></section>
+<?php endif ?>

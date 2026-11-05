@@ -1,0 +1,67 @@
+<?php declare(strict_types=1);
+require dirname(__DIR__).'/native/bootstrap.php';
+require dirname(__DIR__).'/src/Events/WebsiteCalendar.php';
+use Kulturhus\Native\TestSupport;
+use Kulturhus\Native\Shared\{Access,Db};
+use Kulturhus\Native\Communication\Schema;
+use Kulturhus\Native\Cms\{Pages,PublishedEvents};
+use Kulturhus\Native\Events\Eventbrite;
+$db=TestSupport::db();TestSupport::seed($db);Schema::install($db);Kulturhus\Native\Cms\Schema::install($db);
+$n=0;function check(bool $ok,string $label):void{global $n;if(!$ok)throw new RuntimeException($label);$n++;echo "PASS $label\n";}
+function rejected(callable $f,string $label):void{try{$f();}catch(DomainException|InvalidArgumentException){check(true,$label);return;}check(false,$label);}
+$access=new Access($db,'admin');$club=$access->club();$service=new Eventbrite($db,$access);$pages=new Pages($db,$access);$published=new PublishedEvents($db,$club);
+$raw=['id'=>'1008','name'=>['text'=>'Importtermin'],'description'=>['text'=>'Veröffentlichtes Programm'],'start'=>['utc'=>'2026-10-25T00:30:00Z','timezone'=>'Europe/Berlin'],'end'=>['utc'=>'2026-10-25T02:30:00Z'],'venue'=>['name'=>'Vereinssaal'],'status'=>'live','url'=>'https://www.eventbrite.de/e/1008'];
+$fetched=$service->fetch('123',fn($path)=>['events'=>[$raw],'pagination'=>['page_number'=>1,'page_count'=>1]]);$result=$service->import($fetched);$id=$result[0]['id'];
+check($result[0]['status']==='draft'&&$published->between('2026-10-01','2026-11-01')===[],'imports are drafts until explicit publication');
+$p=$pages->get($id);$pages->publish($id,$p['version']);$e=$published->between('2026-10-01','2026-11-01');
+check(count($e)===1&&$e[0]['id']===$id&&$e[0]['starts_at']==='2026-10-25T00:30:00Z'&&$e[0]['ends_at']==='2026-10-25T02:30:00Z','UTC identity and duration survive ambiguous daylight saving time');
+check($service->import($fetched)[0]['status']==='unchanged'&&count($pages->list())===1,'repeated import never duplicates a CMS event');
+$raw['name']['text']='Geändertes Programm';$next=[Eventbrite::normalize($raw)];check($service->import($next)[0]['status']==='draft','publication version does not cause a false editing conflict');
+check($published->between('2026-10-01','2026-11-01')[0]['title']==='Importtermin','edited import cannot leak an unpublished draft to calendar');
+$p=$pages->get($id);$p['title']='Lokale Bearbeitung';$pages->save($p,$p['version']);$raw['name']['text']='Weitere externe Änderung';check($service->import([Eventbrite::normalize($raw)])[0]['status']==='conflict','local edits preserved against external overwrites');
+$calendar=Kulturhus\Verein\WebsiteCalendar::fromNative($db,'manager-club',$club,'https://example.invalid');$entry=$calendar->appointment('manager-club','website:'.$id);check($entry['source_url']==='https://example.invalid/'.$p['slug'].'/','manager event source uses the actual public canonical path and trailing slash');check($entry['title']==='Importtermin'&&$entry['end_known'],'manager reads the identical published revision');
+rejected(fn()=>$calendar->appointment('other-club','website:'.$id),'calendar tenant isolation');
+$raw['id']='1009';$raw['name']['text']='Absagetermin';$result=$service->import([Eventbrite::normalize($raw)]);$cancelId=$result[0]['id'];$p=$pages->get($cancelId);$pages->publish($cancelId,$p['version']);$raw['status']='canceled';check($service->import([Eventbrite::normalize($raw)])[0]['status']==='cancelled','cancellation retracts the original publication');
+check(count($published->between('2026-10-01','2026-11-01'))===1,'cancelled events disappear from shared published feed');
+check($calendar->appointment('manager-club','website:'.$cancelId)['cancelled']===true,'calendar refresh retains the original with its explicit cancellation');
+rejected(fn()=>$service->fetch('123',fn()=>['events'=>[$raw],'pagination'=>['page_number'=>1,'page_count'=>2]]),'incomplete pagination rejected before import');
+rejected(fn()=>$service->fetch('123',fn()=>['events'=>[$raw,$raw],'pagination'=>['page_number'=>1,'page_count'=>1]]),'duplicate external identities rejected');
+$before=count($pages->list());$bad=$raw;$bad['id']='1010';$good=Eventbrite::normalize($bad);rejected(fn()=>$service->import([$good,['external_id'=>'broken']]),'malformed final entry rejects complete batch');check(count($pages->list())===$before,'invalid batch makes no partial writes');
+// Older installations may carry a higher original calendar sequence than the page revision.
+Db::run($db,'UPDATE khcms_events SET sequence=sequence+100,changed_at=? WHERE club_id=? AND page_id=?',['2026-10-01 07:08:09.123456',$club,$id]);
+$originalEvents=$db->query('SELECT * FROM khcms_events ORDER BY club_id,page_id')->fetchAll(PDO::FETCH_ASSOC);
+$originalPages=$db->query('SELECT * FROM khcms_pages ORDER BY id')->fetchAll(PDO::FETCH_ASSOC);
+$originalRevisions=$db->query('SELECT * FROM khcms_revisions ORDER BY page_id,revision')->fetchAll(PDO::FETCH_ASSOC);
+Kulturhus\Native\Cms\Schema::install($db);Kulturhus\Native\Cms\Schema::install($db);
+check($db->query('SELECT * FROM khcms_events ORDER BY club_id,page_id')->fetchAll(PDO::FETCH_ASSOC)===$originalEvents,'repeated schema maintenance preserves every original event sequence, cancellation and timestamp');
+check($db->query('SELECT * FROM khcms_pages ORDER BY id')->fetchAll(PDO::FETCH_ASSOC)===$originalPages&&$db->query('SELECT * FROM khcms_revisions ORDER BY page_id,revision')->fetchAll(PDO::FETCH_ASSOC)===$originalRevisions,'event schema maintenance never republishes or changes an original page/revision');
+$originalCurrent=array_values(array_filter($originalEvents,static fn($row)=>$row['page_id']===$id))[0];
+$originalPublishedPage=array_values(array_filter($originalPages,static fn($row)=>$row['id']===$id))[0];
+Db::run($db,'DELETE FROM khcms_events WHERE club_id=? AND page_id=?',[$club,$id]);Kulturhus\Native\Cms\Schema::install($db);
+$rebuilt=Db::run($db,'SELECT * FROM khcms_events WHERE club_id=? AND page_id=?',[$club,$id])->fetch();
+check($rebuilt&&(int)$rebuilt['revision']===(int)$originalCurrent['revision']&&$rebuilt['slug']===$originalCurrent['slug']&&$rebuilt['published_at']===$originalPublishedPage['published_at']&&$rebuilt['starts_at']===$originalCurrent['starts_at'],'missing older event index is backfilled from its exact published original instead of an edited draft');
+$rebuiltOriginal=$db->query('SELECT * FROM khcms_events ORDER BY club_id,page_id')->fetchAll(PDO::FETCH_ASSOC);Kulturhus\Native\Cms\Schema::install($db);
+check($db->query('SELECT * FROM khcms_events ORDER BY club_id,page_id')->fetchAll(PDO::FETCH_ASSOC)===$rebuiltOriginal,'retry after event backfill preserves the new original and the prior cancellation notice byte-exactly');
+check($db->query('SELECT * FROM khcms_pages ORDER BY id')->fetchAll(PDO::FETCH_ASSOC)===$originalPages&&$db->query('SELECT * FROM khcms_revisions ORDER BY page_id,revision')->fetchAll(PDO::FETCH_ASSOC)===$originalRevisions,'completed backfill preserves every complete original page and revision byte');
+$db->beginTransaction();Db::run($db,"UPDATE native_users SET name='Outer transaction' WHERE id='admin'");try{Db::atomic($db,function()use($db){Db::run($db,"UPDATE native_users SET name='Failed inner write' WHERE id='admin'");throw new RuntimeException('synthetic');});}catch(RuntimeException){}check($db->inTransaction()&&$access->user()['name']==='Outer transaction','failed composed operation rolls back only its savepoint');$db->rollBack();
+$statusClass=Kulturhus\Native\Cms\EventDetails::class;
+$automatic=['template'=>'event','event_start'=>'2026-10-25T02:30','event_start_utc'=>'2026-10-25T00:30:00Z','event_end'=>'2026-10-25T02:30:00Z','event_timezone'=>'Europe/Berlin','event_status'=>'scheduled','event_status_mode'=>'automatic'];
+foreach(['2026-10-25T00:29:59Z'=>'scheduled','2026-10-25T00:30:00Z'=>'started','2026-10-25T02:29:59Z'=>'started','2026-10-25T02:30:00Z'=>'ended','2026-11-04T15:00:00Z'=>'ended']as$clock=>$expected)check($statusClass::status($automatic,new DateTimeImmutable($clock))===$expected,'automatic exact event boundary '.$clock.' '.$expected);
+foreach(array_keys($statusClass::STATUSES)as$manual){$own=array_replace($automatic,['event_status'=>$manual,'event_status_mode'=>'manual']);check($statusClass::status($own,new DateTimeImmutable('2027-01-01T00:00:00Z'))===$manual,'explicit manual '.$manual.' survives a past event end');}
+$unknownEnd=array_replace($automatic,['event_end'=>'']);check($statusClass::status($unknownEnd,new DateTimeImmutable('2026-10-25T22:59:59Z'))==='started'&&$statusClass::status($unknownEnd,new DateTimeImmutable('2026-10-25T23:00:00Z'))==='ended','unknown end uses next local midnight across 25-hour DST day');
+$legacy=$automatic;unset($legacy['event_status_mode']);check($statusClass::status($legacy,new DateTimeImmutable('2027-01-01T00:00:00Z'))==='ended','existing planned event gets automatic past display without rewriting its original');
+foreach(['cancelled','postponed','sold_out','ended']as$manual)check($statusClass::status(array_replace($legacy,['event_status'=>$manual]),new DateTimeImmutable('2027-01-01T00:00:00Z'))===$manual,'legacy explicit '.$manual.' remains authoritative');
+rejected(fn()=>$statusClass::normalize(['event_status_mode'=>[]]),'invalid status mode rejected');
+check($statusClass::normalize(['event_status'=>'automatic'])['event_status_mode']==='automatic','automatic editor choice is normalized into explicit JSON provenance');
+$beforeClock=serialize([$db->query('SELECT * FROM khcms_pages ORDER BY id')->fetchAll(),$db->query('SELECT * FROM khcms_revisions ORDER BY page_id,revision')->fetchAll(),$db->query('SELECT * FROM khcms_events ORDER BY club_id,page_id')->fetchAll()]);
+for($i=0;$i<3;$i++){$published->between('2026-10-01','2026-11-01');$statusClass::label($automatic);}
+check(serialize([$db->query('SELECT * FROM khcms_pages ORDER BY id')->fetchAll(),$db->query('SELECT * FROM khcms_revisions ORDER BY page_id,revision')->fetchAll(),$db->query('SELECT * FROM khcms_events ORDER BY club_id,page_id')->fetchAll()])===$beforeClock,'clock reads preserve every original page publication revision and event index row');
+$clockStart=new DateTimeImmutable('-1 hour',new DateTimeZone('UTC'));$clockEnd=new DateTimeImmutable('+2 seconds',new DateTimeZone('UTC'));
+$live=$pages->save(['template'=>'event','title'=>'Own clock crossing event','slug'=>'veranstaltungen/own-clock-crossing','body'=>'Own exact event body.','event_start'=>$clockStart->setTimezone(new DateTimeZone('Europe/Berlin'))->format('Y-m-d\TH:i'),'event_start_utc'=>$clockStart->setTime((int)$clockStart->format('H'),(int)$clockStart->format('i'),0)->format('Y-m-d\TH:i:s\Z'),'event_end'=>$clockEnd->format('Y-m-d\TH:i:s\Z'),'event_status'=>'automatic']);$pages->publish($live['id'],$live['version']);
+$cacheRoot=sys_get_temp_dir().'/dvm-event-clock-'.bin2hex(random_bytes(8));$site=new Kulturhus\Native\Web\Site($pages,new Kulturhus\Native\Cms\Media($db,$access,$cacheRoot.'/media'),new Kulturhus\Native\Web\Cache($cacheRoot.'/cache'),'https://example.invalid',$club);
+$beforeHtml=$site->page($live['slug']);check(str_contains($beforeHtml,'Läuft bereits'),'actual cached public event starts with running badge');$until=(float)$clockEnd->format('U.u')-microtime(true)+0.1;if($until>0)usleep((int)ceil($until*1000000));$afterHtml=$site->page($live['slug']);check(str_contains($afterHtml,'Beendet')&&$beforeHtml!==$afterHtml,'same public cache changes to ended at actual deadline without a worker or publication');
+$beforeManual=$pages->get($live['id']);$ui=new Kulturhus\Native\Web\Manager($db,$access,$cacheRoot.'/media','own-clock-csrf',false,true);$ui->action('events',['csrf'=>'own-clock-csrf','operation'=>'page-save','id'=>$live['id'],'version'=>(string)$beforeManual['version'],'title'=>$beforeManual['title'],'slug'=>$beforeManual['slug'],'template'=>'event','event_start'=>$beforeManual['event_start'],'event_start_utc'=>$beforeManual['event_start_utc'],'event_end'=>$beforeManual['event_end'],'event_timezone'=>'Europe/Berlin','body'=>$beforeManual['body'],'event_status'=>'scheduled'],[]);$manualSaved=$pages->get($live['id']);
+check($manualSaved['event_status_mode']==='manual'&&$statusClass::status($manualSaved)==='scheduled','actual manager status choice explicitly persists manual planned override for an ended event');
+check($pages->events()->publicId($live['id'])['event_status']==='ended','manual draft cannot change prior automatic public status before publication');$pages->publish($live['id'],$manualSaved['version']);check($pages->events()->publicId($live['id'])['event_status']==='scheduled','consciously published manual planned status remains despite past end time');
+$manualDom=new DOMDocument();$previousErrors=libxml_use_internal_errors(true);$manualDom->loadHTML('<?xml encoding="utf-8" ?>'.(new Kulturhus\Native\Web\Website\PageEditor($db,$access,$cacheRoot.'/media','own-clock-csrf',true))->manager($live['id'],'events'));libxml_clear_errors();libxml_use_internal_errors($previousErrors);check((new DOMXPath($manualDom))->query('//select[@name="event_status"]/option[@value="scheduled" and @selected]')->length===1,'reopened manager displays the actual explicit manual choice');
+echo "$n native event checks passed; no external API calls.\n";

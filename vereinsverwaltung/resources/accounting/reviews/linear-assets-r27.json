@@ -1,0 +1,378 @@
+{
+  "schema": 1,
+  "revision": 27,
+  "source_kind": "explicit_reviewed_source_families",
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "linear-assets-r27-001@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.intan.concessionBrands.concession",
+          "choices": [
+            "bs.ass.fixAss.intan.concessionBrands.concession"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "01100",
+              "semantic": {
+                "name": "Konzessionen",
+                "function": "",
+                "range_start": "01100",
+                "range_end": "01100",
+                "parent": null
+              },
+              "signature": "771faddd070349b23c88d331e5e14053e84d6bc7b03cdd954f2fcbcf0807a547"
+            }
+          ]
+        },
+        {
+          "purpose": "linear-assets-r27-002@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.intan.concessionBrands.tradeMarks",
+          "choices": [
+            "bs.ass.fixAss.intan.concessionBrands.tradeMarks"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "01200",
+              "semantic": {
+                "name": "Gewerbliche Schutzrechte",
+                "function": "",
+                "range_start": "01200",
+                "range_end": "01200",
+                "parent": null
+              },
+              "signature": "4cd850bce6bdec27f6a4e041183d09f981b6037ba97f65a42145f3b7187cb849"
+            }
+          ]
+        },
+        {
+          "purpose": "linear-assets-r27-003@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.intan.concessionBrands.other",
+          "choices": [
+            "bs.ass.fixAss.intan.concessionBrands.other"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "01300",
+              "semantic": {
+                "name": "Ähnliche Rechte und Werte",
+                "function": "",
+                "range_start": "01300",
+                "range_end": "01300",
+                "parent": null
+              },
+              "signature": "0026a8309c673889a9fb03a262bd5bd9f7e135e1855b02c9507483923e1a13a2"
+            }
+          ]
+        },
+        {
+          "purpose": "linear-assets-r27-004@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.intan.concessionBrands.licenses",
+          "choices": [
+            "bs.ass.fixAss.intan.concessionBrands.licenses"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "01400",
+              "semantic": {
+                "name": "Lizenzen an gewerblichen Schutzrechten und ähnlichen Rechten und Werten",
+                "function": "",
+                "range_start": "01400",
+                "range_end": "01400",
+                "parent": null
+              },
+              "signature": "d925526a95a59a223c7817d905a896c973969017128a5b4560f56f36afd1a0dd"
+            }
+          ]
+        },
+        {
+          "purpose": "linear-assets-r27-005@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.intan.concessionBrands.concession",
+          "choices": [
+            "bs.ass.fixAss.intan.concessionBrands.concession",
+            "bs.ass.fixAss.intan.concessionBrands.tradeMarks",
+            "bs.ass.fixAss.intan.concessionBrands.other",
+            "bs.ass.fixAss.intan.concessionBrands.licenses",
+            "bs.ass.fixAss.intan.concessionBrands.software"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "01000",
+              "semantic": {
+                "name": "Entgeltlich erworbene Konzessionen, gewerbliche Schutzrechte und ähnliche Rechte und Werte sowie Lizenzen an solchen Rechten und Werten",
+                "function": "",
+                "range_start": "01000",
+                "range_end": "01000",
+                "parent": null
+              },
+              "signature": "1f9db55716d1f4368c77260d4f1a123e0197384da52f8f4fe8eb1f7a4f87e7bd"
+            }
+          ]
+        },
+        {
+          "purpose": "linear-assets-r27-006@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.tan.machinery.technEquipm",
+          "choices": [
+            "bs.ass.fixAss.tan.machinery.technEquipm",
+            "bs.ass.fixAss.tan.machinery.machinery",
+            "bs.ass.fixAss.tan.machinery.installations"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "04000",
+              "semantic": {
+                "name": "Technische Anlagen und Maschinen",
+                "function": "",
+                "range_start": "04000",
+                "range_end": "04000",
+                "parent": null
+              },
+              "signature": "b26f5a50cbc26dc2629b52b31dc0b647137083e4c3beed3665047b7130bb6359"
+            }
+          ]
+        },
+        {
+          "purpose": "linear-assets-r27-007@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.tan.otherEquipm.other",
+          "choices": [
+            "bs.ass.fixAss.tan.otherEquipm.other",
+            "bs.ass.fixAss.tan.otherEquipm.passengerCars",
+            "bs.ass.fixAss.tan.otherEquipm.comVehicle",
+            "bs.ass.fixAss.tan.otherEquipm.otherTransportMeans",
+            "bs.ass.fixAss.tan.otherEquipm.factory",
+            "bs.ass.fixAss.tan.otherEquipm.office",
+            "bs.ass.fixAss.tan.otherEquipm.otherbga"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "05000",
+              "semantic": {
+                "name": "Andere Anlagen, Betriebs- und Geschäftsausstattung",
+                "function": "",
+                "range_start": "05000",
+                "range_end": "05000",
+                "parent": null
+              },
+              "signature": "d51291acf9f641d78b82856406a92da8c6a1bddfd0fb3ee3dfde4c582f6c07c7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "linear-assets-r27-001@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.intan.concessionBrands.concession",
+          "choices": [
+            "bs.ass.fixAss.intan.concessionBrands.concession"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "01100",
+              "semantic": {
+                "name": "Konzessionen",
+                "function": "",
+                "range_start": "01100",
+                "range_end": "01100",
+                "parent": null
+              },
+              "signature": "771faddd070349b23c88d331e5e14053e84d6bc7b03cdd954f2fcbcf0807a547"
+            }
+          ]
+        },
+        {
+          "purpose": "linear-assets-r27-002@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.intan.concessionBrands.tradeMarks",
+          "choices": [
+            "bs.ass.fixAss.intan.concessionBrands.tradeMarks"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "01200",
+              "semantic": {
+                "name": "Gewerbliche Schutzrechte",
+                "function": "",
+                "range_start": "01200",
+                "range_end": "01200",
+                "parent": null
+              },
+              "signature": "4cd850bce6bdec27f6a4e041183d09f981b6037ba97f65a42145f3b7187cb849"
+            }
+          ]
+        },
+        {
+          "purpose": "linear-assets-r27-003@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.intan.concessionBrands.other",
+          "choices": [
+            "bs.ass.fixAss.intan.concessionBrands.other"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "01300",
+              "semantic": {
+                "name": "Ähnliche Rechte und Werte",
+                "function": "",
+                "range_start": "01300",
+                "range_end": "01300",
+                "parent": null
+              },
+              "signature": "0026a8309c673889a9fb03a262bd5bd9f7e135e1855b02c9507483923e1a13a2"
+            }
+          ]
+        },
+        {
+          "purpose": "linear-assets-r27-004@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.intan.concessionBrands.licenses",
+          "choices": [
+            "bs.ass.fixAss.intan.concessionBrands.licenses"
+          ],
+          "conditional": false,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "01400",
+              "semantic": {
+                "name": "Lizenzen an gewerblichen Schutzrechten und ähnlichen Rechten und Werten",
+                "function": "",
+                "range_start": "01400",
+                "range_end": "01400",
+                "parent": null
+              },
+              "signature": "d925526a95a59a223c7817d905a896c973969017128a5b4560f56f36afd1a0dd"
+            }
+          ]
+        },
+        {
+          "purpose": "linear-assets-r27-005@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.intan.concessionBrands.concession",
+          "choices": [
+            "bs.ass.fixAss.intan.concessionBrands.concession",
+            "bs.ass.fixAss.intan.concessionBrands.tradeMarks",
+            "bs.ass.fixAss.intan.concessionBrands.other",
+            "bs.ass.fixAss.intan.concessionBrands.licenses",
+            "bs.ass.fixAss.intan.concessionBrands.software"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "01000",
+              "semantic": {
+                "name": "Entgeltlich erworbene Konzessionen, gewerbliche Schutzrechte und ähnliche Rechte und Werte sowie Lizenzen an solchen Rechten und Werten",
+                "function": "",
+                "range_start": "01000",
+                "range_end": "01000",
+                "parent": null
+              },
+              "signature": "1f9db55716d1f4368c77260d4f1a123e0197384da52f8f4fe8eb1f7a4f87e7bd"
+            }
+          ]
+        },
+        {
+          "purpose": "linear-assets-r27-006@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.tan.machinery.technEquipm",
+          "choices": [
+            "bs.ass.fixAss.tan.machinery.technEquipm",
+            "bs.ass.fixAss.tan.machinery.machinery",
+            "bs.ass.fixAss.tan.machinery.installations"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "04000",
+              "semantic": {
+                "name": "Technische Anlagen und Maschinen",
+                "function": "",
+                "range_start": "04000",
+                "range_end": "04000",
+                "parent": null
+              },
+              "signature": "b26f5a50cbc26dc2629b52b31dc0b647137083e4c3beed3665047b7130bb6359"
+            }
+          ]
+        },
+        {
+          "purpose": "linear-assets-r27-007@1",
+          "group": "fixed_assets",
+          "target": "bs.ass.fixAss.tan.otherEquipm.other",
+          "choices": [
+            "bs.ass.fixAss.tan.otherEquipm.other",
+            "bs.ass.fixAss.tan.otherEquipm.passengerCars",
+            "bs.ass.fixAss.tan.otherEquipm.comVehicle",
+            "bs.ass.fixAss.tan.otherEquipm.otherTransportMeans",
+            "bs.ass.fixAss.tan.otherEquipm.factory",
+            "bs.ass.fixAss.tan.otherEquipm.office",
+            "bs.ass.fixAss.tan.otherEquipm.otherbga"
+          ],
+          "conditional": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "05000",
+              "semantic": {
+                "name": "Andere Anlagen, Betriebs- und Geschäftsausstattung",
+                "function": "",
+                "range_start": "05000",
+                "range_end": "05000",
+                "parent": null
+              },
+              "signature": "d51291acf9f641d78b82856406a92da8c6a1bddfd0fb3ee3dfde4c582f6c07c7"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "production_authorized": false
+}

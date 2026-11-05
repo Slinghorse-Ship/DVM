@@ -1,0 +1,303 @@
+{
+  "schema": 1,
+  "revision": 64,
+  "production_authorized": false,
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "equity-participation-r64-29790@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.profSharing",
+          "choices": [
+            "bs.eqLiab.equity.profSharing"
+          ],
+          "commercial_book_only": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29790",
+              "semantic": {
+                "name": "Genussrechtskapital mit Eigenkapitalcharakter",
+                "function": "",
+                "range_start": "29790",
+                "range_end": "29790",
+                "parent": null
+              },
+              "signature": "04913fa32e4865ee62992e6dbabdad155251a57ef69bdbd11568ae2184d43f38"
+            }
+          ]
+        },
+        {
+          "purpose": "atypical-debt-r64-35300@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.silentPartner.atyp",
+          "choices": [
+            "bs.eqLiab.liab.other.silentPartner.atyp"
+          ],
+          "commercial_book_only": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "35300",
+              "semantic": {
+                "name": "Verbindlichkeiten gegenüber atypisch stillen Gesellschaftern",
+                "function": "",
+                "range_start": "35300",
+                "range_end": "35300",
+                "parent": null
+              },
+              "signature": "d5c658206c2b38945c45f431d40673f179cc07d42d04969fb4400b1cb4157134"
+            }
+          ]
+        },
+        {
+          "purpose": "atypical-debt-r64-35310@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.silentPartner.atyp",
+          "choices": [
+            "bs.eqLiab.liab.other.silentPartner.atyp"
+          ],
+          "commercial_book_only": true,
+          "disclosures": [
+            "bs.eqLiab.liab.other.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "35310",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "35310",
+                "range_end": "35310",
+                "parent": {
+                  "code": "35300",
+                  "end": "35300",
+                  "name": "Verbindlichkeiten gegenüber atypisch stillen Gesellschaftern",
+                  "function": ""
+                }
+              },
+              "signature": "db7579e9f9e1a44fc9ea32f35c46e7239905d5a4bc1df9319030872be30cc6cc"
+            }
+          ]
+        },
+        {
+          "purpose": "atypical-debt-r64-35320@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.silentPartner.atyp",
+          "choices": [
+            "bs.eqLiab.liab.other.silentPartner.atyp"
+          ],
+          "commercial_book_only": true,
+          "disclosures": [
+            "bs.eqLiab.liab.other.above1year"
+          ],
+          "sources": [
+            {
+              "code": "35320",
+              "semantic": {
+                "name": "- Restlaufzeit 1 bis 5 Jahre",
+                "function": "",
+                "range_start": "35320",
+                "range_end": "35320",
+                "parent": {
+                  "code": "35300",
+                  "end": "35300",
+                  "name": "Verbindlichkeiten gegenüber atypisch stillen Gesellschaftern",
+                  "function": ""
+                }
+              },
+              "signature": "3f5a1bb5034a0654725a67b6972952917d7162ce3b283e32629916983c55ae53"
+            }
+          ]
+        },
+        {
+          "purpose": "atypical-debt-r64-35330@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.silentPartner.atyp",
+          "choices": [
+            "bs.eqLiab.liab.other.silentPartner.atyp"
+          ],
+          "commercial_book_only": true,
+          "disclosures": [
+            "bs.eqLiab.liab.other.above1year"
+          ],
+          "sources": [
+            {
+              "code": "35330",
+              "semantic": {
+                "name": "- Restlaufzeit größer 5 Jahre",
+                "function": "",
+                "range_start": "35330",
+                "range_end": "35330",
+                "parent": {
+                  "code": "35300",
+                  "end": "35300",
+                  "name": "Verbindlichkeiten gegenüber atypisch stillen Gesellschaftern",
+                  "function": ""
+                }
+              },
+              "signature": "6460b98a00b7d07ee3a7e1374778830a00b85c0281efb4813a09f0bcc548c985"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "equity-participation-r64-29790@1",
+          "group": "equity",
+          "target": "bs.eqLiab.equity.profSharing",
+          "choices": [
+            "bs.eqLiab.equity.profSharing"
+          ],
+          "commercial_book_only": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "29790",
+              "semantic": {
+                "name": "Genussrechtskapital mit Eigenkapitalcharakter",
+                "function": "",
+                "range_start": "29790",
+                "range_end": "29790",
+                "parent": null
+              },
+              "signature": "04913fa32e4865ee62992e6dbabdad155251a57ef69bdbd11568ae2184d43f38"
+            }
+          ]
+        },
+        {
+          "purpose": "atypical-debt-r64-35300@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.silentPartner.atyp",
+          "choices": [
+            "bs.eqLiab.liab.other.silentPartner.atyp"
+          ],
+          "commercial_book_only": true,
+          "disclosures": [],
+          "sources": [
+            {
+              "code": "35300",
+              "semantic": {
+                "name": "Verbindlichkeiten gegenüber atypisch stillen Gesellschaftern",
+                "function": "",
+                "range_start": "35300",
+                "range_end": "35300",
+                "parent": null
+              },
+              "signature": "d5c658206c2b38945c45f431d40673f179cc07d42d04969fb4400b1cb4157134"
+            }
+          ]
+        },
+        {
+          "purpose": "atypical-debt-r64-35310@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.silentPartner.atyp",
+          "choices": [
+            "bs.eqLiab.liab.other.silentPartner.atyp"
+          ],
+          "commercial_book_only": true,
+          "disclosures": [
+            "bs.eqLiab.liab.other.upTo1year"
+          ],
+          "sources": [
+            {
+              "code": "35310",
+              "semantic": {
+                "name": "- Restlaufzeit bis 1 Jahr",
+                "function": "",
+                "range_start": "35310",
+                "range_end": "35310",
+                "parent": {
+                  "code": "35300",
+                  "end": "35300",
+                  "name": "Verbindlichkeiten gegenüber atypisch stillen Gesellschaftern",
+                  "function": ""
+                }
+              },
+              "signature": "db7579e9f9e1a44fc9ea32f35c46e7239905d5a4bc1df9319030872be30cc6cc"
+            }
+          ]
+        },
+        {
+          "purpose": "atypical-debt-r64-35320@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.silentPartner.atyp",
+          "choices": [
+            "bs.eqLiab.liab.other.silentPartner.atyp"
+          ],
+          "commercial_book_only": true,
+          "disclosures": [
+            "bs.eqLiab.liab.other.above1year"
+          ],
+          "sources": [
+            {
+              "code": "35320",
+              "semantic": {
+                "name": "- Restlaufzeit 1 bis 5 Jahre",
+                "function": "",
+                "range_start": "35320",
+                "range_end": "35320",
+                "parent": {
+                  "code": "35300",
+                  "end": "35300",
+                  "name": "Verbindlichkeiten gegenüber atypisch stillen Gesellschaftern",
+                  "function": ""
+                }
+              },
+              "signature": "3f5a1bb5034a0654725a67b6972952917d7162ce3b283e32629916983c55ae53"
+            }
+          ]
+        },
+        {
+          "purpose": "atypical-debt-r64-35330@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.silentPartner.atyp",
+          "choices": [
+            "bs.eqLiab.liab.other.silentPartner.atyp"
+          ],
+          "commercial_book_only": true,
+          "disclosures": [
+            "bs.eqLiab.liab.other.above1year"
+          ],
+          "sources": [
+            {
+              "code": "35330",
+              "semantic": {
+                "name": "- Restlaufzeit größer 5 Jahre",
+                "function": "",
+                "range_start": "35330",
+                "range_end": "35330",
+                "parent": {
+                  "code": "35300",
+                  "end": "35300",
+                  "name": "Verbindlichkeiten gegenüber atypisch stillen Gesellschaftern",
+                  "function": ""
+                }
+              },
+              "signature": "6460b98a00b7d07ee3a7e1374778830a00b85c0281efb4813a09f0bcc548c985"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

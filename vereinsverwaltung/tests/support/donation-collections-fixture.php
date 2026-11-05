@@ -1,0 +1,13 @@
+<?php declare(strict_types=1);
+ob_start();require __DIR__.'/member-profile-fixture.php';ob_end_clean();
+use Kulturhus\Verein\{Finance,Documents,SettingsSchema};
+require_once __DIR__.'/../../src/Finance/Donations/DonationCollections.php';
+$fixture=json_decode(file_get_contents($file),true,512,JSON_THROW_ON_ERROR);$finance=new Finance($db,$actor);$docs=new Documents($db,$actor);$settings=new \Kulturhus\Verein\Settings($db,$actor);$key=static fn()=>bin2hex(random_bytes(16));
+$clubData=array_replace(SettingsSchema::defaults('club'),['name'=>'Synthetischer Sammeltest e. V.','street'=>'Testweg 1','postcode'=>'12345','city'=>'Musterort']);$settings->save('club',$clubData,0);
+$original=file_get_contents(__DIR__.'/../../resources/donation-forms/money-original.pdf');$notice=$docs->upload('synthetic-notice.pdf',$original,['title'=>'Synthetic authority fixture','scope'=>'finance','kind'=>'other','document_date'=>'2025-02-01'],$key());
+$tax=array_replace(SettingsSchema::defaults('tax'),['office'=>'Musterstadt','number'=>'00/000/00000','purpose'=>'Kunst und Kultur','notice_type'=>'exemption','exemption_date'=>'2025-02-01','assessment'=>'2022–2024','membership_deductible'=>'no','receipt_signatory'=>'Synthetic Signatory','receipt_authority_reviewed'=>true,'notice_document_id'=>$notice]);$settings->save('tax',$tax,0);
+$account=$finance->createAccount('Synthetic donations','offline','0','2026-01-01');$fixture['payments']=[];
+foreach(['25,01','40,02'] as $i=>$amount){$id=$finance->createEntry(['kind'=>'donation','counterparty'=>'Synthetic donor','description'=>'Synthetic collection '.$i,'category'=>'donations','amount'=>$amount,'document_date'=>'2026-08-01','due_date'=>'2026-08-01'],$key());$finance->assignDonationContact('entry',$id,1,$member);$finance->recordPayment($id,2,$account,'2026-08-0'.($i+1));$fixture['payments'][]=$finance->allocations($id)[0]['id'];}
+$fixture['claim']=$docs->upload('synthetic-claim.pdf',$original,['title'=>'Synthetic prior claim','scope'=>'finance','kind'=>'other','document_date'=>'2026-06-01'],$key());$fixture['waiver']=$docs->upload('synthetic-waiver.pdf',$original,['title'=>'Synthetic signed waiver','scope'=>'finance','kind'=>'other','document_date'=>'2026-08-05'],$key());
+$readRole=$settings->saveRole('',0,['name'=>'Synthetic financial read','description'=>'No issuing','members_access'=>'read','finance_access'=>'read','settings_access'=>false,'inventory_access'=>'none','loans_access'=>'none','documents_access'=>'none']);$settings->assignRole($ownActor,$readRole,0);
+$fixture['finance_transactions']=(int)$db->query('SELECT COUNT(*) FROM finance_transactions WHERE club_id='.$db->quote($club))->fetchColumn();file_put_contents($file,json_encode($fixture,JSON_THROW_ON_ERROR|JSON_PRETTY_PRINT));echo $file,"\n";

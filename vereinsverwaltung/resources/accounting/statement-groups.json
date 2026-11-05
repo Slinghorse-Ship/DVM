@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "chart": "SKR42",
+  "edition": "balance",
+  "description": "Printed statement positions to bookkeeping groups, NOT E-Bilanz XML targets or tax deductibility.",
+  "groups": {
+    "fixed_assets": [
+      "Entgeltlich erworbene Konzessionen, gewerbliche Schutzrechte und ähnliche Rechte und Werte sowie Lizenzen an solchen Rechten und Werten",
+      "Selbst geschaffene gewerbliche Schutzrechte und ähnliche Rechte und Werte",
+      "In der Entwicklung befindliche immaterielle Vermögensgegenstände",
+      "Geschäfts- oder Firmenwert",
+      "Grundstücke, grundstücksgleiche Rechte und Bauten einschließlich der Bauten auf fremden Grundstücken",
+      "Technische Anlagen und Maschinen",
+      "Andere Anlagen, Betriebs- und Geschäftsausstattung",
+      "Geleistete Anzahlungen und Anlagen im Bau",
+      "Anteile an verbundenen Unternehmen",
+      "Ausleihungen an verbundene Unternehmen",
+      "Ausleihungen an Unternehmen, mit denen ein Beteiligungsverhältnis besteht",
+      "Ausleihungen an Gesellschafter",
+      "Beteiligungen",
+      "Genossenschaftsanteile",
+      "Wertpapiere des Anlagevermögens",
+      "Sonstige Ausleihungen",
+      "Rückdeckungsansprüche aus Lebensversicherungen"
+    ],
+    "inventory": [
+      "Roh-, Hilfs- und Betriebsstoffe",
+      "Unfertige Erzeugnisse, unfertige Leistungen",
+      "Fertige Erzeugnisse und Waren",
+      "In Ausführung befindliche Bauaufträge",
+      "In Arbeit befindliche Aufträge"
+    ],
+    "receivables": [
+      "Forderungen aus Lieferungen und Leistungen",
+      "Forderungen gegen verbundene Unternehmen",
+      "Forderungen gegen Unternehmen, mit denen ein Beteiligungsverhältnis besteht"
+    ],
+    "other_assets": ["Sonstige Vermögensgegenstände", "Sonstige Wertpapiere"],
+    "equity": ["Gezeichnetes Kapital", "Vereinskapital", "Kapitalrücklage", "Errichtungskapital", "Zustiftungskapital", "Zuführungskapital", "Verbrauchskapital"],
+    "reserves": ["Andere Gewinnrücklagen", "Gesetzliche Rücklage", "Kapitalerhaltungsrücklage", "Satzungsmäßige Rücklagen", "Rücklage für Anteile an einem herrschenden oder mehrheitlich beteiligten Unternehmen"],
+    "provisions": ["Sonstige Rückstellungen", "Steuerrückstellungen (allgemein)", "Rückstellungen für Pensionen und ähnliche Verpflichtungen"],
+    "liabilities": ["Sonstige Verbindlichkeiten", "Verbindlichkeiten aus Lieferungen und Leistungen", "Verbindlichkeiten gegenüber Kreditinstituten", "Erhaltene Anzahlungen auf Bestellungen", "Anleihen", "Sonstige Schuld- und Finanztitel"],
+    "revenue": [
+      "Umsatzerlöse", "Sonstige betriebliche Erträge", "Sonstige Zinsen und ähnliche Erträge",
+      "Erträge aus anderen Wertpapieren und Ausleihungen des Finanzanlagevermögens",
+      "Erträge aus Beteiligungen", "Erträge aus Spenden", "Erträge aus Mitgliedsbeiträgen, Aufnahmegebühren und Umlagen (nur Vereine)",
+      "Erhöhung oder Verminderung des Bestandes an fertigen und unfertigen Erzeugnissen",
+      "Erhöhung oder Verminderung des Bestands in Ausführung befindlicher Bauaufträge",
+      "Erhöhung oder Verminderung des Bestands in Arbeit befindlicher Aufträge", "Andere aktivierte Eigenleistungen"
+    ],
+    "expense": [
+      "Sonstige betriebliche Aufwendungen", "Zinsen und ähnliche Aufwendungen", "Steuern vom Einkommen und vom Ertrag", "Sonstige Steuern",
+      "Löhne und Gehälter", "Soziale Abgaben und Aufwendungen für Altersversorgung und für Unterstützung",
+      "Aufwendungen für bezogene Leistungen", "Aufwendungen für Roh-, Hilfs- und Betriebsstoffe und für bezogene Waren",
+      "Abschreibungen auf immaterielle Vermögensgegenstände des Anlagevermögens und Sachanlagen",
+      "Abschreibungen auf Finanzanlagen und auf Wertpapiere des Umlaufvermögens",
+      "Abschreibung auf Vermögensgegenstände des Umlaufvermögens, soweit diese die üblichen Abschreibungen überschreiten"
+    ]
+  },
+  "class_guards": {
+    "fixed_assets": "0", "inventory": "1", "receivables": "1", "other_assets": "1",
+    "equity": "2", "reserves": "2", "provisions": "3", "liabilities": "3",
+    "revenue": "47", "expense": "567"
+  }
+}

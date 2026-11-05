@@ -1,0 +1,11 @@
+dialog.kh-dialog{box-sizing:border-box;width:min(560px,calc(100vw - 32px));max-width:calc(100vw - 32px);max-height:calc(100dvh - 32px);margin:auto;padding:28px;border:1px solid var(--border,#dfe3eb);border-radius:12px;background:#fff;color:var(--text,#23354a);box-shadow:0 20px 80px #10284c40;overflow:auto;font:inherit}
+dialog.kh-dialog::backdrop{background:#10284c85}
+dialog.kh-dialog h2{font-size:23px;line-height:1.35;margin:0 0 16px;color:inherit}
+dialog.kh-dialog p{font-size:17px;line-height:1.65;margin:0 0 24px;white-space:pre-wrap;overflow-wrap:anywhere}
+dialog.kh-dialog input{font-size:17px;min-height:48px;width:100%;margin:0 0 24px}
+.kh-dialog-actions{display:flex;justify-content:flex-end;gap:12px;flex-wrap:wrap}
+.kh-dialog-actions button{min-height:48px;font:inherit;font-size:17px;font-weight:600;line-height:1.4;padding:12px 20px;white-space:normal;overflow-wrap:anywhere;max-width:100%;cursor:pointer}
+.kh-dialog-actions .kh-dialog-danger{background:#ad2525;color:white;border:1px solid #ad2525}
+.kh-dialog-actions .kh-dialog-danger:hover{background:#8e1e1e}
+dialog.kh-dialog :focus-visible{outline:3px solid #1c6cba;outline-offset:3px}
+@media(max-width:560px){dialog.kh-dialog{padding:22px 18px}.kh-dialog-actions{flex-direction:column}.kh-dialog-actions button{width:100%}}

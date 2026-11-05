@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "authority": "https://www.esteuer.de/",
+  "sources": {
+    "6.7": {
+      "date": "2023-04-01",
+      "regular_start_year": 2024,
+      "optional_start_year": 2023,
+      "source": "https://www.esteuer.de/download/taxonomie_20230619/german-gaap-taxonomy-v6.7-2023-04-01.zip",
+      "sha256": "c7ad65b29fbd84f6fbc72e598e9b20b8a76e016fe9ca071c3f91c15a8d086847",
+      "archive_sha256": "ad0768cb42aab2fc48d0971120591d37815d335a0ea6949f60819dca3a40df05"
+    },
+    "6.8": {
+      "date": "2024-04-01",
+      "regular_start_year": 2025,
+      "optional_start_year": 2024,
+      "source": "https://www.esteuer.de/download/taxonomie_20240610/german-gaap-taxonomy-v6.8-2024-04-01-xbrl.zip",
+      "sha256": "ed891b1bed30b6cbf8f57f33b5425b73094cddc8a9c72e068797360b0726a3a2",
+      "archive_sha256": "1283dec2d45bce76d3194bb035bdf432ab477d688fc342bb5c17d16ec02285d7"
+    },
+    "6.9": {
+      "date": "2025-04-01",
+      "regular_start_year": 2026,
+      "optional_start_year": 2025,
+      "source": "https://www.esteuer.de/download/taxonomie_20250618/german-gaap-taxonomy-v6.9-2025-04-01-xbrl.zip",
+      "sha256": "936d8f7ca8e8989ead200f70f5438d0d6c209821cfcbea972ba84c011b04c0cb"
+    },
+    "6.10": {
+      "date": "2026-04-01",
+      "regular_start_year": 2027,
+      "optional_start_year": 2026,
+      "source": "https://www.esteuer.de/download/taxonomie_20260615/germany-gaap-taxonomy-v6.10-2026-04-01-xbrl.zip",
+      "sha256": "81de3aa1768b4bb0a1e48a88aeb93f8cad4a2febe48c7201cabe0944db5dd8a8",
+      "archive_sha256": "de00ceaad0e532d238dea24a48160ec335422a3a71c38dd03c7b2b34b32fff76"
+    }
+  }
+}

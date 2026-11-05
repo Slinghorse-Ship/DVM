@@ -1,0 +1,112 @@
+<?php declare(strict_types=1);
+require dirname(__DIR__).'/native/bootstrap.php';
+use Kulturhus\Native\TestSupport;
+use Kulturhus\Native\Shared\{Access,Db,Identity,SecretBox};
+use Kulturhus\Native\Events\Workflow;
+use Kulturhus\Native\Events\Tickets\{Offers,Orders,Qr};
+use Kulturhus\Native\Cms\Pages;
+use Kulturhus\Native\Integration\Accounts;
+
+$db=TestSupport::db();TestSupport::seed($db);Kulturhus\Native\Communication\Schema::install($db);Kulturhus\Native\Cms\Schema::install($db);$access=new Access($db,'admin');$club=$access->club();$keyBytes=random_bytes(32);$box=new SecretBox($keyBytes);
+$checks=0;$check=static function(bool $ok,string $label)use(&$checks):void{if(!$ok)throw new RuntimeException($label);$checks++;};
+$deny=static function(callable $action,string $label)use($check):void{try{$action();}catch(DomainException|InvalidArgumentException){$check(true,$label);return;}throw new RuntimeException($label);};
+(new Identity($db,$access))->save(['name'=>'Own ticket club','origin'=>'https://ticket.example.invalid'],0);
+$workflow=new Workflow($db,$access);$choice=['source'=>'local','tickets'=>'native','payment'=>'sumup','automatic_publication'=>false];$workflow->save($choice,0);
+$pages=new Pages($db,$access);$page=$pages->save(['title'=>'Own simple ticket event','slug'=>'veranstaltungen/own-tickets','template'=>'event','event_start'=>'2050-10-25T19:00','event_timezone'=>'Europe/Berlin']);$page=$pages->publish($page['id'],$page['version']);
+$offers=new Offers($db,$access);$offer=$offers->save($page['id'],['capacity'=>3,'price_cents'=>0,'active'=>true],0);$orders=new Orders($db,$club,$box,$access);
+$request=bin2hex(random_bytes(32));$free=$orders->book($page['id'],1,2,'Own Guest','guest@example.invalid',$request);
+$check($free['status']==='paid'&&$free['quantity']===2&&count($free['passes'])===2&&$free['amount_cents']===0,'free booking issues exactly two private original QR passes immediately');
+$check($offers->get($page['id'])['remaining']===1,'confirmed free tickets count against native capacity');
+$again=$orders->book($page['id'],1,2,'Own Guest','guest@example.invalid',$request);$check($again===$free,'same submitted request retains exact order and both original pass codes');
+$deny(fn()=>$orders->book($page['id'],1,2,'Other Guest','guest@example.invalid',$request),'request cannot substitute buyer and original order');
+$deny(fn()=>$orders->book($page['id'],1,2,'Other Guest','other@example.invalid',bin2hex(random_bytes(32))),'capacity cannot oversell');
+$deny(fn()=>$offers->save($page['id'],['capacity'=>1,'price_cents'=>0,'active'=>true],1),'lower capacity cannot discard confirmed admissions');
+$pass=$free['passes'][0];$before=$db->query('SELECT * FROM native_ticket_passes ORDER BY id')->fetchAll();$inspected=$orders->pass($page['id'],$pass['code']);$check($inspected['status']==='valid'&&$db->query('SELECT * FROM native_ticket_passes ORDER BY id')->fetchAll()===$before,'scanning/reading never performs redemption');
+$admitted=$orders->checkIn($page['id'],$pass['code'],1);$check($admitted['status']==='checked_in'&&$admitted['version']===2,'explicit current actor check-in redeems once');$same=$orders->checkIn($page['id'],$pass['code'],1);$check($same===$admitted,'duplicate check-in preserves exact first actor/time/version');
+$deny(fn()=>(new Orders($db,$club,$box,new Access($db,'reader')))->checkIn($page['id'],$free['passes'][1]['code'],1),'reader cannot redeem admission');
+$deny(fn()=>(new Orders($db,'synthetic-b',$box,new Access($db,'outsider')))->pass($page['id'],$pass['code']),'another club cannot scan admission');
+$qr=Qr::payload($page['id'],$pass['code']);$check(Qr::parse($qr)===['page_id'=>$page['id'],'code'=>$pass['code']]&&!str_contains($qr,'Guest')&&!str_contains($qr,'@'),'QR contains only event and opaque code');$png=Qr::png($page['id'],$pass['code']);$check(str_starts_with($png,"\x89PNG\r\n\x1a\n")&&getimagesizefromstring($png)['mime']==='image/png','actual integer-module QR PNG generated with existing pinned encoder');
+$accounts=new Accounts($db,$box);$accounts->save($access,'sumup',['merchant_code'=>'MCOWN','token'=>'synthetic-ticket-only','affiliate_app_id'=>'','affiliate_key'=>''],0);
+$offers->save($page['id'],['capacity'=>4,'price_cents'=>1200,'active'=>true],1);
+$paid=$orders->book($page['id'],2,1,'Paid Guest','paid@example.invalid',bin2hex(random_bytes(32)));$check($paid['status']==='reserved'&&$paid['passes']===[]&&$paid['amount_cents']===1200,'paid booking reserves one original amount without issuing a pass');
+$check($offers->get($page['id'])['held']===1&&$offers->get($page['id'])['remaining']===1,'pending online payment holds exact capacity');
+$offers->save($page['id'],['capacity'=>4,'price_cents'=>1500,'active'=>true],2);
+$check($orders->view($paid['access_token'])['amount_cents']===1200&&$offers->get($page['id'])['price_cents']===1500,'later tariff change preserves original reservation and customer amount');
+$accounts->save($access,'sumup',['merchant_code'=>'MCNEW','token'=>'synthetic-new-merchant','affiliate_app_id'=>'','affiliate_key'=>''],1);
+$checkout='11111111-2222-3333-4444-555555555555';$tx='aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee';$providerStatus='PENDING';$writes=0;$reads=0;
+$http=static function($method,$path,$headers,$body,$encoded)use(&$providerStatus,&$writes,&$reads,$checkout,$tx,$paid):array{
+    if($headers!==['Authorization: Bearer synthetic-ticket-only'])throw new RuntimeException('Original captured merchant credentials changed.');
+    $base=['id'=>$checkout,'checkout_reference'=>'KH-T-'.$paid['id'],'merchant_code'=>'MCOWN','currency'=>'EUR','amount'=>12.0,'status'=>$providerStatus,'hosted_checkout_url'=>'https://checkout.sumup.com/pay/'.$checkout,'transactions'=>[]];
+    $transaction=['id'=>$tx,'merchant_code'=>'MCOWN','currency'=>'EUR','amount'=>12.0,'status'=>'SUCCESSFUL','payment_type'=>'ECOM','tip_amount'=>0];
+    if($providerStatus==='PAID')$base['transactions']=[$transaction];
+    if($method==='POST'){$writes++;return ['status'=>201,'body'=>$base];}$reads++;return ['status'=>200,'body'=>str_contains($path,'/transactions?')?$transaction:$base];
+};
+$payments=new Orders($db,$club,$box,$access,$http);$prepared=$payments->beginCheckout($paid['access_token']);$check($prepared['status']==='awaiting_payment'&&$prepared['passes']===[]&&$writes===1,'durable order starts only one hosted checkout without ticket issuance');
+$payments->beginCheckout($paid['access_token']);$check($writes===1,'repeated buyer return never starts another checkout');
+$pending=$payments->reconcile($paid['access_token']);$check($pending['status']==='awaiting_payment'&&$pending['passes']===[],'unpaid authoritative response retains reservation only');
+$providerStatus='PAID';$confirmed=$payments->reconcile($paid['access_token']);$check($confirmed['status']==='paid'&&count($confirmed['passes'])===1,'canonical provider proof atomically issues exactly one QR ticket');
+$confirmedAgain=$payments->reconcile($paid['access_token']);$check($confirmedAgain===$confirmed&&$writes===1,'duplicate verified callbacks retain original order and exact QR code');
+$payloadRow=Db::run($db,'SELECT ciphertext FROM native_ticket_orders WHERE club_id=? AND id=?',[$club,$paid['id']])->fetchColumn();$private=$box->open('ticket-order:'.$club.':'.$paid['id'],$payloadRow);$callback=$payments->callback($paid['id'],$private['hook_token']);$check($callback===['id'=>$paid['id'],'status'=>'paid'],'direct callback immediately reconciles paid order without draft');
+$deny(fn()=>$payments->callback($paid['id'],str_repeat('0',64)),'foreign callback capability cannot reconcile private order');
+$visible=json_encode($confirmed,JSON_THROW_ON_ERROR);$check(!str_contains($visible,'synthetic-ticket-only')&&!str_contains($visible,'MCOWN')&&!str_contains($visible,'hook_token')&&!str_contains($payloadRow,'paid@example.invalid'),'public owned projection excludes provider keys and hook while encrypted buyer retained');
+$choice['tickets']='eventbrite';$workflow->save($choice,1);$check(Offers::publicOffer($db,$club,$page['id'])===null,'provider switch prevents new native sales');$check($payments->view($paid['access_token'])===$confirmed,'provider switch preserves purchased QR tickets and original customer access');
+$check($payments->checkIn($page['id'],$confirmed['passes'][0]['code'],1)['status']==='checked_in','existing paid admission still works after ticket provider changed');
+$current=$pages->get($page['id']);$current['event_status']='cancelled';$current=$pages->save($current,$current['version']);
+$check($orders->pass($page['id'],$free['passes'][1]['code'])['status']==='valid','unpublished event draft does not rewrite paid ticket original');
+$current=$pages->publish($current['id'],$current['version']);
+$deny(fn()=>$orders->checkIn($page['id'],$free['passes'][1]['code'],1),'published cancellation blocks actual admission');
+$choice['tickets']='native';$workflow->save($choice,2);
+$root=dirname(getenv('KH_NATIVE_TEST_CONFIG')).'/ticket-runtime';mkdir($root,0700,true);
+// Retain exactly this test's original key for its independently owned processes.
+file_put_contents($root.'/private.key',$keyBytes);chmod($root.'/private.key',0600);
+$makeEvent=static function(string $slug,int $price)use($pages,$offers):array{$event=$pages->save(['title'=>'Own '.$slug,'slug'=>'veranstaltungen/'.$slug,'template'=>'event','event_start'=>'2050-10-25T19:00','event_timezone'=>'Europe/Berlin']);$event=$pages->publish($event['id'],$event['version']);$offers->save($event['id'],['capacity'=>1,'price_cents'=>$price,'active'=>true],0);return $event;};
+$race=$makeEvent('race-one-place',0);file_put_contents($root.'/fault.json',json_encode(['page'=>$race['id'],'requests'=>[bin2hex(random_bytes(32)),bin2hex(random_bytes(32))]],JSON_THROW_ON_ERROR));chmod($root.'/fault.json',0600);
+$children=[];
+try{
+    foreach(['1','2']as$index){$process=proc_open([...TestSupport::phpCommand(),__DIR__.'/support/ticket-fault.php','race',$index],[0=>['pipe','r'],1=>['pipe','w'],2=>['pipe','w']],$pipes,dirname(__DIR__,2));if(!is_resource($process))throw new RuntimeException('Owned race child unavailable.');fclose($pipes[0]);$children[]=[$process,$pipes];}
+    $until=microtime(true)+10;while((!is_file($root.'/ready-1')||!is_file($root.'/ready-2'))&&microtime(true)<$until)usleep(20000);
+    $check(is_file($root.'/ready-1')&&is_file($root.'/ready-2'),'two independent PHP/SQL booking processes are ready before common release');file_put_contents($root.'/go','go');$results=[];
+    foreach($children as[$process,$pipes]){$out=stream_get_contents($pipes[1]);$err=stream_get_contents($pipes[2]);fclose($pipes[1]);fclose($pipes[2]);$exit=proc_close($process);$check($exit===0&&$err==='','owned race process completes without warning');$results[]=json_decode($out,true,32,JSON_THROW_ON_ERROR);}$children=[];
+    $check(count(array_filter($results,static fn($r)=>$r['status']==='booked'))===1&&count(array_filter($results,static fn($r)=>$r['status']==='denied'))===1,'exactly one customer gets the last place under simultaneous independent transactions');
+    $check($offers->get($race['id'])['sold']===1&&$offers->get($race['id'])['remaining']===0,'actual concurrent bookings leave one paid original and zero remaining seats');
+    $crashEvent=$makeEvent('crash-paid-order',700);$crashOrder=$orders->book($crashEvent['id'],1,1,'Crash Guest','crash@example.invalid',bin2hex(random_bytes(32)));file_put_contents($root.'/fault.json',json_encode(['access'=>$crashOrder['access_token']],JSON_THROW_ON_ERROR));
+    $process=proc_open([...TestSupport::phpCommand(),__DIR__.'/support/ticket-fault.php','crash'],[0=>['pipe','r'],1=>['pipe','w'],2=>['pipe','w']],$pipes,dirname(__DIR__,2));if(!is_resource($process))throw new RuntimeException('Owned crash child unavailable.');fclose($pipes[0]);$children[]=[$process,$pipes];
+    $until=microtime(true)+10;while(!is_file($root.'/created-marker')&&microtime(true)<$until)usleep(20000);$check(is_file($root.'/created-marker'),'actual child committed native attempt and created its own synthetic provider object');
+    $check(proc_terminate($process,9),'only owned child is killed before checkout result persistence');$out=stream_get_contents($pipes[1]);$err=stream_get_contents($pipes[2]);fclose($pipes[1]);fclose($pipes[2]);proc_close($process);$children=[];
+    $interrupted=$orders->view($crashOrder['access_token']);$check($interrupted['status']==='creating_checkout'&&$interrupted['passes']===[]&&$offers->get($crashEvent['id'])['held']===1,'real process death retains original reservation without any unconfirmed QR pass');
+    $remote=json_decode(file_get_contents($root.'/remote.json'),true,32,JSON_THROW_ON_ERROR);$recoveryWrites=0;$recoveryReads=0;
+    $recoverHttp=static function($method,$path,$headers,$body,$encoded)use($remote,&$recoveryWrites,&$recoveryReads):array{if($method!=='GET'){$recoveryWrites++;throw new RuntimeException('Recovery must not create another checkout.');}$recoveryReads++;if(str_starts_with($path,'/v0.1/checkouts?'))return ['status'=>200,'body'=>[$remote]];if(str_contains($path,'/transactions?'))return ['status'=>200,'body'=>$remote['transactions'][0]];return ['status'=>200,'body'=>$remote];};
+    $recovered=(new Orders($db,$club,$box,$access,$recoverHttp))->reconcile($crashOrder['access_token']);
+    $check($recovered['id']===$crashOrder['id']&&$recovered['status']==='paid'&&count($recovered['passes'])===1&&$recoveryWrites===0&&$recoveryReads===3,'actual killed attempt recovers original provider checkout and issues one ticket using GET only');
+    $repeated=(new Orders($db,$club,$box,$access,$recoverHttp))->reconcile($crashOrder['access_token']);$check($repeated===$recovered&&$recoveryWrites===0,'repeating recovered payment retains exact first issued pass and never posts again');
+    $choice['payment']='stripe';$workflow->save($choice,3);$accounts->save($access,'stripe',['account_id'=>'acct_TICKETS','mode'=>'test','secret_key'=>'sk_test_ticketonly','webhook_secret'=>'whsec_ticketonly'],0);
+    $stripeEvent=$makeEvent('stripe-native-order',500);$offers->save($stripeEvent['id'],['capacity'=>2,'price_cents'=>500,'active'=>true],1);
+    $stripeOrder=$orders->book($stripeEvent['id'],2,1,'Stripe Guest','stripe@example.invalid',bin2hex(random_bytes(32)));$stripeSession='cs_test_NATIVE';$stripeIntent='pi_NATIVE';$stripeCharge='ch_NATIVE';$stripeState='open';$stripeRefunded=0;$stripeWrites=0;$stripeReads=0;$failCreate=false;
+    $stripeHttp=static function($method,$path,$headers,$body,$encoded)use(&$stripeWrites,&$stripeReads,&$stripeOrder,&$stripeSession,&$stripeIntent,&$stripeCharge,&$stripeState,&$stripeRefunded,&$failCreate):array{
+        $session=['id'=>$stripeSession,'client_reference_id'=>'KH-T-'.$stripeOrder['id'],'mode'=>'payment','currency'=>'eur','amount_total'=>500,'livemode'=>false,'metadata'=>['ticket_order_id'=>$stripeOrder['id']],'url'=>'https://checkout.stripe.com/c/pay/'.$stripeSession,'status'=>$stripeState,'payment_status'=>$stripeState==='complete'?'paid':'unpaid','payment_intent'=>$stripeIntent];
+        if($method==='POST'){$stripeWrites++;if($failCreate)throw new RuntimeException('Own provider creation succeeded; native response deliberately lost.');return ['status'=>200,'body'=>$session];}
+        $stripeReads++;if($path==='/v1/account')return ['status'=>200,'body'=>['id'=>'acct_TICKETS']];if(str_contains($path,'/checkout/sessions/'))return ['status'=>200,'body'=>$session];
+        return ['status'=>200,'body'=>['id'=>$stripeIntent,'status'=>'succeeded','amount'=>500,'amount_received'=>500,'currency'=>'eur','livemode'=>false,'metadata'=>['ticket_order_id'=>$stripeOrder['id']],'latest_charge'=>['id'=>$stripeCharge,'paid'=>true,'captured'=>true,'amount'=>500,'amount_captured'=>500,'amount_refunded'=>$stripeRefunded,'refunded'=>$stripeRefunded===500,'disputed'=>false,'currency'=>'eur','livemode'=>false,'payment_intent'=>$stripeIntent]]];
+    };
+    $stripeOrders=new Orders($db,$club,$box,$access,$stripeHttp);$stripePrepared=$stripeOrders->beginCheckout($stripeOrder['access_token']);$check($stripePrepared['status']==='awaiting_payment'&&$stripePrepared['passes']===[]&&$stripeWrites===1,'native Stripe order prepares one original hosted payment without premature pass');
+    $stripeState='complete';$eventBody=static fn($id,$session,$order)=>json_encode(['id'=>$id,'type'=>'checkout.session.completed','livemode'=>false,'data'=>['object'=>['id'=>$session,'metadata'=>['ticket_order_id'=>$order],'amount_total'=>1]]],JSON_THROW_ON_ERROR);
+    $sign=static function($body){$stamp=time();return 't='.$stamp.',v1='.hash_hmac('sha256',$stamp.'.'.$body,'whsec_ticketonly');};
+    $body=$eventBody('evt_NATIVE',$stripeSession,$stripeOrder['id']);$badSignature='t='.time().',v1='.str_repeat('0',64);$deny(fn()=>$stripeOrders->stripeWebhook($body,$badSignature),'unverified native webhook cannot trigger payment proof or issuance');
+    $notified=$stripeOrders->stripeWebhook($body,$sign($body));$stripePaid=$stripeOrders->view($stripeOrder['access_token']);$check($notified['status']==='paid'&&!$notified['repeated']&&count($stripePaid['passes'])===1,'signed native Stripe notification directly issues one canonical verified QR ticket');
+    $beforeRepeatReads=$stripeReads;$repeat=$stripeOrders->stripeWebhook($body,$sign($body));$check($repeat['repeated']&&$stripeReads===$beforeRepeatReads&&$stripeOrders->view($stripeOrder['access_token'])===$stripePaid,'duplicate signed event retains exact original pass and performs no second provider verification');
+    $check($stripePaid['amount_cents']===500,'signed webhook cannot replace captured amount with its untrusted one-cent hint');
+    $changed=$eventBody('evt_NATIVE',$stripeSession,$stripeOrder['id']);$changed=str_replace('"amount_total":1','"amount_total":2',$changed);$deny(fn()=>$stripeOrders->stripeWebhook($changed,$sign($changed)),'changed body cannot reuse original Stripe event identity');
+    $stripeOrder=$orders->book($stripeEvent['id'],2,1,'Stripe Recovery','stripe-recovery@example.invalid',bin2hex(random_bytes(32)));$stripeSession='cs_test_RECOVERY';$stripeIntent='pi_RECOVERY';$stripeCharge='ch_RECOVERY';$stripeState='open';$failCreate=true;
+    try{$stripeOrders->beginCheckout($stripeOrder['access_token']);}catch(RuntimeException){}
+    $check($stripeOrders->view($stripeOrder['access_token'])['status']==='payment_uncertain'&&$stripeWrites===2,'unknown Stripe creation keeps original stock and no QR ticket');
+    $stripeState='complete';$body=$eventBody('evt_RECOVERY',$stripeSession,$stripeOrder['id']);$recoveredStripe=$stripeOrders->stripeWebhook($body,$sign($body));$check($recoveredStripe['status']==='paid'&&$stripeWrites===2&&count($stripeOrders->view($stripeOrder['access_token'])['passes'])===1,'signed id hint recovers unknown Stripe creation using independent GET identity proof and no duplicate checkout');
+    $check((int)Db::run($db,"SELECT COUNT(*) FROM native_ticket_webhook_events WHERE club_id=? AND provider='stripe'",[$club])->fetchColumn()===2,'only two exact confirmed notification identities recorded');
+    $check($stripePaid['test_mode']&&$stripePaid['passes'][0]['status']==='test','original Stripe test checkout produces sample admission only');$deny(fn()=>$stripeOrders->checkIn($stripeEvent['id'],$stripePaid['passes'][0]['code'],1),'sample Stripe QR cannot admit a real guest');
+    $late=$makeEvent('late-expired-payment',500);$stripeOrder=$orders->book($late['id'],1,1,'Late Guest','late@example.invalid',bin2hex(random_bytes(32)));$stripeSession='cs_test_LATE';$stripeIntent='pi_LATE';$stripeCharge='ch_LATE';$stripeState='open';$failCreate=false;$stripeOrders->beginCheckout($stripeOrder['access_token']);
+    $stripeState='expired';$expired=$stripeOrders->reconcile($stripeOrder['access_token']);$check($expired['status']==='expired'&&$offers->get($late['id'])['remaining']===1,'independent provider expiration releases only original reservation');
+    $replacement=$orders->book($late['id'],1,1,'Replacement Guest','replacement@example.invalid',bin2hex(random_bytes(32)));$stripeState='complete';$unallocated=$stripeOrders->reconcile($stripeOrder['access_token']);$check($unallocated['status']==='paid_unallocated'&&$unallocated['passes']===[]&&$offers->get($late['id'])['allocated']===1,'payment arriving after released place was rebooked never issues admission');
+    $stripeRefunded=100;$review=$stripeOrders->reconcile($stripeOrder['access_token']);$check($review['status']==='paid_unallocated'&&$review['passes']===[]&&$offers->get($late['id'])['allocated']===1,'later payment correction cannot reacquire a released original place');
+    $stripeRefunded=0;$restoredLate=$stripeOrders->reconcile($stripeOrder['access_token']);$check($restoredLate['status']==='paid_unallocated'&&$restoredLate['passes']===[]&&$offers->get($late['id'])['allocated']===1,'correction recovery retains unallocated identity and cannot oversell through payment review');
+
+}finally{foreach($children as[$process,$pipes]){if(is_resource($process)){proc_terminate($process,9);foreach($pipes as$pipe)if(is_resource($pipe))fclose($pipe);proc_close($process);}}}
+echo json_encode(['checks'=>$checks,'status'=>'passed','live_transport'=>false],JSON_THROW_ON_ERROR)."\n";

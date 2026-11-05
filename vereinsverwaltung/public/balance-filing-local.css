@@ -1,0 +1,96 @@
+[data-balance-local] {
+  min-inline-size: 0;
+  max-inline-size: 76rem;
+  margin-inline: auto;
+  font-size: 1rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+[data-balance-local] :is(p,li,label,summary,button,input,select,textarea,dt,dd,span,strong,small,pre,code,a) {
+  font-size: 1em !important;
+}
+[data-balance-local] h2 { font-size: 1.25em; }
+[data-balance-local] :is(h3,h4,legend) { font-size: 1.125em; }
+[data-balance-local] :is(fieldset,form,details,section,article,label,dl) { min-inline-size: 0; }
+[data-balance-local] :is(input:not([type=hidden]):not([type=checkbox]):not([type=radio]),select,textarea) {
+  max-inline-size: 100%;
+  min-block-size: 2.75rem;
+  box-sizing: border-box;
+}
+[data-balance-local] :is(button,.btn,summary) {
+  min-block-size: 2.75rem;
+  max-inline-size: 100%;
+  white-space: normal;
+  box-sizing: border-box;
+}
+[data-balance-local] label.check {
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+  min-block-size: 2.75rem;
+}
+[data-balance-local] input.check[type=checkbox] {
+  inline-size: 2.75rem;
+  min-inline-size: 2.75rem;
+  block-size: 2.75rem;
+  min-block-size: 2.75rem;
+  flex-shrink: 0;
+}
+[data-balance-local] pre { white-space: pre-wrap; overflow-wrap: anywhere; max-inline-size: 100%; }
+[data-balance-local] .notice { display: block; }
+[data-balance-local] .card { padding: min(1.25rem, 4vw); }
+[data-balance-local] :focus-visible { outline: .1875rem solid #155da1; outline-offset: .1875rem; }
+[data-balance-local][data-tax-guided],
+[data-balance-local] [data-tax-guided] { font-size: 1rem; }
+[data-balance-local][data-tax-guided] :is(input,select,textarea),
+[data-balance-local][data-tax-guided] input:not([type=hidden]):not([type=checkbox]):not([type=radio]),
+[data-balance-local] [data-tax-guided] :is(input,select,textarea),
+[data-balance-local] [data-tax-guided] input:not([type=hidden]):not([type=checkbox]):not([type=radio]) { font-size: 1em !important; }
+[data-balance-local] input[type=checkbox] {
+  inline-size: 2.75rem !important;
+  block-size: 2.75rem !important;
+  min-inline-size: 2.75rem !important;
+  min-block-size: 2.75rem !important;
+  flex-shrink: 0;
+}
+
+[data-balance-local] input[type=radio] {
+  inline-size: 2.75rem !important;
+  block-size: 2.75rem !important;
+  min-inline-size: 2.75rem !important;
+  min-block-size: 2.75rem !important;
+  flex-shrink: 0;
+}
+[data-balance-local] .balance-local-options label>span {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 30rem) {
+  [data-balance-local] .balance-local-options input[type=radio] {
+    inline-size: 44px !important;
+    block-size: 44px !important;
+    min-inline-size: 44px !important;
+    min-block-size: 44px !important;
+    align-self: flex-start;
+  }
+}
+
+/* Error instructions form one readable column at narrow widths and large fonts. */
+[data-balance-local].notice {
+  display: block !important;
+}
+[data-balance-local].notice > :is(strong,details) {
+  display: block !important;
+}
+[data-balance-local].notice > :is(details,a,button) {
+  margin-block-start: .75rem;
+}
+
+/* Native labels also contain anonymous text nodes when JavaScript is disabled. */
+[data-balance-specialist-form] label.check {
+  display: grid !important;
+  grid-template-columns: 2.75rem minmax(0,1fr);
+  column-gap: .75rem;
+  overflow-wrap: anywhere !important;
+}

@@ -1,0 +1,6 @@
+<?php declare(strict_types=1);
+function ownFinanceOriginalRecoveryProof(array$f):void{
+ $c=Kulturhus\Native\TestSupport::config();if(PHP_SAPI!=='cli-server'||($_SERVER['REQUEST_METHOD']??'')!=='GET'||($c['owner']??'')!=='isolated-native-ci'||($c['label']??'')!=='native-finance-original-recovery'||($c['host']??'')!=='127.0.0.1'||($c['port']??0)!==13371||!preg_match('/\Akh_native_[a-f0-9]{24}\z/D',$c['database']??'')||!is_string($_SERVER['HTTP_X_OWNED_FINANCE_ORIGINAL_RECOVERY_PROOF']??null)||!hash_equals($f['data']['proof_nonce']??'',$_SERVER['HTTP_X_OWNED_FINANCE_ORIGINAL_RECOVERY_PROOF'])){http_response_code(403);exit;}
+ require_once dirname(__DIR__,2).'/src/autoload.php';require_once __DIR__.'/original-database-hash.php';$db=Kulturhus\Native\TestSupport::db();if($db->query('SELECT DATABASE()')->fetchColumn()!==$c['database']||(int)$db->query('SELECT MAX(version)FROM schema_migrations')->fetchColumn()!==134){http_response_code(403);exit;}
+ $tables=array_values(array_diff($db->query('SHOW TABLES')->fetchAll(PDO::FETCH_COLUMN),['native_auth_sessions','native_auth_limits','native_language_preferences']));header('Content-Type: application/json; charset=UTF-8');header('Cache-Control: no-store');echo json_encode(['protected_sha256'=>ownOriginalDatabaseHash($db,$tables),'protected_tables'=>count($tables),'business_writes'=>0],JSON_THROW_ON_ERROR),PHP_EOL;
+}

@@ -1,0 +1,8 @@
+{
+  "format": 1,
+  "gradle": {"version":"8.13","url":"https://services.gradle.org/distributions/gradle-8.13-bin.zip","sha256":"20f1b1176237254a6fc204d8434196fa11a4cfb387567519c61556e8710aed78"},
+  "jdk_linux_x64": {"url":"https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jdk_x64_linux_hotspot_21.0.12.1_1.tar.gz","sha256":"ce79869e1307ed8ee1e2baa86a412b1eb5b75d10a01006d788a6f968bcfaee94"},
+  "android_tools": {"url":"https://dl.google.com/android/repository/commandlinetools-linux-16111833_latest.zip","sha1":"e025545c62a8e64c7559119566a569fb1dec5f60"},
+  "sdk_packages": ["platforms;android-36","build-tools;36.0.0","platform-tools"],
+  "emulator_packages": ["emulator","system-images;android-36;default;x86_64"]
+}

@@ -1,0 +1,60 @@
+{
+  "date": "2026-09-28",
+  "scope": "Period asset sales, calendar invoice settlement and historical sale carry; source-review UI",
+  "general_balance_release": false,
+  "deployed": false,
+  "kulturhus_accounting_basis_changed": false,
+  "source_archive_sha256": "f2d386f6913211aa29b72ee36962448e18b742dc5376e357b6205730ffe157a1",
+  "private_run_report": "audit/ebilanz-mysql-host-20260918-b3e071332a12831f.json",
+  "host_suite": {
+    "passed": true,
+    "groups": 11,
+    "php_diagnostics": false,
+    "production_database_connected": false,
+    "public_endpoint_created": false,
+    "protected_production_files_unchanged": true,
+    "temporary_host_staging_removed": true,
+    "synthetic_database_retained": true,
+    "routine_preservation_backup_created": false,
+    "synthetic_restore_regressions_executed": true,
+    "tests": [
+      {"test": "balance-period-sales.php", "checks": 133, "reused_checks": 43, "exit": 0},
+      {"test": "balance-period-invoice-carry.php", "checks": 33, "reused_checks": 43, "exit": 0},
+      {"test": "balance-period-sale-carry.php", "checks": 38, "reused_checks": 43, "exit": 0},
+      {"test": "balance-period-disposal-ledger.php", "checks": 44, "reused_checks": 43, "exit": 0},
+      {"test": "balance-period-asset-carry.php", "checks": 22, "reused_checks": 43, "exit": 0},
+      {"test": "balance-period-degressive.php", "checks": 52, "reused_checks": 103, "exit": 0, "arithmetic_only": true},
+      {"test": "balance-period-corrections.php", "checks": 51, "reused_checks": 75, "exit": 0},
+      {"test": "asset-sale.php", "checks": 140, "exit": 0},
+      {"test": "document-protection.php", "checks": 15, "exit": 0},
+      {"test": "mysql-balance-schema-restore.php", "checks": 9, "exit": 0},
+      {"test": "tax-runtime-fingerprint.php", "checks": 132, "exit": 0}
+    ]
+  },
+  "local_checks": {
+    "php_linted_files": 974,
+    "php_lint_failures": 0,
+    "source_ui_node_checks": 16,
+    "diff_whitespace_check": "passed"
+  },
+  "browser_review": {
+    "environment": "Loopback-only static page rendered by passing synthetic MySQL test; actual CSS and search/preview scripts",
+    "viewports": [{"width": 1265, "height": 900}, {"width": 390, "height": 844}],
+    "checks": [
+      "Three plain-language steps; technical posting forms collapsed",
+      "Search filters receipt and asset options; multiline option labels fit mobile dropdown",
+      "Source selection changes hide stale preview and its next-action link",
+      "Software-end choice replaces sale fields with evidence and rights-ended confirmation",
+      "No horizontal page overflow at 390px; document scrollWidth 375px"
+    ],
+    "real_device_test": false,
+    "real_inexperienced_user_test": false,
+    "whole_manager_post_release_review": false
+  },
+  "limitations": [
+    "Further asset and tax special cases, sphere changes and closed-asset corrections remain incomplete",
+    "Period integration for shared assets, inter-area clearing, multiple businesses and tax reconciliation remains incomplete",
+    "Independent period adapters for contributions, donations and non-invoice bank transactions remain incomplete",
+    "Complete verified account coverage, official period XBRL and full acceptance/transport feedback remain incomplete"
+  ]
+}

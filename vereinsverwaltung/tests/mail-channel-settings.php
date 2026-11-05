@@ -1,0 +1,34 @@
+<?php declare(strict_types=1);
+require __DIR__.'/../src/bootstrap.php';require __DIR__.'/../src/Web/View.php';
+use Kulturhus\Verein\{Database,MailChannelSettings,InvoiceMailbox};
+$db=\Kulturhus\Verein\Tests\MySqlFixture::connect(':memory:');Database::migrate($db);Database::migrate($db);$db->exec("INSERT INTO clubs VALUES('a','Synthetic'),('b','Other');INSERT INTO actors(id,club_id,role,is_superuser) VALUES('admin','a','members',1),('manager','a','members',0),('other','b','members',1)");
+$key=random_bytes(32);$service=new MailChannelSettings($db,'admin',$key);$n=0;
+function check(bool $ok,string $label):void{global $n;if(!$ok)throw new RuntimeException($label);++$n;echo "PASS $label\n";}
+function denied(callable $f,string $label):void{try{$f();}catch(DomainException){check(true,$label);return;}throw new RuntimeException('Expected denial: '.$label);}
+$legacy=new \Kulturhus\Verein\Settings($db,'manager');denied(fn()=>$legacy->save('mail',\Kulturhus\Verein\SettingsSchema::defaults('mail'),0),'Legacy mail settings cannot bypass superuser restriction');
+$d=MailChannelSettings::defaults();check($d['routes']['contributions']==='board'&&$d['routes']['reminders']==='board','Default contribution and reminder channel is board');
+check(MailChannelSettings::resolve($db,'a',$key,'press')===['channel'=>'press','override'=>null],'Unset press retains private press configuration');
+denied(fn()=>(new MailChannelSettings($db,'manager',$key))->state(),'Settings manager cannot read channel administration');
+denied(fn()=>(new MailChannelSettings($db,'manager',$key))->save($d,0),'Settings manager cannot change channels');
+$d['channels']['board']=array_replace($d['channels']['board'],['override'=>true,'host'=>'smtp.example.test','user'=>'board@example.invalid','from'=>'board@example.invalid','password'=>'Synthetic-secret-1']);$service->save($d,0);
+$r=MailChannelSettings::resolve($db,'a',$key,'membership');check($r['override']['password']==='Synthetic-secret-1'&&$r['override']['from']==='board@example.invalid','Runtime resolves board override');
+$row=$db->query("SELECT * FROM mail_channel_settings WHERE club_id='a'")->fetch();check(!str_contains(json_encode($row),'Synthetic-secret-1')&&!str_contains(json_encode($service->state()),'Synthetic-secret-1'),'Secrets absent from database plaintext and public state');
+check(!str_contains(json_encode($db->query('SELECT * FROM audit_events')->fetchAll()),'Synthetic-secret-1'),'Audit contains no credentials');
+check(MailChannelSettings::resolve($db,'b',$key,'membership')['override']===null,'Other club does not inherit override');
+unset($d['channels']['board']['password']);$service->save($d,1);check(MailChannelSettings::resolve($db,'a',$key,'membership')['override']['password']==='Synthetic-secret-1','Empty password retains secret');
+denied(fn()=>$service->save($d,1),'Stale version rejected');
+$changed=$d;$changed['channels']['board']['host']='new.example.test';denied(fn()=>$service->save($changed,2),'Changed host cannot reuse password');
+$changed=$d;$changed['channels']['board']['user']='new@example.invalid';denied(fn()=>$service->save($changed,2),'Changed username cannot reuse password');
+$changed=$d;$changed['channels']['board']['clear_password']='1';denied(fn()=>$service->save($changed,2),'Active channel cannot remove password');
+$changed=$d;$changed['routes']['membership']='contributions';denied(fn()=>$service->save($changed,2),'Purpose cannot reference another purpose or cycle');
+$changed=$d;$changed['channels']['board']['port']='25';denied(fn()=>$service->save($changed,2),'Unencrypted SMTP port rejected');
+denied(fn()=>MailChannelSettings::resolve($db,'a',random_bytes(32),'membership'),'Broken active override has no fallback');
+$d['routes']['contributions']='invoices';$service->save($d,2);denied(fn()=>MailChannelSettings::resolve($db,'a',$key,'contributions'),'Unconfigured selected invoice channel fails instead of board fallback');
+$invoice=new InvoiceMailbox($db,'admin',$key);$i=array_replace(InvoiceMailbox::defaults(),['email'=>'invoice@example.invalid','smtp_enabled'=>true,'smtp_host'=>'smtp.example.test','smtp_user'=>'invoice@example.invalid','smtp_password'=>'Synthetic-invoice-secret']);$invoice->save($i,0);
+$r=MailChannelSettings::resolve($db,'a',$key,'contributions');check($r['channel']==='invoices'&&$r['override']['password']==='Synthetic-invoice-secret','Invoice route reuses existing encrypted mailbox credential');
+denied(fn()=>(new InvoiceMailbox($db,'manager',$key))->save($i,1),'Non-superuser cannot edit invoice SMTP');
+$d['routes']['mfa']='newsletter';$service->save($d,3);check(MailChannelSettings::resolve($db,'a',$key,'mfa')===['channel'=>'newsletter','override'=>null],'Purpose resolves explicitly selected legacy channel');
+$_SESSION=['actor'=>'admin','csrf'=>'synthetic'];putenv('APP_SECRET=synthetic-rendering-key-only-long-enough');$_POST=['action'=>'settings-mail-channels','version'=>'2','data'=>$d];$_POST['data']['channels']['board']['password']='DO-NOT-ECHO';$_POST['data']['channels']['board']['host']='draft.example.test';
+ob_start();require __DIR__.'/../views/Settings/settings-mail-channels.php';$html=ob_get_clean();check(!str_contains($html,'DO-NOT-ECHO')&&str_contains($html,'draft.example.test')&&str_contains($html,'name="version" value="2"'),'Failed form retains draft and original version but no password');
+check(\Kulturhus\Verein\Tests\MySqlFixture::integrity($db)==='ok'&&!(\Kulturhus\Verein\Tests\MySqlFixture::foreignKeyErrors($db)[0]??false),'Database integrity');
+echo "$n mail channel settings checks passed; no real connections\n";

@@ -1,0 +1,371 @@
+{
+  "messages": {
+    "native_back": {
+      "de": "Zurück",
+      "en": "Back"
+    },
+    "native_reload_view": {
+      "de": "Ansicht neu laden",
+      "en": "Reload view"
+    },
+    "native_app_menu": {
+      "de": "App-Menü",
+      "en": "App menu"
+    },
+    "native_club_address": {
+      "de": "Vereinsadresse",
+      "en": "Club address"
+    },
+    "native_your_club": {
+      "de": "Dein Verein",
+      "en": "Your club"
+    },
+    "native_open": {
+      "de": "Öffnen",
+      "en": "Open"
+    },
+    "native_close": {
+      "de": "Schließen",
+      "en": "Close"
+    },
+    "native_cancel": {
+      "de": "Abbrechen",
+      "en": "Cancel"
+    },
+    "native_discard": {
+      "de": "Verwerfen",
+      "en": "Discard"
+    },
+    "native_stay": {
+      "de": "Bleiben",
+      "en": "Stay"
+    },
+    "native_switch_club": {
+      "de": "Verein wechseln",
+      "en": "Switch club"
+    },
+    "native_open_in_browser": {
+      "de": "Im Browser öffnen",
+      "en": "Open in browser"
+    },
+    "native_print": {
+      "de": "Drucken",
+      "en": "Print"
+    },
+    "native_card_terminal": {
+      "de": "Kartenterminal",
+      "en": "Card terminal"
+    },
+    "native_card_reader": {
+      "de": "Kartenleser",
+      "en": "Card reader"
+    },
+    "native_sign_out": {
+      "de": "Abmelden",
+      "en": "Sign out"
+    },
+    "native_apply": {
+      "de": "Übernehmen",
+      "en": "Apply"
+    },
+    "native_share": {
+      "de": "Teilen",
+      "en": "Share"
+    },
+    "native_save": {
+      "de": "Speichern",
+      "en": "Save"
+    },
+    "native_file": {
+      "de": "Datei",
+      "en": "File"
+    },
+    "native_open_file": {
+      "de": "Datei öffnen",
+      "en": "Open file"
+    },
+    "native_share_file": {
+      "de": "Datei teilen",
+      "en": "Share file"
+    },
+    "native_checkout": {
+      "de": "Kasse",
+      "en": "Checkout"
+    },
+    "native_enable_tap_to_pay": {
+      "de": "Tap to Pay aktivieren",
+      "en": "Enable Tap to Pay"
+    },
+    "native_view_reopened_review_the_saved_result_before_sending_again": {
+      "de": "Ansicht neu geöffnet. Gespeicherten Stand prüfen, bevor du erneut sendest.",
+      "en": "View reopened. Review the saved result before sending again."
+    },
+    "native_a_payment_attempt_is_in_progress_check_its_result_first": {
+      "de": "Zahlungsversuch läuft. Ergebnis zuerst prüfen.",
+      "en": "A payment attempt is in progress. Check its result first."
+    },
+    "native_discard_your_changes": {
+      "de": "Eingaben verwerfen?",
+      "en": "Discard your changes?"
+    },
+    "native_unsaved_changes_will_be_lost": {
+      "de": "Nicht gespeicherte Änderungen gehen verloren.",
+      "en": "Unsaved changes will be lost."
+    },
+    "native_close_the_app": {
+      "de": "App schließen?",
+      "en": "Close the app?"
+    },
+    "native_no_suitable_app_is_available": {
+      "de": "Keine passende Anwendung verfügbar.",
+      "en": "No suitable app is available."
+    },
+    "native_connection_interrupted_review_the_saved_result_before_sendin": {
+      "de": "Verbindung unterbrochen. Gespeicherten Stand prüfen, bevor du erneut sendest.",
+      "en": "Connection interrupted. Review the saved result before sending again."
+    },
+    "native_the_club_server_is_currently_unavailable_try_opening_it_late": {
+      "de": "Der Vereinsserver ist gerade nicht erreichbar. Später erneut öffnen.",
+      "en": "The club server is currently unavailable. Try opening it later."
+    },
+    "native_the_secure_connection_could_not_be_confirmed": {
+      "de": "Die sichere Verbindung konnte nicht bestätigt werden.",
+      "en": "The secure connection could not be confirmed."
+    },
+    "native_the_action_will_not_be_sent_again_review_the_saved_result_in": {
+      "de": "Die Aktion wird nicht erneut gesendet. Den gespeicherten Stand im Verein prüfen.",
+      "en": "The action will not be sent again. Review the saved result in your club."
+    },
+    "native_leave_your_unsaved_changes": {
+      "de": "Nicht gespeicherte Eingaben verlassen?",
+      "en": "Leave your unsaved changes?"
+    },
+    "native_file_selection_is_unavailable": {
+      "de": "Dateiauswahl nicht verfügbar.",
+      "en": "File selection is unavailable."
+    },
+    "native_file_saved": {
+      "de": "Datei gespeichert.",
+      "en": "File saved."
+    },
+    "native_the_file_could_not_be_saved": {
+      "de": "Datei konnte nicht gespeichert werden.",
+      "en": "The file could not be saved."
+    },
+    "native_download_unconfirmed_open_the_original_file_again_deliberate": {
+      "de": "Download nicht bestätigt. Datei erneut bewusst öffnen.",
+      "en": "Download unconfirmed. Open the original file again deliberately."
+    },
+    "native_the_save_location_is_unavailable": {
+      "de": "Speicherort nicht verfügbar.",
+      "en": "The save location is unavailable."
+    },
+    "native_app_features_could_not_be_connected": {
+      "de": "App-Funktionen konnten nicht verbunden werden.",
+      "en": "App features could not be connected."
+    },
+    "native_permission_is_already_being_checked": {
+      "de": "Erlaubnis wird bereits geprüft.",
+      "en": "Permission is already being checked."
+    },
+    "native_this_app_feature_is_unavailable": {
+      "de": "App-Funktion nicht verfügbar.",
+      "en": "This app feature is unavailable."
+    },
+    "native_app_action_unconfirmed": {
+      "de": "App-Vorgang nicht bestätigt.",
+      "en": "App action unconfirmed."
+    },
+    "native_enter_your_club_https_address_without_a_path_credentials_or_": {
+      "de": "Bitte die HTTPS-Adresse deines Vereins ohne Pfad, Anmeldung oder Zusatz eingeben.",
+      "en": "Enter your club HTTPS address without a path, credentials or other additions."
+    },
+    "native_file_unavailable": {
+      "de": "Datei nicht verfügbar",
+      "en": "File unavailable"
+    },
+    "native_only_reading_is_allowed": {
+      "de": "Nur Lesen erlaubt",
+      "en": "Only reading is allowed"
+    },
+    "native_card_terminal_not_configured_choose_another_payment_method": {
+      "de": "Kartenterminal nicht eingerichtet. Anderen Zahlungsweg wählen.",
+      "en": "Card terminal not configured. Choose another payment method."
+    },
+    "native_sign_in_to_sumup": {
+      "de": "Bei SumUp anmelden",
+      "en": "Sign in to SumUp"
+    },
+    "native_payment_attempt_not_started_review_the_saved_result": {
+      "de": "Zahlungsversuch nicht gestartet. Gespeicherten Stand prüfen.",
+      "en": "Payment attempt not started. Review the saved result."
+    },
+    "native_sign_in_to_sumup_and_check_the_merchant_first": {
+      "de": "Zuerst bei SumUp anmelden und den Händler prüfen.",
+      "en": "Sign in to SumUp and check the merchant first."
+    },
+    "native_check_the_sumup_merchant_and_currency": {
+      "de": "SumUp-Händler und Währung prüfen.",
+      "en": "Check the SumUp merchant and currency."
+    },
+    "native_check_this_payment_attempt_on_the_server_first": {
+      "de": "Diesen Zahlungsversuch zuerst auf dem Server prüfen.",
+      "en": "Check this payment attempt on the server first."
+    },
+    "native_tap_to_pay_is_unavailable_in_this_app_choose_a_card_reader_o": {
+      "de": "Tap to Pay ist in dieser App nicht verfügbar. Kartenleser oder anderen Zahlungsweg wählen.",
+      "en": "Tap to Pay is unavailable in this app. Choose a card reader or another payment method."
+    },
+    "native_payment_attempt_unconfirmed_review_the_saved_result_on_the_s": {
+      "de": "Zahlungsversuch nicht bestätigt. Gespeicherten Stand auf dem Server prüfen.",
+      "en": "Payment attempt unconfirmed. Review the saved result on the server."
+    },
+    "native_device_attempt_finished_check_the_payment_independently_now": {
+      "de": "Geräteversuch beendet. Zahlung jetzt unabhängig prüfen.",
+      "en": "Device attempt finished. Check the payment independently now."
+    },
+    "native_sign_in_to_the_correct_sumup_account_first": {
+      "de": "Zuerst mit dem richtigen SumUp-Konto anmelden.",
+      "en": "Sign in to the correct SumUp account first."
+    },
+    "native_payment_instruction_changed_check_the_attempt_on_the_server": {
+      "de": "Zahlungsanweisung geändert. Versuch auf dem Server prüfen.",
+      "en": "Payment instruction changed. Check the attempt on the server."
+    },
+    "native_tap_to_pay_is_unavailable_or_not_enabled_no_payment_was_star": {
+      "de": "Tap to Pay ist nicht verfügbar oder nicht aktiviert. Es wurde keine Zahlung gestartet; einen anderen Zahlungsweg wählen.",
+      "en": "Tap to Pay is unavailable or not enabled. No payment was started; choose another payment method."
+    },
+    "native_payment_instruction_missing_check_the_attempt_on_the_server": {
+      "de": "Zahlungsanweisung fehlt. Versuch auf dem Server prüfen.",
+      "en": "Payment instruction missing. Check the attempt on the server."
+    },
+    "native_attempt_not_started_check_the_merchant_and_saved_result_in_t": {
+      "de": "Versuch nicht gestartet. Händler und gespeichertes Ergebnis im Vereinsmanager prüfen.",
+      "en": "Attempt not started. Check the merchant and saved result in the club manager."
+    },
+    "native_check_the_sumup_sign_in_merchant_and_currency_the_payment_at": {
+      "de": "SumUp-Anmeldung, Händler und Währung prüfen. Zahlungsversuch bleibt gespeichert.",
+      "en": "Check the SumUp sign-in, merchant and currency. The payment attempt remains saved."
+    },
+    "native_check_this_attempt_independently_on_the_server_first": {
+      "de": "Diesen Versuch zuerst unabhängig auf dem Server prüfen.",
+      "en": "Check this attempt independently on the server first."
+    },
+    "native_device_attempt_finished_check_the_payment_independently_in_t": {
+      "de": "Geräteversuch beendet. Zahlung jetzt im Vereinsmanager unabhängig prüfen.",
+      "en": "Device attempt finished. Check the payment independently in the club manager now."
+    },
+    "native_enable_tap_to_pay_for_this_account_and_device_in_sumup_first": {
+      "de": "Tap to Pay für dieses Konto/Gerät zunächst in SumUp aktivieren. Zahlungsversuch bleibt gespeichert.",
+      "en": "Enable Tap to Pay for this account and device in SumUp first. The payment attempt remains saved."
+    },
+    "native_notification_unconfirmed": {
+      "de": "Hinweis nicht bestätigt.",
+      "en": "Notification unconfirmed."
+    },
+    "native_file_unconfirmed": {
+      "de": "Datei nicht bestätigt.",
+      "en": "File unconfirmed."
+    },
+    "native_check_the_filename": {
+      "de": "Dateiname prüfen.",
+      "en": "Check the filename."
+    },
+    "native_the_file_could_not_be_created": {
+      "de": "Datei konnte nicht angelegt werden.",
+      "en": "The file could not be created."
+    },
+    "native_the_file_could_not_be_opened": {
+      "de": "Datei konnte nicht geöffnet werden.",
+      "en": "The file could not be opened."
+    },
+    "native_file_chunk_sequence_unconfirmed": {
+      "de": "Dateifolge nicht bestätigt.",
+      "en": "File chunk sequence unconfirmed."
+    },
+    "native_file_size_unconfirmed": {
+      "de": "Dateigröße nicht bestätigt.",
+      "en": "File size unconfirmed."
+    },
+    "native_the_file_could_not_be_transferred": {
+      "de": "Datei konnte nicht übernommen werden.",
+      "en": "The file could not be transferred."
+    },
+    "native_file_incomplete": {
+      "de": "Datei unvollständig.",
+      "en": "File incomplete."
+    },
+    "native_the_action_will_not_be_sent_again_review_the_saved_result_in_43daed": {
+      "de": "Die Aktion wird nicht erneut gesendet. Gespeicherten Stand im Verein prüfen.",
+      "en": "The action will not be sent again. Review the saved result in your club."
+    },
+    "native_the_view_was_closed_review_the_saved_result_before_sending_a": {
+      "de": "Ansicht wurde beendet. Gespeicherten Stand prüfen, bevor du erneut sendest.",
+      "en": "The view was closed. Review the saved result before sending again."
+    },
+    "native_the_app_connection_is_not_ready_yet": {
+      "de": "App-Verbindung noch nicht bereit.",
+      "en": "The app connection is not ready yet."
+    },
+    "native_app_result_unconfirmed": {
+      "de": "App-Ergebnis nicht bestätigt.",
+      "en": "App result unconfirmed."
+    },
+    "native_app_notifications_allowed_notifications_work_while_the_app_i": {
+      "de": "App-Hinweise erlaubt. Hinweise funktionieren bei geöffneter Anwendung.",
+      "en": "App notifications allowed. Notifications work while the app is open."
+    },
+    "native_app_notifications_are_off_you_can_enable_them_in_device_sett": {
+      "de": "App-Hinweise ausgeschaltet. Du kannst sie in den Geräteeinstellungen erlauben.",
+      "en": "App notifications are off. You can enable them in device settings."
+    },
+    "native_app_notifications_are_enabled_only_after_your_action_and_per": {
+      "de": "App-Hinweise werden erst nach deinem Klick und deiner Erlaubnis aktiviert.",
+      "en": "App notifications are enabled only after your action and permission."
+    },
+    "native_the_file_could_not_be_transferred_open_the_original_export_a": {
+      "de": "Datei konnte nicht übernommen werden. Export erneut bewusst öffnen.",
+      "en": "The file could not be transferred. Open the original export again deliberately."
+    },
+    "native_the_print_view_could_not_be_opened": {
+      "de": "Druckansicht konnte nicht geöffnet werden.",
+      "en": "The print view could not be opened."
+    },
+    "native_view_changed": {
+      "de": "Ansicht gewechselt.",
+      "en": "View changed."
+    },
+    "native_after_you_choose_the_camera_reads_a_ticket_or_voucher_code": {
+      "de": "Die Kamera liest einen Ticket- oder Gutscheincode nach deiner Auswahl.",
+      "en": "After you choose, the camera reads a ticket or voucher code."
+    },
+    "native_you_choose_the_photos_you_want_to_use_in_your_club": {
+      "de": "Du wählst selbst die Fotos aus, die du im Verein verwenden möchtest.",
+      "en": "You choose the photos you want to use in your club."
+    },
+    "native_after_you_choose_connect_a_card_reader_to_checkout": {
+      "de": "Verbinde nach deiner Auswahl einen Kartenleser mit der Kasse.",
+      "en": "After you choose, connect a card reader to checkout."
+    },
+    "native_after_you_choose_sumup_checks_card_payment_availability_at_y": {
+      "de": "SumUp prüft nach deiner Auswahl die Verfügbarkeit der Kartenzahlung an deinem Standort.",
+      "en": "After you choose, SumUp checks card-payment availability at your location."
+    },
+    "native_after_you_choose_a_supported_card_reader_can_use_the_device_": {
+      "de": "Ein unterstützter Kartenleser kann nach deiner Auswahl die Geräteverbindung verwenden.",
+      "en": "After you choose, a supported card reader can use the device connection."
+    },
+    "native_demo_payments_disabled": {
+      "de": "In der Demo sind Gerätezahlungen gesperrt.",
+      "en": "Device payments are disabled in the demo."
+    }
+  },
+  "privacy": {
+    "NSCameraUsageDescription": "native_after_you_choose_the_camera_reads_a_ticket_or_voucher_code",
+    "NSPhotoLibraryUsageDescription": "native_you_choose_the_photos_you_want_to_use_in_your_club",
+    "NSBluetoothAlwaysUsageDescription": "native_after_you_choose_connect_a_card_reader_to_checkout",
+    "NSLocationWhenInUseUsageDescription": "native_after_you_choose_sumup_checks_card_payment_availability_at_y",
+    "NSMicrophoneUsageDescription": "native_after_you_choose_a_supported_card_reader_can_use_the_device_"
+  }
+}

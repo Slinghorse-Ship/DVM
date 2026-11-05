@@ -1,0 +1,12 @@
+{
+  "name": "mediabunny",
+  "version": "1.61.3",
+  "license": "MPL-2.0",
+  "origin": "https://registry.npmjs.org/mediabunny/-/mediabunny-1.61.3.tgz",
+  "npm_integrity": "sha512-kUqLKVXQVwHR62GkOJxYosAmXERJbqnXBgJDTtRlxHEYviVkMg/Evhl9XN6kedqS5LP1tV4kFKyzY/V4a4ofow==",
+  "files": {
+    "mediabunny-1.61.3-source.tgz": "507e6f75def0ba3748b3b52e4a8ed2937cf311897f4984b90510b56b279bc3d1",
+    "LICENSE": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04",
+    "mediabunny-1.61.3.min.mjs": "d7b3a90e82158a7022729cbd4f861daf73cbb4f69d23349d2aefc9c8281cf70c"
+  }
+}

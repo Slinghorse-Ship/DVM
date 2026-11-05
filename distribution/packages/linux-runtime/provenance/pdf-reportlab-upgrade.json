@@ -1,0 +1,29 @@
+{
+  "reason": "ReportLab 3.6.12 emitted inconsistent embedded Vera-Bold glyph widths (PDF/A-3 rule 6.2.11.5). Version 4.4.9 passes real Mustang/veraPDF against newly generated originals.",
+  "previous_pdf_archive_sha256": "ca972f8e301a28b298b4e530b935c8dfc5ff90c043666717cf33ffda501ab212",
+  "wheels": [
+    {
+      "filename": "reportlab-4.4.9-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/17/77/546e50edfaba6a0e58e8ec5fdc4446510227cec9e8f40172b60941d5a633/reportlab-4.4.9-py3-none-any.whl",
+      "digests": {
+        "blake2b_256": "1777546e50edfaba6a0e58e8ec5fdc4446510227cec9e8f40172b60941d5a633",
+        "md5": "b46d8277bbf38f038d5a18b881d85294",
+        "sha256": "68e2d103ae8041a37714e8896ec9b79a1c1e911d68c3bd2ea17546568cf17bfd"
+      },
+      "size": 1954401,
+      "packagetype": "bdist_wheel"
+    },
+    {
+      "filename": "charset_normalizer-3.5.1-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/cc/61/d01fc49b8dea277640b55a9e15960dbca9fdc8c9fde18e572d39c59f4019/charset_normalizer-3.5.1-py3-none-any.whl",
+      "digests": {
+        "blake2b_256": "cc61d01fc49b8dea277640b55a9e15960dbca9fdc8c9fde18e572d39c59f4019",
+        "md5": "941e6cad75cc77b7d00e6a55f26785f1",
+        "sha256": "6df0ec430f9a831772c23ca5a224cba36517a58a84bb32c32bb59a9fa67c47f6"
+      },
+      "size": 68658,
+      "packagetype": "bdist_wheel"
+    }
+  ],
+  "pdf_archive_sha256": "6c403e45f1a72ce1106d45c658b8f31c33ccfd148229ea4f69fed92586d44dd5"
+}

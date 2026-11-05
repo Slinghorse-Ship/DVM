@@ -1,0 +1,109 @@
+{
+  "date": "2026-09-28",
+  "scope": "Dated no-proceeds asset disposals and evidence-bound calendar asset carry",
+  "general_balance_release": false,
+  "production_deployed": false,
+  "kulturhus_accounting_basis": "EÜR unchanged",
+  "runs": [
+    {
+      "report": "audit/ebilanz-mysql-host-20260918-fcf8db5e7293b2a2.json",
+      "source_archive_sha256": "524a81b37c5a56367f5f022b15458dc1aabfea29d0801dfb7b17ed3ed5a9eae1",
+      "passed": true,
+      "production_database_connected": false,
+      "protected_files_unchanged": true,
+      "temporary_files_removed": true,
+      "backup_created": false,
+      "tests": [
+        {
+          "test": "balance-period-disposal.php",
+          "exit": 0,
+          "php_diagnostic": false,
+          "seconds": 0.13,
+          "summary": "883 dated disposal arithmetic checks passed plus 103 period checks"
+        },
+        {
+          "test": "balance-period-disposal-ledger.php",
+          "exit": 0,
+          "php_diagnostic": false,
+          "seconds": 41.13,
+          "summary": "43 dated disposal ledger checks passed plus 43 reused period source checks; synthetic MySQL only"
+        },
+        {
+          "test": "balance-period-asset-carry.php",
+          "exit": 0,
+          "php_diagnostic": false,
+          "seconds": 81.88,
+          "summary": "22 calendar asset carry checks passed plus 43 reused source checks; synthetic MySQL only"
+        },
+        {
+          "test": "balance-period-depreciation.php",
+          "exit": 0,
+          "php_diagnostic": false,
+          "seconds": 35.71,
+          "summary": "33 period depreciation checks passed plus 43 reused source checks; synthetic MySQL only"
+        },
+        {
+          "test": "balance-period-degressive.php",
+          "exit": 0,
+          "php_diagnostic": false,
+          "seconds": 0.11,
+          "summary": "52 degressive period checks passed plus 103 period checks; arithmetic only"
+        },
+        {
+          "test": "balance-period-corrections.php",
+          "exit": 0,
+          "php_diagnostic": false,
+          "seconds": 11.09,
+          "summary": "51 period correction checks passed plus 75 period-ledger checks; synthetic MySQL only"
+        },
+        {
+          "test": "asset-partial-disposal.php",
+          "exit": 0,
+          "php_diagnostic": false,
+          "seconds": 0.05,
+          "summary": "6941 partial-disposal calculation checks passed; no database or live changes"
+        },
+        {
+          "test": "asset-sale.php",
+          "exit": 0,
+          "php_diagnostic": false,
+          "seconds": 138.54,
+          "summary": "140 issued invoice and asset-sale checks passed; isolated MySQL only"
+        }
+      ]
+    },
+    {
+      "report": "audit/ebilanz-mysql-host-20260918-d0802a022b248a7c.json",
+      "source_archive_sha256": "136de895397007a742e6772a47fce52df10ead1770fca302041b4e6873852b10",
+      "passed": true,
+      "production_database_connected": false,
+      "protected_files_unchanged": true,
+      "temporary_files_removed": true,
+      "backup_created": false,
+      "tests": [
+        {
+          "test": "balance-period-disposal-ledger.php",
+          "exit": 0,
+          "php_diagnostic": false,
+          "seconds": 42.65,
+          "summary": "44 dated disposal ledger checks passed plus 43 reused period source checks; synthetic MySQL only"
+        }
+      ]
+    }
+  ],
+  "ui_review": {
+    "scope": "Synthetic rendered disposal form only; not a real user test or full manager acceptance",
+    "desktop": "1265px viewport, visual inspection",
+    "mobile": "390x844 viewport, visual inspection and DOM measurements",
+    "horizontal_overflow": false,
+    "input_font_px": 17,
+    "non_checkbox_control_min_height_px": 50,
+    "field_switches_verified": [
+      "partial_scrap: component fields visible, software confirmation hidden",
+      "software_end: software confirmation visible, component fields hidden",
+      "scrap: neither specialised field group visible"
+    ],
+    "production_ui_mutations": false
+  },
+  "note": "The full regression preceded final CSS/field-group changes; the second run repeats the disposal ledger and template tests on the final UI source. No tax submission."
+}

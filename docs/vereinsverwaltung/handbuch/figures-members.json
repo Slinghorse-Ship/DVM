@@ -1,0 +1,151 @@
+{
+  "member-stammdaten": {
+    "file": "hilfe-member-stammdaten.png",
+    "title": "Mitglied anlegen: persönliche Angaben und weitere Felder finden",
+    "notes": [
+      "In dieser Karte stehen Name und Kontaktdaten.",
+      "Den vollständigen Namen einer einzelnen Person eintragen.",
+      "Die tatsächliche E-Mail-Adresse eintragen, falls vorhanden. Dadurch wird kein Newsletter bestellt.",
+      "Diese Zeile aufklappen: Hier stehen Geburtstag, alte Mitgliedsnummer, Ehrenmitglied, Notizen und zusätzliche Angaben."
+    ],
+    "source": "?view=members&new=1&create_as=member",
+    "captured_at": "2026-09-08",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 1034,
+    "height": 655,
+    "sha256": "a0ec53b39c95a83e8d70092bae21521d4330439c5f3bec6df8a34fa0f07ec3b4",
+    "privacy_reviewed_at": "2026-09-08",
+    "privacy_review": "Actual current local application. Unsaved fictional German handbook example only; example.invalid email, invented name/address/family/date. No live member data, account numbers, documents, signatures or secrets. Numbered callouts and visible crop manually reviewed."
+  },
+  "member-eintritt": {
+    "file": "hilfe-member-eintritt.png",
+    "title": "Eintritt festlegen: nur das bekannte Jahr angeben",
+    "notes": [
+      "Nur Eintrittsjahr bekannt wählen, wenn kein genaues Eintrittsdatum vorliegt.",
+      "Das belegte Jahr eintragen. Das Datumsfeld wird bei dieser Auswahl ausgeblendet."
+    ],
+    "source": "?view=members&new=1&create_as=member",
+    "captured_at": "2026-09-08",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 992,
+    "height": 269,
+    "sha256": "350466ffe0a2d73857775731fa8bc8aae33057e8a21d7098ad718713f35cb81b",
+    "privacy_reviewed_at": "2026-09-08",
+    "privacy_review": "Actual current local application. Unsaved fictional German handbook example only; example.invalid email, invented name/address/family/date. No live member data, account numbers, documents, signatures or secrets. Numbered callouts and visible crop manually reviewed."
+  },
+  "member-familie": {
+    "file": "hilfe-member-familie.png",
+    "title": "Familie zuordnen und Zugangsmail bewusst auswählen",
+    "notes": [
+      "Einzelmitglied, vorhandene Familie oder Neue Familie anlegen auswählen.",
+      "Bei einer neuen Familie deren Namen eintragen. Diese Person wird zunächst Beitragszahler.",
+      "Website-Zugang und Zugangsmail aufklappen, um die Versandauswahl zu sehen.",
+      "Vorausgewählt ist Konto anlegen, keine Mail senden. Nur bei gewünschter Einladung die Variante mit Mail auswählen."
+    ],
+    "source": "?view=members&new=1&create_as=member",
+    "captured_at": "2026-09-08",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 992,
+    "height": 423,
+    "sha256": "6c5d7ab373f927c28f575dbed28d4d6badf281be7c6f773d65e8f98315630a54",
+    "privacy_reviewed_at": "2026-09-08",
+    "privacy_review": "Actual current local application. Unsaved fictional German handbook example only; example.invalid email, invented name/address/family/date. No live member data, account numbers, documents, signatures or secrets. Numbered callouts and visible crop manually reviewed."
+  },
+  "member-import": {
+    "file": "hilfe-member-import.png",
+    "title": "Import: vorhandene Dateispalten den Mitgliederfeldern zuordnen",
+    "notes": [
+      "Die Dateispalte mit vollständigem Namen auswählen.",
+      "Aktuelle Mitgliedsnummer von der historischen Nummer trennen.",
+      "Die Spalte für die alte Nummer auswählen oder auf Nicht übernehmen lassen."
+    ],
+    "source": "?view=members&import=1",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 344
+  },
+  "orga-gema": {
+    "file": "hilfe-orga-gema.png",
+    "title": "GEMA: Anmeldung und Musikliste als erledigt vermerken",
+    "notes": [
+      "Nur den geklärten Bedarf vermerken; die Anmeldung erfolgt bei GEMA.",
+      "Erst nach tatsächlicher Anmeldung Ja, erledigt wählen.",
+      "Musiklistenstatus getrennt pflegen und danach Erledigungsstand speichern."
+    ],
+    "source": "?view=gema&event=website%3A1027&year=2026",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 988,
+    "height": 407
+  },
+  "orga-inventar": {
+    "file": "hilfe-orga-inventar.png",
+    "title": "Vier vollständige Sätze mit je vier Teilen erfassen",
+    "notes": [
+      "Satz auswählen: Der Bestand wird in vollständigen Sätzen geführt.",
+      "Hier vier vorhandene Sätze eintragen; die Anzahl der einzelnen Füße folgt aus deren Inhalt.",
+      "Den tatsächlichen Lagerort wählen. Die Anfangsmenge wird beim Speichern dort erfasst.",
+      "Diesen Abschnitt für Sätze, Kartons oder Packungen aufklappen.",
+      "Vier Teile pro Satz eintragen und daneben Stück als Einheit der Teile auswählen. Ergebnis: vier Sätze mit zusammen 16 Füßen."
+    ],
+    "source": "?view=inventory&tab=items&new_item=1&create_mode=quantity",
+    "captured_at": "2026-09-08",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 950,
+    "height": 497,
+    "privacy_reviewed_at": "2026-09-08",
+    "sha256": "df2c2eada7b5597cb3c3cd8da8d717cdb17b579e352f652a5cc0a082b358259a",
+    "privacy_review": "Actual current local inventory interface with isolated fictional German training records and unsaved examples only. No real member names, invoice files, account details, signatures or secrets. Numbered overlays and crop visually reviewed."
+  },
+  "orga-nachweis": {
+    "file": "hilfe-orga-nachweis.png",
+    "title": "Nachweis und Datei: vorhandene Unterlage auswählen oder hochladen",
+    "notes": [
+      "Einen verständlichen Titel für die Unterlage eingeben.",
+      "Die passende Nachweisart auswählen.",
+      "Eine bereits abgelegte Datei suchen und auswählen. Ohne Datei bleibt der Nachweis als fehlend sichtbar.",
+      "Eine neue Unterlage hineinziehen oder über diese Schaltfläche auswählen. Anschließend den Nachweis speichern."
+    ],
+    "source": "?view=documents&tab=checks&new_check=1",
+    "captured_at": "2026-09-09",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 1000,
+    "height": 353,
+    "privacy_reviewed_at": "2026-09-09",
+    "privacy_review": "Current isolated synthetic application; blank fields or explicitly fictional sample text only. Numbered DOM overlays and focused crop reviewed. No real persons, signatures, financial values, or credentials.",
+    "sha256": "9a51b142f6c5a204b760b2acf6fca9b9963a6fd110c4470b16652c731abe5caa"
+  },
+  "orga-fristen": {
+    "file": "hilfe-orga-fristen.png",
+    "title": "Fristen und Zuständigkeit: nur die tatsächlich geltenden Daten eintragen",
+    "notes": [
+      "Name oder Kontaktstelle eintragen, die sich um den nächsten Schritt kümmert.",
+      "Bei einer tatsächlichen Befristung das Gültigkeitsdatum eintragen. Sonst leer lassen.",
+      "Nächsten Prüf-, Kündigungs- oder Meldetermin festhalten.",
+      "Vorlauf in Tagen bestimmen, zum Beispiel 30 für einen Monat."
+    ],
+    "source": "?view=documents&tab=checks&new_check=1",
+    "captured_at": "2026-09-09",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 1000,
+    "height": 275,
+    "privacy_reviewed_at": "2026-09-09",
+    "privacy_review": "Current isolated synthetic application; blank fields or explicitly fictional sample text only. Numbered DOM overlays and focused crop reviewed. No real persons, signatures, financial values, or credentials.",
+    "sha256": "381c2b8e2153f2a118b49b9040e82501edc684ad505ba9ad52beb98c8b7f29a0"
+  },
+  "orga-freieliste": {
+    "file": "hilfe-orga-freieliste.png",
+    "title": "Freie Liste: direkt bearbeiten und Speicherstatus beachten",
+    "notes": [
+      "Vor dem Verlassen auf Alle Änderungen gespeichert warten.",
+      "Die Spalten geben an, welche Angabe in eine Zelle gehört.",
+      "Zelle anklicken und ändern; jede Zeile ist ein eigener Eintrag."
+    ],
+    "source": "?view=free&sheet=2c911c83dc6797de6f411896f528bd09",
+    "captured_at": "2026-09-07",
+    "privacy": "synthetic-inputs-and-visible-content-reviewed",
+    "width": 819,
+    "height": 246
+  }
+}

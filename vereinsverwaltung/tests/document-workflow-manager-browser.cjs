@@ -1,0 +1,50 @@
+'use strict';
+// Entire actual manager, isolated workflow-manager fixture and no external requests.
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const {chromium}=require('C:/Users/wehla/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const origin='http://127.0.0.1:8118',base=origin+'/vereinsverwaltung/',runtime=path.resolve('.local/native-cms-integration/workflow-manager-runtime');
+const credentials=JSON.parse(fs.readFileSync(path.join(runtime,'browser-credentials.json'),'utf8'));
+const fixture=JSON.parse(fs.readFileSync(path.join(runtime,'workflow-demo.json'),'utf8'));
+const checks=[],errors=[],external=[];const check=(ok,label)=>{assert(ok,label);checks.push(label)};
+(async()=>{
+ const browser=await chromium.launch({headless:true});const contexts=[];
+ const client=async key=>{const context=await browser.newContext({viewport:{width:1440,height:1000},acceptDownloads:true});contexts.push(context);await context.route('**/*',r=>{if(r.request().url().startsWith(origin+'/'))return r.continue();external.push(r.request().url());return r.abort()});const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));await page.goto(origin+'/login/');await page.getByLabel('E-Mail-Adresse oder persönlicher Benutzername',{exact:true}).fill(credentials[key].email);await page.getByLabel('Passwort',{exact:true}).fill(credentials[key].password);await Promise.all([page.waitForURL('**/vereinsverwaltung/**'),page.getByRole('button',{name:'Anmelden und Vereinsmanager öffnen'}).click()]);return {context,page};};
+ try{
+  const admin=await client('admin'),page=admin.page;
+  let response=await page.goto(base+'?view=documents&tab=workflows&wf_doc='+fixture.document);check(response.status()===200,'actual authenticated manager serves assessment');
+  check(await page.locator('.sidebar').count()===1&&await page.locator('#navigation').count()===1,'one original manager navigation');check(await page.getByRole('heading',{name:'Gefährdungsbeurteilung',exact:true}).count()===1,'module title integrated');
+  check(await page.locator('#navigation a').allTextContents().then(x=>x.some(y=>y.includes('Gefährdungsbeurteilung'))),'module discoverable in Organisation menu');
+  await page.locator('[data-dwf-preview]').waitFor({state:'visible'});check(await page.locator('[data-dwf-preview-content]').innerText().then(x=>x.length>50),'document preview initialized in manager');
+  const csrf=await page.locator('[name=csrf]').first().inputValue();
+  response=await admin.context.request.post(base+'?view=documents&tab=workflows&wf_doc='+fixture.document,{form:{csrf:'bad',action:'document-workflow-document-transition',wf_id:fixture.document,wf_version:'4',wf_transition:'reopen'}});check(response.status()===403,'manager workflow POST rejects wrong CSRF');
+  await page.getByRole('button',{name:'Offene Unterschriften per Mail erinnern',exact:true}).click();await page.getByRole('heading',{name:'Erinnerung prüfen',exact:true}).waitFor();check((await page.locator('.dwf-workspace').innerText()).includes('Lea Beispiel'),'pending member shown in explicit reminder preview');
+  check(await page.locator('#main>.error,.dwf-error').count()===0,'reminder preview has no legacy document-action fallthrough error');
+  await page.locator('[data-dwf-preview]').waitFor({state:'visible'});check(await page.locator('[data-dwf-preview-content]').innerText().then(x=>x.length>50),'document preview survives reminder form navigation');
+  check(await page.getByRole('button',{name:'Versand bestätigen',exact:true}).count()===1&&await page.locator('[name=wf_mail_confirm]').count()===1,'reminder requires separate checkbox and confirmation');
+  await page.screenshot({path:path.join(runtime,'reminder-desktop.png'),fullPage:true});
+  await page.locator('[name=wf_mail_confirm]').check();await page.getByRole('button',{name:'Versand bestätigen',exact:true}).click();await page.getByText('In dieser Testumgebung werden keine Mails versendet.',{exact:true}).first().waitFor();check((await page.locator('#main').innerText()).includes('In dieser Testumgebung werden keine Mails versendet.'),'actual local manager blocks confirmed mail send');
+  await page.goto(base+'?view=documents&tab=workflows&wf_doc='+fixture.document);
+  const exportUrl=await page.getByRole('link',{name:'PDF herunterladen',exact:true}).getAttribute('href');response=await admin.context.request.get(base+exportUrl);check(response.status()===200&&(await response.body()).subarray(0,5).toString()==='%PDF-','manager PDF download works');
+  const member=await client('member'),mp=member.page;
+  response=await mp.goto(base+'?view=documents&tab=workflows&wf_doc='+fixture.document);check(response.status()===403,'member cannot open module-wide assessment route');
+  await mp.goto(base+'?view=portal&tab=signatures');await Promise.all([mp.waitForURL(u=>u.searchParams.has('wf_sign')),mp.locator('.dwf-own-signatures a').first().click()]);
+  const signature=new URL(mp.url()).searchParams.get('wf_sign');check(signature&&await mp.getByRole('heading',{name:'Meine Unterschriften',exact:true}).count()===1,'member reaches assigned signature through actual portal');
+  const returning=await browser.newContext();contexts.push(returning);await returning.route('**/*',r=>r.request().url().startsWith(origin+'/')?r.continue():r.abort());const rp=await returning.newPage();await rp.goto(base+'?view=portal&tab=signatures&wf_sign='+signature);await rp.getByLabel('E-Mail-Adresse oder persönlicher Benutzername',{exact:true}).fill(credentials.member.email);await rp.getByLabel('Passwort',{exact:true}).fill(credentials.member.password);await Promise.all([rp.waitForURL(u=>u.searchParams.get('wf_sign')===signature),rp.getByRole('button',{name:'Anmelden und Vereinsmanager öffnen'}).click()]);check(new URL(rp.url()).searchParams.get('tab')==='signatures','mail link returns to owned signature after login');
+  response=await member.context.request.get(base+exportUrl);check(response.status()===403,'member cannot bypass global PDF rights via download');
+  const foreign=await client('outsider');response=await foreign.context.request.get(base+'?view=portal&tab=signatures&wf_signature_pdf='+signature);check(response.status()===403,'foreign club cannot download personal signature PDF');
+  await mp.setViewportSize({width:390,height:844});await mp.reload();const canvas=mp.locator('[data-dwf-signature-canvas]');await canvas.waitFor();
+  check(await mp.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+2),'personal mobile view fits 390px');
+  await mp.locator('[name=wf_accepted]').check();await mp.getByRole('button',{name:'Unterschreiben',exact:true}).click();check((await mp.locator('[data-dwf-signature-error]').innerText()).includes('Bitte mit Finger'),'blank signature inline error');
+  await canvas.scrollIntoViewIfNeeded();const box=await canvas.boundingBox();await mp.mouse.move(box.x+20,box.y+80);await mp.mouse.down();for(const [x,y] of [[40,30],[70,110],[110,40],[150,100],[190,20],[240,90]])await mp.mouse.move(box.x+x,box.y+y,{steps:3});await mp.mouse.up();
+  await mp.screenshot({path:path.join(runtime,'signature-mobile.png'),fullPage:true});
+  await Promise.all([mp.waitForURL(u=>u.searchParams.get('wf_sign')===signature,{waitUntil:'networkidle'}),mp.getByRole('button',{name:'Unterschreiben',exact:true}).click()]);
+  await mp.getByText(/Unterschrieben von Lea Beispiel/).waitFor();check((await mp.locator('#main').innerText()).includes('Das PDF liegt in Meine Belege'),'signature automatically creates personal archive PDF');
+  await mp.goto(base+'?view=portal&tab=documents');await mp.locator('#meine-beurteilungen').waitFor();check(await mp.locator('#meine-beurteilungen a[href*="'+signature+'"]').count()===1,'same personal archive contains signed assessment once');
+  const archived=await mp.locator('#meine-beurteilungen a[href*="'+signature+'"]').getAttribute('href');response=await member.context.request.get(new URL(archived,base).href);check(response.status()===200&&(await response.body()).subarray(0,5).toString()==='%PDF-','private archived PDF downloadable');fs.writeFileSync(path.join(runtime,'signed-archive.pdf'),await response.body());
+  response=await foreign.context.request.get(new URL(archived,base).href);check(response.status()===403,'foreign club cannot open archived PDF');
+  await mp.screenshot({path:path.join(runtime,'archive-mobile.png'),fullPage:true});
+  await page.goto(base+'?view=documents&tab=workflows&wf_doc='+fixture.document);await page.getByRole('button',{name:'Offene Unterschriften per Mail erinnern',exact:true}).click();check((await page.locator('.dwf-workspace').innerText()).includes('Keine offenen Unterschriften'),'already signed member excluded from reminders');
+  check(errors.length===0,'no browser JavaScript errors');check(external.length===0,'no external resources or services contacted');
+  const report={suite:'document-workflow-manager-browser',status:'passed',checks:checks.length,passed:checks,production_changed:false,real_mail_sent:false};fs.writeFileSync('audit/document-workflow-manager-browser-20261008.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
+ }finally{for(const c of contexts)await c.close();await browser.close();}
+})().catch(e=>{console.error(e);process.exitCode=1});

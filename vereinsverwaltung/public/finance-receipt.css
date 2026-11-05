@@ -1,0 +1,52 @@
+[data-finance-receipt] {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+[data-finance-receipt] :is(section, details, .card, .table-scroll, .application-pdf, .pdf-canvas-wrap) {
+  min-width: 0;
+  max-width: 100%;
+}
+[data-finance-receipt] .data-list {
+  grid-template-columns: minmax(0, 1fr);
+}
+[data-finance-receipt] .data-list :is(dt, dd) {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+[data-finance-receipt] .table-scroll {
+  overflow-x: auto;
+}
+@media (min-width: 48rem) {
+  [data-finance-receipt] .data-list { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
+}
+
+#invoice-approval{font-size:1rem}#invoice-approval h2{font-size:1.25rem;line-height:1.4}#invoice-approval h3{font-size:1.1rem}#invoice-approval :is(form,label,fieldset,.invoice-approval-choice span){min-width:0;max-width:100%;overflow-wrap:anywhere}#invoice-approval :is(input:not([type=hidden]):not([type=checkbox]),textarea,button){font-size:1rem;min-height:44px;max-width:100%}#invoice-approval button.btn{display:block;white-space:normal;overflow-wrap:anywhere;margin-block:.5rem}#invoice-approval summary{min-height:44px;padding-block:.6rem;cursor:pointer}.invoice-review-recovery{border:2px solid #bdcbd5;border-radius:.6rem;padding:.8rem;margin-block:1rem;min-width:0}.invoice-review-earlier{border-left:3px solid #456956;padding-left:.75rem;margin-block:1rem}.invoice-review-recovery textarea{width:100%;min-width:0}.invoice-review-recovery-actions{display:flex;flex-wrap:wrap;gap:.5rem}.invoice-review-recovery-actions button{flex:1 1 12rem;min-width:0}
+
+.finance-receipt-heading{min-width:0;max-width:100%;flex-wrap:wrap;align-items:flex-start}.finance-receipt-heading h1{font-size:1.5rem;min-width:0;max-width:100%;overflow-wrap:anywhere;line-height:1.4}.finance-receipt-heading .icon-button{min-width:44px;min-height:44px}.finance-receipt-heading .status{font-size:1rem;max-width:100%;white-space:normal;overflow-wrap:anywhere}[data-finance-receipt-summary]{font-size:1rem;min-width:0;overflow-wrap:anywhere}[data-finance-receipt-summary] h2{font-size:1.25rem;line-height:1.4;overflow-wrap:anywhere}[data-finance-receipt-summary] .section-heading{flex-wrap:wrap;gap:.75rem}[data-finance-receipt-summary] :is(dt,dd){font-size:1rem}[data-finance-readonly]{font-size:1rem;overflow-wrap:anywhere}
+
+[data-invoice-original-items]{font-size:1rem;min-width:0;max-width:100%;overflow-wrap:anywhere}[data-invoice-original-items] h4{font-size:1.1rem;line-height:1.4}[data-invoice-original-items] :is(section,summary,p){min-width:0;max-width:100%}[data-invoice-original-items] summary{font-size:1rem;min-height:44px;padding-block:.6rem;cursor:pointer}[data-invoice-original-items] .btn{font-size:1rem;min-height:44px;max-width:100%;white-space:normal;overflow-wrap:anywhere}.invoice-original-text{white-space:pre-wrap;overflow-wrap:anywhere}.invoice-original-bank{overflow-wrap:anywhere}
+.invoice-original-action{display:inline-flex;align-items:center;min-height:44px;min-width:44px;max-width:100%;font-size:1rem;white-space:normal;overflow-wrap:anywhere;padding:.4rem}.invoice-original-action span{min-width:0;overflow-wrap:anywhere}
+
+:is([data-contribution-invoice],[data-contribution-payment],[data-receipt-donation]){font-size:1rem;min-width:0;max-width:100%;overflow-wrap:anywhere}
+:is([data-contribution-invoice],[data-contribution-payment]) h2{font-size:1.25rem;line-height:1.4}
+[data-contribution-payment] h3{font-size:1.1rem;line-height:1.4}
+[data-contribution-invoice] .section-heading{flex-wrap:wrap;gap:.75rem}
+:is([data-contribution-invoice],[data-contribution-payment],[data-receipt-donation]) :is(.btn,li>a){display:inline-flex;align-items:center;font-size:1rem;min-height:44px;min-width:44px;max-width:100%;white-space:normal;overflow-wrap:anywhere;padding:.5rem}
+[data-contribution-payment] li{min-width:0;overflow-wrap:anywhere}
+
+[data-contribution-invoice-original]{font-size:1rem;min-width:0;max-width:100%;overflow-wrap:anywhere}
+[data-contribution-invoice-original] h2{font-size:1.25rem;line-height:1.4}
+[data-contribution-invoice-original] pre{font-size:1rem;white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%;min-width:0}
+[data-contribution-invoice-original] .btn{font-size:1rem;display:inline-flex;align-items:center;min-height:44px;min-width:44px;max-width:100%;white-space:normal;overflow-wrap:anywhere;padding:.5rem}
+/* Keep the existing private-advance heading inside narrow, enlarged invoice views. */
+.reimbursement-card .section-heading{flex-wrap:wrap;gap:.75rem}.reimbursement-card .section-heading>*{min-width:0;max-width:100%;overflow-wrap:anywhere}
+
+.financial-original-unavailable { min-width:0;max-width:100%;overflow-wrap:anywhere; }
+.financial-original-unavailable .data-list dd { min-width:0;overflow-wrap:anywhere; }
+.financial-original-unavailable .actions { flex-wrap:wrap; }
+.financial-original-unavailable .btn { max-width:100%;white-space:normal; }
+.financial-original-unavailable input { min-width:0;max-width:100%; }
+
+[data-financial-original-page] { min-width:0;max-width:100%;overflow-wrap:anywhere; }
+.financial-original-heading h1 { font-size:1.25rem; }

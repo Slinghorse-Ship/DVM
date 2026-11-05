@@ -1,0 +1,398 @@
+{
+  "schema": 1,
+  "revision": 61,
+  "source_kind": "original_signed_debtor_creditor_split_counters",
+  "production_authorized": false,
+  "years": [
+    {
+      "year": 2025,
+      "source": {
+        "year": 2025,
+        "edition": "balance",
+        "pdf_sha256": "dcf8080446f4fc0ddb1d67409fdabc3689dab598ac669d2330322f895402e69d",
+        "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab",
+        "url": "https://help-center.apps.datev.de/api/amr/knowledge-common/v1/entities/st45264272267_de.pdf"
+      },
+      "groups": [
+        {
+          "purpose": "original-reclassification-r61-12580@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.trade.other",
+          "choices": [
+            "bs.ass.currAss.receiv.trade.other",
+            "bs.ass.currAss.receiv.trade.shareholders",
+            "bs.ass.currAss.receiv.trade.misc"
+          ],
+          "conditional": true,
+          "primary_code": "12000",
+          "printed_split_ranges": [
+            [
+              "13000",
+              "14969"
+            ]
+          ],
+          "sources": [
+            {
+              "code": "12580",
+              "semantic": {
+                "name": "Gegenkonto zu sonstigen Vermögensgegenständen bei Buchungen über Debitorenkonto",
+                "function": "",
+                "range_start": "12580",
+                "range_end": "12580",
+                "parent": null
+              },
+              "signature": "f47bd4e3199ccea0c01c941f3284c403bbf24e823fa9cbdcd2869da534ccc985"
+            }
+          ]
+        },
+        {
+          "purpose": "original-reclassification-r61-12590@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.trade.other",
+          "choices": [
+            "bs.ass.currAss.receiv.trade.other",
+            "bs.ass.currAss.receiv.trade.shareholders",
+            "bs.ass.currAss.receiv.trade.misc"
+          ],
+          "conditional": true,
+          "primary_code": "12000",
+          "printed_split_ranges": [
+            [
+              "12210",
+              "12299"
+            ],
+            [
+              "12400",
+              "12459"
+            ],
+            [
+              "12500",
+              "12579"
+            ],
+            [
+              "12700",
+              "12759"
+            ],
+            [
+              "12900",
+              "12979"
+            ]
+          ],
+          "sources": [
+            {
+              "code": "12590",
+              "semantic": {
+                "name": "Gegenkonto 1221 0 - 1229 9, 1240 0 - 1245 9, 1250 0 - 1257 9, 1270 0 - 1275 9, 1290 0 - 1297 9 bei Aufteilung Debitorenkonto",
+                "function": "",
+                "range_start": "12590",
+                "range_end": "12590",
+                "parent": null
+              },
+              "signature": "39442f0101ba195131735ee3395bb6c27954b3793a05b026cd6c6d9bfae91ff4"
+            }
+          ]
+        },
+        {
+          "purpose": "original-reclassification-r61-32490@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.bank.other",
+          "choices": [
+            "bs.eqLiab.liab.bank.other"
+          ],
+          "conditional": true,
+          "primary_code": "32100",
+          "printed_split_ranges": [
+            [
+              "31500",
+              "31839"
+            ]
+          ],
+          "sources": [
+            {
+              "code": "32490",
+              "semantic": {
+                "name": "Gegenkonto 3150 0 - 3183 9 bei Aufteilung der Konten 3210 0 - 3248 9",
+                "function": "",
+                "range_start": "32490",
+                "range_end": "32490",
+                "parent": null
+              },
+              "signature": "7deee314bf510588d2a0d46d6a238105e2a977f2938f83d0a66cd90c40e3fdac"
+            }
+          ]
+        },
+        {
+          "purpose": "original-reclassification-r61-33490@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.trade.genOther",
+          "choices": [
+            "bs.eqLiab.liab.trade.genOther",
+            "bs.eqLiab.liab.trade.shareholders",
+            "bs.eqLiab.liab.trade.misc"
+          ],
+          "conditional": true,
+          "primary_code": "33000",
+          "printed_split_ranges": [
+            [
+              "33310",
+              "33399"
+            ],
+            [
+              "33400",
+              "33439"
+            ],
+            [
+              "34200",
+              "34239"
+            ],
+            [
+              "34700",
+              "34739"
+            ]
+          ],
+          "sources": [
+            {
+              "code": "33490",
+              "semantic": {
+                "name": "Gegenkonto 3331 0 - 333 9, 3340 0 - 3343 9, 3420 0 - 3423 9, 3470 0 - 3473 9 bei Aufteilung Kreditorenkonto",
+                "function": "",
+                "range_start": "33490",
+                "range_end": "33490",
+                "parent": null
+              },
+              "signature": "cabac01451505e9523c93c3a069703ebee26ff70940821c0c6d402c875e9d2ed"
+            }
+          ]
+        },
+        {
+          "purpose": "original-reclassification-r61-35990@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.other",
+          "choices": [
+            "bs.eqLiab.liab.other.other"
+          ],
+          "conditional": true,
+          "primary_code": "35700",
+          "printed_split_ranges": [
+            [
+              "35000",
+              "35699"
+            ],
+            [
+              "36400",
+              "36539"
+            ]
+          ],
+          "sources": [
+            {
+              "code": "35990",
+              "semantic": {
+                "name": "Gegenkonto 3500 0 - 3569 9 und 3640 0 - 36539 9 bei Aufteilung der Konten 3570 0 - 3598 9",
+                "function": "",
+                "range_start": "35990",
+                "range_end": "35990",
+                "parent": null
+              },
+              "signature": "4b3ad61bd99fd21d5581206141475dc1a393e06d79768f9740e79bc6b568de5a"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "source": {
+        "year": 2026,
+        "edition": "balance",
+        "pdf_sha256": "643c9a0c764b5fa694e10c3a3239faafa8d28d193dba377f43a964c59f89fbe9",
+        "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225",
+        "url": "https://download.datev-shop.de/X7xkGEfqdeYuynPtuXCf5YKaSZyEji6f/12021"
+      },
+      "groups": [
+        {
+          "purpose": "original-reclassification-r61-12580@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.trade.other",
+          "choices": [
+            "bs.ass.currAss.receiv.trade.other",
+            "bs.ass.currAss.receiv.trade.shareholders",
+            "bs.ass.currAss.receiv.trade.misc"
+          ],
+          "conditional": true,
+          "primary_code": "12000",
+          "printed_split_ranges": [
+            [
+              "13000",
+              "14969"
+            ]
+          ],
+          "sources": [
+            {
+              "code": "12580",
+              "semantic": {
+                "name": "Gegenkonto zu sonstigen Vermögensgegenständen bei Buchungen über Debitorenkonto",
+                "function": "",
+                "range_start": "12580",
+                "range_end": "12580",
+                "parent": null
+              },
+              "signature": "f47bd4e3199ccea0c01c941f3284c403bbf24e823fa9cbdcd2869da534ccc985"
+            }
+          ]
+        },
+        {
+          "purpose": "original-reclassification-r61-12590@1",
+          "group": "receivables",
+          "target": "bs.ass.currAss.receiv.trade.other",
+          "choices": [
+            "bs.ass.currAss.receiv.trade.other",
+            "bs.ass.currAss.receiv.trade.shareholders",
+            "bs.ass.currAss.receiv.trade.misc"
+          ],
+          "conditional": true,
+          "primary_code": "12000",
+          "printed_split_ranges": [
+            [
+              "12210",
+              "12299"
+            ],
+            [
+              "12400",
+              "12459"
+            ],
+            [
+              "12500",
+              "12579"
+            ],
+            [
+              "12700",
+              "12759"
+            ],
+            [
+              "12900",
+              "12979"
+            ]
+          ],
+          "sources": [
+            {
+              "code": "12590",
+              "semantic": {
+                "name": "Gegenkonto 1221 0 - 1229 9, 1240 0 - 1245 9, 1250 0 - 1257 9, 1270 0 - 1275 9, 1290 0 - 1297 9 bei Aufteilung Debitorenkonto",
+                "function": "",
+                "range_start": "12590",
+                "range_end": "12590",
+                "parent": null
+              },
+              "signature": "39442f0101ba195131735ee3395bb6c27954b3793a05b026cd6c6d9bfae91ff4"
+            }
+          ]
+        },
+        {
+          "purpose": "original-reclassification-r61-32490@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.bank.other",
+          "choices": [
+            "bs.eqLiab.liab.bank.other"
+          ],
+          "conditional": true,
+          "primary_code": "32100",
+          "printed_split_ranges": [
+            [
+              "31500",
+              "31839"
+            ]
+          ],
+          "sources": [
+            {
+              "code": "32490",
+              "semantic": {
+                "name": "Gegenkonto 3150 0 - 3183 9 bei Aufteilung der Konten 3210 0 - 3248 9",
+                "function": "",
+                "range_start": "32490",
+                "range_end": "32490",
+                "parent": null
+              },
+              "signature": "7deee314bf510588d2a0d46d6a238105e2a977f2938f83d0a66cd90c40e3fdac"
+            }
+          ]
+        },
+        {
+          "purpose": "original-reclassification-r61-33490@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.trade.genOther",
+          "choices": [
+            "bs.eqLiab.liab.trade.genOther",
+            "bs.eqLiab.liab.trade.shareholders",
+            "bs.eqLiab.liab.trade.misc"
+          ],
+          "conditional": true,
+          "primary_code": "33000",
+          "printed_split_ranges": [
+            [
+              "33310",
+              "33399"
+            ],
+            [
+              "33400",
+              "33439"
+            ],
+            [
+              "34200",
+              "34239"
+            ],
+            [
+              "34700",
+              "34739"
+            ]
+          ],
+          "sources": [
+            {
+              "code": "33490",
+              "semantic": {
+                "name": "Gegenkonto 3331 0 - 333 9, 3340 0 - 3343 9, 3420 0 - 3423 9, 3470 0 - 3473 9 bei Aufteilung Kreditorenkonto",
+                "function": "",
+                "range_start": "33490",
+                "range_end": "33490",
+                "parent": null
+              },
+              "signature": "cabac01451505e9523c93c3a069703ebee26ff70940821c0c6d402c875e9d2ed"
+            }
+          ]
+        },
+        {
+          "purpose": "original-reclassification-r61-35990@1",
+          "group": "liabilities",
+          "target": "bs.eqLiab.liab.other.other",
+          "choices": [
+            "bs.eqLiab.liab.other.other"
+          ],
+          "conditional": true,
+          "primary_code": "35700",
+          "printed_split_ranges": [
+            [
+              "35000",
+              "35699"
+            ],
+            [
+              "36400",
+              "36539"
+            ]
+          ],
+          "sources": [
+            {
+              "code": "35990",
+              "semantic": {
+                "name": "Gegenkonto 3500 0 - 3569 9 und 3640 0 - 36539 9 bei Aufteilung der Konten 3570 0 - 3598 9",
+                "function": "",
+                "range_start": "35990",
+                "range_end": "35990",
+                "parent": null
+              },
+              "signature": "4b3ad61bd99fd21d5581206141475dc1a393e06d79768f9740e79bc6b568de5a"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

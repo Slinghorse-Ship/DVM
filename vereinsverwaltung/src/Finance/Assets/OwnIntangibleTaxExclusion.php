@@ -1,0 +1,17 @@
+<?php declare(strict_types=1);
+namespace Kulturhus\Verein;
+use DomainException;use DateTimeImmutable;
+/** Independent original fiscal source. No assumed tax values from HGB costs. */
+final class OwnIntangibleTaxExclusion {
+ private static function need(bool $ok):void{if(!$ok)throw new DomainException('Steuerlichen Originalansatz unabhängig von den HGB-Kosten feststellen; unbekannte Werte bleiben unbekannt.');}
+ private static function keys(array $v,array $keys):bool{return count($v)===count($keys)&&!array_diff(array_keys($v),$keys);}
+ private static function normal(mixed $v,?string $key=null):mixed{$object=is_object($v)||$key==='cost_rows';if(is_object($v))$v=get_object_vars($v);elseif(!is_array($v))return $v;$list=!$object&&array_is_list($v);if(!$list)ksort($v,SORT_STRING);foreach($v as $k=>&$x)$x=self::normal($x,is_string($k)?$k:null);unset($x);return $list?$v:(object)$v;}
+ public static function fingerprint(array $v):string{return hash('sha256',json_encode(self::normal($v),JSON_THROW_ON_ERROR|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES));}
+ public static function assess(array $proof,array $s,?array $previous=null,int $depth=0):array {
+  self::need($depth>=0&&$depth<2&&isset($proof['source_proof'],$proof['book_source'])&&is_array($proof['source_proof'])&&is_array($proof['book_source'])&&array_key_exists('previous',$proof)&&($proof['previous']===null||is_array($proof['previous'])));$expected=OwnIntangibleBookBasis::calculate($proof['source_proof'],$proof['book_source'],$proof['previous']);self::need(self::fingerprint($expected)===self::fingerprint($proof));$proof=$expected;$book=$proof['source_proof']['source'];
+  self::need(self::keys($s,['schema','club_id','item_id','period','book_proof_sha256','basis','opening_cents','closing_cents','document','reason','confirmed'])&&$s['schema']===1&&$s['confirmed']===true);foreach(['club_id','item_id','period'] as $k)self::need($s[$k]===$book[$k]);self::need($s['book_proof_sha256']===$proof['sha256']&&$s['basis']==='EStG_5_2_not_acquired'&&$s['opening_cents']===0&&$s['closing_cents']===0);AssetValuation::document($s['document']);self::need(is_string($s['reason'])&&trim($s['reason'])!==''&&mb_strlen($s['reason'])<=2000&&!preg_match('/[\x00-\x1f]/',$s['reason']));
+  if($previous===null)self::need($proof['previous']===null);
+  else {self::need(self::keys($previous,['schema','book_proof','source','previous','original_opening_cents','original_closing_cents','assessment_verified','export_authorized','sha256'])&&is_array($previous['book_proof'])&&is_array($previous['source'])&&($previous['previous']===null||is_array($previous['previous'])));$prior=self::assess($previous['book_proof'],$previous['source'],$previous['previous'],$depth+1);self::need(self::fingerprint($prior)===self::fingerprint($previous)&&self::fingerprint($proof['previous'])===self::fingerprint($prior['book_proof']));$previous=$prior;foreach(['club_id','item_id'] as $k)self::need($prior['source'][$k]===$s[$k]);self::need((new DateTimeImmutable($prior['source']['period']['end']))->modify('+1 day')->format('Y-m-d')===$s['period']['start']&&$s['opening_cents']===$prior['original_closing_cents']);}
+  $out=['schema'=>1,'book_proof'=>$proof,'source'=>$s,'previous'=>$previous,'original_opening_cents'=>$s['opening_cents'],'original_closing_cents'=>$s['closing_cents'],'assessment_verified'=>false,'export_authorized'=>false];return $out+['sha256'=>self::fingerprint($out)];
+ }
+}

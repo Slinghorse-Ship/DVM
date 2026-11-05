@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "scope": "original_individual_pool_member",
+  "production_authorized": false,
+  "source_stage_proof_sha256": "150c854dec878226f033c685554ab3c39f63ee18d803c0e80e907dc7b7401137",
+  "account": "06750",
+  "depreciation_code": "62640",
+  "target": "bs.ass.fixAss.tan.otherEquipm.gwgsammelposten",
+  "kind": "pool_member",
+  "years": [
+    {
+      "year": 2025,
+      "catalog_sha256": "fdf6151e9a03631aa9c56b85324321d4b5aee4c1eedd31f8cc0c661f9c6302ab"
+    },
+    {
+      "year": 2026,
+      "catalog_sha256": "66c6be79a64c2294fcafd67c9a094d18c4b59e01a094b2968343d062d3048225"
+    }
+  ],
+  "bounds": "Capability for actual retained original individual HGB plans only. A five-year fiscal pool election is never inferred. Export requires complete independently verified annual original pool sources; no generic/manual choice.",
+  "primary_source": "https://www.gesetze-im-internet.de/estg/__6.html"
+}

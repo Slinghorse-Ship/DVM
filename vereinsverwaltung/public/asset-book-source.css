@@ -1,0 +1,10 @@
+.asset-book-source,.asset-book-source *{min-width:0}
+.asset-book-source :where(h1,h2,p,label,summary,button,a,pre){overflow-wrap:anywhere}
+.asset-book-source form,.asset-book-source fieldset{display:grid;gap:1rem}
+.asset-book-source fieldset{border:0;padding:0;margin:0}
+.asset-book-source input{width:100%;max-width:100%;min-height:44px}
+.asset-book-source :where(.btn,summary){min-height:44px;white-space:normal}
+.asset-book-source summary{display:flex;align-items:center;padding:.5rem}
+.asset-book-source pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:.75rem 0}
+.asset-book-source .asset-source-actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.asset-book-source .asset-source-actions>*{max-width:100%}

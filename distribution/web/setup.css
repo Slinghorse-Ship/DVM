@@ -1,0 +1,164 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #102a4c;
+  background: #f3f5f8;
+  line-height: 1.5;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+main {
+  overflow-wrap:anywhere;
+  max-width: 760px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 6px 30px #102a4c12;
+}
+.eyebrow {
+  font-weight: 750;
+  letter-spacing: 0.03em;
+}
+h1 {
+  line-height: 1.15;
+}
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+label {
+  display: grid;
+  gap: 0.4rem;
+  font-weight: 600;
+  min-width: 0;
+}
+input {
+  width: 100%;
+  min-width: 0;
+  padding: 0.7rem;
+  border: 1px solid #9aabc0;
+  border-radius: 7px;
+  font: inherit;
+}
+.actions {
+  grid-column: 1/-1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.setup-addons {
+  grid-column: 1/-1;
+  min-width: 0;
+}
+.setup-addon + .setup-addon {
+  border-top: 1px solid #d8e0e9;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+}
+.setup-addon h2 {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+}
+.setup-addon-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.setup-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  margin: 1rem 0;
+}
+.setup-check input {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: 0 0 1.25rem;
+  margin-top: 0.15rem;
+}
+button {
+  padding: 0.8rem 1rem;
+  border: 0;
+  border-radius: 7px;
+  background: #102a4c;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+button[data-resume] {
+  background: #e9edf3;
+  color: #102a4c;
+}
+details {
+  padding: 1rem;
+  border: 1px solid #d8e0e9;
+  border-radius: 8px;
+}
+summary {
+  cursor: pointer;
+  font-weight: 650;
+}
+progress {
+  width: 100%;
+}
+[data-error] {
+  color: #a22323;
+  overflow-wrap: anywhere;
+}
+a {
+  color: #174fa0;
+}
+input:focus-visible,
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #d89818;
+  outline-offset: 3px;
+}
+.hint {
+  font-size: 0.9rem;
+  color: #52657b;
+}
+[hidden] {
+  display: none !important;
+}
+@media (max-width: 600px) {
+  main {
+    margin: 0;
+    padding: clamp(12px, 4vw, 20px);
+    border-radius: 0;
+    min-height: 100vh;
+  }
+  form {
+    grid-template-columns: 1fr;
+  }
+  .setup-addon-fields {
+    grid-template-columns: 1fr;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.setup-hosting { grid-column:1/-1;min-width:0;overflow-wrap:anywhere }
+.setup-jobs { margin-top:1.5rem;min-width:0;overflow-wrap:anywhere }
+.setup-jobs details { margin-block:1rem }
+.setup-jobs textarea { box-sizing:border-box;width:100%;max-width:100%;min-width:0;font:inherit;padding:.6rem;white-space:pre-wrap;overflow-wrap:anywhere }
+.setup-jobs textarea:focus-visible { outline:3px solid #d89818;outline-offset:3px }
+
+@media (max-width: 600px) {
+  details { padding: clamp(10px, 3vw, 16px); }
+  details ul { padding-inline-start: 1.25em; }
+  h2 { font-size: 1.25rem; }
+}

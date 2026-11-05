@@ -1,0 +1,12 @@
+<?php declare(strict_types=1);
+require __DIR__.'/free-list-interface-browser-fixture.php';
+$pdFixture=ownFreeListInterfaceBrowser($db,[]);
+$pdFixture['input']['data']=['invoice_id'=>$pdIssued['document_id'],'invoice_sha256'=>hash('sha256',$pdIssuedFile['bytes']),'invoice_name'=>$pdIssuedFile['name'],'shared_id'=>$pdShared[0],'shared_sha256'=>hash('sha256',$pdf('personal first 0')),'shared_name'=>'Own personal original 0.pdf','other_invoice'=>$pdForeignInvoice['document_id'],'other_shared'=>$pdOtherDoc,'event'=>$pdVoucherEvents[0],'unavailable_title'=>$pdPublicInput['title'],'person'=>$pdPerson,'other_person'=>$pdSecond,'counts'=>['invoices'=>$pdOwn->invoicePage()['total'],'shared'=>$pdOwn->sharePage()['total'],'vouchers'=>$pdOwn->voucherPage([],$pdWebsite)['total']]];
+$pdRoot=$pdFixture['input']['root'];file_put_contents($pdRoot.'/fixture.json',json_encode($pdFixture['input'],JSON_THROW_ON_ERROR));
+$pdProtected=array_values(array_diff($tables,['native_auth_sessions','native_auth_limits','native_language_preferences']));$pdBefore=ownOriginalDatabaseHash($db,$pdProtected);$pdCounts=[];foreach($pdProtected as$pdTable)$pdCounts[$pdTable]=(int)$db->query('SELECT COUNT(*) FROM '.chr(96).$pdTable.chr(96))->fetchColumn();
+$pdKeyHashes=[];foreach(['auth','private']as$pdKey)$pdKeyHashes[$pdKey]=hash_file('sha256',$pdRoot.'/'.$pdKey.'.key');
+try{$pdProcess=proc_open(['node',dirname(__DIR__).'/personal-documents-interface-browser.mjs'],[0=>['pipe','r'],1=>STDOUT,2=>STDERR],$pdPipes);fwrite($pdPipes[0],json_encode($pdFixture['input'],JSON_THROW_ON_ERROR));fclose($pdPipes[0]);if(proc_close($pdProcess)!==0)throw new RuntimeException('Actual personal document interface failed.');}
+finally{foreach($pdFixture['servers']as[$pdProcess,$pdLog]){proc_terminate($pdProcess);proc_close($pdProcess);fclose($pdLog);}}
+$check(ownOriginalDatabaseHash($db,$pdProtected)===$pdBefore,'every actual personal page search download and print preserves every complete earlier business row source revision balance recipient right notification and original');
+foreach($pdCounts as$pdTable=>$pdCount)$check((int)$db->query('SELECT COUNT(*) FROM '.chr(96).$pdTable.chr(96))->fetchColumn()===$pdCount,'actual personal document browsing changes no business table count: '.$pdTable);
+foreach($pdKeyHashes as$pdKey=>$pdHash)$check(hash_file('sha256',$pdRoot.'/'.$pdKey.'.key')===$pdHash,'actual personal document browsing preserves the exact original private '.$pdKey.' key');

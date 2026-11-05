@@ -1,0 +1,41 @@
+-- Separate accrual ledger; never reinterpret or modify the existing EÜR/cash ledger.
+CREATE TABLE IF NOT EXISTS balance_years (
+ club_id varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+ tax_year int NOT NULL,
+ version int NOT NULL,
+ state varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
+ accounts mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+ opening mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+ opening_note text COLLATE utf8mb4_unicode_ci NOT NULL,
+ result_account varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
+ previous_sha256 char(64) COLLATE utf8mb4_unicode_ci NULL,
+ closed_snapshot mediumtext COLLATE utf8mb4_unicode_ci NULL,
+ closed_sha256 char(64) COLLATE utf8mb4_unicode_ci NULL,
+ created_by varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+ created_at varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
+ PRIMARY KEY(club_id,tax_year),
+ CONSTRAINT balance_year_club FOREIGN KEY(club_id) REFERENCES clubs(id),
+ CONSTRAINT balance_year_state CHECK(state IN ('setup','open','closed')),
+ CONSTRAINT balance_year_version CHECK(version>0),
+ CONSTRAINT balance_year_number CHECK(tax_year BETWEEN 2000 AND 2200),
+ CONSTRAINT balance_year_accounts CHECK(JSON_VALID(accounts)),
+ CONSTRAINT balance_year_opening CHECK(JSON_VALID(opening)),
+ CONSTRAINT balance_year_closed CHECK((state='closed' AND closed_snapshot IS NOT NULL AND JSON_VALID(closed_snapshot) AND closed_sha256 IS NOT NULL) OR (state<>'closed' AND closed_snapshot IS NULL AND closed_sha256 IS NULL))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE IF NOT EXISTS balance_entries (
+ club_id varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+ tax_year int NOT NULL,
+ id char(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+ booked_on varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+ description varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+ evidence varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+ posting_lines mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+ reversal_of char(32) COLLATE utf8mb4_unicode_ci NULL,
+ created_by varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+ created_at varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
+ PRIMARY KEY(club_id,tax_year,id),
+ UNIQUE KEY balance_one_reversal(club_id,tax_year,reversal_of),
+ CONSTRAINT balance_entry_year FOREIGN KEY(club_id,tax_year) REFERENCES balance_years(club_id,tax_year),
+ CONSTRAINT balance_entry_original FOREIGN KEY(club_id,tax_year,reversal_of) REFERENCES balance_entries(club_id,tax_year,id),
+ CONSTRAINT balance_entry_lines CHECK(JSON_VALID(posting_lines))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

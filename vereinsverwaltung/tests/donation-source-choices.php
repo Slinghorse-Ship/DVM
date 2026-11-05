@@ -1,0 +1,33 @@
+<?php declare(strict_types=1);
+require __DIR__.'/donation-receipts.php';
+use Kulturhus\Verein\{Inventory,DonationForms,SettingsSchema};
+$start=$checks;
+$moneyChoices=$forms->sourceChoices('money')['rows'];check(count($moneyChoices)===1&&$moneyChoices[0]['source_id']===$entry&&$moneyChoices[0]['receipt_id']!==null,'only actual active donation payment offered and existing claim visible');
+check($forms->sourceDetails('money',$entry)['claimed']!==[],'selected certified payment reports existing receipt');
+check($forms->sourceChoices('goods')['rows'][0]['source_id']===$goods,'goods picker uses goods donation records only');
+foreach(['member','manager','editor','missing'] as $actor)denied(fn()=>(new DonationForms($db,$actor))->sourceChoices('money'),'source search denied without finance: '.$actor);
+check($readForms->sourceChoices('money')===$forms->sourceChoices('money'),'finance reader has same eligible source list');
+check($forms->sourceChoices('money','Fremder Testspender')['rows']===[],'search cannot expose another club');
+denied(fn()=>$forms->sourceDetails('goods',$foreignGoods),'foreign source detail denied');
+denied(fn()=>$forms->sourceChoices('wrong'),'invalid source kind rejected');
+denied(fn()=>$forms->sourceChoices('money',str_repeat('x',151)),'overlong query rejected');
+$db->exec("UPDATE actors SET is_superuser=1 WHERE id='writer'");$inventory=new Inventory($db,'writer');
+$item=$inventory->saveItem('',0,['name'=>'Bühne Örtlicher Verein','code'=>'SYN-BUEHNE','source_kind'=>'goods','source_id'=>$goods,'unit'=>'Stück'],$key());
+check($forms->sourceChoices('goods','BÜHNE')['rows'][0]['source_id']===$goods,'case-insensitive German inventory name search');
+check($forms->sourceChoices('goods','örtlicher bühne')['rows'][0]['source_id']===$goods,'search words may appear in different order');
+check($readForms->sourceDetails('goods',$goods)['inventory'][0]['id']===$item,'finance-only reader sees existing evidence link without inventory permission');
+$inventory->archiveItem($item,1,0,['reason'=>'Synthetic archive'],$key());check($forms->sourceChoices('goods','BÜHNE')['rows'][0]['source_id']===$goods,'archiving an item does not invalidate historical donated goods');
+$partial=$finance->createEntry(array_replace($moneyData,['description'=>'Synthetic partial donation','amount'=>'200']),$key());$payments=[];
+foreach([['50','2026-08-03'],['75','2026-08-04']] as [$amount,$day]){$tx=$finance->createTransaction(['account'=>$paidAccount,'booked_on'=>$day,'direction'=>'income','amount'=>$amount,'description'=>'Synthetic partial payment '.$key(),'counterparty'=>'Synthetic payer'],$key());$payments[]=$finance->allocate($tx,$finance->transactionDetail($tx)['version'],$partial,$finance->entry($partial)['version'],$amount,$key());}
+$partialChoices=$forms->sourceChoices('money','Synthetic partial donation')['rows'];check(count($partialChoices)===2&&array_sum(array_column($partialChoices,'amount_cents'))===12500,'partial payments offered separately without unpaid balance');
+check($forms->defaults('money',$partial,$payments[0])['amount']==='50,00'&&$forms->defaults('money',$partial,$payments[1])['donated_on']==='2026-08-04','selection retains each real amount and payment day');
+check(count($forms->sourceChoices('money','04.08.2026')['rows'])===1,'specific payment day searchable');
+$partialCertificate=$receipts->issue(array_replace($forms->defaults('money',$partial,$payments[0]),['waiver'=>'no','receipt_reviewed'=>'1']),$key());
+check($forms->sourceDetails('money',$partial,$payments[0])['claimed']!==[]&&$forms->sourceDetails('money',$partial,$payments[1])['claimed']===[],'one certified partial payment leaves the other payment usable');
+$receipts->cancel(json_decode($docs->file($partialCertificate)['snapshot'],true)['receipt_number'],'Synthetic correction');check($forms->sourceDetails('money',$partial,$payments[0])['claimed']===[],'cancelled certificate releases the source for replacement');
+$tax['membership_deductible']='yes';$financeSettings->save('tax',$tax,$financeSettings->section('tax')['version']);
+for($i=0;$i<105;$i++){$orphan=$finance->createEntry(array_replace($moneyData,['kind'=>'contribution','category'=>'membership','document_date'=>'2026-09-01','due_date'=>'2026-09-01']),$key());$finance->recordPayment($orphan,1,$paidAccount,'2026-09-01');}
+check(count($forms->sourceChoices('money')['rows'])===3,'105 newer contributions without a payer cannot displace eligible donations');
+$counts=$db->query('SELECT (SELECT COUNT(*) FROM finance_entries) entries,(SELECT COUNT(*) FROM finance_transactions) payments,(SELECT COUNT(*) FROM goods_donations) goods,(SELECT COUNT(*) FROM documents) documents,(SELECT COUNT(*) FROM audit_events) audits')->fetch();
+$forms->sourceChoices('money');$forms->sourceDetails('goods',$goods);check($db->query('SELECT (SELECT COUNT(*) FROM finance_entries) entries,(SELECT COUNT(*) FROM finance_transactions) payments,(SELECT COUNT(*) FROM goods_donations) goods,(SELECT COUNT(*) FROM documents) documents,(SELECT COUNT(*) FROM audit_events) audits')->fetch()===$counts,'search and selection do not write domain records or audit');
+check(\Kulturhus\Verein\Tests\MySqlFixture::integrity($db)==='ok','source picker database integrity');echo ($checks-$start)." source picker checks passed\n";

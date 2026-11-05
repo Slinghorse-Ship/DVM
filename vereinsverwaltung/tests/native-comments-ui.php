@@ -1,0 +1,61 @@
+<?php declare(strict_types=1);
+require dirname(__DIR__).'/native/bootstrap.php';
+require __DIR__.'/support/original-database-hash.php';
+use Kulturhus\Native\TestSupport;
+use Kulturhus\Native\Shared\{Access,Db,SecretBox};
+use Kulturhus\Native\Cms\{Pages,Conflict};
+use Kulturhus\Native\Comments\{Schema,Streams,PublicView,ModerationView};
+
+$db=TestSupport::db();
+if(getenv('DVM_COMMENTS_BROWSER')==='1'){require dirname(__DIR__,2).'/vendor/autoload.php';require dirname(__DIR__).'/src/bootstrap.php';\Kulturhus\Native\Installer\SchemaRegistry::install($db);}
+TestSupport::seed($db);\Kulturhus\Native\Cms\Schema::install($db);Schema::install($db);
+$access=new Access($db,'admin');$box=new SecretBox(random_bytes(32));$service=new Streams($db,$access,$box);$pages=new Pages($db,$access);$checks=0;
+function commentsUiCheck(bool $okay,string $label):void{if(!$okay)throw new RuntimeException('FAIL '.$label);++$GLOBALS['checks'];echo'PASS '.$label.PHP_EOL;}
+function commentsUiDeny(callable $action,string $label):void{try{$action();}catch(DomainException|InvalidArgumentException|Conflict){commentsUiCheck(true,$label);return;}throw new RuntimeException('FAIL expected rejection '.$label);}
+$source=$pages->save(['title'=>'Eigene ursprüngliche Kommentaransicht','slug'=>'kommentare-original','body'=>'Exakte ursprüngliche Seite']);$source=$pages->publish($source['id'],$source['version']);$id=$source['id'];
+for($i=1;$i<=24;$i++)$pages->save(['title'=>'Eigene weitere Seite '.$i,'slug'=>'kommentar-auswahl-'.$i]);
+$originalTables=['khcms_pages','khcms_revisions','khcms_media','khcms_published_media'];$originalHash=ownOriginalDatabaseHash($db,$originalTables);
+$moderation=new ModerationView($db,$access,$box,'own-comment-ui-csrf');
+commentsUiDeny(fn()=>$moderation->action(['operation'=>'website-comment-configure','comments_page'=>$id,'version'=>'0','enabled'=>'1','max_length'=>'5000','csrf'=>'wrong']),'real moderation adapter rejects wrong original CSRF');
+commentsUiDeny(fn()=>(new ModerationView($db,new Access($db,'reader'),$box,'own'))->render([]),'ordinary reader cannot open private moderation workspace');
+$settingsHtml=$moderation->render(['comments_state'=>'settings','comments_page'=>$id]);
+commentsUiCheck(!preg_match('/name="enabled"[^>]*checked/',$settingsHtml)&&str_contains($settingsHtml,'name="moderation" value="1" checked'),'actual configuration form retains disabled and moderated defaults');
+$configured=$moderation->action(['operation'=>'website-comment-configure','comments_page'=>$id,'version'=>'0','enabled'=>'1','anonymous'=>'1','max_length'=>'5000','csrf'=>'own-comment-ui-csrf']);
+commentsUiCheck($configured['comments_state']==='settings'&&$service->configuration($id)['enabled']&&$service->configuration($id)['anonymous']&&!$service->configuration($id)['moderation'],'actual configuration action independently selects immediate guest comments');
+$publicLink=\Kulturhus\Native\Comments\PublicLink::render($db,$access,$source);commentsUiCheck(str_contains($publicLink,'/_comments?id='.$id)&&!str_contains($publicLink,'csrf')&&!str_contains($publicLink,'form'),'cached source page gets only static enabled-comment link without session or form tokens');
+$client=bin2hex(random_bytes(32));$human='<script>Original exact human text</script>';$first=$service->submit($id,'comments',['name'=>'Alias <img src=x>','email'=>'private-contact@example.invalid','body'=>$human],bin2hex(random_bytes(32)),$client,'own-ui-first');
+for($i=1;$i<=21;$i++)$service->submit($id,'comments',['name'=>'Eigener Alias '.$i,'body'=>'Eigener menschlicher Kommentar '.$i],bin2hex(random_bytes(32)),bin2hex(random_bytes(32)),'own-ui-seed-'.$i);
+$reply=$service->submit($id,'comments',['name'=>'Eigene Antwortperson','body'=>'Eine tatsächliche menschliche Antwort','parent'=>$first['id']],bin2hex(random_bytes(32)),$client,'own-ui-reply');
+$list=$service->publicList($id);$state=['list'=>$list,'stream'=>'comments','can_submit'=>true];$publicHtml=PublicView::render($state,str_repeat('a',64),str_repeat('b',64));
+commentsUiCheck($list['page']===$list['last']&&$list['page']===2&&count($list['rows'])===3,'public conversation opens newest bounded twenty-message page');
+commentsUiCheck(str_contains($publicHtml,'Eine tatsächliche menschliche Antwort')&&str_contains($publicHtml,'Alias &lt;img src=x&gt;')&&str_contains($publicHtml,'comment-reply-context'),'public reply shows visible parent across page boundaries');
+commentsUiCheck(!str_contains($publicHtml,'private-contact@example.invalid')&&!str_contains($publicHtml,'author_cipher')&&!str_contains($publicHtml,'author_key'),'public conversation contains no private email or identity hashes');
+commentsUiCheck(str_contains($publicHtml,'name="comment_form" value="'.str_repeat('b',64).'"')&&!str_contains($publicHtml,'name="page_id"')&&!str_contains($publicHtml,'name="parent"'),'public form binds page and reply only through opaque server context');
+$safe=PublicView::render(array_replace($state,['list'=>$service->publicList($id,'comments',1)]),str_repeat('a',64),str_repeat('b',64));
+commentsUiCheck(str_contains($safe,'&lt;script&gt;Original exact human text&lt;/script&gt;')&&!str_contains($safe,'<script>Original exact human text</script>'),'public renderer escapes exact human plain source at HTML boundary');
+$guestLocked=PublicView::render(array_replace($state,['can_submit'=>false]),str_repeat('a',64),str_repeat('b',64));commentsUiCheck(str_contains($guestLocked,'Zum Kommentieren anmelden')&&!str_contains($guestLocked,'name="comment_form"'),'authenticated-only stream presents real login without a guest form');
+$picker=$moderation->render(['comments_state'=>'settings']);$dom=new DOMDocument();@$dom->loadHTML($picker);$xpath=new DOMXPath($dom);commentsUiCheck($xpath->query('//ul[contains(@class,"comment-page-picker")]/li')->length===20&&str_contains($picker,'comments_list_page=2'),'private source picker limits and paginates actual source pages');
+$changed=$moderation->action(['operation'=>'website-comment-edit','comment'=>$first['id'],'version'=>'1','name'=>'Geprüfter Alias','body'=>'**Eine echte Korrektur**','format'=>'markdown','csrf'=>'own-comment-ui-csrf']);
+commentsUiCheck($changed['comment']===$first['id']&&$service->get($first['id'])['body']==='**Eine echte Korrektur**','private edit changes only chosen comment and retains previous immutable version');
+$stale=['operation'=>'website-comment-edit','comment'=>$first['id'],'version'=>'1','name'=>'Mein unverlorener Alias','body'=>'Meine unverlorene eigene Korrektur','format'=>'plain','csrf'=>'own-comment-ui-csrf'];
+commentsUiDeny(fn()=>$moderation->action($stale),'private edit refuses stale version without overwriting current text');
+$recovery=$moderation->correction($stale,'Inzwischen geändert.');file_put_contents('/tmp/kulturhus-comments-ui-conflict.html',$recovery);$recoveryDom=new DOMDocument();@$recoveryDom->loadHTML($recovery);$recoveryXpath=new DOMXPath($recoveryDom);
+commentsUiCheck($recoveryXpath->evaluate('string(//textarea[@name="body"])')===$stale['body']&&$recoveryXpath->evaluate('string(//form[input[@name="operation" and @value="website-comment-edit"]]/input[@name="version"]/@value)')==='1','conflict view preserves exact own text and old CAS instead of adopting latest version');
+commentsUiCheck(str_contains($recovery,'Aktuellen Stand öffnen')&&$service->get($first['id'])['body']==='**Eine echte Korrektur**','conflict view offers explicit reload without any automatic retry or mutation');
+$history=$moderation->render(['comment'=>$first['id'],'comments_state'=>'approved','revision'=>'1']);commentsUiCheck(str_contains($history,'Original exact human text')&&!str_contains($history,'name="operation" value="website-comment-edit"'),'selected historical human text is read-only');
+$current=$moderation->render(['comment'=>$first['id'],'comments_state'=>'approved']);commentsUiCheck(str_contains($current,'<strong>Eine echte Korrektur</strong>')&&str_contains($current,'Eigene ursprüngliche Kommentaransicht')&&str_contains($current,'Verlauf'),'private current detail exposes safe formatted text source page and actual history');
+$moderation->action(['operation'=>'website-comment-moderate','comment'=>$first['id'],'version'=>'2','comment_state'=>'rejected','csrf'=>'own-comment-ui-csrf']);commentsUiCheck($service->publicParent($id,'comments',$first['id'])===null&&$service->publicList($id)['total']===21,'real rejection hides parent and existing reply before public count');
+commentsUiCheck(ownOriginalDatabaseHash($db,$originalTables)===$originalHash,'all UI actions and error recovery preserve original pages revisions and media bytes');
+$service->configure($id,'comments',1,['enabled'=>false]);commentsUiCheck(\Kulturhus\Native\Comments\PublicLink::render($db,$access,$source)==='','closed source stream removes public comment invitation without source page changes');
+$model=new \Kulturhus\Native\Cms\DataModel($db,$access);$model->saveField(['key'=>'discussion','label'=>'Eigene Diskussion','type'=>'comments']);$model->saveField(['key'=>'feedback','label'=>'Eigene Rückmeldungen','type'=>'comments']);$model->saveTemplate(['key'=>'own_ui_comment_fields','label'=>'Eigene getrennte Kommentarfelder','fields'=>['discussion','feedback']]);
+$typed=$pages->save(['title'=>'Eigenes Feldoriginal','slug'=>'eigenes-feldoriginal','template'=>'own_ui_comment_fields']);$typed=$pages->publish($typed['id'],$typed['version']);$typedOriginal=ownOriginalDatabaseHash($db,['khcms_pages','khcms_revisions']);
+$typedSettings=$moderation->render(['comments_state'=>'settings','comments_page'=>$typed['id'],'comments_stream'=>'feedback']);
+commentsUiCheck(str_contains($typedSettings,'name="comments_stream"')&&str_contains($typedSettings,'value="feedback" selected')&&str_contains($typedSettings,'Eigene Diskussion'),'actual settings choose a named original-bound comment field');
+$typedPost=['operation'=>'website-comment-configure','comments_page'=>$typed['id'],'comments_stream'=>'feedback','version'=>'0','enabled'=>'1','anonymous'=>'1','max_length'=>'5000','csrf'=>'own-comment-ui-csrf'];$typedResult=$moderation->action($typedPost);
+commentsUiCheck($typedResult['comments_stream']==='feedback'&&$service->configuration($typed['id'],'feedback')['enabled']&&!$service->configuration($typed['id'],'discussion')['enabled'],'configuration result preserves actual stream and never activates another field');
+commentsUiDeny(fn()=>$moderation->action($typedPost),'named field settings retain exact original CAS');$typedRecovery=$moderation->correction($typedPost,'Inzwischen geändert.');
+commentsUiCheck(str_contains($typedRecovery,'name="comments_stream" value="feedback"')&&str_contains($typedRecovery,'name="version" value="0"')&&str_contains($typedRecovery,'comments_stream=feedback'),'named field conflict keeps selected field old CAS and explicit current-field link');
+commentsUiDeny(fn()=>$moderation->render(['comments_state'=>'settings','comments_page'=>$typed['id'],'comments_stream'=>'unknown']),'unknown field selection never falls back to a different conversation');
+commentsUiCheck(ownOriginalDatabaseHash($db,['khcms_pages','khcms_revisions'])===$typedOriginal,'named field configuration and errors preserve all exact original page bytes');
+if(getenv('DVM_COMMENTS_BROWSER')==='1'){require __DIR__.'/support/comments-browser-fixture.php';ownCommentsBrowser($db);}
+echo json_encode(['suite'=>'native-comments-ui','checks'=>$checks,'source_originals'=>'exact','live_transport'=>false],JSON_THROW_ON_ERROR).PHP_EOL;

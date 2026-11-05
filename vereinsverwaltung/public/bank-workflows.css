@@ -1,0 +1,199 @@
+[data-sepa-picker]{margin:1rem 0;padding:1rem;border:1px solid #bdcbd5;border-radius:.75rem}[data-sepa-list]{max-height:22rem;overflow:auto;margin-top:.75rem}[data-sepa-entry]{display:flex;align-items:center;gap:.8rem;min-height:48px;border-bottom:1px solid #e3e9ec;padding:.55rem}[data-sepa-entry][hidden]{display:none}[data-sepa-entry] input{flex:0 0 auto;width:1.3rem;height:1.3rem;margin:0}[data-sepa-picker] .actions{display:flex;flex-wrap:wrap;gap:.5rem}[data-sepa-count]{font-weight:700}.bank-return-review{padding:.75rem;border-left:4px solid #a35d00;background:#fff7e6}
+.fints-auth-choice{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem;margin:1rem 0}.fints-auth-card{padding:1rem;border:2px solid #d7e2e8;border-radius:.8rem;background:#f8fbfc}.fints-auth-card span{font-size:1.5rem;display:block;margin-bottom:.35rem}.fints-auth-card p{margin:.35rem 0 0;color:#4b5b63}.fints-auth-needed{display:flex;gap:.8rem;align-items:flex-start;padding:1rem;border:2px solid #b86b00;border-radius:.8rem;background:#fff7e6;margin:1rem 0}.fints-auth-needed-icon{display:grid;place-items:center;flex:0 0 2rem;height:2rem;border-radius:50%;background:#b86b00;color:#fff;font-weight:800;font-size:1.25rem}.fints-auth-needed p{margin:.35rem 0}.fints-schedule{margin-top:1rem}.fints-schedule-icon{font-size:2rem;color:#276f86}.fints-schedule-explainer{padding:.8rem 1rem;border-left:4px solid #276f86;background:#f1f8fa}.fints-schedule-row{padding:1rem 0;border-top:1px solid #d7e2e8}.fints-schedule-main{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}.fints-schedule-main small{color:#52636c}.fints-schedule-times{display:flex;gap:.8rem;flex-wrap:wrap;margin:.55rem 0}.fints-schedule-times span{padding:.4rem .65rem;border-radius:.5rem;background:#eef4f6}.fints-schedule-last{margin:.4rem 0;color:#394b53}.fints-schedule-last small{display:block;color:#68777e}.fints-schedule-form{display:flex;align-items:end;gap:.7rem;flex-wrap:wrap;margin-top:.7rem}.fints-schedule-form label{display:grid;gap:.2rem}.fints-schedule-form .check{display:flex;align-items:center;min-height:2.5rem}.fints-schedule-form input[type=time]{min-height:2.5rem}.fints-auth-link{display:inline-block;margin-top:.6rem;font-weight:700}.fints-schedule .status.warning{background:#fff3cd;color:#7a4b00}.fints-schedule .status.error{background:#f8d7da;color:#842029}.fints-schedule .status.active{background:#d1e7dd;color:#0f5132}
+.fints-payment-summary{margin:1rem 0;padding:1rem 1.1rem;border:2px solid #c9dce5;border-radius:.8rem;background:#f5fafc}.fints-payment-summary h3{margin:0 0 .45rem;color:#23465b}.fints-payment-summary p{margin:.35rem 0}.fints-payment-card{border-left:5px solid #277e60;background:#f6fbf8}.fints-payment-card .actions{margin-top:.75rem}.invoice-payment-alternative{margin-top:.8rem}.invoice-payment-alternative>summary{cursor:pointer;font-weight:600}.invoice-payment-alternative form{margin-top:.6rem}.invoice-single-account{padding:.75rem 1rem;border:1px solid #c9dce5;border-radius:.5rem;background:#f5fafc;align-self:end}
+.account-delete-panel{margin-top:1rem;border-left:4px solid #b33a3a}.account-delete-panel .danger{background:#a32929;color:#fff;border-color:#a32929}.account-delete-panel form{display:flex;align-items:end;gap:.75rem;flex-wrap:wrap}.account-delete-panel label{display:grid;gap:.25rem}
+.sepa-order-cards{display:grid;gap:.75rem;margin:1rem 0}.sepa-order-card{padding:.75rem;border:1px solid #bdcbd5;border-radius:.75rem;min-width:0;overflow-wrap:anywhere}.sepa-order-card a{display:flex;align-items:center;min-height:44px;white-space:normal;text-align:left}.sepa-order-card p{margin:.5rem 0 0}#sepa-order-catalogue summary{min-height:44px;padding:.75rem;cursor:pointer}#sepa-order-catalogue .actions{display:flex;align-items:end;flex-wrap:wrap;gap:.5rem;margin:.75rem 0}#sepa-order-catalogue .actions input{max-width:8rem}#sepa-order-catalogue button,#sepa-order-catalogue nav a{min-height:44px}#sepa-order-catalogue .form-grid>*{min-width:0}
+#sepa-candidate-picker{padding:.75rem;margin:1rem 0;border:1px solid #bdcbd5;border-radius:.75rem;min-width:0}.sepa-candidate-cards{display:grid;gap:.5rem;margin:1rem 0}.sepa-candidate-cards label{display:flex;gap:.75rem;align-items:center;min-height:44px;padding:.75rem;border:1px solid #bdcbd5;border-radius:.75rem;overflow-wrap:anywhere}.sepa-candidate-cards input{flex:0 0 auto;width:1.3rem;height:1.3rem;margin:0}#sepa-candidate-picker .actions{display:flex;align-items:end;flex-wrap:wrap;gap:.5rem;margin:.75rem 0}#sepa-candidate-picker .actions input{max-width:8rem}#sepa-candidate-picker button{min-height:44px;white-space:normal}#sepa-candidate-picker span{min-width:0}
+
+.bank-actions{min-width:0;overflow-wrap:anywhere}.bank-main>.table-scroll:focus-visible{outline:3px solid #356071;outline-offset:-3px}
+
+/* Reflow by available journal width, including a visible sidebar and larger text. */
+.bank-journal-summary{grid-template-columns:repeat(auto-fit,minmax(min(100%,11rem),1fr))}
+.bank-journal-summary>a{grid-template-columns:auto minmax(0,1fr);min-width:0;overflow-wrap:anywhere}
+.bank-journal-summary :is(span,small){min-width:0}
+
+/* A retained bank import remains readable with enlarged text and touch controls. */
+#fints-manual.fints-import-workspace{min-width:0;font-size:1rem;overflow-wrap:anywhere}
+#fints-manual.fints-import-workspace :is(.error,.notice,.form-control,.btn){font-size:1rem}
+#fints-manual.fints-import-workspace h2{font-size:1.25rem}
+#fints-manual.fints-import-workspace h3{font-size:1.125rem}
+#fints-manual.fints-import-workspace .btn{min-height:44px;white-space:normal}
+#fints-manual.fints-import-workspace :is(form,label,select){min-width:0;max-width:100%}
+
+.transaction-summary{min-width:0;overflow-wrap:anywhere}
+
+/* Accounts, cashbook and journal use the available width at enlarged text sizes. */
+[data-bank-ledger-main],.account-create-content,#account-settings,.transaction-new{min-width:0;overflow-wrap:anywhere}
+[data-bank-ledger-main] :is(button,input,select,summary),.account-create-content :is(button,input:not([type=radio]),summary),#account-settings :is(button,input,select,summary),.transaction-new :is(button,input,select){min-height:44px;max-width:100%;min-width:0;font-size:1rem}
+[data-bank-ledger-main] :is(.btn,.button),.account-create-content :is(.btn,.button),#account-settings :is(.btn,.button),.transaction-new :is(.btn,.button){min-height:44px;white-space:normal;overflow-wrap:anywhere}
+[data-bank-ledger-main] .bank-journal-intro>[role=status]{white-space:normal;min-width:0}
+[data-bank-ledger-main] .bank-heading h2{min-width:0;overflow-wrap:anywhere}
+[data-bank-ledger-main] .cash-stats{grid-template-columns:repeat(auto-fit,minmax(min(100%,10rem),1fr))}
+[data-bank-ledger-main] .cash-stats strong{white-space:normal;overflow-wrap:anywhere}
+[data-bank-ledger-main] .book-filter label{flex:1 1 12rem;min-width:0;max-width:100%}
+[data-bank-ledger-main] :is(.book-filter,.filter-form,.actions){flex-wrap:wrap}
+[data-bank-ledger-main] :is(.book-filter,.filter-form) label{min-width:0;max-width:100%}
+[data-bank-ledger-main] .table-scroll a{display:inline-flex;align-items:center;min-height:44px}
+[data-bank-ledger-main] .journal-row-action a{display:flex;min-height:44px}
+.bank-layout .account-list{min-width:0;max-width:100%}
+.account-create-content :is(fieldset,.form-grid>*,.account-kind-option span),#account-settings :is(fieldset,.form-grid>*),.transaction-new .form-grid>*{min-width:0}
+.account-create-content .account-kind-option{min-height:44px}
+.account-create-content .account-kind-option input{flex-shrink:0}
+#account-settings summary,[data-bank-ledger-main] .cash-close>summary{display:flex;align-items:center;cursor:pointer}
+@media(max-width:760px){.account-create-content .form-grid,#account-settings .form-grid,.transaction-new .form-grid{grid-template-columns:minmax(0,1fr)}}
+
+.account-create-content .account-kind-options{grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr))}
+
+[data-bank-ledger-main],.account-create-content,#account-settings,.transaction-new{font-size:1rem}
+[data-bank-ledger-main] :is(label,th,td,.status,.bank-journal-summary span),.account-create-content label,#account-settings label,.transaction-new label{font-size:1rem}
+[data-bank-ledger-main] :is(.journal-status-detail,.remaining-note,.journal-row-action,.bank-journal-summary small,.cash-stats small),.account-create-content :is(.field-help,.account-kind-option small){font-size:.875rem}
+[data-bank-ledger-main] :is(h2,h3),.account-create-content h2,#account-settings h2{font-size:1.25rem}
+[data-bank-ledger-main] .bank-journal-intro p{font-size:1rem}
+.bank-layout .account-list-item>span,.bank-layout .account-list strong,.bank-layout .account-list b{font-size:1rem}
+.bank-layout .account-list small{font-size:.875rem}
+[data-bank-journal-filter]>a,[data-bank-workspace] p>a{display:inline-flex;align-items:center;min-height:44px;white-space:normal}
+
+/* Original allocation input remains readable alongside actual current money. */
+.finance-match-workspace{container-type:inline-size;min-width:0;font-size:1rem;overflow-wrap:anywhere}
+.matching-layout.finance-match-workspace{grid-template-columns:repeat(auto-fit,minmax(min(100%,24rem),1fr))}
+.finance-match-workspace :is(.card,section,article,form,label,fieldset,.data-list>*){min-width:0;max-width:100%}
+.finance-match-workspace :is(p,label,dt,dd,.data-list,.status,.match-form label,.profile-link){font-size:1rem}
+.finance-match-workspace :is(h2,h3){font-size:1.25rem}
+.finance-match-workspace :is(.amount-large,.payment-totals strong){font-size:1.5rem;white-space:normal;overflow-wrap:anywhere}
+.finance-match-workspace .muted,.finance-match-workspace small{font-size:.875rem}
+.finance-match-workspace :is(input:not([type=hidden]):not([type=checkbox]),select,textarea,button){font-size:1rem;min-height:44px;min-width:0;max-width:100%}
+.finance-match-workspace :is(.btn,summary){min-height:44px;font-size:1rem;white-space:normal;overflow-wrap:anywhere}
+.finance-match-workspace summary{display:flex;align-items:center;cursor:pointer}
+.finance-match-workspace :is(.actions,.filter-form){display:flex;gap:.75rem;flex-wrap:wrap;align-items:end}
+.finance-match-workspace .filter-form>label{flex:1 1 12rem;margin:0}
+.finance-match-workspace .matching-candidate{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:1rem;align-items:start}
+.finance-match-workspace .match-form{display:grid;grid-template-columns:minmax(0,1fr);width:100%;max-width:100%;flex:initial}
+.finance-match-workspace .match-form label{width:100%;margin:0}
+.finance-match-workspace .allocation-history-row{grid-template-columns:minmax(0,1fr);gap:.75rem}
+.finance-match-workspace .allocation-history-row>a,.finance-match-workspace .matching-candidate a{min-height:44px;display:inline-flex;align-items:center;white-space:normal}
+.finance-match-original-form{display:grid;gap:1rem}
+.finance-match-original-form>label{display:grid;gap:.4rem;margin:0}
+.finance-match-original-form .actions{align-items:stretch}
+.finance-match-original-form button{flex:1 1 14rem}
+.finance-match-original-form textarea{min-height:6rem;resize:vertical}
+.finance-match-original-form .finance-match-confirm{display:flex;align-items:flex-start;gap:.75rem;min-height:44px}
+.finance-match-confirm input[type=checkbox]{flex:0 0 1.3rem;width:1.3rem;height:1.3rem;margin-top:.2rem}
+.finance-match-close{margin-block:1rem}
+[data-finance-match-heading] h1{font-size:1.5rem;overflow-wrap:anywhere}
+@container(max-width:35rem){.finance-match-workspace .data-list,.finance-match-workspace .payment-totals{grid-template-columns:minmax(0,1fr)}}
+
+[data-finance-match-heading]{min-width:0;flex-wrap:wrap}
+[data-finance-match-heading] h1{min-width:0;flex:1 1 12rem}
+[data-finance-match-heading] .status{white-space:normal;font-size:1rem}
+.finance-match-workspace .payment-choice-guide{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:.75rem;min-width:0}
+.finance-match-original-form>label{grid-template-columns:minmax(0,1fr)}
+.finance-match-original-form .finance-match-confirm>span{min-width:0;flex:1 1 0;white-space:normal;overflow-wrap:anywhere}
+
+.cashbook-workspace{min-width:0;font-size:1rem}
+.cashbook-workspace .book-filter{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,12rem),1fr));gap:1rem;align-items:end}
+.cashbook-workspace .book-filter>label{display:grid;grid-template-columns:minmax(0,1fr);min-width:0}
+.cashbook-workspace input,.cashbook-workspace button,.cashbook-workspace summary,.cashbook-workspace .btn{min-height:44px;font-size:1rem}
+.cashbook-workspace .btn{display:inline-flex;align-items:center;justify-content:center;white-space:normal;overflow-wrap:anywhere;text-align:center}
+.cashbook-workspace p,.cashbook-workspace h3,.cashbook-workspace h4,.cashbook-workspace dd,.cashbook-workspace dt{overflow-wrap:anywhere}
+.cashbook-explanation{max-width:70ch}
+.cashbook-entries{list-style:none;margin:0;padding:0;display:grid;gap:1rem}
+.cashbook-entry{border:1px solid var(--bs-border-color,#d8e2df);border-radius:.75rem;padding:1rem;min-width:0;background:var(--bs-body-bg,#fff)}
+.cashbook-entry-heading{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.5rem 1rem}
+.cashbook-entry-heading h4{font-size:1rem;margin:0;flex:1 1 12rem;min-width:0}
+.cashbook-entry-heading strong{font-size:1.125rem;overflow-wrap:anywhere}
+.cashbook-purpose{white-space:pre-wrap;margin:.5rem 0}
+.cashbook-receipts{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;min-width:0}
+.cashbook-receipts a{display:inline-flex;align-items:center;min-height:44px;overflow-wrap:anywhere;max-width:100%}
+.cashbook-entry-amounts,.cashbook-page-carry{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.5rem 1rem;margin:1rem 0}
+.cashbook-entry-amounts dt,.cashbook-entry-amounts dd,.cashbook-page-carry dt,.cashbook-page-carry dd{margin:0;min-width:0}
+.cashbook-entry-amounts dd,.cashbook-page-carry dd{text-align:right;font-weight:600}
+.cashbook-association{margin:.25rem 0}
+.cashbook-workspace .bank-catalogue-pager{margin:1rem 0}
+
+.account-create-content [data-account-create-original-values]{min-height:10rem;width:100%;font-size:.875rem;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word}
+.account-create-content :is([data-account-create-original] summary,[data-account-create-unsupported]){font-size:1rem;overflow-wrap:anywhere}
+.account-create-content .account-create-grid [data-account-create] :is(label,input,button,summary,legend,.form-intro,.account-create-kicker){font-size:1rem}
+.account-create-content .account-create-grid .account-kind-option strong{font-size:1rem}
+.account-create-content .account-create-grid .account-kind-option small{font-size:.875rem}
+.account-create-content .account-create-grid h2{font-size:1.25rem}
+
+.account-create-content .account-create-grid .account-create-help p{font-size:1rem}
+.account-create-content .account-create-grid .field-help{font-size:.875rem}
+
+.bank-opening-controls{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;min-width:0}.bank-opening-controls input{flex:1 1 10rem;min-width:0}.bank-opening-controls [data-opening-sign-toggle]{min-height:2.75rem;white-space:normal;max-width:100%}.bank-opening-controls [data-opening-sign-toggle][hidden]{display:none!important}
+
+.bank-opening-controls+.field-help{font-size:.875rem;overflow-wrap:anywhere}
+
+/* Keep the original transaction amount visible before horizontal scrolling. */
+.bank-journal{container-type:inline-size}
+.bank-journal-table th:last-child,.bank-journal-table td:last-child{position:sticky;inset-inline-end:0;background:var(--bs-body-bg,#fff);z-index:1;min-width:10rem;box-shadow:-2px 0 0 var(--bs-border-color,#d8e2df)}
+.bank-journal-table [data-bank-transaction-amount]{display:block;white-space:nowrap;font-variant-numeric:tabular-nums}
+.bank-journal-table .bank-transaction-direction{display:block;font-size:.875rem}
+.bank-journal-table .status{white-space:normal;max-width:100%;overflow-wrap:anywhere}
+@container(max-width:54rem){
+ .bank-journal .table-scroll{overflow:visible}
+ .bank-journal-table,.bank-journal-table tbody{display:block;width:100%;min-width:0}
+ .bank-journal-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+ .bank-journal-table tr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.5rem 1rem;padding:1rem;margin-block:.75rem;border:1px solid var(--bs-border-color,#d8e2df);border-radius:.75rem}
+ .bank-journal-table td{display:block;min-width:0;padding:0;border:0;white-space:normal;overflow-wrap:anywhere}
+ .bank-journal-table td::before{content:attr(data-label);display:block;font-size:.875rem;font-weight:600;color:var(--bs-secondary-color,#52636c)}
+ .bank-journal-table td:nth-child(5){grid-column:1/-1}
+ .bank-journal-table td:last-child{position:static;grid-column:2;grid-row:1/3;min-width:0;box-shadow:none;text-align:end;background:transparent}
+ .bank-journal-table .remaining-note{white-space:normal}
+}
+@container(max-width:24rem){
+ .bank-journal-table tr{grid-template-columns:minmax(0,1fr)}
+ .bank-journal-table td:last-child{grid-column:1;grid-row:1;text-align:start}
+ .bank-journal-table td:nth-child(5){grid-column:1}
+ .bank-journal-table [data-bank-transaction-amount]{white-space:normal;overflow-wrap:anywhere}
+}
+
+/* One bank dialog, from sign-in through bank confirmation and explicit import. */
+#fints-manual.fints-workspace,.fints-pending{min-width:0;font-size:1rem;overflow-wrap:anywhere}
+#fints-manual.fints-workspace :is(p,label,dt,dd,.notice,.error,.success,.muted,.data-list){font-size:1rem}
+#fints-manual.fints-workspace h2{font-size:1.25rem}
+#fints-manual.fints-workspace h3{font-size:1.125rem}
+#fints-manual.fints-workspace :is(form,label,select,.actions,.data-list,dd){min-width:0;max-width:100%}
+#fints-manual.fints-workspace :is(input:not([type=hidden]):not([type=checkbox]),select,button,.btn,summary),.fints-pending .btn{font-size:1rem;min-height:2.75rem;max-width:100%;min-width:0;white-space:normal;overflow-wrap:anywhere}
+#fints-manual.fints-workspace .check:has(input){display:flex;align-items:center;gap:.75rem;min-height:2.75rem}
+#fints-manual.fints-workspace input[type=checkbox]{flex:0 0 auto}
+#fints-manual.fints-workspace .form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr))}
+#fints-manual.fints-workspace .actions{flex-wrap:wrap}
+#fints-manual.fints-workspace .data-list{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:.5rem 1rem}
+#fints-manual.fints-workspace .data-list dd{margin:0}
+#fints-manual.fints-workspace .fints-stage{border-inline-start:.25rem solid currentColor;padding:.5rem .75rem;font-weight:600}
+#fints-manual.fints-workspace .fints-approval-image{display:block;max-width:100%;width:17.5rem;height:auto}
+@media(max-width:36rem){#fints-manual.fints-workspace .data-list{grid-template-columns:minmax(0,1fr);gap:.25rem}#fints-manual.fints-workspace .data-list dd{margin-bottom:.75rem}}
+
+.bank-linked-account{min-width:0;overflow-wrap:anywhere}
+
+#fints-manual .fints-choice-controls{border:0;padding:0;margin:0;min-width:0;max-width:100%}
+#fints-manual .fints-choice-original{min-width:0;overflow-wrap:anywhere;margin-block:1rem}
+#fints-manual [data-fints-choice-original]{width:100%;min-height:8rem;font-size:.875rem;white-space:pre-wrap;overflow-wrap:anywhere}
+
+/* Retrieval configuration and observed bank outcome remain separate. */
+#fints-schedule{min-width:0;font-size:1rem;overflow-wrap:anywhere}
+#fints-schedule :is(p,label,dt,dd,.status){font-size:1rem}
+#fints-schedule h2{font-size:1.25rem}
+#fints-schedule h3{font-size:1.125rem}
+#fints-schedule :is(form,fieldset,label,select,dd){min-width:0;max-width:100%}
+#fints-schedule :is(button,select,summary,.btn){font-size:1rem;min-height:2.75rem;white-space:normal;overflow-wrap:anywhere;max-width:100%}
+#fints-schedule .fints-schedule-form{display:block}
+#fints-schedule fieldset{display:flex;align-items:end;flex-wrap:wrap;gap:.75rem;border:0;padding:0;margin:0}
+#fints-schedule fieldset label{flex:1 1 12rem}
+#fints-schedule .fints-schedule-current{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.5rem 1rem}
+#fints-schedule dd{margin:0}
+#fints-schedule [data-fints-schedule-original]{width:100%;min-height:8rem;font-size:.875rem;white-space:pre-wrap;overflow-wrap:anywhere}
+@media(max-width:36rem){#fints-schedule .fints-schedule-current{grid-template-columns:minmax(0,1fr)}#fints-schedule dd{margin-bottom:.5rem}}
+
+.fints-directory-workspace,.fints-directory-heading{min-width:0;font-size:1rem;overflow-wrap:anywhere}
+[data-fints-directory].fints-directory-workspace :is(p,label,dt,dd,small,summary,.form-control,.btn),.fints-directory-heading .btn{font-size:1rem}
+[data-fints-directory].fints-directory-workspace .card h2{font-size:1.25rem}.page-heading.fints-directory-heading h1{font-size:1.5rem}
+[data-fints-directory].fints-directory-workspace :is(button,.btn,summary,.setting-check),.fints-directory-heading .btn{min-height:2.75rem;white-space:normal;overflow-wrap:anywhere}
+.fints-directory-workspace :is(form,label,input,textarea,.settings-actions,.settings-panel,dd){min-width:0;max-width:100%}
+.fints-directory-workspace [data-fints-directory-original]{width:100%;min-height:8rem;font-size:.875rem;white-space:pre-wrap;overflow-wrap:anywhere}
+.fints-directory-workspace .data-list{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+@media(max-width:36rem){.fints-directory-workspace .data-list{grid-template-columns:minmax(0,1fr)}.fints-directory-workspace dd{margin-inline-start:0;margin-bottom:.75rem}}
+
+[data-fints-directory] .fints-directory-controls{border:0;padding:0;margin:0;min-width:0;max-width:100%}
+[data-fints-directory] form.settings-form .fints-directory-controls{display:grid;gap:1rem}

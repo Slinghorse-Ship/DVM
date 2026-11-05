@@ -1,0 +1,23 @@
+<?php declare(strict_types=1);
+$financialProfile=$financialProfile??'';$financialAccount=$financialAccount??'';
+$financialLabels=[''=>'Keine solche Finanzanlage','corp_domestic'=>'Im Inland · Aktie oder Kapitalgesellschaft','corp_foreign'=>'Im Ausland · Aktie oder Kapitalgesellschaft',
+'cert_corp_de'=>'Genussschein im Inland · Beteiligungsqualität vertraglich bestätigt','cert_corp_ab'=>'Genussschein im Ausland · Beteiligungsqualität vertraglich bestätigt',
+'bond_de'=>'Anleihe im Inland','bond_ab'=>'Anleihe im Ausland','convert_de'=>'Wandelanleihe im Inland','convert_ab'=>'Wandelanleihe im Ausland',
+'fund_de'=>'Investmentfonds im Inland','fund_ab'=>'Investmentfonds im Ausland','cert_de'=>'Genussschein im Inland · ohne Beteiligungsqualität','cert_ab'=>'Genussschein im Ausland · ohne Beteiligungsqualität',
+'warrant_de'=>'Optionsschein im Inland','warrant_ab'=>'Optionsschein im Ausland','other_de'=>'Sonstiges Wertpapier im Inland','other_ab'=>'Sonstiges Wertpapier im Ausland'];
+$financialLabels+=['loan_pg'=>'Darlehen an eine Personengesellschaft · keine Beteiligung am Gesellschaftskapital','loan_sole'=>'Darlehen an ein Einzelunternehmen · kein Gesellschaftsanteil','loan_de_le25'=>'Darlehen im Inland · Beteiligung höchstens 25 %','loan_de_gt25'=>'Darlehen im Inland · Beteiligung größer als 25 %','loan_ab_le25'=>'Darlehen im Ausland · Beteiligung höchstens 25 %','loan_ab_gt25'=>'Darlehen im Ausland · Beteiligung größer als 25 %'];
+$financialLabels+=['loan_person_de'=>'Darlehen an eine natürliche Person im Inland · kein Gesellschaftsanteil','loan_person_ab'=>'Darlehen an eine natürliche Person im Ausland · kein Gesellschaftsanteil'];
+$financialLabels+=['silent_part'=>'Typisch stille Anlage · handelsrechtlicher Beteiligungsausweis vertraglich bestätigt','silent_loan'=>'Typisch stille Anlage · handelsrechtliche Ausleihung vertraglich bestätigt'];
+$financialLabels+=['pension_reinsurance_unoffset'=>'Ursprünglicher Rückdeckungsanspruch · Voraussetzungen zur Saldierung nach § 246 Absatz 2 HGB anhand des Vertrags nicht erfüllt'];
+$financialPension=isset(\Kulturhus\Verein\FinancialInvestment::PENSION_ASSETS[$financialAccount]);
+$financialChoices=\Kulturhus\Verein\FinancialInvestment::profiles($financialAccount);
+?>
+<link rel="stylesheet" href="financial-investment-profile.css?v=1">
+<details data-financial-profile data-financial-options="<?= e(json_encode(array_map('array_keys',\Kulturhus\Verein\FinancialInvestment::PENSION_ASSETS+\Kulturhus\Verein\FinancialInvestment::SECURITIES+\Kulturhus\Verein\FinancialInvestment::LOANS+['08300'=>\Kulturhus\Verein\FinancialInvestment::BOOK_TARGETS_R69]),JSON_THROW_ON_ERROR)) ?>" data-financial-defaults="<?= e(json_encode(\Kulturhus\Verein\FinancialInvestment::PROFILES,JSON_THROW_ON_ERROR)) ?>" data-financial-labels="<?= e(json_encode($financialLabels,JSON_THROW_ON_ERROR)) ?>" <?= $financialProfile!==''?'open':'' ?>><summary>Finanzanlage oder Darlehen klassifizieren</summary>
+<p data-financial-general-note <?= $financialPension?'hidden':'' ?>>Art und Sitz des Emittenten anhand des ursprünglichen Anschaffungsbelegs bestätigen. Für Genussscheine die Beteiligungsqualität aus dem Vertrag prüfen. Bei Darlehen Rechtsform und Sitz des Schuldners sowie den Anteil des Darlehensgebers am Schuldner einschließlich der 25-%-Grenze bestätigen. Für Gesellschafterdarlehen oder nahestehende Personen das Vertragsverhältnis zum ursprünglichen SKR42-Konto belegen. Handelsrechtliche und steuerliche Wertänderungen werden anschließend getrennt geprüft.</p>
+<p data-financial-pension-note <?= $financialPension?'':'hidden' ?>>Für 13800 und 13820 gilt dieser Weg nur für einen ursprünglichen langfristigen Rückdeckungsanspruch ohne Saldierung. Pensionszweck beziehungsweise vergleichbare langfristige Verpflichtung und fehlende Saldierungsvoraussetzung aus dem Originalvertrag bestätigen. Vermögen, das allen anderen Gläubigern entzogen ist und ausschließlich diese Verpflichtung deckt, hier nicht als ungesaldete Anlage bestätigen; es benötigt den gesonderten Saldierungsnachweis. Die Verpflichtung selbst separat bewerten. Keine HGB- oder Steuerwerte aus der Kontonummer ableiten.</p>
+<fieldset><legend><?= $financialPension?'Welche ursprüngliche Vertragszuordnung ist belegt?':'Welche Art und welcher Sitz sind belegt?' ?></legend>
+<?php foreach(array_merge([''],$financialChoices) as $financialChoice): ?>
+<label class="check"><input class="check" type="radio" name="financial_profile" value="<?= e($financialChoice) ?>" <?= $financialProfile===$financialChoice?'checked':'' ?>><?= e($financialLabels[$financialChoice]) ?></label>
+<?php endforeach ?></fieldset></details>
+<script defer src="financial-investment-profile.js?v=1"></script>
