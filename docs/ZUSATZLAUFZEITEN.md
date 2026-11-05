@@ -1,4 +1,8 @@
-# OCR, KoSIT und ERiC ergänzen
+# OCR, XRechnung/KoSIT und ERiC einrichten
+
+OCR erkennt Text aus Bildern. KoSIT prüft strukturierte XRechnung-XML-Dateien.
+ERiC ist die amtliche ELSTER-Laufzeit für die gesondert eingerichtete Steuerprüfung
+und Übermittlung. Die drei Programme werden unabhängig voneinander eingerichtet.
 
 Diese Anleitung gilt für eine neue oder bestehende eigene DVM-Installation.
 Die Linux-x86_64-Artefakte liegen im vollständigen Quellpaket unter
@@ -17,9 +21,12 @@ Vorbereiten und Aktivieren sind getrennt. Eigene Kennungen und Zertifikate
 werden nicht aus einer anderen Installation übernommen. Die Programme benötigen
 ein privates Dateisystem mit passenden Lese- und Ausführungsrechten.
 
-## 1. Gewählte Pakete offline vorbereiten
+## Gemeinsame Vorbereitung
 
-Im vollständigen entpackten Quellpaket mit PHP ab 8.3 und den
+Die folgenden Befehle verwenden Linux-/Unix-Pfade. Dafür wird ein geeigneter
+Arbeitsplatz oder ein CLI-Zugang beim Hoster benötigt; bei reinem FTP-Hosting
+übernimmt die technische Betreuung diese Schritte. Die Zielprogramme benötigen
+Linux x86_64. Im vollständigen entpackten Quellpaket mit PHP ab 8.3 und den
 [Installer-Erweiterungen](WEBSPACE-INSTALLATION.md#voraussetzungen):
 
 ```sh
@@ -28,7 +35,8 @@ php distribution/prepare-runtimes.php --target=/PRIVAT/NEUE-DVM-ZUSATZLAUFZEITEN
 
 Der Elternordner muss bestehen. Der Zielordner muss neu sein und außerhalb des
 Checkouts sowie des öffentlich erreichbaren Webroots liegen. Für eine einzelne
-Gruppe beispielsweise `--components=kosit` verwenden. Bestehende Ziele werden
+Gruppe beispielsweise `--components=kosit` verwenden. Wurde OCR schon mit
+`--with-ocr` eingerichtet, für die weitere Vorbereitung nur `kosit,eric` wählen. Bestehende Ziele werden
 nicht überschrieben. Nach einem abgebrochenen Versuch einen neuen Zielpfad
 wählen und den unvollständigen Bestand zuerst prüfen.
 
@@ -46,7 +54,7 @@ SDK-Beispielverzeichnisse und Zertifikate gelangen nicht in das vorbereitete
 Laufzeitverzeichnis. Das Ergebnis ist kein unabhängig weiterlizenzierbares SDK;
 [ERiC-Bedingungen](ERIC-LIZENZ.md) gelten weiterhin.
 
-## 2. OCR verbinden
+## OCR einrichten
 
 Für eine **neue** Webspace-Installation ist der vorhandene Assistent der kürzeste
 Weg. Statt des separaten Vorbereitungsbefehls das komplette Upload-Paket bauen:
@@ -75,7 +83,7 @@ Konfigurationsdateien werden nicht überschrieben. Keine bestehende Datenbank
 neu installieren. Eine echte synthetische Erkennungsprüfung im späteren
 Webkontext bleibt erforderlich.
 
-## 3. KoSIT verbinden
+## XRechnung mit KoSIT einrichten
 
 Die Paketgruppe enthält KoSIT 1.6.3, Java 17.0.20.1+1 und die
 XRechnung-Konfiguration 3.0.2 vom 31.08.2026. Nach Vorbereitung prüfen:
@@ -103,30 +111,95 @@ und den betroffenen Jobs setzen. Anschließend eine ausschließlich synthetische
 XRechnung mit dem konfigurierten Validator prüfen. Ein Java-Versionsaufruf allein
 bestätigt keine fachliche Rechnungsprüfung. Neue Regelstände getrennt abnehmen.
 
-## 4. ERiC verbinden
+## ERiC einrichten
 
-[Vertragsbedingungen und Pflichtinformationen](ERIC-LIZENZ.md) vor Nutzung
-umsetzen. Die Programmbibliothek liegt nach Vorbereitung unter:
+Die Bibliotheken liegen nach der Vorbereitung unter
+`runtime/eric-44.3.6.0/lib/libericapi.so`. Sie allein ersetzen weder die eigene
+Herstellerregistrierung noch Formularkatalog, Zertifikat oder Produktivfreigabe.
 
-```text
-/PRIVAT/NEUE-DVM-ZUSATZLAUFZEITEN/runtime/eric-44.3.6.0/lib/libericapi.so
+### Vorbereitung
+
+1. Die für den eigenen Produktbetrieb gültige Herstellerregistrierung klären.
+   ELSTER verwendet fünf Ziffern; eine FinTS-Produkt-ID ist eine andere Kennung.
+2. Aktuelle freigegebene Mindestversion im eigenen ELSTER-Entwicklerzugang prüfen.
+   Die enthaltene Version 44.3.6.0 ist ein festgelegter Paketstand, kein Updater.
+3. Die Datenschutzinformationen und bestätigte Kenntnisnahme gemäß § 5 sowie die
+   übrigen Betreiberpflichten vor ERiC-Nutzung organisatorisch einrichten.
+4. Die Programmbibliotheken außerhalb des Webroots vorbereiten. Native Laufzeit,
+   Python, Plugins und eventuell erforderliche Systembibliotheken müssen vom
+   späteren PHP-Webprozess erreichbar und ausführbar sein.
+
+### Formularkatalog
+
+Die vollständige Entwicklerdokumentation mit den passenden amtlichen Schemata
+selbst über ELSTER beziehen und privat aufbewahren. Der Compiler verarbeitet
+diese lokalen Originale; DVM verteilt die Dokumentationsarchive nicht:
+
+```sh
+python3 vereinsverwaltung/tools/compile-eric-forms.py \
+  --documentation /PRIVAT/ERiC/Dokumentation \
+  --output /PRIVAT/eric/form-catalog.json --years 2025 \
+  --periodic-years 2025 2026 --messages --registration
 ```
 
-Den benötigten Formularkatalog aus selbst bezogenen passenden amtlichen Schemata
-erzeugen. Private Laufzeitdatei, eigene Hersteller-ID, Python-Adapter und
-Formularprofile einrichten; `VEREIN_ERIC_RUNTIME` auf diese private Datei setzen.
-Produktivfreigaben und Profiltransporte bleiben bei Ersteinrichtung aus.
-[Schrittfolge und Konfigurationsfelder](vereinsverwaltung/ELSTER-ERIC-INTEGRATION.md).
+Das sind die vorhandenen Compileroptionen, keine Freigabe zusätzlicher Jahre.
+Jeder Zeitraum benötigt seinen tatsächlichen passenden Schema- und Laufzeitstand.
 
-Der lokale Bibliothekscheck verwendet kein Zertifikat und sendet keine Daten:
+### Private Konfiguration
+
+Eine neue JSON-Datei mit 0600 anlegen und ihren absoluten Pfad als
+`VEREIN_ERIC_RUNTIME` im PHP-Webprozess und in den betroffenen privaten Jobs setzen.
+Erforderliche Angaben:
+
+| Feld | Bedeutung |
+|---|---|
+| `version` | Konfigurationsformat 1 |
+| `manufacturer_id` | Eigene gültige fünfstellige Hersteller-ID |
+| `library` | Absoluter Pfad zu `lib/libericapi.so` |
+| `scratch` | Privates beschreibbares Arbeitsverzeichnis mit 0700 |
+| `catalog` | Absoluter Pfad zum selbst erzeugten Formularkatalog |
+| `command` | Argumentliste aus absolutem Python-Interpreter und absoluter `eric-bridge.py` |
+| `profiles` | Passende Katalogprofile ohne die umfangreichen `types` |
+| `production_enabled` | Bei Ersteinrichtung `false` |
+| `production_versions` | Bei Ersteinrichtung leere Liste |
+
+Auch `transport_enabled` der Profile bleibt bis zur gesonderten Prüfung aus.
+Bei einer Produktivinstallation gehört die Konfiguration zum eigenen Verein;
+vorhandene Bindungen und Originalfelder erhalten. Änderungen in neuen privaten
+Versionsverzeichnissen vorbereiten, keine aktive Bibliothek unter gleichem Pfad
+überschreiben.
+
+Die Hersteller-ID kann ein berechtigter technischer Verwalter unter
+**Einstellungen → Steuern** hinterlegen. Ohne expliziten Laufzeitpfad verwendet
+DVM `VEREIN_PRIVATE_ROOT/runtime-config/eric.json`. Eine neue Kennung installiert
+keine Bibliothek und aktiviert keine Übermittlung.
+
+Windows benötigt passende amtliche Windows-Bibliotheken und zusätzlich
+`windows_process_command` mit dem absoluten Python-Interpreter. Das enthaltene
+Linux-Paket ist dafür nicht geeignet.
+
+### Prüfen und freigeben
 
 ```sh
 VEREIN_ERIC_RUNTIME=/PRIVAT/eric.json php vereinsverwaltung/tools/check-eric-runtime.php
 ```
 
-Für tatsächliche Abgaben sind zusätzlich ein eigenes geeignetes Zertifikat und
-die getrennte Prüfung/Freigabe der jeweiligen Datenart erforderlich. Die aktuelle
-Mindestversion im eigenen ELSTER-Entwicklerzugang prüfen.
+Dieser Check prüft Initialisierung und Version, ohne Steuer-XML, Zertifikat oder
+Versand. Anschließend passende synthetische Formulare, PDF-Ausgaben und die
+vereinbarte Testübermittlung getrennt abnehmen. Erst danach gegebenenfalls eine
+Produktivfreigabe pro unterstützter Datenart erteilen. Historische Prüfungen
+anderer Installationen ersetzen diese Schritte nicht.
+
+Für [E-Bilanz](EBILANZ-UMGEBUNGEN.md) gelten eigene fachliche Grenzen.
+Ein Bibliotheksstart ist keine Formularprüfung oder erfolgreiche Abgabe.
+Testübermittlungen sind ebenfalls externer Versand und benötigen ausdrücklich
+synthetische Daten, den passenden Testmerker und eine gesonderte Freigabe.
+Arbeitsunterlagen und ein Transferticket bestätigen keine steuerfachliche Anerkennung.
+
+Zertifikate über den Steuerbereich einrichten und ihr Passwort getrennt privat
+aufbewahren. Lokale Entwicklung kann mit `VEREIN_ERIC_DISABLE_TRANSPORT=1`
+Übermittlungen ausdrücklich sperren. Den tatsächlichen Zertifikats-,
+Formular- und Versandweg vor einer Freigabe gesondert prüfen.
 
 ## Docker
 
@@ -144,3 +217,30 @@ Docker-Socket nicht pauschal an die Webanwendung durchreichen. Die
 [Docker-Anleitung](../docker/dvm/README.md) beschreibt Grundinstallation,
 Persistenz und Updates. Ein automatischer Nachinstallationsassistent im Manager
 ist mit diesen CLI-Werkzeugen noch nicht verbunden.
+
+## Paketinhalt und Lizenzen
+
+Das Quellpaket enthält die geprüften Laufzeitarchive einschließlich der zugehörigen
+Lizenztexte, Herkunftsnachweise und erforderlichen Quellarchive. Eigene API-Token,
+FinTS-Produktkennungen, Hersteller-IDs und Steuerzertifikate werden nicht mitgegeben.
+Das [Paketmanifest](../distribution/packages/linux-runtime/manifest.json) bindet die
+Archivteile und Gesamtdateien mit SHA256.
+
+ERiC 44.3.6.0 wird als DVM-Produktlaufzeit in 16 Teilen ausgeliefert. Sie enthält
+225 unveränderte amtliche Bibliotheken/Plugins und die Pflichttexte; kein vollständiges
+Entwickler-SDK und keine Entwickler- oder Schemadokumentationsarchive.
+[Herkunft und Dateiprüfsummen](../distribution/packages/linux-runtime/provenance/eric-runtime-44.3.6.0.json),
+[Vertrag und Datenschutzpflichten](ERIC-LIZENZ.md). Eine aktuelle Mindestversion
+muss der verantwortliche Hersteller im eigenen ELSTER-Entwicklerzugang prüfen.
+
+## Abschluss prüfen
+
+| Funktion | Nachweis auf der eigenen Installation |
+|---|---|
+| OCR | Eine ausschließlich synthetische Bildrechnung wird tatsächlich erkannt; die Schutzprüfung bleibt aktiv. |
+| XRechnung/KoSIT | Eine synthetische gültige Rechnung wird geprüft und eine fachlich ungültige Variante mit verständlichem Bericht abgewiesen. |
+| ERiC | Lokale Initialisierung und Version funktionieren. Formularprüfung, Zertifikat und ausdrücklich freigegebener Versand werden getrennt geprüft. |
+
+Die Variablen müssen im **PHP-Webprozess und den betroffenen Jobs** gelten, nicht
+nur im eigenen Terminal. Nach einem Prozessneustart den Systemstatus prüfen.
+Eine grüne Konfigurationsanzeige ersetzt keine tatsächliche Funktionsprüfung.

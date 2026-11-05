@@ -45,7 +45,7 @@ Produktionsvorbereitung ist beispielsweise:
 ```json
 {
   "version": 1,
-  "manufacturer_id": "12345",
+  "manufacturer_id": "EIGENE_FUENFSTELLIGE_ID",
   "command": ["/usr/bin/python3", "-B"],
   "balance_production_preparation": true,
   "profiles": {}
@@ -59,7 +59,7 @@ ein. Für die synthetische Testvorbereitung gilt der vorhandene separate Schalte
 `balance_test_enabled`.
 
 Zur nativen Prüfung kommen die in
-[ELSTER-ERIC-INTEGRATION.md](vereinsverwaltung/ELSTER-ERIC-INTEGRATION.md)
+[ELSTER-ERIC-INTEGRATION.md](ZUSATZLAUFZEITEN.md#eric-einrichten)
 beschriebenen originalen Bibliotheken, Kataloge und privaten Arbeitsverzeichnisse
 hinzu. Produktionsprüfung erfordert außerdem `balance_production_enabled` und ein
 passendes Bilanzprofil. Der Prozess liest die originale native ERiC-Version und
@@ -80,19 +80,14 @@ intern injizierten synthetischen Testabhängigkeiten geprüft. Es gibt dafür ke
 HTTP-Parameter oder Umgebungsvariablen-Schalter. Weder ein solcher Test noch
 lokale XML-Erzeugung belegt einen erfolgreichen amtlichen Versand.
 
-## Geprüfte Softwareabläufe
+## Interne Zwischenabschlüsse
 
-Die getrennte Auslieferungsfassung besteht 71 Fachbedingungen einschließlich
-zweier tatsächlicher paralleler Versandprozesse und eines echten Prozessabbruchs
-nach der Versandreservierung. Ein unklarer Eingang wird dabei nicht erneut
-übermittelt. Die Freigabe bleibt an Originale, Umgebung und aktuelle Rechte gebunden.
-
-Beide tatsächlichen App-Einstiege bestehen 29 HTTP-/Originalbedingungen. Vier
-Browserabläufe mit und ohne JavaScript bestehen 79 Bedingungen bei 320 Pixel
-Breite und 32-Pixel-Schrift: sichtbare Suchauswahl, Fehlerkorrektur, genaue
-Originaleingaben und tatsächliche lokale Python-XML-Erzeugung. Es gibt keine
-externen Anfragen oder native SDK-Aufrufe; sämtliche 429 übrigen Tabellen bleiben
-exakt. Diese Prüfung ersetzt die gesonderte amtliche Originalabnahme nicht.
+Interne Tages- oder Monatsaufteilungen bestätigen keine steuerliche Jahres-AfA.
+Für nicht fachlich freigegebene unterjährige Fälle erzeugt der Manager keinen
+E-Bilanz-Entwurf; vollständige Folgemonate heben diese Grenze nicht automatisch auf.
+Vorhandene unbestätigte Teilmonatsstände bleiben erhalten. Der Menüweg
+**Finanzen → Auswertungen & Steuer → Abschreibung & Buchwerte** zeigt die
+vorhandenen Werte; Änderungen benötigen das passende Finanzrecht.
 
 ## Fristen erfasster Finanzanlagenrücklagen
 

@@ -77,7 +77,7 @@ Installationsweg weder Composer noch SSH oder Docker erforderlich.
    öffentlichen `setup/`-Ordner und die lokale `SETUP-KEY.txt` entfernen.
 
 Neue Websites beginnen mit der allgemeinen Vorlage **Klar**. Weitere allgemeine
-[Website-Vorlagen](../docs/CMS-WEBSITE-VORLAGEN.md) können im Manager ausgewählt
+[Website-Vorlagen](../docs/BEDIENUNG.md#website-und-bildstudio) können im Manager ausgewählt
 werden. Vereinsinhalte werden anschließend selbst angelegt.
 
 ## Verbindungen und automatische Aufgaben

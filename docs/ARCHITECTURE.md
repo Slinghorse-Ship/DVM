@@ -10,7 +10,19 @@ private Schlüssel und Dateien liegen außerhalb des öffentlichen Webroots.
 Systemverwaltung. `vereinsverwaltung/src/` enthält Mitglieder-, Finanz-, Kalender-,
 Dokumenten- und Inventardienste. `native/Integration/ManagerBridge` verbindet die
 Konten mit den vorhandenen Vereinsakteuren und ihren aktuellen Rechten.
-Die [Projektstruktur](PROJEKTSTRUKTUR.md) beschreibt die Modulgrenzen.
+
+| Verzeichnis | Aufgabe |
+|---|---|
+| `vereinsverwaltung/native/` | Anmeldung, CMS, Kommunikation, Anbieterintegration und gemeinsame Managerhülle |
+| `vereinsverwaltung/src/` | Fachmodule für Mitglieder, Finanzen, Dokumente, Inventar und Termine |
+| `vereinsverwaltung/views/`, `public/` | Ansichten und lokale Browserressourcen |
+| `vereinsverwaltung/bin/`, `tools/` | Private Worker sowie Dokument-, Steuer- und Medienwerkzeuge |
+| `vereinsverwaltung/resources/` | Vorlagen, Kataloge, Schriften und lizenzierte Laufzeitressourcen |
+| `banking/` | FinTS-Adapter und dessen gesperrte Abhängigkeiten |
+| `distribution/` | Installer, Upgrade, Wiederherstellung, Paketmanifeste und Offline-Pakete |
+| `docker/dvm/` | Docker-Build und Compose für die eigene Installation |
+| `native-app/` | Native Mobilanwendungen und Gerätebrücken |
+| `tools/ci/`, `vereinsverwaltung/tests/` | Lokale Software-, Browser- und Paketprüfungen |
 
 Native Konten, persönliche Rollen, MFA, Einladungen und Passwort-Reset verwenden
 keine zweite Verwaltungsoberfläche. Originalbelege, verschlüsselte Bankdaten,
@@ -38,7 +50,7 @@ Der Installer erzeugt eine Anleitung mit den konkreten Installationspfaden und
 Zeitmustern. cPanel-Cron-Jobs oder Plesk-Aufgaben werden anschließend beim Hoster
 eingetragen und anhand echter erfolgreicher Läufe geprüft.
 [Hosting-Zeitpläne](HOSTING-ZEITPLAENE.md),
-[Fachjobs und Freigaben](NATIVE-HINTERGRUNDJOBS.md).
+[Fachjobs und Freigaben](HOSTING-ZEITPLAENE.md).
 
 ## Installation und Betrieb
 
@@ -54,7 +66,15 @@ Geschäftsdaten und freigegebene Originale bleiben geschützt.
 [Webspace-Installation](WEBSPACE-INSTALLATION.md),
 [Sicherung und Wiederherstellung](NATIVE-SICHERUNG-WIEDERHERSTELLUNG.md).
 
-## Noch offene Abnahme
+## Erweiterungen und Schnittstellen
+
+Fachregeln, Datenzugriff, Formularaktionen und Darstellung bleiben getrennt.
+Die [native API](NATIVE-API.md) nutzt benannte Ressourcen und vorhandene
+Fachdienste mit aktuellen Rechten. Eigene Erweiterungen benötigen einen
+entsprechend geprüften Adapter; eine API-Anfrage darf keine beliebige PHP-Datei,
+SQL-Anweisung oder frei benannte Methode ausführen.
+
+## Prüfgrenzen
 
 Fachmodule besitzen eigene dokumentierte Verträge und Tests. Tatsächliche
 Anbieter-/Gerätetests, qualifizierte Finanzsonderfälle und Auslieferungsprüfungen

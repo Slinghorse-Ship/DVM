@@ -159,7 +159,7 @@ Eine interne Tagesaufteilung bestätigt keine steuerliche Jahres-AfA. Dafür
 bietet der Manager keinen E-Bilanz-Entwurf an; auch vollständige Folgemonate
 heben diese fachliche Grenze nicht automatisch auf. Alte unbestätigte
 Teilmonatsoriginale bleiben unverändert lesbar. Einzelheiten und Rechenbeispiel:
-[Interne datierte Abschlüsse](../../BILANZ-PRODUKTIVE-ZEITRAEUME.md).
+[Interne datierte Abschlüsse](../../EBILANZ-UMGEBUNGEN.md).
 
 **Menüweg:** Finanzen → Auswertungen & Steuer → **Abschreibung & Buchwerte**. Finanz-Leserecht genügt für vorhandene Werte; Pläne und Jahresstände benötigen Finanz-Bearbeitungsrecht.
 

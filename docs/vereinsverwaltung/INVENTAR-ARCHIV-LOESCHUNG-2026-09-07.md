@@ -1,7 +1,0 @@
-# Entfernen leerer Archivgegenstände
-
-Migration052 ergänzt deleted_at/deleted_by. Inventory::purgeArchived(id, version, stockVersion, reason, requestKey) läuft über die bestehende serialisierte Inventartransaktion. Es prüft aktuellen Mandant und Inventarbearbeitungsrecht, Objekt-/Bestandsversion, Archivstatus, sämtliche Bestandsfelder, offene Ausleihen, Kasse und Beleg-/Dokumentverknüpfungen. Ein Fehler bricht einschließlich des neuen Prüfereignisses ab.
-
-Gelöschte Datensätze bleiben als unveränderbare Identitäten erhalten. Nummern, Kategorien, Preisdetailzeilen, Bewegungen und Auditdaten werden nicht gelöscht. Direkte Änderungen und Wiederherstellung sind gesperrt; dieselbe bestätigte Löschanforderung ist wiederholbar ohne zweiten Löschvorgang. Dokumentquellen werden deaktiviert und können durch erneute Katalogsynchronisierung nicht wieder erscheinen. Aktive/Archiv/Alle-Listen und Auswahlfelder enthalten keine gelöschten Gegenstände. Historische Bewegungsnachweise bleiben erhalten.
-
-23 neue isolierte Prüfungen erfolgreich: Mandant, Versionskonflikte, Wiederholung, Listen, Nummernreserve, Dokumenterhalt, unerwarteter Restbestand, offene Ausleihe trotz leerer Bestandsanzeige, direkte Wiederherstellung und Bewegung. Bestehende Inventarsuite83 ebenfalls erfolgreich. Keine produktive Löschung durch diesen Teilauftrag. Die konkrete Liste der15 freigegebenen Archivgegenstände wird getrennt von Root nach Veröffentlichung nochmals abgeglichen.

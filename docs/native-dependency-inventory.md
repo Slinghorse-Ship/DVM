@@ -6,7 +6,7 @@ Stand: 8. Oktober 2026. Grundlage der Lizenz-/Paketangaben: Dateien des Checkout
 
 `vereinsverwaltung/native/Chat/{Schema,Workspace,Polls,Conflict,Attachments,Notifications}.php`, `native/Web/ChatView.php` und `native/Web/assets/chat.{js,css}` sowie `chat-worker.js` sind neu geschriebener Anwendungscode. Verwendet werden PHP/PDO-MySQL, mbstring, GD zur Bildprüfung/Neucodierung, Fileinfo zur Typprüfung, PHP-Zufallszahlen/Hash/JSON/Datumsfunktionen sowie die neuen projektinternen `Shared\Access` und `Shared\Db`. Der Browser verwendet DOM-, Fetch-, Web-Crypto- und Notifications-APIs ohne fremdes Chat-/Editorpaket. Der ursprüngliche isolierte Chat-Kern hatte keinen externen HTTP-/Mail-/Pushtransport als Pflichtabhängigkeit. Ein eigener vorbereiteter Service-Worker-Empfänger ist vorhanden, wird in der Demo aber nicht registriert; geschlossener Browser/Web-Push ist ohne weiteren Transport nicht verfügbar. PHP, seine Erweiterungen, der Browser und MySQL bleiben Fremdsoftware und Betriebsabhängigkeiten. Ihre vollständigen jeweiligen Laufzeitdistributionen wurden hier nicht als lizenzrechtlich vollständig geprüft inventarisiert.
 
-Der lokale Chat-Ausbau ist im dokumentierten Umfang geprüft: 69 Basisprüfungen einschließlich vier echter Konkurrenzszenarien, 75 zusätzliche Serviceprüfungen und 11 isolierte Client-DOM-Prüfungen; außerdem sieben Layout-/Mobilprüfungen laut Hauptintegration. Anhänge, Umfragen, Antworten, Teilnehmer, Lesestand, Stummschaltung und Geräte-/Outbox-Modell sind nutzbar. Kein lokaler Queueeintrag wird als externe Zustellung ausgegeben. Siehe [Chat-Ausbau und Grenzen](CHAT-ABLAEUFE.md).
+Der lokale Chat-Ausbau ist im dokumentierten Umfang geprüft: 69 Basisprüfungen einschließlich vier echter Konkurrenzszenarien, 75 zusätzliche Serviceprüfungen und 11 isolierte Client-DOM-Prüfungen; außerdem sieben Layout-/Mobilprüfungen laut Hauptintegration. Anhänge, Umfragen, Antworten, Teilnehmer, Lesestand, Stummschaltung und Geräte-/Outbox-Modell sind nutzbar. Kein lokaler Queueeintrag wird als externe Zustellung ausgegeben. Siehe [Chat-Ausbau und Grenzen](BEDIENUNG.md#mail-und-newsletter).
 
 Fachliche Referenz waren die vorhandenen projektspezifischen Dateien `vereinsverwaltung/src/ClubChat.php` und `ChatPolls.php`: Unterhaltungen, Teilnehmer, Nachrichten, Lesestand, Bearbeitung, Umfragen. Der Altcode ruft `Permissions`, `DocumentCatalog`, `Documents::inspectFile` und `PushNotifications::enqueue` auf. Der ursprüngliche Berechtigungsdienst prüfte auch seine damaligen Identitätszuordnungen. Der neue Dienst übernimmt diese Pflichtabhängigkeiten nicht. Die bloße Lage von Altcode im Projekt beweist keine vollständige Herkunfts- oder Lizenzprüfung sämtlicher alter Dateien.
 
@@ -20,7 +20,7 @@ Die eigene Kontenoberfläche verwendet bestehende projekteigene Kulturhus-Styles
 
 Prüfungen einzelner Abhängigkeiten ersetzen keine vollständige Fach- und
 Integrationsabnahme der Anwendung. Kontoeinrichtung und Bedienung stehen unter
-[Konto](KONTO-BEDIENUNG.md); die jeweiligen Fachdienste benötigen eigene Tests.
+[Konto](BEDIENUNG.md); die jeweiligen Fachdienste benötigen eigene Tests.
 
 ## Direkt sichtbare Ressourcen und Archive
 

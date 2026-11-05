@@ -6,7 +6,7 @@ Vereinsdaten sind konfigurierbar; Kulturhus ist keine feste Produktvorgabe.
 
 - [Entwicklung und Einrichtung aus Git](../docs/CLOUD-NEUSTART-AUS-GIT.md)
 - [PHP-Webspace mit MySQL einrichten](../docs/WEBSPACE-INSTALLATION.md)
-- [Fachmodule](src/README.md), [Oberflächen](views/README.md), [Projektstruktur](../docs/PROJEKTSTRUKTUR.md)
+- [Fachmodule](src/README.md), [Oberflächen](views/README.md), [Projektstruktur](../docs/ARCHITECTURE.md)
 - [Handbuch](../docs/vereinsverwaltung/HANDBUCH.md)
 
 `native/` enthält die eigene modulare Anwendung, `src/` die bestehenden

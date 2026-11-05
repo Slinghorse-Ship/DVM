@@ -33,5 +33,5 @@ modularem Namespace können direkt über den passenden relativen Pfad geladen
 werden. Für weitere bestehende Klassenumzüge die Dateizuordnung, direkte
 Includes, CLI-/Testwerkzeuge und Ressourcenpfade gemeinsam ändern.
 
-Die vollständige [Projektstruktur](../../docs/PROJEKTSTRUKTUR.md) zeigt auch
+Die vollständige [Projektstruktur](../../docs/ARCHITECTURE.md) zeigt auch
 HTTP-Einstieg, native Module, Werkzeuge und Abhängigkeiten.

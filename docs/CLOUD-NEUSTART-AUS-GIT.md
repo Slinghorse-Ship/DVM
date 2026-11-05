@@ -14,9 +14,14 @@ Geheimniswerte werden in den Umgebungseinstellungen hinterlegt, nicht in Git.
 
 ## Erstmalig vorbereiten
 
-Im vorhandenen isolierten Checkout `/workspace/Kulturhus`:
+Die vorhandene Cloud-Einrichtung erwartet technisch den Ordner
+`/workspace/Kulturhus`; der Repositoryname bleibt DVM. In einer frischen
+Arbeitsumgebung DVM in diesen Ordner klonen, keine bestehende Installation
+überschreiben:
 
 ```sh
+git clone https://github.com/Slinghorse-Ship/DVM.git /workspace/Kulturhus
+cd /workspace/Kulturhus
 bash tools/cloud/bootstrap.sh --setup
 bash tools/cloud/bootstrap.sh --check
 ```

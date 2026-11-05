@@ -9,12 +9,28 @@ import json
 import re
 import struct
 import hashlib
+import os
 from datetime import date
 
 ROOT = Path(__file__).resolve().parents[2]
 RESOURCE = ROOT / 'vereinsverwaltung/resources'
 SOURCES = ROOT / 'docs/vereinsverwaltung/handbuch'
 CHAPTER_LINKS = {}
+
+
+def repository_markdown(source):
+    """Rebase chapter-relative links for the combined repository document."""
+    def rebase(match):
+        url = match.group(1)
+        if url.startswith(('https://', 'http://', 'mailto:', '#', '?')):
+            return match.group(0)
+        path, separator, anchor = url.partition('#')
+        target = (SOURCES / path).resolve()
+        if not target.is_relative_to(ROOT):
+            raise ValueError('Handbook reference outside repository')
+        relative = os.path.relpath(target, ROOT / 'docs/vereinsverwaltung').replace(os.sep, '/')
+        return '](' + relative + (separator + anchor if separator else '') + ')'
+    return re.sub(r'\]\(([^)\n]+)\)', rebase, source)
 
 
 def inline(value):
@@ -154,7 +170,7 @@ def build():
             nav.append('<li data-handbook-result><a href="#' + item['id'] + '">' + html.escape(item['title']) + '</a></li>')
         nav.append('</ul></details>')
     nav.append('</div></nav>')
-    (ROOT / 'docs/vereinsverwaltung/HANDBUCH.md').write_text(source, encoding='utf-8')
+    (ROOT / 'docs/vereinsverwaltung/HANDBUCH.md').write_text(repository_markdown(source), encoding='utf-8')
     (RESOURCE / 'handbook.html').write_text('\n'.join(nav + output), encoding='utf-8')
     (RESOURCE / 'handbook-images.json').write_text(json.dumps(list(dict.fromkeys(files)), ensure_ascii=False, indent=2), encoding='utf-8')
     coverage = json.loads((SOURCES / 'menu-coverage.json').read_text(encoding='utf-8'))

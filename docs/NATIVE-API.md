@@ -186,59 +186,15 @@ Dateiassets kann über einen separaten Adapter ergänzt werden; der aktuelle
 v1-Dateivertrag bezeichnet ausdrücklich CMS-Bilder und Website-PDFs und bindet
 keine öffentlichen Inhalte an einen veränderlichen Latest-Zeiger.
 
-## Erweiterung und Prüfung
+## Weitere Ressourcen und Erweiterungen
 
-`Api/Engine` stellt ausdrücklich benannte Ressourcen bereit und verwendet die
-ursprünglichen Fachdienste; weitere Dienste erhalten einen eigenen geprüften
-Adapter mit festem DTO und Freigaben. Eigene lokale Erweiterungen verwenden die
-separaten geprüften Verträge aus [NATIVE-ERWEITERUNGEN.md](NATIVE-ERWEITERUNGEN.md),
-keinen PHP-Upload oder frei aufrufbare Methoden aus einer API-Anfrage.
+Die allgemeine Dateiablage verwendet `/api/v1/files/assets` und
+`/api/v1/files/revisions`. Die bisherigen Bild- und PDF-Verträge bleiben erhalten.
+Auch hier gelten aktuelle Rechte, Versionsbindung und die dokumentierte
+Wiederaufnahme. Die genaue Ressourcenregistrierung liegt im
+[API-Fachcode](../vereinsverwaltung/native/Api/).
 
-Die isolierten Gruppen `native-api-tokens`, `native-api`,
-`native-api-role-transactions`, `native-api-recovery` und `native-api-http` prüfen
-Originalschutz, echte Auth-/MFA-/Rechtewechsel, native Fachänderungen,
-Savepoints, tatsächlichen SQL-Fehler, verlorene Commitbestätigung, zwei parallele
-PHP-Prozesse und Abbruch einer unbestätigten Transaktion sowie echte
-HTTP-/Multipart-/Formular-/Touchabläufe. Ausschließlich eigene synthetische
-Datenbanken und Loopback-Server; keine echten Anbieteraktionen.
-
-Aktuelle lokale Abnahme am 15. Oktober 2026: 42 Token-, 95 Ressourcen-,
-23 äußere Rollen-/gemischte API-/Oberflächen-, neun Wiederaufnahmebedingungen
-und 33 bestehende Rollenbedingungen bestanden. Dazu gehören echte parallele
-API-/Oberflächenänderungen, SQL-Rollback, Abbruch, tiefe JSON-Wiederholung,
-aktuelle und historische Feldrechte einschließlich Übersetzungs-Replay sowie
-acht tatsächliche Hosting-Konfigurationsprüfungen. Tief verschachtelte
-Antworten verwenden vor Commit und beim Replay denselben JSON-Tiefenvertrag.
-
-Der registrierte vollständige HTTP-Lauf besteht 413 Bedingungen in 24 Ansichten
-bei sechs Bildschirmgrößen, einfacher/doppelter Schrift und JavaScript an/aus;
-sieben echte persönliche Formular-POSTs. Zusätzlich bestehen 252 Bedingungen
-über den tatsächlichen Hauptmanager und eigenständigen Redaktions-Einstieg:
-24 Ansichten bei 390/820/1440 Pixeln, einfacher/doppelter Schrift und JavaScript
-an/aus, acht persönliche Formular-POSTs, echte Editor-Konten, Kontoverknüpfung,
-SPA-Assets, Sitzung/CSRF, explizite und intern weitergereichte Authorization,
-fester Vereinskontext und HTTP-Methoden. Keine externen Browseranfragen oder
-JavaScriptfehler. Die Originalprüfung vergleicht sämtliche ursprünglichen
-Spalten einschließlich unsichtbarer generierter MySQL-Indexspalten; ein echter
-temporärer Eingriff muss erkannt werden und wird zurückgerollt. Im Fachlauf
-blieben 418 Tabellenoriginale, im HTTP-Lauf 409 Geschäftstabellen und jeweils
-beide privaten Schlüssel exakt; zulässige eigene Anmeldevorgänge werden separat
-abgegrenzt.
-
-Die tatsächlichen lokalen App-Einstiege und öffentliche API-Integration sind
-damit geprüft. Apache-Regeln wurden als erzeugte und aktualisierte Dateien
-geprüft; eine reale HTTPS-/Apache-Webspace- und Anbieterabnahme ist darin nicht
-enthalten. Allgemeine Dateiversionen werden als gesonderter Adapter ergänzt;
-der geprüfte Dateivertrag umfasst CMS-Bilder und unveränderliche Website-PDFs.
-
-Seitenlisten und Seitenabfragen prüfen vor dem Laden ein gemeinsames Budget von 8 MiB ursprünglichen gespeicherten Payloads. Eine zu große Auswahl liefert `413 response_too_large`; dafür `limit` verkleinern. Treffer werden danach einzeln mit Originalversion, unveränderten Rechten und tatsächlicher Bytezahl geprüft.
-
-Die nachträgliche Speichergrenze und die Erhaltung absichtlich leerer Feldgruppen sind in einer zweiten unveränderlichen Auslieferungsfassung separat geprüft: 20 Budgetbedingungen mit tatsächlich gespeicherten 11.428.982 Payloadbytes, 16-/32-/64-MiB-Prozessen, null geladenen Payloads bei zu großer Auswahl, echten Versions-/Byteänderungen und Rechteentzug; zusätzlich 95 API-, 150 Feldrechte-, 65 Feldgruppen- und 89 Abfragebedingungen. Beleg: `kulturhus-api-isolated-budget-correction.log`, SHA-256 `994a17b851cfe313584c3bb0d138dcf3f8a0d129295dcf9e3950ffd1dc957af4`. Diese fünf Gruppen ergänzen die ursprüngliche Zehngruppenabnahme.
-
-## Getrennte Auslieferungsprüfung
-
-Die kuratierte Auslieferungsfassung besteht alle zehn ausgewählten API-, Authentifizierungs-, Rechte-, Installations- und Upgradegruppen. Sie enthält ausschließlich bereits abgeschlossene Feldrechte und die neue API; laufende Arbeiten an Selektoren, allgemeinen Dateien, Kontenverwaltung und weiteren Plattformmodulen gehören nicht zu diesem Nachweis. 42 Token-, 95 Ressourcen-, 23 Transaktions- und neun Wiederaufnahmebedingungen sowie 413 HTTP- und 252 Browserbedingungen beider tatsächlichen Anwendungen bleiben grün. Die ursprünglichen Geschäftstabellen und Schlüssel bleiben exakt. Die spätere Erweiterung der Modulzahl verändert die Zahl der verglichenen Tabellen; sie ist kein Grund, neue oder alte Originalspalten aus dem Vergleich auszuschließen.
-
-Beleg: `kulturhus-api-isolated-feature-package-corrected.log`, SHA-256 `b90dcb1c8397bd44de3a6ad34c019e450bdfb10f31928f528209928071f12211`. Quellen-/Offline-Inventar werden nach den abschließenden Dokumentationsänderungen separat erneut geprüft.
-
-Die allgemeine Dateiablage ist jetzt über `/api/v1/files/assets` und `/api/v1/files/revisions` angebunden. Die bisherigen Bild- und PDF-Verträge bleiben erhalten. [Originalfassungen, Wiederaufnahme und Vertrag](NATIVE-API-DATEIEN.md).
+Erweiterungen verwenden geprüfte Adapter und die bestehenden Fachdienste.
+Beliebige PHP-Dateien, Methoden oder SQL-Anweisungen werden nicht aus API-Anfragen
+aufgerufen. [Architektur](ARCHITECTURE.md) und
+[lokale Prüfungen](LOKALE-PRUEFUNGEN-OHNE-GITHUB-CI.md) beschreiben den Entwicklungsweg.

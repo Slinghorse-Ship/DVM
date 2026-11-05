@@ -1,43 +1,39 @@
 # DVM-Dokumentation
 
-DVM verwaltet einen gemeinnützigen Verein und seine Website. Die
-[Projektbeschreibung](../README.md) erklärt Funktionen, Voraussetzungen und Grenzen.
+Die [README](../README.md) erklärt Funktionen und den schnellen Einstieg.
+Diese Übersicht führt zu den aktuellen Anleitungen für die eigene Installation.
 
-## Installation und Betrieb
+## Installieren und betreiben
 
 | Aufgabe | Anleitung |
 |---|---|
-| PHP-Webspace einrichten | [Installation mit Browser-Assistent](WEBSPACE-INSTALLATION.md) |
-| Docker verwenden | [Image, eigene Installation und Updates](../docker/dvm/README.md) |
-| OCR, KoSIT oder ERiC ergänzen | [Zusatzlaufzeiten vorbereiten und verbinden](ZUSATZLAUFZEITEN.md) |
-| Eigene Zugänge und Registrierungen | [SMTP, FinTS, ELSTER, Meta und weitere Anbieter](VERBINDUNGEN-UND-ZUGANGSDATEN.md) |
-| Hintergrundaufgaben einrichten | [Plesk/cPanel und private Zeitpläne](HOSTING-ZEITPLAENE.md) |
-| DVM aktualisieren | [Paketupgrade](PAKET-UPGRADE.md) |
-| Daten sichern und wiederherstellen | [Betreiberverfahren](NATIVE-SICHERUNG-WIEDERHERSTELLUNG.md) |
-| Lizenzbedingungen verstehen | [Gemeinnützige Nutzung und Drittanbieter](LIZENZ.md), [ERiC-Bedingungen](ERIC-LIZENZ.md) |
+| DVM auf PHP-Webspace installieren | [Voraussetzungen, Upload und Browser-Assistent](WEBSPACE-INSTALLATION.md) |
+| DVM mit Docker starten | [Build, eigene Passwörter, Volumes und HTTPS](../docker/dvm/README.md) |
+| OCR für Scans und Fotos ergänzen | [OCR einrichten](ZUSATZLAUFZEITEN.md#ocr-einrichten) |
+| XRechnung-XML mit KoSIT prüfen | [Java und KoSIT einrichten](ZUSATZLAUFZEITEN.md#xrechnung-mit-kosit-einrichten) |
+| ELSTER/ERiC ergänzen | [Hersteller-ID, Bibliothek, Formularkatalog und Prüfung](ZUSATZLAUFZEITEN.md#eric-einrichten) |
+| Eigene Konten und API-Schlüssel verbinden | [Zugänge und Registrierungen](VERBINDUNGEN-UND-ZUGANGSDATEN.md) |
+| Einrichtung abschließen und sicher betreiben | [Betrieb](BETRIEB.md), [Hosting-Zeitpläne](HOSTING-ZEITPLAENE.md) |
+| Eine vorhandene Installation aktualisieren | [Paketupgrade](PAKET-UPGRADE.md) |
+| Daten und Schlüssel wiederherstellen | [Sicherung und Wiederherstellung](NATIVE-SICHERUNG-WIEDERHERSTELLUNG.md) |
 
-## Bedienung
+## Im Verein arbeiten
 
-Die Hilfe im Vereinsmanager öffnet die passende Aufgabenbeschreibung innerhalb
-der Anwendung. Das [Handbuch](../vereinsverwaltung/resources/handbook.html) beschreibt
-Mitglieder, Finanzen, Dokumente, Kommunikation, Website und Einstellungen.
+[Bedienübersicht](BEDIENUNG.md) · [Vollständiges Handbuch](vereinsverwaltung/HANDBUCH.md) ·
+[Excel-Mitgliedervorlage](vereinsverwaltung/vorlagen/DVM-Mitglieder-Vorlage.xlsx) ·
+[Jahresabschluss und E-Bilanz-Grenzen](EBILANZ-UMGEBUNGEN.md)
 
-| Bereich | Weiterführende Anleitung |
-|---|---|
-| Website | [Vorlagen und Vorschau](CMS-WEBSITE-VORLAGEN.md), [Inhalte und Startseite](CMS-STARTSEITE.md) |
-| Newsletter und Social | [Veranstaltungsentwürfe und Medienwahl](SOCIAL-VERANSTALTUNGSENTWUERFE.md), [Bildquellen](SOCIAL-BILDQUELLEN.md) |
-| Gemeinsame Postfächer | [Nachrichten und Mailverläufe](SOCIAL-GESPRAECHSLISTE.md) |
-| Vereinstermine | [Kalenderquellen](KALENDER-QUELLEN.md) |
-| Jahresabschluss und E-Bilanz | [Unterstützte Umgebungen und Grenzen](EBILANZ-UMGEBUNGEN.md) |
+Die Aufgabenhilfe öffnet sich auch direkt über **Hilfe** im Vereinsmanager.
 
-## Technische Referenz
+## Lizenz und Technik
 
-[Architektur](ARCHITECTURE.md), [Projektstruktur](PROJEKTSTRUKTUR.md),
-[Cloud-Entwicklungsumgebung](CLOUD-NEUSTART-AUS-GIT.md),
-[lokale Prüfungen](LOKALE-PRUEFUNGEN-OHNE-GITHUB-CI.md) und
-[Paketprüfung](../distribution/ABNAHME.md).
+[Gemeinnützige Nutzung](LIZENZ.md) · [ERiC-Vertrag und Pflichtinformationen](ERIC-LIZENZ.md) ·
+[Architektur und Projektstruktur](ARCHITECTURE.md) · [Native API](NATIVE-API.md) ·
+[Abhängigkeiten und Lizenzen](native-dependency-inventory.md) ·
+[Entwicklungsumgebung](CLOUD-NEUSTART-AUS-GIT.md) ·
+[Lokale Prüfungen](LOKALE-PRUEFUNGEN-OHNE-GITHUB-CI.md)
 
-Detaillierte Fachverträge und datierte Prüfnachweise bleiben als technische
-Referenz erhalten. Ein früherer Einzeltest bestätigt nicht die Einrichtung einer
-neuen Installation; dafür gelten die aktuellen Installationsanleitungen und die
-auf dem eigenen Hosting ausgeführten Prüfungen.
+Die Unterordner enthalten die Kapitelquellen des Handbuchs, die Mitgliedervorlage
+und unveränderte technische Prüfnachweise. Lizenztexte der Laufzeitpakete liegen
+bei den jeweiligen Paketen. Alte Arbeitsprotokolle und doppelte Einzelanleitungen
+gehören nicht zur aktuellen Dokumentation.

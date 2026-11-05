@@ -27,7 +27,7 @@ und `tests/editor-lifecycle-browser.cjs`; vom Projektstamm aus ausführen.
 Breiten, tatsächliche gerenderte/exportierte/gespeicherte Klonpixel und den
 Originalschutz. Das Servermodul `Communication/PhotoClones` prüft dieselben
 Grenzen: 64 Stempel je Foto, 256 je Dokument, Radius 1–25 Prozent. Alte Dokumente
-erhalten keine neue leere Stempelliste. [Bedienung](../../../../../docs/BILDSTUDIO-KLONSTEMPEL.md).
+erhalten keine neue leere Stempelliste. [Bedienung](../../../../../docs/BEDIENUNG.md#website-und-bildstudio).
 
 `tests/photo-soft-clones-browser.mjs` und `tests/native-photo-soft-clones.php`
 prüfen weiche Ränder in einer ausschließlich neuen isolierten CI-Datenbank.
@@ -44,4 +44,4 @@ bleiben auf das unveränderte Original bezogen. Striche bleiben bis zum bewusste
 Anwenden außerhalb des Editor-Dokuments. Ein eigener AbortController entfernt
 alle Ereignisse beim Schließen; die drei lokalen Canvas-Puffer werden geleert.
 Das gemeinsame Editor-Signal beendet auch eine noch ladende Fotoansicht.
-[Bedienung](../../../../../docs/BILDSTUDIO-DIREKTRETUSCHE.md).
+[Bedienung](../../../../../docs/BEDIENUNG.md#website-und-bildstudio).

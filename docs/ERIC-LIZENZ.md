@@ -62,5 +62,5 @@ aktiviert keine Übermittlung.
 
 Die anschließende private Einrichtung von Hersteller-ID, Formularkatalog,
 Laufzeit und gegebenenfalls eigenem Zertifikat bleibt Aufgabe des Betreibers.
-[Programmpaket und Prüfsummen](ERIC-ORIGINALPAKETE.md),
-[private Einrichtung](vereinsverwaltung/ELSTER-ERIC-INTEGRATION.md).
+[Programmpaket und Prüfsummen](ZUSATZLAUFZEITEN.md#eric-einrichten),
+[private Einrichtung](ZUSATZLAUFZEITEN.md#eric-einrichten).

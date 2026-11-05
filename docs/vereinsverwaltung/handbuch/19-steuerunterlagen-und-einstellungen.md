@@ -1736,7 +1736,7 @@ Die Bedienung folgt Deutsch/Englisch; originale Kontenbezeichnungen bleiben erha
 
 ### Eingegangene Rechnungsanhänge prüfen und weiter zuordnen
 
-**Menüweg:** Finanzen → Rechnungseingang. Voraussetzung: Finanz-Leserecht und Zugriff auf die Datei, für Erfassung und Zuordnung Finanz-Bearbeitungsrecht. Die vollständige Schrittfolge steht in [Kapitel 7: Rechnungseingang](#kapitel-7). Die Dokumentablage enthält dieselben Originaldateien; dort muss keine zweite Rechnung angelegt werden.
+**Menüweg:** Finanzen → Rechnungseingang. Voraussetzung: Finanz-Leserecht und Zugriff auf die Datei, für Erfassung und Zuordnung Finanz-Bearbeitungsrecht. Die vollständige Schrittfolge steht in [Kapitel 7: Rechnungseingang](07-beitraege-rechnungen-zahlungen.md). Die Dokumentablage enthält dieselben Originaldateien; dort muss keine zweite Rechnung angelegt werden.
 
 1. Öffne bei der gewünschten Eingangsdatei **Prüfen und zuordnen** und sieh dir die Vorschau sowie die Begleit-E-Mail an. Jeder unterstützte PDF-, XML-, PNG- oder JPG-Anhang erhält einen eigenen Eintrag mit seinem Dateinamen als Titel. Gleiche Dateiinhalte werden auch bei Weiterleitungen und wiederholten Abrufen nicht doppelt gespeichert.
 2. Kontrolliere den Titel und passe ihn bei Bedarf an, etwa **Bühnenreparatur – September**. Als Dokumentdatum ist zunächst das Eingangsdatum der Nachricht gesetzt. Übernimm stattdessen das tatsächliche Rechnungsdatum aus dem Beleg, wenn das passend ist.

@@ -17,7 +17,7 @@ diese Werte nicht automatisch, die entsprechenden PHP-Einstellungen beim Hoster
 setzen. Ein abgeschnittener Rechnungsentwurf wird vor einer neuen Ausgabe
 abgewiesen; vollständige Originaleingaben im Browser behalten.
 Damit passen auch mehrere große Kameraoriginale in den Server-Fotoweg;
-[Größen, Speicher und tatsächliche Prüfung](GROSSE-KAMERAORIGINALE.md).
+[Größen, Speicher und tatsächliche Prüfung](BEDIENUNG.md).
 Damit passen auch größere gespeicherte MP4-Reels und Mehrfachauswahlen durch
 die PHP-Anfrage. Das fachliche Videolimit bleibt 100 MiB. Bereits vorhandene
 ausdrückliche eigene Werte bleiben erhalten; PHP-FPM/CGI und Hostingvorgaben
@@ -29,7 +29,7 @@ vorbereitet werden. Dafür Node.js mit ausführbarem `proc_open` einrichten;
 `VEREIN_PHOTO_NODE` benennt bei Bedarf den Node-Pfad. Die gebündelten Codecs
 werden ausschließlich lokal verwendet. Normale Fotos und die übliche lokale
 Browservorbereitung benötigen diese zusätzliche Laufzeit nicht.
-[Grenzen und Originalschutz](PRESSE-FOTOUPLOAD-MODULRECHTE.md).
+[Grenzen und Originalschutz](BEDIENUNG.md#mail-und-newsletter).
 
 ## Voraussetzungen
 
@@ -127,7 +127,7 @@ Meta- und StadtLand.Funk-Kontoverwaltung sowie persönliche PHP-HTTP-Abrufe sind
 im Paket enthalten. Konten nach der Installation unter Website-Verbindungen
 einrichten; für automatische Kommentar-/Nachrichtenprüfung den getrennten
 `--social-check`-Zeitplan und die Kanalpläne im Social Hub verwenden.
-[Aufruf und unterschiedliche Abrufzeiten](NATIVE-HINTERGRUNDJOBS.md).
+[Aufruf und unterschiedliche Abrufzeiten](HOSTING-ZEITPLAENE.md).
 Gespeicherte Passwörter/Tokens liegen verschlüsselt in MySQL; die vorhandene
 private Initialisierung erstellt den Schlüssel außerhalb des Webbereichs.
 
@@ -210,7 +210,7 @@ aber ausschließlich Verbindungs-/Laufzeitnachweise. Er akzeptiert keine Versand
 oder Veröffentlichungsoptionen und beachtet Upgrade-/Wiederherstellungssperren.
 Für reinen Webspace ohne CLI-Zeitplan bleibt „Prüfen“ im berechtigten Manager
 verfügbar. Das Öffnen einer Statusansicht startet keinen Anbieterabruf.
-[Prüfumfang, Verlauf und öffentliche Auswahl](SYSTEMSTATUS-VERFUEGBARKEIT.md).
+[Prüfumfang, Verlauf und öffentliche Auswahl](HOSTING-ZEITPLAENE.md).
 
 Das Upload-Paket enthält den privaten CLI-Versandworker unter
 `app/vereinsverwaltung/bin/native-delivery-worker.php`. Der Hosting-Zeitplan kann
@@ -234,7 +234,7 @@ Minute einplanen. Gerätewahl und persönliche Profil-/Rollen-/Sperrzuordnung
 verwenden die persönliche DVM-Anmeldung. Ursprüngliche Mail-/Rechnungs-/Beitragsjobs
 sind angeschlossen; `--receive` und `--push` aktivieren die getrennten eigenen
 Postfach- und Pushwege. Die ausdrückliche Beitragsautomatik und Betriebsanzeige
-sind in [Hintergrundaufgaben](NATIVE-HINTERGRUNDJOBS.md) beschrieben.
+sind in [Hintergrundaufgaben](HOSTING-ZEITPLAENE.md) beschrieben.
 
 Der PHP-Browser-Installer benötigt kein `proc_open`. PDF-/OCR-/Video- und amtliche
 Steuerwerkzeuge haben eigene Programm-/Plattformvoraussetzungen. Geplante Jobs
@@ -259,15 +259,6 @@ freigegebene Beiträge erscheinen darin nicht. Die Suchmaschinenwahl hat eine
 eigene Version und Historie; Vereinsdaten und freigegebene Bildfassungen bleiben
 bei ihrer Änderung erhalten. Der CMS-Schemastand dafür ist **5**.
 
-## Entwicklungsprüfung
-
-`native-webspace-installer.php` prüft die echte HTTP-Einrichtung auf synthetischem
-MySQL mit abgeschalteten Prozess-/Shell-Funktionen, geprüftem Upload, Wiederaufnahme,
-privaten Schlüsseln, eigenem Verein und Abschluss-Sperre. Mit
-`DVM_INSTALLER_BROWSER=1` wird derselbe Ablauf im wirklichen Chromium ausgeführt;
-1440/820/390 Pixel, Tastatur, Fortschritt, Abschluss und native Anmeldung sind geprüft.
-Dieser Test läuft auch in der GitHub-Prüfgruppe und im Git-eigenen Cloud-Startskript.
-
 ## Optionale serverseitige Fotoaufbereitung
 
 Das Paket enthält beide lokalen Foto-Serverprogramme und ihre Codecs samt
@@ -277,4 +268,4 @@ VEREIN_PHOTO_NODE sowie PHP-Prozessfunktionen. Setup und privater Systemstatus
 zeigen die Voraussetzungen getrennt von einer tatsächlichen Funktionsprüfung.
 Kleine Fotos und die Browservorbereitung bleiben unabhängig davon nutzbar.
 PHP-Anforderungsspeicher, nativer HTTP-Prozessspeicher und Node-Speicher werden
-getrennt betrachtet. [Bedienung und Grenzen](CMS-FOTOS-SERVERVORBEREITUNG.md).
+getrennt betrachtet. [Bedienung und Grenzen](BEDIENUNG.md#website-und-bildstudio).

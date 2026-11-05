@@ -123,22 +123,40 @@ Registrierungen stehen, erklärt die
 Tatsächliche Schlüssel und Passwörter bleiben außerhalb Git und des öffentlichen
 Webbereichs.
 
-### Zusatzfunktionen einrichten
+### 4. OCR, XRechnung und ERiC bei Bedarf ergänzen
 
-E-Mail-Versand und gemeinsame Postfächer benötigen eigene Mailzugänge;
-Facebook/Instagram und Eventbrite eigene passende Konten und Berechtigungen.
-FinTS benötigt die eigene Registrierung sowie ein unterstütztes Bankkonto und
-TAN-Verfahren. ELSTER/ERiC benötigt eine passende private Laufzeit,
-Herstellerkonfiguration und das eigene Zertifikat.
+Diese drei Funktionen haben unterschiedliche Aufgaben. Die normale
+Grundinstallation aktiviert sie nicht automatisch.
 
-PDF-Ausgabe, OCR, serverseitige Fotoaufbereitung und experimentelle Videos haben
-zusätzliche Laufzeit- und Hostingvoraussetzungen. Das optionale OCR-/PDF-Paket
-wird mit `--with-ocr` erstellt. KoSIT und ERiC werden getrennt privat eingerichtet.
-Der [gemeinsame Vorbereitungsbefehl und die anschließende Einrichtung](docs/ZUSATZLAUFZEITEN.md)
-beschreiben alle drei Gruppen. Die
-[Installationsanleitung](docs/WEBSPACE-INSTALLATION.md#zusatzfunktionen) und der
-Systemstatus zeigen die Voraussetzungen. Nur die tatsächlich benötigten Dienste
-aktivieren und testen.
+| Funktion | Einrichtung |
+|---|---|
+| **OCR** liest Text aus Fotos und gescannten Rechnungen. | Für eine neue Installation das Upload-Paket mit `--with-ocr` bauen und OCR im Assistenten auswählen. Erforderlich sind Linux x86_64, PHP-Prozessfunktionen sowie Landlock ABI 6 und seccomp. |
+| **XRechnung/KoSIT** prüft strukturierte XML-Rechnungen nach den mitgelieferten Regeln. | Die Gruppe `kosit` vorbereiten, die mitgelieferte Java-Laufzeit und KoSIT privat konfigurieren und `VEREIN_KOSIT_RUNTIME` setzen. XML-Rechnungen brauchen keine OCR. |
+| **ELSTER/ERiC** ergänzt die amtliche Steuerprüfung und den gesondert freizugebenden Übermittlungsweg. | Die Gruppe `eric` vorbereiten; eigene gültige Hersteller-ID, Formularkatalog, private Konfiguration und gegebenenfalls eigenes Zertifikat einrichten. Vertragsinformationen und aktuelle Mindestversion vor Nutzung prüfen. |
+
+Das OCR-Paket für eine **neue** Installation wird so erstellt:
+
+```sh
+php distribution/build-webspace.php --target=/ABSOLUTER/NEUER/PFAD/dvm-upload --with-ocr
+```
+
+Für die getrennte Ergänzung vorhandene Offline-Pakete außerhalb des Webroots vorbereiten:
+
+```sh
+php distribution/prepare-runtimes.php --target=/PRIVAT/NEUE-DVM-ZUSATZLAUFZEITEN --components=ocr,kosit,eric
+```
+
+Nur benötigte Gruppen auswählen. Der zweite Befehl entpackt und prüft Dateien;
+er aktiviert keine bestehende Installation. Die anschließende Verbindung,
+Konfigurationsfelder und Funktionsprüfung stehen gemeinsam in der
+[Schrittfolge für OCR, XRechnung/KoSIT und ERiC](docs/ZUSATZLAUFZEITEN.md).
+Die Schritte gelten auch für Docker; dort müssen die endgültigen Containerpfade
+und Dateirechte verwendet werden. Das Standard-Dockerimage enthält diese drei
+Zusatzlaufzeiten nicht.
+
+Mail, Social-Konten und Banking anschließend mit den eigenen
+[Zugängen](docs/VERBINDUNGEN-UND-ZUGANGSDATEN.md) einrichten.
+[Betrieb und Hintergrundaufgaben](docs/BETRIEB.md) beschreiben den nächsten Schritt.
 
 ## Hilfe und technische Dokumentation
 
@@ -151,9 +169,11 @@ Vereinsmanagers und berücksichtigt die eigenen Rechte.
 | Paketaufbau und CLI-Einrichtung | [Installationspakete](distribution/README.md) |
 | Automatische Aufgaben | [Zeitpläne für Plesk und cPanel](docs/HOSTING-ZEITPLAENE.md) |
 | Updates | [Paketupgrade](docs/PAKET-UPGRADE.md) |
-| Weitere Bedien- und Fachanleitungen | [Dokumentation](docs/README.md) |
+| Tägliche Arbeit | [Bedienübersicht](docs/BEDIENUNG.md), [Handbuch](docs/vereinsverwaltung/HANDBUCH.md) |
+| OCR, XRechnung und ERiC | [Vorbereiten, verbinden und prüfen](docs/ZUSATZLAUFZEITEN.md) |
+| Alle Anleitungen | [Dokumentation](docs/README.md) |
 | Mitglieder aus Excel übernehmen | [Vorlage mit Anleitung](docs/vereinsverwaltung/vorlagen/DVM-Mitglieder-Vorlage.xlsx) |
-| Aufbau des Quellcodes | [Architektur](docs/ARCHITECTURE.md), [Projektstruktur](docs/PROJEKTSTRUKTUR.md) |
+| Aufbau des Quellcodes | [Architektur und Projektstruktur](docs/ARCHITECTURE.md) |
 
 ## Lizenz
 

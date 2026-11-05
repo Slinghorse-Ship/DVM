@@ -1,6 +1,6 @@
 # HSE-Referenzen und lokale Formularvorlagen
 
-Prüfstand: 7. Oktober 2026. Arbeitsverzeichnis: `C:/Users/wehla/.codex/worktrees/eb9a/Kulturhus`, Branch `layoutauswahl`. Diese Recherche hat ausschließlich öffentlich zugängliche Quellen lesend geprüft. Es wurden keine Konten verwendet, keine Formulare abgeschickt und keine Markenassets übernommen.
+Quellenprüfung vom 7. Oktober 2026. Diese Recherche hat ausschließlich öffentlich zugängliche Quellen lesend geprüft. Es wurden keine Konten verwendet, keine Formulare abgeschickt und keine Markenassets übernommen.
 
 ## Ergebnis
 

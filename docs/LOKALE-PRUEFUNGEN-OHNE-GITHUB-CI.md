@@ -1,11 +1,9 @@
 # Lokale Softwareabnahme ohne GitHub-Quote
 
-Stand: 3. November 2026. Die GitHub-Quote ist aufgebraucht. Die drei Workflows
-starten deshalb ausschließlich manuell. Für die weitere Entwicklung und lokale
-Abnahme werden weder GitHub-CLI noch Actions benötigt. Normale Git-Pushes sichern
-weiterhin `main`; sie lösen keine gehosteten Prüfungen aus. Bereits laufende Jobs
-werden durch diese Umstellung nicht abgebrochen. Konto- und Ausgabenlimits bleiben
-beim Kontoinhaber.
+Die GitHub-Workflows werden ausschließlich manuell gestartet. Die lokale
+Prüfstrecke benötigt weder GitHub-CLI noch Actions und funktioniert unabhängig
+von einem gehosteten Prüfkontingent. Für Änderungen zuerst passende Gruppen
+verwenden; vollständige Abnahmen besitzen einen eigenen Lauf und Ergebnisordner.
 
 ## Vorhandene Umgebung weiterverwenden
 
@@ -46,10 +44,9 @@ registrierten Phasen ausgewählt. Die Reihenfolge ist festgelegt:
 
 Die Namen werden aus den bestehenden Registern gelesen. Eine neue native
 Browsergruppe ohne Eintrag im vollständigen Aufrufplan bricht die Planung ab.
-Die aktuelle Registrierung enthält 537 Kerngruppen und 362 Fachbrowseraufrufe;
-der abschließende Installerbrowser ist zusätzlich ausgewählt. Die endgültige
-Schrittzahl steht im ausgegebenen Plan. Zahlen älterer Commits werden nicht als
-aktueller vollständiger Nachweis übernommen.
+Die tatsächlich registrierten Gruppen und Schrittzahlen stehen im ausgegebenen
+Plan. Zahlen oder Ergebnisse älterer Commits gelten nicht als aktueller vollständiger
+Nachweis. Der abschließende Installerbrowser wird gesondert ausgewählt.
 
 `core` startet keine der sechs abschließenden Installationsgruppen. Sie werden
 zur endgültigen Abnahme gesammelt in `installation` ausgeführt. Ein bereits
@@ -109,7 +106,7 @@ verfügbar; solche Teilergebnisse sind kein vollständiger Gesamtlauf.
 Der Prüflauf bewertet die lokale Software und ihre synthetischen Verträge. Er
 ändert keine Anbieterkennungen, verarbeitet keine echten Zahlungen und erteilt
 keine steuerliche oder physische Gerätefreigabe. Die tatsächlich nachgewiesenen
-iPhone-/iPad-Xcode-Ergebnisse bleiben in der [App-Dokumentation](NATIVE-APPS-UMSETZUNG.md)
+iPhone-/iPad-Xcode-Ergebnisse bleiben in der [App-Dokumentation](BEDIENUNG.md)
 erhalten. Android-Gerätebedienung benötigt eine arbeitsfähige eigene Laufzeit;
 fehlendes KVM oder eine abgestürzte System-WebView ist kein bestandener Test.
 

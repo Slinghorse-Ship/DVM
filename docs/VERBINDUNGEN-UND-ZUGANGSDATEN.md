@@ -88,7 +88,7 @@ Webhooks melden Änderungen; der Social-Abgleich liest die berechtigten Original
 
 [Meta: Graph API](https://developers.facebook.com/docs/graph-api/get-started/),
 [Meta: Webhooks](https://developers.facebook.com/docs/graph-api/webhooks/getting-started/),
-[DVM-Empfang einrichten](META-WEBHOOKS.md).
+[DVM-Empfang einrichten](BEDIENUNG.md#social-hub).
 
 ## Eventbrite und Zahlungsanbieter
 
@@ -124,7 +124,7 @@ nicht automatisch. Für diesen Browser-Push-Weg werden keine eigenen
 APNs- oder FCM-Entwicklerschlüssel eingetragen. Die Browser melden ihre
 Geräteabonnements nach ausdrücklicher Erlaubnis selbst an.
 [Technischer Standard VAPID](https://www.rfc-editor.org/rfc/rfc8292),
-[DVM-Geräteeinrichtung](VEREINSCHAT-GERAETEPUSH.md).
+[DVM-Geräteeinrichtung](BEDIENUNG.md#mail-und-newsletter).
 
 **Wallet:** Unter **Einstellungen → Mitgliedsausweise & Wallet** richtet der
 zentrale Superuser die gewünschten Anbieter ein. Der Pass enthält ausschließlich
