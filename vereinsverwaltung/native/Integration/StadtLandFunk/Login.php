@@ -273,6 +273,38 @@ final class Login
         ];
     }
 
+    public function organizations(#[\SensitiveParameter] string $token): array
+    {
+        $rows = $this->providerRead($token, '/grapevine/organization/own/home-senders');
+        if (!array_is_list($rows) || count($rows) > 1000) throw new \DomainException('Vereinsprofile konnten nicht bestätigt werden.');
+        $out = [];
+        foreach ($rows as $row) {
+            if (!in_array($row['role'] ?? '', ['ADMIN','FUNKER'], true)) continue;
+            $id = Sender::id($row['id'] ?? null); $name = $row['name'] ?? null;
+            if (isset($out[$id]) || !is_string($name) || trim($name) === '' || strlen($name) > 500 || preg_match('//u', $name) !== 1) throw new \DomainException('Vereinsprofil prüfen.');
+            $out[$id] = ['id'=>$id,'name'=>$name,'role'=>$row['role']];
+        }
+        return array_values($out);
+    }
+
+    public function organization(#[\SensitiveParameter] string $token, string $id, string $home): array
+    {
+        Sender::id($id); $selected = null;
+        foreach ($this->organizations($token) as $row) if ($row['id'] === $id) $selected = $row;
+        if ($selected === null) throw new \DomainException('Für diesen Vereinsabsender fehlen die Anbieterrechte.');
+        $full = $this->providerRead($token, '/grapevine/organization/'.$id);
+        if (($full['id'] ?? '') !== $id || !in_array($full['role'] ?? '', ['ADMIN','FUNKER'], true) || !in_array($home, $full['geoAreaIds'] ?? [], true)) throw new \DomainException('Vereinsabsender oder Zielgebiet nicht bestätigt.');
+        $options = $this->providerRead($token, '/grapevine/post-creation/options?creationContext=MEIN_ORT');
+        foreach ($options['senders'] ?? [] as $sender) if (($sender['senderType'] ?? '') === 'ORGANIZATION' && ($sender['organization']['id'] ?? '') === $id)
+            foreach ($sender['channels'] ?? [] as $channel) if (($channel['channelType'] ?? '') === 'HAPPENING' && in_array('HAPPENING', $channel['postTypes'] ?? [], true)) return $selected;
+        throw new \DomainException('Der Vereinsabsender darf hier keine Veranstaltungen veröffentlichen.');
+    }
+
+    private function providerRead(#[\SensitiveParameter] string $token, string $path): array
+    {
+        return self::json(($this->http)('GET', Http::API.$path, ['Accept: application/json','Cache-Control: no-cache','Authorization: Bearer '.$token,'appVariantIdentifier: '.self::APP], null));
+    }
+
     public function read(
         #[\SensitiveParameter] string $token,
         string $path,
@@ -280,6 +312,7 @@ final class Login
     ): array {
         if (
             (!in_array(parse_url($path,PHP_URL_PATH),["/grapevine/post/own","/grapevine/comment"],true)
+                && !preg_match('~\A/grapevine/organization/[A-Za-z0-9_-]{1,100}/posts\z~D', (string)parse_url($path,PHP_URL_PATH))
                 && (!$publication || !preg_match('~\A/grapevine/post/[A-Za-z0-9_-]{1,50}\z~D',$path))) ||
             str_contains($path, "#") ||
             !str_starts_with($path, "/")
@@ -292,6 +325,7 @@ final class Login
                 Http::API . $path,
                 [
                     "Accept: application/json",
+                    "Cache-Control: no-cache",
                     "Authorization: Bearer " . $token,
                     "appVariantIdentifier: " . self::APP,
                 ],
@@ -301,14 +335,16 @@ final class Login
     }
 
     /** The observed app comment endpoint; never retries a write. */
-    public function reply(#[\SensitiveParameter] string $token, string $post, string $comment, string $text): array
+    public function reply(#[\SensitiveParameter] string $token, string $post, string $comment, string $text, string $organization = ''): array
     {
         foreach ([$post, $comment] as $id) if (!preg_match('/^[A-Za-z0-9_:-]{1,200}$/D', $id)) throw new \DomainException('Anbieterkennung ungültig.');
         if ($text === '' || preg_match('//u', $text) !== 1 || preg_match_all('/./us', $text) > 2000 || preg_match('/[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]/', $text)) throw new \DomainException('Antworttext prüfen.');
+        $payload = ['postId'=>$post,'replyToCommentId'=>$comment,'text'=>$text];
+        if ($organization !== '') $payload['organizationId'] = Sender::id($organization);
         $response = ($this->http)('POST', Http::API . '/grapevine/comment/event/commentCreateRequest', [
             'Accept: application/json', 'Content-Type: application/json',
             'Authorization: Bearer ' . $token, 'appVariantIdentifier: ' . self::APP,
-        ], json_encode(['postId' => $post, 'replyToCommentId' => $comment, 'text' => $text], JSON_THROW_ON_ERROR));
+        ], json_encode($payload, JSON_THROW_ON_ERROR));
         // Only an explicit, completely readable provider error is a known rejection.
         if (in_array($response['status'] ?? 0, [400, 401, 403, 404, 405, 410, 413, 415, 422], true)) {
             try { $error = json_decode($response['body'] ?? '', true, 32, JSON_THROW_ON_ERROR); } catch (\Throwable) { $error = null; }
@@ -330,12 +366,19 @@ final class Login
     /** Fixed observed app endpoint; a write is never automatically repeated. */
     public function createEvent(#[\SensitiveParameter] string $token,array $event):array
     {
-        $keys=['title','text','startTime','endTime','temporaryMediaItemIds','customLocationDefinition','hiddenForOtherHomeAreas'];
+        $keys=['title','text','startTime','endTime','temporaryMediaItemIds','customLocationDefinition','hiddenForOtherHomeAreas','organizationId','geoAreaIds'];
         if(array_diff(array_keys($event),$keys)||!is_string($event['title']??null)||trim($event['title'])===''||!is_string($event['text']??null)||!is_int($event['startTime']??null)||$event['startTime']<=0||(isset($event['endTime'])&&(!is_int($event['endTime'])||$event['endTime']<=$event['startTime']))||($event['hiddenForOtherHomeAreas']??false)!==false||!is_array($event['temporaryMediaItemIds']??null)||!array_is_list($event['temporaryMediaItemIds'])||count($event['temporaryMediaItemIds'])!==1||!is_string($event['temporaryMediaItemIds'][0])||!preg_match('/\A[A-Za-z0-9_-]{1,50}\z/D',$event['temporaryMediaItemIds'][0])||!is_array($event['customLocationDefinition']??null))throw new \DomainException('Veranstaltungsfassung nicht bestätigt.');
         $location=$event['customLocationDefinition'];
         if(!is_string($location['locationName']??null)||trim($location['locationName'])===''||array_diff(array_keys($location),['locationName','locationLookupString','addressStreet','addressZip','addressCity']))throw new \DomainException('Ursprünglichen Veranstaltungsort prüfen.');
         foreach([$event['title'],$event['text'],...array_values($location)]as$text)if(!is_string($text)||preg_match('//u',$text)!==1||preg_match('/[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]/',$text))throw new \DomainException('Ursprüngliche Veranstaltungsangaben prüfen.');
-        return self::json(($this->http)('POST',Http::API.'/grapevine/event/happeningCreateRequest',['Accept: application/json','Content-Type: application/json','Authorization: Bearer '.$token,'appVariantIdentifier: '.self::APP],json_encode($event,JSON_THROW_ON_ERROR|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES)));
+        $path = '/grapevine/event/happeningCreateRequest';
+        if (isset($event['organizationId'])) {
+            Sender::id($event['organizationId']);
+            if (!is_array($event['geoAreaIds'] ?? null) || !array_is_list($event['geoAreaIds']) || count($event['geoAreaIds']) !== 1) throw new \DomainException('Freigegebenes Vereinsgebiet fehlt.');
+            Sender::id($event['geoAreaIds'][0]);
+            $event += ['creationContext'=>'MEIN_ORT','postType'=>'HAPPENING']; $path='/grapevine/post-creation/create';
+        } elseif (isset($event['geoAreaIds'])) throw new \DomainException('Persönliches Zielgebiet wird vom Anbieter bestimmt.');
+        return self::json(($this->http)('POST',Http::API.$path,['Accept: application/json','Content-Type: application/json','Authorization: Bearer '.$token,'appVariantIdentifier: '.self::APP],json_encode($event,JSON_THROW_ON_ERROR|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES)));
     }
 
     public static function json(array $response): array

@@ -68,6 +68,8 @@ final class Workspace extends BaseWorkspace
                 [
                     "stadtlandfunk-connect",
                     "stadtlandfunk-verify",
+                    "stadtlandfunk-senders",
+                    "stadtlandfunk-sender",
                     "stadtlandfunk-disconnect",
                 ],
                 true,
@@ -95,6 +97,11 @@ final class Workspace extends BaseWorkspace
                 );
             } elseif ($op === "stadtlandfunk-verify") {
                 $connection->verify($this->access, $version);
+            } elseif ($op === 'stadtlandfunk-senders') {
+                $connection->loadSenders($this->access, IndexingPanel::version($post));
+            } elseif ($op === 'stadtlandfunk-sender') {
+                if (!is_string($post['organization_id']??null)) throw new \DomainException('Absender auswählen.');
+                $connection->selectSender($this->access, $post['organization_id'], IndexingPanel::version($post));
             } else {
                 if (!isset($post["disconnect_confirm"])) {
                     throw new \DomainException(

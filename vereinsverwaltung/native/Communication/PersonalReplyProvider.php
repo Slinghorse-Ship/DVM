@@ -16,7 +16,7 @@ final class PersonalReplyProvider implements ReplyProvider
         $identity = $this->connection->replyIdentity($access, $binding);
         $object = Db::run($this->db, "SELECT kind,payload_json FROM native_social_objects WHERE club_id=? AND channel='stadtlandfunk' AND remote_id=?" . ($this->db->inTransaction() ? ' FOR SHARE' : ''), [$access->club(), $source['parent_id']])->fetch();
         $payload = $object ? json_decode($object['payload_json'], true, 32, JSON_THROW_ON_ERROR) : [];
-        if (!$object || $object['kind'] !== 'event') throw new DomainException('Eigener StadtLand.Funk-Termin fehlt.');
+        if (!$object || !in_array($object['kind'], ['event','post'], true)) throw new DomainException('Eigener StadtLand.Funk-Beitrag fehlt.');
         foreach ($identity as $key => $value) if (($payload[$key] ?? null) !== $value) throw new DomainException('Originaltermin zuerst mit der aktuellen StadtLand.Funk-Verbindung abgleichen.');
         if (($source['kind'] ?? '') === 'comment') {
             if (!is_string($source['payload']['creator_id'] ?? null)) throw new DomainException('Ursprünglichen Kommentar zuerst erneut mit StadtLand.Funk abgleichen.');
@@ -45,7 +45,7 @@ final class PersonalReplyProvider implements ReplyProvider
         $remote = SocialHub::remoteId($original['remote_id']);
         $creator = SocialHub::remoteId($original['creator_id'] ?? null);
         $current = $this->comments($access, $account, $source['parent_id'])[$remote] ?? null;
-        if (!$current || !empty($current['deleted']) || ($current['text'] ?? null) !== $original['text'] || ($current['creator']['id'] ?? null) !== $creator || $creator === $account['account_id'] || in_array($current['filterStatus'] ?? '', ['BLOCKED', 'FLAGGED'], true)) {
+        if (!$current || !empty($current['deleted']) || ($current['text'] ?? null) !== $original['text'] || ($current['creator']['id'] ?? null) !== $creator || $creator === $account['account_id'] || (!empty($account['organization_id']) && ($current['organizationId']??'')===$account['organization_id']) || in_array($current['filterStatus'] ?? '', ['BLOCKED', 'FLAGGED'], true)) {
             throw new DomainException('Kommentar beim Anbieter geändert, entfernt oder gesperrt. Neu abgleichen; nichts versendet.');
         }
     }
@@ -61,6 +61,6 @@ final class PersonalReplyProvider implements ReplyProvider
     public function proof(Access $access, array $account, array $row, string $remote): bool
     {
         $reply = $this->comments($access, $account, $row['parent_id'])[SocialHub::remoteId($remote)] ?? null;
-        return $reply !== null && empty($reply['deleted']) && ($reply['postId'] ?? null) === $row['parent_id'] && ($reply['creator']['id'] ?? null) === $account['account_id'] && ($reply['replyTo']['id'] ?? null) === ($row['payload']['original']['creator_id'] ?? null) && ($reply['text'] ?? null) === $row['payload']['text'] && !in_array($reply['filterStatus'] ?? '', ['BLOCKED', 'FLAGGED'], true);
+        return $reply !== null && empty($reply['deleted']) && ($reply['postId'] ?? null) === $row['parent_id'] && ($reply['creator']['id'] ?? null) === $account['account_id'] && ($reply['organizationId']??'') === ($account['organization_id']??'') && ($reply['replyTo']['id'] ?? null) === ($row['payload']['original']['creator_id'] ?? null) && ($reply['text'] ?? null) === $row['payload']['text'] && !in_array($reply['filterStatus'] ?? '', ['BLOCKED', 'FLAGGED'], true);
     }
 }

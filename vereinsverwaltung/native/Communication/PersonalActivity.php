@@ -3,7 +3,7 @@ namespace Kulturhus\Native\Communication;
 
 use PDO;
 use Kulturhus\Native\Shared\{Access, Db, SecretBox};
-use Kulturhus\Native\Integration\StadtLandFunk\{Connection, OwnPostsPage};
+use Kulturhus\Native\Integration\StadtLandFunk\{Connection, OwnPostsPage, Sender};
 
 /** Reads the personal app's own events/comments, without a paid partner key or browser. */
 final class PersonalActivity
@@ -41,12 +41,7 @@ final class PersonalActivity
         for ($page = 0; $page < $pages; $page++) {
             $data = $this->connection->read(
                 $access,
-                "/grapevine/post/own?" .
-                    http_build_query([
-                        "type" => "HAPPENING",
-                        "page" => $page,
-                        "count" => 50,
-                    ]),
+                Sender::postsPath($identity, $page),
             );
             $data = OwnPostsPage::read($data, $page);
             if ($page === 0) {
@@ -59,19 +54,19 @@ final class PersonalActivity
             }
             foreach ($data["content"] as $row) {
                 $remote = SocialHub::remoteId($row["id"] ?? null);
-                $event = $row["happening"] ?? null;
+                $type = $row['type'] ?? 'HAPPENING';
+                $event = match ($type) { 'HAPPENING'=>$row['happening']??null, 'GOSSIP'=>$row['gossip']??null, 'NEWS_ITEM'=>$row['newsItem']??null, default=>null };
                 if (
                     isset($seen[$remote]) ||
                     !is_array($event) ||
-                    ($event["creator"]["id"] ?? null) !==
-                        $identity["account_id"]
+                    !Sender::owns($event, $identity)
                 ) {
                     throw new \DomainException(
                         "Eigene Veranstaltung oder Seitenfolge nicht bestätigt.",
                     );
                 }
                 $seen[$remote] = true;
-                $title = Content::text($event["title"] ?? "", 300, true);
+                $title = Content::text($event["title"] ?? ($type==='HAPPENING'?'':'Beitrag'), 300, true);
                 $events[] = [
                     "id" => substr(
                         hash("sha256", $club . ":stadtlandfunk:" . $remote),
@@ -79,7 +74,7 @@ final class PersonalActivity
                         32,
                     ),
                     "remote_id" => $remote,
-                    "kind" => "event",
+                    "kind" => $type==='HAPPENING' ? 'event' : 'post',
                     "caption" =>
                         $title .
                         "\n\n" .
@@ -101,7 +96,7 @@ final class PersonalActivity
                     "connection_id" => $identity["connection_id"],
                     "account_id" => $identity["account_id"],
                     "home_area_id" => $identity["home_area_id"],
-                ];
+                ] + (!empty($identity['organization_id']) ? ['organization_id'=>$identity['organization_id']] : []);
             }
         }
         $comments = [];
@@ -130,7 +125,8 @@ final class PersonalActivity
                 if (
                     !empty($comment["deleted"]) ||
                     ($comment["creator"]["id"] ?? null) ===
-                        $identity["account_id"]
+                        $identity["account_id"] ||
+                    (!empty($identity['organization_id']) && ($comment['organizationId']??'')===$identity['organization_id'])
                 ) {
                     continue;
                 }
@@ -179,11 +175,12 @@ final class PersonalActivity
                 if($old&&(!$sameComments||$old['caption']!==$event['caption']||!OriginalArchive::sameData(json_decode($old['payload_json'],true,64,JSON_THROW_ON_ERROR),$event)))(new OriginalArchive($this->db,$this->box))->retain($club,'object',$old,'changed');
                 Db::run(
                     $this->db,
-                    "INSERT INTO native_social_objects(club_id,id,channel,remote_id,kind,caption,created_at,payload_json,last_seen,comments_cipher,comments_at) VALUES(?,?,'stadtlandfunk',?,'event',?,?,?,UTC_TIMESTAMP(),?,UTC_TIMESTAMP()) ON DUPLICATE KEY UPDATE caption=VALUES(caption),payload_json=VALUES(payload_json),last_seen=VALUES(last_seen),comments_cipher=VALUES(comments_cipher),comments_at=VALUES(comments_at)",
+                    "INSERT INTO native_social_objects(club_id,id,channel,remote_id,kind,caption,created_at,payload_json,last_seen,comments_cipher,comments_at) VALUES(?,?,'stadtlandfunk',?,?,?,?,?,UTC_TIMESTAMP(),?,UTC_TIMESTAMP()) ON DUPLICATE KEY UPDATE kind=VALUES(kind),caption=VALUES(caption),payload_json=VALUES(payload_json),last_seen=VALUES(last_seen),comments_cipher=VALUES(comments_cipher),comments_at=VALUES(comments_at)",
                     [
                         $club,
                         $id,
                         $event["remote_id"],
+                        $event['kind'],
                         $event["caption"],
                         $event["created_at"],
                         json_encode($event, JSON_THROW_ON_ERROR),

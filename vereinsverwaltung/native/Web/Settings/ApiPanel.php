@@ -121,6 +121,12 @@ final class ApiPanel extends Workspace
             ($s["configured"] ? "Konto verbunden" : "nicht verbunden") .
             "</summary><p>Persönliches Konto ohne kostenpflichtigen Partner-Schlüssel verbinden. Die Anmeldung verwendet den zentralen Digitale-Dörfer-Login. Passwort und Tokens werden verschlüsselt gespeichert; du kannst das gespeicherte Passwort auch weglassen.</p>";
         if ($s["configured"]) {
+            $h .= '<p><strong>Absender: '.Html::e($s['organization_name'] !== '' ? $s['organization_name'] : 'Persönliches Profil').'</strong></p>';
+            $choices = [''=>'Persönliches Profil'];
+            foreach ($s['organizations'] as $organization) $choices[$organization['id']] = $organization['name'];
+            if ($s['organization_id'] !== '') $choices[$s['organization_id']] = $s['organization_name'];
+            $h .= $this->start('stadtlandfunk-sender').Html::hidden('version',$s['version']).Html::select('organization_id','Absender für Beiträge und Antworten',$choices,$s['organization_id']).'<button class="btn btn-solid theme-primary">Absender speichern</button></form>';
+            $h .= $this->start('stadtlandfunk-senders').Html::hidden('version',$s['version']).'<button class="btn btn-outline theme-secondary">Vereinsprofile laden</button></form>';
             $h .=
                 "<p><strong>Zielgebiet: " .
                 Html::e($s["home_area_name"]) .
@@ -167,7 +173,7 @@ final class ApiPanel extends Workspace
             ($s["configured"]
                 ? "Zugang ändern &amp; neu verbinden"
                 : "Konto verbinden") .
-            '</button></form><p class="hint">Die Kontoverbindung bestätigt die Anmeldung. Die dauerhafte Veranstaltungswarteschlange und Kommentarantworten dieses Kanals sind noch in Umsetzung.</p>';
+            '</button></form>';
         if ($s["configured"]) {
             $h .= $this->disconnect("stadtlandfunk-disconnect", $s["version"]);
         }

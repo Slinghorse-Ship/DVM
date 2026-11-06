@@ -7,7 +7,7 @@ use Kulturhus\Native\Shared\{Access,Authority,Db,SecretBox};
 use Kulturhus\Native\Cms\{EventDetails,Pages};
 use Kulturhus\Native\Delivery\{DeferredDelivery,Outbox,UncertainDelivery};
 use Kulturhus\Native\Integration\ManagerEventSource;
-use Kulturhus\Native\Integration\StadtLandFunk\{Connection,OwnPostsPage};
+use Kulturhus\Native\Integration\StadtLandFunk\{Connection,OwnPostsPage,Sender};
 
 /** Personal app publication, with a committed photo checkpoint before its single event write. */
 final class PersonalPublication
@@ -86,6 +86,7 @@ final class PersonalPublication
                 'event'=>['title'=>$content['title'],'text'=>$content['body'].(($content['destination_url']??'')!==''?"\n".$content['destination_url']:''),'startTime'=>EventDetails::start($source['snapshot'])->getTimestamp()*1000,'customLocationDefinition'=>self::location($source['snapshot'])],
                 'approval'=>['actor'=>$content['approved_by'],'authority'=>$content['approved_authority']??'native','item'=>$item,'version'=>$version]];
             if(($end=EventDetails::end($source['snapshot']))!==null)$payload['event']['endTime']=$end->getTimestamp()*1000;
+            if (!empty($identity['organization_id'])) $payload['event'] += ['organizationId'=>$identity['organization_id'],'geoAreaIds'=>[$identity['home_area_id']]];
             $dedupe=hash('sha256','stadtlandfunk:'.$identity['connection_id'].':'.$source['kind'].':'.$source['id']);
             $old=Db::run($this->db,'SELECT id,ciphertext FROM native_delivery_jobs WHERE club_id=? AND dedupe=? FOR SHARE',[$access->club(),hash('sha256','stadtlandfunk:'.$dedupe)])->fetch();
             if($old){$original=$this->box->open('job:'.$access->club().':'.$old['id'],$old['ciphertext']);if($original!==$payload)throw new DomainException('Für diese Veranstaltung besteht bereits ein eigener Veröffentlichungsauftrag.');return $old['id'];}
@@ -152,7 +153,7 @@ final class PersonalPublication
     private static function matches(array $post,array $payload,string $media,?string $id=null):bool
     {
         $event=$post['happening']??null;$expected=$payload['event'];
-        if(!is_array($event)||($post['type']??null)!=='HAPPENING'||!is_string($post['id']??null)||($id!==null&&$post['id']!==$id)||($event['creator']['id']??null)!==$payload['identity']['account_id']||($event['geoAreaId']??null)!==$payload['identity']['home_area_id'])return false;
+        if(!is_array($event)||($post['type']??null)!=='HAPPENING'||!is_string($post['id']??null)||($id!==null&&$post['id']!==$id)||!Sender::owns($event,$payload['identity'])||(($event['geoAreaId']??null)!==$payload['identity']['home_area_id']&&!in_array($payload['identity']['home_area_id'],$event['geoAreaIds']??[],true)))return false;
         foreach(['title','text','startTime','endTime']as$key)if(($event[$key]??null)!==($expected[$key]??null))return false;
         if(!empty($event['filterStatus'])||($event['hiddenForOtherHomeAreas']??false)!==false||!is_array($event['images']??null)||count($event['images'])!==1||($event['images'][0]['id']??null)!==$media)return false;
         $address=$event['customAddress']??[];$location=$expected['customLocationDefinition'];if(($address['name']??null)!==$location['locationName'])return false;
@@ -183,7 +184,7 @@ final class PersonalPublication
             }else{
                 $pages=1;$seen=[];$sequence=null;
                 for($page=0;$page<$pages;$page++){
-                    $list=$this->connection->publicationRead($access,$binding,'/grapevine/post/own?'.http_build_query(['type'=>'HAPPENING','page'=>$page,'count'=>50]));
+                    $list=$this->connection->publicationRead($access,$binding,Sender::postsPath($payload['identity'],$page));
                     $list=OwnPostsPage::read($list,$page);
                     if($page===0){$pages=max(1,$list['total_pages']);$sequence=OwnPostsPage::sequence($list);}elseif(OwnPostsPage::sequence($list)!==$sequence)throw new DomainException('Veröffentlichungsliste inzwischen geändert.');
                     if($page<$pages-1&&count($list['content'])!==50)throw new DomainException('Frühere Veröffentlichungsseite nicht vollständig bestätigt.');

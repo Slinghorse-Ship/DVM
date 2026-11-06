@@ -3027,22 +3027,22 @@
     },
     {
       "path": "vereinsverwaltung/native/Communication/PersonalActivity.php",
-      "bytes": 9912,
-      "sha256": "b544b37ef1a06d0d4b99f08d1d0728e5498a152d722a0729da27620110b7b733",
+      "bytes": 10197,
+      "sha256": "822f776b95f60975183d68404524b46e39bc8da84ea272cde4140555688e2f3a",
       "normalized_lf": true,
       "executable": false
     },
     {
       "path": "vereinsverwaltung/native/Communication/PersonalPublication.php",
-      "bytes": 17657,
-      "sha256": "182bcb5e5bce42276907b057a35e2eac534c8fc958a3e18bd7d0d4da9168744e",
+      "bytes": 17843,
+      "sha256": "04fdcef45fcdb47deffdb0820dcf37bf4bf81215f4801aa62d64bd7c8555ca07",
       "normalized_lf": true,
       "executable": false
     },
     {
       "path": "vereinsverwaltung/native/Communication/PersonalReplyProvider.php",
-      "bytes": 4658,
-      "sha256": "e6a1a1f3723c7fcba1396d25a18368f56958b61674411c9556522172632c1748",
+      "bytes": 4861,
+      "sha256": "4f8509c3ae847062707fc226812b00738c0b8cf6fde22658df2faf29fe112054",
       "normalized_lf": true,
       "executable": false
     },
@@ -4113,7 +4113,7 @@
     {
       "path": "vereinsverwaltung/native/Installer/PackageVersion.php",
       "bytes": 233,
-      "sha256": "0ff6236cfc6c6b2ff90dff4efb80e0062c106ffdba55dcf8246a0c9e0f57045d",
+      "sha256": "0cf4f75c272c48d57edbdefe78428a6ff6a21463bf7e8181e306bcbde5ab8fc0",
       "normalized_lf": true,
       "executable": false
     },
@@ -4504,8 +4504,8 @@
     },
     {
       "path": "vereinsverwaltung/native/Integration/StadtLandFunk/Connection.php",
-      "bytes": 16736,
-      "sha256": "236ae1a39ec406ca1fd43e2e9a39f88011c9fa24e9b22009920da9038efee191",
+      "bytes": 21266,
+      "sha256": "9b05870798ebfbcb1dad7499b3c97a92f7aea91da7417d6a4fcb61df3402ccbb",
       "normalized_lf": true,
       "executable": false
     },
@@ -4518,8 +4518,8 @@
     },
     {
       "path": "vereinsverwaltung/native/Integration/StadtLandFunk/Login.php",
-      "bytes": 16386,
-      "sha256": "444536032e8eeca4c8f31d226370f04c8a0e1162a7c24967690aeca029af4ead",
+      "bytes": 19746,
+      "sha256": "c3e65afa1201296fc79b29e9c6597176e2242909411034334f922a462482e6af",
       "normalized_lf": true,
       "executable": false
     },
@@ -4541,6 +4541,13 @@
       "path": "vereinsverwaltung/native/Integration/StadtLandFunk/ReplyRejected.php",
       "bytes": 221,
       "sha256": "a6024213c3ad57b8fd9189fa8f8172dd122eeac1af42337422c544945e430646",
+      "normalized_lf": true,
+      "executable": false
+    },
+    {
+      "path": "vereinsverwaltung/native/Integration/StadtLandFunk/Sender.php",
+      "bytes": 1309,
+      "sha256": "3a6ba92640e045f655c479a72f4198472d3ae3103ac28a11eba15e8867da4c4c",
       "normalized_lf": true,
       "executable": false
     },
@@ -6975,8 +6982,8 @@
     },
     {
       "path": "vereinsverwaltung/native/Web/Settings/ApiPanel.php",
-      "bytes": 10521,
-      "sha256": "7b65eaa105ddcbf2e9e13d71dbe504bc7a835f0627201bf288dda39ac503d068",
+      "bytes": 11234,
+      "sha256": "5c9fcb9595654d601a48b581a5c10ebd5ca3652f58195029440cbfccdeb63157",
       "normalized_lf": true,
       "executable": false
     },
@@ -7024,8 +7031,8 @@
     },
     {
       "path": "vereinsverwaltung/native/Web/Settings/Workspace.php",
-      "bytes": 17969,
-      "sha256": "9b3916b20da63fd2909059e00509db0bfec10226bfe344e0c674219942fff188",
+      "bytes": 18490,
+      "sha256": "0fe5dd2b53b5ae4fbd162099674aed825626d805fe2bb2949e1ae770a2880cf5",
       "normalized_lf": true,
       "executable": false
     },
@@ -23250,8 +23257,8 @@
     },
     {
       "path": "vereinsverwaltung/tests/ci-native.php",
-      "bytes": 28139,
-      "sha256": "d7677eeaea7654a2d545cc0591508fb5ae900f3518a246fa020affd5cf4b82e8",
+      "bytes": 28189,
+      "sha256": "657379ee40f21bc2b653a65dfd39d08b1ade2fac9b731e4e8b54329315f1274b",
       "normalized_lf": true,
       "executable": false
     },
@@ -32373,6 +32380,13 @@
       "path": "vereinsverwaltung/tests/native-social.php",
       "bytes": 8475,
       "sha256": "3058f5d31d57c8a1d592f1042238a93896c607deac27760cc5da11e79a9fd1ba",
+      "normalized_lf": true,
+      "executable": false
+    },
+    {
+      "path": "vereinsverwaltung/tests/native-stadtlandfunk-organizations.php",
+      "bytes": 10427,
+      "sha256": "4ff0b1966aa4d9f2620ea9f6eddd893ea3eeb89b973a7038bc64f184cb138094",
       "normalized_lf": true,
       "executable": false
     },

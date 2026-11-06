@@ -121,6 +121,10 @@ final class Connection
                     "changed_at" => gmdate("Y-m-d H:i:s"),
                     "checked_at" => gmdate("Y-m-d H:i:s"),
                 ];
+            if ($same && !empty($old['organization_id'])) {
+                $organization = $this->login->organization($tokens['access_token'], $old['organization_id'], $identity['home_area_id']);
+                $data += ['organization_id'=>$organization['id'],'organization_name'=>$organization['name'],'organizations'=>$old['organizations']??[]];
+            }
             $this->write($club, $data, $version + 1, $u["id"]);
             if (!$same) {
                 $this->clearActivity($club);
@@ -173,9 +177,50 @@ final class Connection
             $data = array_replace($data, $identity, [
                 "checked_at" => gmdate("Y-m-d H:i:s"),
             ]);
+            if (!empty($data['organization_id'])) {
+                $organization = $this->login->organization($data['access_token'], $data['organization_id'], $data['home_area_id']);
+                $data['organization_name'] = $organization['name'];
+            }
             $this->write($u["club_id"], $data, $version + 1, $u["id"]);
         });
         return $this->status($access);
+    }
+
+    public function loadSenders(Access $access, int $version): void
+    {
+        $state = $this->status($access);
+        if ($state['version'] !== $version) throw new \DomainException('Verbindungsstand wurde geändert. Bitte neu laden.');
+        if ($state['needs_refresh']) $version = $this->verify($access, $version)['version'];
+        Db::atomic($this->db, function () use ($access, $version) {
+            $data = $this->current($access, $version, true);
+            if (empty($data['access_token']) || !empty($data['disconnected'])) throw new \DomainException('StadtLand.Funk zuerst verbinden.');
+            $data['organizations'] = $this->login->organizations($data['access_token']);
+            $this->write($access->club(), $data, $version+1, $access->user()['id']);
+        });
+    }
+
+    /** A sender change creates a new binding; older approved jobs cannot silently change author. */
+    public function selectSender(Access $access, string $organization, int $version): void
+    {
+        if ($organization !== '') Sender::id($organization);
+        $state = $this->status($access);
+        if ($state['version'] !== $version) throw new \DomainException('Verbindungsstand wurde geändert. Bitte neu laden.');
+        if ($state['needs_refresh']) $version = $this->verify($access, $version)['version'];
+        Db::atomic($this->db, function () use ($access, $organization, $version) {
+            $data = $this->current($access, $version, true);
+            if (empty($data['access_token']) || !empty($data['disconnected'])) throw new \DomainException('StadtLand.Funk zuerst verbinden.');
+            $profile = $organization === '' ? null : $this->login->organization($data['access_token'], $organization, $data['home_area_id']);
+            if (($data['organization_id'] ?? '') !== $organization) $data['connection_id'] = bin2hex(random_bytes(16));
+            unset($data['organization_id'], $data['organization_name']);
+            if ($profile !== null) $data += ['organization_id'=>$profile['id'],'organization_name'=>$profile['name']];
+            $data['changed_at'] = gmdate('Y-m-d H:i:s');
+            $this->write($access->club(), $data, $version+1, $access->user()['id']);
+        });
+    }
+
+    private function checkSender(array $data): void
+    {
+        if (!empty($data['organization_id'])) $this->login->organization($data['access_token'], $data['organization_id'], $data['home_area_id']);
     }
 
     /** Removes local tokens without revoking any other app login or existing public event. */
@@ -273,6 +318,7 @@ final class Connection
             if (!is_string($data[$key] ?? null) || !preg_match('/^[A-Za-z0-9_:-]{1,200}$/D', $data[$key])) throw new \DomainException('Persönliche Kontobindung nicht bestätigt. Neu verbinden.');
             $identity[$key] = $data[$key];
         }
+        if (!empty($data['organization_id'])) $identity['organization_id'] = Sender::id($data['organization_id']);
         return $identity;
     }
 
@@ -281,7 +327,8 @@ final class Connection
     {
         $access->require('social', 'publish');
         [$club, $data, $owner] = $this->replyContext($access, $binding, true);
-        $response = $this->login->reply($data['access_token'], $post, $comment, $text);
+        $this->checkSender($data);
+        $response = $this->login->reply($data['access_token'], $post, $comment, $text, $data['organization_id'] ?? '');
         $access->require('social', 'publish');
         $owner->require('website', 'manage');
         if ($access->club() !== $club || $owner->club() !== $club) throw new \DomainException('Vereinszuordnung während Antwort geändert.');
@@ -293,6 +340,7 @@ final class Connection
     public function read(Access $access, string $path, ?string $binding = null): array
     {
         [$club, $data, $owner] = $this->replyContext($access, $binding, true);
+        $this->checkReadPath($data, $path);
         $response = $this->login->read($data["access_token"], $path);
         $access->require("social", "manage");
         $owner->require("website", "manage");
@@ -332,11 +380,17 @@ final class Connection
     {
         [, $data]=$this->replyContext($access,$binding,false,true);$identity=[];
         foreach(['account_id','home_area_id','connection_id']as$key){if(!is_string($data[$key]??null)||!preg_match('/\A[A-Za-z0-9_:-]{1,200}\z/D',$data[$key]))throw new \DomainException('Persönliche Kontobindung nicht bestätigt.');$identity[$key]=$data[$key];}
+        if (!empty($data['organization_id'])) $identity['organization_id'] = Sender::id($data['organization_id']);
         return $identity;
     }
 
     public function publicationRead(Access $access,string $binding,string $path):array
-    {return $this->publicationCall($access,$binding,fn($token)=>$this->login->read($token,$path,true));}
+    {[, $data]=$this->replyContext($access,$binding,false,true);$this->checkReadPath($data,$path);return $this->publicationCall($access,$binding,fn($token)=>$this->login->read($token,$path,true));}
+
+    private function checkReadPath(array $data, string $path): void
+    {
+        if (preg_match('~\A/grapevine/organization/([^/]+)/posts(?:\?|$)~D', $path, $match) && ($data['organization_id'] ?? '') !== $match[1]) throw new \DomainException('Beitragsliste gehört zu einem anderen Vereinsabsender.');
+    }
 
     public function upload(Access $access,string $binding,string $path,string $sha256):array
     {
@@ -345,6 +399,9 @@ final class Connection
 
     public function createEvent(Access $access,string $binding,array $event):array
     {
+        [, $data]=$this->replyContext($access,$binding,true,true);
+        if (($event['organizationId']??'') !== ($data['organization_id']??'') || (isset($event['organizationId']) && ($event['geoAreaIds']??null)!==[$data['home_area_id']])) throw new \DomainException('Freigegebener Vereinsabsender oder Zielgebiet wurde geändert.');
+        $this->checkSender($data);
         return $this->publicationCall($access,$binding,fn($token)=>$this->login->createEvent($token,$event));
     }
 
@@ -367,7 +424,7 @@ final class Connection
             "account_id" => $data["account_id"],
             "home_area_id" => $data["home_area_id"],
             "connection_id" => $data["connection_id"],
-        ];
+        ] + (!empty($data['organization_id']) ? ['organization_id'=>Sender::id($data['organization_id'])] : []);
     }
 
     public function status(Access $access): array
@@ -399,6 +456,9 @@ final class Connection
                 $configured && ($data["expires_at"] ?? 0) <= time() + 60,
             "changed_at" => $data["changed_at"] ?? null,
             "checked_at" => $configured ? $data["checked_at"] ?? null : null,
+            "organization_id" => $configured ? $data['organization_id'] ?? '' : '',
+            "organization_name" => $configured ? $data['organization_name'] ?? '' : '',
+            "organizations" => $configured ? $data['organizations'] ?? [] : [],
         ];
     }
 }
